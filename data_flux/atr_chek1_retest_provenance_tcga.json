@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-16",
+  "mission": "Re-test ATR/CHEK1 : la hausse BRCA2/ATR/CHEK1/RAD51 survit-elle à la pureté et à la prolifération ?",
+  "source": "Broad GDAC Firehose 2016-01-28 PAAD, tarball déjà sur disque, MD5 vérifié b09569ce3f4721f514bc137bd109ac0a",
+  "patients": 178,
+  "correction_pureté": "v3 identique à build_fluxes_tcga_v4.py (scores acineux + îlots, régression, résidus)",
+  "score_prolifération": "médiane de MKI67, TOP2A, PCNA, CCNB1 (primaire : résidus ; sensibilité : brut)",
+  "gènes_testés": [
+    "BRCA2",
+    "ATR",
+    "CHEK1",
+    "RAD51",
+    "POLQ",
+    "PARP1",
+    "PARP2"
+  ],
+  "gènes_complétude": [
+    "PARP1",
+    "PARP2",
+    "BRCA1",
+    "BRCA2",
+    "ATM",
+    "ATR",
+    "CHEK1",
+    "CHEK2",
+    "RAD51",
+    "XRCC1",
+    "POLQ",
+    "FANCD2"
+  ],
+  "ordre": "résidu KRAS croissant (versions b/c) ; KRAS brut pour (a)",
+  "top12_commun_brut_résidu": 11,
+  "spearman_prolif_vs_rang_kras": {
+    "brut": 0.3856,
+    "p_brut": 1.0688623564023613e-07,
+    "résidus": 0.3394,
+    "p_résidus": 3.5737596171577535e-06
+  },
+  "r2_pureté": {
+    "BRCA2": 0.0085,
+    "ATR": 0.0057,
+    "CHEK1": 0.0322,
+    "RAD51": 0.0263,
+    "POLQ": 0.0295,
+    "PARP1": 0.0002,
+    "PARP2": 0.0073,
+    "MKI67": 0.0135,
+    "TOP2A": 0.0197,
+    "PCNA": 0.0244,
+    "CCNB1": 0.0708
+  },
+  "fichiers": {
+    "tests_csv": {
+      "fichier": "/home/hatch/workspace/runs/pdac-v6/atr_chek1_direct_tests_tcga.csv",
+      "sha256": "c19bbb700659efe3c0f484dcbf91de7c049244f40c2aaccda9c2215c5f62f96f"
+    },
+    "tests_txt": {
+      "fichier": "/home/hatch/workspace/runs/pdac-v6/atr_chek1_direct_tests_tcga.txt",
+      "sha256": "fd04b8ef72495944ffaf91bd5f4d442b9aa43dc6aa46c738c672009c50639bf0"
+    },
+    "flux_csv": {
+      "fichier": "/home/hatch/workspace/runs/pdac-v6/pdac_tcga_fluxes_atr.csv",
+      "sha256": "88e52311a2cc10371647ff0b9ebbe909b49afe58cf8f8a72e67b7ee31c5fe849"
+    },
+    "flux_nul_csv": {
+      "fichier": "/home/hatch/workspace/runs/pdac-v6/pdac_tcga_fluxes_atr_nul.csv",
+      "sha256": "e70011545f230f77d64d4b084addcab83a8cc40508f97cc47e54b08f95f1b090"
+    }
+  }
+}

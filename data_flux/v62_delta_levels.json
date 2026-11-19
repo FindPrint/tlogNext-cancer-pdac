@@ -1,0 +1,248 @@
+{
+ "n_runs": 222,
+ "n_v61": 156,
+ "n_v62": 66,
+ "mismatch_d_div": 0,
+ "mismatch_d_sat": 0,
+ "predictions": {
+  "H1 masque (L/P)": {
+   "acc_paire": 0.6081081081081081,
+   "acc_valeur_pm010": 0.14864864864864866,
+   "n_groupes": 3,
+   "n_runs": 222
+  },
+  "H1b masque Levina seule": {
+   "acc_paire": 0.5765765765765766,
+   "acc_valeur_pm010": 0.14864864864864866,
+   "n_groupes": 2,
+   "n_runs": 222
+  },
+  "H1c masque PH seule": {
+   "acc_paire": 0.5765765765765766,
+   "acc_valeur_pm010": 0.13513513513513514,
+   "n_groupes": 2,
+   "n_runs": 222
+  },
+  "H2 MFA": {
+   "acc_paire": 0.6216216216216216,
+   "acc_valeur_pm010": 0.36036036036036034,
+   "n_groupes": 9,
+   "n_runs": 222
+  },
+  "H3 n": {
+   "acc_paire": 0.6306306306306306,
+   "acc_valeur_pm010": 0.5630630630630631,
+   "n_groupes": 11,
+   "n_runs": 222
+  },
+  "H3b n_fluxes_mode": {
+   "acc_paire": 0.46846846846846846,
+   "acc_valeur_pm010": 0.08108108108108109,
+   "n_groupes": 4,
+   "n_runs": 222
+  },
+  "H3c (n, n_fluxes_mode)": {
+   "acc_paire": 0.6306306306306306,
+   "acc_valeur_pm010": 0.5630630630630631,
+   "n_groupes": 12,
+   "n_runs": 222
+  },
+  "H5 controle": {
+   "acc_paire": 0.6801801801801802,
+   "acc_valeur_pm010": 0.32882882882882886,
+   "n_groupes": 53,
+   "n_runs": 222
+  },
+  "H5b (controle, masque)": {
+   "acc_paire": 0.7432432432432432,
+   "acc_valeur_pm010": 0.36486486486486486,
+   "n_groupes": 56,
+   "n_runs": 222
+  },
+  "H1+H2 (masque, MFA)": {
+   "acc_paire": 0.7432432432432432,
+   "acc_valeur_pm010": 0.5135135135135135,
+   "n_groupes": 11,
+   "n_runs": 222
+  },
+  "H2+H3 (MFA, n)": {
+   "acc_paire": 0.7837837837837838,
+   "acc_valeur_pm010": 0.5990990990990991,
+   "n_groupes": 19,
+   "n_runs": 222
+  },
+  "H1+H3 (masque, n)": {
+   "acc_paire": 0.6486486486486487,
+   "acc_valeur_pm010": 0.581081081081081,
+   "n_groupes": 13,
+   "n_runs": 222
+  },
+  "H1+H2+H3 (masque, MFA, n)": {
+   "acc_paire": 0.8018018018018018,
+   "acc_valeur_pm010": 0.6171171171171171,
+   "n_groupes": 21,
+   "n_runs": 222
+  }
+ },
+ "meilleure": "H1+H2+H3 (masque, MFA, n)",
+ "elucide": false,
+ "mfa_valeurs_distinctes": [
+  3.0,
+  4.0,
+  4.5,
+  5.0,
+  6.0,
+  6.25,
+  6.5,
+  6.75,
+  7.0
+ ],
+ "masques": {
+  "LP": 181,
+  "-P": 12,
+  "--": 29
+ },
+ "paires": {
+  "LocalPCA+LevinaBickel": 31,
+  "LocalPCA+MFA": 99,
+  "LocalPCA": 7,
+  "MFA": 5,
+  "MFA+LocalPCA": 30,
+  "LocalPCA+PCAIntrinsic": 46,
+  "PCAIntrinsic+LocalPCA": 4
+ },
+ "dfa_extremes": [
+  {
+   "dir": "results_fast_v61_depmap",
+   "dfa": -18.576782,
+   "d_sat": 1.190025,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_aco2_nul",
+   "dfa": -38.159724,
+   "d_sat": 1.190916,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_ccnd1",
+   "dfa": -36.826815,
+   "d_sat": 1.197432,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_ccnd1_nul",
+   "dfa": -37.05822,
+   "d_sat": 1.195431,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_cflar",
+   "dfa": -36.811269,
+   "d_sat": 1.192146,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_cflar_nul",
+   "dfa": -36.939964,
+   "d_sat": 1.197149,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_crkl",
+   "dfa": -36.688901,
+   "d_sat": 1.190665,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_crkl_nul",
+   "dfa": -37.090049,
+   "d_sat": 1.193958,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_dock5",
+   "dfa": -37.589014,
+   "d_sat": 1.195275,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_efr3a",
+   "dfa": -35.978578,
+   "d_sat": 1.193024,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_efr3a_nul",
+   "dfa": -36.042361,
+   "d_sat": 1.187939,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_myc",
+   "dfa": -36.936929,
+   "d_sat": 1.194613,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_myc_nul",
+   "dfa": -37.259209,
+   "d_sat": 1.197745,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_myh9",
+   "dfa": -36.614356,
+   "d_sat": 1.209135,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_rab10",
+   "dfa": -37.194512,
+   "d_sat": 1.193257,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_rab10_nul",
+   "dfa": -37.358574,
+   "d_sat": 1.196735,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_rab6a",
+   "dfa": -35.96703,
+   "d_sat": 1.185889,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_scap",
+   "dfa": -36.213611,
+   "d_sat": 1.184498,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_urod",
+   "dfa": -36.199859,
+   "d_sat": 1.214627,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v61_depmaprot_urod_nul",
+   "dfa": -18.599196,
+   "d_sat": 1.199144,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v62_depmap",
+   "dfa": -18.576782,
+   "d_sat": 1.190025,
+   "sat_med_member": "Katz"
+  },
+  {
+   "dir": "results_fast_v62_depmap_rep2",
+   "dfa": -18.576782,
+   "d_sat": 1.190025,
+   "sat_med_member": "Katz"
+  }
+ ]
+}
