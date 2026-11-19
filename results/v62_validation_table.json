@@ -1,0 +1,5055 @@
+{
+ "runs": [
+  {
+   "run": "HP35 reel",
+   "input": "/home/hatch/workspace/runs/biophysique-hp35/test_biophysique_input.csv",
+   "n": 1000.0,
+   "v61": {
+    "dir": "/home/hatch/workspace/runs/biophysique-hp35/results_fast_hp35",
+    "version": "v5.9.0-L7aL7b-CoherenceRobustesse",
+    "sha": "9bdb4ca671e55ad415c745fbeb4da66e1596e99563344c8dba47e29c1f4fdb1d",
+    "ts_keys": [],
+    "n": 1000.0,
+    "cascade": [
+     0.0,
+     1.5545702200698892,
+     9.077993756177401,
+     37.78143606375039,
+     37.78143606375039
+    ],
+    "cascade_pas": [
+     0,
+     16,
+     91,
+     378,
+     378
+    ],
+    "mc_thr": 6.6239316239316235,
+    "mc_score": 0.6035370647008537,
+    "max_sep": 1.771783162388352,
+    "stability": 0.8686535935333372,
+    "s_sep": 1.5390658109705022,
+    "robustness": 0.9840212134283363,
+    "sharpness": 0.42106719691834343,
+    "delta": 4.482534,
+    "fals": 1.265592,
+    "l7a_dir": "up",
+    "l7a_conf": 0.37694661238526533,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.838686646292728,
+    "l5_top": "TwoNN",
+    "l5_conf": 0.6564213697076773,
+    "l5_n_alerts": 2,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "TwoNN",
+      0.5143789768216728
+     ],
+     [
+      "MFA",
+      0.2796596027464126
+     ],
+     [
+      "PersistentHomology",
+      0.2578961295522125
+     ],
+     [
+      "LocalPCA",
+      0.25569025123537636
+     ],
+     [
+      "CorrelationD2",
+      0.25405842162767106
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.24978990665904535
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.24718278870193522
+     ],
+     [
+      "PermutationEntropy",
+      0.17949707418871924
+     ],
+     [
+      "SpectralDimension",
+      0.1699369958569168
+     ],
+     [
+      "SpectralBeta",
+      0.1699369958569165
+     ],
+     [
+      "DFA",
+      0.1654556638256996
+     ],
+     [
+      "Sevcik",
+      0.1647701031831271
+     ],
+     [
+      "LevinaBickel",
+      0.147766038846411
+     ],
+     [
+      "Petrosian",
+      0.13665836520723862
+     ],
+     [
+      "Higuchi",
+      0.1198436616668847
+     ],
+     [
+      "KolmogorovLZ",
+      0.11267677516786329
+     ],
+     [
+      "Katz",
+      0.09315695393035744
+     ],
+     [
+      "PCAIntrinsic",
+      0.09000777977777269
+     ],
+     [
+      "VisibilityGraph",
+      0.08950435982750699
+     ],
+     [
+      "SampleEn",
+      0.07890344548874381
+     ],
+     [
+      "BoxCounting",
+      0.059370855613819704
+     ],
+     [
+      "Fisher",
+      0.04015433068481372
+     ],
+     [
+      "SingularityFmax",
+      0.03855148627983851
+     ],
+     [
+      "DANCo",
+      0.037277277465836284
+     ],
+     [
+      "GraphDimension",
+      0.02888894895647981
+     ],
+     [
+      "Hurst",
+      0.020831501083495407
+     ],
+     [
+      "Hurst2mH",
+      0.020831501083495352
+     ],
+     [
+      "InformationD1",
+      0.008986964712500267
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "PersistentHomology",
+      "alert": 0.554197627195715,
+      "horizon": 12
+     },
+     {
+      "metric": "TwoNN",
+      "alert": 0.9831138210076286,
+      "horizon": 12
+     }
+    ]
+   },
+   "rep1": {
+    "dir": "results_fast_v62_hp35",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "07a1b5e03ed2ad1d2f6439978b00e1c754a0e3e49719e4b4d6432c8ce1a41d1c",
+    "ts_keys": [],
+    "n": 1000.0,
+    "cascade": [
+     0.0,
+     1.5545702200698892,
+     9.077993756177401,
+     37.78143606375039,
+     37.78143606375039
+    ],
+    "cascade_pas": [
+     0,
+     16,
+     91,
+     378,
+     378
+    ],
+    "mc_thr": 6.6239316239316235,
+    "mc_score": 0.6035370647008537,
+    "max_sep": 1.771783162388352,
+    "stability": 0.8686535935333372,
+    "s_sep": 1.5390658109705022,
+    "robustness": 0.9840212134283363,
+    "sharpness": 0.42106719691834343,
+    "delta": 4.482534,
+    "fals": 1.265592,
+    "l7a_dir": "up",
+    "l7a_conf": 0.37787853794426407,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.8442322298434778,
+    "l5_top": "TwoNN",
+    "l5_conf": 0.6608571379819769,
+    "l5_n_alerts": 2,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "TwoNN",
+      0.52386787502422
+     ],
+     [
+      "MFA",
+      0.27819998428723147
+     ],
+     [
+      "PersistentHomology",
+      0.2634289458515665
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.25374252736358616
+     ],
+     [
+      "CorrelationD2",
+      0.25308792412547426
+     ],
+     [
+      "LocalPCA",
+      0.252667504429149
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.24718278870193522
+     ],
+     [
+      "PermutationEntropy",
+      0.17949707418871924
+     ],
+     [
+      "SpectralDimension",
+      0.1699369958569168
+     ],
+     [
+      "SpectralBeta",
+      0.1699369958569165
+     ],
+     [
+      "DFA",
+      0.1654556638256996
+     ],
+     [
+      "Sevcik",
+      0.1647701031831271
+     ],
+     [
+      "LevinaBickel",
+      0.147766038846411
+     ],
+     [
+      "Petrosian",
+      0.13665836520723862
+     ],
+     [
+      "Higuchi",
+      0.1198436616668847
+     ],
+     [
+      "KolmogorovLZ",
+      0.11267677516786329
+     ],
+     [
+      "Katz",
+      0.09315695393035744
+     ],
+     [
+      "PCAIntrinsic",
+      0.09000777977777269
+     ],
+     [
+      "VisibilityGraph",
+      0.08950435982750699
+     ],
+     [
+      "SampleEn",
+      0.07890344548874381
+     ],
+     [
+      "BoxCounting",
+      0.059370855613819704
+     ],
+     [
+      "Fisher",
+      0.04015433068481372
+     ],
+     [
+      "SingularityFmax",
+      0.03855148627983851
+     ],
+     [
+      "DANCo",
+      0.037277277465836284
+     ],
+     [
+      "GraphDimension",
+      0.02888894895647981
+     ],
+     [
+      "Hurst",
+      0.020831501083495407
+     ],
+     [
+      "Hurst2mH",
+      0.020831501083495352
+     ],
+     [
+      "InformationD1",
+      0.008986964712500267
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "PersistentHomology",
+      "alert": 0.569000497064771,
+      "horizon": 12
+     },
+     {
+      "metric": "TwoNN",
+      "alert": 1.0,
+      "horizon": 12
+     }
+    ]
+   },
+   "rep2": {
+    "dir": "results_fast_v62_hp35_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "53e18ac53e0ae900ec06463d5f47f02fa7d3d88df2965d0a17e7aea1fbf5325c",
+    "ts_keys": [],
+    "n": 1000.0,
+    "cascade": [
+     0.0,
+     1.5545702200698892,
+     9.077993756177401,
+     37.78143606375039,
+     37.78143606375039
+    ],
+    "cascade_pas": [
+     0,
+     16,
+     91,
+     378,
+     378
+    ],
+    "mc_thr": 6.6239316239316235,
+    "mc_score": 0.6035370647008537,
+    "max_sep": 1.771783162388352,
+    "stability": 0.8686535935333372,
+    "s_sep": 1.5390658109705022,
+    "robustness": 0.9840212134283363,
+    "sharpness": 0.42106719691834343,
+    "delta": 4.482534,
+    "fals": 1.265592,
+    "l7a_dir": "up",
+    "l7a_conf": 0.37787853794426407,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.8442322298434778,
+    "l5_top": "TwoNN",
+    "l5_conf": 0.6608571379819769,
+    "l5_n_alerts": 2,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "TwoNN",
+      0.52386787502422
+     ],
+     [
+      "MFA",
+      0.27819998428723147
+     ],
+     [
+      "PersistentHomology",
+      0.2634289458515665
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.25374252736358616
+     ],
+     [
+      "CorrelationD2",
+      0.25308792412547426
+     ],
+     [
+      "LocalPCA",
+      0.252667504429149
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.24718278870193522
+     ],
+     [
+      "PermutationEntropy",
+      0.17949707418871924
+     ],
+     [
+      "SpectralDimension",
+      0.1699369958569168
+     ],
+     [
+      "SpectralBeta",
+      0.1699369958569165
+     ],
+     [
+      "DFA",
+      0.1654556638256996
+     ],
+     [
+      "Sevcik",
+      0.1647701031831271
+     ],
+     [
+      "LevinaBickel",
+      0.147766038846411
+     ],
+     [
+      "Petrosian",
+      0.13665836520723862
+     ],
+     [
+      "Higuchi",
+      0.1198436616668847
+     ],
+     [
+      "KolmogorovLZ",
+      0.11267677516786329
+     ],
+     [
+      "Katz",
+      0.09315695393035744
+     ],
+     [
+      "PCAIntrinsic",
+      0.09000777977777269
+     ],
+     [
+      "VisibilityGraph",
+      0.08950435982750699
+     ],
+     [
+      "SampleEn",
+      0.07890344548874381
+     ],
+     [
+      "BoxCounting",
+      0.059370855613819704
+     ],
+     [
+      "Fisher",
+      0.04015433068481372
+     ],
+     [
+      "SingularityFmax",
+      0.03855148627983851
+     ],
+     [
+      "DANCo",
+      0.037277277465836284
+     ],
+     [
+      "GraphDimension",
+      0.02888894895647981
+     ],
+     [
+      "Hurst",
+      0.020831501083495407
+     ],
+     [
+      "Hurst2mH",
+      0.020831501083495352
+     ],
+     [
+      "InformationD1",
+      0.008986964712500267
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "PersistentHomology",
+      "alert": 0.569000497064771,
+      "horizon": 12
+     },
+     {
+      "metric": "TwoNN",
+      "alert": 1.0,
+      "horizon": 12
+     }
+    ]
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 18,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 16,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "HP35 nul",
+   "input": "/home/hatch/workspace/runs/biophysique-hp35/test_biophysique_input_nul.csv",
+   "n": 1000.0,
+   "v61": {
+    "dir": "/home/hatch/workspace/runs/biophysique-hp35/results_fast_hp35_nul",
+    "version": "v5.9.0-L7aL7b-CoherenceRobustesse",
+    "sha": "c8bbc473f523f0f4d5511b4b27a38f9011f7323662277d8e7fb6eac78e6dc01f",
+    "ts_keys": [],
+    "n": 1000.0,
+    "cascade": [
+     0.0,
+     20.600192987327286,
+     27.407334455479216,
+     73.69797219700087,
+     73.69797219700087
+    ],
+    "cascade_pas": [
+     0,
+     206,
+     274,
+     737,
+     737
+    ],
+    "mc_thr": 4.914529914529914,
+    "mc_score": 0.40855248624509577,
+    "max_sep": 0.12058792701103928,
+    "stability": 0.9826747928564232,
+    "s_sep": 0.11849871619655851,
+    "robustness": 0.8989670691281666,
+    "sharpness": 0.09014227142058295,
+    "delta": 4.572404,
+    "fals": 1.117745,
+    "l7a_dir": "up",
+    "l7a_conf": 0.3374996875550765,
+    "l7a_status": "ok",
+    "l4_level": "medium",
+    "l4_risk": 0.5482254609768666,
+    "l5_top": "MultifractalDeltaAlpha",
+    "l5_conf": 0.6829885350301734,
+    "l5_n_alerts": 9,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "MultifractalDeltaAlpha",
+      0.5805902112701604
+     ],
+     [
+      "Sevcik",
+      0.4612758934465933
+     ],
+     [
+      "SpectralBeta",
+      0.41915332031340014
+     ],
+     [
+      "Katz",
+      0.3887910617085193
+     ],
+     [
+      "PermutationEntropy",
+      0.3860892615164278
+     ],
+     [
+      "Petrosian",
+      0.3592609410591367
+     ],
+     [
+      "SpectralDimension",
+      0.3496979092332276
+     ],
+     [
+      "LocalPCA",
+      0.33612482307660907
+     ],
+     [
+      "Fisher",
+      0.3276790283470363
+     ],
+     [
+      "Hurst",
+      0.30538347341361005
+     ],
+     [
+      "Hurst2mH",
+      0.30537272589712683
+     ],
+     [
+      "MFA",
+      0.3015609532017425
+     ],
+     [
+      "GraphDimension",
+      0.27377755247279834
+     ],
+     [
+      "VisibilityGraph",
+      0.25901042400458774
+     ],
+     [
+      "PersistentHomology",
+      0.15939779727968145
+     ],
+     [
+      "SingularityFmax",
+      0.1282139925110233
+     ],
+     [
+      "LevinaBickel",
+      0.12465470816694518
+     ],
+     [
+      "DANCo",
+      0.11060437242896198
+     ],
+     [
+      "DFA",
+      0.08860590173281052
+     ],
+     [
+      "PCAIntrinsic",
+      0.08765714802399305
+     ],
+     [
+      "BoxCounting",
+      0.08364991270328298
+     ],
+     [
+      "TwoNN",
+      0.0786515429527854
+     ],
+     [
+      "CorrelationD2",
+      0.07088898390502624
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.0707363648113149
+     ],
+     [
+      "KolmogorovLZ",
+      0.05741186276426674
+     ],
+     [
+      "SampleEn",
+      0.05114658136747402
+     ],
+     [
+      "Higuchi",
+      0.04051970129567861
+     ],
+     [
+      "InformationD1",
+      0.00435330504671777
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "Petrosian",
+      "alert": 0.568132644188603,
+      "horizon": 11
+     },
+     {
+      "metric": "Katz",
+      "alert": 0.5776387006393644,
+      "horizon": 11
+     },
+     {
+      "metric": "Hurst2mH",
+      "alert": 0.5954610610161115,
+      "horizon": 12
+     },
+     {
+      "metric": "PermutationEntropy",
+      "alert": 0.6152103345031882,
+      "horizon": 10
+     },
+     {
+      "metric": "Hurst",
+      "alert": 0.6274598794230694,
+      "horizon": 12
+     },
+     {
+      "metric": "LocalPCA",
+      "alert": 0.6352324317536131,
+      "horizon": 12
+     },
+     {
+      "metric": "SpectralBeta",
+      "alert": 0.6682391468153858,
+      "horizon": 12
+     },
+     {
+      "metric": "Sevcik",
+      "alert": 0.7429764786944875,
+      "horizon": 12
+     },
+     {
+      "metric": "MultifractalDeltaAlpha",
+      "alert": 0.9850591358407057,
+      "horizon": 12
+     }
+    ]
+   },
+   "rep1": {
+    "dir": "results_fast_v62_hp35_nul",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "8acf3ab53f557e9181cad58326b92fc6d03f0cd606d5acc17765da6b14d9f813",
+    "ts_keys": [],
+    "n": 1000.0,
+    "cascade": [
+     0.0,
+     20.600192987327286,
+     27.407334455479216,
+     73.69797219700087,
+     73.69797219700087
+    ],
+    "cascade_pas": [
+     0,
+     206,
+     274,
+     737,
+     737
+    ],
+    "mc_thr": 4.914529914529914,
+    "mc_score": 0.40855248624509577,
+    "max_sep": 0.12058792701103928,
+    "stability": 0.9826747928564232,
+    "s_sep": 0.11849871619655851,
+    "robustness": 0.8989670691281666,
+    "sharpness": 0.09014227142058295,
+    "delta": 4.572404,
+    "fals": 1.117745,
+    "l7a_dir": "up",
+    "l7a_conf": 0.33802868885280646,
+    "l7a_status": "ok",
+    "l4_level": "medium",
+    "l4_risk": 0.5492934758340785,
+    "l5_top": "MultifractalDeltaAlpha",
+    "l5_conf": 0.6874032070093633,
+    "l5_n_alerts": 9,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "MultifractalDeltaAlpha",
+      0.5831209835443318
+     ],
+     [
+      "Sevcik",
+      0.45177828535222575
+     ],
+     [
+      "SpectralBeta",
+      0.41510077971552
+     ],
+     [
+      "PermutationEntropy",
+      0.38663231305802476
+     ],
+     [
+      "Katz",
+      0.3848511498188468
+     ],
+     [
+      "Petrosian",
+      0.3615736210663133
+     ],
+     [
+      "SpectralDimension",
+      0.34650252793708464
+     ],
+     [
+      "LocalPCA",
+      0.337131890384803
+     ],
+     [
+      "Fisher",
+      0.3284559429457173
+     ],
+     [
+      "Hurst2mH",
+      0.30674918508585003
+     ],
+     [
+      "MFA",
+      0.29935354895326444
+     ],
+     [
+      "Hurst",
+      0.29043717445569633
+     ],
+     [
+      "GraphDimension",
+      0.26717046354232044
+     ],
+     [
+      "VisibilityGraph",
+      0.26394281612040216
+     ],
+     [
+      "PersistentHomology",
+      0.1872363632827543
+     ],
+     [
+      "SingularityFmax",
+      0.1282139925110233
+     ],
+     [
+      "LevinaBickel",
+      0.12465470816694518
+     ],
+     [
+      "DANCo",
+      0.11060437242896198
+     ],
+     [
+      "DFA",
+      0.08860590173281052
+     ],
+     [
+      "PCAIntrinsic",
+      0.08765714802399305
+     ],
+     [
+      "BoxCounting",
+      0.08364991270328298
+     ],
+     [
+      "TwoNN",
+      0.0786515429527854
+     ],
+     [
+      "CorrelationD2",
+      0.07088898390502624
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.0707363648113149
+     ],
+     [
+      "KolmogorovLZ",
+      0.05741186276426674
+     ],
+     [
+      "SampleEn",
+      0.05114658136747402
+     ],
+     [
+      "Higuchi",
+      0.04051970129567861
+     ],
+     [
+      "InformationD1",
+      0.00435330504671777
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "Katz",
+      "alert": 0.563157961598397,
+      "horizon": 11
+     },
+     {
+      "metric": "Petrosian",
+      "alert": 0.5814321980691896,
+      "horizon": 12
+     },
+     {
+      "metric": "Hurst2mH",
+      "alert": 0.5995613933924763,
+      "horizon": 12
+     },
+     {
+      "metric": "PermutationEntropy",
+      "alert": 0.6107843589218596,
+      "horizon": 12
+     },
+     {
+      "metric": "LocalPCA",
+      "alert": 0.6349417044429315,
+      "horizon": 12
+     },
+     {
+      "metric": "Hurst",
+      "alert": 0.6454013276932657,
+      "horizon": 11
+     },
+     {
+      "metric": "SpectralBeta",
+      "alert": 0.668239412930595,
+      "horizon": 12
+     },
+     {
+      "metric": "Sevcik",
+      "alert": 0.7393546950112643,
+      "horizon": 11
+     },
+     {
+      "metric": "MultifractalDeltaAlpha",
+      "alert": 1.0,
+      "horizon": 9
+     }
+    ]
+   },
+   "rep2": {
+    "dir": "results_fast_v62_hp35_nul_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "e93be76d80c40d1da82638ea0b02b553f46ef525c1e11f9f2d0f25746bf8ec72",
+    "ts_keys": [],
+    "n": 1000.0,
+    "cascade": [
+     0.0,
+     20.600192987327286,
+     27.407334455479216,
+     73.69797219700087,
+     73.69797219700087
+    ],
+    "cascade_pas": [
+     0,
+     206,
+     274,
+     737,
+     737
+    ],
+    "mc_thr": 4.914529914529914,
+    "mc_score": 0.40855248624509577,
+    "max_sep": 0.12058792701103928,
+    "stability": 0.9826747928564232,
+    "s_sep": 0.11849871619655851,
+    "robustness": 0.8989670691281666,
+    "sharpness": 0.09014227142058295,
+    "delta": 4.572404,
+    "fals": 1.117745,
+    "l7a_dir": "up",
+    "l7a_conf": 0.33802868885280646,
+    "l7a_status": "ok",
+    "l4_level": "medium",
+    "l4_risk": 0.5492934758340785,
+    "l5_top": "MultifractalDeltaAlpha",
+    "l5_conf": 0.6874032070093633,
+    "l5_n_alerts": 9,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "MultifractalDeltaAlpha",
+      0.5831209835443318
+     ],
+     [
+      "Sevcik",
+      0.45177828535222575
+     ],
+     [
+      "SpectralBeta",
+      0.41510077971552
+     ],
+     [
+      "PermutationEntropy",
+      0.38663231305802476
+     ],
+     [
+      "Katz",
+      0.3848511498188468
+     ],
+     [
+      "Petrosian",
+      0.3615736210663133
+     ],
+     [
+      "SpectralDimension",
+      0.34650252793708464
+     ],
+     [
+      "LocalPCA",
+      0.337131890384803
+     ],
+     [
+      "Fisher",
+      0.3284559429457173
+     ],
+     [
+      "Hurst2mH",
+      0.30674918508585003
+     ],
+     [
+      "MFA",
+      0.29935354895326444
+     ],
+     [
+      "Hurst",
+      0.29043717445569633
+     ],
+     [
+      "GraphDimension",
+      0.26717046354232044
+     ],
+     [
+      "VisibilityGraph",
+      0.26394281612040216
+     ],
+     [
+      "PersistentHomology",
+      0.1872363632827543
+     ],
+     [
+      "SingularityFmax",
+      0.1282139925110233
+     ],
+     [
+      "LevinaBickel",
+      0.12465470816694518
+     ],
+     [
+      "DANCo",
+      0.11060437242896198
+     ],
+     [
+      "DFA",
+      0.08860590173281052
+     ],
+     [
+      "PCAIntrinsic",
+      0.08765714802399305
+     ],
+     [
+      "BoxCounting",
+      0.08364991270328298
+     ],
+     [
+      "TwoNN",
+      0.0786515429527854
+     ],
+     [
+      "CorrelationD2",
+      0.07088898390502624
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.0707363648113149
+     ],
+     [
+      "KolmogorovLZ",
+      0.05741186276426674
+     ],
+     [
+      "SampleEn",
+      0.05114658136747402
+     ],
+     [
+      "Higuchi",
+      0.04051970129567861
+     ],
+     [
+      "InformationD1",
+      0.00435330504671777
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "Katz",
+      "alert": 0.563157961598397,
+      "horizon": 11
+     },
+     {
+      "metric": "Petrosian",
+      "alert": 0.5814321980691896,
+      "horizon": 12
+     },
+     {
+      "metric": "Hurst2mH",
+      "alert": 0.5995613933924763,
+      "horizon": 12
+     },
+     {
+      "metric": "PermutationEntropy",
+      "alert": 0.6107843589218596,
+      "horizon": 12
+     },
+     {
+      "metric": "LocalPCA",
+      "alert": 0.6349417044429315,
+      "horizon": 12
+     },
+     {
+      "metric": "Hurst",
+      "alert": 0.6454013276932657,
+      "horizon": 11
+     },
+     {
+      "metric": "SpectralBeta",
+      "alert": 0.668239412930595,
+      "horizon": 12
+     },
+     {
+      "metric": "Sevcik",
+      "alert": 0.7393546950112643,
+      "horizon": 11
+     },
+     {
+      "metric": "MultifractalDeltaAlpha",
+      "alert": 1.0,
+      "horizon": 9
+     }
+    ]
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "TCGA v4 reel",
+   "input": "pdac_tcga_fluxes_v4.csv",
+   "n": 178.0,
+   "v61": {
+    "dir": "results_fast_v61_tcga_v4",
+    "version": "v6.1.0-L7aL7b-CohenD-short",
+    "sha": "dad7010abd5f13e0afccc03e4be728f6cfaaae686e4a73792a59f8fe0e7c72f2",
+    "ts_keys": [],
+    "n": 178.0,
+    "cascade": [
+     0.0,
+     74.06172772042967,
+     93.22165459418838,
+     98.4357664448127,
+     98.95717762987513
+    ],
+    "cascade_pas": [
+     0,
+     132,
+     166,
+     175,
+     176
+    ],
+    "mc_thr": 10.869565217391305,
+    "mc_score": 0.3720465146241378,
+    "max_sep": 0.46234232096887146,
+    "stability": 0.9837314042173217,
+    "s_sep": 0.4548206606358036,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.04392638937711432,
+    "delta": 4.181387,
+    "fals": 0.849386,
+    "l7a_dir": "down",
+    "l7a_conf": 0.40524048359603276,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.8497047476626551,
+    "l5_top": "BoxCounting",
+    "l5_conf": 0.8016387841899415,
+    "l5_n_alerts": 9,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "BoxCounting",
+      0.8032775683798831
+     ],
+     [
+      "Petrosian",
+      0.7992203413072475
+     ],
+     [
+      "Sevcik",
+      0.7579676098516991
+     ],
+     [
+      "LocalPCA",
+      0.7205993331057983
+     ],
+     [
+      "Katz",
+      0.7144555351293503
+     ],
+     [
+      "InformationD1",
+      0.6080860502153982
+     ],
+     [
+      "PCAIntrinsic",
+      0.6050194963591706
+     ],
+     [
+      "PersistentHomology",
+      0.5992538346982497
+     ],
+     [
+      "GraphDimension",
+      0.5735651528366377
+     ],
+     [
+      "SampleEn",
+      0.5611998686618529
+     ],
+     [
+      "Lyapunov",
+      0.4993742667188111
+     ],
+     [
+      "Hurst",
+      0.43647375859476245
+     ],
+     [
+      "Hurst2mH",
+      0.43647375859476245
+     ],
+     [
+      "Higuchi",
+      0.3797354124672643
+     ],
+     [
+      "MFA",
+      0.29099761375724986
+     ],
+     [
+      "CorrelationD2",
+      0.26238617007473986
+     ],
+     [
+      "Fisher",
+      0.25825259040830834
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.24101437762667816
+     ],
+     [
+      "KolmogorovLZ",
+      0.2172659038351195
+     ],
+     [
+      "DFA",
+      0.18168732980255553
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.17690430937101442
+     ],
+     [
+      "PermutationEntropy",
+      0.1655286476254375
+     ],
+     [
+      "VisibilityGraph",
+      0.15561837727858063
+     ],
+     [
+      "SpectralDimension",
+      0.15374865366224222
+     ],
+     [
+      "SpectralBeta",
+      0.15374865366224172
+     ],
+     [
+      "TwoNN",
+      0.04048515453995144
+     ],
+     [
+      "LevinaBickel",
+      0.030049432800490772
+     ],
+     [
+      "SingularityFmax",
+      0.00792453802915899
+     ],
+     [
+      "DANCo",
+      0.00038661046553384315
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "SampleEn",
+      "alert": 0.6922402967028145,
+      "horizon": 10
+     },
+     {
+      "metric": "PCAIntrinsic",
+      "alert": 0.7105098810598142,
+      "horizon": 10
+     },
+     {
+      "metric": "InformationD1",
+      "alert": 0.7461876702259028,
+      "horizon": 11
+     },
+     {
+      "metric": "LocalPCA",
+      "alert": 0.9354182052456074,
+      "horizon": 11
+     },
+     {
+      "metric": "Katz",
+      "alert": 0.955175669225883,
+      "horizon": 11
+     },
+     {
+      "metric": "Sevcik",
+      "alert": 0.9907332174368236,
+      "horizon": 12
+     },
+     {
+      "metric": "BoxCounting",
+      "alert": 1.0,
+      "horizon": 3
+     },
+     {
+      "metric": "Petrosian",
+      "alert": 1.0,
+      "horizon": 3
+     },
+     {
+      "metric": "PersistentHomology",
+      "alert": 1.0,
+      "horizon": 8
+     }
+    ]
+   },
+   "rep1": {
+    "dir": "results_fast_v62_tcga_v4",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "1506f23dcfe44ab604cec21ff977b025b8f90cdd8c6acb202e7974e08164df76",
+    "ts_keys": [],
+    "n": 178.0,
+    "cascade": [
+     0.0,
+     74.06172772042967,
+     93.22165459418838,
+     98.4357664448127,
+     98.95717762987513
+    ],
+    "cascade_pas": [
+     0,
+     132,
+     166,
+     175,
+     176
+    ],
+    "mc_thr": 10.869565217391305,
+    "mc_score": 0.3720465146241378,
+    "max_sep": 0.46234232096887146,
+    "stability": 0.9837314042173217,
+    "s_sep": 0.4548206606358036,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.04392638937711432,
+    "delta": 4.181387,
+    "fals": 0.849386,
+    "l7a_dir": "down",
+    "l7a_conf": 0.4051910172618019,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.8490646487431595,
+    "l5_top": "BoxCounting",
+    "l5_conf": 0.8016387841899415,
+    "l5_n_alerts": 9,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "BoxCounting",
+      0.8032775683798831
+     ],
+     [
+      "Petrosian",
+      0.7992203413072475
+     ],
+     [
+      "Sevcik",
+      0.7493603987612889
+     ],
+     [
+      "LocalPCA",
+      0.727392667005242
+     ],
+     [
+      "Katz",
+      0.7080755214494574
+     ],
+     [
+      "PCAIntrinsic",
+      0.6032705837142233
+     ],
+     [
+      "PersistentHomology",
+      0.6010324903529386
+     ],
+     [
+      "InformationD1",
+      0.5998175499127727
+     ],
+     [
+      "GraphDimension",
+      0.5740717819368428
+     ],
+     [
+      "SampleEn",
+      0.5491829126195341
+     ],
+     [
+      "Lyapunov",
+      0.4993742667188111
+     ],
+     [
+      "Hurst",
+      0.43647375859476245
+     ],
+     [
+      "Hurst2mH",
+      0.43647375859476245
+     ],
+     [
+      "Higuchi",
+      0.3817133303625826
+     ],
+     [
+      "MFA",
+      0.29099761375724986
+     ],
+     [
+      "CorrelationD2",
+      0.26238617007473986
+     ],
+     [
+      "Fisher",
+      0.25825259040830834
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.24101437762667816
+     ],
+     [
+      "KolmogorovLZ",
+      0.2172659038351195
+     ],
+     [
+      "DFA",
+      0.18168732980255553
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.17690430937101442
+     ],
+     [
+      "PermutationEntropy",
+      0.1655286476254375
+     ],
+     [
+      "VisibilityGraph",
+      0.15561837727858063
+     ],
+     [
+      "SpectralDimension",
+      0.15374865366224222
+     ],
+     [
+      "SpectralBeta",
+      0.15374865366224172
+     ],
+     [
+      "TwoNN",
+      0.04048515453995144
+     ],
+     [
+      "LevinaBickel",
+      0.030049432800490772
+     ],
+     [
+      "SingularityFmax",
+      0.00792453802915899
+     ],
+     [
+      "DANCo",
+      0.00038661046553384315
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "SampleEn",
+      "alert": 0.6774158063829638,
+      "horizon": 9
+     },
+     {
+      "metric": "PCAIntrinsic",
+      "alert": 0.713184006567786,
+      "horizon": 12
+     },
+     {
+      "metric": "InformationD1",
+      "alert": 0.7520431985454361,
+      "horizon": 12
+     },
+     {
+      "metric": "Katz",
+      "alert": 0.9465694995203323,
+      "horizon": 11
+     },
+     {
+      "metric": "LocalPCA",
+      "alert": 0.9480459886819653,
+      "horizon": 12
+     },
+     {
+      "metric": "Sevcik",
+      "alert": 0.9765467536970482,
+      "horizon": 11
+     },
+     {
+      "metric": "BoxCounting",
+      "alert": 1.0,
+      "horizon": 2
+     },
+     {
+      "metric": "Petrosian",
+      "alert": 1.0,
+      "horizon": 3
+     },
+     {
+      "metric": "PersistentHomology",
+      "alert": 1.0,
+      "horizon": 7
+     }
+    ]
+   },
+   "rep2": {
+    "dir": "results_fast_v62_tcga_v4_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "351818f7161b2ea8dc03c4281722f4c7524f5a16380beeede8c8ab3df4cef580",
+    "ts_keys": [],
+    "n": 178.0,
+    "cascade": [
+     0.0,
+     74.06172772042967,
+     93.22165459418838,
+     98.4357664448127,
+     98.95717762987513
+    ],
+    "cascade_pas": [
+     0,
+     132,
+     166,
+     175,
+     176
+    ],
+    "mc_thr": 10.869565217391305,
+    "mc_score": 0.3720465146241378,
+    "max_sep": 0.46234232096887146,
+    "stability": 0.9837314042173217,
+    "s_sep": 0.4548206606358036,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.04392638937711432,
+    "delta": 4.181387,
+    "fals": 0.849386,
+    "l7a_dir": "down",
+    "l7a_conf": 0.4051910172618019,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.8490646487431595,
+    "l5_top": "BoxCounting",
+    "l5_conf": 0.8016387841899415,
+    "l5_n_alerts": 9,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "BoxCounting",
+      0.8032775683798831
+     ],
+     [
+      "Petrosian",
+      0.7992203413072475
+     ],
+     [
+      "Sevcik",
+      0.7493603987612889
+     ],
+     [
+      "LocalPCA",
+      0.727392667005242
+     ],
+     [
+      "Katz",
+      0.7080755214494574
+     ],
+     [
+      "PCAIntrinsic",
+      0.6032705837142233
+     ],
+     [
+      "PersistentHomology",
+      0.6010324903529386
+     ],
+     [
+      "InformationD1",
+      0.5998175499127727
+     ],
+     [
+      "GraphDimension",
+      0.5740717819368428
+     ],
+     [
+      "SampleEn",
+      0.5491829126195341
+     ],
+     [
+      "Lyapunov",
+      0.4993742667188111
+     ],
+     [
+      "Hurst",
+      0.43647375859476245
+     ],
+     [
+      "Hurst2mH",
+      0.43647375859476245
+     ],
+     [
+      "Higuchi",
+      0.3817133303625826
+     ],
+     [
+      "MFA",
+      0.29099761375724986
+     ],
+     [
+      "CorrelationD2",
+      0.26238617007473986
+     ],
+     [
+      "Fisher",
+      0.25825259040830834
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.24101437762667816
+     ],
+     [
+      "KolmogorovLZ",
+      0.2172659038351195
+     ],
+     [
+      "DFA",
+      0.18168732980255553
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.17690430937101442
+     ],
+     [
+      "PermutationEntropy",
+      0.1655286476254375
+     ],
+     [
+      "VisibilityGraph",
+      0.15561837727858063
+     ],
+     [
+      "SpectralDimension",
+      0.15374865366224222
+     ],
+     [
+      "SpectralBeta",
+      0.15374865366224172
+     ],
+     [
+      "TwoNN",
+      0.04048515453995144
+     ],
+     [
+      "LevinaBickel",
+      0.030049432800490772
+     ],
+     [
+      "SingularityFmax",
+      0.00792453802915899
+     ],
+     [
+      "DANCo",
+      0.00038661046553384315
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "SampleEn",
+      "alert": 0.6774158063829638,
+      "horizon": 9
+     },
+     {
+      "metric": "PCAIntrinsic",
+      "alert": 0.713184006567786,
+      "horizon": 12
+     },
+     {
+      "metric": "InformationD1",
+      "alert": 0.7520431985454361,
+      "horizon": 12
+     },
+     {
+      "metric": "Katz",
+      "alert": 0.9465694995203323,
+      "horizon": 11
+     },
+     {
+      "metric": "LocalPCA",
+      "alert": 0.9480459886819653,
+      "horizon": 12
+     },
+     {
+      "metric": "Sevcik",
+      "alert": 0.9765467536970482,
+      "horizon": 11
+     },
+     {
+      "metric": "BoxCounting",
+      "alert": 1.0,
+      "horizon": 2
+     },
+     {
+      "metric": "Petrosian",
+      "alert": 1.0,
+      "horizon": 3
+     },
+     {
+      "metric": "PersistentHomology",
+      "alert": 1.0,
+      "horizon": 7
+     }
+    ]
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "TCGA v4 nul",
+   "input": "pdac_tcga_fluxes_v4_nul.csv",
+   "n": 178.0,
+   "v61": {
+    "dir": "results_fast_v61_tcga_v4_nul",
+    "version": "v6.1.0-L7aL7b-CohenD-short",
+    "sha": "bd68447161a17fec9215b59c26f3216215e38cb63627627f70432e69f1425b51",
+    "ts_keys": [],
+    "n": 178.0,
+    "cascade": [
+     0.0,
+     10.649555995954243,
+     15.95705016198265,
+     67.11895308166824,
+     67.11895308166824
+    ],
+    "cascade_pas": [
+     0,
+     19,
+     28,
+     119,
+     119
+    ],
+    "mc_thr": 81.52173913043478,
+    "mc_score": 0.326773250583873,
+    "max_sep": 0.1695801283296793,
+    "stability": 0.9952483692580094,
+    "s_sep": 0.1687743461786773,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.014112521757526473,
+    "delta": 3.765664,
+    "fals": 0.642205,
+    "l7a_dir": "up",
+    "l7a_conf": 0.1672601814285603,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.7865419243548379,
+    "l5_top": "Higuchi",
+    "l5_conf": 0.7221505314238014,
+    "l5_n_alerts": 3,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Higuchi",
+      0.6443010628476027
+     ],
+     [
+      "InformationD1",
+      0.5461387959951681
+     ],
+     [
+      "PermutationEntropy",
+      0.5106439502025867
+     ],
+     [
+      "Lyapunov",
+      0.4993742667188111
+     ],
+     [
+      "SampleEn",
+      0.41513417788451956
+     ],
+     [
+      "Sevcik",
+      0.3927297711933674
+     ],
+     [
+      "Petrosian",
+      0.37322335378469573
+     ],
+     [
+      "GraphDimension",
+      0.37238573157126675
+     ],
+     [
+      "Katz",
+      0.3559910931603734
+     ],
+     [
+      "Hurst",
+      0.33435044214732434
+     ],
+     [
+      "Hurst2mH",
+      0.33435044214732434
+     ],
+     [
+      "BoxCounting",
+      0.3208909088951089
+     ],
+     [
+      "MFA",
+      0.30156236911650725
+     ],
+     [
+      "Fisher",
+      0.2883582353051237
+     ],
+     [
+      "LocalPCA",
+      0.2734476464824759
+     ],
+     [
+      "PCAIntrinsic",
+      0.27153742149690757
+     ],
+     [
+      "DFA",
+      0.23446011656908983
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.221527941293902
+     ],
+     [
+      "KolmogorovLZ",
+      0.17895866446238506
+     ],
+     [
+      "CorrelationD2",
+      0.17753971480378972
+     ],
+     [
+      "SingularityFmax",
+      0.10349737637156775
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.10169724906255184
+     ],
+     [
+      "SpectralBeta",
+      0.0790861679580081
+     ],
+     [
+      "SpectralDimension",
+      0.07908616795800738
+     ],
+     [
+      "TwoNN",
+      0.07568107440224897
+     ],
+     [
+      "PersistentHomology",
+      0.06999378273005508
+     ],
+     [
+      "VisibilityGraph",
+      0.06746181755925235
+     ],
+     [
+      "LevinaBickel",
+      0.031006400841928627
+     ],
+     [
+      "DANCo",
+      0.024874319123598387
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "PermutationEntropy",
+      "alert": 0.8679450928665206,
+      "horizon": 12
+     },
+     {
+      "metric": "InformationD1",
+      "alert": 0.891557115889233,
+      "horizon": 12
+     },
+     {
+      "metric": "Higuchi",
+      "alert": 1.0,
+      "horizon": 5
+     }
+    ]
+   },
+   "rep1": {
+    "dir": "results_fast_v62_tcga_v4_nul",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "0d939a4045482ef980d47be9eb61ad0f3a4b645e0b739a409354e9493a62bc5a",
+    "ts_keys": [],
+    "n": 178.0,
+    "cascade": [
+     0.0,
+     10.649555995954243,
+     15.95705016198265,
+     67.11895308166824,
+     67.11895308166824
+    ],
+    "cascade_pas": [
+     0,
+     19,
+     28,
+     119,
+     119
+    ],
+    "mc_thr": 81.52173913043478,
+    "mc_score": 0.326773250583873,
+    "max_sep": 0.1695801283296793,
+    "stability": 0.9952483692580094,
+    "s_sep": 0.1687743461786773,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.014112521757526473,
+    "delta": 3.765664,
+    "fals": 0.642205,
+    "l7a_dir": "up",
+    "l7a_conf": 0.16715778704330952,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.7847927734675979,
+    "l5_top": "Higuchi",
+    "l5_conf": 0.7221505314238014,
+    "l5_n_alerts": 3,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Higuchi",
+      0.6443010628476027
+     ],
+     [
+      "InformationD1",
+      0.5424343007451544
+     ],
+     [
+      "PermutationEntropy",
+      0.5152308789643711
+     ],
+     [
+      "Lyapunov",
+      0.4993742667188111
+     ],
+     [
+      "SampleEn",
+      0.41058832366314696
+     ],
+     [
+      "Sevcik",
+      0.3927297711933674
+     ],
+     [
+      "Petrosian",
+      0.37322335378469573
+     ],
+     [
+      "GraphDimension",
+      0.37238573157126675
+     ],
+     [
+      "Katz",
+      0.3559910931603734
+     ],
+     [
+      "Hurst",
+      0.33435044214732434
+     ],
+     [
+      "Hurst2mH",
+      0.33435044214732434
+     ],
+     [
+      "BoxCounting",
+      0.3208909088951089
+     ],
+     [
+      "MFA",
+      0.30156236911650725
+     ],
+     [
+      "Fisher",
+      0.2883582353051237
+     ],
+     [
+      "LocalPCA",
+      0.2734476464824759
+     ],
+     [
+      "PCAIntrinsic",
+      0.27153742149690757
+     ],
+     [
+      "DFA",
+      0.23446011656908983
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.221527941293902
+     ],
+     [
+      "KolmogorovLZ",
+      0.17895866446238506
+     ],
+     [
+      "CorrelationD2",
+      0.17753971480378972
+     ],
+     [
+      "SingularityFmax",
+      0.10349737637156775
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.10169724906255184
+     ],
+     [
+      "SpectralBeta",
+      0.0790861679580081
+     ],
+     [
+      "SpectralDimension",
+      0.07908616795800738
+     ],
+     [
+      "TwoNN",
+      0.07568107440224897
+     ],
+     [
+      "PersistentHomology",
+      0.06999378273005508
+     ],
+     [
+      "VisibilityGraph",
+      0.06746181755925235
+     ],
+     [
+      "LevinaBickel",
+      0.031006400841928627
+     ],
+     [
+      "DANCo",
+      0.024874319123598387
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "PermutationEntropy",
+      "alert": 0.8517704679005409,
+      "horizon": 12
+     },
+     {
+      "metric": "InformationD1",
+      "alert": 0.8927390189645841,
+      "horizon": 12
+     },
+     {
+      "metric": "Higuchi",
+      "alert": 1.0,
+      "horizon": 5
+     }
+    ]
+   },
+   "rep2": {
+    "dir": "results_fast_v62_tcga_v4_nul_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "075371ecbf5511d5dfd83b87ca94afd7180009f9b92b036fa1b5fa827fe0ea2b",
+    "ts_keys": [],
+    "n": 178.0,
+    "cascade": [
+     0.0,
+     10.649555995954243,
+     15.95705016198265,
+     67.11895308166824,
+     67.11895308166824
+    ],
+    "cascade_pas": [
+     0,
+     19,
+     28,
+     119,
+     119
+    ],
+    "mc_thr": 81.52173913043478,
+    "mc_score": 0.326773250583873,
+    "max_sep": 0.1695801283296793,
+    "stability": 0.9952483692580094,
+    "s_sep": 0.1687743461786773,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.014112521757526473,
+    "delta": 3.765664,
+    "fals": 0.642205,
+    "l7a_dir": "up",
+    "l7a_conf": 0.16715778704330952,
+    "l7a_status": "ok",
+    "l4_level": "high",
+    "l4_risk": 0.7847927734675979,
+    "l5_top": "Higuchi",
+    "l5_conf": 0.7221505314238014,
+    "l5_n_alerts": 3,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Higuchi",
+      0.6443010628476027
+     ],
+     [
+      "InformationD1",
+      0.5424343007451544
+     ],
+     [
+      "PermutationEntropy",
+      0.5152308789643711
+     ],
+     [
+      "Lyapunov",
+      0.4993742667188111
+     ],
+     [
+      "SampleEn",
+      0.41058832366314696
+     ],
+     [
+      "Sevcik",
+      0.3927297711933674
+     ],
+     [
+      "Petrosian",
+      0.37322335378469573
+     ],
+     [
+      "GraphDimension",
+      0.37238573157126675
+     ],
+     [
+      "Katz",
+      0.3559910931603734
+     ],
+     [
+      "Hurst",
+      0.33435044214732434
+     ],
+     [
+      "Hurst2mH",
+      0.33435044214732434
+     ],
+     [
+      "BoxCounting",
+      0.3208909088951089
+     ],
+     [
+      "MFA",
+      0.30156236911650725
+     ],
+     [
+      "Fisher",
+      0.2883582353051237
+     ],
+     [
+      "LocalPCA",
+      0.2734476464824759
+     ],
+     [
+      "PCAIntrinsic",
+      0.27153742149690757
+     ],
+     [
+      "DFA",
+      0.23446011656908983
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.221527941293902
+     ],
+     [
+      "KolmogorovLZ",
+      0.17895866446238506
+     ],
+     [
+      "CorrelationD2",
+      0.17753971480378972
+     ],
+     [
+      "SingularityFmax",
+      0.10349737637156775
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.10169724906255184
+     ],
+     [
+      "SpectralBeta",
+      0.0790861679580081
+     ],
+     [
+      "SpectralDimension",
+      0.07908616795800738
+     ],
+     [
+      "TwoNN",
+      0.07568107440224897
+     ],
+     [
+      "PersistentHomology",
+      0.06999378273005508
+     ],
+     [
+      "VisibilityGraph",
+      0.06746181755925235
+     ],
+     [
+      "LevinaBickel",
+      0.031006400841928627
+     ],
+     [
+      "DANCo",
+      0.024874319123598387
+     ]
+    ],
+    "l5_alerts": [
+     {
+      "metric": "PermutationEntropy",
+      "alert": 0.8517704679005409,
+      "horizon": 12
+     },
+     {
+      "metric": "InformationD1",
+      "alert": 0.8927390189645841,
+      "horizon": 12
+     },
+     {
+      "metric": "Higuchi",
+      "alert": 1.0,
+      "horizon": 5
+     }
+    ]
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "GSE62452 reel",
+   "input": "pdac_geo62452_fluxes.csv",
+   "n": 69.0,
+   "v61": {
+    "dir": "results_fast_v61_geo62452",
+    "version": "v6.1.0-L7aL7b-CohenD-short",
+    "sha": "d394ce191403144f853087f4f12735e52d69e80be5f5b8036fcf117cf6bebdd5",
+    "ts_keys": [],
+    "n": 69.0,
+    "cascade": [
+     1.4248752983668271,
+     35.66927865876287,
+     95.64281282658867,
+     98.64281282658867,
+     100.0
+    ],
+    "cascade_pas": [
+     1,
+     25,
+     66,
+     68,
+     69
+    ],
+    "mc_thr": 18.18181818181818,
+    "mc_score": 0.34538762756423014,
+    "max_sep": 0.31001534546414306,
+    "stability": 0.9820162184969299,
+    "s_sep": 0.3044400972287171,
+    "robustness": 1.0278171095492657e-25,
+    "sharpness": 0.02324678973169121,
+    "delta": 1.412354,
+    "fals": 0.198792,
+    "l7a_dir": "down",
+    "l7a_conf": 0.19744317413867352,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Petrosian",
+    "l5_conf": 0.5967938786083343,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Petrosian",
+      0.3935877572166686
+     ],
+     [
+      "Higuchi",
+      0.37085572337121875
+     ],
+     [
+      "SampleEn",
+      0.35109746893406346
+     ],
+     [
+      "Katz",
+      0.3469239722726138
+     ],
+     [
+      "Sevcik",
+      0.3366422111490145
+     ],
+     [
+      "SpectralDimension",
+      0.27995346676874
+     ],
+     [
+      "SpectralBeta",
+      0.2799534667687398
+     ],
+     [
+      "DFA",
+      0.27053027678724256
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.2566562658340246
+     ],
+     [
+      "BoxCounting",
+      0.25056593654950443
+     ],
+     [
+      "CorrelationD2",
+      0.2479688132289416
+     ],
+     [
+      "Hurst",
+      0.23666429038608228
+     ],
+     [
+      "Hurst2mH",
+      0.23666429038608222
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.22104718893673136
+     ],
+     [
+      "PersistentHomology",
+      0.14815802943181516
+     ],
+     [
+      "GraphDimension",
+      0.10548161570780584
+     ],
+     [
+      "KolmogorovLZ",
+      0.10398372390318666
+     ],
+     [
+      "PermutationEntropy",
+      0.10267844264262316
+     ],
+     [
+      "VisibilityGraph",
+      0.09168429765097613
+     ],
+     [
+      "Fisher",
+      0.044402345125407805
+     ],
+     [
+      "PCAIntrinsic",
+      0.04266857586642314
+     ],
+     [
+      "LocalPCA",
+      0.03454149578493082
+     ],
+     [
+      "SingularityFmax",
+      0.013555137644523374
+     ],
+     [
+      "MFA",
+      0.007758313649940396
+     ],
+     [
+      "InformationD1",
+      0.0012434186253645896
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep1": {
+    "dir": "results_fast_v62_geo62452",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "0d4196f1da60ab34c03e36e803284d7264fc5bf1f9dc1ebb29f16d031472d29f",
+    "ts_keys": [],
+    "n": 69.0,
+    "cascade": [
+     1.4248752983668271,
+     35.66927865876287,
+     95.64281282658867,
+     98.64281282658867,
+     100.0
+    ],
+    "cascade_pas": [
+     1,
+     25,
+     66,
+     68,
+     69
+    ],
+    "mc_thr": 18.18181818181818,
+    "mc_score": 0.34538762756423014,
+    "max_sep": 0.31001534546414306,
+    "stability": 0.9820162184969299,
+    "s_sep": 0.3044400972287171,
+    "robustness": 1.0278171095492657e-25,
+    "sharpness": 0.02324678973169121,
+    "delta": 1.412354,
+    "fals": 0.198792,
+    "l7a_dir": "down",
+    "l7a_conf": 0.19744317413867352,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Petrosian",
+    "l5_conf": 0.5967938786083343,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Petrosian",
+      0.3935877572166686
+     ],
+     [
+      "Higuchi",
+      0.37085572337121875
+     ],
+     [
+      "SampleEn",
+      0.35109746893406346
+     ],
+     [
+      "Katz",
+      0.3469239722726138
+     ],
+     [
+      "Sevcik",
+      0.3366422111490145
+     ],
+     [
+      "SpectralDimension",
+      0.27995346676874
+     ],
+     [
+      "SpectralBeta",
+      0.2799534667687398
+     ],
+     [
+      "DFA",
+      0.27053027678724256
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.2566562658340246
+     ],
+     [
+      "BoxCounting",
+      0.25056593654950443
+     ],
+     [
+      "CorrelationD2",
+      0.2479688132289416
+     ],
+     [
+      "Hurst",
+      0.23666429038608228
+     ],
+     [
+      "Hurst2mH",
+      0.23666429038608222
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.22104718893673136
+     ],
+     [
+      "PersistentHomology",
+      0.14815802943181516
+     ],
+     [
+      "GraphDimension",
+      0.10548161570780584
+     ],
+     [
+      "KolmogorovLZ",
+      0.10398372390318666
+     ],
+     [
+      "PermutationEntropy",
+      0.10267844264262316
+     ],
+     [
+      "VisibilityGraph",
+      0.09168429765097613
+     ],
+     [
+      "Fisher",
+      0.044402345125407805
+     ],
+     [
+      "PCAIntrinsic",
+      0.04266857586642314
+     ],
+     [
+      "LocalPCA",
+      0.03454149578493082
+     ],
+     [
+      "SingularityFmax",
+      0.013555137644523374
+     ],
+     [
+      "MFA",
+      0.007758313649940396
+     ],
+     [
+      "InformationD1",
+      0.0012434186253645896
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep2": {
+    "dir": "results_fast_v62_geo62452_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "52e2a28da8ddc9f2c2e06b24714fcca7b0d7a612b6487593b07985dc5aa29af1",
+    "ts_keys": [],
+    "n": 69.0,
+    "cascade": [
+     1.4248752983668271,
+     35.66927865876287,
+     95.64281282658867,
+     98.64281282658867,
+     100.0
+    ],
+    "cascade_pas": [
+     1,
+     25,
+     66,
+     68,
+     69
+    ],
+    "mc_thr": 18.18181818181818,
+    "mc_score": 0.34538762756423014,
+    "max_sep": 0.31001534546414306,
+    "stability": 0.9820162184969299,
+    "s_sep": 0.3044400972287171,
+    "robustness": 1.0278171095492657e-25,
+    "sharpness": 0.02324678973169121,
+    "delta": 1.412354,
+    "fals": 0.198792,
+    "l7a_dir": "down",
+    "l7a_conf": 0.19744317413867352,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Petrosian",
+    "l5_conf": 0.5967938786083343,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Petrosian",
+      0.3935877572166686
+     ],
+     [
+      "Higuchi",
+      0.37085572337121875
+     ],
+     [
+      "SampleEn",
+      0.35109746893406346
+     ],
+     [
+      "Katz",
+      0.3469239722726138
+     ],
+     [
+      "Sevcik",
+      0.3366422111490145
+     ],
+     [
+      "SpectralDimension",
+      0.27995346676874
+     ],
+     [
+      "SpectralBeta",
+      0.2799534667687398
+     ],
+     [
+      "DFA",
+      0.27053027678724256
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.2566562658340246
+     ],
+     [
+      "BoxCounting",
+      0.25056593654950443
+     ],
+     [
+      "CorrelationD2",
+      0.2479688132289416
+     ],
+     [
+      "Hurst",
+      0.23666429038608228
+     ],
+     [
+      "Hurst2mH",
+      0.23666429038608222
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.22104718893673136
+     ],
+     [
+      "PersistentHomology",
+      0.14815802943181516
+     ],
+     [
+      "GraphDimension",
+      0.10548161570780584
+     ],
+     [
+      "KolmogorovLZ",
+      0.10398372390318666
+     ],
+     [
+      "PermutationEntropy",
+      0.10267844264262316
+     ],
+     [
+      "VisibilityGraph",
+      0.09168429765097613
+     ],
+     [
+      "Fisher",
+      0.044402345125407805
+     ],
+     [
+      "PCAIntrinsic",
+      0.04266857586642314
+     ],
+     [
+      "LocalPCA",
+      0.03454149578493082
+     ],
+     [
+      "SingularityFmax",
+      0.013555137644523374
+     ],
+     [
+      "MFA",
+      0.007758313649940396
+     ],
+     [
+      "InformationD1",
+      0.0012434186253645896
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "GSE62452 nul",
+   "input": "pdac_geo62452_fluxes_nul.csv",
+   "n": 69.0,
+   "v61": {
+    "dir": "results_fast_v61_geo62452_nul",
+    "version": "v6.1.0-L7aL7b-CohenD-short",
+    "sha": "fc7ea58d02a05ecccb8bd4ea568cf8be38a24f8d4a940245e7ca20ac17c5507d",
+    "ts_keys": [],
+    "n": 69.0,
+    "cascade": [
+     0.0,
+     12.823877685301444,
+     17.098503580401925,
+     21.37312947550241,
+     21.37312947550241
+    ],
+    "cascade_pas": [
+     0,
+     9,
+     12,
+     15,
+     15
+    ],
+    "mc_thr": 51.35135135135135,
+    "mc_score": 0.34848641132921115,
+    "max_sep": 0.3135700657950538,
+    "stability": 0.9938509754749856,
+    "s_sep": 0.31164191577016964,
+    "robustness": 1.389234684673659e-17,
+    "sharpness": 0.018386292493921083,
+    "delta": 1.260284,
+    "fals": 0.339711,
+    "l7a_dir": "down",
+    "l7a_conf": 0.3359321663379632,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "PersistentHomology",
+    "l5_conf": 0.6476116255664015,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "PersistentHomology",
+      0.4952232511328031
+     ],
+     [
+      "DANCo",
+      0.495223251132803
+     ],
+     [
+      "Sevcik",
+      0.41644739106051937
+     ],
+     [
+      "SampleEn",
+      0.39334625178679067
+     ],
+     [
+      "BoxCounting",
+      0.3863128844088782
+     ],
+     [
+      "LocalPCA",
+      0.38403720046152845
+     ],
+     [
+      "PCAIntrinsic",
+      0.3833244083588501
+     ],
+     [
+      "Katz",
+      0.38009292253236515
+     ],
+     [
+      "Hurst",
+      0.37884744711391205
+     ],
+     [
+      "Hurst2mH",
+      0.37884744711391194
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.3638417369985678
+     ],
+     [
+      "CorrelationD2",
+      0.3555374110637381
+     ],
+     [
+      "Petrosian",
+      0.3527283236639619
+     ],
+     [
+      "Fisher",
+      0.2990868911795811
+     ],
+     [
+      "InformationD1",
+      0.28867831213008144
+     ],
+     [
+      "PermutationEntropy",
+      0.27993122833762996
+     ],
+     [
+      "VisibilityGraph",
+      0.24016028728687017
+     ],
+     [
+      "Higuchi",
+      0.21726714190871782
+     ],
+     [
+      "DFA",
+      0.20076571878927402
+     ],
+     [
+      "GraphDimension",
+      0.18239357512821824
+     ],
+     [
+      "SpectralBeta",
+      0.158797126079395
+     ],
+     [
+      "SpectralDimension",
+      0.15879712607939483
+     ],
+     [
+      "KolmogorovLZ",
+      0.15692233655198684
+     ],
+     [
+      "SingularityFmax",
+      0.10727302185105597
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.09702474647719878
+     ],
+     [
+      "MFA",
+      0.04171136597206593
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep1": {
+    "dir": "results_fast_v62_geo62452_nul",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "b406229dc6bb1bb38f4792497a1f7ad56c7389276d8db32aebfe60c03ecb130f",
+    "ts_keys": [],
+    "n": 69.0,
+    "cascade": [
+     0.0,
+     12.823877685301444,
+     17.098503580401925,
+     21.37312947550241,
+     21.37312947550241
+    ],
+    "cascade_pas": [
+     0,
+     9,
+     12,
+     15,
+     15
+    ],
+    "mc_thr": 51.35135135135135,
+    "mc_score": 0.34848641132921115,
+    "max_sep": 0.3135700657950538,
+    "stability": 0.9938509754749856,
+    "s_sep": 0.31164191577016964,
+    "robustness": 1.389234684673659e-17,
+    "sharpness": 0.018386292493921083,
+    "delta": 1.260284,
+    "fals": 0.339711,
+    "l7a_dir": "down",
+    "l7a_conf": 0.3359321663379632,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "PersistentHomology",
+    "l5_conf": 0.6476116255664015,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "PersistentHomology",
+      0.4952232511328031
+     ],
+     [
+      "DANCo",
+      0.495223251132803
+     ],
+     [
+      "Sevcik",
+      0.41644739106051937
+     ],
+     [
+      "SampleEn",
+      0.39334625178679067
+     ],
+     [
+      "BoxCounting",
+      0.3863128844088782
+     ],
+     [
+      "LocalPCA",
+      0.38403720046152845
+     ],
+     [
+      "PCAIntrinsic",
+      0.3833244083588501
+     ],
+     [
+      "Katz",
+      0.38009292253236515
+     ],
+     [
+      "Hurst",
+      0.37884744711391205
+     ],
+     [
+      "Hurst2mH",
+      0.37884744711391194
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.3638417369985678
+     ],
+     [
+      "CorrelationD2",
+      0.3555374110637381
+     ],
+     [
+      "Petrosian",
+      0.3527283236639619
+     ],
+     [
+      "Fisher",
+      0.2990868911795811
+     ],
+     [
+      "InformationD1",
+      0.28867831213008144
+     ],
+     [
+      "PermutationEntropy",
+      0.27993122833762996
+     ],
+     [
+      "VisibilityGraph",
+      0.24016028728687017
+     ],
+     [
+      "Higuchi",
+      0.21726714190871782
+     ],
+     [
+      "DFA",
+      0.20076571878927402
+     ],
+     [
+      "GraphDimension",
+      0.18239357512821824
+     ],
+     [
+      "SpectralBeta",
+      0.158797126079395
+     ],
+     [
+      "SpectralDimension",
+      0.15879712607939483
+     ],
+     [
+      "KolmogorovLZ",
+      0.15692233655198684
+     ],
+     [
+      "SingularityFmax",
+      0.10727302185105597
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.09702474647719878
+     ],
+     [
+      "MFA",
+      0.04171136597206593
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep2": {
+    "dir": "results_fast_v62_geo62452_nul_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "bed1050388e0e8fc4f088eaa5eeb23737f0473974120c624d37b908a3ed4f6a9",
+    "ts_keys": [],
+    "n": 69.0,
+    "cascade": [
+     0.0,
+     12.823877685301444,
+     17.098503580401925,
+     21.37312947550241,
+     21.37312947550241
+    ],
+    "cascade_pas": [
+     0,
+     9,
+     12,
+     15,
+     15
+    ],
+    "mc_thr": 51.35135135135135,
+    "mc_score": 0.34848641132921115,
+    "max_sep": 0.3135700657950538,
+    "stability": 0.9938509754749856,
+    "s_sep": 0.31164191577016964,
+    "robustness": 1.389234684673659e-17,
+    "sharpness": 0.018386292493921083,
+    "delta": 1.260284,
+    "fals": 0.339711,
+    "l7a_dir": "down",
+    "l7a_conf": 0.3359321663379632,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "PersistentHomology",
+    "l5_conf": 0.6476116255664015,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "PersistentHomology",
+      0.4952232511328031
+     ],
+     [
+      "DANCo",
+      0.495223251132803
+     ],
+     [
+      "Sevcik",
+      0.41644739106051937
+     ],
+     [
+      "SampleEn",
+      0.39334625178679067
+     ],
+     [
+      "BoxCounting",
+      0.3863128844088782
+     ],
+     [
+      "LocalPCA",
+      0.38403720046152845
+     ],
+     [
+      "PCAIntrinsic",
+      0.3833244083588501
+     ],
+     [
+      "Katz",
+      0.38009292253236515
+     ],
+     [
+      "Hurst",
+      0.37884744711391205
+     ],
+     [
+      "Hurst2mH",
+      0.37884744711391194
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.3638417369985678
+     ],
+     [
+      "CorrelationD2",
+      0.3555374110637381
+     ],
+     [
+      "Petrosian",
+      0.3527283236639619
+     ],
+     [
+      "Fisher",
+      0.2990868911795811
+     ],
+     [
+      "InformationD1",
+      0.28867831213008144
+     ],
+     [
+      "PermutationEntropy",
+      0.27993122833762996
+     ],
+     [
+      "VisibilityGraph",
+      0.24016028728687017
+     ],
+     [
+      "Higuchi",
+      0.21726714190871782
+     ],
+     [
+      "DFA",
+      0.20076571878927402
+     ],
+     [
+      "GraphDimension",
+      0.18239357512821824
+     ],
+     [
+      "SpectralBeta",
+      0.158797126079395
+     ],
+     [
+      "SpectralDimension",
+      0.15879712607939483
+     ],
+     [
+      "KolmogorovLZ",
+      0.15692233655198684
+     ],
+     [
+      "SingularityFmax",
+      0.10727302185105597
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.09702474647719878
+     ],
+     [
+      "MFA",
+      0.04171136597206593
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "ICGC reel",
+   "input": "pdac_icgc_fluxes.csv",
+   "n": 70.0,
+   "v61": {
+    "dir": "results_fast_v61_icgc",
+    "version": "v6.1.0-L7aL7b-CohenD-short",
+    "sha": "943a7a43bd397924dbb6b6ca50ba6fb83e5d12e32f5c52c64f933d449d47b3a7",
+    "ts_keys": [],
+    "n": 70.0,
+    "cascade": [
+     1.405831361422672,
+     9.840819529958706,
+     52.307746570863415,
+     94.273587560129,
+     94.273587560129
+    ],
+    "cascade_pas": [
+     1,
+     7,
+     37,
+     66,
+     66
+    ],
+    "mc_thr": 70.58823529411765,
+    "mc_score": 0.3600005708845393,
+    "max_sep": 0.4079739796735737,
+    "stability": 0.9886857905361811,
+    "s_sep": 0.4033580766117591,
+    "robustness": 5.314010005152039e-24,
+    "sharpness": 0.015168235124127174,
+    "delta": 1.444299,
+    "fals": 0.237857,
+    "l7a_dir": "up",
+    "l7a_conf": 0.18106574722100274,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Sevcik",
+    "l5_conf": 0.5707677555759517,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Sevcik",
+      0.34153551115190356
+     ],
+     [
+      "SampleEn",
+      0.3363848323209203
+     ],
+     [
+      "BoxCounting",
+      0.32028997675492743
+     ],
+     [
+      "Katz",
+      0.31201345832557587
+     ],
+     [
+      "Petrosian",
+      0.255918632427373
+     ],
+     [
+      "PermutationEntropy",
+      0.2307179537559665
+     ],
+     [
+      "Hurst",
+      0.14575319928499647
+     ],
+     [
+      "Hurst2mH",
+      0.1457531992849963
+     ],
+     [
+      "GraphDimension",
+      0.11948690833694398
+     ],
+     [
+      "DANCo",
+      0.11893497068654657
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.11154280757037277
+     ],
+     [
+      "LocalPCA",
+      0.10897139181099202
+     ],
+     [
+      "SingularityFmax",
+      0.09552013566414996
+     ],
+     [
+      "VisibilityGraph",
+      0.09210280248078678
+     ],
+     [
+      "InformationD1",
+      0.08956875374462542
+     ],
+     [
+      "PersistentHomology",
+      0.059929881656435535
+     ],
+     [
+      "CorrelationD2",
+      0.04650060484459961
+     ],
+     [
+      "KolmogorovLZ",
+      0.04518912848006057
+     ],
+     [
+      "Higuchi",
+      0.03852620618094943
+     ],
+     [
+      "MFA",
+      0.020477791016083047
+     ],
+     [
+      "SpectralDimension",
+      0.016033144728061277
+     ],
+     [
+      "SpectralBeta",
+      0.016033144728060778
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.015228817850022447
+     ],
+     [
+      "DFA",
+      0.013831501867504536
+     ],
+     [
+      "PCAIntrinsic",
+      0.00589829778534573
+     ],
+     [
+      "LevinaBickel",
+      0.005606255010831285
+     ],
+     [
+      "Fisher",
+      0.004810853877285692
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep1": {
+    "dir": "results_fast_v62_icgc",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "81c7e2a94359ff404cf46efb8613f44a730e062941b7e6707fb7f80ad72adfec",
+    "ts_keys": [],
+    "n": 70.0,
+    "cascade": [
+     1.405831361422672,
+     9.840819529958706,
+     52.307746570863415,
+     94.273587560129,
+     94.273587560129
+    ],
+    "cascade_pas": [
+     1,
+     7,
+     37,
+     66,
+     66
+    ],
+    "mc_thr": 70.58823529411765,
+    "mc_score": 0.3600005708845393,
+    "max_sep": 0.4079739796735737,
+    "stability": 0.9886857905361811,
+    "s_sep": 0.4033580766117591,
+    "robustness": 5.314010005152039e-24,
+    "sharpness": 0.015168235124127174,
+    "delta": 1.444299,
+    "fals": 0.237857,
+    "l7a_dir": "up",
+    "l7a_conf": 0.18106574722100274,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Sevcik",
+    "l5_conf": 0.5707677555759517,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Sevcik",
+      0.34153551115190356
+     ],
+     [
+      "SampleEn",
+      0.3363848323209203
+     ],
+     [
+      "BoxCounting",
+      0.32028997675492743
+     ],
+     [
+      "Katz",
+      0.31201345832557587
+     ],
+     [
+      "Petrosian",
+      0.255918632427373
+     ],
+     [
+      "PermutationEntropy",
+      0.2307179537559665
+     ],
+     [
+      "Hurst",
+      0.14575319928499647
+     ],
+     [
+      "Hurst2mH",
+      0.1457531992849963
+     ],
+     [
+      "GraphDimension",
+      0.11948690833694398
+     ],
+     [
+      "DANCo",
+      0.11893497068654657
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.11154280757037277
+     ],
+     [
+      "LocalPCA",
+      0.10897139181099202
+     ],
+     [
+      "SingularityFmax",
+      0.09552013566414996
+     ],
+     [
+      "VisibilityGraph",
+      0.09210280248078678
+     ],
+     [
+      "InformationD1",
+      0.08956875374462542
+     ],
+     [
+      "PersistentHomology",
+      0.059929881656435535
+     ],
+     [
+      "CorrelationD2",
+      0.04650060484459961
+     ],
+     [
+      "KolmogorovLZ",
+      0.04518912848006057
+     ],
+     [
+      "Higuchi",
+      0.03852620618094943
+     ],
+     [
+      "MFA",
+      0.020477791016083047
+     ],
+     [
+      "SpectralDimension",
+      0.016033144728061277
+     ],
+     [
+      "SpectralBeta",
+      0.016033144728060778
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.015228817850022447
+     ],
+     [
+      "DFA",
+      0.013831501867504536
+     ],
+     [
+      "PCAIntrinsic",
+      0.00589829778534573
+     ],
+     [
+      "LevinaBickel",
+      0.005606255010831285
+     ],
+     [
+      "Fisher",
+      0.004810853877285692
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep2": {
+    "dir": "results_fast_v62_icgc_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "442f815513f272aa133f52eb0667d3aeaa96648eb66e231e9bcb67d549e64f7f",
+    "ts_keys": [],
+    "n": 70.0,
+    "cascade": [
+     1.405831361422672,
+     9.840819529958706,
+     52.307746570863415,
+     94.273587560129,
+     94.273587560129
+    ],
+    "cascade_pas": [
+     1,
+     7,
+     37,
+     66,
+     66
+    ],
+    "mc_thr": 70.58823529411765,
+    "mc_score": 0.3600005708845393,
+    "max_sep": 0.4079739796735737,
+    "stability": 0.9886857905361811,
+    "s_sep": 0.4033580766117591,
+    "robustness": 5.314010005152039e-24,
+    "sharpness": 0.015168235124127174,
+    "delta": 1.444299,
+    "fals": 0.237857,
+    "l7a_dir": "up",
+    "l7a_conf": 0.18106574722100274,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Sevcik",
+    "l5_conf": 0.5707677555759517,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Sevcik",
+      0.34153551115190356
+     ],
+     [
+      "SampleEn",
+      0.3363848323209203
+     ],
+     [
+      "BoxCounting",
+      0.32028997675492743
+     ],
+     [
+      "Katz",
+      0.31201345832557587
+     ],
+     [
+      "Petrosian",
+      0.255918632427373
+     ],
+     [
+      "PermutationEntropy",
+      0.2307179537559665
+     ],
+     [
+      "Hurst",
+      0.14575319928499647
+     ],
+     [
+      "Hurst2mH",
+      0.1457531992849963
+     ],
+     [
+      "GraphDimension",
+      0.11948690833694398
+     ],
+     [
+      "DANCo",
+      0.11893497068654657
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.11154280757037277
+     ],
+     [
+      "LocalPCA",
+      0.10897139181099202
+     ],
+     [
+      "SingularityFmax",
+      0.09552013566414996
+     ],
+     [
+      "VisibilityGraph",
+      0.09210280248078678
+     ],
+     [
+      "InformationD1",
+      0.08956875374462542
+     ],
+     [
+      "PersistentHomology",
+      0.059929881656435535
+     ],
+     [
+      "CorrelationD2",
+      0.04650060484459961
+     ],
+     [
+      "KolmogorovLZ",
+      0.04518912848006057
+     ],
+     [
+      "Higuchi",
+      0.03852620618094943
+     ],
+     [
+      "MFA",
+      0.020477791016083047
+     ],
+     [
+      "SpectralDimension",
+      0.016033144728061277
+     ],
+     [
+      "SpectralBeta",
+      0.016033144728060778
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.015228817850022447
+     ],
+     [
+      "DFA",
+      0.013831501867504536
+     ],
+     [
+      "PCAIntrinsic",
+      0.00589829778534573
+     ],
+     [
+      "LevinaBickel",
+      0.005606255010831285
+     ],
+     [
+      "Fisher",
+      0.004810853877285692
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "ICGC nul",
+   "input": "pdac_icgc_fluxes_nul.csv",
+   "n": 70.0,
+   "v61": {
+    "dir": "results_fast_v61_icgc_nul",
+    "version": "v6.1.0-L7aL7b-CohenD-short",
+    "sha": "bce35bf585826b056f2e450774a373a376061a6b08bf73c28185b9c26d058842",
+    "ts_keys": [],
+    "n": 70.0,
+    "cascade": [
+     0.0,
+     28.11662722845345,
+     32.433296328269364,
+     36.541373929365804,
+     49.10394790774809
+    ],
+    "cascade_pas": [
+     0,
+     20,
+     23,
+     26,
+     34
+    ],
+    "mc_thr": 79.41176470588236,
+    "mc_score": 0.34497767913976224,
+    "max_sep": 0.3109761441058221,
+    "stability": 0.9882329591384312,
+    "s_sep": 0.3073168751111558,
+    "robustness": 5.1826190599007e-19,
+    "sharpness": 0.011168430183679908,
+    "delta": 1.371684,
+    "fals": 0.135355,
+    "l7a_dir": "down",
+    "l7a_conf": 0.3495949652407051,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Sevcik",
+    "l5_conf": 0.57148027595717,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Sevcik",
+      0.34296055191434005
+     ],
+     [
+      "Katz",
+      0.33877438767956497
+     ],
+     [
+      "BoxCounting",
+      0.31889401349077084
+     ],
+     [
+      "SampleEn",
+      0.30950734817078196
+     ],
+     [
+      "Higuchi",
+      0.3042116680080794
+     ],
+     [
+      "Petrosian",
+      0.28068103270500133
+     ],
+     [
+      "LevinaBickel",
+      0.24026392058354357
+     ],
+     [
+      "DFA",
+      0.22257991182840736
+     ],
+     [
+      "Fisher",
+      0.21923600928828613
+     ],
+     [
+      "PermutationEntropy",
+      0.20187588174680127
+     ],
+     [
+      "SpectralBeta",
+      0.20141681853511606
+     ],
+     [
+      "SpectralDimension",
+      0.20141681853511556
+     ],
+     [
+      "Hurst2mH",
+      0.1923601971661673
+     ],
+     [
+      "Hurst",
+      0.19236019716616704
+     ],
+     [
+      "DANCo",
+      0.16922475766605982
+     ],
+     [
+      "InformationD1",
+      0.10348902436422175
+     ],
+     [
+      "VisibilityGraph",
+      0.06926679865385171
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.06213461982931323
+     ],
+     [
+      "CorrelationD2",
+      0.05417931276359961
+     ],
+     [
+      "MFA",
+      0.051811890034364094
+     ],
+     [
+      "PersistentHomology",
+      0.04129835633820228
+     ],
+     [
+      "PCAIntrinsic",
+      0.03990212352148065
+     ],
+     [
+      "SingularityFmax",
+      0.026898818644591982
+     ],
+     [
+      "LocalPCA",
+      0.024802708325780742
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.023296796371899853
+     ],
+     [
+      "KolmogorovLZ",
+      0.011481275004331215
+     ],
+     [
+      "GraphDimension",
+      0.008008377404959244
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep1": {
+    "dir": "results_fast_v62_icgc_nul",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "a8bb7d1225640d591e25aac0420d12b289481193f7ff5f6f9ef039402492fe3d",
+    "ts_keys": [],
+    "n": 70.0,
+    "cascade": [
+     0.0,
+     28.11662722845345,
+     32.433296328269364,
+     36.541373929365804,
+     49.10394790774809
+    ],
+    "cascade_pas": [
+     0,
+     20,
+     23,
+     26,
+     34
+    ],
+    "mc_thr": 79.41176470588236,
+    "mc_score": 0.34497767913976224,
+    "max_sep": 0.3109761441058221,
+    "stability": 0.9882329591384312,
+    "s_sep": 0.3073168751111558,
+    "robustness": 5.1826190599007e-19,
+    "sharpness": 0.011168430183679908,
+    "delta": 1.371684,
+    "fals": 0.135355,
+    "l7a_dir": "down",
+    "l7a_conf": 0.3495949652407051,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Sevcik",
+    "l5_conf": 0.57148027595717,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Sevcik",
+      0.34296055191434005
+     ],
+     [
+      "Katz",
+      0.33877438767956497
+     ],
+     [
+      "BoxCounting",
+      0.31889401349077084
+     ],
+     [
+      "SampleEn",
+      0.30950734817078196
+     ],
+     [
+      "Higuchi",
+      0.3042116680080794
+     ],
+     [
+      "Petrosian",
+      0.28068103270500133
+     ],
+     [
+      "LevinaBickel",
+      0.24026392058354357
+     ],
+     [
+      "DFA",
+      0.22257991182840736
+     ],
+     [
+      "Fisher",
+      0.21923600928828613
+     ],
+     [
+      "PermutationEntropy",
+      0.20187588174680127
+     ],
+     [
+      "SpectralBeta",
+      0.20141681853511606
+     ],
+     [
+      "SpectralDimension",
+      0.20141681853511556
+     ],
+     [
+      "Hurst2mH",
+      0.1923601971661673
+     ],
+     [
+      "Hurst",
+      0.19236019716616704
+     ],
+     [
+      "DANCo",
+      0.16922475766605982
+     ],
+     [
+      "InformationD1",
+      0.10348902436422175
+     ],
+     [
+      "VisibilityGraph",
+      0.06926679865385171
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.06213461982931323
+     ],
+     [
+      "CorrelationD2",
+      0.05417931276359961
+     ],
+     [
+      "MFA",
+      0.051811890034364094
+     ],
+     [
+      "PersistentHomology",
+      0.04129835633820228
+     ],
+     [
+      "PCAIntrinsic",
+      0.03990212352148065
+     ],
+     [
+      "SingularityFmax",
+      0.026898818644591982
+     ],
+     [
+      "LocalPCA",
+      0.024802708325780742
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.023296796371899853
+     ],
+     [
+      "KolmogorovLZ",
+      0.011481275004331215
+     ],
+     [
+      "GraphDimension",
+      0.008008377404959244
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep2": {
+    "dir": "results_fast_v62_icgc_nul_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "24a4d567fe2a6caef697bebfac453a0260beffec61add0e98130332a52c944c7",
+    "ts_keys": [],
+    "n": 70.0,
+    "cascade": [
+     0.0,
+     28.11662722845345,
+     32.433296328269364,
+     36.541373929365804,
+     49.10394790774809
+    ],
+    "cascade_pas": [
+     0,
+     20,
+     23,
+     26,
+     34
+    ],
+    "mc_thr": 79.41176470588236,
+    "mc_score": 0.34497767913976224,
+    "max_sep": 0.3109761441058221,
+    "stability": 0.9882329591384312,
+    "s_sep": 0.3073168751111558,
+    "robustness": 5.1826190599007e-19,
+    "sharpness": 0.011168430183679908,
+    "delta": 1.371684,
+    "fals": 0.135355,
+    "l7a_dir": "down",
+    "l7a_conf": 0.3495949652407051,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Sevcik",
+    "l5_conf": 0.57148027595717,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Sevcik",
+      0.34296055191434005
+     ],
+     [
+      "Katz",
+      0.33877438767956497
+     ],
+     [
+      "BoxCounting",
+      0.31889401349077084
+     ],
+     [
+      "SampleEn",
+      0.30950734817078196
+     ],
+     [
+      "Higuchi",
+      0.3042116680080794
+     ],
+     [
+      "Petrosian",
+      0.28068103270500133
+     ],
+     [
+      "LevinaBickel",
+      0.24026392058354357
+     ],
+     [
+      "DFA",
+      0.22257991182840736
+     ],
+     [
+      "Fisher",
+      0.21923600928828613
+     ],
+     [
+      "PermutationEntropy",
+      0.20187588174680127
+     ],
+     [
+      "SpectralBeta",
+      0.20141681853511606
+     ],
+     [
+      "SpectralDimension",
+      0.20141681853511556
+     ],
+     [
+      "Hurst2mH",
+      0.1923601971661673
+     ],
+     [
+      "Hurst",
+      0.19236019716616704
+     ],
+     [
+      "DANCo",
+      0.16922475766605982
+     ],
+     [
+      "InformationD1",
+      0.10348902436422175
+     ],
+     [
+      "VisibilityGraph",
+      0.06926679865385171
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.06213461982931323
+     ],
+     [
+      "CorrelationD2",
+      0.05417931276359961
+     ],
+     [
+      "MFA",
+      0.051811890034364094
+     ],
+     [
+      "PersistentHomology",
+      0.04129835633820228
+     ],
+     [
+      "PCAIntrinsic",
+      0.03990212352148065
+     ],
+     [
+      "SingularityFmax",
+      0.026898818644591982
+     ],
+     [
+      "LocalPCA",
+      0.024802708325780742
+     ],
+     [
+      "MultifractalDeltaAlpha",
+      0.023296796371899853
+     ],
+     [
+      "KolmogorovLZ",
+      0.011481275004331215
+     ],
+     [
+      "GraphDimension",
+      0.008008377404959244
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "DepMap reel",
+   "input": "pdac_depmap_fluxes.csv",
+   "n": 45.0,
+   "v61": {
+    "dir": "results_fast_v61_depmap",
+    "version": "v6.1.0-L7aL7b-CohenD-short",
+    "sha": "03847e1d786d2ba52da74c8f3acc0b3129b6ab4753f59cbc05d2e3c64588c516",
+    "ts_keys": [],
+    "n": 45.0,
+    "cascade": [
+     0.0,
+     1.403078092322252,
+     4.403078092322252,
+     11.007695230805629,
+     26.418468553933504
+    ],
+    "cascade_pas": [
+     0,
+     1,
+     2,
+     5,
+     12
+    ],
+    "mc_thr": 57.14285714285714,
+    "mc_score": 0.36145734658105977,
+    "max_sep": 0.4435636447049733,
+    "stability": 0.9782090204677996,
+    "s_sep": 0.433897958401979,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.012649659479939372,
+    "delta": 1.933817,
+    "fals": null,
+    "l7a_dir": "down",
+    "l7a_conf": 0.1959427043500747,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "DFA",
+    "l5_conf": 0.649083081360195,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "DFA",
+      0.49816616272039
+     ],
+     [
+      "Sevcik",
+      0.33696094962225015
+     ],
+     [
+      "Higuchi",
+      0.2838823554165073
+     ],
+     [
+      "SampleEn",
+      0.20617151879910478
+     ],
+     [
+      "Katz",
+      0.19096819585501174
+     ],
+     [
+      "PermutationEntropy",
+      0.1268735814207459
+     ],
+     [
+      "Petrosian",
+      0.11888471946671031
+     ],
+     [
+      "GraphDimension",
+      0.1174845436469259
+     ],
+     [
+      "CorrelationD2",
+      0.08383935293404604
+     ],
+     [
+      "MFA",
+      0.06836344249248688
+     ],
+     [
+      "Fisher",
+      0.04705107715475576
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.043164534139389754
+     ],
+     [
+      "PCAIntrinsic",
+      0.021391949518243136
+     ],
+     [
+      "InformationD1",
+      0.01994446693432228
+     ],
+     [
+      "Hurst",
+      0.006691342549057899
+     ],
+     [
+      "Hurst2mH",
+      0.006691342549057899
+     ],
+     [
+      "LocalPCA",
+      0.002090014156491682
+     ],
+     [
+      "BoxCounting",
+      0.0017838513066775752
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep1": {
+    "dir": "results_fast_v62_depmap",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "5859c6fd6599a337034f1ced221f2257272d39bb20a5c51ad273bda13fba5382",
+    "ts_keys": [],
+    "n": 45.0,
+    "cascade": [
+     0.0,
+     1.403078092322252,
+     4.403078092322252,
+     11.007695230805629,
+     26.418468553933504
+    ],
+    "cascade_pas": [
+     0,
+     1,
+     2,
+     5,
+     12
+    ],
+    "mc_thr": 57.14285714285714,
+    "mc_score": 0.36145734658105977,
+    "max_sep": 0.4435636447049733,
+    "stability": 0.9782090204677996,
+    "s_sep": 0.433897958401979,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.012649659479939372,
+    "delta": 1.933817,
+    "fals": null,
+    "l7a_dir": "down",
+    "l7a_conf": 0.1959427043500747,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "DFA",
+    "l5_conf": 0.649083081360195,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "DFA",
+      0.49816616272039
+     ],
+     [
+      "Sevcik",
+      0.33696094962225015
+     ],
+     [
+      "Higuchi",
+      0.2838823554165073
+     ],
+     [
+      "SampleEn",
+      0.20617151879910478
+     ],
+     [
+      "Katz",
+      0.19096819585501174
+     ],
+     [
+      "PermutationEntropy",
+      0.1268735814207459
+     ],
+     [
+      "Petrosian",
+      0.11888471946671031
+     ],
+     [
+      "GraphDimension",
+      0.1174845436469259
+     ],
+     [
+      "CorrelationD2",
+      0.08383935293404604
+     ],
+     [
+      "MFA",
+      0.06836344249248688
+     ],
+     [
+      "Fisher",
+      0.04705107715475576
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.043164534139389754
+     ],
+     [
+      "PCAIntrinsic",
+      0.021391949518243136
+     ],
+     [
+      "InformationD1",
+      0.01994446693432228
+     ],
+     [
+      "Hurst",
+      0.006691342549057899
+     ],
+     [
+      "Hurst2mH",
+      0.006691342549057899
+     ],
+     [
+      "LocalPCA",
+      0.002090014156491682
+     ],
+     [
+      "BoxCounting",
+      0.0017838513066775752
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep2": {
+    "dir": "results_fast_v62_depmap_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "5b95784204eb23caa619e8e8a547b89c2e110ffd013fe97c2907e6c3c3ad6560",
+    "ts_keys": [],
+    "n": 45.0,
+    "cascade": [
+     0.0,
+     1.403078092322252,
+     4.403078092322252,
+     11.007695230805629,
+     26.418468553933504
+    ],
+    "cascade_pas": [
+     0,
+     1,
+     2,
+     5,
+     12
+    ],
+    "mc_thr": 57.14285714285714,
+    "mc_score": 0.36145734658105977,
+    "max_sep": 0.4435636447049733,
+    "stability": 0.9782090204677996,
+    "s_sep": 0.433897958401979,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.012649659479939372,
+    "delta": 1.933817,
+    "fals": null,
+    "l7a_dir": "down",
+    "l7a_conf": 0.1959427043500747,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "DFA",
+    "l5_conf": 0.649083081360195,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "DFA",
+      0.49816616272039
+     ],
+     [
+      "Sevcik",
+      0.33696094962225015
+     ],
+     [
+      "Higuchi",
+      0.2838823554165073
+     ],
+     [
+      "SampleEn",
+      0.20617151879910478
+     ],
+     [
+      "Katz",
+      0.19096819585501174
+     ],
+     [
+      "PermutationEntropy",
+      0.1268735814207459
+     ],
+     [
+      "Petrosian",
+      0.11888471946671031
+     ],
+     [
+      "GraphDimension",
+      0.1174845436469259
+     ],
+     [
+      "CorrelationD2",
+      0.08383935293404604
+     ],
+     [
+      "MFA",
+      0.06836344249248688
+     ],
+     [
+      "Fisher",
+      0.04705107715475576
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.043164534139389754
+     ],
+     [
+      "PCAIntrinsic",
+      0.021391949518243136
+     ],
+     [
+      "InformationD1",
+      0.01994446693432228
+     ],
+     [
+      "Hurst",
+      0.006691342549057899
+     ],
+     [
+      "Hurst2mH",
+      0.006691342549057899
+     ],
+     [
+      "LocalPCA",
+      0.002090014156491682
+     ],
+     [
+      "BoxCounting",
+      0.0017838513066775752
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": null,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  },
+  {
+   "run": "DepMap nul",
+   "input": "pdac_depmap_fluxes_nul.csv",
+   "n": 45.0,
+   "v61": {
+    "dir": "results_fast_v61_depmap_nul",
+    "version": "v6.1.0-L7aL7b-CohenD-short",
+    "sha": "38c665d9553e0981a24580add933fdbb666839e7b14e3bdc8bd2052759268316",
+    "ts_keys": [],
+    "n": 45.0,
+    "cascade": [
+     0.0,
+     13.209234276966752,
+     17.612312369289,
+     26.418468553933504,
+     26.418468553933504
+    ],
+    "cascade_pas": [
+     0,
+     6,
+     8,
+     12,
+     12
+    ],
+    "mc_thr": 60.8695652173913,
+    "mc_score": 0.3499132711753995,
+    "max_sep": 0.2531882734650912,
+    "stability": 0.9967943711355904,
+    "s_sep": 0.2523766458275415,
+    "robustness": 0.06353631369684216,
+    "sharpness": 0.001955223117855987,
+    "delta": 1.6927,
+    "fals": 0.042752,
+    "l7a_dir": "up",
+    "l7a_conf": 0.3449151233222331,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Higuchi",
+    "l5_conf": 0.6089064745852372,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Higuchi",
+      0.4178129491704744
+     ],
+     [
+      "Katz",
+      0.3931584987252057
+     ],
+     [
+      "SampleEn",
+      0.38612014011580886
+     ],
+     [
+      "Petrosian",
+      0.37377635646085544
+     ],
+     [
+      "PCAIntrinsic",
+      0.36440757948859126
+     ],
+     [
+      "Sevcik",
+      0.34486852918995614
+     ],
+     [
+      "Hurst",
+      0.30943983898506616
+     ],
+     [
+      "Hurst2mH",
+      0.30943983898506566
+     ],
+     [
+      "BoxCounting",
+      0.30881345508742697
+     ],
+     [
+      "CorrelationD2",
+      0.3053129108995155
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.26488811192560335
+     ],
+     [
+      "GraphDimension",
+      0.21149107783638021
+     ],
+     [
+      "Fisher",
+      0.1902157715306242
+     ],
+     [
+      "SpectralBeta",
+      0.18566064194292836
+     ],
+     [
+      "SpectralDimension",
+      0.1856606419429278
+     ],
+     [
+      "InformationD1",
+      0.16978230232802677
+     ],
+     [
+      "DFA",
+      0.1568343183656311
+     ],
+     [
+      "MFA",
+      0.07251515678165871
+     ],
+     [
+      "KolmogorovLZ",
+      0.027384016141033807
+     ],
+     [
+      "PermutationEntropy",
+      0.01729897814761494
+     ],
+     [
+      "LocalPCA",
+      0.005290282342696739
+     ],
+     [
+      "VisibilityGraph",
+      0.000817173149854522
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep1": {
+    "dir": "results_fast_v62_depmap_nul",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "2a4800899f9d0de7e5bac39941a5907620e43e311caad3155b606856901a850e",
+    "ts_keys": [],
+    "n": 45.0,
+    "cascade": [
+     0.0,
+     13.209234276966752,
+     17.612312369289,
+     26.418468553933504,
+     26.418468553933504
+    ],
+    "cascade_pas": [
+     0,
+     6,
+     8,
+     12,
+     12
+    ],
+    "mc_thr": 60.8695652173913,
+    "mc_score": 0.3499132711753995,
+    "max_sep": 0.2531882734650912,
+    "stability": 0.9967943711355904,
+    "s_sep": 0.2523766458275415,
+    "robustness": 0.06353631369684216,
+    "sharpness": 0.001955223117855987,
+    "delta": 1.6927,
+    "fals": 0.042752,
+    "l7a_dir": "up",
+    "l7a_conf": 0.3449151233222331,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Higuchi",
+    "l5_conf": 0.6089064745852372,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Higuchi",
+      0.4178129491704744
+     ],
+     [
+      "Katz",
+      0.3931584987252057
+     ],
+     [
+      "SampleEn",
+      0.38612014011580886
+     ],
+     [
+      "Petrosian",
+      0.37377635646085544
+     ],
+     [
+      "PCAIntrinsic",
+      0.36440757948859126
+     ],
+     [
+      "Sevcik",
+      0.34486852918995614
+     ],
+     [
+      "Hurst",
+      0.30943983898506616
+     ],
+     [
+      "Hurst2mH",
+      0.30943983898506566
+     ],
+     [
+      "BoxCounting",
+      0.30881345508742697
+     ],
+     [
+      "CorrelationD2",
+      0.3053129108995155
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.26488811192560335
+     ],
+     [
+      "GraphDimension",
+      0.21149107783638021
+     ],
+     [
+      "Fisher",
+      0.1902157715306242
+     ],
+     [
+      "SpectralBeta",
+      0.18566064194292836
+     ],
+     [
+      "SpectralDimension",
+      0.1856606419429278
+     ],
+     [
+      "InformationD1",
+      0.16978230232802677
+     ],
+     [
+      "DFA",
+      0.1568343183656311
+     ],
+     [
+      "MFA",
+      0.07251515678165871
+     ],
+     [
+      "KolmogorovLZ",
+      0.027384016141033807
+     ],
+     [
+      "PermutationEntropy",
+      0.01729897814761494
+     ],
+     [
+      "LocalPCA",
+      0.005290282342696739
+     ],
+     [
+      "VisibilityGraph",
+      0.000817173149854522
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "rep2": {
+    "dir": "results_fast_v62_depmap_nul_rep2",
+    "version": "v6.2.0-L7aL7b-CohenD-short",
+    "sha": "eaaf2fe54b958dfcebb251d94c081caafe73c55e16405c03cd4cdea37f2b8063",
+    "ts_keys": [],
+    "n": 45.0,
+    "cascade": [
+     0.0,
+     13.209234276966752,
+     17.612312369289,
+     26.418468553933504,
+     26.418468553933504
+    ],
+    "cascade_pas": [
+     0,
+     6,
+     8,
+     12,
+     12
+    ],
+    "mc_thr": 60.8695652173913,
+    "mc_score": 0.3499132711753995,
+    "max_sep": 0.2531882734650912,
+    "stability": 0.9967943711355904,
+    "s_sep": 0.2523766458275415,
+    "robustness": 0.06353631369684216,
+    "sharpness": 0.001955223117855987,
+    "delta": 1.6927,
+    "fals": 0.042752,
+    "l7a_dir": "up",
+    "l7a_conf": 0.3449151233222331,
+    "l7a_status": "ok",
+    "l4_level": "low",
+    "l4_risk": 0.0,
+    "l5_top": "Higuchi",
+    "l5_conf": 0.6089064745852372,
+    "l5_n_alerts": 0,
+    "l5_stability": 1.0,
+    "l5_ranking": [
+     [
+      "Higuchi",
+      0.4178129491704744
+     ],
+     [
+      "Katz",
+      0.3931584987252057
+     ],
+     [
+      "SampleEn",
+      0.38612014011580886
+     ],
+     [
+      "Petrosian",
+      0.37377635646085544
+     ],
+     [
+      "PCAIntrinsic",
+      0.36440757948859126
+     ],
+     [
+      "Sevcik",
+      0.34486852918995614
+     ],
+     [
+      "Hurst",
+      0.30943983898506616
+     ],
+     [
+      "Hurst2mH",
+      0.30943983898506566
+     ],
+     [
+      "BoxCounting",
+      0.30881345508742697
+     ],
+     [
+      "CorrelationD2",
+      0.3053129108995155
+     ],
+     [
+      "GrassbergerProcaccia",
+      0.26488811192560335
+     ],
+     [
+      "GraphDimension",
+      0.21149107783638021
+     ],
+     [
+      "Fisher",
+      0.1902157715306242
+     ],
+     [
+      "SpectralBeta",
+      0.18566064194292836
+     ],
+     [
+      "SpectralDimension",
+      0.1856606419429278
+     ],
+     [
+      "InformationD1",
+      0.16978230232802677
+     ],
+     [
+      "DFA",
+      0.1568343183656311
+     ],
+     [
+      "MFA",
+      0.07251515678165871
+     ],
+     [
+      "KolmogorovLZ",
+      0.027384016141033807
+     ],
+     [
+      "PermutationEntropy",
+      0.01729897814761494
+     ],
+     [
+      "LocalPCA",
+      0.005290282342696739
+     ],
+     [
+      "VisibilityGraph",
+      0.000817173149854522
+     ]
+    ],
+    "l5_alerts": []
+   },
+   "cascade_identique_v61": true,
+   "cascade_identique_rep": true,
+   "json_identique_rep": false,
+   "json_diff": {
+    "n_total": 8,
+    "n_runtime_paths": 2,
+    "n_worker_budget": 6,
+    "n_other": 0,
+    "other_paths": []
+   },
+   "l5_identique_rep": true,
+   "l4_identique_rep": true,
+   "l7a_identique_rep": true,
+   "jitter": {
+    "mc_score": 0.0,
+    "max_sep": 0.0,
+    "stability": 0.0,
+    "s_sep": 0.0,
+    "delta": 0.0,
+    "fals": 0.0,
+    "l4_risk": 0.0,
+    "l5_conf": 0.0,
+    "l5_stability": 0.0,
+    "l7a_signed": 0.0,
+    "cascade_max": 0.0
+   }
+  }
+ ],
+ "gigue_max": {
+  "mc_score": 0.0,
+  "max_sep": 0.0,
+  "stability": 0.0,
+  "s_sep": 0.0,
+  "delta": 0.0,
+  "fals": 0.0,
+  "l4_risk": 0.0,
+  "l5_conf": 0.0,
+  "l5_stability": 0.0,
+  "l7a_signed": 0.0,
+  "cascade_max": 0.0
+ },
+ "sha_v62": "f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf",
+ "sha_v61": "2af5e5cea3a99ff227c7f76dff48c678eb07baba92625ca57e3c1c412546a9c9",
+ "sha_v6": "bb8bbdba4eb1f8c55b49748274ae8fbfef8a43f6c1b890964f18ba77960c0773"
+}

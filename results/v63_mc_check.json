@@ -1,0 +1,98 @@
+{
+ "runs": [
+  {
+   "run": "HP35_REAL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.6686913002713779,
+   "mc_new_offline": 0.6686913002713779,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "HP35_NUL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.4416293392454511,
+   "mc_new_offline": 0.4416293392454511,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "TCGAV4_REAL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.5331274999735274,
+   "mc_new_offline": 0.5331274999735274,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "TCGAV4_NUL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.42658206224804335,
+   "mc_new_offline": 0.42658206224804335,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "CEACAM5_REAL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.6080485019954452,
+   "mc_new_offline": 0.6080485019954452,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "CEACAM5_NUL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.4363529034226351,
+   "mc_new_offline": 0.4363529034226351,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "GSTM1_REAL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.451286488373275,
+   "mc_new_offline": 0.451286488373275,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "GSTM1_NUL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.47474320327509334,
+   "mc_new_offline": 0.47474320327509334,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "TESTA_REAL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.5055518013650347,
+   "mc_new_offline": 0.5055518013650347,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "TESTA_NUL",
+   "version_v63": "v6.3.0-L7aL7b-CohenD-short",
+   "mc_new_code": 0.43893421086954515,
+   "mc_new_offline": 0.43893421086954515,
+   "abs_diff_mc_new": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  }
+ ],
+ "problemes": [],
+ "gigue_mc_new_mesuree": 0.0,
+ "n_runs_verifies": 10,
+ "n_identiques_best_config_cascade": 10
+}
