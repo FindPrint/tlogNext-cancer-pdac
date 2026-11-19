@@ -1,0 +1,262 @@
+{
+ "LevinaBickel": {
+  "n": 181,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.868,
+    "|r|": 0.868
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": 0.769,
+    "|r|": 0.769
+   },
+   {
+    "trait": "glob_n",
+    "r": 0.665,
+    "|r|": 0.665
+   }
+  ]
+ },
+ "PCAIntrinsic": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.455,
+    "|r|": 0.455
+   },
+   {
+    "trait": "agg_sd_min",
+    "r": 0.392,
+    "|r|": 0.392
+   },
+   {
+    "trait": "agg_sd_range",
+    "r": 0.373,
+    "|r|": 0.373
+   }
+  ]
+ },
+ "LocalPCA": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.824,
+    "|r|": 0.824
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": 0.694,
+    "|r|": 0.694
+   },
+   {
+    "trait": "glob_n",
+    "r": 0.562,
+    "|r|": 0.562
+   }
+  ]
+ },
+ "GraphDimension": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.852,
+    "|r|": 0.852
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": 0.68,
+    "|r|": 0.68
+   },
+   {
+    "trait": "agg_sd_range",
+    "r": 0.586,
+    "|r|": 0.586
+   }
+  ]
+ },
+ "PersistentHomology": {
+  "n": 193,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.655,
+    "|r|": 0.655
+   },
+   {
+    "trait": "cross_pc2",
+    "r": -0.448,
+    "|r|": 0.448
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": 0.437,
+    "|r|": 0.437
+   }
+  ]
+ },
+ "MFA": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.847,
+    "|r|": 0.847
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": 0.674,
+    "|r|": 0.674
+   },
+   {
+    "trait": "agg_sd_range",
+    "r": 0.516,
+    "|r|": 0.516
+   }
+  ]
+ },
+ "Higuchi": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "agg_mean_ac1",
+    "r": -0.59,
+    "|r|": 0.59
+   },
+   {
+    "trait": "agg_sd_min",
+    "r": -0.448,
+    "|r|": 0.448
+   },
+   {
+    "trait": "glob_n",
+    "r": -0.443,
+    "|r|": 0.443
+   }
+  ]
+ },
+ "Katz": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": -0.922,
+    "|r|": 0.922
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": -0.742,
+    "|r|": 0.742
+   },
+   {
+    "trait": "agg_sd_range",
+    "r": -0.678,
+    "|r|": 0.678
+   }
+  ]
+ },
+ "Petrosian": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": -0.949,
+    "|r|": 0.949
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": -0.785,
+    "|r|": 0.785
+   },
+   {
+    "trait": "agg_sd_range",
+    "r": -0.69,
+    "|r|": 0.69
+   }
+  ]
+ },
+ "Sevcik": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.886,
+    "|r|": 0.886
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": 0.71,
+    "|r|": 0.71
+   },
+   {
+    "trait": "agg_mean_range",
+    "r": 0.694,
+    "|r|": 0.694
+   }
+  ]
+ },
+ "BoxCounting": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.932,
+    "|r|": 0.932
+   },
+   {
+    "trait": "glob_n_x_p",
+    "r": 0.74,
+    "|r|": 0.74
+   },
+   {
+    "trait": "agg_sd_range",
+    "r": 0.644,
+    "|r|": 0.644
+   }
+  ]
+ },
+ "Hurst2mH": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.689,
+    "|r|": 0.689
+   },
+   {
+    "trait": "agg_mean_range",
+    "r": 0.527,
+    "|r|": 0.527
+   },
+   {
+    "trait": "agg_mean_max",
+    "r": 0.511,
+    "|r|": 0.511
+   }
+  ]
+ },
+ "DFA": {
+  "n": 222,
+  "top3": [
+   {
+    "trait": "glob_log_n",
+    "r": 0.547,
+    "|r|": 0.547
+   },
+   {
+    "trait": "agg_mean_max",
+    "r": 0.52,
+    "|r|": 0.52
+   },
+   {
+    "trait": "agg_sd_range",
+    "r": 0.424,
+    "|r|": 0.424
+   }
+  ]
+ }
+}

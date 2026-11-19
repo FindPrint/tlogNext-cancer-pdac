@@ -1,0 +1,71 @@
+icgc_id,Sample type,HistoSubtype,Status,followup_months,Gender,Age at Diagnosis in Years,kras_rank
+ICGC_0006,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - With Disease,43,Female,49,0
+ICGC_0139,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,34,Male,70,1
+ICGC_0206,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,3.63,Female,90,2
+ICGC_0230,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,8.4,Male,37,3
+ICGC_0214,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,13.2,Female,82,4
+ICGC_0075,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,15.87,Female,76,5
+ICGC_0185,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - With Disease,33,Female,61,6
+ICGC_0507,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,50.4,Male,77,7
+ICGC_0153,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,13.73,Female,83,8
+ICGC_0522,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,15,Female,56,9
+ICGC_0033,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,25.6,Male,51,10
+ICGC_0412,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,13,Female,77,11
+ICGC_0295,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,21,Male,60,12
+ICGC_0415,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,10.3,Female,55,13
+ICGC_0223,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,7.33,Female,83,14
+ICGC_0503,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,27.5,Female,74,15
+ICGC_0365,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,11,Male,50,16
+ICGC_0406,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,14,Female,46,17
+ICGC_0052,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,47,Male,76,18
+ICGC_0326,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,9,Female,86,19
+ICGC_0169,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - With Disease,28,Female,77,20
+ICGC_0103,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,35.8,Female,78,21
+ICGC_0301,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,18,Male,68,22
+ICGC_0144,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,28,Male,64,23
+ICGC_0205,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,9.37,Male,59,24
+ICGC_0296,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,24,Male,75,25
+ICGC_0124,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,5.2,Male,79,26
+ICGC_0199,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,17.7,Male,77,27
+ICGC_0099,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Other Cause,0.27,Female,80,28
+ICGC_0021,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,23.83,Male,60,29
+ICGC_0486,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,5,Female,77,30
+ICGC_0115,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,26.53,Female,70,31
+ICGC_0048,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,42,Female,65,32
+ICGC_0212,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,19.8,Male,57,33
+ICGC_0207,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,6.83,Male,80,34
+ICGC_0526,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Other Cause,0.03,Male,60,35
+ICGC_0026,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,8.67,Female,69,36
+ICGC_0109,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,30,Male,70,37
+ICGC_0007,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Other Cause,1.87,Female,74,38
+ICGC_0192,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,3.3,Male,75,39
+ICGC_0141,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,12.93333333,Female,75,40
+ICGC_0031,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,35.9,Female,61,41
+ICGC_0535,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - With Disease,9.4,Female,40,42
+ICGC_0067,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,16.5,Male,64,43
+ICGC_0053,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,20.33,Female,73,44
+ICGC_0312,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,14.1,Male,56,45
+ICGC_0518,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Other Cause,0.9,Male,58,46
+ICGC_0135,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,30,Female,62,47
+ICGC_0087,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,12.03,Male,70,48
+ICGC_0304,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,24,Female,67,49
+ICGC_0315,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,7.3,Female,58,50
+ICGC_0536,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,5.7,Male,58,51
+ICGC_0300,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,22,Female,72,52
+ICGC_0392,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,10.9,Male,50,53
+ICGC_0321,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,38,Male,64,54
+ICGC_0025,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,11.6,Male,69,55
+ICGC_0227,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,9.5,Female,49,56
+ICGC_0417,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - With Disease,15,Male,65,57
+ICGC_0188,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,7.8,Male,72,58
+ICGC_0354,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,3.6,Male,49,59
+ICGC_0146,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - Without Disease,35,Male,52,60
+ICGC_0201,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,23.3,Female,72,61
+ICGC_0215,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,23.7,Female,79,62
+ICGC_0020,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,41.97,Male,57,63
+ICGC_0521,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,14.1,Female,51,64
+ICGC_0066,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,10.37,Male,58,65
+ICGC_0059,Primary tumour,Pancreatic Ductal Adenocarcinoma,Alive - With Disease,42,Male,68,66
+ICGC_0108,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Unknown Cause,14.1,Male,72,67
+ICGC_0420,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,6.5,Male,74,68
+ICGC_0114,Primary tumour,Pancreatic Ductal Adenocarcinoma,Deceased - Of Disease,16.63,Female,65,69
