@@ -202,6 +202,10 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 49 | 19 nov. 2026 | **Série MTAP avec la dépendance PRMT5 comme flux (§8.43)** (go de Zackary « Fait tes 3 propositions, je reviens plus tard », 19 nov. 2026 ~08h16, 1re des 3 propositions ; protocole gelé avant construction `PROTOCOL_mtap_prmt5_flux.md`, SHA `1e56ed9a…66ae161d` ; 45 lignées adénocarcinomes, ordre = Chronos PRMT5 croissant ; 9 flux — DPCR1 et MUC2 absents de DepMap 24Q4, GSTM1 exclu pour 8 NaN sur 45, sans imputation ; 2 runs v6.2 fast, exit 0/0 ; **NON, la chaîne ne réapparaît pas** — MC 0,3390 contre nul 0,3386 (+0,0004), S_sep 0,1897 contre 0,2874 (−0,0977), Delta 1,761 contre 1,912, L7a DOWN des deux côtés ; top-12 : PGC +0,45 sens inverse de l’axe KRAS, CLDN18 −0,18, MUC16 −0,01 ; DPCR1 non testable ; la chaîne reste propre à l’axe KRAS). Détail au §8.43. |
 | 50 | 19 nov. 2026 | **Rotations de contrôle sans doublon (§8.44)** (go de Zackary « Fait tes 3 propositions », 19 nov. 2026 ~08h16, 2e des 3 propositions ; suite mesurée du §8.41 ; 44 paires refaites sans le doublon contrôle=flux, 88 runs v6.2 fast, exit 0/0, 2 redémarrages machine, 0 run perdu ; **vrai compteur sans doublon : 37/48 sous la règle (A) 0,07, 42/48 sous la règle (B) gigue 0** — V4ROT 10/12, DEPMAPROT 6/12, IMMROT 12/12, PARPROT 9/12 sous (A) ; somme des écarts +17,1614 ; la perte vient du réel (S_sep réel 0,7570 → 0,5780), le nul ne bouge pas (0,2209 → 0,2205) ; MC reste aveugle 12/48 ; MUC16 passe (A) de 0,0012). Détail au §8.44. |
 | 51 | 19 nov. 2026 | **Test C — série TCGA v4 ordonnée par stade clinique (§8.45)** (go de Zackary « Fait tes 3 propositions », 19 nov. 2026 ~08h16, 3e des 3 propositions ; protocole gelé avant construction `PROTOCOL_testC_stage.md`, SHA `8386ec03…ff6fc6` ; 175 tumeurs — I 21, II 146, III 4, IV 4, 3 exclues sans stade, sans imputation ; départage intra-stade par code échantillon, jamais par KRAS ; 2 runs v6.2 fast, exit 0/0 ; **NON, la chaîne ne réapparaît pas** — MC 0,3472 contre nul 0,3507, Delta 3,852 contre 3,830, falsification 0,642 contre 0,774, S_sep 0,285 contre 0,198 ; le bloc MONTE au bout de l’axe (PGC +0,51, CLDN18 +0,57, DPCR1 +0,40) au lieu de s’effondrer, MUC16 plate −0,10 ; réserve de méthode : le stade est une variable clinique, pas une mesure du système). Détail au §8.45. |
+| 52 | 19 nov. 2026 | **Arbitrage de la contradiction MTAP (§8.46)** (go de Zackary « Fait tout cela », 19 nov. 2026 ~16h30, 1er des 4 chantiers ; protocole gelé avant tout calcul `PROTOCOL_mtap_arbitration_ssep.md`, SHA `9cf3295a…2693fed7` ; série TCGA v4 ordonnée par CN MTAP, 177 tumeurs ; 2 nuls frais graines 7 et 123, 2/2 runs v6.2 fast exit 0 ; **ARBITRÉ : S_sep voit une marche de niveau multi-flux** — réel 0,3378 contre nuls 0,1409 (graine 42) / 0,2663 (graine 7) / 0,2031 (graine 123), écarts +0,197 / +0,072 / +0,135 ; MC réel 0,3511 DANS l'intervalle des nuls (0,3422–0,5153), Delta réel 3,8051 DANS l'intervalle des nuls (3,1415–4,3466) ; l'inversion MC est portée par le seul terme de robustesse (réel 3,37×10⁻⁴¹, FWHM 78,26 %, contre nul 42 0,9756, FWHM 11,11 % — le MC récompense un pic étroit, la marche réelle est haute mais large) ; l'inversion Delta vient de d_div seul (5,383 contre 5,940) ; marche multi-flux : CEACAM5 +0,74, CLDN18 +0,63, DPCR1 +0,48, MUC17 +0,44, MUC16 +0,39 (nul |d| ≤ 0,23) ; effet PRMT5 reproduit à l'identique et **survit au contrôle prolifération** (partiel rho 0,445, p=0,0019) ; **marge fragile** : l'écart S_sep contre le nul 7 (+0,0715) ne dépasse le plancher 0,07 que de 0,0015 — un 4e nul pourrait le renverser ; §8.36 précisé, pas renversé : pas de rupture, pas de chaîne, mais une différence de niveau réelle). Détail au §8.46. |
+| 53 | 19 nov. 2026 | **Inversion immunitaire ICGC (§8.47)** (go de Zackary « Fait tout cela », 19 nov. 2026 ~16h30, 2e des 4 chantiers ; protocole gelé avant tout calcul `PROTOCOL_icgc_immune_inversion.md`, SHA `b55283ee…08a61eb34`, amendé §9 SHA `f1a5a37c…988379c` ; réplique du scan par les fonctions du pipeline elles-mêmes : **calibration 8/8 EXACTE** (écart 0,00e+00) ; 500 permutations par ligne × 4 cohortes × 2 configs ; 11 runs v6.2 fast de confirmation, 11/11 exit 0 ; **EXPLIQUÉE : l'inversion ne vient pas de la biologie** — le réel ICGC ne sépare pas du tout (maxsep 0,2299, un nul le bat dans 61 % des cas, courbe dans l'IQR nulle 13/13 candidats ; d_ssep avec nul médian −0,016 ≈ 0), le nul graine 42 est haut (0,4500, ~98e percentile) mais ordinaire pour le pipeline (1 nul frais sur 3 atteint 0,4564 ; d_ssep sur 4 tirages −0,220 / +0,052 / −0,011 / −0,221), et le signal réel est une falaise, pas un gradient (top-12 moy |d| 0,408, élargir à 26 lignes divise le signal par 1,9, PDCD1 −0,85 → −0,26 ; en TCGA facteur 0,95) ; petit n structurel : médiane nulle 0,246 à n=70 contre 0,170 à n=178 ; H2/H4/H5 rejetées, H3 retenue avec réserve, H1 ni retenue ni rejetée par la lettre ; le froid tumoral existe en ICGC comme ailleurs (PDCD1 rho −0,22, top-12 d −0,85) ; §8.23 inchangé, KRAS + anti-PD-(L)1 : NON). Détail au §8.47. |
+| 54 | 19 nov. 2026 | **Domination IMMROT (§8.48)** (go de Zackary « Fait tout cela », 19 nov. 2026 ~16h30, 3e des 4 chantiers ; protocole gelé avant tout calcul `PROTOCOL_immrot_domination.md`, SHA `465b4f54…77d4b9d` ; **EXPLIQUÉE : effet de corrélation, pas rupture** — le couplage contrôle↔flux C (moyenne des |r| entre le contrôle et les 11 flux) prédit l'écart S_sep réel−nul sur les 48 rotations sans doublon avec **r = 0,954, rho de Spearman = 0,945, R² = 0,909** (d = −0,175 + 1,705·C, p = 1,3×10⁻²⁵) ; l'immunitaire domine parce que ses flux sont fortement corrélés entre eux (|r| moyen **0,556**, 62 % des paires > 0,5, contre 0,25 / 0,27 / 0,17 pour V4ROT / PARPROT / DEPMAPROT) ; H1 soutenue (à la médiane, le |d| de chaque flux est prédit par sa seule corrélation avec le contrôle : r = 0,947, biais −0,002, n = 528), H3 soutenue (dose–réponse monotone : CD8A 1,2310 → 0,5525 → 0,1725), H2 rejetée (contrôle immunitaire universel : X1 +0,1649, X2 −0,0535 — domination intra-famille) ; le nul conserve EXACTEMENT la cohésion entre flux (H identique à 10⁻¹⁶ près) en brisant le couplage (0,068) et S_sep nul reste bas sans corréler avec C (r = 0,09) ; contrôle négatif H dégénéré (identité algébrique H_c = S/55 − C_c/5, r(C,H) = −1,000000) — spécificité fondée sur le nul, pas sur H ; 8 runs v6.2 fast, 8/8 exit 0 ; niveau exact de maxsep non répliqué (D_full +0,19 / D_win −0,23)). Détail au §8.48. |
+| 55 | 19 nov. 2026 | **Recomposition du score MC — proposition v6.3 (§8.49)** (go de Zackary « Fait tout cela », 19 nov. 2026 ~16h30, 4e des 4 chantiers ; protocole gelé avant tout calcul `PROTOCOL_v6.3_mc.md`, SHA `acc74e94…5cea0b` ; ancien MC lu dans le code v6.2 : `best_config.score = 0,3·s_norm + 0,3·stability + 0,2·robustness + 0,2·sharpness` sur 12 tirages fast ; défauts mesurés D1–D5 (robustness morte ≤2×10⁻⁷ sur 14/16 JSON PDAC, stability saturée 0,978–0,997, sharpness récompense le bruit, s_norm sature, malédiction du vainqueur) ; MC recomposé gelé : `MC_new = 0,60·maxsep/(1+maxsep) + 0,25·stability + 0,15·recur`, `recur = médiane_i(maxsep_i)/maxsep_best` ; code v6.3 copie de v6.2, SHA `552e7359…044ffb`, v6.2/v6.1/v6 revérifiés inchangés ; validation hors-ligne 60 paires : rotations **31/48** contre 12/48 (moy. +0,1043 contre +0,0152), principales **4/8** contre 1/8, HP35 +0,2271 contre +0,1950, artefact pureté corrigé (−0,0353 contre +0,1520) ; validation en code 10/10 exit 0, MC_new en code = hors-ligne à 0,0 exact, best_config + cascade + S_sep identiques à v6.2 ; **REJETÉE : A1 franchie (31/48 ≥ 24/48), A2 en échec (4/8 < 6/8), A3 en échec (+0,227 < 0,30), A4 franchie** — la récurrence punit le vrai pic (HP35 recur réel 0,453 contre nul 0,876) ; **v6.2 reste la version de travail**, ancien MC affiché avec ses défauts documentés). Détail au §8.49. |
 
 ---
 
@@ -2992,6 +2996,1585 @@ La stabilité est quasi saturée sur les 96 runs : **0,9463–0,9986** (minimum 
 
 **Ce que ça change.** La chaîne (bloc qui chute + MUC16 qui monte) est confirmée comme propre à l'axe KRAS : elle ne réapparaît ni sous les 48 contrôles du §8.32, ni sous l'ordre prolifération (§8.34), ni sous l'ordre MTAP (§8.36), ni sous l'ordre stade. Le stade porte autre chose : une pente ascendante graduelle du bloc estomac/mucus (CLDN18, MUC17, PGC en tête), sans MUC16, sans saut aux extrêmes — cohérente avec l'idée que les tumeurs avancées expriment davantage ce programme, mais ce n'est pas la coupure KRAS et ce n'est pas une rupture. Prochaines étapes : l'intégration de cette section au livre blanc et la publication finale (PDF + GitHub) attendent le go de Zackary ; rien n'a été poussé, rien n'a été régénéré dans ce chantier.
 
+
+### 8.46 Arbitrage de la contradiction MTAP — S_sep contre MC/Delta (19 novembre 2026)
+
+**Verdict d'abord, en trois phrases. (a) ARBITRÉ : S_sep voit quelque chose
+de réel — une marche de niveau multi-flux entre tumeurs MTAP-délétées et
+intactes (CEACAM5, CLDN18, DPCR1, MUC17, MUC16 plus hauts côté délété,
+d de Cohen jusqu'à +0,74, gradients de Spearman jusqu'à −0,39, nul plat),
+et non une rupture localisée. (b) MC et Delta ne contredisent pas cette
+marche : l'inversion MC est portée par le seul terme de robustesse
+(FWHM 78,26 % réel contre 11,11 % nul graine 42 — le pic réel est haut
+mais large, le MC récompense un pic étroit), et Delta est une largeur
+spectrale globale sans rapport avec un seuil (réel 3,8051, à l'intérieur
+de l'intervalle des trois nuls 3,14–4,35). (c) Le nul graine 42 était
+extrême sur les trois indicateurs à la fois (S_sep le plus bas, MC et
+Delta les plus hauts des trois nuls) : avec les nuls frais graines 7 et
+123, les trois écarts s'effondrent ou changent de signe — S_sep
++0,072/+0,135, MC +0,009/−0,101, Delta −0,003/+0,664. Le verdict §8.36
+est donc PRÉCISÉ, pas renversé : pas de rupture, pas de chaîne — mais
+une différence de niveau réelle, que S_sep mesure et que MC/Delta ne
+mesurent pas. Marge fragile, à lire avec le verdict : l'écart S_sep
+contre le nul graine 7 (+0,0715) ne dépasse le plancher 0,07 que de
+0,0015 — un quatrième nul pourrait le faire tomber sous le plancher.**
+
+## 8.46.1 Question, méthode, règles
+
+**Question.** Sur la série TCGA v4 ordonnée par CN MTAP (177 tumeurs,
+contrôle MTAPCN, §8.36), S_sep = +0,1968 (réel > nul graine 42) alors
+que MC = −0,1642 et Delta = −0,5416 sont inversés (§8.38). S_sep voit-il
+quelque chose de réel que MC/Delta ratent, ou est-ce un artefact de
+construction de S_sep ?
+
+**Méthode.** Protocole gelé `PROTOCOL_mtap_arbitration_ssep.md`
+(SHA `9cf3295a…`, écrit avant tout nouveau calcul et tout nouveau run).
+Six volets, dans l'ordre : (A) relecture vérifiée des runs v6.2 et
+recomposition du MC composite ; (B) forme du scan (FWHM recalculée) ;
+(C) loupe par loupe depuis les CSV (harnais, hors pipeline) ; (D)
+décomposition de Delta (D-vector, estimateur par estimateur) ;
+(E) deux nuls frais (graines 7 et 123), seuls nouveaux runs ;
+(F) tests directs PRMT5 contre MTAP avec et sans contrôle prolifération,
+et relecture des 4 confirmations « PRMT5 suit MTAP, pas CDKN2A ».
+Règles de décision écrites avant (protocole §4) : « S_sep VOIT DU RÉEL »
+exige (1) les deux nuls frais sous le S_sep réel de plus de 0,07,
+(2) ≥ 2 flux portant la séparation avec un support direct, (3) le
+mécanisme nommé. Les trois conditions sont remplies (voir §8.46.6) —
+avec la réserve de marge sur (1), consignée dans le verdict.
+
+**Corrections trouvées en cours de route (traçabilité, pas silence).**
+(1) Le protocole §1 disait que d_sat/d_div étaient des médianes T_log :
+c'est FAUX — le code (`compute_holographic_tension_state`, lignes
+~7990–8022) montre que ce sont des médianes BRUTES de dimensions
+(médiane des médianes par estimateur) et que Delta = d_div − d_sat en
+unités brutes ; T_log est une transformée séparée, rapportée ailleurs.
+La correction est appliquée partout ci-dessous, et la conclusion (Delta
+global, sans rapport avec un seuil) en sort renforcée, pas affaiblie.
+(2) Piège pandas attrapé dans le volet F : `read_csv(usecols=[...])`
+rend les colonnes dans l'ordre DU FICHIER, pas dans l'ordre demandé —
+un premier renommage positionnel échangeait PRMT5 et ACTB et donnait
+un F1 inversé (médianes −0,558/−0,610, p = 0,60). Corrigé par renommage
+PAR LE NOM, avec vérification ligne à ligne contre la table §8.40
+(écart max 5,67×10⁻⁸ sur CN, 1,12×10⁻⁷ sur PRMT5). Le premier calcul
+faux n'est cité nulle part comme résultat.
+
+## 8.46.2 (A) Relecture vérifiée — le MC composite se recompose à l'identique
+
+| Indicateur | Réel | Nul graine 42 | Nul graine 7 | Nul graine 123 |
+|---|---|---|---|---|
+| S_sep = max_sep × stabilité | **0,3378** | 0,1409 | 0,2663 | 0,2031 |
+| max_separation | 0,3392 | 0,1434 | 0,2685 | 0,2092 |
+| stabilité | 0,9959 | 0,9825 | 0,9919 | 0,9705 |
+| MC best_score (seuil) | 0,3511 (69,57 %) | 0,5153 (84,44 %) | 0,3422 (89,13 %) | 0,4518 (88,89 %) |
+| s_norm / robustesse / acuité | 0,1680 / 3,37×10⁻⁴¹ / 0,0099 | 0,0716 / 0,9756 / 0,0198 | 0,1334 / 3,37×10⁻⁴¹ / 0,0231 | 0,1042 / 0,6290 / 0,0177 |
+| Delta (d_div − d_sat) | 3,8051 | 4,3466 | 3,8085 | 3,1415 |
+| D-vector (sat / crit / div / null) | 1,578 / 3,240 / 5,383 / 2,506 | 1,594 / 3,325 / 5,940 / 2,509 | 1,599 / 3,194 / 5,407 / 2,480 | 1,572 / 3,202 / 4,713 / 2,483 |
+| Cascade T_-2 / T_-1 / T_0 / T_+1 / T_+2 (%) | 0,54 / 60,74 / 72,77 / 92,11 / 92,11 | 1,07 / 2,14 / 8,57 / 15,58 / 15,58 | 1,07 / 8,03 / 95,79 / 98,79 / 100,0 | 0,0 / 10,71 / 61,18 / 90,01 / 90,01 |
+| L7a | DOWN 0,427 | UP 0,331 | DOWN 0,413 | UP 0,412 |
+| Falsification delta_vs_null | 0,733 | 0,816 | 0,714 | 0,719 |
+
+Écarts réel − nul : **S_sep +0,1968 / +0,0715 / +0,1347** ;
+**MC −0,1642 / +0,0089 / −0,1006** ; **Delta −0,5416 / −0,0034 / +0,6636**.
+Le réel est au-dessus des trois nuls en S_sep, mais DANS l'intervalle
+des trois nuls en MC (0,342–0,515 ; réel 0,351) comme en Delta
+(3,14–4,35 ; réel 3,81). La « contradiction » du §8.38 est spécifique
+au nul graine 42 : c'est le seul des trois nuls qui soit à la fois le
+plus bas en S_sep et le plus haut en MC et en Delta. Avec le nul graine
+7, les trois écarts s'effondrent (+0,072 / +0,009 / −0,003) ; avec le
+nul graine 123, Delta change de signe (+0,664).
+
+**Le MC se recompose exactement** (écart 0,0 sur les 4 runs) depuis
+0,3·s_norm + 0,3·stabilité + 0,2·robustesse + 0,2·acuité (poids par
+défaut, code lignes 3727–3730 et 3481–3484). Décomposition de
+l'inversion MC contre le nul 42 : s_norm favorise le réel (+0,029),
+stabilité est quasi égale (+0,004), acuité favorise le nul (+0,002),
+**robustesse favorise le nul de +0,195 (0,2×0,9756 contre ~0)** — à
+elle seule, elle porte l'inversion (−0,164). Contre le nul graine 7,
+la robustesse est IDENTIQUE au réel (3,37×10⁻⁴¹ des deux côtés) et
+l'écart MC tombe à +0,009.
+
+**À paramètres de scan FIXES, le réel gagne partout.** La courbe par
+défaut (mêmes paramètres des deux côtés) donne max_separation
+0,2380 (réel) contre 0,0861 / 0,1548 / 0,1023 (nuls) — écarts
++0,152 / +0,083 / +0,136. Et sur les 12 itérations MC — dont les
+configurations (n_candidats, w_size, min_grp) sont IDENTIQUES pour les
+4 runs (échantillonneur seedé, graine globale 42) — le réel gagne en
+max_separation 12/12 contre chaque nul, et en score MC 8/12 contre le
+nul 42, 12/12 contre le nul 7, 10/12 contre le nul 123. Les seules
+itérations perdues en MC sont celles où le nul produit un pic étroit
+(robustesse ~0,6–0,98 : itérations 1, 4, 6, 10 pour le nul 42 ;
+4 et 10 pour le nul 123 ; aucune pour le réel ni pour le nul 7).
+
+## 8.46.3 (B) Forme du scan — le pic réel est haut et large, pas localisé
+
+FWHM recalculée depuis chaque `scan_curve.json` en répliquant
+`evaluate_scan_quality` (code lignes 3314–3390) ; les valeurs
+recalculées reproduisent les métriques lues (robustesse, stabilité,
+acuité) au chiffre près.
+
+| Run | Candidats scorés | Max (seuil) | FWHM | Au-dessus de la moitié du max | Médiane des scores |
+|---|---|---|---|---|---|
+| Réel | 73/93 | 0,3392 (69,57 %) | **78,26 %** | **73/73** | 0,2899 |
+| Nul 42 | 32/46 | 0,1434 (84,44 %) | 11,11 % | 30/32 | 0,0935 |
+| Nul 7 | 73/93 | 0,2685 (89,13 %) | **78,26 %** | **73/73** | 0,2132 |
+| Nul 123 | 22/28 | 0,2092 (88,89 %) | 14,81 % | 18/22 | 0,1331 |
+
+Le scan réel ne descend JAMAIS sous la moitié de son max : de 10,87 %
+à 89,13 %, le score reste entre 0,219 et 0,339. Ce n'est pas un pic,
+c'est un plateau — la signature d'une différence de niveau stable sur
+tout l'axe, pas d'une rupture localisée. Le nul graine 7 a EXACTEMENT
+la même forme (FWHM 78,26 %, 73/73 au-dessus de la moitié, même
+configuration best (93, 30, 6), même robustesse 3,37×10⁻⁴¹) : un nul
+permuté produit le même plateau, à un niveau plus bas (max 0,269 contre
+0,339, médiane 0,213 contre 0,290).
+
+**La robustesse est, en régime plateau, déterminée par la configuration,
+pas par les données.** Les 12 robustesses par itération sont IDENTIQUES
+entre le réel et le nul graine 7 (les 12 valeurs, de 9,65×10⁻²³ à
+3,37×10⁻⁴¹) : quand la courbe ne descend jamais sous la moitié du max,
+la FWHM vaut la plage des candidats scorés, qui ne dépend que de
+(n_candidats, w_size, min_grp). La robustesse ne devient informative
+que quand la courbe descend sous la moitié du max — ce qui arrive pour
+certaines paires (données, configuration) et pas d'autres. Conséquence :
+le `best_config` compare des configurations DIFFÉRENTES d'un run à
+l'autre — réel (93, 30, 6), nul 42 (46, 42, 7), nul 123 (28, 27, 6),
+nul 7 (93, 30, 6) — choisies par un composite qui récompense un pic
+étroit. L'inversion MC est un artefact de ce choix de « meilleur » :
+à configuration fixée, le réel est devant partout (§8.46.2).
+
+## 8.46.4 (C) Loupe par loupe — une marche de niveau multi-flux, pas 1–2 flux
+
+**C1 — d de Cohen par flux au seuil MC (pas 122 réel / 149 nul 42).**
+Lecture directe depuis les CSV ; le partage entier pré/post est une
+APPROXIMATION du score fenêtré du pipeline (qui donne 0,339 contre
+0,143), pas sa réplique exacte — les deux vont dans le même sens, et
+l'approximation donne des valeurs plus grandes (0,392 contre 0,247).
+
+| Flux | Réel (entier) | Nul 42 (entier) | Réel (±20) | Nul 42 (±20) |
+|---|---|---|---|---|
+| CEACAM5 | −0,772 | +0,536 | −0,270 | +0,624 |
+| CLDN18 | −0,678 | +0,271 | −0,469 | +0,364 |
+| MUC17 | −0,619 | +0,111 | −0,662 | −0,003 |
+| DPCR1 | −0,518 | +0,157 | −0,117 | −0,100 |
+| MUC16 | −0,428 | +0,261 | +0,018 | +0,393 |
+| REG4 | −0,320 | +0,229 | −0,341 | +0,355 |
+| GSTM1 | −0,320 | +0,263 | −0,356 | +0,794 |
+| MUC2 | −0,297 | +0,318 | −0,538 | +0,677 |
+| KRT20 | −0,230 | +0,231 | −0,386 | +0,169 |
+| CR2 | +0,231 | −0,219 | −0,325 | −0,354 |
+| PGC | −0,188 | −0,097 | −0,384 | −0,199 |
+| CLCA1 | −0,103 | +0,265 | −0,500 | +0,249 |
+| Moyenne \|d\| | **0,392** | 0,247 | 0,364 | 0,357 |
+
+Signe : après − avant (négatif = plus haut côté délété, avant le seuil).
+Le réel est porté par 8 flux pour 80 % de la séparation (part du top
+16 %) — H3 (1–2 flux) est REJETÉE. Réserve honnête : en fenêtres ±20,
+réel (0,364) et nul (0,357) sont quasi égaux — la lecture fenêtrée
+locale ne sépare pas ; c'est le partage entier (niveau global) qui
+sépare. C'est cohérent avec une marche, pas avec un pic.
+
+**C2 — groupes GISTIC (jointure exacte par code-barres, reconstruite
+depuis les tarballs ; colonne MTAPCN reproduite à 10⁻¹² près ;
+GISTIC seuillé sur 177 : −2 : 43, −1 : 62, 0 : 69, +1 : 2, +2 : 1).**
+d de Cohen (délétées − intactes ; positif = plus haut chez les délétées) :
+
+| Flux | −2/−1 (n=105) vs 0/+ (n=72), réel | même, nul 42 | −2 (n=43) vs reste, réel | Top-12 vs reste, réel |
+|---|---|---|---|---|
+| CEACAM5 | **+0,740** | −0,115 | +0,546 | +0,585 |
+| CLDN18 | **+0,634** | −0,045 | +0,178 | +0,012 |
+| DPCR1 | **+0,476** | −0,045 | +0,215 | −0,078 |
+| CR2 | −0,462 | +0,163 | −0,333 | −0,570 |
+| MUC17 | **+0,442** | +0,095 | +0,248 | +0,185 |
+| MUC16 | **+0,387** | +0,042 | +0,393 | −0,143 |
+| REG4 | +0,278 | +0,008 | +0,301 | +0,238 |
+| GSTM1 | +0,146 | +0,229 | +0,371 | +0,063 |
+| KRT20 | +0,109 | −0,003 | +0,142 | −0,146 |
+| MUC2 | +0,111 | +0,080 | +0,007 | −0,026 |
+| PGC | +0,058 | +0,096 | −0,304 | −0,399 |
+| CLCA1 | −0,046 | +0,016 | +0,010 | −0,010 |
+
+Le nul 42 reste à |d| ≤ 0,23 sur les deux groupements GISTIC. Cinq flux
+dépassent +0,38 en réel sur le groupement large (−2/−1 contre 0/+),
+tous dans le même sens (plus hauts chez les délétées), et le top-12
+reproduit le §8.36 au chiffre près (CEACAM5 +0,585, CR2 −0,570,
+PGC −0,399). C'est une différence de NIVEAU entre deux groupes
+biologiques (perte MTAP contre intact), pas un saut à un seuil : les
+mêmes flux sont décalés sur tout l'axe.
+
+**C3 — Spearman flux contre rang MTAP.** Réel : CEACAM5 −0,390
+(p = 8,1×10⁻⁸), CLDN18 −0,270 (p = 2,8×10⁻⁴), MUC16 −0,270,
+DPCR1 −0,262, MUC17 −0,219, REG4 −0,181 (p = 0,016), CR2 +0,184
+(p = 0,014), MUC2 −0,118, GSTM1 −0,054, KRT20 −0,049, PGC −0,025,
+CLCA1 −0,007. Nul 42 : tous |rho| ≤ 0,096, tous p ≥ 0,21. Les flux
+montent en pente douce et monotone quand CN MTAP baisse — sans saut
+chez les 12 plus délétées, comme déjà dit au §8.36.
+
+## 8.46.5 (D) Décomposition de Delta — l'inversion vient de d_div seul
+
+Delta = d_div − d_sat (médianes brutes de dimensions). Réel contre
+nul 42 : d_sat 1,578 contre 1,594 (Δ −0,016), d_crit 3,240 contre 3,325
+(Δ −0,086), **d_div 5,383 contre 5,940 (Δ −0,557)**, d_null 2,506 contre
+2,509 (Δ −0,003). L'inversion Delta (−0,542) est portée à 103 % par
+d_div. Le D-vector est reproduit exactement par la médiane des
+médianes brutes par estimateur (saturation 1,5781 contre 1,578056 lu).
+Par estimateur (écart réel − nul 42) : divergence — MFA −1,000
+(niveau discret 3 contre 4), LocalPCA −0,494, PCAIntrinsic −0,328,
+LevinaBickel +0,204, GraphDimension −0,069, PersistentHomology −0,078 ;
+saturation — tous |Δ| ≤ 0,126 (BoxCounting −0,126) ; criticality —
+Fisher −0,491, CorrelationD2 et GrassbergerProcaccia −0,193, TwoNN
++0,246, InformationD1 −0,093, DANCo −0,086, VisibilityGraph +0,025 ;
+SpectralDimension −0,003. Delta ne dépend d'aucun seuil : c'est une
+largeur spectrale globale de la matrice entière, et le nul permuté
+l'élargit (surtout via MFA et LocalPCA, des estimateurs de dimension
+qui lisent plus haut sur des lignes mélangées). Avec trois nuls, le
+réel (3,805) est à l'intérieur de l'intervalle nul (3,14–4,35) :
+Delta ne sépare rien sur cette série. Ceci est cohérent avec le §8.42
+(Delta non élucidé, magnitudes portant l'échelle de n) — il n'explique
+pas POURQUOI la permutation élargit d_div, il constate OÙ elle
+l'élargit.
+
+## 8.46.6 (E) Deux nuls frais — le nul graine 42 était extrême
+
+Construction : même méthode que le nul graine 42 (lignes permutées
+ensemble, `rng(seed)`, colonne MTAPCN intacte), graines 7 et 123,
+script `build_mtap_nuls_846.py`. Runs v6.2 fast : lot lancé par
+`systemd-run` (unité `mtap-nuls846`, jamais nohup), 19 nov. 2026
+21:34:25Z ; s7 exit 0 ; 1re tentative s123 tuée par un redémarrage du
+service (pas de `master_results.json`, pas de ligne EXIT) ; relance
+par `systemd-run` (unité `mtap-nuls846b`, s7 ignoré car complet),
+FIN 2026-11-19T21:53:04Z, terminés=1, échecs=0 — lot total 2/2, exit 0.
+SHA v6.2 `f07567c4…ec3abf` vérifié avant et après (journal du lot).
+
+| Écart réel − nul | Nul 42 | Nul 7 | Nul 123 | Moyenne des 3 nuls |
+|---|---|---|---|---|
+| S_sep | +0,1968 | +0,0715 | +0,1347 | réel 0,3378 contre moyenne 0,2034 |
+| MC | −0,1642 | +0,0089 | −0,1006 | réel 0,3511 contre moyenne 0,4364 |
+| Delta | −0,5416 | −0,0034 | +0,6636 | réel 3,8051 contre moyenne 3,7656 |
+
+La condition (1) du protocole est remplie : les deux nuls frais
+restent sous le S_sep réel de plus de 0,07 — mais de justesse pour le
+nul 7 (+0,0715, soit 0,0015 au-dessus du plancher). La condition (2)
+est remplie nettement : ≥ 5 flux avec support direct (C2/C3). La
+condition (3) est remplie : MC = forme du pic (robustesse), Delta =
+largeur spectrale globale — ni l'un ni l'autre ne nie la hauteur vue
+par S_sep. **Verdict du protocole : ARBITRÉ — S_sep VOIT DU RÉEL**,
+précisé ainsi : ce qu'il voit est une marche de niveau, pas une
+rupture. Le L7a illustre la même variabilité du nul : DOWN réel
+(0,427) et DOWN nul 7 (0,413) contre UP nul 42 (0,331) et UP nul 123
+(0,412) — la direction L7a ne sépare pas non plus. La falsification
+ne sépare pas davantage (réel 0,733 ; nuls 0,816 / 0,714 / 0,719).
+
+## 8.46.7 (F) Tests directs — l'effet PRMT5 survit au contrôle prolifération
+
+**F1 — reproduction §8.40.** 47 lignées pancréas DepMap 24Q4
+(OncotreeLineage Pancreas, jointure GeneEffect/CN) : PRMT5 Chronos
+délétées profondes (CN < 0,5, n = 20) médiane −1,385 contre intactes
+(n = 27) −1,010, Mann-Whitney p = 0,003551 ; Spearman continu
+rho = +0,497, p = 0,000376. Reproduit au chiffre près.
+
+**F2 — contrôle prolifération, lignées.** Proxy gelé : médiane des
+Chronos MKI67/TOP2A/PCNA/CCNB1 par lignée (mêmes 4 gènes que le score
+TCGA §8.25c, mais en dépendance CRISPR, pas en expression — la
+différence est nommée, le proxy est une hypothèse de travail, pas une
+vitesse de division mesurée ; médiane du proxy −1,555, 0 NaN).
+Spearman partiel PRMT5 ~ CN MTAP : brut rho = 0,497 (p = 0,00038) →
+**partiel prolif rho = 0,445 (p = 0,0019, n = 47)** ; partiel KRAS
+rho = 0,500 (p = 0,00041) ; partiel prolif + KRAS rho = 0,447
+(p = 0,0021). L'effet perd ~10 % et reste significatif : il n'est
+pas un confondant prolifération. CDKN2A fixé (MTAP-intacte, par CN) :
+p = 0,464 (n = 7/20, méd −1,049/−0,984) — reproduit le §8.40 (0,46).
+
+**F3 — contrôle prolifération, tumeurs TCGA.** Score §8.25c (médiane
+des résidus MKI67/TOP2A/PCNA/CCNB1 ; jointure exacte par code-barres,
+score reproduit à 10⁻⁹ près) : Spearman score ~ CN MTAP rho = −0,268
+(p = 0,00031) — les tumeurs les plus délétées sont un peu plus
+proliférantes ; d du score top-12 contre reste +0,218 (petit). Mais
+les gradients flux ~ MTAP survivent au contrôle : CEACAM5 −0,390 →
+−0,336 (p = 5,2×10⁻⁶), CLDN18 −0,270 → −0,237, MUC16 −0,271 → −0,212,
+DPCR1 −0,263 → −0,254, MUC17 −0,220 → −0,175, REG4 −0,182 → −0,156,
+CR2 +0,184 → +0,146. Atténuation de 10 à 20 %, pas d'élimination.
+Partiels du nul 42 : tous |rho| ≤ 0,044.
+
+**F4 — relecture des 4 confirmations « PRMT5 suit MTAP, pas CDKN2A ».**
+Chaque valeur est RELUE dans son fichier source, pas recopiée :
+§8.28 — `data/prmt5_mtap_results.csv`, pancréas profond : −1,385 /
+−1,010, p = 0,003551. §8.29 — stratification CN pan-cancer, relue
+dans `mtap_arbitration_840_results.csv`, ligne a3 (recomputation
+§8.40 de cette stratification) : MTAP-intacte, n = 137/747,
+−1,013 / −0,973, p = 0,257009. §8.36 — stratification mutation,
+relue dans `mtap_arbitration_840_results.csv` ligne a4 et
+`verify_alleles_mutations.txt` : MTAP-intacte, n = 10/15, −0,978 /
+−1,010, p = 0,760301, d = +0,19. §8.40 — stratification CN pancréas,
+même fichier, ligne a3 : n = 7/20, −1,049 / −0,984, p = 0,464000.
+Quatre confirmations, quatre relectures exactes, deux angles (CN et
+mutation) et deux échelles (pancréas et pan-cancer). La strate
+MTAP-délétée ne peut pas être testée dans l'autre sens (20/0 en
+pancréas, 293/1 au pan-cancer) — dit au §8.40, inchangé.
+
+## 8.46.8 Ce que ça change, et ce que ça ne change pas
+
+**Change — la contradiction est arbitrée, et le mécanisme est nommé.**
+(1) S_sep mesure la HAUTEUR d'une marche de niveau réelle entre deux
+groupes (perte MTAP contre intact) ; MC mesure la FORME d'un pic et
+pénalise le plateau ; Delta mesure une LARGEUR spectrale globale. Les
+trois sont exacts, ils ne se contredisent pas — ils ne mesurent pas la
+même chose. (2) Le nul graine 42 ne doit plus être cité seul : sur
+cette série, un nul = une permutation, et les trois nuls détenus
+couvrent S_sep 0,141–0,266, MC 0,342–0,515, Delta 3,14–4,35. Toute
+comparaison réel/nul sur un seul nul est fragile — ici, la conclusion
+« MC et Delta inversés » tenait à UNE permutation. (3) La robustesse
+du MC, en régime plateau, est déterminée par la configuration de scan,
+pas par les données : le `best_config` ne doit pas être comparé entre
+runs sans comparer aussi les configurations choisies.
+**Ne change pas.** Le verdict §8.36 (la chaîne KRAS ne réapparaît pas
+sous l'ordre MTAP ; pas de rupture localisée) est maintenu et précisé :
+une marche de niveau n'est pas une rupture, et la chaîne reste propre
+à l'axe KRAS. Le rationnel vopimetostat + daraxonrasib n'est ni renforcé
+ni affaibli par ce chantier (il vit dans les lignées et la clinique,
+pas dans cette série). S_sep ne devient pas un discriminateur général
+recommandé : il sépare ici à configuration fixée (12/12 en maxsep
+contre les trois nuls), mais sa marge contre le nul graine 7 est de
+0,0015 au-dessus du plancher — un seul nul de plus pourrait renverser
+la condition (1). **Reste ouvert :** pourquoi la permutation élargit
+d_div (MFA discret 3 contre 4 en tête) — le §8.42 ne l'élucide pas
+non plus ; et la distribution nulle complète (3 nuls seulement ici).
+
+## 8.46.9 Provenance
+
+- **Protocole gelé.** `PROTOCOL_mtap_arbitration_ssep.md` (SHA-256
+  `9cf3295aea379d4df4c8acaa6afaf6b0410c6bb56b20a03c956cb9952693fed7`),
+  écrit avant tout calcul et tout run de ce chantier.
+- **Codes (jamais modifiés).** Pipeline v6.2
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`, SHA-256
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+  (vérifié avant et après les runs, journal du lot) ; v6.1 de référence
+  `2af5e5ce…c1c9`. Scripts neufs : `mtap_arbitration_846.py` (SHA-256
+  `8e9c5382a768dd78c85a239d354e664a347e8be2ee772a164575599709164fc4`),
+  `build_mtap_nuls_846.py` (SHA-256
+  `6eeec29088bba5745b5603f16fbba0077b565d49f13462a50cfc4cd65eba3083`).
+  Deux lancements antérieurs du script d'arbitrage documentés ici :
+  un arrêt sur une erreur de lecture DepMap (colonnes, voir §8.46.1),
+  puis un arrêt sur une assertion trop stricte (écart 10⁻⁷), puis un
+  run tué par le redémarrage du service — le run final est complet,
+  exit 0, 2 min 05 s.
+- **Entrées (SHA-256 vérifiés avant les calculs).** Série MTAP :
+  `pdac_tcga_fluxes_v4_mtap.csv`
+  `578b8d3b9b26099d0784ed23754d1cc9717be7f9292eb47e201d186cdbc90df6`,
+  nul graine 42
+  `e6786a47ce107dbf9785d83981ab413f8afb4e75fbdbae4da56da8c1e46453b9`
+  (PROVENANCE_mtap_series.md : Broad GDAC Firehose stddata 2016-01-28,
+  PAAD, RSEM ; GISTIC2 Level 4 ; 177/178 appariées, TCGA-FB-A4P6-01
+  sans GISTIC). Nuls frais : `pdac_tcga_fluxes_v4_mtap_nul_s7.csv`
+  `cacce06f455a74450e74032f9103d9ebea9f730065fc9d4f1921a896957904d3`,
+  `..._nul_s123.csv`
+  `da2b1d3f6b4f6cb91c2888a0704a36b397ea1782ef8bc4c980a89d920c2626c1`.
+  DepMap Public 24Q4 (figshare 27993248) : `CRISPRGeneEffect.csv`
+  `3d8f3ec6…167e3b`, `OmicsCNGene.csv` `4851d3e9…134c`, `Model.csv`
+  `b7a0c138…dcfa`. Tarballs TCGA revérifiés par MD5 dans la
+  reconstruction (RSEM `b09569ce…`, GISTIC préfixe `816034f7…`).
+- **Sorties.** Runs frais : `results_fast_v62_mtap_nul_s7/` et
+  `results_fast_v62_mtap_nul_s123/` (`master_results.json` chacun) ;
+  manifeste `manifest_v62_mtap_nuls846.txt` ; journal
+  `runs_v62_mtap_nuls846.log` (2/2, exit 0) ; unités systemd
+  `mtap-nuls846` (1re tentative s123 tuée par redémarrage) et
+  `mtap-nuls846b` (reprise, FIN 2026-11-19T21:53:04Z). Lecture :
+  `mtap_arbitration_846_extract.json` (SHA-256
+  `db8b25acec563e39fa17b04385fe67c8bc9721a75c43528ab2ab20505d9076c6`),
+  `mtap_arbitration_846_results.csv` (SHA-256
+  `7b4e44d4851fade4408a917587ad176ce341bed6722779b98c56b4843a14e1ff`,
+  252 lignes), `mtap_arbitration_846_prolif.csv` (SHA-256
+  `6bb10b85b968c0344a882c9a8f53c61e455a3204842b4255e061bc2726126401`,
+  26 lignes), `mtap_arbitration_846_patients.csv` (SHA-256
+  `29ad89741f4416b6e752ecb2956ea6f5c1939e76d5c55cd0d5f0e964a74e2ae3`,
+  177 lignes : barcode, MTAPCN, GISTIC seuillé, score prolifération).
+- **Nature des lignes.** Résidus d'expression TCGA (mesures
+  instrumentales — séquençage ARN — transformées) ordonnés par CN
+  MTAP ; nuls = lignes permutées (échantillons hypothétiques, pas des
+  mesures) ; Chronos, CN DepMap, viabilités = mesures instrumentales ;
+  statuts GISTIC = appels mesurés ; score de prolifération TCGA =
+  médiane de résidus (mesure transformée) ; proxy prolifération
+  lignées = médiane de Chronos (hypothèse de travail, limite nommée
+  au §8.46.7). Aucun mot humain, aucun échantillon hypothétique dans
+  les séries réelles.
+- **Ce qui manque, ce qui reste ouvert.** Trois nuls seulement (la
+  condition (1) tient à 0,0015 près sur le nul 7) ; la C1 fenêtrée
+  ±20 ne sépare pas (0,364 contre 0,357) alors que le partage entier
+  sépare — la décomposition par flux est une approximation du score
+  fenêtré du pipeline, pas sa réplique exacte ; le mécanisme
+  « permutation élargit d_div » n'est pas élucidé (MFA discret en
+  tête) ; le proxy prolifération lignées n'est pas une vitesse de
+  division mesurée ; PDF non régénéré, rien poussé sur GitHub (hors
+  de ce chantier).
+
+— Fin de la §8.46. —
+
+### 8.47 Inversion immunitaire ICGC — EXPLIQUÉE : le réel ne sépare pas, le nul est haut (19 nov. 2026)
+
+**Verdict d'abord. L'inversion S_sep immunitaire ICGC (−0,2200) est
+expliquée, et elle ne vient pas de la biologie.** Les tests directs
+confirment le froid tumoral en ICGC comme dans les trois autres cohortes
+(PDCD1 rho −0,22, top-12 d −0,85). L'inversion est une propriété de la
+métrique max_separation, et elle tient en trois faits mesurés :
+**(1) le réel ICGC ne sépare pas du tout** — maxsep 0,2299, et un nul
+tiré au hasard le bat dans 61 % des cas (500 permutations) ; sa courbe
+de scan reste dans l'intervalle interquartile nulle sur 13/13 candidats ;
+avec un nul médian, d_ssep vaudrait −0,016, c'est-à-dire zéro.
+**(2) Le nul graine 42 est haut** (0,4500, ~98e percentile à config
+fixe), **mais pas exceptionnel pour le pipeline tel qu'il tourne** : un
+nul frais sur trois atteint 0,4564 ; sur quatre tirages de nuls
+pipeline, d_ssep ICGC vaut −0,220 / +0,052 / −0,011 / −0,221 — le signe
+dépend du tirage du nul.
+**(3) Le réel ICGC est bas parce que son signal est une falaise, pas un
+gradient** : la chute immunitaire est concentrée dans les 12 tumeurs
+KRAS-les-plus-fortes (moyenne des |d| top-12 = 0,408), et élargir le
+groupe « haut » à 26 lignes — ce que font les fenêtres chevauchantes du
+scan — divise ce signal par 1,9 (0,408 → 0,215 ; PDCD1 −0,85 → −0,26),
+alors qu'en TCGA le gradient survit à l'élargissement (facteur 0,95).
+Le petit n (70) relève en plus le plancher du nul (médiane 0,246 contre
+0,170 à n=178). Les trois autres explications testées sont rejetées :
+les flux substitués (H2), la composition en sous-types (H4) et la
+corrélation inter-flux (H5). **Conséquence de méthode : à n≈70, S_sep
+lu sur un seul nul est un tirage, pas une mesure — il faut la
+distribution des nuls.**
+
+#### 8.47.1 Faits de départ et décomposition
+
+S_sep = max_separation × stabilité (PROTOCOL_v6.2.md §3), relu dans les
+`master_results.json` v6.2 (§8.38, vérifié identique en v6.1 sur 29/29
+paires). Décomposition (§8.38 relue le 19 nov.) :
+
+| Paire | n | maxsep réel | maxsep nul | d_maxsep | stab R/N | S_sep R | S_sep N | d_S_sep |
+|---|---|---|---|---|---|---|---|---|
+| IMMUNE_TCGA | 178 | 0,5309 | 0,1634 | +0,3675 | 0,9914/0,9819 | 0,5263 | 0,1604 | +0,3659 |
+| IMMUNE_GEO71729 | 145 | 0,2925 | 0,1563 | +0,1362 | 0,9916/0,9964 | 0,2900 | 0,1557 | +0,1343 |
+| IMMUNE_GEO62452 | 69 | 0,4804 | 0,3154 | +0,1650 | 0,9692/0,9899 | 0,4656 | 0,3122 | +0,1534 |
+| IMMUNE_ICGC | 70 | 0,2299 | 0,4500 | −0,2200 | 0,9955/0,9976 | 0,2289 | 0,4489 | −0,2200 |
+
+La stabilité est saturée partout (0,97–1,00) : S_sep ≈ max_separation.
+L'inversion vient entièrement de max_separation, et elle est à deux
+côtés : le nul ICGC (0,4500) est le plus élevé des 8 maxsep
+immunitaires, le réel ICGC (0,2299) le plus faible des 4 réels.
+max_separation = maximum, sur les candidats, du score de scan =
+moyenne sur les 12 flux de |d de Cohen| entre groupes pré/post-seuil
+de fenêtres (code v6.2 lu : `_scan_critical_threshold_fast` +
+`evaluate_scan_quality`). C'est une statistique de MAXIMUM : elle
+favorise le nul qui « a de la chance » sur un candidat. Les courbes de
+scan relues (`run_pipeline.scan_curve`) : réel ICGC plat (0,18–0,23 sur
+toute la plage, max à 23,5 %) ; nul ICGC en plateau haut précoce (0,450
+à 19,0 %, 0,445 à 23,8 % et 28,6 %, puis décroissance lisse) — pas un
+pic isolé. Réel TCGA en rampe jusqu'à 0,53 à ~79 % ; réel GSE62452 en
+rampe jusqu'à 0,48 à 81,8 % ; réel GSE71729 en U (max 0,29 à 12,2 %).
+
+#### 8.47.2 La biologie n'est pas inversée (tests directs, §8.23 reproduits)
+
+Mêmes définitions que `direct_tests_immune.py` (Spearman contre KRAS
+brut ; top-12 KRAS-fort contre reste, d de Cohen + Welch), réel contre
+nul graine 42, 4 cohortes, plus 200 permutations par gène focal
+(`direct_tests_icgc_847.py`, SHA `db97d1da…`) :
+
+| Gène (ICGC) | rho réel | p_perm (rho) | d top-12 réel | p_perm (d) |
+|---|---|---|---|---|
+| PDCD1 (PD-1) | −0,223 | 0,07 | −0,854 | 0,005 |
+| CTLA4 | −0,243 | — | −0,740 | — |
+| FOXP3 | −0,196 | — | −0,705 | — |
+| CD8A | −0,146 | 0,21 | −0,452 | 0,12 |
+| GZMB | −0,035 | 0,75 | −0,517 | 0,14 |
+| PRF1 (remplace IFNG) | −0,039 | 0,74 | −0,470 | 0,19 |
+
+Moyenne des |d| top-12, réel contre nul 42 : TCGA 0,376/0,117 ;
+GSE71729 0,409/0,271 ; GSE62452 0,584/0,158 ; ICGC 0,408/0,222. Signes
+rho négatifs (réel) : 10/12, 7/12, 9/12, 9/12. **Le réel ICGC est, en
+test direct, aussi « froid » que GSE71729 (0,408 contre 0,409) et plus
+froid que TCGA (0,376).** Les magnitudes de rho sont quasi identiques
+entre cohortes (PDCD1 −0,22 à −0,25) ; seules les p-values diffèrent,
+par la taille (n=70 contre 145/178) — une histoire de puissance, pas
+de sens. L'inversion est donc une propriété de la métrique, pas du
+signal biologique.
+
+#### 8.47.3 Le réel ICGC ne sépare pas (réplique, 500 permutations)
+
+Réplique exacte du scan (voir §8.47.8 pour la correction de méthode) :
+500 permutations par ligne par cohorte, sous les deux configs fixes
+(config réelle et config nulle de chaque run), plus la distribution de
+référence. Résultats (`icgc_immune_inversion_replica.json`, SHA
+`539f9527…`) :
+
+| Cohorte | n | maxsep réel | médiane nulle | [p2,5 ; p97,5] | P(nul ≥ nul42) | P(nul ≥ réel) |
+|---|---|---|---|---|---|---|
+| TCGA | 178 | 0,5309 | 0,1700 | [0,089 ; 0,324] | 0,538 | **0,000** |
+| GSE71729 | 145 | 0,2925 | 0,1757 | [0,111 ; 0,271] | 0,672 | **0,014** |
+| GSE62452 | 69 | 0,4804 | 0,2426 | [0,159 ; 0,395] | 0,130 | **0,004** |
+| ICGC | 70 | 0,2299 | 0,2458 | [0,157 ; 0,443] | 0,024 | **0,612** |
+
+ICGC est la seule cohorte où le réel ne dépasse pas la distribution
+nulle : un nul tiré au hasard bat le réel ICGC dans 61 % des cas,
+contre 0 % (TCGA), 1,4 % (GSE71729) et 0,4 % (GSE62452). Avec un nul
+médian, d_ssep vaudrait : TCGA +0,361 ; GSE71729 +0,117 ; GSE62452
++0,238 ; **ICGC −0,016** — c'est-à-dire zéro. Même avec un nul au
+97,5e percentile, les trois autres cohortes restent positives
+(+0,207 / +0,022 / +0,085) alors qu'ICGC tombe à −0,214. La courbe de
+scan réelle ICGC reste dans l'intervalle interquartile nulle sur
+**13/13 candidats** (grille config nulle) : à aucun seuil le réel ne
+sort du bruit du nul. Le côté « réel bas » suffit à lui seul à
+expliquer l'absence de séparation ; le nul haut ne fait
+qu'approfondir l'écart de −0,02 à −0,22.
+
+#### 8.47.4 Le nul graine 42 est haut, mais le pipeline en produit d'autres (lot v6.2, 11/11 exit 0)
+
+Trois nuls ICGC frais (graines 1, 2, 3), deux GSE62452, deux TCGA,
+runs v6.2 fast via systemd-run (unité `v62-847`, 21h49–22h58 UTC,
+11/11 exit 0, SHA v6.2 re-vérifié `f07567c4…`) :
+
+| Nul frais | maxsep | S_sep | MC | Dans [p2,5 ; p97,5] réplique ? |
+|---|---|---|---|---|
+| ICGC s1 | 0,1796 | 0,1769 | 0,5262 | oui |
+| ICGC s2 | 0,2443 | 0,2396 | 0,3354 | oui |
+| ICGC s3 | 0,4564 | 0,4497 | 0,3675 | non (+0,013 au-dessus de p97,5 = 0,4434) |
+| GSE62452 s1 | 0,2826 | 0,2780 | 0,3405 | oui |
+| GSE62452 s2 | 0,1869 | 0,1861 | 0,3280 | oui |
+| TCGA s1 | 0,2479 | 0,2465 | 0,3377 | oui |
+| TCGA s2 | 0,1414 | 0,1390 | 0,5144 | oui |
+
+6/7 dans l'intervalle 95 % de la réplique ; le 7e (s3) ne le dépasse
+que de 0,013 — l'optimiseur, libre de choisir sa config par run,
+élargit légèrement la distribution des nuls au-delà de la réplique à
+config fixe. Surtout : **un nul frais sur trois atteint 0,4564,
+c'est-à-dire le niveau du nul graine 42 (0,4500)**. d_ssep ICGC sur
+quatre tirages de nuls pipeline (réel S_sep 0,2289) : graine 42
+−0,2200 ; s1 +0,0520 ; s2 −0,0107 ; s3 −0,2208. Le signe dépend du
+tirage du nul ; l'inversion se reproduit avec une autre graine (s3).
+Observation annexe (pas un critère du protocole) : le MC ne sépare
+pas non plus sur ces tirages frais — nul s1 MC 0,5262 contre réel
+0,3342 ; TCGA nul s2 MC 0,5144 contre réel 0,3785 — cohérent avec
+§8.32/§8.35 (MC 1/8).
+
+#### 8.47.5 Pourquoi le réel ICGC est bas : falaise contre gradient, dilution mesurée
+
+Le signal immunitaire ICGC est une **falaise au sommet**, pas un
+gradient. Moyenne des |d| de Cohen, top-K contre reste
+(`extra_checks_icgc_847.py`, SHA `0767d8dd…`) :
+
+| Cohorte | top-12 | top élargi | Facteur de dilution |
+|---|---|---|---|
+| TCGA (top-60) | 0,376 | 0,397 | 0,95 (aucune) |
+| GSE71729 (top-40) | 0,409 | 0,262 | 1,56 |
+| GSE62452 (top-26) | 0,584 | 0,375 | 1,56 |
+| ICGC (top-26) | 0,408 | 0,215 | **1,90** |
+
+En ICGC, PDCD1 passe de −0,85 (top-12) à −0,26 (top-26) et CD8A de
+−0,45 à −0,17 ; en TCGA, PDCD1 passe de −0,61 à −0,69 — le signal y
+est un gradient sur tout le tiers supérieur, qui survit à
+l'élargissement. Or le scan construit ses groupes à partir de fenêtres
+chevauchantes : à un seuil tardif (~80 %), le groupe « haut » contient
+environ deux fois plus de lignes du milieu d'axe que de lignes du
+sommet à n=70 (w_size=16). La falaise ICGC y est diluée par ~2 et le
+score tardif tombe à ~0,20, alors que le gradient TCGA donne 0,53.
+C'est visible dans les courbes : TCGA et GSE62452 montent en rampe
+(0,10 → 0,53 ; 0,16 → 0,48), ICGC reste plate (0,18–0,23) sans rampe
+tardive. Décomposition par flux au meilleur candidat du scan :
+réel ICGC à 23,5 % — CD68 0,58 ; GZMB 0,43 ; PRF1 0,41 ; CD274 0,39 ;
+CTLA4 0,25 ; CD163 0,21 ; CD8B 0,20 ; CD8A 0,10 ; CD4 0,06 ; FOXP3
+0,05 ; PDCD1 0,05 ; MS4A1 0,05. Au seuil optimal du scan, les
+marqueurs T (CD8A, CD4, FOXP3, PDCD1) ne contribuent presque rien ;
+le score est porté par CD68/GZMB/PRF1/CD274. Le scan ne « voit » pas
+la falaise T du sommet — le test direct, lui, la voit (top-12).
+
+#### 8.47.6 Le petit n relève le plancher du nul (H3 retenue, avec réserve)
+
+Médianes des maxsep nuls répliqués (500 tirages, config nulle) :
+**ICGC 0,2458 (n=70) ≈ GSE62452 0,2426 (n=69) > GSE71729 0,1757
+(n=145) > TCGA 0,1700 (n=178)** — gradient net avec la taille, et
+courbe réelle ICGC dans la bande nulle (13/13, §8.47.3). H3 est
+retenue. Réserve : le petit n seul ne suffit pas — GSE62452 (n=69)
+sépare nettement (réel 0,4804, P(nul ≥ réel) = 0,004). Le petit n
+relève le plancher du nul d'environ +0,07 ; il faut AUSSI un réel bas
+(falaise diluée) pour inverser. À n≈70, un réel doit dépasser ~0,25
+pour seulement égaler le nul médian.
+
+#### 8.47.7 Hypothèses rejetées
+
+- **H2 — Substitution de flux (IFNG→PRF1, CD19→MS4A1), REJETÉE.**
+  Variante 10 gènes (sans IFNG/CD19, donc sans PRF1/MS4A1 en ICGC —
+  mêmes 10 gènes partout), réplique ET pipeline : ICGC d_ssep 10g =
+  −0,2085 (réplique, config réelle) et **−0,2085 (pipeline v6.2)**,
+  contre −0,2200 à 12 gènes ; TCGA 10g = +0,3634 (réplique) et
+  +0,3974 (pipeline), contre +0,3659. Retirer les deux colonnes
+  substituées ne change presque rien (−0,22 → −0,21) et ne renverse
+  pas le signe. Décomposition du score nul 42 à son meilleur candidat
+  (19,0 %) : aucun flux substitué ne domine — PRF1 0,46, MS4A1 0,56,
+  pour une moyenne de 0,45 ; max CTLA4 0,69, CD163 0,67. Les deux
+  colonnes portent leur part ordinaire du score, pas l'inversion.
+  (Runs 10g : ICGC réel maxsep 0,2337/S_sep 0,2324, MC 0,3355 ;
+  ICGC nul42 0,4439/0,4409, MC 0,3657 ; TCGA réel 0,5091/0,5065,
+  MC 0,3762 ; TCGA nul42 0,1107/0,1091, MC 0,5102.)
+- **H4 — Composition / sous-type Bailey, REJETÉE.** Jointure NMF
+  70/70 (`data/icgc_pacaau_nmf.txt.gz`) : Pancreatic Progenitor 19,
+  Immunogenic 19, Squamous 18, ADEX 14. Les tumeurs Immunogenic ne se
+  concentrent à aucune extrémité de l'axe KRAS (médiane step 34
+  contre 36 pour les autres, Mann-Whitney p=0,79 ; tertiles
+  équilibrés : 6/8/5). Aucune ligne à fardeau immunitaire extrême
+  (moyenne des z-scores des 12 flux : max |z| = 1,62 ; 0 ligne
+  au-dessus de 2,5, dans les 4 cohortes). Pas d'artefact de
+  composition, pas de ligne dominante.
+- **H5 — Corrélation inter-flux préservée par le nul, REJETÉE comme
+  mécanisme principal.** Le nul du projet permute les lignes
+  entières, donc la corrélation entre flux survit — mais briser ces
+  corrélations (500 permutations indépendantes par flux) ne baisse la
+  médiane nulle que de 0,0115 en ICGC (0,2458 → 0,2343), 0,0153 en
+  GSE62452, 0,0169 en GSE71729, 0,0224 en TCGA — loin du critère
+  (> 0,10). La corrélation inter-flux moyenne (Spearman) est
+  pourtant la 2e plus haute en ICGC (0,378, contre 0,540 TCGA,
+  0,252 GSE71729, 0,243 GSE62452) : elle existe, elle ne porte pas
+  l'inversion.
+- **H1 — Fluke du nul graine 42 : statut nuancé, pas « tirage
+  ordinaire ».** À config fixe, P(maxsep nul ≥ 0,45) = 0,022–0,024
+  (11–12/500) et médiane 0,246 < 0,30 : le critère de retenue
+  (P ≥ 0,05 ET médiane ≥ 0,30) n'est pas tenu, et le critère de rejet
+  (P < 0,01) non plus — le nul 42 est un tirage haut (top ~2 %),
+  pas un tirage ordinaire ni un aberrant (max sur 500 tirages :
+  0,59–0,62). Le lot pipeline tranche le sens : avec l'optimiseur
+  libre de choisir sa config, un nul frais sur trois atteint 0,4564.
+  Le nul 42 n'est donc pas un accident de graine : c'est un tirage
+  haut ordinaire du pipeline tel qu'il tourne, et l'inversion ne
+  dépend pas de lui seul (s3 donne −0,221 comme 42).
+
+#### 8.47.8 Méthode
+
+Protocole gelé avant tout run et toute analyse neuve :
+`PROTOCOL_icgc_immune_inversion.md`, SHA
+`b55283eeb7a24e30b52ee6a8f24de8a77b3c7b53072d8b837fab9eb08a61eb34`
+(amendé §9, SHA
+`f1a5a37c0b8ce452b4d00a9d2a649ac41384e076dcb80839389eac728988379c`).
+Hypothèses H1–H5 et leurs critères écrits avant les analyses ; un nul
+qui invalide une piste est un résultat ; aucune conclusion importée
+d'autres expériences (MTAP, test C, rotations).
+**(a) Vérification des entrées** (`verify_icgc_immune_847.py`, SHA
+`a92b4906…`) : les 12 SHA des CSV de flux et d'axe re-vérifiés contre
+PROVENANCE_immune_v6.md ; chaque nul est bien une permutation par
+ligne du réel (même multi-ensemble de lignes, step inchangé) et le
+nul graine 42 est reconstruit à l'identique
+(`default_rng(42).permutation(n)`) ; 0 valeur manquante partout ;
+KRAS brut ICGC min 5,162 / médiane 6,359 / max 7,352, écart
+top-12–reste 0,680 (TCGA 1,032 ; GSE71729 0,677 ; GSE62452 0,842).
+**(b) Tests directs** (§8.47.2). **(c) Réplique du scan** :
+correction de méthode documentée — la première version ré-implémentait
+le scan avec le step brut et échouait sa propre calibration (TCGA
+réel 0,3229 contre 0,5309 pipeline). Lecture du code v6.2 : le scan
+n'utilise pas le step brut mais l'axe MC `progress_pct`
+(`_build_mc_progress_axis`, médiane de 200 trajectoires harmoniques,
+graine 42, à partir du rang du contrôle ; `run_pipeline` l. 6817–6818).
+La réplique corrigée utilise les fonctions du pipeline elles-mêmes
+(import en lecture seule, aucune modification) :
+`_build_mc_progress_axis` + `scan_critical_threshold` (appel identique
+à celui du worker Monte-Carlo : n_candidates, resolution=None, w_size,
+min_grp) + `evaluate_scan_quality`. **Calibration : 8/8 EXACTS**
+(écart 0,00e+00 sur maxsep, stabilité, seuil et courbe complète).
+L'axe progress_pct est presque linéaire (écart max 1,06–1,16 point)
+et identique pour le réel et tous les nuls d'une même cohorte (il ne
+dépend que du contrôle et de la graine). La réplique ne reproduit pas
+l'optimiseur de configs (12 itérations, choix par score MC) : elle
+fixe les configs — le lot (d) calibre cet écart. **(d) Lot de
+confirmation** (§8.47.4) : 11 runs v6.2 fast, 11/11 exit 0.
+Calibration réplique ↔ pipeline : 3/4 prédictions ponctuelles 10g
+exactes (ICGC réel 0,2337, ICGC nul42 0,4439, TCGA réel 0,5091 —
+l'optimiseur a choisi la config réelle dans ces trois cas) ; la 4e
+(TCGA nul42) vaut 0,1107 contre 0,1434 prédit sous config réelle
+(écart 0,033, dans la tolérance) et 0,1717 sous config nulle (écart
+0,061) — l'optimiseur y a choisi une troisième config (w=84,
+ncand=37) ; 6/7 nuls frais dans l'intervalle 95 % de la réplique. La
+réplique est déclarée prédictive, avec cette réserve : l'optimiseur
+élargit un peu la distribution des nuls au-delà de la réplique à
+config fixe.
+
+#### 8.47.9 Limites
+
+- La réplique fixe les configs ; l'optimiseur en choisit une par run —
+  la distribution des nuls du pipeline tel qu'il tourne est un peu
+  plus large que celle de la réplique (1 nul frais sur 3 au-dessus de
+  p97,5). Les probabilités citées (P = 0,022 ; 0,612) sont celles de la
+  réplique à config fixe, pas du pipeline avec optimiseur.
+- n=70 : 500 permutations décrivent la distribution du scan, pas une
+  preuve biologique ; les p de permutation des tests directs reposent
+  sur 200 tirages.
+- ARN bulk sans correction de pureté (choix du bras §8.23) : la baisse
+  des marqueurs T peut être un effet de composition ; ce chantier n'y
+  touche pas.
+- ICGC : IFNG et CD19 absents de la matrice — aucune donnée IFNG/CD19
+  ICGC n'existe sur le disque pour un test direct de remplacement ;
+  H2 est testée par retrait, pas par remplacement.
+- Le mécanisme « falaise diluée » est mesuré sur les moyennes de |d|
+  (top-12 contre top-26) ; il explique le score tardif bas, pas le
+  choix du seuil optimal précoce (23,5 %) du réel ICGC.
+- Ce chantier ne change rien au verdict biologique du §8.23 (froid
+  tumoral, KRAS + anti-PD-(L)1 : NON) : il explique seulement pourquoi
+  la métrique S_sep s'inverse en ICGC.
+
+#### 8.47.10 Provenance
+
+- Protocole : `PROTOCOL_icgc_immune_inversion.md`, SHA
+  `b55283eeb7a24e30b52ee6a8f24de8a77b3c7b53072d8b837fab9eb08a61eb34`
+  (amendé §9 : `f1a5a37c…79c`).
+- Pipeline v6.2 :
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`,
+  SHA `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`,
+  re-vérifié avant le lot (d), jamais modifié. Mode fast.
+- Entrées (déjà sur disque, rien re-téléchargé) : flux immunitaires
+  `pdac_immune_{tcga,geo71729,geo62452,icgc}_fluxes(_nul).csv` (SHA
+  dans PROVENANCE_immune_v6.md, re-vérifiés) ; matrices sources :
+  TCGA Firehose PAAD MD5 `b09569ce…`, GSE71729 SHA `b2287893…`,
+  GSE62452 SHA `8f41d5b3…`, ICGC Xena SHA `c2cb57af…` (Bailey et al.,
+  Nature 2016, doi:10.1038/nature16965) ; sous-types Bailey NMF
+  `data/icgc_pacaau_nmf.txt.gz`, SHA `f1e84b99…` (PROVENANCE_icgc.md).
+- Scripts (SHA-256) : `verify_icgc_immune_847.py` `a92b4906…`,
+  `direct_tests_icgc_847.py` `db97d1da…`, `replica_scan_847.py`
+  `84b030a3…`, `build_icgc_immune_847.py` `fd2ad098…`,
+  `extract_icgc_immune_847.py` `c32a542d…`,
+  `extra_checks_icgc_847.py` `0767d8dd…`,
+  `run_icgc_immune_847.sh` `494bbada…`.
+- Sorties : `icgc_immune_inversion_verify.json` (`5c552aec…`) /
+  `.csv` (`2b2d0c4a…`), `icgc_immune_inversion_direct.csv`
+  (`997598f2…`) / `.json` (`df4b0d27…`),
+  `icgc_immune_inversion_replica.json` (`539f9527…`) / `.csv`
+  (`de90b445…`), `icgc_immune_inversion_extra.json` (`a1fdea07…`),
+  `icgc_immune_inversion_confirm_files.json` (`385ed81e…`),
+  `icgc_immune_inversion_confirm.json` (`3139a817…`),
+  `replica_847.log` (réplique, exit 0),
+  `runs_icgc_immune_847.log` (lot v6.2, 11/11 exit 0, 21h49–22h58
+  UTC, unité systemd `v62-847`), dossiers
+  `results_fast_v62_847_*` (11 runs), fichiers de flux
+  `pdac_immune_icgc_fluxes_nul_s{1,2,3}.csv`,
+  `pdac_immune_{geo62452,tcga}_fluxes_nul_s{1,2}.csv` et
+  `pdac_immune_{icgc,tcga}_fluxes_10g(_nul).csv` (SHA dans
+  `icgc_immune_inversion_confirm_files.json`).
+- Livre blanc : `livre-blanc-pdac-v6.md`, SHA `00f344b9…`, 3 104
+  lignes, §8.1–§8.45 (cette section §8.47 est à fusionner par le
+  coordinateur ; §8.46 appartient à un autre chantier).
+
+— Fin de la §8.47. —
+
+### 8.48 Pourquoi IMMROT domine — la domination est un effet de corrélation, pas une rupture (19 novembre 2026)
+
+Date : 19 novembre 2026. Go : Zackary, « Fait tout cela », 19 nov. 2026 ~16h30 (4 chantiers : MTAP, ICGC, IMMROT, MC ; suite du §8.44, annoncée au §8.44.7).
+Protocole gelé avant tout calcul et avant tout run :
+`PROTOCOL_immrot_domination.md` (SHA-256 `465b4f54…b9d`).
+
+**Verdict d'abord.**
+
+**La domination IMMROT est expliquée, quantitativement, par le couplage
+contrôle↔flux — la corrélation entre le flux qui ordonne et les flux ordonnés —
+et non par une rupture.** Sur les 48 rotations sans doublon, le couplage moyen
+C (moyenne des |r de Pearson| entre le contrôle et les 11 flux analysés) prédit
+l'écart S_sep réel−nul avec **r = 0,954, ρ de Spearman = 0,945, R² = 0,909**
+(régression d_ssep = −0,175 + 1,705·C, p = 1,3×10⁻²⁵, n = 48). La famille
+immunitaire domine parce que ses flux sont fortement corrélés entre eux
+(|r| moyen 0,556, 62 % des paires au-dessus de 0,5) : ordonner par l'un d'eux,
+c'est ordonner presque tous les autres. Les autres familles ne se suivent pas
+autant (|r| moyen 0,25 pour V4ROT, 0,27 pour PARPROT, 0,17 pour DEPMAPROT),
+et leurs écarts S_sep sont proportionnellement plus petits — exactement dans
+le rapport prédit par la régression.
+
+**Le mécanisme est vérifié flux par flux, pas seulement en corrélation globale.**
+À la coupure médiane, le |d de Cohen| observé de chaque flux est prédit par sa
+seule corrélation r avec le contrôle, par la formule bivariée-normale
+|d| ≈ 1,596·|r| / √(1 − 0,637·r²) : sur les 528 paires flux×rotation,
+**r = 0,947, biais moyen −0,002, écart moyen absolu 0,11**. Autrement dit : le
+|d| que le scan mesure est celui que la corrélation impose ; il n'y a rien
+d'autre à expliquer dans max_separation sur ces rotations — pas de marche
+supplémentaire, pas de seuil critique, pas de transition.
+
+**Le nul tranche la spécificité.** Le nul du projet permute les lignes du bloc
+analysé conjointement : il conserve EXACTEMENT les corrélations entre flux
+analysés (cohésion H identique à 10⁻¹⁶ près) et brise seulement l'alignement
+contrôle↔flux (couplage nul moyen 0,068, bruit d'échantillonnage seul). Si la
+cohésion entre flux suffisait à produire S_sep, le nul montrerait le même S_sep
+que le réel. Il ne le montre pas (S_sep nul 0,08–0,43 contre 0,13–1,25 réel),
+et S_sep nul ne corrèle ni avec le couplage (r = 0,09) ni avec la cohésion
+(r = 0,14). **Ce n'est donc pas « les flux sont corrélés entre eux » qui fait
+S_sep — c'est « les flux suivent le contrôle ».** La corrélation interne de la
+famille n'agit que par le couplage qu'elle induit avec chaque contrôle pris
+dans la famille.
+
+**Ce que cela ne dit pas.** Cela ne dit pas que les flux immunitaires ne sont
+pas co-exprimés dans les tumeurs — ils le sont, et les tests directs du §8.32
+l'ont confirmé. Cela dit que S_sep, sur les rotations, mesure cette
+co-expression à travers le tri par le contrôle, et rien de plus. La domination
+IMMROT (12/12, +0,752 en moyenne) n'est ni une rupture ni une piste
+thérapeutique : c'est la signature attendue d'une famille de flux
+mutuellement corrélés, ordonnés par l'un des leurs. Le §8.44 parlait d'ordre,
+pas de rupture ; ce chantier nomme l'ordre : la corrélation.
+
+**Les deux contrôles par runs confirment le mécanisme.** Dose–réponse (H3) :
+casser la moitié de l'alignement fait chuter S_sep d'environ moitié — CD8A
+1,2310 → 0,5525 à q=0,5 → 0,1725 à q=0,25 ; CD68 0,6322 → 0,3033 à q=0,5 ;
+CLDN18 0,8633 → 0,4423 à q=0,5 — monotone, entre le réel et le nul aux trois
+q=0,5, comme prédit (0,63 ; 0,37 ; 0,33). Croisés inter-familles (H2) : un
+contrôle immunitaire n'ordonne PAS les flux PARP comme il ordonne les siens
+(X1 : écart +0,1649, un cinquième de la moyenne IMMROT), et un contrôle PARP
+n'ordonne pas les flux immunitaires du tout (X2 : écart −0,0535, nul devant).
+Le petit écart X1 est porté par un seul lien, CD8A–ATM (r = +0,498,
+|d| = 0,737 à la médiane, contre ≤ 0,27 pour les 11 autres flux PARP) — pas
+par un ordonnancement de la famille. **La domination est donc intra-famille :
+elle vient de ce que les flux immunitaires se suivent entre eux, et seulement
+entre eux.**
+
+## 8.48.1 Question, méthode, définitions gelées
+
+**Question.** Rotations sans doublon (§8.44) : IMMROT 12/12, somme des écarts
++9,0256, moyenne +0,7521, plus petit écart +0,4508 (CD68) ; V4ROT 10/12
+(+3,6063, +0,3005) ; DEPMAPROT 6/12 (+0,9036, +0,0753) ; PARPROT 9/12
+(+3,6259, +0,3022). Avec doublon (§8.41) : IMMROT +10,8540 sur +25,7324.
+Qu'est-ce qui, dans la construction des flux immunitaires, produit cette
+domination ? Est-ce un effet de la corrélation interne des flux plutôt
+qu'une rupture ?
+
+**Ce que fait le scan (lu dans le code v6.2, jamais modifié).** Mode `fast` :
+w_size = 80 (plafonné à n//2, donc 22 à n=45), min_grp = 2. Le scan trie les
+lignes par le contrôle (axe de progression MC, monotone en le contrôle),
+construit des fenêtres glissantes de w_size points, puis pour chaque seuil
+candidat partage les fenêtres en deux groupes et calcule, par flux analysé,
+le |d de Cohen| entre les deux groupes ; le score est la MOYENNE sur les flux
+des |d| ; max_separation est le maximum de ce score ; S_sep = max_separation ×
+stabilité (quasi saturée, 0,9463–0,9986). Conséquence mécanique : si un flux
+analysé j est corrélé au contrôle c avec un coefficient r_j, trier par c trie
+partiellement j, et le |d| de j au seuil est grand — sans qu'aucune rupture
+n'existe. Le nul permute les lignes du bloc analysé conjointement (graine 42,
+contrôle intact) : il conserve les corrélations entre flux et brise seulement
+l'alignement contrôle↔flux.
+
+**Définitions gelées.** Pour une rotation de contrôle c (base à 12 flux) :
+- Couplage C_c = moyenne sur les 11 flux j≠c de |r_Pearson(c, j)|.
+  Robustesse : même quantité en Spearman, C_c^S.
+- Cohésion H_c = moyenne sur les 55 paires (j,k), j<k, j,k≠c, de |r_Pearson(j, k)|.
+- Mêmes quantités sur le CSV nul dédoublonné : C_c^nul, H_c^nul.
+- D_full (réplication analytique transparente, sans l'axe MC ni les fenêtres) :
+  sur un CSV dédoublonné, lignes triées par le contrôle, pour chaque coupure
+  k = 20..n−20, |d de Cohen| par flux entre les k premières et les n−k
+  dernières lignes, moyenne sur les flux ; D_full = maximum sur k.
+  Variante à coupure fixe : médiane (k = n//2), D_med.
+- Prédiction bivariée-normale par flux, à la médiane :
+  d_j^pred = 1,596·r_j / √(1 − 0,637·r_j²), r_j = Pearson(c, j).
+
+**Critères gelés (avant les calculs).** H1 soutenue si r(C_c, d_ssep sans doublon)
+> 0,7 ET ρ_Spearman > 0,7 ; rejetée si r < 0,5 ; entre 0,5 et 0,7 : partielle.
+Contrôles négatifs : r(H_c, d_ssep) et r(C_c, S_sep nul), attendus |r| < 0,3.
+D_full : mécanisme confirmé si r(D_full, maxsep) > 0,95 ET écart moyen < 0,10.
+Par flux à la médiane : r(|d_pred|, |d_obs|) > 0,8.
+
+**Hypothèses.** H1 (principale) : l'écart S_sep est prédit par le couplage
+contrôle↔flux. H0 (négative) : la cohésion entre flux analysés ne prédit pas
+l'écart. H2 : un flux immunitaire comme contrôle ordonne-t-il aussi des flux
+non immunitaires ? H3 (dose–réponse) : dégrader l'alignement contrôle↔flux
+fait chuter S_sep progressivement.
+
+## 8.48.2 Corrélations internes par famille — l'immunitaire est deux fois plus cohésif
+
+Matrices de corrélation Pearson + Spearman des 12 flux de chaque base
+(66 paires hors diagonale). Aucune valeur manquante dans les 4 bases.
+
+| Famille | n | Pearson : moyenne \|r\| | médiane \|r\| | fraction \|r\|>0,5 | Spearman : moyenne \|r\| | Paire la plus forte | Paire la plus faible |
+|---|---|---|---|---|---|---|---|
+| V4ROT (TCGA v4, ARN tumeurs) | 178 | 0,2481 | 0,1449 | 0,197 (13/66) | 0,2309 | CLDN18–MUC17 +0,714 | PGC–KRT20 +0,006 |
+| DEPMAPROT (CRISPR DepMap) | 45 | 0,1732 | 0,1293 | 0,030 (2/66) | 0,1764 | RAB10–RAB6A +0,528 | CCND1–RAB6A +0,002 |
+| IMMROT (immunitaire TCGA) | 178 | **0,5563** | **0,5677** | **0,621 (41/66)** | **0,5403** | CD8A–CD8B +0,843 | CD68–CD19 +0,177 |
+| PARPROT (réparation ADN TCGA) | 178 | 0,2715 | 0,2127 | 0,182 (12/66) | 0,2690 | RAD51–POLQ +0,823 | CHEK1–XRCC1 +0,000 |
+
+Lecture : la famille immunitaire est environ deux fois plus corrélée
+intérieurement que V4ROT et PARPROT, trois fois plus que DEPMAPROT. Sa paire
+la plus FAIBLE (CD68–CD19, 0,177) est au niveau de la MOYENNE des autres
+familles. 41 des 66 paires immunitaires dépassent 0,5 ; aucune autre famille
+n'en a plus de 13. La paire la plus forte de PARPROT (RAD51–POLQ, 0,823) montre
+que PARPROT contient, elle aussi, un couple très corrélé — mais un seul couple
+ne fait pas une famille : sa moyenne reste à 0,27, et ses écarts S_sep restent
+à +0,30 en moyenne. C'est la moyenne du couplage qui compte, pas le maximum
+d'une paire — et c'est exactement ce que le test principal mesure.
+
+## 8.48.3 Le couplage prédit S_sep — test principal (48 rotations, sans doublon)
+
+| Test (n = 48) | Pearson r | p | Spearman ρ | p |
+|---|---|---|---|---|
+| C_c (Pearson) vs d_ssep sans doublon | **0,9535** | 1,3×10⁻²⁵ | **0,9447** | 6,5×10⁻²⁴ |
+| C_c (Spearman) vs d_ssep sans doublon | 0,9582 | 1,2×10⁻²⁶ | 0,9528 | 1,9×10⁻²⁵ |
+| C_c vs d_ssep AVEC doublon (§8.41) | 0,9337 | 3,7×10⁻²² | 0,9069 | 1,0×10⁻¹⁸ |
+| H_c (cohésion) vs d_ssep sans doublon | 0,7035 | 2,5×10⁻⁸ | 0,4731 | 6,8×10⁻⁴ |
+| C_c vs S_sep NUL sans doublon | 0,0920 | 0,53 | −0,0661 | 0,66 |
+| H_c vs S_sep NUL sans doublon | 0,1379 | 0,35 | −0,0045 | 0,98 |
+| C_c vs H_c (global) | 0,7577 | 4,5×10⁻¹⁰ | 0,5022 | 2,8×10⁻⁴ |
+
+Régression (moindres carrés, 48 points) : **d_ssep = −0,1748 + 1,7046·C_c**,
+R² = 0,909, p = 1,3×10⁻²⁵, erreur-type de la pente 0,079. Appliquée aux
+moyennes par famille, elle prédit : IMMROT +0,773 (observé +0,752), V4ROT
++0,248 (observé +0,301), PARPROT +0,288 (observé +0,302), DEPMAPROT +0,120
+(observé +0,075). Les quatre familles tombent sur la même droite, à ±0,05
+près : **il n'y a pas d'effet « famille immunitaire » au-delà du couplage.**
+Un contrôle immunitaire ne domine pas parce qu'il est immunitaire — il domine
+parce que son couplage vaut 0,56 en moyenne, contre 0,17 à 0,27 ailleurs.
+
+Par famille (n = 12, descriptif seulement) : r(C_c, d_ssep) = 0,968 (V4ROT),
+0,834 (DEPMAPROT), 0,832 (IMMROT), 0,872 (PARPROT). Le couplage prédit
+l'écart DANS chaque famille, pas seulement entre familles : même dans
+DEPMAPROT, la plus faible, les contrôles les plus couplés (CRKL 0,270 ;
+EFR3A 0,221) sont ceux qui séparent le plus (+0,181 ; +0,224), et les moins
+couplés (MYC 0,074 ; CFLAR 0,111) sont ceux qui échouent (−0,138 ; +0,018).
+À l'inverse, les rotations qui échouent sont toutes des rotations à couplage
+faible : les six écarts négatifs ont tous C_c < 0,13 — CR2 0,043 (−0,029),
+GSTM1 0,078 (−0,134), MYC 0,074 (−0,138), ACO2 0,120 (−0,021),
+UROD 0,102 (−0,028), CCND1 0,125 (−0,114). Aucune rotation à C_c > 0,40 n'échoue.
+
+### La cohésion H n'est pas un contrôle indépendant — identité algébrique
+
+Le contrôle négatif H, tel que gelé, doit être lu avec une identité que le
+chantier a établie en le calculant : DANS une famille, H_c est une fonction
+affine DÉCROISSANTE exacte de C_c. Soit S la somme des |r| sur les 66 paires
+de la famille. Les 11 paires qui touchent c somment à 11·C_c ; les 55 autres
+somment à S − 11·C_c ; donc **H_c = S/55 − C_c/5, exactement**. Vérifié
+numériquement : r(C_c, H_c) = −1,000000 dans chaque famille (n = 12), et
+r(H_c, d_ssep) = −r(C_c, d_ssep) exactement dans chaque famille (−0,968 ;
+−0,834 ; −0,832 ; −0,872). Globalement, r(H_c, d_ssep) = 0,7035 (Pearson)
+vient de ce que C et H suivent tous deux la moyenne familiale (r(C, H) = 0,76
+globalement, alors qu'il vaut −1 dans chaque famille — structure de
+Simpson). **Le critère gelé « si r(H, d_ssep) > 0,7, H1 n'est pas
+spécifique » ne peut donc pas être appliqué tel quel : H n'est pas une
+variable indépendante, c'est C retourné.** La spécificité ne se joue pas là —
+elle se joue sur le nul (paragraphe suivant), qui est le vrai contrôle
+négatif : même cohésion H, couplage brisé, S_sep effondré.
+
+### Le nul : même cohésion, couplage brisé, S_sep effondré
+
+Sanité du nul (48 paires) : couplage nul C_c^nul moyen **0,068** (écart-type
+0,028, maximum 0,146) — le bruit d'échantillonnage seul, comme attendu d'une
+permutation ; cohésion nulle H_c^nul − H_c moyen **−3,3×10⁻¹⁷** (écart-type
+2,1×10⁻¹⁶) — la permutation conjointe conserve les corrélations entre flux
+exactement, à l'erreur d'arrondi près. Et pourtant S_sep nul reste bas
+(0,08–0,43) et ne corrèle ni avec C_c (r = 0,09) ni avec H_c (r = 0,14).
+**La cohésion entre flux, seule, ne produit pas S_sep : le nul en est la
+preuve contrôlée.** Il faut l'alignement avec le contrôle — c'est-à-dire le
+couplage — pour que le tri produise des |d|.
+
+### Avec doublon : même loi, décalée
+
+Le couplage prédit aussi les écarts AVEC doublon (r = 0,934, ρ = 0,907) :
+la domination IMMROT ne dépend pas du doublon. La perte d'écart
+(avec − sans, moyenne +0,1786) corrèle NÉGATIVEMENT avec le couplage
+(r = −0,474, p = 0,0007) : le doublon gonfle surtout les rotations à FAIBLE
+couplage — là où le contrôle seul portait la séparation (GSTM1 +0,356 ;
+CFLAR +0,293 ; CCND1 +0,274), il ajoute une colonne parfaitement triée qui
+vaut 1/12 de la moyenne ; là où le couplage est fort, il n'ajoute presque
+rien (CRKL +0,025 ; GZMB +0,103 ; CD8A +0,104). Cohérent avec le §8.44 :
+le doublon assiste à la marge, il ne crée pas la domination.
+
+## 8.48.4 Table complète des 48 rotations — couplage, cohésion, écarts S_sep
+
+C_c et H_c calculés sur les bases à 12 flux (la corrélation ne dépend pas de
+l'ordre des lignes : C_c recalculé sur les CSV dédoublonnés donne les mêmes
+valeurs à 1,8×10⁻¹⁵ près, maximum sur les 48 paires). Écarts S_sep relus dans
+`ssep_844_rotations.csv` (sans doublon) et `ssep_841_rotations.csv` (avec
+doublon) — aucune valeur recopiée à la main.
+
+| Famille | Contrôle | C couplage | H cohésion | d S_sep sans | d S_sep avec |
+|---|---|---|---|---|---|
+| DEPMAPROT | ACO2 | 0.1197 | 0.1839 | -0.0208 | +0.0829 |
+| DEPMAPROT | CCND1 | 0.1252 | 0.1828 | -0.1143 | +0.1600 |
+| DEPMAPROT | CFLAR | 0.1111 | 0.1856 | +0.0183 | +0.3115 |
+| DEPMAPROT | CRKL | 0.2699 | 0.1539 | +0.1812 | +0.2066 |
+| DEPMAPROT | DOCK5 | 0.2156 | 0.1647 | +0.2596 | +0.4179 |
+| DEPMAPROT | EFR3A | 0.2213 | 0.1636 | +0.2239 | +0.3880 |
+| DEPMAPROT | MYC | 0.0736 | 0.1931 | -0.1380 | +0.0969 |
+| DEPMAPROT | MYH9 | 0.1907 | 0.1697 | +0.0899 | +0.2556 |
+| DEPMAPROT | RAB10 | 0.2405 | 0.1598 | +0.0604 | +0.2075 |
+| DEPMAPROT | RAB6A | 0.2188 | 0.1641 | +0.2378 | +0.4330 |
+| DEPMAPROT | SCAP | 0.1905 | 0.1698 | +0.1338 | +0.3445 |
+| DEPMAPROT | UROD | 0.1017 | 0.1875 | -0.0282 | +0.1576 |
+| IMMROT | CD163 | 0.5721 | 0.5532 | +0.7748 | +0.9013 |
+| IMMROT | CD19 | 0.4723 | 0.5731 | +0.4509 | +0.6685 |
+| IMMROT | CD274 | 0.4107 | 0.5855 | +0.5006 | +0.6551 |
+| IMMROT | CD4 | 0.6516 | 0.5373 | +0.7372 | +0.8830 |
+| IMMROT | CD68 | 0.4261 | 0.5824 | +0.4508 | +0.5942 |
+| IMMROT | CD8A | 0.6514 | 0.5373 | +0.9838 | +1.0877 |
+| IMMROT | CD8B | 0.5859 | 0.5504 | +0.8398 | +1.0029 |
+| IMMROT | CTLA4 | 0.6527 | 0.5371 | +0.8986 | +1.1227 |
+| IMMROT | FOXP3 | 0.6241 | 0.5428 | +0.8428 | +0.9852 |
+| IMMROT | GZMB | 0.5724 | 0.5531 | +0.9053 | +1.0083 |
+| IMMROT | IFNG | 0.4370 | 0.5802 | +0.7242 | +0.8634 |
+| IMMROT | PDCD1 | 0.6197 | 0.5436 | +0.9167 | +1.0818 |
+| PARPROT | ATM | 0.1618 | 0.2934 | +0.1676 | +0.3345 |
+| PARPROT | ATR | 0.2702 | 0.2718 | +0.2384 | +0.3890 |
+| PARPROT | BRCA1 | 0.2560 | 0.2746 | +0.5241 | +0.6859 |
+| PARPROT | BRCA2 | 0.3901 | 0.2478 | +0.3978 | +0.5530 |
+| PARPROT | CHEK1 | 0.2907 | 0.2676 | +0.3763 | +0.5623 |
+| PARPROT | CHEK2 | 0.3288 | 0.2600 | +0.2523 | +0.4000 |
+| PARPROT | FANCD2 | 0.3713 | 0.2515 | +0.4339 | +0.5871 |
+| PARPROT | PARP1 | 0.1396 | 0.2979 | +0.0169 | +0.1968 |
+| PARPROT | PARP2 | 0.1196 | 0.3019 | +0.0293 | +0.2253 |
+| PARPROT | POLQ | 0.4114 | 0.2435 | +0.6093 | +0.7595 |
+| PARPROT | RAD51 | 0.4039 | 0.2450 | +0.5242 | +0.6652 |
+| PARPROT | XRCC1 | 0.1144 | 0.3029 | +0.0558 | +0.2545 |
+| V4ROT | CEACAM5 | 0.3678 | 0.2241 | +0.5104 | +0.6485 |
+| V4ROT | CLCA1 | 0.2712 | 0.2435 | +0.3048 | +0.5198 |
+| V4ROT | CLDN18 | 0.3729 | 0.2231 | +0.6761 | +0.8783 |
+| V4ROT | CR2 | 0.0434 | 0.2890 | -0.0291 | +0.2441 |
+| V4ROT | DPCR1 | 0.2859 | 0.2405 | +0.4166 | +0.6372 |
+| V4ROT | GSTM1 | 0.0779 | 0.2821 | -0.1342 | +0.2215 |
+| V4ROT | KRT20 | 0.2363 | 0.2504 | +0.2558 | +0.4834 |
+| V4ROT | MUC16 | 0.1117 | 0.2754 | +0.0712 | +0.2996 |
+| V4ROT | MUC17 | 0.3704 | 0.2236 | +0.5584 | +0.7423 |
+| V4ROT | MUC2 | 0.2308 | 0.2515 | +0.2008 | +0.4152 |
+| V4ROT | PGC | 0.2319 | 0.2513 | +0.2349 | +0.4113 |
+| V4ROT | REG4 | 0.3768 | 0.2223 | +0.5405 | +0.7022 |
+
+## 8.48.5 Réplication analytique : le |d| vient de la corrélation, flux par flux
+
+**À la médiane (528 paires flux×rotation, réel sans doublon).** Pour chaque
+flux j, r_j = Pearson(contrôle, j) ; |d| observé = |d de Cohen| entre les deux
+moitiés (triées par le contrôle) ; |d| prédit = 1,596·|r_j| / √(1 − 0,637·r_j²)
+(formule bivariée-normale, coupure à la médiane).
+- |r_j| vs |d| observé : **r = 0,938**, p = 6,1×10⁻²⁴⁴.
+- |d| prédit vs |d| observé : **r = 0,947**, p = 1,8×10⁻²⁶²,
+  écart moyen absolu 0,11, **biais moyen −0,002** (la formule ne surestime ni
+  ne sous-estime en moyenne).
+- Contrôle de la convention de signe : d_obs signé (bas−haut) vs −d_pred signé :
+  r = 0,955. [Correction consignée : la première version du script comparait
+  d_obs signé à d_pred signé, conventions opposées, et donnait r = −0,95 ; la
+  comparaison correcte porte sur |d|, puisque le pipeline ne lit que |d|. Les
+  valeurs signées restent dans `immrot_848_per_flux_mediane.csv`.]
+
+Exemples. Rotation CD8A (plus fort écart IMMROT, +0,984) : les 11 flux ont
+r = 0,36–0,84 avec CD8A ; |d| observés à la médiane 0,59–2,13 (CD8B : r = 0,843,
+|d| = 2,13, prédit 1,82 ; CD4 : r = 0,731, |d| = 1,29, prédit 1,44 ; PDCD1 :
+r = 0,792, |d| = 1,66, prédit 1,63). Rotation GSTM1 (échoue, −0,134) : les 11
+flux ont r ≤ 0,15 avec GSTM1 ; |d| observés ≤ 0,23, prédits ≤ 0,24. Le contrôle
+qui n'ordonne rien ne sépare rien — et la formule le dit avant le run.
+
+**D_full (coupure franche, maximum sur toutes les coupures, 96 runs).**
+D_full vs max_separation pipeline : **r = 0,970** sur les 96 runs (réels
+r = 0,966, nuls r = 0,524 — les nuls sont du bruit, leur corrélation est
+faible comme attendu), mais D_full DÉPASSE maxsep de 0,19 en moyenne sur les
+réels (écart moyen absolu 0,197 ; 0,132 sur les 96). Le critère gelé (r > 0,95
+ET écart moyen < 0,10) n'est donc rempli que sur la corrélation, pas sur le
+niveau : D_full est une borne haute, pas une réplique. La raison est mesurée
+au paragraphe suivant : le scan du pipeline est fenêtré et optimisé, pas une
+coupure franche.
+
+**Pourquoi D_full dépasse maxsep — le scan optimisé (lecture des JSON).**
+Le max_separation rapporté n'est pas celui du scan par défaut (w_size = 80) :
+c'est le meilleur des 12 itérations d'optimisation Monte Carlo (mode fast,
+`optimization_iterations` = 12), qui échantillonnent w_size, min_grp et
+n_candidates. Sur les 96 runs v6.2 dédoublonnés (88 du §8.44 + 8 du §8.41,
+dont 2 nuls à permutation identique), le w_size retenu est : 30 (57 runs),
+10 (16), 19 (9), 27 (8), 53 (3), 43 (2), 89 (1) — le w_size par défaut (80)
+n'est jamais retenu.
+À n=45 (DEPMAPROT) : 10 (16 runs) et 19 (9). Une fenêtre plus petite recouvre
+moins les deux groupes autour du seuil, donc atténue moins le |d| qu'une
+fenêtre de 80 — d'où un maxsep entre D_full (coupure franche, borne haute,
++0,19) et la réplication fenêtrée à w = 80 (voir diagnostic ci-dessous, borne
+basse, −0,23). Le mécanisme reste le même : le score est une moyenne de |d|
+induits par le tri ; seuls le lissage et le choix de fenêtre déplacent son
+niveau, pas son ordre.
+
+**Diagnostic post-hoc (hors protocole gelé, hors verdict).** Réplication
+fenêtrée D_win — même algorithme que `_scan_critical_threshold_fast`
+(w_size = 80, min_grp = 2, candidats linspace(0,100,n_use), n_use = milieu
+des bornes de loupe), sauf l'axe de progression remplacé par le percentile de
+rang du contrôle (l'axe MC du pipeline est monotone en le rang du contrôle).
+D_win vs maxsep : r = 0,974 sur les 96 runs, mais D_win SOUS-estime maxsep de
+0,23 en moyenne sur les réels (0,17 sur les 96). La fenêtre de 80 lisse trop
+par rapport au w_size optimisé (le plus souvent 30) ; le percentile de rang
+n'est pas l'axe MC. Ce diagnostic n'est pas utilisé pour le verdict : il
+borne le mécanisme par en bas, comme D_full le borne par en haut, et il montre
+que la réplication exacte du niveau demanderait l'axe MC et les paramètres
+optimisés — hors périmètre de ce chantier.
+
+## 8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)
+
+Les prédictions ci-dessous sont calculées À PARTIR de la régression du §8.48.3
+(d = −0,175 + 1,705·C) et des couplages mesurés sur les CSV — AVANT de lire
+les sorties des 8 nouveaux runs. Elles ne sont pas ajustées après coup.
+
+**Porte G (jointure inter-familles) : OUVERTE.** Tarball TCGA-PAAD RSEM,
+MD5 `b09569ce…ac0a` conforme ; 178 tumeurs primaires (code 01) ; 0 NaN sur
+KRAS + 12 gènes immunitaires et sur KRAS + 12 gènes PARP ; ordre KRAS brut
+recalculé égal EXACTEMENT à `immune_kras_order_tcga.csv` (178/178 échantillons,
+KRAS log2 min 8,5697, médiane 10,2816, max 11,7273). La ligne i est donc le même
+patient dans les bases IMMROT et PARPROT (toutes deux ordonnées par KRAS brut
+croissant). La base V4ROT est exclue de tout croisement : ses lignes sont
+ordonnées par KRAS RÉSIDUEL (corrigé pureté), la jointure par index y serait
+fausse.
+
+**Croisés inter-familles (H2) — couplages mesurés, prédictions :**
+- X1 : contrôle CD8A (immunitaire) sur les 12 flux PARP. Couplage
+  C_X1 = 0,1397 (Spearman 0,1588). Seule corrélation notable : CD8A–ATM
+  +0,498 ; les 11 autres sont entre −0,14 et +0,22. Prédiction :
+  d_X1 = −0,175 + 1,705×0,140 = **+0,063** — sous le plancher 0,07, ne passe
+  pas la règle (A).
+- X2 : contrôle POLQ (PARP) sur les 12 flux immunitaires. Couplage
+  C_X2 = 0,1306 (Spearman 0,0695). Plus fortes : POLQ–CD68 +0,314,
+  POLQ–GZMB +0,223. Prédiction : d_X2 = **+0,048** — ne passe pas la règle (A).
+- Critère gelé : si l'un des deux atteint ≥ 0,45 (minimum IMMROT sans doublon),
+  H2 est soutenue (le contrôle ordonne hors famille) et H1 doit être
+  reformulée ; sous 0,30, la domination est intra-famille.
+
+**Dose–réponse (H3) — permutation partielle, prédictions :** bloc analysé
+permuté conjointement, fraction q de lignes fixées (default_rng(1234) frais
+par CSV ; l'ensemble fixé à q=0,25 est un sous-ensemble de celui à q=0,5,
+même tirage). Couplage effectif ≈ q·C, donc d(q) ≈ −0,175 + 1,705·q·C.
+- CD8A (C = 0,6514 ; réel S_sep 1,2310, nul 0,2472) : q=0,5 → S_sep ≈ 0,63 ;
+  q=0,25 → S_sep ≈ 0,35.
+- CD68 (C = 0,4261 ; réel 0,6322, nul 0,1814) : q=0,5 → S_sep ≈ 0,37.
+- CLDN18 (C = 0,3729 ; réel sans doublon 0,8633, nul 0,1872) : q=0,5 →
+  S_sep ≈ 0,33.
+- Critère gelé : H3 soutenue si S_sep(q=0,5) tombe entre le réel et le nul
+  pour les 3 rotations ET S_sep CD8A(q=0,25) < S_sep CD8A(q=0,5).
+
+### Résultats des 8 runs v6.2 (21h41–22h51 UTC, 8/8 exit 0)
+
+Extraction `extract_immrot_848.py` (SHA `98765df1…f48eb0`), version
+`v6.2.0-L7aL7b-CohenD-short` sur les 8 runs, SHA des 8 CSV vérifiés (8/8
+conformes). Références réels/nuls : §8.44 (`ssep_844_rotations.csv`).
+
+**Dose–réponse (H3) — S_sep :**
+
+| Rotation | Réel (q=1) | q=0,5 (observé / prédit) | q=0,25 (observé / prédit) | Nul (q=0) |
+|---|---|---|---|---|
+| CD8A (IMMROT) | 1,2310 | **0,5525** / 0,63 | **0,1725** / 0,35 | 0,2472 |
+| CD68 (IMMROT) | 0,6322 | **0,3033** / 0,37 | — | 0,1814 |
+| CLDN18 (V4ROT) | 0,8633 | **0,4423** / 0,33 | — | 0,1872 |
+
+Critère gelé : H3 soutenue si S_sep(q=0,5) tombe entre le réel et le nul pour
+les 3 rotations ET S_sep CD8A(q=0,25) < S_sep CD8A(q=0,5). **Les deux
+conditions sont remplies : H3 est SOUTENUE.** La décroissance est monotone
+(1,2310 → 0,5525 → 0,1725 pour CD8A) et les trois q=0,5 sont entre le réel et
+le nul, à ±0,11 de la prédiction de la régression (0,55 contre 0,63 ; 0,30
+contre 0,37 ; 0,44 contre 0,33). Deux réserves honnêtes : (a) à q=0,25,
+S_sep (0,1725) tombe SOUS le nul §8.44 (0,2472) — il est dans la bande de bruit
+du nul (les nuls varient de 0,08 à 0,43 sur les 48 paires ; un seul tirage de
+nul ne définit pas un plancher) et la régression surestime ce point (0,35
+prédit contre 0,17 observé) : le modèle linéaire ne tient plus aux faibles
+couplages, où l'écart s'annule dans le bruit ; (b) MC ne suit pas la dose
+(0,3834 ; 0,3275 ; 0,5381 ; 0,3668) — cohérent avec le §8.44 (MC aveugle sur
+les rotations), il n'est pas utilisé ici.
+
+**Croisés inter-familles (H2) — S_sep réel / nul (écart) :**
+
+| Croisement | S_sep réel | S_sep nul | Écart | Prédit | Verdict gelé |
+|---|---|---|---|---|---|
+| X1 : CD8A (immunitaire) → 12 flux PARP | 0,3310 | 0,1661 | **+0,1649** | +0,06 | < 0,30 : intra-famille |
+| X2 : POLQ (PARP) → 12 flux immunitaires | 0,2144 | 0,2679 | **−0,0535** | +0,05 | < 0,30 : intra-famille |
+
+Critère gelé : H2 soutenue si l'un des deux atteint ≥ 0,45 ; intra-famille
+si les deux restent sous 0,30. **Les deux restent sous 0,30 (et X2 est
+négatif) : H2 est REJETÉE.** Aucun croisement ne reproduit la domination
+IMMROT (moyenne +0,752, minimum +0,451) : X1 en fait le cinquième, X2 rien.
+X1 passe la règle (A) (> 0,07) — il faut le dire — mais à +0,165, c'est une
+séparation faible, pas une domination, et elle est portée par UN seul lien :
+à la médiane, ATM a |d| = 0,737 (r = +0,498 avec CD8A, prédit 0,865) quand les
+11 autres flux PARP sont à |d| ≤ 0,27 (moyenne |d| 0,190 ; sans ATM, 0,140).
+Retirer ATM de la moyenne, c'est retirer un tiers du signal X1. X2, lui,
+n'a même pas ce lien : sa plus forte corrélation croisée (POLQ–CD68, +0,314)
+donne |d| = 0,027 à la médiane (prédit 0,518) — la corrélation y est portée
+par des extrêmes, pas par un décalage de médiane, et la formule
+bivariée-normale y échoue : c'est la plus grosse erreur de prédiction
+par-flux de ce chantier, consignée comme telle. MC sur X1/X2 (0,35 ; 0,33 ;
+0,33 ; 0,53) ne sépare rien non plus ; Delta (4,26 ; 4,23 ; 3,10 ; 3,22)
+disperse comme au §8.44.
+
+**Bilan H1/H2/H3.** H1 soutenue (r = 0,954, R² = 0,909, formule par flux
+r = 0,947, biais −0,002). H3 soutenue (dose monotone, q=0,5 intermédiaires).
+H2 rejetée (aucun ordonnancement hors famille au niveau IMMROT). Les trois
+lignes convergent : **S_sep mesure le couplage contrôle↔flux ; la domination
+IMMROT est la mesure de la co-expression immunitaire, ordonnée par l'un des
+siens, et rien d'autre.**
+
+
+## 8.48.7 Provenance
+
+- **Codes (jamais modifiés).** Pipeline v6.2
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`, SHA-256
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf` (vérifié
+  avant les calculs et dans le log du lot). Mode `fast`, graine 42 (défaut),
+  nul = lignes permutées, graine 42, contrôle intact. Pipeline v6.1 (CLDN18
+  seul, run préexistant §8.32) SHA `2af5e5cea3a99ff227c7f76dff48c678eb07baba92625ca57e3c1c412546a9c9`.
+- **Protocole.** `PROTOCOL_immrot_domination.md`, SHA-256
+  `465b4f54bc9f3421557914e6d04319170a98e0fe3158189c899125d3d77d4b9d`,
+  gelé le 19 nov. 2026 avant tout calcul et avant tout run de ce chantier.
+- **Entrées.** 4 bases, SHA-256 vérifiés un par un avant les calculs (4/4
+  conformes à PROVENANCE_rotations_v61.md) : TCGA v4 `e7a2adaba5a0…13a0b0`,
+  DepMap `7d605fefb412…98e37f8`, immunitaire TCGA `66dbb672ea2a…bbd2e`,
+  PARP TCGA `c9549b68280b…c4309`. Écarts S_sep relus en machine dans
+  `ssep_844_rotations.csv` (SHA `d1abc0aba2e4…f999`, 48 paires) et
+  `ssep_841_rotations.csv` (SHA `1d3b28a4ff…58ab`, 48 paires).
+  Sources : TCGA-PAAD ARN Broad GDAC Firehose 2016-01-28 (RSEM, tarball MD5
+  `b09569ce3f4721f514bc137bd109ac0a`) ; DepMap CRISPR 24Q2 (figshare Corsello
+  et al.) ; GEO GSE62452/GSE71729 ; ICGC PACA-AU. Voir PROVENANCE_tcga_v4.md,
+  PROVENANCE_depmap.md, PROVENANCE_immune_v6.md, PROVENANCE_parp_v6.md,
+  PROVENANCE_rotations_v61.md, PROVENANCE_rotations_dedup_844.md.
+- **Nature des lignes.** Les CSV sont des résidus d'expression génique ou de
+  dépendance CRISPR (mesures instrumentales — séquençage ARN, criblage CRISPR
+  — transformées : correction de pureté, résidus) ordonnés par un flux-contrôle
+  croissant ; les nuls et les CSV partiels sont des lignes permutées
+  (graines 42 et 1234) — des échantillons hypothétiques, pas des mesures.
+  Aucun mot humain, aucun échantillon hypothétique dans les séries réelles.
+- **Sorties et scripts de ce chantier.**
+  `analyze_immrot_domination.py` (SHA `bd2ba083…49ee9`) : corrélations,
+  D_full, D_win (diagnostic), per-flux, porte G.
+  `build_immrot_848.py` (SHA `55f003b8…6ca99`) : 8 CSV de contrôle.
+  `extract_immrot_848.py` (SHA `98765df1abe1…f48eb0`) : lecture des 8 runs.
+  `immrot_848_correlations.csv/.json` (table des 48 rotations : C, H, écarts),
+  `immrot_848_dfull.csv` (D_full sur les 96 runs dédoublonnés),
+  `immrot_848_dwin_diagnostic.csv` (diagnostic fenêtré),
+  `immrot_848_per_flux_mediane.csv` (528 paires flux×rotation, à la médiane),
+  `immrot_848_gate.json` (porte G : OUVERTE),
+  `immrot_848_bestconfig_wsize.json` (w_size retenu sur les 96 runs §8.44),
+  `immrot_848_csv_sha.json` (SHA des 8 CSV de contrôle),
+  `immrot_848_results.csv/.json` (8 runs, 8/8 exit 0 ; CSV SHA
+  `2a90e077…6722c3`, JSON SHA `74bcf433…e097`).
+  Manifeste `manifest_v62_immrot_848.txt` ; log `runs_v62_immrot_848.log` ;
+  surveillance `watch_v62_immrot_848.sh` ; unités systemd `v62-immrot-848`
+  puis `v62-immrot-848b`.
+- **Ce qui manque :** les valeurs exactes de S_sep par flux analysé (hors
+  contrôle) n'ont pas été extraites — S_sep est global, pas par flux ; la
+  lecture par flux du §8.32 reste la référence, doublon exclu ; le D_win
+  diagnostique ne réplique pas l'axe MC (percentile de rang à la place) et
+  sous-estime maxsep de 0,23 — la réplication exacte du niveau demanderait
+  l'axe MC et les paramètres optimisés ; les corrélations DEPMAPROT sont
+  estimées sur n=45 (incertitude plus grande que sur n=178) ; la cause
+  biologique de la corrélation immunitaire elle-même (infiltration, pureté,
+  sous-types) est hors périmètre — ce chantier mesure si cette corrélation
+  suffit à produire la domination S_sep, pas pourquoi elle existe.
+
+## 8.48.8 Ce qui manque, ce qui reste ouvert
+
+- **La domination IMMROT est expliquée, pas relativisée.** Le 12/12 et le
+  +0,752 restent vrais comme mesures ; ils changent de sens : ce sont des
+  mesures de co-expression ordonnée, pas des ruptures. Aucun des 12 contrôles
+  immunitaires ne devient une cible, et aucun flux immunitaire ne devient un
+  biomarqueur sur cette seule base.
+- **MC reste aveugle sur les rotations (12/48 en positif sous (A) au §8.44).**
+  Ce chantier ne touche pas au composite MC : il explique max_separation /
+  S_sep, pas MC. L'écart entre MC et max_separation sur les mêmes runs reste
+  le fait le plus net après la domination elle-même — le composite cache ce
+  que le pic voit. Revoir la composition du score MC reste hors protocole,
+  non lancé.
+- **Le niveau exact de maxsep n'est pas répliqué.** D_full (coupure franche)
+  le dépasse de 0,19, D_win (fenêtres w=80, percentile de rang) est en
+  dessous de 0,23 : le scan optimisé (w_size le plus souvent 30, 12
+  itérations) se place entre les deux. L'ordre est expliqué, le niveau exact
+  ne l'est pas encore — une réplication avec l'axe MC exact et les paramètres
+  optimisés le trancherait, hors périmètre ici.
+- **La cause biologique de la corrélation immunitaire reste ouverte.**
+  Infiltration lymphocytaire, pureté tumorale, sous-type moléculaire :
+  trois variables latentes plausibles, aucune testée ici. Un contrôle
+  supplémentaire serait d'ordonner par la pureté ou par un score
+  d'infiltration et de mesurer si le couplage immunitaire s'effondre —
+  hors protocole, non lancé.
+- **Incident d'exécution.** La machine a redémarré pendant le lot
+  (~21h41 UTC, `uptime` : 1 min à 21h42) ; la première unité
+  `v62-immrot-848` est morte avec elle (aucune entrée dans `journalctl`,
+  cause non établie — comme aux §8.41/§8.44 ; unité `--collect`, donc
+  introuvable après sa mort). Aucune sortie complète n'était perdue (0/8) ;
+  la relance reprenable `v62-immrot-848b` a repris au 1er run à 21h42:43 UTC.
+  Bilan final : **8/8 exit 0**, 0 échec, lot 21h41:12–22h51:02 UTC
+  (`=== FIN 2026-11-19T22:51:02Z deja_faits=0 termines=8 echecs=0` ;
+  surveillance arrêtée d'elle-même à 8/8, tour 1/12). Le 1er run a duré
+  ~16 min (3 autres lots v6.2/v6.3 en concurrence sur les 2 vCPU, charge
+  3,91) ; les suivants 7 à 9 min. Aucun run perdu, aucun dossier partiel
+  à nettoyer.
+- **Périmètre.** 8 nouveaux runs v6.2 au maximum (protocole §6), aucun autre.
+  Aucun nouveau seuil proposé, aucun code modifié, aucun push GitHub dans ce
+  chantier (publication sur go séparé, comme au §8.37 ; règle permanente
+  « Toujours github et pdf !!! » — par le coordinateur).
+
+— Fin de la §8.48. —
+
+### 8.49 Recomposition du score MC — proposition v6.3 REJETÉE (19 novembre 2026)
+
+**Verdict d'abord.**
+
+**La recomposition du score MC améliore nettement la séparation, mais pas
+assez : la proposition v6.3 est REJETÉE.** Sur les rotations sans doublon,
+MC_new sépare 31/48 paires au plancher 0,07 contre 12/48 pour l'ancien MC
+(écart moyen +0,104 contre +0,015, ×6,9) — la porte A1 est franchie. Mais
+sur les 8 paires principales, MC_new ne sépare que 4/8 (porte A2 : ≥6/8
+exigés), et sur HP35, le contrôle positif, l'écart n'est que de +0,227
+(porte A3 : ≥0,30 exigé). La variante avec resélection (S) ne change rien
+(4/8, 31/48, HP35 +0,246). Le code v6.3, lui, fait ce qu'on lui demande
+(porte A4 franchie : 10/10 runs, best_config et cascade identiques à
+v6.2, MC_new en code = hors-ligne à 0,0 près) — mais un code correct ne
+sauve pas un score qui échoue à ses propres critères. La v6.2 reste la
+version de travail ; l'ancien MC reste le score affiché, avec ses défauts
+connus (§8.49.3) — un score imparfait et documenté vaut mieux qu'un score
+recomposé qui ne franchit pas ses propres critères.
+
+Protocole gelé : `PROTOCOL_v6.3_mc.md` (19 nov. 2026). Critères d'adoption
+écrits AVANT tout calcul de MC_new (§5 du protocole) ; aucune repondération,
+aucun nouveau terme après avoir vu les chiffres. La décision finale
+d'adoption revient à Zackary ; ce chantier propose ou rejette — il rejette.
+
+## 8.49.1 — Les quatre portes, et leur sort
+
+| Porte (PROTOCOL_v6.3_mc.md §5) | Exigé | Mesuré | Sort |
+|---|---|---|---|
+| A1 — rotations sans doublon (48 paires), MC_new sépare au plancher 0,07 | ≥ 24/48 | **31/48** (direction réel > nul, somme +5,008, moyenne +0,104) | FRANCHIE |
+| A2 — paires principales, MC_new > 0,07 et positif | ≥ 6/8 > 0,07 et ≥ 7/8 positifs | **4/8** > 0,07 ; 7/8 positifs | **ÉCHEC** |
+| A3 — HP35 (contrôle positif), écart MC_new | ≥ 0,30 | **+0,2271** (ancien +0,1950) | **ÉCHEC** |
+| A4 — code v6.3 : best_config, cascade, S_sep identiques à v6.2 ; MC_new en code = hors-ligne | 10/10 | **10/10** (exit 0, best_config + cascade + S_sep identiques, MC_new code = hors-ligne à 0,0 près, gigue 0) | FRANCHIE |
+
+Références ancien MC : rotations 12/48 (moyenne +0,0152) ; principales
+1/8 au plancher 0,07 (7/8 positifs avec gigue 0) ; HP35 +0,1950.
+
+## 8.49.2 — Définition exacte de l'ancien MC (lue dans le code v6.2)
+
+Fichier `universal_v6.2.0_cohen.py`. Mode `fast` : 12 tirages MC
+(`optimization_iterations = 12`, ligne 243 ; 100 est le défaut de la
+fonction, ligne 3704). Par tirage (`_monte_carlo_worker`, lignes
+3453–3490), `evaluate_scan_quality` (lignes 3314–3390) tire 5 métriques
+de la courbe de scan (|d de Cohen| pré/post-seuil) :
+
+- `max_separation` = score maximal de la courbe ;
+- `s_norm = tanh(max_separation / 2.0)` (ligne 3336) ;
+- `stability = 1 / (1 + écart-type des scores locaux)` (ligne 3344) ;
+- `robustness = exp(-((FWHM − 10)²) / (2 × 5²))`, FWHM en % de la plage,
+  idéal 10 % (lignes 3346–3364) ;
+- `sharpness = tanh(max |dS/dx| local / 0.5)` (lignes 3365–3381).
+
+Score composite du tirage (lignes 3480–3484, poids lignes 3727–3731) :
+
+```
+score_tirage = 0.3·s_norm + 0.3·stability + 0.2·robustness + 0.2·sharpness
+```
+
+(×0,8 si `w_size < n_pts // 10`). **MC (ancien) = score du meilleur
+tirage** = `best_config.score`. Les 12 tirages sont conservés dans le
+JSON (`threshold_optimization.all_results[i].metrics.*`, vérifié :
+12 entrées sur HP35 et TCGA v4).
+
+## 8.49.3 — Défauts mesurés de l'ancien MC
+
+- **D1 — robustness morte.** `PROTOCOL_v6.2.md` §3.2, 16 JSON v6.1 :
+  robustness ≤ 2×10⁻⁷ sur 14/16 (TCGA v4 : 3,37×10⁻⁴¹), contre 0,984 /
+  0,899 sur HP35. La FWHM des scans PDAC est très loin de l'idéal
+  arbitraire de 10 % : le poids 0,2 est perdu sur tout le PDAC.
+- **D2 — stability saturée.** 0,978–0,997 sur le PDAC (quasi constante),
+  0,869 / 0,983 sur HP35 (le réel y est MOINS stable que le nul). Le
+  terme 0,3·stability ajoute ≈ 0,29–0,30 à chaque score, réel comme nul.
+- **D3 — sharpness récompense le bruit.** Le nul est plus « sharp » que
+  le réel sur GSE71729, l'immunitaire TCGA et PARP TCGA (phase 2).
+- **D4 — s_norm sature là où vit le PDAC.** tanh(maxsep/2) : 0,15 → 0,075 ;
+  0,46 → 0,226 ; 1,77 → 0,709. Les écarts PDAC sont comprimés à ~0,14
+  en s_norm, puis à ~0,04 après le poids 0,3.
+- **D5 — malédiction du vainqueur.** Le MC prend le MAX sur 12 tirages
+  d'un composite bruité ; l'information de RÉCURRENCE des 12 tirages
+  n'est jamais utilisée.
+
+Conséquences déjà publiées : rotations 12/48 (§8.44) ; Test A MC inversé
+(−0,0948) alors que max_separation est à +0,2501 (§8.34) ; série
+MTAP-PRMT5 MC égal à 0,0004 près (§8.43) ; artefact pureté (§8.31,
+V4R_PURITY) : ancien MC +0,1520 (réel > nul) alors que max_separation
+est à −0,0670 (inversé) — les termes annexes renversent la séparation
+elle-même. Précision : la mission citait « MC HP35 1,772 vs 0,121 » —
+ce sont les valeurs de max_separation, pas du MC best_score (v6.2 : MC
+0,6035 contre 0,4086 ; max_separation 1,7718 contre 0,1206).
+
+## 8.49.4 — Le MC recomposé proposé (formule gelée)
+
+```
+MC_new = 0.60 · sep + 0.25 · stability + 0.15 · recur
+sep    = max_separation / (1 + max_separation)
+recur  = médiane_i(max_separation_i) / max_separation_best   (12 tirages)
+```
+
+`max_separation` et `stability` sont ceux du best_config ANCIEN
+(sélection inchangée) ; `recur` est borné à [0, 1], vaut 0 si best = 0
+ou si `all_results` est absent. Justification (principe, pas ajustement) :
+`sep` a le même ordre que max_separation (aucun renversement possible)
+avec un ancrage non arbitraire — sep = 0,5 quand |d de Cohen| = 1 — et
+sature moins que tanh(·/2) dans la plage PDAC (0,17 → 0,145 ; 0,46 →
+0,315 ; 1,77 → 0,639). `stability` est gardée à poids réduit comme
+garde-fou. `recur` est la récurrence que « robustesse » prétendait
+mesurer, sans paramètre : une vraie rupture revient quand les paramètres
+de scan changent, un pic de chance est isolé à un tirage. Poids fixés
+par principe : séparation dominante (0,60), récurrence minoritaire
+(0,15) car terme nouveau et non prouvé. **Supprimés : `robustness` (D1)
+et `sharpness` (D3).** Variante R (primaire) : rescore seul — seuil,
+cascade, S_sep, Delta, L7a inchangés par construction. Variante S
+(exploratoire, non candidate) : resélection du tirage par
+0,60·sep_i + 0,25·stab_i, puis MC_new_S avec recur du tirage sélectionné.
+
+## 8.49.5 — Validation hors-ligne (60 paires, JSON v6.2 existants, aucun run)
+
+Extracteur `extract_mc63.py` : 60/60 paires lues, 0 manquante, 0 version
+non attendue ; ancien MC relu sans écart vs §8.44 et phase 2 v6.2
+(tol. 1e-9). Gigue_eff = max(gigue mesurée, 0,07) = 0,07 (même plancher
+que S_sep, `PROTOCOL_v6.2.md` §3.4).
+
+### Paires principales (V1) — MC_new 4/8, ancien 1/8, maxsep 6/8
+
+| Paire | MC ancien R/N (écart) | MC_new R/N (écart) | MC_new_S (écart) | maxsep (écart) | recur R/N |
+|---|---|---|---|---|---|
+| HP35 | 0,6035 / 0,4086 (+0,1950) | 0,6687 / 0,4416 (**+0,2271**) | (+0,2459) | +1,6512 | 0,453 / 0,876 |
+| TCGA v4 | 0,3720 / 0,3268 (+0,0453) | 0,5331 / 0,4266 (**+0,1065**) | (+0,1065) | +0,2928 | 0,650 / 0,605 |
+| GSE71729 | 0,3393 / 0,3335 (+0,0059) | 0,4885 / 0,4676 (+0,0209) | (+0,0168) | +0,0402 | 0,775 / 0,745 |
+| GSE62452 | 0,3454 / 0,3485 (−0,0031) | 0,4981 / 0,5394 (−0,0414) | (−0,0395) | −0,0036 | 0,737 / 0,985 |
+| ICGC | 0,3600 / 0,3450 (+0,0150) | 0,5373 / 0,5137 (+0,0236) | (+0,0236) | +0,0970 | 0,775 / 0,829 |
+| Immunitaire TCGA | 0,3785 / 0,3240 (+0,0545) | 0,5519 / 0,4571 (**+0,0949**) | (+0,0949) | +0,3675 | 0,640 / 0,849 |
+| PARP TCGA | 0,3555 / 0,3311 (+0,0244) | 0,5356 / 0,4502 (**+0,0854**) | (+0,0854) | +0,1688 | 0,834 / 0,675 |
+| DepMap | 0,3615 / 0,3499 (+0,0115) | 0,5596 / 0,5204 (+0,0392) | (+0,0375) | +0,1904 | 0,871 / 1,000 |
+
+MC_new passe le plancher sur HP35, TCGA v4, immunitaire et PARP ; il
+échoue sur GSE71729 (+0,0209), ICGC (+0,0236), DepMap (+0,0392) et
+reste négatif sur GSE62452 (−0,0414, pire que l'ancien −0,0031).
+Positifs : 7/8 (seul GSE62452 est négatif).
+
+### Rotations sans doublon (V2) — MC_new 31/48, ancien 12/48, maxsep 37/48
+
+| Famille | MC_new > 0,07 | Positifs | Écart moyen MC_new | Écart moyen ancien MC |
+|---|---|---|---|---|
+| IMMROT (n=178) | **12/12** | 12/12 | +0,187 | +0,037 |
+| V4ROT (n=178) | **10/12** | 11/12 | +0,106 | +0,025 |
+| PARPROT (n=178) | **8/12** | 11/12 | +0,103 | −0,010 |
+| DEPMAPROT (n=45) | **1/12** | 7/12 | +0,020 | +0,009 |
+| **Toutes** | **31/48** | 41/48 | **+0,104** | **+0,015** |
+
+Échecs MC_new (17 paires, écart ≤ 0,07) : les 11 DEPMAPROT restantes
+(AC02, CCND1, CFLAR, CRKL, DOCK5, MYC, MYH9, RAB10, RAB6A, SCAP, UROD),
+PARPROT ATR (+0,0696, à 0,0004 du plancher), PARP1, PARP2, XRCC1,
+V4ROT CR2 et GSTM1. Le gain est réel mais concentré sur les grandes
+cohortes (n=178) ; sur les petites cohortes DepMap (n=45), MC_new ne
+sépare presque rien (1/12) — comme maxsep y sépare moins aussi, mais
+moins mal. Table complète par paire : `v63_mc_table.csv` / `.json`.
+
+### Contrôles descriptifs (V3–V5, ne décident pas de l'adoption)
+
+| Paire | MC ancien (écart) | MC_new R/N (écart) | maxsep (écart) | Lecture |
+|---|---|---|---|---|
+| Test A (prolifération) | −0,0948 | 0,5056 / 0,4389 (**+0,0666**) | +0,2501 | Suit maxsep, comme prévu par construction ; ne ressuscite pas Test A (verdict NON du §8.34 portait sur la chaîne et MC/Delta) |
+| MTAP série PRMT5-flux (§8.43) | +0,0004 | 0,4937 / 0,4983 (−0,0046) | −0,1036 | Reste ≈ 0 : cohérent avec le verdict NON du §8.43 |
+| MTAP série (§8.31) | −0,1642 | 0,5269 / 0,4540 (**+0,0729**) | +0,1957 | Suit maxsep ; l'ancien MC était fortement inversé ici |
+| V4R_PURITY (artefact §8.31) | +0,1520 | 0,4438 / 0,4791 (**−0,0353**) | −0,0670 | **Artefact CORRIGÉ** : MC_new reprend le sens de maxsep, l'ancien MC « séparait » à tort |
+
+### Variante S (resélection) — ne sauve rien
+
+MC_new_S : principales 4/8, rotations 31/48, HP35 +0,2459 — les mêmes
+verdicts que R. |d_S − d_R| ≤ 0,0293 sur les 56 paires jugées (max :
+IMMROT_IFNG +0,0293) ; sur 4 des 8 paires principales, la resélection
+choisit le même tirage que l'ancien composite (écart 0,0000 : TCGA v4,
+ICGC, immunitaire TCGA, PARP TCGA). La
+sélection n'était pas le goulot : changer le tirage gagnant ne change
+presque rien, parce que le composite ancien et le nouveau classent les
+tirages presque pareil. La piste « resélectionner » est fermée par ce
+résultat, pas reportée.
+
+## 8.49.6 — Pourquoi ça ne suffit pas : la récurrence punit le vrai pic
+
+Décomposition de l'écart HP35 (+0,2271) : terme de séparation
+0,60×(0,639 − 0,108) = **+0,319** ; terme de stabilité
+0,25×(0,869 − 0,983) = **−0,029** (le réel HP35 est moins stable que
+son nul, D2) ; terme de récurrence 0,15×(0,453 − 0,876) = **−0,063**.
+La récurrence, telle que définie (médiane/best), punit exactement le
+cas qu'elle devait récompenser : sur HP35 réel, le meilleur tirage est
+un pic isolé (maxsep 1,77, médiane des tirages 0,80, recur 0,453),
+tandis que le nul est plat (maxsep 0,12, médiane 0,11, recur 0,876).
+Sur les 8 paires principales, recur moyen réel 0,717 contre nul 0,820 :
+**le nul est en moyenne PLUS récurrent que le réel**. Sur les rotations,
+recur est à peine favorable (réel 0,755 contre nul 0,719). Le terme
+nouveau ne discrimine pas ; il dilue. Et MC_new reste partout en
+retrait de max_separation seul (rotations 31/48 contre 37/48 ;
+principales 4/8 contre 6/8) : les deux termes annexes (stability,
+recur) coûtent plus qu'ils ne rapportent. L'amélioration 12 → 31/48
+vient presque entièrement de `sep` (moins saturante que `s_norm`) et
+de la suppression de `robustness`/`sharpness` — pas de la récurrence.
+
+Leçon : un score composite ne sépare pas mieux que sa meilleure
+composante quand les autres composantes sont saturées ou
+anti-discriminantes. MC_new n'est pas un mauvais score — il est
+meilleur que l'ancien sur tous les ensembles — mais il ne franchit
+pas la barre qu'il s'était fixée, et il reste inférieur à
+max_separation, qui existe déjà comme indicateur (§8.37–§8.38, S_sep).
+Adopter MC_new ajouterait un second indicateur plus faible que celui
+qu'on a déjà, sans rien apporter que max_separation ne donne.
+
+## 8.49.7 — Code v6.3 et validation en code (porte A4 : FRANCHIE)
+
+Construction : copie exacte de la v6.2 →
+`universal_v6.3.0_cohen.py`, SHA-256
+`552e735910a1fac183ad2ce5713ffa2888e9214c764b103707eeef1787044ffb`
+(script `build_v6.3.py`, SHA
+`96165bcbba08a0f16c7f51be274653ee71d8fdc41c77e890d26adfd248c31fe2`) ;
+3 remplacements seuls (version C1, fonction pure `mc_recomposed_score`
+C2, appel en lecture seule C3), 3 blocs différants vérifiés par diff,
+`py_compile` exit 0. La fonction est appelée APRÈS la sélection du
+best_config et n'écrit que les champs nouveaux `mc_recomposed`
+(`best_config` et `threshold_optimization`) ; `score`, `threshold` et
+cascade ne sont jamais touchés.
+
+Validation en code (§7.2 du protocole) : HP35, TCGA v4, rotations
+CEACAM5 (cas fort) et GSTM1 (cas négatif), Test A — 10 runs, mode fast,
+graine 42, dossiers `results_fast_v63_*`, journal `runs_v63_mc.log`
+(lanceur `run_v63_mc.sh`, manifeste `manifest_v63_mc.txt`).
+Incident consigné : le premier lancement (unité systemd `v63-mc-lot`,
+21h36 UTC) a été tué par un redémarrage du runtime vers 21h41, avant
+toute écriture (dossier HP35 vide, aucun run perdu, aucune sortie
+partielle) ; relance reprenable (`v63-mc-lot2`, 21h41 UTC), terminée
+23h01:27 UTC. **10/10 exit 0, 0 échec.**
+
+Vérification (`extract_v63_check.py` → `v63_mc_check.json`, SHA
+`eb17ddf0d9cb44c8844c7a0a35a411a027a73108e15872c0d9cd99166aae7009`) :
+MC_new calculé en code = MC_new hors-ligne sur 10/10, écart 0,0
+exact (tol. 1e-9) — HP35 0,6687 / 0,4416 ; TCGA v4 0,5331 / 0,4266 ;
+CEACAM5 0,6080 / 0,4364 ; GSTM1 0,4513 / 0,4747 ; Test A 0,5056 /
+0,4389. best_config (score ancien, seuil, métriques), cascade
+T_-2…T_+2 et S_sep IDENTIQUES aux JSON v6.2 sur 10/10 (tol. 0).
+Gigue MC_new mesurée (code vs hors-ligne) : **0,00**. Versions :
+v6.3.0-L7aL7b-CohenD-short sur 10/10 JSON v6.3. SHA revérifiés après
+le lot : v6.2 `f07567c4…c3abf`, v6.1 `2af5e5ce…c1c9`, v6
+`bb8bbdba…c0773` — inchangés. **Porte A4 franchie.** Le rejet de la
+proposition ne vient donc pas du code : il vient du score lui-même
+(A2, A3).
+
+## 8.49.8 — Limites et ce qui reste
+
+- La validation hors-ligne réutilise les JSON v6.2 : elle ne teste que
+  la RELECTURE, pas une nouvelle mesure. La porte A4 (§8.49.7) est le
+  seul contrôle en code, sur 10 runs.
+- Le plancher 0,07 est une convention du projet (même que S_sep), pas
+  une propriété statistique de MC_new ; avec une gigue 0, MC_new
+  séparerait 41/48 rotations (positifs) et 7/8 principales — le verdict
+  de rejet tient au plancher gelé, et il est dit tel quel.
+- DEPMAPROT (n=45) reste le point faible commun à MC ancien, MC_new et
+  maxsep : les petites cohortes séparent mal, quel que soit le score.
+- Piste NON testée (pour un chantier ultérieur, pas une proposition
+  ici) : une récurrence définie autrement — par exemple la concentration
+  des SEUILS des tirages autour du seuil gagnant, plutôt que le rapport
+  des maxsep — ou la suppression pure et simple de `stability` du
+  score, puisque S_sep montre déjà que la stabilité ne porte rien sur
+  le PDAC. Aucune de ces pistes n'a été calculée dans ce chantier : les
+  ajouter après le rejet serait exactement la retouche interdite par le
+  protocole gelé.
+- Rien de clinique : l'étude porte sur l'instrument.
+
+## 8.49.9 — Provenance
+
+- Protocole gelé : `PROTOCOL_v6.3_mc.md`, SHA
+  `acc74e943d60757e90b8800a0caac178b6b38222c94d197895615d2d3a5cea0b`.
+- Extracteur hors-ligne : `extract_mc63.py`, SHA
+  `9cb813039d19f3892ad2a503adee9c2419ffbf9a6e3809f59dbb58c236d61206` ;
+  sorties `v63_mc_table.csv` / `v63_mc_table.json` / `v63_mc_table.md`.
+- Construction : `build_v6.3.py` ; v6.3 SHA
+  `552e735910a1fac183ad2ce5713ffa2888e9214c764b103707eeef1787044ffb`.
+- Validation code : `run_v63_mc.sh`, manifeste `manifest_v63_mc.txt`,
+  journal `runs_v63_mc.log`, vérification `extract_v63_check.py` →
+  `v63_mc_check.json`.
+- Données : JSON v6.2 existants (lots §8.44, phase 2, §8.43, Test A) ;
+  CSV inchangés, SHA déjà publiés dans `PROVENANCE_rotations_dedup_844.md`,
+  `PROVENANCE_tcga_v4.md`, `PROVENANCE_mtap_prmt5_flux.md`,
+  `PROVENANCE_testA_proliferation.md`. Nuls = lignes permutées, graine
+  42 — échantillons hypothétiques, pas des mesures. Séries réelles =
+  résidus d'expression génique ou de dépendance CRISPR (mesures
+  instrumentales transformées). Aucune valeur inventée ; aucune valeur
+  recopiée à la main (tables générées depuis `v63_mc_table.json`).
+- Codes jamais modifiés : v6.2 (`f07567c4…c3abf`), v6.1 (`2af5e5ce…c1c9`),
+  v6 (`bb8bbdba…c0773`).
+
+— Fin de la §8.49. —
+
 ### 8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas
 
 | | v1 (brute) | v2 (hors pureté) | v3 (+ correction) | v4 (+ hors sexe) |
@@ -3101,4 +4684,8 @@ La stabilité est quasi saturée sur les 96 runs : **0,9463–0,9986** (minimum 
 - **19 nov. 2026, ~13h20–13h56 (heure de Montréal) : §8.45 — TEST C, SÉRIE PAR STADE : NON, LA CHAÎNE NE RÉAPPARAÎT PAS.** Go de Zackary « Fait tes 3 propositions » (~08h16, 3e des 3 propositions). Protocole gelé avant construction (`PROTOCOL_testC_stage.md`, SHA `8386ec03…ff6fc6`) ; CSV réel `pdac_tcga_fluxes_v4_stage.csv` (SHA `d7608bc9…45ea39c`), nul `pdac_tcga_fluxes_v4_stage_nul.csv` (SHA `4e373684…4a0ff534fe`, graine 42) ; **175 tumeurs** (178 − 3 exclues, sans imputation : 2 stade vide, 1 patient absent du fichier clinique) : I 21, II 146, III 4, IV 4 ; départage intra-stade par code échantillon, jamais par KRAS ; vérification v4 passée (écart max 1,776e-15) ; Spearman rang stade vs rang KRAS +0,136 (p=0,072, NS) ; recouvrement top-12 stade/KRAS 1/12. 2 runs v6.2 fast, exit 0/0 (unité systemd `v62-stage`, FIN 13h56:15Z ; lot lent, 35 min, 3 runs partageaient la machine). **Le pipeline ne sépare pas réel et nul** : MC 0,3472 contre 0,3507 (−0,0036), Delta 3,852 contre 3,830 (+0,0225), falsification 0,642 contre 0,774, L7a UP 0,164 contre DOWN 0,415 ; seuls max_separation (0,290 contre 0,200) et S_sep (0,285 contre 0,198) vont dans le sens réel. Tests directs top-12 : **le bloc MONTE au bout de l’axe** (PGC +0,51, CLDN18 +0,57, DPCR1 +0,40, KRT20 +0,52) au lieu de s’effondrer, MUC16 plate −0,10 (nul +0,56) ; pente graduelle réelle du bloc avec le stade (Spearman CLDN18 +0,302 p=4,9e-05, MUC17 +0,264, PGC +0,244 ; MUC16 +0,013 p=0,86, plat ; nul |rho| ≤ 0,145), pas une rupture. **Réserve de méthode : le stade est une variable clinique (AJCC 7e édition), pas une mesure du système — la pente ascendante ne doit pas être présentée comme une rupture du système.** Provenance d’acquisition du fichier clinique `data_clinical_patient.txt` manquante (déjà sur le disque depuis le 15 nov., aucune entrée dans les journaux de téléchargement ; premier hachage consigné au §8.45, SHA `0c274268…efe5`) — nommée, pas comblée. Section rédigée dans `section_8.45_testC_stage.md` (SHA `9add43f0…e661506`) ; ligne 51 au §7. PDF non régénéré, rien poussé sur GitHub (hors de ce chantier).
 ---
 
+- **19 nov. 2026, ~16h30–22h00 (heure de Montréal) : §8.46 — ARBITRAGE DE LA CONTRADICTION MTAP : S_sep VOIT DU RÉEL (MARCHE DE NIVEAU, PAS RUPTURE).** Go de Zackary « Fait tout cela » (~16h30, 1er des 4 chantiers). Protocole gelé avant tout calcul (`PROTOCOL_mtap_arbitration_ssep.md`, SHA `9cf3295a…2693fed7`) ; scripts `mtap_arbitration_846.py` (SHA `8e9c5382…`) et `build_mtap_nuls_846.py` (SHA `6eeec290…`) ; 2 nuls frais graines 7 et 123, 2/2 runs v6.2 fast exit 0 (unité `mtap-nuls846b`, 1re tentative tuée par un redémarrage du service, relance FIN 21:53:04Z). **S_sep réel 0,3378 contre nuls 0,1409 / 0,2663 / 0,2031 (écarts +0,197 / +0,072 / +0,135, tous > plancher 0,07) ; MC réel 0,3511 dans l'intervalle des nuls ; Delta réel 3,8051 dans l'intervalle des nuls (3,1415–4,3466).** Mécanismes lus dans le code v6.2 : l'inversion MC est portée par le seul terme de robustesse (réel 3,37×10⁻⁴¹, FWHM 78,26 %, 73/73 candidats au-dessus de la moitié du max, contre nul 42 0,9756, FWHM 11,11 %) ; en régime plateau la robustesse est déterminée par la configuration de scan, pas par les données (12 robustesses par itération identiques entre réel et nul 7) ; l'inversion Delta vient de d_div seul (5,383 contre 5,940, Δ −0,557 ; d_sat Δ −0,016) ; le nul graine 42 était extrême sur les trois indicateurs à la fois. Marche réelle multi-flux (GISTIC −2/−1 contre 0/+ : CEACAM5 +0,740, CLDN18 +0,634, DPCR1 +0,476, MUC17 +0,442, MUC16 +0,387, nul |d| ≤ 0,23 ; 8 flux pour 80 % de la séparation). Effet PRMT5 reproduit à l'identique (−1,385/−1,010, p = 0,0036, rho +0,497) et **survit au contrôle prolifération** (partiel rho 0,445, p = 0,0019) ; 4 confirmations relues (p = 0,26 / 0,46 / 0,76). **§8.36 précisé, pas renversé.** Limites : marge fragile (+0,0015 au-dessus du plancher contre le nul 7, 3 nuls seulement) ; lecture fenêtrée ±20 ne sépare pas (0,364 contre 0,357) ; deux corrections consignées (d_sat/d_div sont des médianes brutes, pas T_log ; piège pandas `usecols` corrigé). Section rédigée dans `section_8.46_mtap_arbitration.md` (410 lignes, SHA `951de170…f70da7`) ; ligne 52 au §7. PDF non régénéré, rien poussé sur GitHub (hors de ce chantier).
+- **19 nov. 2026, ~16h30–23h00 (heure de Montréal) : §8.47 — INVERSION IMMUNITAIRE ICGC : EXPLIQUÉE, ELLE NE VIENT PAS DE LA BIOLOGIE.** Go de Zackary « Fait tout cela » (~16h30, 2e des 4 chantiers). Protocole gelé avant tout calcul (`PROTOCOL_icgc_immune_inversion.md`, SHA `b55283ee…08a61eb34`, amendé §9 SHA `f1a5a37c…988379c`) ; correction de méthode documentée avant tout résultat (première réplique au step brut échouait sa calibration ; réplique corrigée avec les fonctions du pipeline elles-mêmes : **calibration 8/8 EXACTE**, écart 0,00e+00) ; 500 permutations par ligne × 4 cohortes × 2 configs (unité `replica-847`, exit 0) ; 11 runs v6.2 fast de confirmation, 11/11 exit 0 (unité `v62-847`, 21h49–22h58 UTC). **Le réel ICGC ne sépare pas du tout** (maxsep 0,2299, un nul le bat dans 61 % des cas, courbe dans l'IQR nulle 13/13 candidats ; d_ssep avec nul médian −0,016 ≈ 0) ; **le nul graine 42 est haut** (0,4500, ~98e percentile) mais ordinaire pour le pipeline (1 nul frais sur 3 atteint 0,4564 ; d_ssep sur 4 tirages −0,220 / +0,052 / −0,011 / −0,221 — le signe dépend du tirage) ; **le réel est bas parce que son signal est une falaise, pas un gradient** (top-12 moy |d| 0,408, élargir à 26 lignes divise le signal par 1,9, PDCD1 −0,85 → −0,26 ; TCGA facteur 0,95) ; petit n relève le plancher du nul (médiane 0,246 à n=70 contre 0,170 à n=178). H2/H4/H5 rejetées, H3 retenue avec réserve, H1 ni retenue ni rejetée par la lettre. **Conséquence de méthode : à n≈70, S_sep lu sur un seul nul est un tirage, pas une mesure — il faut la distribution des nuls.** Le froid tumoral existe en ICGC comme ailleurs ; §8.23 inchangé (KRAS + anti-PD-(L)1 : NON). Section rédigée dans `section_8.47_icgc_immune_inversion.md` (341 lignes, SHA `223e8b96…e21a7cb`) ; ligne 53 au §7. PDF non régénéré, rien poussé sur GitHub (hors de ce chantier).
+- **19 nov. 2026, ~16h30–22h51 (heure de Montréal) : §8.48 — DOMINATION IMMROT : EXPLIQUÉE, EFFET DE CORRÉLATION, PAS RUPTURE.** Go de Zackary « Fait tout cela » (~16h30, 3e des 4 chantiers ; suite du §8.44, annoncée au §8.44.7). Protocole gelé avant tout calcul (`PROTOCOL_immrot_domination.md`, SHA `465b4f54…77d4b9d`) ; scripts `analyze_immrot_domination.py`, `build_immrot_848.py`, `extract_immrot_848.py` ; 8 runs v6.2 fast, 8/8 exit 0 (unités `v62-immrot-848` puis `v62-immrot-848b`, 1re morte au redémarrage machine ~21h41 UTC, 0/8 perdu, relance 21h42:43, FIN 22h51:02 UTC). **Le couplage contrôle↔flux prédit l'écart S_sep réel−nul : r = 0,954, rho = 0,945, R² = 0,909** (d = −0,175 + 1,705·C, p = 1,3×10⁻²⁵, n = 48 rotations sans doublon) ; l'immunitaire domine parce que ses flux sont corrélés entre eux (|r| moyen 0,556, 62 % des paires > 0,5, contre 0,25 / 0,27 / 0,17) ; H1 soutenue (r = 0,947 flux par flux, biais −0,002, n = 528), H3 soutenue (dose–réponse monotone), H2 rejetée (X1 +0,1649, X2 −0,0535 — domination intra-famille) ; le nul conserve EXACTEMENT la cohésion (H identique à 10⁻¹⁶ près) en brisant le couplage (0,068), S_sep nul bas sans corréler avec C (r = 0,09). **Correction consignée : l'attribution du go dans le fichier de section disait à tort « Fait tes 3 propositions » (08h16) — corrigée à la fusion vers « Fait tout cela » (~16h30).** Limites : contrôle H dégénéré (identité algébrique, r(C,H) = −1,000000) ; niveau exact de maxsep non répliqué (D_full +0,19 / D_win −0,23) ; cause biologique de la corrélation (infiltration, pureté, sous-type) hors périmètre. Section rédigée dans `section_8.48_immrot_domination.md` (532 lignes, SHA `aa1ab9ad…6cea33`) ; ligne 54 au §7. PDF non régénéré, rien poussé sur GitHub (hors de ce chantier).
+- **19 nov. 2026, ~16h30–23h01 (heure de Montréal) : §8.49 — RECOMPOSITION DU SCORE MC : PROPOSITION v6.3 REJETÉE.** Go de Zackary « Fait tout cela » (~16h30, 4e des 4 chantiers). Protocole gelé avant tout calcul (`PROTOCOL_v6.3_mc.md`, SHA `acc74e94…5cea0b`) ; ancien MC lu dans le code v6.2 (`best_config.score = 0,3·s_norm + 0,3·stability + 0,2·robustness + 0,2·sharpness`, 12 tirages fast) ; défauts mesurés D1–D5 ; MC recomposé gelé `MC_new = 0,60·maxsep/(1+maxsep) + 0,25·stability + 0,15·recur` ; code v6.3 copie de v6.2 (SHA `552e7359…044ffb`, script `build_v6.3.py`, 3 blocs différants, `py_compile` exit 0 ; v6.2/v6.1/v6 revérifiés inchangés avant et après) ; validation hors-ligne 60 paires (extracteur `extract_mc63.py`, ancien MC relu sans écart vs §8.44/phase 2 v6.2, tol. 1e-9) : rotations **31/48** contre 12/48 (moy. +0,1043 contre +0,0152), principales **4/8** contre 1/8 (7/8 positifs), HP35 +0,2271 contre +0,1950, artefact pureté corrigé (−0,0353 contre +0,1520) ; validation en code 10/10 exit 0 (FIN 23:01:27Z), MC_new en code = hors-ligne à 0,0 exact, best_config + cascade + S_sep identiques à v6.2, gigue 0. **Décision : REJET — A1 franchie (31/48 ≥ 24/48), A2 en échec (4/8 < 6/8), A3 en échec (+0,227 < 0,30), A4 franchie ; la récurrence punit le vrai pic (HP35 recur réel 0,453 contre nul 0,876). v6.2 reste la version de travail ; l'ancien MC reste affiché avec ses défauts documentés.** Correction faite en cours de rédaction : la mission citait « MC HP35 1,772 vs 0,121 » — ce sont les max_separation, pas le MC best_score (0,6035 contre 0,4086). Section rédigée dans `section_8.49_mc_recomposition.md` (287 lignes, SHA `ca4121d8…98055b4`) ; ligne 55 au §7. PDF non régénéré, rien poussé sur GitHub (hors de ce chantier).
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*
