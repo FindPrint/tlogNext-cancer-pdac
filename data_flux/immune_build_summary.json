@@ -1,0 +1,93 @@
+{
+  "tcga": {
+    "flux": "66dbb672ea2a305ea67b51be3f9522a47e5003425f271c9cc4f42bc0427bbd2e",
+    "nul": "9100d181e3391d558eec6bc97e82f93b16c118b807b4a5f0c0992f4bda51a405",
+    "axis": "31d31ae64baf0a4a9247424f877ae6b0c3524cf97cf15c19d4bab80af417b62d",
+    "n": 178,
+    "flux_genes": [
+      "CD8A",
+      "CD8B",
+      "CD4",
+      "FOXP3",
+      "CD68",
+      "CD163",
+      "CD274",
+      "PDCD1",
+      "CTLA4",
+      "GZMB",
+      "IFNG",
+      "CD19"
+    ],
+    "remplacements": {},
+    "source_label": "Firehose PAAD log2(RSEM+1)"
+  },
+  "geo71729": {
+    "flux": "8987ffcaeb9cac848bd220c2a1816f63ecbcd63e5cd68c4f698e7c3234952219",
+    "nul": "b96b1f744db30193098e588326db33c3bca448bb87615fd011d9302e7c605fc7",
+    "axis": "2113e24c5b82303f4f808fc99a418ead53436ecbc530af0da02a623cffa76515",
+    "n": 145,
+    "flux_genes": [
+      "CD8A",
+      "CD8B",
+      "CD4",
+      "FOXP3",
+      "CD68",
+      "CD163",
+      "CD274",
+      "PDCD1",
+      "CTLA4",
+      "GZMB",
+      "IFNG",
+      "CD19"
+    ],
+    "remplacements": {},
+    "source_label": "GEO GSE71729 GPL20769"
+  },
+  "geo62452": {
+    "flux": "97c4689a6ecacd0a73a77804200a72a90994d60bea7e6b2c079195acbffd79a3",
+    "nul": "b0496cb923d49ef4913f90b895d856e3c02a1b1b4d78a2cc11a9f198c367d3a9",
+    "axis": "4a8549998b38021559724a08dcd5a882d170256f98d487cc45eeff3bd303c095",
+    "n": 69,
+    "flux_genes": [
+      "CD8A",
+      "CD8B",
+      "CD4",
+      "FOXP3",
+      "CD68",
+      "CD163",
+      "CD274",
+      "PDCD1",
+      "CTLA4",
+      "GZMB",
+      "IFNG",
+      "CD19"
+    ],
+    "remplacements": {},
+    "source_label": "GEO GSE62452 GPL6244"
+  },
+  "icgc": {
+    "flux": "10823879c0632d8c3ec7a07b0e73047a81ece2052aff9c2e5cd96bbf4d388adc",
+    "nul": "3393ecd662e6decfa41416b535e509089cb43bd63345097fe3f25ad9b7860955",
+    "axis": "67d41da9c93538e8670026bdfef0b3bddbc49df39bca3dc4d67af3101a720860",
+    "n": 70,
+    "flux_genes": [
+      "CD8A",
+      "CD8B",
+      "CD4",
+      "FOXP3",
+      "CD68",
+      "CD163",
+      "CD274",
+      "PDCD1",
+      "CTLA4",
+      "GZMB",
+      "PRF1",
+      "MS4A1"
+    ],
+    "remplacements": {
+      "IFNG": "PRF1",
+      "CD19": "MS4A1"
+    },
+    "source_label": "UCSC Xena PACA-AU log2(cpm), Bailey 2016"
+  }
+}

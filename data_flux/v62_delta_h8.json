@@ -1,0 +1,277 @@
+{
+ "n_runs": 222,
+ "n_v61": 156,
+ "n_v62": 66,
+ "n_dedup": 153,
+ "localpca_dans_paire": 217,
+ "graphdim_ph_dans_paire": 0,
+ "predictions": {
+  "H8a LocalPCA (quartiles)": {
+   "acc_paire": 0.46846846846846846,
+   "acc_valeur": 0.2882882882882883,
+   "n_groupes": 4,
+   "holdout_paire": 0.3939393939393939,
+   "holdout_valeur": 0.22727272727272727,
+   "holdout_unseen": 0,
+   "acc_upair": 0.5990990990990991
+  },
+  "H8b LevinaBickel (quartiles)": {
+   "acc_paire": 0.5765765765765766,
+   "acc_valeur": 0.2072072072072072,
+   "n_groupes": 5,
+   "holdout_paire": 0.5454545454545454,
+   "holdout_valeur": 0.15151515151515152,
+   "holdout_unseen": 0,
+   "acc_upair": 0.5900900900900901
+  },
+  "H8c PCAIntrinsic (quartiles)": {
+   "acc_paire": 0.5495495495495496,
+   "acc_valeur": 0.13063063063063063,
+   "n_groupes": 4,
+   "holdout_paire": 0.6060606060606061,
+   "holdout_valeur": 0.045454545454545456,
+   "holdout_unseen": 0,
+   "acc_upair": 0.581081081081081
+  },
+  "H8d GraphDimension (quartiles)": {
+   "acc_paire": 0.536036036036036,
+   "acc_valeur": 0.35135135135135137,
+   "n_groupes": 4,
+   "holdout_paire": 0.42424242424242425,
+   "holdout_valeur": 0.19696969696969696,
+   "holdout_unseen": 0,
+   "acc_upair": 0.6351351351351351
+  },
+  "H8e PersistentHomology (quartiles)": {
+   "acc_paire": 0.5765765765765766,
+   "acc_valeur": 0.23873873873873874,
+   "n_groupes": 5,
+   "holdout_paire": 0.5,
+   "holdout_valeur": 0.10606060606060606,
+   "holdout_unseen": 0,
+   "acc_upair": 0.581081081081081
+  },
+  "H9 famille": {
+   "acc_paire": 0.7612612612612613,
+   "acc_valeur": 0.49099099099099097,
+   "n_groupes": 19,
+   "holdout_paire": 0.7272727272727273,
+   "holdout_valeur": 0.5,
+   "holdout_unseen": 0,
+   "acc_upair": 0.7612612612612613
+  },
+  "H10 reel/nul": {
+   "acc_paire": 0.44594594594594594,
+   "acc_valeur": 0.05405405405405406,
+   "n_groupes": 2,
+   "holdout_paire": 0.5606060606060606,
+   "holdout_valeur": 0.0,
+   "holdout_unseen": 0,
+   "acc_upair": 0.581081081081081
+  },
+  "H9b (famille, nul)": {
+   "acc_paire": 0.7927927927927928,
+   "acc_valeur": 0.545045045045045,
+   "n_groupes": 38,
+   "holdout_paire": 0.7727272727272727,
+   "holdout_valeur": 0.5606060606060606,
+   "holdout_unseen": 0,
+   "acc_upair": 0.7972972972972973
+  },
+  "H9c (famille, MFA)": {
+   "acc_paire": 0.8423423423423423,
+   "acc_valeur": 0.8063063063063063,
+   "n_groupes": 36,
+   "holdout_paire": 0.8181818181818182,
+   "holdout_valeur": 0.7878787878787878,
+   "holdout_unseen": 0,
+   "acc_upair": 0.8423423423423423
+  },
+  "H9d (famille, n)": {
+   "acc_paire": 0.7792792792792793,
+   "acc_valeur": 0.527027027027027,
+   "n_groupes": 23,
+   "holdout_paire": 0.7575757575757576,
+   "holdout_valeur": 0.5606060606060606,
+   "holdout_unseen": 0,
+   "acc_upair": 0.7792792792792793
+  },
+  "H9e (famille, masque, MFA, n)": {
+   "acc_paire": 0.8783783783783784,
+   "acc_valeur": 0.8243243243243243,
+   "n_groupes": 40,
+   "holdout_paire": 0.8787878787878788,
+   "holdout_valeur": 0.8181818181818182,
+   "holdout_unseen": 0,
+   "acc_upair": 0.8783783783783784
+  },
+  "H11 (masque, MFA, n, controle)": {
+   "acc_paire": 0.8963963963963963,
+   "acc_valeur": 0.8468468468468469,
+   "n_groupes": 87,
+   "holdout_paire": 0.8636363636363636,
+   "holdout_valeur": 0.7878787878787878,
+   "holdout_unseen": 0,
+   "acc_upair": 0.8963963963963963
+  },
+  "H11b (masque, MFA, n, famille)": {
+   "acc_paire": 0.8783783783783784,
+   "acc_valeur": 0.8243243243243243,
+   "n_groupes": 40,
+   "holdout_paire": 0.8787878787878788,
+   "holdout_valeur": 0.8181818181818182,
+   "holdout_unseen": 0,
+   "acc_upair": 0.8783783783783784
+  },
+  "H11c (masque, MFA, n, nul)": {
+   "acc_paire": 0.8243243243243243,
+   "acc_valeur": 0.6846846846846847,
+   "n_groupes": 33,
+   "holdout_paire": 0.8333333333333334,
+   "holdout_valeur": 0.6666666666666666,
+   "holdout_unseen": 1,
+   "acc_upair": 0.8243243243243243
+  },
+  "H12 n_fluxes_div (detail)": {
+   "acc_paire": 0.6306306306306306,
+   "acc_valeur": 0.22072072072072071,
+   "n_groupes": 8,
+   "holdout_paire": 0.7121212121212122,
+   "holdout_valeur": 0.21212121212121213,
+   "holdout_unseen": 0,
+   "acc_upair": 0.6351351351351351
+  },
+  "H13a d_sat (quartiles)": {
+   "acc_paire": 0.5225225225225225,
+   "acc_valeur": 0.22072072072072071,
+   "n_groupes": 4,
+   "holdout_paire": 0.42424242424242425,
+   "holdout_valeur": 0.25757575757575757,
+   "holdout_unseen": 0,
+   "acc_upair": 0.5945945945945946
+  },
+  "H13b d_crit (quartiles)": {
+   "acc_paire": 0.5,
+   "acc_valeur": 0.22972972972972974,
+   "n_groupes": 4,
+   "holdout_paire": 0.4393939393939394,
+   "holdout_valeur": 0.15151515151515152,
+   "holdout_unseen": 0,
+   "acc_upair": 0.6216216216216216
+  },
+  "H13c d_null (quartiles)": {
+   "acc_paire": 0.545045045045045,
+   "acc_valeur": 0.11261261261261261,
+   "n_groupes": 5,
+   "holdout_paire": 0.5151515151515151,
+   "holdout_valeur": 0.07575757575757576,
+   "holdout_unseen": 0,
+   "acc_upair": 0.5900900900900901
+  },
+  "H13d trio_gap_E (quartiles)": {
+   "acc_paire": 0.5315315315315315,
+   "acc_valeur": 0.24324324324324326,
+   "n_groupes": 4,
+   "holdout_paire": 0.45454545454545453,
+   "holdout_valeur": 0.21212121212121213,
+   "holdout_unseen": 0,
+   "acc_upair": 0.6036036036036037
+  },
+  "H13e max_sep (quartiles)": {
+   "acc_paire": 0.481981981981982,
+   "acc_valeur": 0.0045045045045045045,
+   "n_groupes": 4,
+   "holdout_paire": 0.5606060606060606,
+   "holdout_valeur": 0.0,
+   "holdout_unseen": 0,
+   "acc_upair": 0.581081081081081
+  },
+  "H13f (d_sat q, MFA)": {
+   "acc_paire": 0.6756756756756757,
+   "acc_valeur": 0.5315315315315315,
+   "n_groupes": 19,
+   "holdout_paire": 0.5757575757575758,
+   "holdout_valeur": 0.4696969696969697,
+   "holdout_unseen": 0,
+   "acc_upair": 0.7432432432432432
+  },
+  "H13g (d_crit q, MFA)": {
+   "acc_paire": 0.6216216216216216,
+   "acc_valeur": 0.3963963963963964,
+   "n_groupes": 17,
+   "holdout_paire": 0.5,
+   "holdout_valeur": 0.24242424242424243,
+   "holdout_unseen": 0,
+   "acc_upair": 0.7252252252252253
+  },
+  "H14a robustness log-quartiles": {
+   "acc_paire": 0.45045045045045046,
+   "acc_valeur": 0.09009009009009009,
+   "n_groupes": 4,
+   "holdout_paire": 0.3181818181818182,
+   "holdout_valeur": 0.07575757575757576,
+   "holdout_unseen": 0,
+   "acc_upair": 0.581081081081081
+  },
+  "H14b sharpness (quartiles)": {
+   "acc_paire": 0.44594594594594594,
+   "acc_valeur": 0.009009009009009009,
+   "n_groupes": 4,
+   "holdout_paire": 0.5606060606060606,
+   "holdout_valeur": 0.015151515151515152,
+   "holdout_unseen": 0,
+   "acc_upair": 0.581081081081081
+  },
+  "H14c l7a_dir": {
+   "acc_paire": 0.44594594594594594,
+   "acc_valeur": 0.05855855855855856,
+   "n_groupes": 3,
+   "holdout_paire": 0.5606060606060606,
+   "holdout_valeur": 0.0,
+   "holdout_unseen": 0,
+   "acc_upair": 0.581081081081081
+  },
+  "H14d (l7a_dir, MFA)": {
+   "acc_paire": 0.6711711711711712,
+   "acc_valeur": 0.4774774774774775,
+   "n_groupes": 18,
+   "holdout_paire": 0.5757575757575758,
+   "holdout_valeur": 0.36363636363636365,
+   "holdout_unseen": 0,
+   "acc_upair": 0.7612612612612613
+  },
+  "H15 REF (masque, MFA, n)": {
+   "acc_paire": 0.8018018018018018,
+   "acc_valeur": 0.6171171171171171,
+   "n_groupes": 21,
+   "holdout_paire": 0.8181818181818182,
+   "holdout_valeur": 0.6515151515151515,
+   "holdout_unseen": 0,
+   "acc_upair": 0.8018018018018018
+  }
+ },
+ "meilleure_echantillon": "H11 (masque, MFA, n, controle)",
+ "meilleure_holdout": "H9e (famille, masque, MFA, n)",
+ "elucide": false,
+ "familles": {
+  "atr": 4,
+  "coad": 4,
+  "cptac": 8,
+  "depmap": 6,
+  "depmaprot": 24,
+  "geo62452": 10,
+  "geo71729": 16,
+  "hp35": 6,
+  "icgc": 6,
+  "immrot": 24,
+  "immune": 16,
+  "luad": 4,
+  "mtap": 2,
+  "parp": 4,
+  "parprot": 24,
+  "prolif": 4,
+  "tcga": 18,
+  "v4r": 18,
+  "v4rot": 24
+ }
+}
