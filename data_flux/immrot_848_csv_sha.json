@@ -1,0 +1,10 @@
+{
+  "pdac_immune_tcga_fluxes_immrot_CD8A_pp50.csv": "502bf8b4504cffd2b811a05eb2378b5bd63069cb2bc8452e4bcb01db860da2b0",
+  "pdac_immune_tcga_fluxes_immrot_CD8A_pp25.csv": "2be409ea721768afe01764164ee7e14cbd78f88082f575467710d0c6237bec4a",
+  "pdac_immune_tcga_fluxes_immrot_CD68_pp50.csv": "07ed558970c613a2265ab277e5dab24743ff21f219ac80cd78ae3fb983606027",
+  "pdac_tcga_fluxes_v4r_cldn18_pp50.csv": "1a41845604e4b351f43af0aefd656973785b962071c9fa846d81ebce8304e13e",
+  "xfam_cd8a_over_parp.csv": "80e094484380ee42578d81bbbaf72960fc8210b627e37eaf7ca928d0787e79df",
+  "xfam_cd8a_over_parp_nul.csv": "1bdf8e6259b3ede614cad356e90a823c4fb3043629c30f37b937031e80509263",
+  "xfam_polq_over_immune.csv": "c73435bf5375542cf7b4dbbbf435405d00355d201ea95d31db77680e7103be3c",
+  "xfam_polq_over_immune_nul.csv": "8612b828797a929b17e91d8dd2c273b80c7a61690f53262400ec50b89577e0f1"
+}

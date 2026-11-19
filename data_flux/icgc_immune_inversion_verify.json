@@ -1,0 +1,652 @@
+{
+  "sha_verifies": {
+    "pdac_immune_tcga_fluxes.csv": true,
+    "pdac_immune_tcga_fluxes_nul.csv": true,
+    "pdac_immune_geo71729_fluxes.csv": true,
+    "pdac_immune_geo71729_fluxes_nul.csv": true,
+    "pdac_immune_geo62452_fluxes.csv": true,
+    "pdac_immune_geo62452_fluxes_nul.csv": true,
+    "pdac_immune_icgc_fluxes.csv": true,
+    "pdac_immune_icgc_fluxes_nul.csv": true
+  },
+  "cohortes": {
+    "tcga": {
+      "n": 178,
+      "nul_permutation_lignes": true,
+      "ordre_change": true,
+      "nul_reconstruit_graine42": true,
+      "colonnes": [
+        "CD8A",
+        "CD8B",
+        "CD4",
+        "FOXP3",
+        "CD68",
+        "CD163",
+        "CD274",
+        "PDCD1",
+        "CTLA4",
+        "GZMB",
+        "IFNG",
+        "CD19"
+      ],
+      "genes_stats": [
+        {
+          "gene": "CD8A",
+          "moyenne": 7.3366,
+          "ecart_type": 1.5049,
+          "min": 3.328,
+          "max": 10.4663,
+          "nan": 0
+        },
+        {
+          "gene": "CD8B",
+          "moyenne": 5.5838,
+          "ecart_type": 1.5137,
+          "min": 1.4944,
+          "max": 8.9194,
+          "nan": 0
+        },
+        {
+          "gene": "CD4",
+          "moyenne": 10.1843,
+          "ecart_type": 1.0846,
+          "min": 6.6709,
+          "max": 12.4107,
+          "nan": 0
+        },
+        {
+          "gene": "FOXP3",
+          "moyenne": 5.501,
+          "ecart_type": 1.4534,
+          "min": 1.6292,
+          "max": 9.423,
+          "nan": 0
+        },
+        {
+          "gene": "CD68",
+          "moyenne": 11.9477,
+          "ecart_type": 0.9212,
+          "min": 7.535,
+          "max": 14.3474,
+          "nan": 0
+        },
+        {
+          "gene": "CD163",
+          "moyenne": 10.048,
+          "ecart_type": 1.6156,
+          "min": 5.6007,
+          "max": 13.661,
+          "nan": 0
+        },
+        {
+          "gene": "CD274",
+          "moyenne": 4.6326,
+          "ecart_type": 1.1374,
+          "min": 0.0,
+          "max": 7.7582,
+          "nan": 0
+        },
+        {
+          "gene": "PDCD1",
+          "moyenne": 5.0421,
+          "ecart_type": 1.4783,
+          "min": 0.9326,
+          "max": 8.6122,
+          "nan": 0
+        },
+        {
+          "gene": "CTLA4",
+          "moyenne": 5.1903,
+          "ecart_type": 1.5139,
+          "min": 0.0,
+          "max": 9.0585,
+          "nan": 0
+        },
+        {
+          "gene": "GZMB",
+          "moyenne": 5.4904,
+          "ecart_type": 1.431,
+          "min": 1.7935,
+          "max": 9.2078,
+          "nan": 0
+        },
+        {
+          "gene": "IFNG",
+          "moyenne": 1.3549,
+          "ecart_type": 1.1371,
+          "min": 0.0,
+          "max": 6.1523,
+          "nan": 0
+        },
+        {
+          "gene": "CD19",
+          "moyenne": 3.9095,
+          "ecart_type": 2.8154,
+          "min": 0.0,
+          "max": 11.7586,
+          "nan": 0
+        }
+      ],
+      "kras": {
+        "min": 8.5697,
+        "mediane": 10.2816,
+        "max": 11.7273,
+        "moy_top12": 11.227,
+        "moy_reste": 10.1949,
+        "ecart_top12_reste": 1.0322,
+        "sd": 0.51,
+        "monotone_croissant": true
+      },
+      "fardeau": {
+        "moyenne_abs_z": 0.6207,
+        "max_abs_z": 2.2786,
+        "lignes_abs_z_sup_2.5": 0,
+        "lignes_abs_z_sup_2.0": 2,
+        "rho_burden_vs_step": -0.1352,
+        "p_burden_vs_step": 0.0720017750093922,
+        "lignes_extremes": [
+          {
+            "step": 38,
+            "fardeau_z": 2.123
+          },
+          {
+            "step": 49,
+            "fardeau_z": -2.279
+          }
+        ]
+      },
+      "correlation_inter_flux": {
+        "rho_spearman_moyen": 0.5403,
+        "rho_spearman_mediane": 0.5652,
+        "rho_min": 0.1267,
+        "rho_max": 0.8398
+      }
+    },
+    "geo71729": {
+      "n": 145,
+      "nul_permutation_lignes": true,
+      "ordre_change": true,
+      "nul_reconstruit_graine42": true,
+      "colonnes": [
+        "CD8A",
+        "CD8B",
+        "CD4",
+        "FOXP3",
+        "CD68",
+        "CD163",
+        "CD274",
+        "PDCD1",
+        "CTLA4",
+        "GZMB",
+        "IFNG",
+        "CD19"
+      ],
+      "genes_stats": [
+        {
+          "gene": "CD8A",
+          "moyenne": 4.2078,
+          "ecart_type": 1.1754,
+          "min": 1.95,
+          "max": 7.337,
+          "nan": 0
+        },
+        {
+          "gene": "CD8B",
+          "moyenne": 3.0027,
+          "ecart_type": 0.4934,
+          "min": 1.833,
+          "max": 4.673,
+          "nan": 0
+        },
+        {
+          "gene": "CD4",
+          "moyenne": 6.5019,
+          "ecart_type": 0.7574,
+          "min": 5.08,
+          "max": 9.315,
+          "nan": 0
+        },
+        {
+          "gene": "FOXP3",
+          "moyenne": 0.9735,
+          "ecart_type": 0.3434,
+          "min": 0.149,
+          "max": 2.468,
+          "nan": 0
+        },
+        {
+          "gene": "CD68",
+          "moyenne": 5.2471,
+          "ecart_type": 0.8053,
+          "min": 3.136,
+          "max": 8.069,
+          "nan": 0
+        },
+        {
+          "gene": "CD163",
+          "moyenne": 7.2702,
+          "ecart_type": 1.3204,
+          "min": 3.953,
+          "max": 10.767,
+          "nan": 0
+        },
+        {
+          "gene": "CD274",
+          "moyenne": 2.6216,
+          "ecart_type": 0.7229,
+          "min": 1.0,
+          "max": 5.292,
+          "nan": 0
+        },
+        {
+          "gene": "PDCD1",
+          "moyenne": 3.6535,
+          "ecart_type": 0.8455,
+          "min": 2.091,
+          "max": 6.508,
+          "nan": 0
+        },
+        {
+          "gene": "CTLA4",
+          "moyenne": 1.1398,
+          "ecart_type": 0.2553,
+          "min": 0.386,
+          "max": 2.12,
+          "nan": 0
+        },
+        {
+          "gene": "GZMB",
+          "moyenne": 4.194,
+          "ecart_type": 1.0498,
+          "min": 2.224,
+          "max": 7.544,
+          "nan": 0
+        },
+        {
+          "gene": "IFNG",
+          "moyenne": 0.6174,
+          "ecart_type": 0.2722,
+          "min": 0.269,
+          "max": 2.081,
+          "nan": 0
+        },
+        {
+          "gene": "CD19",
+          "moyenne": 4.0824,
+          "ecart_type": 1.6827,
+          "min": 2.031,
+          "max": 9.887,
+          "nan": 0
+        }
+      ],
+      "kras": {
+        "min": 1.55,
+        "mediane": 3.278,
+        "max": 4.151,
+        "moy_top12": 3.9008,
+        "moy_reste": 3.2236,
+        "ecart_top12_reste": 0.6772,
+        "sd": 0.3597,
+        "monotone_croissant": false
+      },
+      "fardeau": {
+        "moyenne_abs_z": 0.4568,
+        "max_abs_z": 1.8177,
+        "lignes_abs_z_sup_2.5": 0,
+        "lignes_abs_z_sup_2.0": 0,
+        "rho_burden_vs_step": -0.0827,
+        "p_burden_vs_step": 0.32256808652125724,
+        "lignes_extremes": []
+      },
+      "correlation_inter_flux": {
+        "rho_spearman_moyen": 0.2519,
+        "rho_spearman_mediane": 0.2572,
+        "rho_min": -0.3282,
+        "rho_max": 0.7854
+      }
+    },
+    "geo62452": {
+      "n": 69,
+      "nul_permutation_lignes": true,
+      "ordre_change": true,
+      "nul_reconstruit_graine42": true,
+      "colonnes": [
+        "CD8A",
+        "CD8B",
+        "CD4",
+        "FOXP3",
+        "CD68",
+        "CD163",
+        "CD274",
+        "PDCD1",
+        "CTLA4",
+        "GZMB",
+        "IFNG",
+        "CD19"
+      ],
+      "genes_stats": [
+        {
+          "gene": "CD8A",
+          "moyenne": 4.4564,
+          "ecart_type": 0.3531,
+          "min": 3.947,
+          "max": 5.8624,
+          "nan": 0
+        },
+        {
+          "gene": "CD8B",
+          "moyenne": 3.9,
+          "ecart_type": 0.1753,
+          "min": 3.5938,
+          "max": 4.5097,
+          "nan": 0
+        },
+        {
+          "gene": "CD4",
+          "moyenne": 5.2136,
+          "ecart_type": 0.541,
+          "min": 4.0307,
+          "max": 6.5607,
+          "nan": 0
+        },
+        {
+          "gene": "FOXP3",
+          "moyenne": 4.0615,
+          "ecart_type": 0.2253,
+          "min": 3.6457,
+          "max": 4.7606,
+          "nan": 0
+        },
+        {
+          "gene": "CD68",
+          "moyenne": 7.1179,
+          "ecart_type": 0.4961,
+          "min": 5.4139,
+          "max": 8.1548,
+          "nan": 0
+        },
+        {
+          "gene": "CD163",
+          "moyenne": 6.8092,
+          "ecart_type": 0.8756,
+          "min": 4.6405,
+          "max": 8.6826,
+          "nan": 0
+        },
+        {
+          "gene": "CD274",
+          "moyenne": 4.143,
+          "ecart_type": 0.4844,
+          "min": 3.1883,
+          "max": 5.4648,
+          "nan": 0
+        },
+        {
+          "gene": "PDCD1",
+          "moyenne": 5.2564,
+          "ecart_type": 0.2559,
+          "min": 4.7518,
+          "max": 6.0548,
+          "nan": 0
+        },
+        {
+          "gene": "CTLA4",
+          "moyenne": 4.2272,
+          "ecart_type": 0.6,
+          "min": 3.1503,
+          "max": 5.9921,
+          "nan": 0
+        },
+        {
+          "gene": "GZMB",
+          "moyenne": 4.5679,
+          "ecart_type": 0.4296,
+          "min": 3.6232,
+          "max": 6.145,
+          "nan": 0
+        },
+        {
+          "gene": "IFNG",
+          "moyenne": 2.6463,
+          "ecart_type": 0.3266,
+          "min": 2.2082,
+          "max": 3.8719,
+          "nan": 0
+        },
+        {
+          "gene": "CD19",
+          "moyenne": 4.1868,
+          "ecart_type": 0.3509,
+          "min": 3.4534,
+          "max": 5.6062,
+          "nan": 0
+        }
+      ],
+      "kras": {
+        "min": 5.277,
+        "mediane": 6.3965,
+        "max": 7.3609,
+        "moy_top12": 7.0816,
+        "moy_reste": 6.2396,
+        "ecart_top12_reste": 0.842,
+        "sd": 0.4724,
+        "monotone_croissant": true
+      },
+      "fardeau": {
+        "moyenne_abs_z": 0.4408,
+        "max_abs_z": 2.0139,
+        "lignes_abs_z_sup_2.5": 0,
+        "lignes_abs_z_sup_2.0": 1,
+        "rho_burden_vs_step": -0.2429,
+        "p_burden_vs_step": 0.04435928911918812,
+        "lignes_extremes": [
+          {
+            "step": 40,
+            "fardeau_z": 2.014
+          }
+        ]
+      },
+      "correlation_inter_flux": {
+        "rho_spearman_moyen": 0.2426,
+        "rho_spearman_mediane": 0.2476,
+        "rho_min": -0.1974,
+        "rho_max": 0.7365
+      }
+    },
+    "icgc": {
+      "n": 70,
+      "nul_permutation_lignes": true,
+      "ordre_change": true,
+      "nul_reconstruit_graine42": true,
+      "colonnes": [
+        "CD8A",
+        "CD8B",
+        "CD4",
+        "FOXP3",
+        "CD68",
+        "CD163",
+        "CD274",
+        "PDCD1",
+        "CTLA4",
+        "GZMB",
+        "PRF1",
+        "MS4A1"
+      ],
+      "genes_stats": [
+        {
+          "gene": "CD8A",
+          "moyenne": 1.7875,
+          "ecart_type": 1.2523,
+          "min": -1.3041,
+          "max": 4.3182,
+          "nan": 0
+        },
+        {
+          "gene": "CD8B",
+          "moyenne": -0.0404,
+          "ecart_type": 1.3022,
+          "min": -2.5539,
+          "max": 2.2802,
+          "nan": 0
+        },
+        {
+          "gene": "CD4",
+          "moyenne": 4.6509,
+          "ecart_type": 0.7301,
+          "min": 2.2783,
+          "max": 6.3862,
+          "nan": 0
+        },
+        {
+          "gene": "FOXP3",
+          "moyenne": -0.5602,
+          "ecart_type": 0.9924,
+          "min": -3.3153,
+          "max": 1.5222,
+          "nan": 0
+        },
+        {
+          "gene": "CD68",
+          "moyenne": 6.3153,
+          "ecart_type": 0.6734,
+          "min": 4.8279,
+          "max": 8.12,
+          "nan": 0
+        },
+        {
+          "gene": "CD163",
+          "moyenne": 5.8313,
+          "ecart_type": 0.9381,
+          "min": 3.7866,
+          "max": 8.2604,
+          "nan": 0
+        },
+        {
+          "gene": "CD274",
+          "moyenne": 1.7973,
+          "ecart_type": 0.8682,
+          "min": 0.0719,
+          "max": 4.1364,
+          "nan": 0
+        },
+        {
+          "gene": "PDCD1",
+          "moyenne": -0.9848,
+          "ecart_type": 1.1588,
+          "min": -3.8743,
+          "max": 2.7662,
+          "nan": 0
+        },
+        {
+          "gene": "CTLA4",
+          "moyenne": 0.2219,
+          "ecart_type": 1.049,
+          "min": -2.1876,
+          "max": 2.8151,
+          "nan": 0
+        },
+        {
+          "gene": "GZMB",
+          "moyenne": -0.3778,
+          "ecart_type": 1.2808,
+          "min": -2.9555,
+          "max": 2.6172,
+          "nan": 0
+        },
+        {
+          "gene": "PRF1",
+          "moyenne": 1.6106,
+          "ecart_type": 0.8422,
+          "min": -0.4762,
+          "max": 3.6748,
+          "nan": 0
+        },
+        {
+          "gene": "MS4A1",
+          "moyenne": -1.0005,
+          "ecart_type": 1.8772,
+          "min": -5.8767,
+          "max": 3.8089,
+          "nan": 0
+        }
+      ],
+      "kras": {
+        "min": 5.1616,
+        "mediane": 6.3587,
+        "max": 7.3523,
+        "moy_top12": 6.9206,
+        "moy_reste": 6.2404,
+        "ecart_top12_reste": 0.6802,
+        "sd": 0.4238,
+        "monotone_croissant": true
+      },
+      "fardeau": {
+        "moyenne_abs_z": 0.5247,
+        "max_abs_z": 1.6216,
+        "lignes_abs_z_sup_2.5": 0,
+        "lignes_abs_z_sup_2.0": 0,
+        "rho_burden_vs_step": -0.1096,
+        "p_burden_vs_step": 0.366206802630353,
+        "lignes_extremes": []
+      },
+      "correlation_inter_flux": {
+        "rho_spearman_moyen": 0.3785,
+        "rho_spearman_mediane": 0.3855,
+        "rho_min": 0.0807,
+        "rho_max": 0.7492
+      }
+    }
+  },
+  "h4_sous_type": {
+    "fichier_nmf_lignes": 96,
+    "jointure_70": 70,
+    "repartition_70": {
+      "Pancreatic Progenitor": 19,
+      "Immunogenic": 19,
+      "Squamous": 18,
+      "ADEX": 14
+    },
+    "classes": [
+      "ADEX",
+      "Immunogenic",
+      "Pancreatic Progenitor",
+      "Squamous"
+    ],
+    "mannwhitney_immunogenic_vs_autres": {
+      "n_immunogenic": 19,
+      "n_autres": 51,
+      "mediane_step_immunogenic": 34.0,
+      "mediane_step_autres": 36.0,
+      "U": 464.0,
+      "p": 0.7916742065475761
+    },
+    "tertiaire_x_sous_type": {
+      "ADEX": {
+        "T1_bas": 7,
+        "T2": 3,
+        "T3_haut": 4
+      },
+      "Immunogenic": {
+        "T1_bas": 6,
+        "T2": 8,
+        "T3_haut": 5
+      },
+      "Pancreatic Progenitor": {
+        "T1_bas": 7,
+        "T2": 6,
+        "T3_haut": 6
+      },
+      "Squamous": {
+        "T1_bas": 4,
+        "T2": 6,
+        "T3_haut": 8
+      }
+    },
+    "mediane_step_par_sous_type": {
+      "ADEX": 22.5,
+      "Immunogenic": 34.0,
+      "Pancreatic Progenitor": 39.0,
+      "Squamous": 42.5
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "fichiers": {
+    "pdac_immune_icgc_fluxes_nul_s1.csv": "62f13f83fc28cf445da1acb5a8b0061eddf7786790b96bc9706242e4db507a93",
+    "pdac_immune_icgc_fluxes_nul_s2.csv": "869045d7d6ab30b1a5fa2324bfff764af3f698adf7905d21569a94b637d0fb23",
+    "pdac_immune_icgc_fluxes_nul_s3.csv": "25fdec860620d8997f548ffffd52e30e104fea124f949b3bda59f9778a88ec30",
+    "pdac_immune_geo62452_fluxes_nul_s1.csv": "53d21653be54763260c3fad91654bcf802c3a5c50408922cc13dc8e522b795c2",
+    "pdac_immune_geo62452_fluxes_nul_s2.csv": "f46af04c57b830dbf255f2aab953e8be17786614e1fb6ff5752df09a8aa8bfa5",
+    "pdac_immune_tcga_fluxes_nul_s1.csv": "990d60c1b9ee74143d72ac649ccae5d2488709a1c0b1b4fc3ff7cedb4140b2f8",
+    "pdac_immune_tcga_fluxes_nul_s2.csv": "1131a687386d7b08fe9a56ed81aaaf9e72876d183572069cd873814c899b8709",
+    "pdac_immune_icgc_fluxes_10g.csv": "988b1665a5f8f318bbbab1b37a614a5ae0f35daa24939188b57d9140e2817d6c",
+    "pdac_immune_icgc_fluxes_10g_nul.csv": "90c9883d39a658d91a8b18094969f7cacbf48f102d37e9b82a7b41d5f6e8f23b",
+    "pdac_immune_tcga_fluxes_10g.csv": "37ce3ef1312d906de927e83e8e4f8f390f14bbdbf78e6af458da4b737dacfe69",
+    "pdac_immune_tcga_fluxes_10g_nul.csv": "10f518ff4c92283592a9482e1a086553994c2fcce5653d8ac4e5159fd8ae5973"
+  }
+}

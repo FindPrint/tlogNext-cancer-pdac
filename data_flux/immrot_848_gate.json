@@ -1,0 +1,17 @@
+{
+  "tarball_md5": "b09569ce3f4721f514bc137bd109ac0a",
+  "tarball_md5_attendu": "b09569ce3f4721f514bc137bd109ac0a",
+  "tarball_md5_ok": true,
+  "tumeurs_primaires_01": 178,
+  "nan_kras_plus_imm": 0,
+  "nan_kras_plus_parp": 0,
+  "axis_lignes": 178,
+  "ordre_kras_recalcule_egal_axis": true,
+  "n_concordants": 178,
+  "kras_min_med_max": [
+    8.5697,
+    10.2816,
+    11.7273
+  ],
+  "ouverte": true
+}
