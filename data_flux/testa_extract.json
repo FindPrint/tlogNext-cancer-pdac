@@ -1,0 +1,373 @@
+{
+  "extraction": {
+    "TESTA_RÉEL": {
+      "dir": "results_fast_v61_prolif",
+      "version": "v6.1.0-L7aL7b-CohenD-short",
+      "n": 178.0,
+      "control_col": "PROLIF",
+      "cascade_pct": [
+        0.0,
+        0.7273445985839841,
+        3.727344598583984,
+        24.567160757811283,
+        24.567160757811283
+      ],
+      "cascade_pas": [
+        0,
+        1,
+        7,
+        43,
+        43
+      ],
+      "l7a_dir": "up",
+      "l7a_conf": 0.41201426710508016,
+      "l7a_status": "ok",
+      "l7b": "FRAGILE",
+      "delta": 3.79799,
+      "mc_thr": 10.869565217391305,
+      "mc_score": 0.36384619549365427,
+      "mc_metrics": {
+        "max_separation": 0.39430233103000595,
+        "s_norm": 0.1946359349163616,
+        "stability": 0.9753548131857463,
+        "robustness": 1.1721808629252972e-08,
+        "sharpness": 0.06424484359330104
+      },
+      "fals": 0.736656,
+      "fals_status": "ok",
+      "regime": "divergence",
+      "bruit_verdict": "Proxy de variance modéré - Plusieurs flux agissent comme proxies de variance résiduelle",
+      "bruit_score_moyen": 0.6286666666666666,
+      "f1_avant": 0.051206276661305145,
+      "f1_apres": 0.0013036124980154756,
+      "f2_avant": 0.014621531347281926,
+      "f2_apres": 7.04386525653713e-05,
+      "f1_ratio": 0.02545806067170222,
+      "f2_ratio": 0.004817460694940515,
+      "n_estimateurs_tous_ok": 29,
+      "f1_changement_signe": [
+        "DFA",
+        "Katz",
+        "Hurst",
+        "SampleEn",
+        "Petrosian",
+        "Sevcik",
+        "BoxCounting",
+        "PermutationEntropy",
+        "CorrelationD2",
+        "GrassbergerProcaccia",
+        "InformationD1",
+        "VisibilityGraph",
+        "TwoNN",
+        "Fisher",
+        "PCAIntrinsic",
+        "LocalPCA",
+        "GraphDimension",
+        "MFA",
+        "KolmogorovLZ",
+        "SpectralBeta",
+        "SpectralDimension",
+        "Hurst2mH",
+        "SingularityFmax"
+      ]
+    },
+    "TESTA_NUL": {
+      "dir": "results_fast_v61_prolif_nul",
+      "version": "v6.1.0-L7aL7b-CohenD-short",
+      "n": 178.0,
+      "control_col": "PROLIF",
+      "cascade_pct": [
+        0.0,
+        2.3247779979771206,
+        5.324777997977121,
+        46.594842376760084,
+        46.594842376760084
+      ],
+      "cascade_pas": [
+        0,
+        4,
+        9,
+        82,
+        82
+      ],
+      "l7a_dir": "down",
+      "l7a_conf": 0.19629009155935984,
+      "l7a_status": "ok",
+      "l7b": "FRAGILE",
+      "delta": 4.589542,
+      "mc_thr": 19.047619047619047,
+      "mc_score": 0.4586760096340217,
+      "mc_metrics": {
+        "max_separation": 0.14422872166615555,
+        "s_norm": 0.07198961054255895,
+        "stability": 0.9839519013879158,
+        "robustness": 0.6925693242051973,
+        "sharpness": 0.016898456069198983
+      },
+      "fals": 0.733274,
+      "fals_status": "ok",
+      "regime": "divergence",
+      "bruit_verdict": "Mixte - Coexistence de bruit blanc et de proxies de variance résiduelle",
+      "bruit_score_moyen": 0.47474999999999995,
+      "f1_avant": 0.022025555900096843,
+      "f1_apres": 0.0015155872128199512,
+      "f2_avant": 0.0015876906345165655,
+      "f2_apres": 0.00014717843306482438,
+      "f1_ratio": 0.06881039551030299,
+      "f2_ratio": 0.09269969215988895,
+      "n_estimateurs_tous_ok": 29,
+      "f1_changement_signe": [
+        "DFA",
+        "Katz",
+        "Hurst",
+        "SampleEn",
+        "Petrosian",
+        "Sevcik",
+        "BoxCounting",
+        "PermutationEntropy",
+        "CorrelationD2",
+        "GrassbergerProcaccia",
+        "InformationD1",
+        "VisibilityGraph",
+        "DANCo",
+        "Fisher",
+        "LevinaBickel",
+        "PCAIntrinsic",
+        "LocalPCA",
+        "GraphDimension",
+        "PersistentHomology",
+        "MFA",
+        "KolmogorovLZ",
+        "SpectralBeta",
+        "SpectralDimension",
+        "Hurst2mH",
+        "MultifractalDeltaAlpha",
+        "SingularityFmax"
+      ]
+    }
+  },
+  "autour_T0": {
+    "TESTA_RÉEL": {
+      "PGC": 1.574,
+      "REG4": 1.379,
+      "CLDN18": 2.242,
+      "MUC17": 2.015,
+      "DPCR1": 2.42,
+      "CR2": 1.27,
+      "KRT20": 0.638,
+      "MUC2": 1.043,
+      "GSTM1": 0.605,
+      "CEACAM5": 1.934,
+      "CLCA1": 0.693,
+      "MUC16": 1.727
+    },
+    "TESTA_NUL": {
+      "PGC": 0.927,
+      "REG4": 0.103,
+      "CLDN18": 0.31,
+      "MUC17": -0.081,
+      "DPCR1": 0.213,
+      "CR2": 0.317,
+      "KRT20": 0.799,
+      "MUC2": 0.12,
+      "GSTM1": -0.407,
+      "CEACAM5": -0.232,
+      "CLCA1": 0.301,
+      "MUC16": -0.68
+    }
+  },
+  "directs": [
+    {
+      "flux": "PGC",
+      "top12_moy_z": -0.568,
+      "top12_d": -0.612,
+      "spearman_rho": -0.048,
+      "spearman_p": 0.5280348765387752,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "REG4",
+      "top12_moy_z": 0.143,
+      "top12_d": 0.153,
+      "spearman_rho": 0.123,
+      "spearman_p": 0.10093185345280056,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "CLDN18",
+      "top12_moy_z": -0.141,
+      "top12_d": -0.15,
+      "spearman_rho": 0.172,
+      "spearman_p": 0.021476512165988698,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "MUC17",
+      "top12_moy_z": -0.084,
+      "top12_d": -0.09,
+      "spearman_rho": 0.201,
+      "spearman_p": 0.007045130940167394,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "DPCR1",
+      "top12_moy_z": -0.346,
+      "top12_d": -0.37,
+      "spearman_rho": 0.072,
+      "spearman_p": 0.33979794900204396,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "CR2",
+      "top12_moy_z": -0.218,
+      "top12_d": -0.233,
+      "spearman_rho": -0.161,
+      "spearman_p": 0.03153837813150492,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "KRT20",
+      "top12_moy_z": 0.631,
+      "top12_d": 0.683,
+      "spearman_rho": 0.212,
+      "spearman_p": 0.004417806299744365,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "MUC2",
+      "top12_moy_z": 0.473,
+      "top12_d": 0.508,
+      "spearman_rho": 0.17,
+      "spearman_p": 0.02368660165357077,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "GSTM1",
+      "top12_moy_z": 0.542,
+      "top12_d": 0.584,
+      "spearman_rho": 0.031,
+      "spearman_p": 0.6769883318869505,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "CEACAM5",
+      "top12_moy_z": 0.391,
+      "top12_d": 0.42,
+      "spearman_rho": 0.306,
+      "spearman_p": 3.328347677279878e-05,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "CLCA1",
+      "top12_moy_z": 0.263,
+      "top12_d": 0.281,
+      "spearman_rho": 0.048,
+      "spearman_p": 0.5256927647223388,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "MUC16",
+      "top12_moy_z": -0.037,
+      "top12_d": -0.039,
+      "spearman_rho": 0.277,
+      "spearman_p": 0.00018363801017751383,
+      "série": "TESTA_RÉEL"
+    },
+    {
+      "flux": "PGC",
+      "top12_moy_z": -0.004,
+      "top12_d": -0.004,
+      "spearman_rho": -0.008,
+      "spearman_p": 0.9154888067807674,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "REG4",
+      "top12_moy_z": 0.112,
+      "top12_d": 0.12,
+      "spearman_rho": 0.071,
+      "spearman_p": 0.3436774348288538,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "CLDN18",
+      "top12_moy_z": -0.012,
+      "top12_d": -0.013,
+      "spearman_rho": 0.062,
+      "spearman_p": 0.41156147884570615,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "MUC17",
+      "top12_moy_z": 0.003,
+      "top12_d": 0.003,
+      "spearman_rho": 0.036,
+      "spearman_p": 0.63405977335409,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "DPCR1",
+      "top12_moy_z": -0.473,
+      "top12_d": -0.508,
+      "spearman_rho": -0.081,
+      "spearman_p": 0.28032113285350835,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "CR2",
+      "top12_moy_z": 0.513,
+      "top12_d": 0.553,
+      "spearman_rho": -0.035,
+      "spearman_p": 0.6400417005147698,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "KRT20",
+      "top12_moy_z": 0.177,
+      "top12_d": 0.189,
+      "spearman_rho": 0.048,
+      "spearman_p": 0.523025154792606,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "MUC2",
+      "top12_moy_z": 0.101,
+      "top12_d": 0.108,
+      "spearman_rho": -0.068,
+      "spearman_p": 0.3641955491651514,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "GSTM1",
+      "top12_moy_z": -0.205,
+      "top12_d": -0.219,
+      "spearman_rho": 0.041,
+      "spearman_p": 0.5887724553517932,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "CEACAM5",
+      "top12_moy_z": -0.218,
+      "top12_d": -0.233,
+      "spearman_rho": 0.021,
+      "spearman_p": 0.7806776616016338,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "CLCA1",
+      "top12_moy_z": 0.245,
+      "top12_d": 0.262,
+      "spearman_rho": 0.058,
+      "spearman_p": 0.4408538804823081,
+      "série": "TESTA_NUL"
+    },
+    {
+      "flux": "MUC16",
+      "top12_moy_z": -0.421,
+      "top12_d": -0.452,
+      "spearman_rho": -0.213,
+      "spearman_p": 0.00424516277781159,
+      "série": "TESTA_NUL"
+    }
+  ]
+}

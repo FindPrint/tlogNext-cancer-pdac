@@ -1,0 +1,9385 @@
+{
+ "V4ROT_PGC": {
+  "real": {
+   "casc": [
+    0.0,
+    0.53,
+    96.35,
+    99.35,
+    100.0
+   ],
+   "mc": 0.3971680315769768,
+   "mc_thr": 28.26086956521739,
+   "mc_met": {
+    "max_separation": 0.6669820809921009,
+    "s_norm": 0.32165413526476316,
+    "stability": 0.9974464809867476,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.007189233507617584
+   },
+   "delta": 3.822078,
+   "dvec": {
+    "d_sat": 1.605,
+    "d_crit": 3.139,
+    "d_div": 5.427,
+    "d_null": 2.526
+   },
+   "l7a": "down",
+   "l7a_conf": 0.20272757013414827,
+   "fals": 0.613044,
+   "t0": {
+    "step": 171,
+    "top": [
+     [
+      "PGC.1",
+      3.59
+     ],
+     [
+      "MUC2",
+      1.06
+     ],
+     [
+      "REG4",
+      0.74
+     ],
+     [
+      "DPCR1",
+      0.67
+     ]
+    ],
+    "dup_d": 3.59,
+    "max_d": [
+     "PGC.1",
+     3.59
+    ]
+   },
+   "mc_at": {
+    "step": 50,
+    "top": [
+     [
+      "PGC.1",
+      3.09
+     ]
+    ],
+    "dup_d": 3.09,
+    "max_d": [
+     "PGC.1",
+     3.09
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.529
+   ],
+   "f1_ratio": 0.22,
+   "f2_ratio": 0.14,
+   "react_med": 27.7,
+   "react_iqr": [
+    15.5,
+    54.6
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    21.53,
+    24.57,
+    49.11,
+    49.11
+   ],
+   "mc": 0.33990222483097504,
+   "mc_thr": 89.13043478260869,
+   "mc_met": {
+    "max_separation": 0.25487120891512277,
+    "s_norm": 0.12675021205326725,
+    "stability": 0.9964974960503613,
+    "robustness": 3.6322891999924454e-05,
+    "sharpness": 0.014603239107432397
+   },
+   "delta": 3.763695,
+   "dvec": {
+    "d_sat": 1.605,
+    "d_crit": 3.211,
+    "d_div": 5.368,
+    "d_null": 2.533
+   },
+   "l7a": "up",
+   "l7a_conf": 0.18591699436349562,
+   "fals": 0.678253,
+   "t0": {
+    "step": 43,
+    "top": [
+     [
+      "GSTM1",
+      -0.72
+     ],
+     [
+      "MUC16",
+      0.63
+     ],
+     [
+      "PGC.1",
+      -0.57
+     ],
+     [
+      "CLDN18",
+      -0.5
+     ]
+    ],
+    "dup_d": -0.57,
+    "max_d": [
+     "GSTM1",
+     -0.72
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [],
+    "dup_d": 0.32,
+    "max_d": [
+     "CR2",
+     -0.41
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.685
+   ],
+   "f1_ratio": 28.41,
+   "f2_ratio": 79.47,
+   "react_med": 70.6,
+   "react_iqr": [
+    37.8,
+    75.6
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_REG4": {
+  "real": {
+   "casc": [
+    0.0,
+    74.61,
+    98.44,
+    100.0,
+    100.0
+   ],
+   "mc": 0.4223496384620242,
+   "mc_thr": 10.714285714285715,
+   "mc_met": {
+    "max_separation": 0.8725296623124303,
+    "s_norm": 0.4105435906802111,
+    "stability": 0.9877839427448546,
+    "robustness": 1.4407624984028267e-41,
+    "sharpness": 0.014256892172522604
+   },
+   "delta": 3.0887,
+   "dvec": {
+    "d_sat": 1.58,
+    "d_crit": 3.156,
+    "d_div": 4.668,
+    "d_null": 2.486
+   },
+   "l7a": "down",
+   "l7a_conf": 0.1803815686369646,
+   "fals": 0.67061,
+   "t0": {
+    "step": 174,
+    "top": [
+     [
+      "REG4.1",
+      3.9
+     ],
+     [
+      "DPCR1",
+      -2.78
+     ],
+     [
+      "MUC2",
+      2.54
+     ],
+     [
+      "CLCA1",
+      2.25
+     ],
+     [
+      "KRT20",
+      2.05
+     ],
+     [
+      "MUC16",
+      -1.99
+     ],
+     [
+      "CEACAM5",
+      1.38
+     ],
+     [
+      "MUC17",
+      -1.2
+     ],
+     [
+      "PGC",
+      -1.15
+     ],
+     [
+      "CR2",
+      -0.51
+     ]
+    ],
+    "dup_d": 3.9,
+    "max_d": [
+     "REG4.1",
+     3.9
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "REG4.1",
+      2.39
+     ],
+     [
+      "CEACAM5",
+      0.72
+     ],
+     [
+      "DPCR1",
+      0.69
+     ]
+    ],
+    "dup_d": 2.39,
+    "max_d": [
+     "REG4.1",
+     2.39
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.684
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.0,
+   "react_med": 81.5,
+   "react_iqr": [
+    52.1,
+    84.0
+   ],
+   "n_estimators": 17
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    0.53,
+    15.48,
+    58.84,
+    58.84
+   ],
+   "mc": 0.3242456897224853,
+   "mc_thr": 71.73913043478261,
+   "mc_met": {
+    "max_separation": 0.15986320811632776,
+    "s_norm": 0.07976180867144847,
+    "stability": 0.9986349842625429,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.0036332592114394152
+   },
+   "delta": 3.792538,
+   "dvec": {
+    "d_sat": 1.589,
+    "d_crit": 3.26,
+    "d_div": 5.381,
+    "d_null": 2.537
+   },
+   "l7a": "up",
+   "l7a_conf": 0.397440638454772,
+   "fals": 0.72272,
+   "t0": {
+    "step": 27,
+    "top": [
+     [
+      "PGC",
+      0.72
+     ]
+    ],
+    "dup_d": 0.14,
+    "max_d": [
+     "PGC",
+     0.72
+    ]
+   },
+   "mc_at": {
+    "step": 127,
+    "top": [
+     [
+      "MUC17",
+      0.69
+     ],
+     [
+      "MUC2",
+      0.64
+     ],
+     [
+      "MUC16",
+      0.63
+     ],
+     [
+      "CLCA1",
+      0.53
+     ]
+    ],
+    "dup_d": 0.4,
+    "max_d": [
+     "MUC17",
+     0.69
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.593
+   ],
+   "f1_ratio": 6.26,
+   "f2_ratio": 10.76,
+   "react_med": 21.0,
+   "react_iqr": [
+    17.6,
+    67.2
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_CLDN18": {
+  "real": {
+   "casc": [
+    4.26,
+    46.59,
+    84.42,
+    91.14,
+    91.14
+   ],
+   "mc": 0.4503984565889834,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 1.075889024281347,
+    "s_norm": 0.4914304626236491,
+    "stability": 0.994138266138766,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.023639189801294657
+   },
+   "delta": 3.863009,
+   "dvec": {
+    "d_sat": 1.558,
+    "d_crit": 3.264,
+    "d_div": 5.421,
+    "d_null": 2.478
+   },
+   "l7a": "up",
+   "l7a_conf": 0.41825269344059496,
+   "fals": 0.785938,
+   "t0": {
+    "step": 149,
+    "top": [
+     [
+      "CLDN18.1",
+      3.15
+     ],
+     [
+      "DPCR1",
+      0.86
+     ],
+     [
+      "PGC",
+      0.85
+     ],
+     [
+      "MUC2",
+      -0.82
+     ],
+     [
+      "REG4",
+      -0.65
+     ],
+     [
+      "CLCA1",
+      -0.6
+     ],
+     [
+      "KRT20",
+      -0.57
+     ]
+    ],
+    "dup_d": 3.15,
+    "max_d": [
+     "CLDN18.1",
+     3.15
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CLDN18.1",
+      2.96
+     ],
+     [
+      "DPCR1",
+      1.52
+     ],
+     [
+      "CEACAM5",
+      1.25
+     ],
+     [
+      "PGC",
+      1.02
+     ],
+     [
+      "MUC17",
+      0.79
+     ],
+     [
+      "GSTM1",
+      0.75
+     ],
+     [
+      "MUC16",
+      0.67
+     ],
+     [
+      "CR2",
+      0.58
+     ]
+    ],
+    "dup_d": 2.96,
+    "max_d": [
+     "CLDN18.1",
+     2.96
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.723
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 26.9,
+   "react_iqr": [
+    14.3,
+    86.1
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    3.19,
+    49.11,
+    60.9,
+    60.9
+   ],
+   "mc": 0.3634502896340475,
+   "mc_thr": 80.95238095238095,
+   "mc_met": {
+    "max_separation": 0.19625157421951442,
+    "s_norm": 0.09781205510583667,
+    "stability": 0.9745934812077128,
+    "robustness": 0.19452624124121157,
+    "sharpness": 0.014116902458701668
+   },
+   "delta": 4.444593,
+   "dvec": {
+    "d_sat": 1.558,
+    "d_crit": 3.344,
+    "d_div": 6.003,
+    "d_null": 2.482
+   },
+   "l7a": "up",
+   "l7a_conf": 0.35006920720787016,
+   "fals": 0.862158,
+   "t0": {
+    "step": 87,
+    "top": [
+     [
+      "MUC16",
+      0.85
+     ],
+     [
+      "REG4",
+      0.56
+     ]
+    ],
+    "dup_d": 0.05,
+    "max_d": [
+     "MUC16",
+     0.85
+    ]
+   },
+   "mc_at": {
+    "step": 143,
+    "top": [
+     [
+      "DPCR1",
+      -0.76
+     ],
+     [
+      "CLDN18.1",
+      -0.75
+     ],
+     [
+      "MUC17",
+      -0.72
+     ],
+     [
+      "PGC",
+      -0.58
+     ],
+     [
+      "REG4",
+      -0.52
+     ]
+    ],
+    "dup_d": -0.75,
+    "max_d": [
+     "DPCR1",
+     -0.76
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.649
+   ],
+   "f1_ratio": 9.36,
+   "f2_ratio": 1.71,
+   "react_med": 10.1,
+   "react_iqr": [
+    10.1,
+    39.1
+   ],
+   "n_estimators": 23
+  }
+ },
+ "V4ROT_MUC17": {
+  "real": {
+   "casc": [
+    1.06,
+    30.68,
+    78.34,
+    97.39,
+    97.39
+   ],
+   "mc": 0.43490982232414044,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.9360464163268832,
+    "s_norm": 0.43660072120967564,
+    "stability": 0.990453679951194,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.033967509879397756
+   },
+   "delta": 3.865081,
+   "dvec": {
+    "d_sat": 1.553,
+    "d_crit": 3.268,
+    "d_div": 5.418,
+    "d_null": 2.456
+   },
+   "l7a": "up",
+   "l7a_conf": 0.41733780188163083,
+   "fals": 0.811764,
+   "t0": {
+    "step": 139,
+    "top": [
+     [
+      "MUC17.1",
+      3.85
+     ],
+     [
+      "REG4",
+      0.65
+     ],
+     [
+      "CEACAM5",
+      0.6
+     ]
+    ],
+    "dup_d": 3.85,
+    "max_d": [
+     "MUC17.1",
+     3.85
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "MUC17.1",
+      4.11
+     ],
+     [
+      "CEACAM5",
+      1.43
+     ],
+     [
+      "PGC",
+      1.33
+     ],
+     [
+      "DPCR1",
+      1.13
+     ],
+     [
+      "REG4",
+      1.09
+     ],
+     [
+      "CLDN18",
+      0.93
+     ],
+     [
+      "KRT20",
+      0.91
+     ],
+     [
+      "MUC2",
+      0.86
+     ],
+     [
+      "MUC16",
+      0.7
+     ],
+     [
+      "CLCA1",
+      0.61
+     ],
+     [
+      "GSTM1",
+      -0.55
+     ]
+    ],
+    "dup_d": 4.11,
+    "max_d": [
+     "MUC17.1",
+     4.11
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.686
+   ],
+   "f1_ratio": 0.04,
+   "f2_ratio": 0.01,
+   "react_med": 29.4,
+   "react_iqr": [
+    12.4,
+    45.4
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    56.08,
+    80.28,
+    93.22,
+    100.0
+   ],
+   "mc": 0.3281544243767903,
+   "mc_thr": 23.913043478260867,
+   "mc_met": {
+    "max_separation": 0.18514731568752643,
+    "s_norm": 0.0923101127817074,
+    "stability": 0.9983298538443177,
+    "robustness": 7.705381515573579e-10,
+    "sharpness": 0.00481217117437583
+   },
+   "delta": 3.783509,
+   "dvec": {
+    "d_sat": 1.61,
+    "d_crit": 3.188,
+    "d_div": 5.394,
+    "d_null": 2.518
+   },
+   "l7a": "down",
+   "l7a_conf": 0.18901038536515224,
+   "fals": 0.670201,
+   "t0": {
+    "step": 142,
+    "top": [
+     [
+      "PGC",
+      -0.73
+     ],
+     [
+      "CLCA1",
+      -0.59
+     ]
+    ],
+    "dup_d": -0.3,
+    "max_d": [
+     "PGC",
+     -0.73
+    ]
+   },
+   "mc_at": {
+    "step": 42,
+    "top": [],
+    "dup_d": 0.24,
+    "max_d": [
+     "DPCR1",
+     0.43
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.469
+   ],
+   "f1_ratio": 0.12,
+   "f2_ratio": 0.06,
+   "react_med": 70.6,
+   "react_iqr": [
+    24.4,
+    82.4
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_DPCR1": {
+  "real": {
+   "casc": [
+    1.06,
+    60.9,
+    75.1,
+    95.31,
+    95.31
+   ],
+   "mc": 0.42069633791039057,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.835771611695828,
+    "s_norm": 0.3951478438369733,
+    "stability": 0.9918382428395974,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.02300255953709667
+   },
+   "delta": 3.837499,
+   "dvec": {
+    "d_sat": 1.573,
+    "d_crit": 3.209,
+    "d_div": 5.41,
+    "d_null": 2.488
+   },
+   "l7a": "up",
+   "l7a_conf": 0.4044156998274167,
+   "fals": 0.720484,
+   "t0": {
+    "step": 133,
+    "top": [
+     [
+      "DPCR1.1",
+      2.87
+     ],
+     [
+      "PGC",
+      0.91
+     ],
+     [
+      "GSTM1",
+      0.58
+     ],
+     [
+      "MUC16",
+      -0.58
+     ],
+     [
+      "CLDN18",
+      0.55
+     ]
+    ],
+    "dup_d": 2.87,
+    "max_d": [
+     "DPCR1.1",
+     2.87
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "DPCR1.1",
+      3.52
+     ],
+     [
+      "MUC16",
+      1.0
+     ],
+     [
+      "CR2",
+      0.96
+     ],
+     [
+      "MUC17",
+      0.85
+     ],
+     [
+      "PGC",
+      0.82
+     ]
+    ],
+    "dup_d": 3.52,
+    "max_d": [
+     "DPCR1.1",
+     3.52
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.682
+   ],
+   "f1_ratio": 0.03,
+   "f2_ratio": 0.01,
+   "react_med": 40.8,
+   "react_iqr": [
+    26.9,
+    70.6
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    46.59,
+    84.86,
+    88.01,
+    94.79
+   ],
+   "mc": 0.3312781392620062,
+   "mc_thr": 18.478260869565215,
+   "mc_met": {
+    "max_separation": 0.1920843502562775,
+    "s_norm": 0.0957479597723862,
+    "stability": 0.9984927116738551,
+    "robustness": 0.005651674519245554,
+    "sharpness": 0.009378014621423757
+   },
+   "delta": 3.794964,
+   "dvec": {
+    "d_sat": 1.597,
+    "d_crit": 3.23,
+    "d_div": 5.392,
+    "d_null": 2.518
+   },
+   "l7a": "up",
+   "l7a_conf": 0.18890776178663157,
+   "fals": 0.711882,
+   "t0": {
+    "step": 150,
+    "top": [
+     [
+      "PGC",
+      0.75
+     ]
+    ],
+    "dup_d": 0.21,
+    "max_d": [
+     "PGC",
+     0.75
+    ]
+   },
+   "mc_at": {
+    "step": 33,
+    "top": [
+     [
+      "CLCA1",
+      -0.66
+     ]
+    ],
+    "dup_d": -0.14,
+    "max_d": [
+     "CLCA1",
+     -0.66
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.563
+   ],
+   "f1_ratio": 0.07,
+   "f2_ratio": 0.03,
+   "react_med": 59.7,
+   "react_iqr": [
+    19.3,
+    78.2
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_CR2": {
+  "real": {
+   "casc": [
+    0.0,
+    2.66,
+    7.99,
+    57.77,
+    57.77
+   ],
+   "mc": 0.35799761417428794,
+   "mc_thr": 60.8695652173913,
+   "mc_met": {
+    "max_separation": 0.38715398306897225,
+    "s_norm": 0.19119478266672083,
+    "stability": 0.9982812581319285,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.0057740096734660885
+   },
+   "delta": 3.79121,
+   "dvec": {
+    "d_sat": 1.613,
+    "d_crit": 3.173,
+    "d_div": 5.404,
+    "d_null": 2.534
+   },
+   "l7a": "down",
+   "l7a_conf": 0.1927931140981546,
+   "fals": 0.639057,
+   "t0": {
+    "step": 14,
+    "top": [
+     [
+      "CR2.1",
+      3.18
+     ],
+     [
+      "CEACAM5",
+      -0.72
+     ],
+     [
+      "MUC16",
+      -0.71
+     ],
+     [
+      "DPCR1",
+      -0.61
+     ],
+     [
+      "CLDN18",
+      -0.54
+     ]
+    ],
+    "dup_d": 3.18,
+    "max_d": [
+     "CR2.1",
+     3.18
+    ]
+   },
+   "mc_at": {
+    "step": 108,
+    "top": [
+     [
+      "CR2.1",
+      2.69
+     ],
+     [
+      "CLDN18",
+      0.87
+     ],
+     [
+      "DPCR1",
+      0.72
+     ],
+     [
+      "PGC",
+      0.65
+     ],
+     [
+      "MUC17",
+      0.53
+     ],
+     [
+      "REG4",
+      0.51
+     ]
+    ],
+    "dup_d": 2.69,
+    "max_d": [
+     "CR2.1",
+     2.69
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.666
+   ],
+   "f1_ratio": 1.66,
+   "f2_ratio": 3.12,
+   "react_med": 58.0,
+   "react_iqr": [
+    45.6,
+    83.4
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.53,
+    28.52,
+    35.34,
+    38.73,
+    44.04
+   ],
+   "mc": 0.3220501312065793,
+   "mc_thr": 15.217391304347824,
+   "mc_met": {
+    "max_separation": 0.14306380859114406,
+    "s_norm": 0.07141014835660824,
+    "stability": 0.9954678453041873,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.009933665541703465
+   },
+   "delta": 3.806177,
+   "dvec": {
+    "d_sat": 1.585,
+    "d_crit": 3.188,
+    "d_div": 5.391,
+    "d_null": 2.523
+   },
+   "l7a": "up",
+   "l7a_conf": 0.4165510001166552,
+   "fals": 0.665339,
+   "t0": {
+    "step": 63,
+    "top": [],
+    "dup_d": -0.02,
+    "max_d": [
+     "PGC",
+     0.45
+    ]
+   },
+   "mc_at": {
+    "step": 27,
+    "top": [
+     [
+      "MUC2",
+      -0.7
+     ],
+     [
+      "CLCA1",
+      -0.57
+     ]
+    ],
+    "dup_d": -0.03,
+    "max_d": [
+     "MUC2",
+     -0.7
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.614
+   ],
+   "f1_ratio": 0.06,
+   "f2_ratio": 0.05,
+   "react_med": 52.9,
+   "react_iqr": [
+    42.0,
+    60.5
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_KRT20": {
+  "real": {
+   "casc": [
+    0.0,
+    35.34,
+    82.72,
+    96.87,
+    96.87
+   ],
+   "mc": 0.396006874455549,
+   "mc_thr": 65.21739130434783,
+   "mc_met": {
+    "max_separation": 0.6531733042543685,
+    "s_norm": 0.3154504056433394,
+    "stability": 0.9953998709746994,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.013758957350686857
+   },
+   "delta": 3.789092,
+   "dvec": {
+    "d_sat": 1.596,
+    "d_crit": 3.198,
+    "d_div": 5.385,
+    "d_null": 2.5
+   },
+   "l7a": "down",
+   "l7a_conf": 0.171060279600634,
+   "fals": 0.697927,
+   "t0": {
+    "step": 146,
+    "top": [
+     [
+      "KRT20.1",
+      3.52
+     ],
+     [
+      "PGC",
+      -0.55
+     ]
+    ],
+    "dup_d": 3.52,
+    "max_d": [
+     "KRT20.1",
+     3.52
+    ]
+   },
+   "mc_at": {
+    "step": 115,
+    "top": [
+     [
+      "KRT20.1",
+      3.12
+     ],
+     [
+      "CLCA1",
+      0.78
+     ],
+     [
+      "DPCR1",
+      0.72
+     ],
+     [
+      "MUC17",
+      0.57
+     ]
+    ],
+    "dup_d": 3.12,
+    "max_d": [
+     "KRT20.1",
+     3.12
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.608
+   ],
+   "f1_ratio": 2.83,
+   "f2_ratio": 4.0,
+   "react_med": 34.9,
+   "react_iqr": [
+    22.1,
+    52.1
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    60.9,
+    93.74,
+    96.87,
+    100.0
+   ],
+   "mc": 0.32715480634407,
+   "mc_thr": 82.6086956521739,
+   "mc_met": {
+    "max_separation": 0.1676538903294812,
+    "s_norm": 0.08363114605609204,
+    "stability": 0.9949813216681701,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.01785533013395698
+   },
+   "delta": 3.84905,
+   "dvec": {
+    "d_sat": 1.58,
+    "d_crit": 3.255,
+    "d_div": 5.429,
+    "d_null": 2.526
+   },
+   "l7a": "down",
+   "l7a_conf": 0.4038869016955137,
+   "fals": 0.728387,
+   "t0": {
+    "step": 166,
+    "top": [
+     [
+      "CEACAM5",
+      0.79
+     ],
+     [
+      "PGC",
+      -0.68
+     ]
+    ],
+    "dup_d": -0.08,
+    "max_d": [
+     "CEACAM5",
+     0.79
+    ]
+   },
+   "mc_at": {
+    "step": 146,
+    "top": [],
+    "dup_d": -0.23,
+    "max_d": [
+     "MUC2",
+     -0.3
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.577
+   ],
+   "f1_ratio": 13.6,
+   "f2_ratio": 25.58,
+   "react_med": 39.5,
+   "react_iqr": [
+    26.1,
+    69.7
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_MUC2": {
+  "real": {
+   "casc": [
+    1.06,
+    74.61,
+    98.44,
+    100.0,
+    100.0
+   ],
+   "mc": 0.39409163242094686,
+   "mc_thr": 78.26086956521739,
+   "mc_met": {
+    "max_separation": 0.6317402540893545,
+    "s_norm": 0.30576790947549454,
+    "stability": 0.997027193509938,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.01626550762658592
+   },
+   "delta": 3.79649,
+   "dvec": {
+    "d_sat": 1.59,
+    "d_crit": 3.292,
+    "d_div": 5.387,
+    "d_null": 2.462
+   },
+   "l7a": "down",
+   "l7a_conf": 0.19400055239101593,
+   "fals": 0.83042,
+   "t0": {
+    "step": 174,
+    "top": [
+     [
+      "MUC2.1",
+      3.65
+     ],
+     [
+      "MUC16",
+      -2.25
+     ],
+     [
+      "REG4",
+      1.62
+     ],
+     [
+      "DPCR1",
+      -1.59
+     ],
+     [
+      "CLCA1",
+      1.43
+     ],
+     [
+      "KRT20",
+      1.13
+     ],
+     [
+      "CEACAM5",
+      1.0
+     ],
+     [
+      "CR2",
+      -0.85
+     ],
+     [
+      "PGC",
+      -0.8
+     ],
+     [
+      "CLDN18",
+      0.7
+     ]
+    ],
+    "dup_d": 3.65,
+    "max_d": [
+     "MUC2.1",
+     3.65
+    ]
+   },
+   "mc_at": {
+    "step": 139,
+    "top": [
+     [
+      "MUC2.1",
+      3.29
+     ],
+     [
+      "CLCA1",
+      0.89
+     ],
+     [
+      "GSTM1",
+      0.87
+     ],
+     [
+      "KRT20",
+      0.86
+     ],
+     [
+      "REG4",
+      0.58
+     ],
+     [
+      "MUC17",
+      0.5
+     ]
+    ],
+    "dup_d": 3.29,
+    "max_d": [
+     "MUC2.1",
+     3.29
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.727
+   ],
+   "f1_ratio": 7.8,
+   "f2_ratio": 12.35,
+   "react_med": 23.5,
+   "react_iqr": [
+    14.5,
+    62.8
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    1.6,
+    60.9,
+    70.53,
+    84.86,
+    86.06
+   ],
+   "mc": 0.3330427622159915,
+   "mc_thr": 89.13043478260869,
+   "mc_met": {
+    "max_separation": 0.21646321610660993,
+    "s_norm": 0.10781096763594188,
+    "stability": 0.9918634489345859,
+    "robustness": 4.627221975484378e-06,
+    "sharpness": 0.015697559002190258
+   },
+   "delta": 3.791241,
+   "dvec": {
+    "d_sat": 1.587,
+    "d_crit": 3.281,
+    "d_div": 5.378,
+    "d_null": 2.523
+   },
+   "l7a": "down",
+   "l7a_conf": 0.4241160644400421,
+   "fals": 0.757959,
+   "t0": {
+    "step": 125,
+    "top": [],
+    "dup_d": 0.02,
+    "max_d": [
+     "CR2",
+     0.47
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [],
+    "dup_d": -0.27,
+    "max_d": [
+     "REG4",
+     -0.44
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.581
+   ],
+   "f1_ratio": 39.78,
+   "f2_ratio": 90.9,
+   "react_med": 58.8,
+   "react_iqr": [
+    25.2,
+    89.1
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_GSTM1": {
+  "real": {
+   "casc": [
+    0.0,
+    38.73,
+    70.03,
+    95.31,
+    95.31
+   ],
+   "mc": 0.37205223931215636,
+   "mc_thr": 47.826086956521735,
+   "mc_met": {
+    "max_separation": 0.4759882888757581,
+    "s_norm": 0.2336002423722676,
+    "stability": 0.9902477851196928,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.024489155322841367
+   },
+   "delta": 3.813182,
+   "dvec": {
+    "d_sat": 1.588,
+    "d_crit": 3.224,
+    "d_div": 5.402,
+    "d_null": 2.49
+   },
+   "l7a": "up",
+   "l7a_conf": 0.4108090097159616,
+   "fals": 0.734747,
+   "t0": {
+    "step": 124,
+    "top": [
+     [
+      "GSTM1.1",
+      3.09
+     ],
+     [
+      "CLCA1",
+      0.71
+     ],
+     [
+      "PGC",
+      0.52
+     ]
+    ],
+    "dup_d": 3.09,
+    "max_d": [
+     "GSTM1.1",
+     3.09
+    ]
+   },
+   "mc_at": {
+    "step": 85,
+    "top": [
+     [
+      "GSTM1.1",
+      5.89
+     ],
+     [
+      "CEACAM5",
+      0.67
+     ]
+    ],
+    "dup_d": 5.89,
+    "max_d": [
+     "GSTM1.1",
+     5.89
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.487
+   ],
+   "f1_ratio": 0.39,
+   "f2_ratio": 0.58,
+   "react_med": 71.0,
+   "react_iqr": [
+    27.5,
+    85.5
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    1.06,
+    21.53,
+    24.57,
+    90.61,
+    90.61
+   ],
+   "mc": 0.33928804475844115,
+   "mc_thr": 86.95652173913044,
+   "mc_met": {
+    "max_separation": 0.2514460945323613,
+    "s_norm": 0.12506480394976366,
+    "stability": 0.9937609540267415,
+    "robustness": 1.3274327663430909e-05,
+    "sharpness": 0.018188312499784552
+   },
+   "delta": 3.814276,
+   "dvec": {
+    "d_sat": 1.579,
+    "d_crit": 3.193,
+    "d_div": 5.393,
+    "d_null": 2.452
+   },
+   "l7a": "up",
+   "l7a_conf": 0.41248725723982915,
+   "fals": 0.741418,
+   "t0": {
+    "step": 43,
+    "top": [
+     [
+      "DPCR1",
+      0.97
+     ],
+     [
+      "CLDN18",
+      0.74
+     ],
+     [
+      "MUC17",
+      0.73
+     ],
+     [
+      "PGC",
+      0.7
+     ]
+    ],
+    "dup_d": -0.16,
+    "max_d": [
+     "DPCR1",
+     0.97
+    ]
+   },
+   "mc_at": {
+    "step": 154,
+    "top": [],
+    "dup_d": -0.19,
+    "max_d": [
+     "MUC17",
+     -0.49
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.705
+   ],
+   "f1_ratio": 24.86,
+   "f2_ratio": 41.95,
+   "react_med": 25.2,
+   "react_iqr": [
+    13.4,
+    37.8
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_CEACAM5": {
+  "real": {
+   "casc": [
+    0.0,
+    11.71,
+    15.48,
+    42.52,
+    42.52
+   ],
+   "mc": 0.41934593355857214,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.8243046081004137,
+    "s_norm": 0.3902986483274953,
+    "stability": 0.9954161692252154,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.01815744146379484
+   },
+   "delta": 3.85735,
+   "dvec": {
+    "d_sat": 1.55,
+    "d_crit": 3.247,
+    "d_div": 5.407,
+    "d_null": 2.46
+   },
+   "l7a": "up",
+   "l7a_conf": 0.39072571165188574,
+   "fals": 0.787225,
+   "t0": {
+    "step": 27,
+    "top": [
+     [
+      "CEACAM5.1",
+      2.06
+     ]
+    ],
+    "dup_d": 2.06,
+    "max_d": [
+     "CEACAM5.1",
+     2.06
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CEACAM5.1",
+      2.23
+     ],
+     [
+      "CLDN18",
+      1.25
+     ],
+     [
+      "PGC",
+      0.8
+     ],
+     [
+      "DPCR1",
+      0.76
+     ],
+     [
+      "REG4",
+      0.66
+     ],
+     [
+      "MUC17",
+      0.56
+     ]
+    ],
+    "dup_d": 2.23,
+    "max_d": [
+     "CEACAM5.1",
+     2.23
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.662
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 38.7,
+   "react_iqr": [
+    29.4,
+    74.6
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    0.0,
+    1.6,
+    43.53,
+    43.53
+   ],
+   "mc": 0.3955538701291469,
+   "mc_thr": 11.956521739130434,
+   "mc_met": {
+    "max_separation": 0.17261815961967833,
+    "s_norm": 0.08609540363239705,
+    "stability": 0.9965845314663376,
+    "robustness": 0.33533421115221107,
+    "sharpness": 0.018415236845421318
+   },
+   "delta": 3.820506,
+   "dvec": {
+    "d_sat": 1.586,
+    "d_crit": 3.331,
+    "d_div": 5.406,
+    "d_null": 2.499
+   },
+   "l7a": "down",
+   "l7a_conf": 0.39943564653375624,
+   "fals": 0.831755,
+   "t0": {
+    "step": 3,
+    "top": [
+     [
+      "PGC",
+      -1.11
+     ],
+     [
+      "MUC16",
+      1.06
+     ],
+     [
+      "DPCR1",
+      -1.01
+     ],
+     [
+      "CLDN18",
+      -0.84
+     ],
+     [
+      "GSTM1",
+      0.76
+     ],
+     [
+      "MUC2",
+      0.73
+     ],
+     [
+      "KRT20",
+      0.72
+     ],
+     [
+      "CEACAM5.1",
+      -0.66
+     ],
+     [
+      "CLCA1",
+      0.65
+     ]
+    ],
+    "dup_d": -0.66,
+    "max_d": [
+     "PGC",
+     -1.11
+    ]
+   },
+   "mc_at": {
+    "step": 21,
+    "top": [
+     [
+      "CR2",
+      0.59
+     ],
+     [
+      "MUC16",
+      0.55
+     ]
+    ],
+    "dup_d": -0.16,
+    "max_d": [
+     "CR2",
+     0.59
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.58
+   ],
+   "f1_ratio": 0.03,
+   "f2_ratio": 0.02,
+   "react_med": 41.2,
+   "react_iqr": [
+    32.8,
+    52.1
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_CLCA1": {
+  "real": {
+   "casc": [
+    1.6,
+    94.79,
+    97.91,
+    100.0,
+    100.0
+   ],
+   "mc": 0.39944555596916914,
+   "mc_thr": 69.56521739130434,
+   "mc_met": {
+    "max_separation": 0.6828322852386021,
+    "s_norm": 0.3287410813631149,
+    "stability": 0.9943258289688478,
+    "robustness": 3.6415725392148296e-25,
+    "sharpness": 0.012627414347901642
+   },
+   "delta": 3.835148,
+   "dvec": {
+    "d_sat": 1.588,
+    "d_crit": 3.168,
+    "d_div": 5.423,
+    "d_null": 2.49
+   },
+   "l7a": "down",
+   "l7a_conf": 0.18800046838259724,
+   "fals": 0.677733,
+   "t0": {
+    "step": 173,
+    "top": [
+     [
+      "CLCA1.1",
+      3.6
+     ],
+     [
+      "MUC2",
+      2.47
+     ],
+     [
+      "REG4",
+      2.16
+     ],
+     [
+      "KRT20",
+      1.67
+     ],
+     [
+      "CEACAM5",
+      1.06
+     ],
+     [
+      "PGC",
+      -0.89
+     ],
+     [
+      "MUC16",
+      -0.84
+     ],
+     [
+      "DPCR1",
+      -0.84
+     ],
+     [
+      "CLDN18",
+      0.69
+     ],
+     [
+      "CR2",
+      -0.68
+     ],
+     [
+      "GSTM1",
+      -0.52
+     ]
+    ],
+    "dup_d": 3.6,
+    "max_d": [
+     "CLCA1.1",
+     3.6
+    ]
+   },
+   "mc_at": {
+    "step": 123,
+    "top": [
+     [
+      "CLCA1.1",
+      3.21
+     ],
+     [
+      "CLDN18",
+      0.75
+     ],
+     [
+      "CEACAM5",
+      0.66
+     ],
+     [
+      "REG4",
+      0.62
+     ],
+     [
+      "MUC2",
+      0.57
+     ],
+     [
+      "PGC",
+      0.54
+     ]
+    ],
+    "dup_d": 3.21,
+    "max_d": [
+     "CLCA1.1",
+     3.21
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.688
+   ],
+   "f1_ratio": 4.32,
+   "f2_ratio": 6.81,
+   "react_med": 33.2,
+   "react_iqr": [
+    20.4,
+    67.0
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    3.19,
+    9.05,
+    59.37,
+    59.37
+   ],
+   "mc": 0.32590562799458667,
+   "mc_thr": 86.95652173913044,
+   "mc_met": {
+    "max_separation": 0.16024506765861093,
+    "s_norm": 0.07995152086625881,
+    "stability": 0.9931187854337795,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.019922680522875807
+   },
+   "delta": 3.816167,
+   "dvec": {
+    "d_sat": 1.584,
+    "d_crit": 3.204,
+    "d_div": 5.4,
+    "d_null": 2.512
+   },
+   "l7a": "down",
+   "l7a_conf": 0.18642140921007308,
+   "fals": 0.691549,
+   "t0": {
+    "step": 16,
+    "top": [
+     [
+      "PGC",
+      -0.67
+     ],
+     [
+      "CEACAM5",
+      0.64
+     ],
+     [
+      "GSTM1",
+      0.53
+     ]
+    ],
+    "dup_d": -0.16,
+    "max_d": [
+     "PGC",
+     -0.67
+    ]
+   },
+   "mc_at": {
+    "step": 154,
+    "top": [
+     [
+      "MUC17",
+      -0.89
+     ],
+     [
+      "DPCR1",
+      -0.58
+     ],
+     [
+      "CLDN18",
+      -0.51
+     ]
+    ],
+    "dup_d": -0.34,
+    "max_d": [
+     "MUC17",
+     -0.89
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.603
+   ],
+   "f1_ratio": 16.34,
+   "f2_ratio": 28.17,
+   "react_med": 37.8,
+   "react_iqr": [
+    19.3,
+    70.6
+   ],
+   "n_estimators": 17
+  }
+ },
+ "V4ROT_MUC16": {
+  "real": {
+   "casc": [
+    2.13,
+    2.66,
+    5.86,
+    29.55,
+    29.55
+   ],
+   "mc": 0.38468730087998393,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.5436871033594914,
+    "s_norm": 0.26533942865294374,
+    "stability": 0.9953207752906786,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.032446198484486106
+   },
+   "delta": 3.813171,
+   "dvec": {
+    "d_sat": 1.587,
+    "d_crit": 3.252,
+    "d_div": 5.401,
+    "d_null": 2.512
+   },
+   "l7a": "up",
+   "l7a_conf": 0.17764348988528658,
+   "fals": 0.740122,
+   "t0": {
+    "step": 10,
+    "top": [
+     [
+      "MUC16.1",
+      2.76
+     ],
+     [
+      "PGC",
+      1.87
+     ],
+     [
+      "DPCR1",
+      1.28
+     ],
+     [
+      "CLDN18",
+      1.19
+     ],
+     [
+      "KRT20",
+      -1.02
+     ],
+     [
+      "CR2",
+      0.76
+     ],
+     [
+      "MUC17",
+      0.69
+     ],
+     [
+      "CLCA1",
+      -0.65
+     ],
+     [
+      "CEACAM5",
+      0.61
+     ]
+    ],
+    "dup_d": 2.76,
+    "max_d": [
+     "MUC16.1",
+     2.76
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "MUC16.1",
+      3.02
+     ],
+     [
+      "PGC",
+      0.97
+     ],
+     [
+      "DPCR1",
+      0.84
+     ],
+     [
+      "CLDN18",
+      0.67
+     ],
+     [
+      "MUC17",
+      0.56
+     ]
+    ],
+    "dup_d": 3.02,
+    "max_d": [
+     "MUC16.1",
+     3.02
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.661
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 59.2,
+   "react_iqr": [
+    14.5,
+    71.0
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    1.6,
+    29.15,
+    65.8,
+    88.53,
+    88.53
+   ],
+   "mc": 0.5046534922162457,
+   "mc_thr": 89.13043478260869,
+   "mc_met": {
+    "max_separation": 0.2445549880235417,
+    "s_norm": 0.12167169457824721,
+    "stability": 0.9874821027161337,
+    "robustness": 0.8308922143568135,
+    "sharpness": 0.028644550782843742
+   },
+   "delta": 3.835017,
+   "dvec": {
+    "d_sat": 1.583,
+    "d_crit": 3.304,
+    "d_div": 5.418,
+    "d_null": 2.479
+   },
+   "l7a": "up",
+   "l7a_conf": 0.4167975069671928,
+   "fals": 0.82546,
+   "t0": {
+    "step": 116,
+    "top": [
+     [
+      "KRT20",
+      -0.73
+     ],
+     [
+      "CEACAM5",
+      -0.63
+     ],
+     [
+      "DPCR1",
+      -0.6
+     ],
+     [
+      "PGC",
+      -0.59
+     ],
+     [
+      "CLDN18",
+      -0.59
+     ],
+     [
+      "CLCA1",
+      -0.58
+     ]
+    ],
+    "dup_d": -0.1,
+    "max_d": [
+     "KRT20",
+     -0.73
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [
+     [
+      "CR2",
+      0.53
+     ]
+    ],
+    "dup_d": 0.26,
+    "max_d": [
+     "CR2",
+     0.53
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.63
+   ],
+   "f1_ratio": 31.97,
+   "f2_ratio": 74.8,
+   "react_med": 36.1,
+   "react_iqr": [
+    15.1,
+    46.2
+   ],
+   "n_estimators": 17
+  }
+ },
+ "DEPMAPROT_EFR3A": {
+  "real": {
+   "casc": [
+    0.6,
+    3.6,
+    6.6,
+    13.21,
+    100.0
+   ],
+   "mc": 0.38967797522121306,
+   "mc_thr": 76.19047619047619,
+   "mc_met": {
+    "max_separation": 0.6625229492775666,
+    "s_norm": 0.3196538121586223,
+    "stability": 0.9695352227398149,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.014606323758409269
+   },
+   "delta": 1.9395,
+   "dvec": {
+    "d_sat": 1.193,
+    "d_crit": 2.5,
+    "d_div": 3.133
+   },
+   "l7a": "up",
+   "l7a_conf": 0.385813376153117,
+   "fals": null,
+   "t0": {
+    "step": 3,
+    "top": [
+     [
+      "EFR3A.1",
+      3.36
+     ],
+     [
+      "ACO2",
+      1.52
+     ],
+     [
+      "UROD",
+      1.41
+     ],
+     [
+      "CCND1",
+      1.29
+     ],
+     [
+      "CFLAR",
+      -0.92
+     ],
+     [
+      "MYC",
+      0.54
+     ]
+    ],
+    "dup_d": 3.36,
+    "max_d": [
+     "EFR3A.1",
+     3.36
+    ]
+   },
+   "mc_at": {
+    "step": 34,
+    "top": [
+     [
+      "EFR3A.1",
+      4.15
+     ],
+     [
+      "RAB6A",
+      1.63
+     ],
+     [
+      "RAB10",
+      0.92
+     ],
+     [
+      "MYH9",
+      0.73
+     ],
+     [
+      "CCND1",
+      0.58
+     ],
+     [
+      "CFLAR",
+      0.54
+     ]
+    ],
+    "dup_d": 4.15,
+    "max_d": [
+     "EFR3A.1",
+     4.15
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 5.73,
+   "f2_ratio": 27.4,
+   "react_med": 85.3,
+   "react_iqr": [
+    67.9,
+    89.9
+   ],
+   "n_estimators": 4
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    28.62,
+    68.62,
+    77.59,
+    100.0
+   ],
+   "mc": 0.33504629329961816,
+   "mc_thr": 76.19047619047619,
+   "mc_met": {
+    "max_separation": 0.2604814299600019,
+    "s_norm": 0.12950926853183567,
+    "stability": 0.9763289407261156,
+    "robustness": 0.0010098442341126832,
+    "sharpness": 0.015464308377051256
+   },
+   "delta": 1.923172,
+   "dvec": {
+    "d_sat": 1.188,
+    "d_crit": 2.429,
+    "d_div": 3.111
+   },
+   "l7a": "up",
+   "l7a_conf": 0.1660316206472369,
+   "fals": null,
+   "t0": {
+    "step": 30,
+    "top": [
+     [
+      "EFR3A.1",
+      -0.65
+     ],
+     [
+      "ACO2",
+      -0.63
+     ]
+    ],
+    "dup_d": -0.65,
+    "max_d": [
+     "EFR3A.1",
+     -0.65
+    ]
+   },
+   "mc_at": {
+    "step": 34,
+    "top": [
+     [
+      "ACO2",
+      -0.6
+     ],
+     [
+      "EFR3A.1",
+      -0.53
+     ]
+    ],
+    "dup_d": -0.53,
+    "max_d": [
+     "ACO2",
+     -0.6
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 11.51,
+   "f2_ratio": 14.78,
+   "react_med": 89.9,
+   "react_iqr": [
+    51.3,
+    89.9
+   ],
+   "n_estimators": 3
+  }
+ },
+ "DEPMAPROT_RAB10": {
+  "real": {
+   "casc": [
+    6.6,
+    66.38,
+    73.11,
+    79.83,
+    100.0
+   ],
+   "mc": 0.3827902573359198,
+   "mc_thr": 76.19047619047619,
+   "mc_met": {
+    "max_separation": 0.5867046489064712,
+    "s_norm": 0.28521736487223276,
+    "stability": 0.9869852586927675,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.005647351332098369
+   },
+   "delta": 1.915539,
+   "dvec": {
+    "d_sat": 1.193,
+    "d_crit": 2.432,
+    "d_div": 3.109
+   },
+   "l7a": "up",
+   "l7a_conf": 0.3375899385052687,
+   "fals": null,
+   "t0": {
+    "step": 32,
+    "top": [
+     [
+      "RAB10.1",
+      2.79
+     ],
+     [
+      "CRKL",
+      0.88
+     ],
+     [
+      "RAB6A",
+      0.82
+     ],
+     [
+      "MYH9",
+      0.63
+     ],
+     [
+      "DOCK5",
+      0.55
+     ],
+     [
+      "ACO2",
+      0.55
+     ],
+     [
+      "UROD",
+      0.53
+     ]
+    ],
+    "dup_d": 2.79,
+    "max_d": [
+     "RAB10.1",
+     2.79
+    ]
+   },
+   "mc_at": {
+    "step": 34,
+    "top": [
+     [
+      "RAB10.1",
+      2.83
+     ],
+     [
+      "RAB6A",
+      1.01
+     ],
+     [
+      "CRKL",
+      0.98
+     ],
+     [
+      "MYH9",
+      0.76
+     ],
+     [
+      "DOCK5",
+      0.62
+     ]
+    ],
+    "dup_d": 2.83,
+    "max_d": [
+     "RAB10.1",
+     2.83
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 7.59,
+   "f2_ratio": 15.43,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  },
+  "_nul": {
+   "casc": [
+    2.2,
+    62.16,
+    68.62,
+    73.11,
+    100.0
+   ],
+   "mc": 0.3521315104796501,
+   "mc_thr": 23.80952380952381,
+   "mc_met": {
+    "max_separation": 0.3815198940771969,
+    "s_norm": 0.18847926107759655,
+    "stability": 0.9738941276228112,
+    "robustness": 1.866446911352067e-05,
+    "sharpness": 0.017078804878525207
+   },
+   "delta": 1.923636,
+   "dvec": {
+    "d_sat": 1.197,
+    "d_crit": 2.555,
+    "d_div": 3.12
+   },
+   "l7a": "up",
+   "l7a_conf": 0.3435308667941919,
+   "fals": null,
+   "t0": {
+    "step": 30,
+    "top": [
+     [
+      "CRKL",
+      -0.52
+     ],
+     [
+      "EFR3A",
+      0.52
+     ]
+    ],
+    "dup_d": -0.1,
+    "max_d": [
+     "CRKL",
+     -0.52
+    ]
+   },
+   "mc_at": {
+    "step": 10,
+    "top": [
+     [
+      "CRKL",
+      1.32
+     ],
+     [
+      "RAB10.1",
+      0.73
+     ],
+     [
+      "UROD",
+      -0.51
+     ],
+     [
+      "ACO2",
+      -0.51
+     ]
+    ],
+    "dup_d": 0.73,
+    "max_d": [
+     "CRKL",
+     1.32
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.14,
+   "f2_ratio": 0.07,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  }
+ },
+ "DEPMAPROT_CCND1": {
+  "real": {
+   "casc": [
+    8.81,
+    84.31,
+    93.28,
+    96.28,
+    99.28
+   ],
+   "mc": 0.36094378674827937,
+   "mc_thr": 23.80952380952381,
+   "mc_met": {
+    "max_separation": 0.4326196189134827,
+    "s_norm": 0.21299807087456138,
+    "stability": 0.9791091335485939,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.01655812710666353
+   },
+   "delta": 1.898054,
+   "dvec": {
+    "d_sat": 1.197,
+    "d_crit": 2.538,
+    "d_div": 3.095
+   },
+   "l7a": "up",
+   "l7a_conf": 0.2950317246798367,
+   "fals": null,
+   "t0": {
+    "step": 41,
+    "top": [
+     [
+      "CCND1.1",
+      2.52
+     ],
+     [
+      "SCAP",
+      -0.99
+     ],
+     [
+      "DOCK5",
+      0.63
+     ],
+     [
+      "EFR3A",
+      0.58
+     ]
+    ],
+    "dup_d": 2.52,
+    "max_d": [
+     "CCND1.1",
+     2.52
+    ]
+   },
+   "mc_at": {
+    "step": 10,
+    "top": [
+     [
+      "CCND1.1",
+      3.3
+     ],
+     [
+      "SCAP",
+      0.68
+     ],
+     [
+      "RAB10",
+      0.54
+     ],
+     [
+      "MYC",
+      0.53
+     ],
+     [
+      "EFR3A",
+      0.52
+     ]
+    ],
+    "dup_d": 3.3,
+    "max_d": [
+     "CCND1.1",
+     3.3
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.07,
+   "f2_ratio": 0.03,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  },
+  "_nul": {
+   "casc": [
+    6.6,
+    82.07,
+    86.55,
+    89.55,
+    92.55
+   ],
+   "mc": 0.3359861410432616,
+   "mc_thr": 71.42857142857143,
+   "mc_met": {
+    "max_separation": 0.2698353745214752,
+    "s_norm": 0.13410497840834898,
+    "stability": 0.9768826111158242,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.013449320930047845
+   },
+   "delta": 1.91568,
+   "dvec": {
+    "d_sat": 1.195,
+    "d_crit": 2.571,
+    "d_div": 3.111
+   },
+   "l7a": "up",
+   "l7a_conf": 0.35217468770479254,
+   "fals": null,
+   "t0": {
+    "step": 38,
+    "top": [
+     [
+      "RAB10",
+      1.08
+     ],
+     [
+      "ACO2",
+      -0.94
+     ],
+     [
+      "RAB6A",
+      0.86
+     ],
+     [
+      "EFR3A",
+      0.75
+     ],
+     [
+      "MYC",
+      0.68
+     ],
+     [
+      "CRKL",
+      0.64
+     ]
+    ],
+    "dup_d": 0.3,
+    "max_d": [
+     "RAB10",
+     1.08
+    ]
+   },
+   "mc_at": {
+    "step": 31,
+    "top": [
+     [
+      "RAB10",
+      0.74
+     ],
+     [
+      "RAB6A",
+      0.7
+     ],
+     [
+      "MYH9",
+      0.65
+     ]
+    ],
+    "dup_d": -0.29,
+    "max_d": [
+     "RAB10",
+     0.74
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 23.07,
+   "f2_ratio": 6.55,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  }
+ },
+ "DEPMAPROT_UROD": {
+  "real": {
+   "casc": [
+    0.0,
+    28.62,
+    35.3,
+    82.07,
+    82.07
+   ],
+   "mc": 0.37160408624585795,
+   "mc_thr": 23.80952380952381,
+   "mc_met": {
+    "max_separation": 0.4853651594991916,
+    "s_norm": 0.23802795235681384,
+    "stability": 0.9902779953988756,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.01556150959575541
+   },
+   "delta": 1.896484,
+   "dvec": {
+    "d_sat": 1.215,
+    "d_crit": 2.631,
+    "d_div": 3.111
+   },
+   "l7a": "up",
+   "l7a_conf": 0.16113566807676385,
+   "fals": null,
+   "t0": {
+    "step": 16,
+    "top": [
+     [
+      "UROD.1",
+      3.04
+     ],
+     [
+      "CCND1",
+      -0.64
+     ],
+     [
+      "ACO2",
+      0.62
+     ]
+    ],
+    "dup_d": 3.04,
+    "max_d": [
+     "UROD.1",
+     3.04
+    ]
+   },
+   "mc_at": {
+    "step": 10,
+    "top": [
+     [
+      "UROD.1",
+      2.58
+     ],
+     [
+      "ACO2",
+      0.96
+     ],
+     [
+      "CRKL",
+      -0.56
+     ]
+    ],
+    "dup_d": 2.58,
+    "max_d": [
+     "UROD.1",
+     2.58
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.11,
+   "f2_ratio": 0.05,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 4
+  },
+  "_nul": {
+   "casc": [
+    2.2,
+    66.38,
+    73.11,
+    77.59,
+    100.0
+   ],
+   "mc": 0.3455954157254821,
+   "mc_thr": 33.333333333333336,
+   "mc_met": {
+    "max_separation": 0.3297929826005158,
+    "s_norm": 0.16341801093439481,
+    "stability": 0.9796553988222314,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.013366963992470672
+   },
+   "delta": 1.893448,
+   "dvec": {
+    "d_sat": 1.199,
+    "d_crit": 2.662,
+    "d_div": 3.093
+   },
+   "l7a": "up",
+   "l7a_conf": 0.15076833634470344,
+   "fals": null,
+   "t0": {
+    "step": 32,
+    "top": [
+     [
+      "CRKL",
+      -0.71
+     ],
+     [
+      "CFLAR",
+      -0.64
+     ],
+     [
+      "SCAP",
+      0.64
+     ],
+     [
+      "EFR3A",
+      -0.6
+     ],
+     [
+      "MYH9",
+      -0.56
+     ]
+    ],
+    "dup_d": 0.06,
+    "max_d": [
+     "CRKL",
+     -0.71
+    ]
+   },
+   "mc_at": {
+    "step": 15,
+    "top": [
+     [
+      "UROD.1",
+      -0.7
+     ],
+     [
+      "DOCK5",
+      0.63
+     ],
+     [
+      "SCAP",
+      -0.56
+     ],
+     [
+      "RAB6A",
+      -0.51
+     ]
+    ],
+    "dup_d": -0.7,
+    "max_d": [
+     "UROD.1",
+     -0.7
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.44,
+   "f2_ratio": 0.31,
+   "react_med": 89.9,
+   "react_iqr": [
+    67.2,
+    89.9
+   ],
+   "n_estimators": 3
+  }
+ },
+ "DEPMAPROT_CFLAR": {
+  "real": {
+   "casc": [
+    0.0,
+    49.88,
+    54.59,
+    64.2,
+    91.04
+   ],
+   "mc": 0.38621632741486495,
+   "mc_thr": 52.38095238095238,
+   "mc_met": {
+    "max_separation": 0.6082915131914806,
+    "s_norm": 0.2951019494129966,
+    "stability": 0.9867736806582778,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.008268191967412958
+   },
+   "delta": 1.910285,
+   "dvec": {
+    "d_sat": 1.192,
+    "d_crit": 2.396,
+    "d_div": 3.102
+   },
+   "l7a": "up",
+   "l7a_conf": 0.3552290592516263,
+   "fals": null,
+   "t0": {
+    "step": 24,
+    "top": [
+     [
+      "CFLAR.1",
+      3.58
+     ],
+     [
+      "EFR3A",
+      0.89
+     ],
+     [
+      "RAB6A",
+      0.76
+     ],
+     [
+      "CCND1",
+      0.66
+     ]
+    ],
+    "dup_d": 3.58,
+    "max_d": [
+     "CFLAR.1",
+     3.58
+    ]
+   },
+   "mc_at": {
+    "step": 23,
+    "top": [
+     [
+      "CFLAR.1",
+      3.54
+     ],
+     [
+      "EFR3A",
+      0.74
+     ],
+     [
+      "RAB6A",
+      0.67
+     ],
+     [
+      "CCND1",
+      0.61
+     ]
+    ],
+    "dup_d": 3.54,
+    "max_d": [
+     "CFLAR.1",
+     3.54
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 1.76,
+   "f2_ratio": 1.75,
+   "react_med": 74.4,
+   "react_iqr": [
+    50.0,
+    89.9
+   ],
+   "n_estimators": 4
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    8.81,
+    62.16,
+    66.38,
+    73.11
+   ],
+   "mc": 0.3386897380837839,
+   "mc_thr": 71.42857142857143,
+   "mc_met": {
+    "max_separation": 0.2970622140619747,
+    "s_norm": 0.14744838808664906,
+    "stability": 0.9720525810262791,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.014197236749526934
+   },
+   "delta": 1.925536,
+   "dvec": {
+    "d_sat": 1.197,
+    "d_crit": 2.5,
+    "d_div": 3.123
+   },
+   "l7a": "up",
+   "l7a_conf": 0.34963690984578255,
+   "fals": null,
+   "t0": {
+    "step": 27,
+    "top": [
+     [
+      "EFR3A",
+      0.74
+     ],
+     [
+      "RAB10",
+      0.57
+     ]
+    ],
+    "dup_d": 0.12,
+    "max_d": [
+     "EFR3A",
+     0.74
+    ]
+   },
+   "mc_at": {
+    "step": 31,
+    "top": [
+     [
+      "CFLAR.1",
+      0.57
+     ],
+     [
+      "MYC",
+      0.56
+     ]
+    ],
+    "dup_d": 0.57,
+    "max_d": [
+     "CFLAR.1",
+     0.57
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 5.26,
+   "f2_ratio": 11.43,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  }
+ },
+ "DEPMAPROT_DOCK5": {
+  "real": {
+   "casc": [
+    0.0,
+    30.82,
+    35.3,
+    42.34,
+    52.47
+   ],
+   "mc": 0.38081349196406433,
+   "mc_thr": 23.80952380952381,
+   "mc_met": {
+    "max_separation": 0.5711929385530162,
+    "s_norm": 0.2780767878060708,
+    "stability": 0.9863921084578654,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.00736411542441713
+   },
+   "delta": 1.897317,
+   "dvec": {
+    "d_sat": 1.195,
+    "d_crit": 2.62,
+    "d_div": 3.093
+   },
+   "l7a": "down",
+   "l7a_conf": 0.1795032703326718,
+   "fals": null,
+   "t0": {
+    "step": 16,
+    "top": [
+     [
+      "DOCK5.1",
+      2.57
+     ],
+     [
+      "SCAP",
+      -0.67
+     ],
+     [
+      "CRKL",
+      0.65
+     ],
+     [
+      "RAB10",
+      0.64
+     ]
+    ],
+    "dup_d": 2.57,
+    "max_d": [
+     "DOCK5.1",
+     2.57
+    ]
+   },
+   "mc_at": {
+    "step": 10,
+    "top": [
+     [
+      "DOCK5.1",
+      2.65
+     ],
+     [
+      "CRKL",
+      1.27
+     ],
+     [
+      "SCAP",
+      -0.94
+     ],
+     [
+      "RAB10",
+      0.65
+     ]
+    ],
+    "dup_d": 2.65,
+    "max_d": [
+     "DOCK5.1",
+     2.65
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.22,
+   "f2_ratio": 0.04,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    66.38,
+    75.35,
+    79.83,
+    100.0
+   ],
+   "mc": 0.3341058111400604,
+   "mc_thr": 43.47826086956522,
+   "mc_met": {
+    "max_separation": 0.14616519771226183,
+    "s_norm": 0.07295276323247182,
+    "stability": 0.9958830907521391,
+    "robustness": 0.06353631369684216,
+    "sharpness": 0.003738961026543171
+   },
+   "delta": 1.689229,
+   "dvec": {
+    "d_sat": 1.396,
+    "d_crit": 2.535,
+    "d_div": 3.086,
+    "d_null": 2.566
+   },
+   "l7a": "up",
+   "l7a_conf": 0.17431242381038223,
+   "fals": 0.030678,
+   "t0": {
+    "step": 33,
+    "top": [
+     [
+      "EFR3A",
+      -0.67
+     ],
+     [
+      "SCAP",
+      0.64
+     ]
+    ],
+    "dup_d": -0.24,
+    "max_d": [
+     "EFR3A",
+     -0.67
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "UROD",
+      0.58
+     ],
+     [
+      "MYH9",
+      0.52
+     ]
+    ],
+    "dup_d": 0.49,
+    "max_d": [
+     "UROD",
+     0.58
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.35,
+   "f2_ratio": 0.33,
+   "react_med": 79.8,
+   "react_iqr": [
+    30.9,
+    79.8
+   ],
+   "n_estimators": 10
+  }
+ },
+ "DEPMAPROT_MYH9": {
+  "real": {
+   "casc": [
+    0.0,
+    77.59,
+    86.55,
+    89.55,
+    92.55
+   ],
+   "mc": 0.3654813768605083,
+   "mc_thr": 76.19047619047619,
+   "mc_met": {
+    "max_separation": 0.45394033092698743,
+    "s_norm": 0.2231513469496787,
+    "stability": 0.9923411446037137,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.004168146972452356
+   },
+   "delta": 1.910078,
+   "dvec": {
+    "d_sat": 1.209,
+    "d_crit": 2.649,
+    "d_div": 3.119
+   },
+   "l7a": "up",
+   "l7a_conf": 0.31918806625778373,
+   "fals": null,
+   "t0": {
+    "step": 38,
+    "top": [
+     [
+      "MYH9.1",
+      3.31
+     ],
+     [
+      "SCAP",
+      -0.97
+     ],
+     [
+      "RAB6A",
+      0.9
+     ],
+     [
+      "EFR3A",
+      0.71
+     ],
+     [
+      "UROD",
+      -0.66
+     ]
+    ],
+    "dup_d": 3.31,
+    "max_d": [
+     "MYH9.1",
+     3.31
+    ]
+   },
+   "mc_at": {
+    "step": 34,
+    "top": [
+     [
+      "MYH9.1",
+      2.77
+     ],
+     [
+      "RAB6A",
+      0.85
+     ],
+     [
+      "UROD",
+      -0.72
+     ]
+    ],
+    "dup_d": 2.77,
+    "max_d": [
+     "MYH9.1",
+     2.77
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 11.12,
+   "f2_ratio": 34.79,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    1.4,
+    4.4,
+    73.11,
+    73.11
+   ],
+   "mc": 0.34047526307771414,
+   "mc_thr": 43.47826086956522,
+   "mc_met": {
+    "max_separation": 0.19686992627754188,
+    "s_norm": 0.09811826391666444,
+    "stability": 0.9895809789384976,
+    "robustness": 0.06353631369684216,
+    "sharpness": 0.007291137408985331
+   },
+   "delta": 1.732929,
+   "dvec": {
+    "d_sat": 1.346,
+    "d_crit": 2.444,
+    "d_div": 3.079,
+    "d_null": 2.589
+   },
+   "l7a": "up",
+   "l7a_conf": 0.15837119588829718,
+   "fals": 0.144875,
+   "t0": {
+    "step": 2,
+    "top": [
+     [
+      "MYH9.1",
+      -2.58
+     ],
+     [
+      "RAB10",
+      -1.94
+     ],
+     [
+      "RAB6A",
+      -1.63
+     ],
+     [
+      "EFR3A",
+      -1.52
+     ],
+     [
+      "CRKL",
+      -1.41
+     ],
+     [
+      "CFLAR",
+      -0.93
+     ],
+     [
+      "MYC",
+      -0.92
+     ],
+     [
+      "SCAP",
+      0.89
+     ],
+     [
+      "DOCK5",
+      -0.77
+     ],
+     [
+      "UROD",
+      0.64
+     ],
+     [
+      "CCND1",
+      -0.57
+     ]
+    ],
+    "dup_d": -2.58,
+    "max_d": [
+     "MYH9.1",
+     -2.58
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "UROD",
+      0.53
+     ]
+    ],
+    "dup_d": 0.26,
+    "max_d": [
+     "UROD",
+     0.53
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.4,
+   "f2_ratio": 0.92,
+   "react_med": 52.5,
+   "react_iqr": [
+    21.0,
+    79.8
+   ],
+   "n_estimators": 10
+  }
+ },
+ "DEPMAPROT_SCAP": {
+  "real": {
+   "casc": [
+    0.0,
+    13.21,
+    93.28,
+    96.28,
+    99.28
+   ],
+   "mc": 0.37640927745879343,
+   "mc_thr": 71.42857142857143,
+   "mc_met": {
+    "max_separation": 0.5710029936662838,
+    "s_norm": 0.27798915695429804,
+    "stability": 0.9667762542241821,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.014898270526246881
+   },
+   "delta": 1.908094,
+   "dvec": {
+    "d_sat": 1.184,
+    "d_crit": 2.415,
+    "d_div": 3.093
+   },
+   "l7a": "up",
+   "l7a_conf": 0.34758235859582953,
+   "fals": null,
+   "t0": {
+    "step": 41,
+    "top": [
+     [
+      "SCAP.1",
+      2.01
+     ],
+     [
+      "RAB6A",
+      0.97
+     ],
+     [
+      "EFR3A",
+      0.95
+     ],
+     [
+      "UROD",
+      0.93
+     ],
+     [
+      "ACO2",
+      0.92
+     ],
+     [
+      "CFLAR",
+      0.82
+     ],
+     [
+      "RAB10",
+      0.75
+     ],
+     [
+      "CCND1",
+      0.56
+     ]
+    ],
+    "dup_d": 2.01,
+    "max_d": [
+     "SCAP.1",
+     2.01
+    ]
+   },
+   "mc_at": {
+    "step": 31,
+    "top": [
+     [
+      "SCAP.1",
+      3.71
+     ],
+     [
+      "DOCK5",
+      -0.69
+     ],
+     [
+      "CCND1",
+      -0.65
+     ],
+     [
+      "MYC",
+      0.57
+     ],
+     [
+      "RAB10",
+      -0.53
+     ],
+     [
+      "RAB6A",
+      0.52
+     ]
+    ],
+    "dup_d": 3.71,
+    "max_d": [
+     "SCAP.1",
+     3.71
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 38.09,
+   "f2_ratio": 12.87,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  },
+  "_nul": {
+   "casc": [
+    6.6,
+    26.42,
+    33.22,
+    39.94,
+    66.38
+   ],
+   "mc": 0.34362087678319525,
+   "mc_thr": 56.52173913043478,
+   "mc_met": {
+    "max_separation": 0.2080776040183283,
+    "s_norm": 0.10366504564635741,
+    "stability": 0.9972005714088646,
+    "robustness": 0.06353631369684216,
+    "sharpness": 0.003269644636300949
+   },
+   "delta": 1.827938,
+   "dvec": {
+    "d_sat": 1.269,
+    "d_crit": 2.494,
+    "d_div": 3.097,
+    "d_null": 2.496
+   },
+   "l7a": "down",
+   "l7a_conf": 0.35370248406974675,
+   "fals": 0.00209,
+   "t0": {
+    "step": 15,
+    "top": [
+     [
+      "RAB10",
+      -0.93
+     ],
+     [
+      "RAB6A",
+      -0.82
+     ],
+     [
+      "EFR3A",
+      -0.54
+     ]
+    ],
+    "dup_d": -0.28,
+    "max_d": [
+     "RAB10",
+     -0.93
+    ]
+   },
+   "mc_at": {
+    "step": 25,
+    "top": [
+     [
+      "MYH9",
+      -0.51
+     ]
+    ],
+    "dup_d": -0.15,
+    "max_d": [
+     "MYH9",
+     -0.51
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 2.78,
+   "f2_ratio": 2.38,
+   "react_med": 66.4,
+   "react_iqr": [
+    19.3,
+    79.8
+   ],
+   "n_estimators": 9
+  }
+ },
+ "DEPMAPROT_RAB6A": {
+  "real": {
+   "casc": [
+    2.2,
+    75.35,
+    82.07,
+    88.79,
+    95.52
+   ],
+   "mc": 0.38398882745375845,
+   "mc_thr": 71.42857142857143,
+   "mc_met": {
+    "max_separation": 0.6040152757343187,
+    "s_norm": 0.29314879970826413,
+    "stability": 0.9807356084086108,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.009117525093479453
+   },
+   "delta": 1.91712,
+   "dvec": {
+    "d_sat": 1.186,
+    "d_crit": 2.341,
+    "d_div": 3.103
+   },
+   "l7a": "up",
+   "l7a_conf": 0.32007553284571955,
+   "fals": null,
+   "t0": {
+    "step": 36,
+    "top": [
+     [
+      "RAB6A.1",
+      4.06
+     ],
+     [
+      "EFR3A",
+      1.48
+     ],
+     [
+      "RAB10",
+      1.39
+     ],
+     [
+      "MYH9",
+      0.95
+     ],
+     [
+      "CRKL",
+      0.59
+     ]
+    ],
+    "dup_d": 4.06,
+    "max_d": [
+     "RAB6A.1",
+     4.06
+    ]
+   },
+   "mc_at": {
+    "step": 31,
+    "top": [
+     [
+      "RAB6A.1",
+      3.63
+     ],
+     [
+      "MYH9",
+      0.76
+     ],
+     [
+      "UROD",
+      -0.72
+     ],
+     [
+      "ACO2",
+      -0.67
+     ],
+     [
+      "CRKL",
+      0.66
+     ],
+     [
+      "RAB10",
+      0.64
+     ]
+    ],
+    "dup_d": 3.63,
+    "max_d": [
+     "RAB6A.1",
+     3.63
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 12.48,
+   "f2_ratio": 6.4,
+   "react_med": 89.9,
+   "react_iqr": [
+    80.7,
+    89.9
+   ],
+   "n_estimators": 4
+  },
+  "_nul": {
+   "casc": [
+    0.6,
+    3.6,
+    6.6,
+    22.02,
+    24.22
+   ],
+   "mc": 0.3370089957574675,
+   "mc_thr": 39.130434782608695,
+   "mc_met": {
+    "max_separation": 0.15996105707377176,
+    "s_norm": 0.0798104217055311,
+    "stability": 0.9961485661463059,
+    "robustness": 0.06353631369684216,
+    "sharpness": 0.007570183312740043
+   },
+   "delta": 1.716375,
+   "dvec": {
+    "d_sat": 1.39,
+    "d_crit": 2.428,
+    "d_div": 3.106,
+    "d_null": 2.489
+   },
+   "l7a": "up",
+   "l7a_conf": 0.1742081439056568,
+   "fals": 0.060651,
+   "t0": {
+    "step": 3,
+    "top": [
+     [
+      "RAB6A.1",
+      -1.21
+     ],
+     [
+      "EFR3A",
+      -1.15
+     ],
+     [
+      "CFLAR",
+      -1.15
+     ],
+     [
+      "MYH9",
+      0.73
+     ],
+     [
+      "MYC",
+      -0.57
+     ],
+     [
+      "CRKL",
+      0.52
+     ],
+     [
+      "UROD",
+      -0.51
+     ]
+    ],
+    "dup_d": -1.21,
+    "max_d": [
+     "RAB6A.1",
+     -1.21
+    ]
+   },
+   "mc_at": {
+    "step": 17,
+    "top": [
+     [
+      "SCAP",
+      0.57
+     ],
+     [
+      "CFLAR",
+      -0.5
+     ]
+    ],
+    "dup_d": -0.21,
+    "max_d": [
+     "SCAP",
+     0.57
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.27,
+   "f2_ratio": 0.5,
+   "react_med": 53.8,
+   "react_iqr": [
+    19.3,
+    68.9
+   ],
+   "n_estimators": 9
+  }
+ },
+ "DEPMAPROT_CRKL": {
+  "real": {
+   "casc": [
+    0.0,
+    8.81,
+    70.86,
+    97.76,
+    100.0
+   ],
+   "mc": 0.3780622830870591,
+   "mc_thr": 76.19047619047619,
+   "mc_met": {
+    "max_separation": 0.6012713042349058,
+    "s_norm": 0.2918942134237274,
+    "stability": 0.9561534645521432,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.018239898471489404
+   },
+   "delta": 1.898455,
+   "dvec": {
+    "d_sat": 1.191,
+    "d_crit": 2.386,
+    "d_div": 3.089
+   },
+   "l7a": "down",
+   "l7a_conf": 0.21123432976041687,
+   "fals": null,
+   "t0": {
+    "step": 31,
+    "top": [
+     [
+      "CRKL.1",
+      2.79
+     ],
+     [
+      "RAB6A",
+      0.92
+     ],
+     [
+      "RAB10",
+      0.9
+     ],
+     [
+      "EFR3A",
+      0.82
+     ],
+     [
+      "MYH9",
+      0.79
+     ],
+     [
+      "DOCK5",
+      0.61
+     ],
+     [
+      "CFLAR",
+      0.56
+     ],
+     [
+      "UROD",
+      0.51
+     ],
+     [
+      "CCND1",
+      0.51
+     ]
+    ],
+    "dup_d": 2.79,
+    "max_d": [
+     "CRKL.1",
+     2.79
+    ]
+   },
+   "mc_at": {
+    "step": 34,
+    "top": [
+     [
+      "CRKL.1",
+      2.73
+     ],
+     [
+      "RAB6A",
+      1.35
+     ],
+     [
+      "MYH9",
+      1.1
+     ],
+     [
+      "EFR3A",
+      1.03
+     ],
+     [
+      "RAB10",
+      0.73
+     ],
+     [
+      "DOCK5",
+      0.58
+     ],
+     [
+      "SCAP",
+      -0.51
+     ],
+     [
+      "CFLAR",
+      0.51
+     ]
+    ],
+    "dup_d": 2.73,
+    "max_d": [
+     "CRKL.1",
+     2.73
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 13.82,
+   "f2_ratio": 20.92,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  },
+  "_nul": {
+   "casc": [
+    4.4,
+    49.88,
+    54.59,
+    88.79,
+    88.79
+   ],
+   "mc": 0.35351884341103407,
+   "mc_thr": 57.14285714285714,
+   "mc_met": {
+    "max_separation": 0.37706204121497117,
+    "s_norm": 0.18632861605339332,
+    "stability": 0.9767810945999672,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.022929651075129096
+   },
+   "delta": 1.944931,
+   "dvec": {
+    "d_sat": 1.194,
+    "d_crit": 2.638,
+    "d_div": 3.139
+   },
+   "l7a": "up",
+   "l7a_conf": 0.33746695119520764,
+   "fals": null,
+   "t0": {
+    "step": 24,
+    "top": [
+     [
+      "RAB10",
+      -0.76
+     ],
+     [
+      "ACO2",
+      0.67
+     ],
+     [
+      "CRKL.1",
+      -0.65
+     ],
+     [
+      "DOCK5",
+      -0.52
+     ],
+     [
+      "RAB6A",
+      -0.51
+     ],
+     [
+      "MYC",
+      -0.5
+     ]
+    ],
+    "dup_d": -0.65,
+    "max_d": [
+     "RAB10",
+     -0.76
+    ]
+   },
+   "mc_at": {
+    "step": 25,
+    "top": [
+     [
+      "ACO2",
+      0.83
+     ],
+     [
+      "CRKL.1",
+      -0.64
+     ],
+     [
+      "SCAP",
+      0.6
+     ],
+     [
+      "MYC",
+      -0.57
+     ]
+    ],
+    "dup_d": -0.64,
+    "max_d": [
+     "ACO2",
+     0.83
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.99,
+   "f2_ratio": 3.46,
+   "react_med": 89.9,
+   "react_iqr": [
+    60.1,
+    89.9
+   ],
+   "n_estimators": 3
+  }
+ },
+ "DEPMAPROT_MYC": {
+  "real": {
+   "casc": [
+    0.0,
+    22.02,
+    28.62,
+    35.3,
+    49.88
+   ],
+   "mc": 0.36531248781913167,
+   "mc_thr": 57.14285714285714,
+   "mc_met": {
+    "max_separation": 0.4524294710796452,
+    "s_norm": 0.2224334139209253,
+    "stability": 0.9896296968650826,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.008467772916646342
+   },
+   "delta": 1.952378,
+   "dvec": {
+    "d_sat": 1.195,
+    "d_crit": 2.512,
+    "d_div": 3.147
+   },
+   "l7a": "up",
+   "l7a_conf": 0.3497220111667742,
+   "fals": null,
+   "t0": {
+    "step": 13,
+    "top": [
+     [
+      "MYC.1",
+      2.54
+     ],
+     [
+      "ACO2",
+      0.71
+     ],
+     [
+      "MYH9",
+      -0.51
+     ]
+    ],
+    "dup_d": 2.54,
+    "max_d": [
+     "MYC.1",
+     2.54
+    ]
+   },
+   "mc_at": {
+    "step": 25,
+    "top": [
+     [
+      "MYC.1",
+      2.94
+     ],
+     [
+      "RAB10",
+      0.55
+     ],
+     [
+      "RAB6A",
+      0.54
+     ],
+     [
+      "ACO2",
+      -0.51
+     ]
+    ],
+    "dup_d": 2.94,
+    "max_d": [
+     "MYC.1",
+     2.94
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.92,
+   "f2_ratio": 2.76,
+   "react_med": 89.9,
+   "react_iqr": [
+    57.6,
+    89.9
+   ],
+   "n_estimators": 3
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    19.81,
+    24.22,
+    30.82,
+    100.0
+   ],
+   "mc": 0.3543154887571883,
+   "mc_thr": 61.904761904761905,
+   "mc_met": {
+    "max_separation": 0.3562954227699349,
+    "s_norm": 0.17628673099541317,
+    "stability": 0.984745127848134,
+    "robustness": 2.505426535196992e-16,
+    "sharpness": 0.03002965552062068
+   },
+   "delta": 1.922625,
+   "dvec": {
+    "d_sat": 1.198,
+    "d_crit": 2.582,
+    "d_div": 3.12
+   },
+   "l7a": "down",
+   "l7a_conf": 0.16111499542080612,
+   "fals": null,
+   "t0": {
+    "step": 11,
+    "top": [
+     [
+      "RAB10",
+      0.73
+     ],
+     [
+      "CFLAR",
+      0.63
+     ],
+     [
+      "CCND1",
+      -0.6
+     ]
+    ],
+    "dup_d": 0.17,
+    "max_d": [
+     "RAB10",
+     0.73
+    ]
+   },
+   "mc_at": {
+    "step": 27,
+    "top": [
+     [
+      "RAB6A",
+      0.73
+     ],
+     [
+      "CRKL",
+      0.63
+     ]
+    ],
+    "dup_d": 0.48,
+    "max_d": [
+     "RAB6A",
+     0.73
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 5.92,
+   "f2_ratio": 5.5,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  }
+ },
+ "DEPMAPROT_ACO2": {
+  "real": {
+   "casc": [
+    2.2,
+    22.02,
+    28.62,
+    66.38,
+    66.38
+   ],
+   "mc": 0.3666607995006349,
+   "mc_thr": 56.52173913043478,
+   "mc_met": {
+    "max_separation": 0.36658063934528284,
+    "s_norm": 0.18126496536477443,
+    "stability": 0.9972225222510634,
+    "robustness": 0.06353631369684216,
+    "sharpness": 0.0020364523825755526
+   },
+   "delta": 1.666625,
+   "dvec": {
+    "d_sat": 1.333,
+    "d_crit": 2.436,
+    "d_div": 3.0,
+    "d_null": 2.578
+   },
+   "l7a": "up",
+   "l7a_conf": 0.339763039427146,
+   "fals": 0.141594,
+   "t0": {
+    "step": 13,
+    "top": [
+     [
+      "ACO2.1",
+      2.4
+     ],
+     [
+      "SCAP",
+      0.58
+     ],
+     [
+      "UROD",
+      0.53
+     ]
+    ],
+    "dup_d": 2.4,
+    "max_d": [
+     "ACO2.1",
+     2.4
+    ]
+   },
+   "mc_at": {
+    "step": 25,
+    "top": [
+     [
+      "ACO2.1",
+      2.95
+     ],
+     [
+      "CRKL",
+      -1.3
+     ]
+    ],
+    "dup_d": 2.95,
+    "max_d": [
+     "ACO2.1",
+     2.95
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 1.99,
+   "f2_ratio": 3.64,
+   "react_med": 56.7,
+   "react_iqr": [
+    19.3,
+    79.8
+   ],
+   "n_estimators": 10
+  },
+  "_nul": {
+   "casc": [
+    0.6,
+    3.6,
+    6.6,
+    13.21,
+    47.22
+   ],
+   "mc": 0.34063850150847824,
+   "mc_thr": 28.57142857142857,
+   "mc_met": {
+    "max_separation": 0.2861559337947779,
+    "s_norm": 0.14210956502379082,
+    "stability": 0.9878068642087972,
+    "robustness": 5.102605714370072e-13,
+    "sharpness": 0.00831786369299912
+   },
+   "delta": 1.920195,
+   "dvec": {
+    "d_sat": 1.191,
+    "d_crit": 2.495,
+    "d_div": 3.111
+   },
+   "l7a": "up",
+   "l7a_conf": 0.3026978433459014,
+   "fals": null,
+   "t0": {
+    "step": 3,
+    "top": [
+     [
+      "RAB6A",
+      1.57
+     ],
+     [
+      "EFR3A",
+      1.38
+     ],
+     [
+      "RAB10",
+      1.1
+     ],
+     [
+      "DOCK5",
+      0.91
+     ],
+     [
+      "CRKL",
+      0.63
+     ],
+     [
+      "ACO2.1",
+      0.57
+     ]
+    ],
+    "dup_d": 0.57,
+    "max_d": [
+     "RAB6A",
+     1.57
+    ]
+   },
+   "mc_at": {
+    "step": 13,
+    "top": [
+     [
+      "CFLAR",
+      -0.63
+     ],
+     [
+      "RAB6A",
+      0.62
+     ],
+     [
+      "ACO2.1",
+      -0.57
+     ]
+    ],
+    "dup_d": -0.57,
+    "max_d": [
+     "CFLAR",
+     -0.63
+    ]
+   },
+   "noise": [
+    null,
+    "Scores proxy complets indisponibles",
+    null
+   ],
+   "f1_ratio": 0.05,
+   "f2_ratio": 0.03,
+   "react_med": 89.9,
+   "react_iqr": [
+    89.9,
+    89.9
+   ],
+   "n_estimators": 3
+  }
+ },
+ "IMMROT_CD8A": {
+  "real": {
+   "casc": [
+    0.0,
+    0.0,
+    2.13,
+    99.48,
+    100.0
+   ],
+   "mc": 0.4775401424218665,
+   "mc_thr": 88.04347826086956,
+   "mc_met": {
+    "max_separation": 1.3457556777655106,
+    "s_norm": 0.5868697343461409,
+    "stability": 0.9911687975145396,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.020642914318311695
+   },
+   "delta": 4.248427,
+   "dvec": {
+    "d_sat": 1.566,
+    "d_crit": 3.299,
+    "d_div": 5.814,
+    "d_null": 2.497
+   },
+   "l7a": "up",
+   "l7a_conf": 0.4527953352288731,
+   "fals": 0.801571,
+   "t0": {
+    "step": 4,
+    "top": [
+     [
+      "CD8A.1",
+      3.59
+     ],
+     [
+      "PDCD1",
+      2.67
+     ],
+     [
+      "CTLA4",
+      2.42
+     ],
+     [
+      "CD68",
+      1.8
+     ],
+     [
+      "CD8B",
+      1.44
+     ],
+     [
+      "FOXP3",
+      1.2
+     ],
+     [
+      "CD4",
+      1.13
+     ],
+     [
+      "CD163",
+      0.78
+     ],
+     [
+      "GZMB",
+      0.65
+     ],
+     [
+      "IFNG",
+      0.55
+     ]
+    ],
+    "dup_d": 3.59,
+    "max_d": [
+     "CD8A.1",
+     3.59
+    ]
+   },
+   "mc_at": {
+    "step": 156,
+    "top": [
+     [
+      "CD8A.1",
+      3.15
+     ],
+     [
+      "CD8B",
+      1.32
+     ],
+     [
+      "CTLA4",
+      0.78
+     ],
+     [
+      "FOXP3",
+      0.71
+     ],
+     [
+      "CD4",
+      0.55
+     ]
+    ],
+    "dup_d": 3.15,
+    "max_d": [
+     "CD8A.1",
+     3.15
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.758
+   ],
+   "f1_ratio": 26.52,
+   "f2_ratio": 38.9,
+   "react_med": 41.2,
+   "react_iqr": [
+    22.1,
+    63.4
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    21.53,
+    24.57,
+    49.11,
+    49.11
+   ],
+   "mc": 0.5409696419223324,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.2489544984002953,
+    "s_norm": 0.12383830120555685,
+    "stability": 0.9886290836227092,
+    "robustness": 0.9990552669574038,
+    "sharpness": 0.03709186541185944
+   },
+   "delta": 3.82054,
+   "dvec": {
+    "d_sat": 1.59,
+    "d_crit": 3.393,
+    "d_div": 5.411,
+    "d_null": 2.546
+   },
+   "l7a": "up",
+   "l7a_conf": 0.18516523699761142,
+   "fals": 0.846959,
+   "t0": {
+    "step": 43,
+    "top": [
+     [
+      "FOXP3",
+      -0.59
+     ],
+     [
+      "CD8A.1",
+      -0.55
+     ]
+    ],
+    "dup_d": -0.55,
+    "max_d": [
+     "FOXP3",
+     -0.59
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "GZMB",
+      0.67
+     ],
+     [
+      "FOXP3",
+      0.53
+     ],
+     [
+      "CTLA4",
+      0.52
+     ]
+    ],
+    "dup_d": 0.38,
+    "max_d": [
+     "GZMB",
+     0.67
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.573
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 42.9,
+   "react_iqr": [
+    18.5,
+    61.3
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_CD8B": {
+  "real": {
+   "casc": [
+    0.0,
+    0.19,
+    3.19,
+    34.29,
+    34.29
+   ],
+   "mc": 0.46419332103269584,
+   "mc_thr": 10.714285714285715,
+   "mc_met": {
+    "max_separation": 1.2547851309565958,
+    "s_norm": 0.5562541820131687,
+    "stability": 0.9790099755854479,
+    "robustness": 1.4407624984028267e-41,
+    "sharpness": 0.018070368765554172
+   },
+   "delta": 3.112236,
+   "dvec": {
+    "d_sat": 1.586,
+    "d_crit": 3.249,
+    "d_div": 4.698,
+    "d_null": 2.516
+   },
+   "l7a": "up",
+   "l7a_conf": 0.4071569432716783,
+   "fals": 0.733358,
+   "t0": {
+    "step": 6,
+    "top": [
+     [
+      "CD8B.1",
+      3.46
+     ],
+     [
+      "PDCD1",
+      2.28
+     ],
+     [
+      "CD8A",
+      1.97
+     ],
+     [
+      "CTLA4",
+      1.96
+     ],
+     [
+      "CD4",
+      1.7
+     ],
+     [
+      "CD68",
+      1.16
+     ],
+     [
+      "FOXP3",
+      0.89
+     ],
+     [
+      "GZMB",
+      0.8
+     ],
+     [
+      "CD163",
+      0.74
+     ],
+     [
+      "IFNG",
+      0.68
+     ],
+     [
+      "CD19",
+      0.53
+     ]
+    ],
+    "dup_d": 3.46,
+    "max_d": [
+     "CD8B.1",
+     3.46
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CD8B.1",
+      2.22
+     ],
+     [
+      "PDCD1",
+      1.17
+     ],
+     [
+      "CD8A",
+      1.06
+     ],
+     [
+      "GZMB",
+      1.0
+     ],
+     [
+      "CD274",
+      0.96
+     ],
+     [
+      "CD68",
+      0.89
+     ],
+     [
+      "CD163",
+      0.87
+     ],
+     [
+      "CTLA4",
+      0.75
+     ],
+     [
+      "CD4",
+      0.74
+     ],
+     [
+      "IFNG",
+      0.57
+     ]
+    ],
+    "dup_d": 2.22,
+    "max_d": [
+     "CD8B.1",
+     2.22
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.774
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 64.7,
+   "react_iqr": [
+    49.6,
+    81.5
+   ],
+   "n_estimators": 17
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    2.66,
+    5.86,
+    22.63,
+    22.63
+   ],
+   "mc": 0.33452579719876185,
+   "mc_thr": 76.08695652173913,
+   "mc_met": {
+    "max_separation": 0.22708781989923632,
+    "s_norm": 0.11305846882528235,
+    "stability": 0.9934216780611435,
+    "robustness": 0.0005604517035883659,
+    "sharpness": 0.012348313960582223
+   },
+   "delta": 3.834796,
+   "dvec": {
+    "d_sat": 1.58,
+    "d_crit": 3.339,
+    "d_div": 5.415,
+    "d_null": 2.553
+   },
+   "l7a": "down",
+   "l7a_conf": 0.16228723677944695,
+   "fals": 0.785898,
+   "t0": {
+    "step": 10,
+    "top": [
+     [
+      "CD8A",
+      -0.94
+     ],
+     [
+      "CD8B.1",
+      -0.83
+     ],
+     [
+      "CTLA4",
+      -0.82
+     ],
+     [
+      "CD163",
+      -0.78
+     ],
+     [
+      "FOXP3",
+      -0.76
+     ],
+     [
+      "GZMB",
+      -0.7
+     ],
+     [
+      "CD274",
+      -0.68
+     ],
+     [
+      "CD68",
+      -0.67
+     ],
+     [
+      "CD19",
+      -0.64
+     ],
+     [
+      "PDCD1",
+      -0.55
+     ],
+     [
+      "CD4",
+      -0.55
+     ]
+    ],
+    "dup_d": -0.83,
+    "max_d": [
+     "CD8A",
+     -0.94
+    ]
+   },
+   "mc_at": {
+    "step": 135,
+    "top": [
+     [
+      "CTLA4",
+      0.81
+     ],
+     [
+      "CD4",
+      0.8
+     ],
+     [
+      "PDCD1",
+      0.75
+     ],
+     [
+      "FOXP3",
+      0.62
+     ],
+     [
+      "CD8A",
+      0.53
+     ]
+    ],
+    "dup_d": 0.39,
+    "max_d": [
+     "CTLA4",
+     0.81
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.608
+   ],
+   "f1_ratio": 3.71,
+   "f2_ratio": 5.82,
+   "react_med": 50.4,
+   "react_iqr": [
+    20.2,
+    70.6
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_CD4": {
+  "real": {
+   "casc": [
+    0.0,
+    0.0,
+    2.66,
+    9.58,
+    9.58
+   ],
+   "mc": 0.4721593660870315,
+   "mc_thr": 10.714285714285715,
+   "mc_met": {
+    "max_separation": 1.3299698931715824,
+    "s_norm": 0.5816713094418052,
+    "stability": 0.9809360922979042,
+    "robustness": 1.4407624984028267e-41,
+    "sharpness": 0.016885727825593538
+   },
+   "delta": 3.144993,
+   "dvec": {
+    "d_sat": 1.571,
+    "d_crit": 3.202,
+    "d_div": 4.716,
+    "d_null": 2.511
+   },
+   "l7a": "up",
+   "l7a_conf": 0.41398577761837624,
+   "fals": 0.691667,
+   "t0": {
+    "step": 5,
+    "top": [
+     [
+      "CD4.1",
+      4.29
+     ],
+     [
+      "CD163",
+      1.65
+     ],
+     [
+      "CD8A",
+      1.44
+     ],
+     [
+      "FOXP3",
+      1.23
+     ],
+     [
+      "CTLA4",
+      1.05
+     ],
+     [
+      "CD19",
+      0.86
+     ],
+     [
+      "CD8B",
+      0.84
+     ],
+     [
+      "PDCD1",
+      0.62
+     ],
+     [
+      "IFNG",
+      0.56
+     ]
+    ],
+    "dup_d": 4.29,
+    "max_d": [
+     "CD4.1",
+     4.29
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CD4.1",
+      1.8
+     ],
+     [
+      "CTLA4",
+      1.22
+     ],
+     [
+      "CD68",
+      1.16
+     ],
+     [
+      "FOXP3",
+      1.08
+     ],
+     [
+      "PDCD1",
+      1.08
+     ],
+     [
+      "CD163",
+      0.98
+     ],
+     [
+      "CD8A",
+      0.92
+     ],
+     [
+      "IFNG",
+      0.68
+     ],
+     [
+      "CD8B",
+      0.65
+     ],
+     [
+      "GZMB",
+      0.61
+     ]
+    ],
+    "dup_d": 1.8,
+    "max_d": [
+     "CD4.1",
+     1.8
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.712
+   ],
+   "f1_ratio": 0.04,
+   "f2_ratio": 0.01,
+   "react_med": 46.2,
+   "react_iqr": [
+    27.7,
+    79.0
+   ],
+   "n_estimators": 17
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    35.93,
+    41.22,
+    84.42,
+    84.42
+   ],
+   "mc": 0.36425199232921146,
+   "mc_thr": 77.17391304347825,
+   "mc_met": {
+    "max_separation": 0.4252920162375288,
+    "s_norm": 0.20949777361942543,
+    "stability": 0.9914663948438511,
+    "robustness": 0.00023601698025521353,
+    "sharpness": 0.019577691970887195
+   },
+   "delta": 4.269624,
+   "dvec": {
+    "d_sat": 1.585,
+    "d_crit": 3.421,
+    "d_div": 5.855,
+    "d_null": 2.487
+   },
+   "l7a": "down",
+   "l7a_conf": 0.19300360397621893,
+   "fals": 0.934351,
+   "t0": {
+    "step": 73,
+    "top": [
+     [
+      "CD19",
+      -0.61
+     ]
+    ],
+    "dup_d": 0.02,
+    "max_d": [
+     "CD19",
+     -0.61
+    ]
+   },
+   "mc_at": {
+    "step": 137,
+    "top": [
+     [
+      "CTLA4",
+      -0.9
+     ],
+     [
+      "PDCD1",
+      -0.84
+     ],
+     [
+      "CD4.1",
+      -0.74
+     ],
+     [
+      "CD163",
+      -0.74
+     ],
+     [
+      "CD8A",
+      -0.73
+     ],
+     [
+      "CD8B",
+      -0.57
+     ],
+     [
+      "CD68",
+      -0.56
+     ]
+    ],
+    "dup_d": -0.74,
+    "max_d": [
+     "CTLA4",
+     -0.9
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.743
+   ],
+   "f1_ratio": 9.68,
+   "f2_ratio": 9.92,
+   "react_med": 37.0,
+   "react_iqr": [
+    24.4,
+    63.9
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_FOXP3": {
+  "real": {
+   "casc": [
+    0.0,
+    6.92,
+    75.1,
+    83.96,
+    100.0
+   ],
+   "mc": 0.4749514412782432,
+   "mc_thr": 19.565217391304348,
+   "mc_met": {
+    "max_separation": 1.3125808094636289,
+    "s_norm": 0.5758893964733462,
+    "stability": 0.9918193332291685,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.02319411183744399
+   },
+   "delta": 4.295346,
+   "dvec": {
+    "d_sat": 1.549,
+    "d_crit": 3.319,
+    "d_div": 5.844,
+    "d_null": 2.459
+   },
+   "l7a": "up",
+   "l7a_conf": 0.18356299929014977,
+   "fals": 0.859862,
+   "t0": {
+    "step": 133,
+    "top": [
+     [
+      "FOXP3.1",
+      2.86
+     ],
+     [
+      "CD8A",
+      1.39
+     ],
+     [
+      "CTLA4",
+      1.15
+     ],
+     [
+      "CD8B",
+      1.14
+     ],
+     [
+      "GZMB",
+      1.11
+     ],
+     [
+      "IFNG",
+      1.04
+     ],
+     [
+      "PDCD1",
+      0.76
+     ],
+     [
+      "CD4",
+      0.76
+     ],
+     [
+      "CD274",
+      0.69
+     ],
+     [
+      "CD163",
+      0.62
+     ]
+    ],
+    "dup_d": 2.86,
+    "max_d": [
+     "FOXP3.1",
+     2.86
+    ]
+   },
+   "mc_at": {
+    "step": 35,
+    "top": [
+     [
+      "FOXP3.1",
+      2.96
+     ],
+     [
+      "CD8B",
+      0.98
+     ],
+     [
+      "CTLA4",
+      0.89
+     ],
+     [
+      "CD4",
+      0.88
+     ],
+     [
+      "CD163",
+      0.88
+     ],
+     [
+      "GZMB",
+      0.73
+     ]
+    ],
+    "dup_d": 2.96,
+    "max_d": [
+     "FOXP3.1",
+     2.96
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.675
+   ],
+   "f1_ratio": 0.17,
+   "f2_ratio": 0.08,
+   "react_med": 39.9,
+   "react_iqr": [
+    31.1,
+    78.6
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    3.19,
+    29.15,
+    73.47,
+    73.47
+   ],
+   "mc": 0.5547241099361406,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.3205546929442065,
+    "s_norm": 0.15891885823708424,
+    "stability": 0.9878943088388997,
+    "robustness": 0.9990552669574038,
+    "sharpness": 0.054345532109323365
+   },
+   "delta": 3.953306,
+   "dvec": {
+    "d_sat": 1.615,
+    "d_crit": 3.315,
+    "d_div": 5.568,
+    "d_null": 2.532
+   },
+   "l7a": "up",
+   "l7a_conf": 0.23240448668946817,
+   "fals": 0.783174,
+   "t0": {
+    "step": 52,
+    "top": [
+     [
+      "CD163",
+      0.51
+     ]
+    ],
+    "dup_d": 0.22,
+    "max_d": [
+     "CD163",
+     0.51
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "IFNG",
+      0.92
+     ],
+     [
+      "CD8B",
+      0.71
+     ],
+     [
+      "CTLA4",
+      0.6
+     ],
+     [
+      "FOXP3.1",
+      0.59
+     ],
+     [
+      "CD8A",
+      0.59
+     ],
+     [
+      "CD163",
+      0.53
+     ]
+    ],
+    "dup_d": 0.59,
+    "max_d": [
+     "IFNG",
+     0.92
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.692
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 37.8,
+   "react_iqr": [
+    31.9,
+    58.0
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_CD68": {
+  "real": {
+   "casc": [
+    0.0,
+    1.06,
+    5.86,
+    11.18,
+    11.18
+   ],
+   "mc": 0.41956363043276845,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.7830125702909156,
+    "s_norm": 0.3726580566654814,
+    "stability": 0.9867136828481176,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.05876054289344392
+   },
+   "delta": 4.165369,
+   "dvec": {
+    "d_sat": 1.582,
+    "d_crit": 3.352,
+    "d_div": 5.748,
+    "d_null": 2.557
+   },
+   "l7a": "up",
+   "l7a_conf": 0.2070123989870012,
+   "fals": 0.795444,
+   "t0": {
+    "step": 10,
+    "top": [
+     [
+      "CD68.1",
+      3.82
+     ],
+     [
+      "CTLA4",
+      1.94
+     ],
+     [
+      "CD19",
+      1.65
+     ],
+     [
+      "GZMB",
+      1.56
+     ],
+     [
+      "PDCD1",
+      1.36
+     ],
+     [
+      "FOXP3",
+      1.08
+     ],
+     [
+      "CD8B",
+      1.02
+     ],
+     [
+      "CD163",
+      0.93
+     ],
+     [
+      "CD8A",
+      0.86
+     ],
+     [
+      "CD4",
+      0.83
+     ],
+     [
+      "IFNG",
+      0.55
+     ]
+    ],
+    "dup_d": 3.82,
+    "max_d": [
+     "CD68.1",
+     3.82
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CD68.1",
+      1.86
+     ],
+     [
+      "GZMB",
+      0.83
+     ],
+     [
+      "CD163",
+      0.83
+     ],
+     [
+      "CTLA4",
+      0.82
+     ],
+     [
+      "PDCD1",
+      0.67
+     ],
+     [
+      "CD4",
+      0.59
+     ],
+     [
+      "FOXP3",
+      0.58
+     ]
+    ],
+    "dup_d": 1.86,
+    "max_d": [
+     "CD68.1",
+     1.86
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.776
+   ],
+   "f1_ratio": 0.03,
+   "f2_ratio": 0.01,
+   "react_med": 22.3,
+   "react_iqr": [
+    11.1,
+    50.2
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    1.06,
+    48.16,
+    52.74,
+    92.18,
+    92.18
+   ],
+   "mc": 0.3279775887103947,
+   "mc_thr": 48.9795918367347,
+   "mc_met": {
+    "max_separation": 0.17877243362235537,
+    "s_norm": 0.08914891301060811,
+    "stability": 0.9978012678717946,
+    "robustness": 6.224162272125298e-12,
+    "sharpness": 0.009462672222145151
+   },
+   "delta": 3.083929,
+   "dvec": {
+    "d_sat": 1.581,
+    "d_crit": 3.72,
+    "d_div": 4.665,
+    "d_null": 2.583
+   },
+   "l7a": "up",
+   "l7a_conf": 0.3547841897562074,
+   "fals": 1.1369,
+   "t0": {
+    "step": 93,
+    "top": [
+     [
+      "IFNG",
+      0.8
+     ],
+     [
+      "FOXP3",
+      0.74
+     ],
+     [
+      "CD4",
+      0.65
+     ],
+     [
+      "CD8B",
+      0.61
+     ],
+     [
+      "CTLA4",
+      0.59
+     ],
+     [
+      "PDCD1",
+      0.53
+     ],
+     [
+      "CD163",
+      0.51
+     ]
+    ],
+    "dup_d": 0.24,
+    "max_d": [
+     "IFNG",
+     0.8
+    ]
+   },
+   "mc_at": {
+    "step": 87,
+    "top": [],
+    "dup_d": -0.03,
+    "max_d": [
+     "IFNG",
+     0.47
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.465
+   ],
+   "f1_ratio": 0.72,
+   "f2_ratio": 0.77,
+   "react_med": 29.8,
+   "react_iqr": [
+    13.4,
+    83.2
+   ],
+   "n_estimators": 22
+  }
+ },
+ "IMMROT_CD163": {
+  "real": {
+   "casc": [
+    1.6,
+    53.28,
+    76.16,
+    90.61,
+    91.14
+   ],
+   "mc": 0.4670495797578296,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 1.2181442246870533,
+    "s_norm": 0.5434736051310649,
+    "stability": 0.9807551060232821,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.048904832057627794
+   },
+   "delta": 4.317522,
+   "dvec": {
+    "d_sat": 1.561,
+    "d_crit": 3.279,
+    "d_div": 5.878,
+    "d_null": 2.509
+   },
+   "l7a": "up",
+   "l7a_conf": 0.38626467511827306,
+   "fals": 0.770009,
+   "t0": {
+    "step": 135,
+    "top": [
+     [
+      "CD163.1",
+      3.28
+     ],
+     [
+      "CD8A",
+      -0.73
+     ],
+     [
+      "GZMB",
+      -0.72
+     ],
+     [
+      "CD19",
+      -0.7
+     ],
+     [
+      "PDCD1",
+      -0.68
+     ],
+     [
+      "CTLA4",
+      -0.67
+     ],
+     [
+      "CD8B",
+      -0.6
+     ]
+    ],
+    "dup_d": 3.28,
+    "max_d": [
+     "CD163.1",
+     3.28
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CD163.1",
+      3.3
+     ],
+     [
+      "CD4",
+      1.67
+     ],
+     [
+      "CD8A",
+      1.28
+     ],
+     [
+      "CTLA4",
+      1.01
+     ],
+     [
+      "PDCD1",
+      0.87
+     ],
+     [
+      "FOXP3",
+      0.83
+     ],
+     [
+      "CD8B",
+      0.68
+     ],
+     [
+      "CD274",
+      0.63
+     ],
+     [
+      "IFNG",
+      0.53
+     ]
+    ],
+    "dup_d": 3.3,
+    "max_d": [
+     "CD163.1",
+     3.3
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.746
+   ],
+   "f1_ratio": 0.03,
+   "f2_ratio": 0.01,
+   "react_med": 55.5,
+   "react_iqr": [
+    33.8,
+    85.7
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    1.06,
+    4.26,
+    38.73,
+    46.59,
+    46.59
+   ],
+   "mc": 0.34634583571310823,
+   "mc_thr": 68.47826086956522,
+   "mc_met": {
+    "max_separation": 0.29656547132971456,
+    "s_norm": 0.1472054076757112,
+    "stability": 0.9892194097706541,
+    "robustness": 3.632289199992419e-05,
+    "sharpness": 0.027055629503993026
+   },
+   "delta": 4.236419,
+   "dvec": {
+    "d_sat": 1.584,
+    "d_crit": 3.397,
+    "d_div": 5.821,
+    "d_null": 2.52
+   },
+   "l7a": "up",
+   "l7a_conf": 0.18743954745204056,
+   "fals": 0.877649,
+   "t0": {
+    "step": 69,
+    "top": [],
+    "dup_d": 0.29,
+    "max_d": [
+     "CD19",
+     0.34
+    ]
+   },
+   "mc_at": {
+    "step": 121,
+    "top": [
+     [
+      "CD274",
+      -1.01
+     ],
+     [
+      "FOXP3",
+      -0.88
+     ],
+     [
+      "CD8A",
+      -0.77
+     ],
+     [
+      "GZMB",
+      -0.77
+     ],
+     [
+      "CTLA4",
+      -0.75
+     ],
+     [
+      "PDCD1",
+      -0.72
+     ],
+     [
+      "CD4",
+      -0.71
+     ],
+     [
+      "CD68",
+      -0.68
+     ],
+     [
+      "CD163.1",
+      -0.67
+     ],
+     [
+      "IFNG",
+      -0.62
+     ],
+     [
+      "CD8B",
+      -0.6
+     ]
+    ],
+    "dup_d": -0.67,
+    "max_d": [
+     "CD274",
+     -1.01
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.595
+   ],
+   "f1_ratio": 6.13,
+   "f2_ratio": 5.64,
+   "react_med": 54.6,
+   "react_iqr": [
+    27.7,
+    68.9
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_CD274": {
+  "real": {
+   "casc": [
+    0.0,
+    15.96,
+    22.09,
+    28.52,
+    31.81
+   ],
+   "mc": 0.4246606868140921,
+   "mc_thr": 72.82608695652173,
+   "mc_met": {
+    "max_separation": 0.865727265455983,
+    "s_norm": 0.40771170742520546,
+    "stability": 0.9975041944294449,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.015479581288484659
+   },
+   "delta": 4.329303,
+   "dvec": {
+    "d_sat": 1.543,
+    "d_crit": 3.324,
+    "d_div": 5.872,
+    "d_null": 2.462
+   },
+   "l7a": "up",
+   "l7a_conf": 0.2104548078144823,
+   "fals": 0.861324,
+   "t0": {
+    "step": 39,
+    "top": [
+     [
+      "CD274.1",
+      2.9
+     ],
+     [
+      "CD8B",
+      -1.0
+     ],
+     [
+      "IFNG",
+      -0.93
+     ],
+     [
+      "CD8A",
+      -0.79
+     ],
+     [
+      "CTLA4",
+      -0.59
+     ],
+     [
+      "GZMB",
+      -0.58
+     ]
+    ],
+    "dup_d": 2.9,
+    "max_d": [
+     "CD274.1",
+     2.9
+    ]
+   },
+   "mc_at": {
+    "step": 129,
+    "top": [
+     [
+      "CD274.1",
+      3.43
+     ],
+     [
+      "CD163",
+      0.71
+     ],
+     [
+      "GZMB",
+      0.56
+     ]
+    ],
+    "dup_d": 3.43,
+    "max_d": [
+     "CD274.1",
+     3.43
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.655
+   ],
+   "f1_ratio": 2.06,
+   "f2_ratio": 8.03,
+   "react_med": 61.3,
+   "react_iqr": [
+    20.0,
+    75.8
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    2.13,
+    5.86,
+    10.12,
+    75.61,
+    75.61
+   ],
+   "mc": 0.33282996373742524,
+   "mc_thr": 18.478260869565215,
+   "mc_met": {
+    "max_separation": 0.2090334574316677,
+    "s_norm": 0.10413781288262791,
+    "stability": 0.9972358184719651,
+    "robustness": 4.627221975484378e-06,
+    "sharpness": 0.01208474443326123
+   },
+   "delta": 4.145329,
+   "dvec": {
+    "d_sat": 1.586,
+    "d_crit": 3.335,
+    "d_div": 5.731,
+    "d_null": 2.489
+   },
+   "l7a": "up",
+   "l7a_conf": 0.1752375942310105,
+   "fals": 0.846077,
+   "t0": {
+    "step": 18,
+    "top": [
+     [
+      "CD68",
+      0.76
+     ]
+    ],
+    "dup_d": -0.28,
+    "max_d": [
+     "CD68",
+     0.76
+    ]
+   },
+   "mc_at": {
+    "step": 33,
+    "top": [],
+    "dup_d": 0.22,
+    "max_d": [
+     "CD19",
+     0.35
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.586
+   ],
+   "f1_ratio": 0.09,
+   "f2_ratio": 0.04,
+   "react_med": 49.6,
+   "react_iqr": [
+    36.1,
+    88.2
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_PDCD1": {
+  "real": {
+   "casc": [
+    0.0,
+    93.74,
+    96.87,
+    99.87,
+    100.0
+   ],
+   "mc": 0.46479597709909826,
+   "mc_thr": 51.086956521739125,
+   "mc_met": {
+    "max_separation": 1.2306538958398625,
+    "s_norm": 0.547866001685953,
+    "stability": 0.9979807456828408,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.005209764442300498
+   },
+   "delta": 4.276929,
+   "dvec": {
+    "d_sat": 1.574,
+    "d_crit": 3.249,
+    "d_div": 5.851,
+    "d_null": 2.481
+   },
+   "l7a": "up",
+   "l7a_conf": 0.17038099550885324,
+   "fals": 0.768058,
+   "t0": {
+    "step": 171,
+    "top": [
+     [
+      "PDCD1.1",
+      4.69
+     ],
+     [
+      "CD19",
+      2.37
+     ],
+     [
+      "CTLA4",
+      1.52
+     ],
+     [
+      "CD8B",
+      0.99
+     ],
+     [
+      "FOXP3",
+      0.97
+     ],
+     [
+      "CD8A",
+      0.8
+     ],
+     [
+      "CD4",
+      0.74
+     ],
+     [
+      "GZMB",
+      0.6
+     ],
+     [
+      "CD163",
+      -0.59
+     ]
+    ],
+    "dup_d": 4.69,
+    "max_d": [
+     "PDCD1.1",
+     4.69
+    ]
+   },
+   "mc_at": {
+    "step": 90,
+    "top": [
+     [
+      "PDCD1.1",
+      3.83
+     ],
+     [
+      "CD163",
+      0.94
+     ],
+     [
+      "GZMB",
+      0.77
+     ],
+     [
+      "CD8A",
+      0.73
+     ],
+     [
+      "CTLA4",
+      0.51
+     ]
+    ],
+    "dup_d": 3.83,
+    "max_d": [
+     "PDCD1.1",
+     3.83
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.714
+   ],
+   "f1_ratio": 0.96,
+   "f2_ratio": 1.21,
+   "react_med": 63.9,
+   "react_iqr": [
+    19.3,
+    80.5
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.53,
+    4.26,
+    9.58,
+    84.86,
+    84.86
+   ],
+   "mc": 0.3228250365894649,
+   "mc_thr": 29.34782608695652,
+   "mc_met": {
+    "max_separation": 0.14651008368573085,
+    "s_norm": 0.07312428629991669,
+    "stability": 0.9992022408710115,
+    "robustness": 3.337439281441981e-23,
+    "sharpness": 0.005635392190932138
+   },
+   "delta": 4.205053,
+   "dvec": {
+    "d_sat": 1.589,
+    "d_crit": 3.373,
+    "d_div": 5.794,
+    "d_null": 2.46
+   },
+   "l7a": "down",
+   "l7a_conf": 0.36157437629976213,
+   "fals": 0.913024,
+   "t0": {
+    "step": 17,
+    "top": [
+     [
+      "PDCD1.1",
+      -0.91
+     ],
+     [
+      "CD163",
+      -0.69
+     ],
+     [
+      "CD19",
+      -0.62
+     ],
+     [
+      "CD68",
+      -0.56
+     ],
+     [
+      "FOXP3",
+      -0.56
+     ],
+     [
+      "IFNG",
+      -0.52
+     ]
+    ],
+    "dup_d": -0.91,
+    "max_d": [
+     "PDCD1.1",
+     -0.91
+    ]
+   },
+   "mc_at": {
+    "step": 52,
+    "top": [
+     [
+      "CD19",
+      0.58
+     ]
+    ],
+    "dup_d": 0.28,
+    "max_d": [
+     "CD19",
+     0.58
+    ]
+   },
+   "noise": [
+    "LOW_MEDIUM",
+    "Bruit blanc avec signaux faibles - Quelques flux montrent des signatures de proxy",
+    0.389
+   ],
+   "f1_ratio": 0.29,
+   "f2_ratio": 0.11,
+   "react_med": 58.8,
+   "react_iqr": [
+    31.1,
+    68.1
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_CTLA4": {
+  "real": {
+   "casc": [
+    0.0,
+    63.88,
+    84.42,
+    92.7,
+    92.7
+   ],
+   "mc": 0.47903682089503513,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 1.3439964204181247,
+    "s_norm": 0.5862927662386119,
+    "stability": 0.993287018849103,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.025814426843603334
+   },
+   "delta": 4.181147,
+   "dvec": {
+    "d_sat": 1.551,
+    "d_crit": 3.355,
+    "d_div": 5.732,
+    "d_null": 2.44
+   },
+   "l7a": "up",
+   "l7a_conf": 0.18076957958580422,
+   "fals": 0.91436,
+   "t0": {
+    "step": 149,
+    "top": [
+     [
+      "CTLA4.1",
+      2.87
+     ],
+     [
+      "CD8A",
+      1.4
+     ],
+     [
+      "PDCD1",
+      1.17
+     ],
+     [
+      "CD8B",
+      1.11
+     ],
+     [
+      "CD4",
+      0.97
+     ],
+     [
+      "FOXP3",
+      0.75
+     ],
+     [
+      "GZMB",
+      0.67
+     ],
+     [
+      "CD19",
+      0.61
+     ]
+    ],
+    "dup_d": 2.87,
+    "max_d": [
+     "CTLA4.1",
+     2.87
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CTLA4.1",
+      2.2
+     ],
+     [
+      "CD68",
+      1.53
+     ],
+     [
+      "FOXP3",
+      1.23
+     ],
+     [
+      "CD4",
+      1.05
+     ],
+     [
+      "CD163",
+      0.89
+     ],
+     [
+      "PDCD1",
+      0.74
+     ],
+     [
+      "CD8A",
+      0.72
+     ],
+     [
+      "IFNG",
+      0.67
+     ],
+     [
+      "GZMB",
+      0.54
+     ]
+    ],
+    "dup_d": 2.2,
+    "max_d": [
+     "CTLA4.1",
+     2.2
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.732
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 30.7,
+   "react_iqr": [
+    20.2,
+    50.4
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.53,
+    46.59,
+    68.82,
+    75.1,
+    75.61
+   ],
+   "mc": 0.33348560272841954,
+   "mc_thr": 39.130434782608695,
+   "mc_met": {
+    "max_separation": 0.21386266974141374,
+    "s_norm": 0.10652562833551342,
+    "stability": 0.9926471705566892,
+    "robustness": 9.110895649388692e-12,
+    "sharpness": 0.01866881529468331
+   },
+   "delta": 4.214424,
+   "dvec": {
+    "d_sat": 1.603,
+    "d_crit": 3.332,
+    "d_div": 5.818,
+    "d_null": 2.489
+   },
+   "l7a": "up",
+   "l7a_conf": 0.37654349644449936,
+   "fals": 0.842917,
+   "t0": {
+    "step": 122,
+    "top": [
+     [
+      "PDCD1",
+      -0.79
+     ],
+     [
+      "GZMB",
+      -0.72
+     ],
+     [
+      "CD8B",
+      -0.69
+     ],
+     [
+      "CD8A",
+      -0.51
+     ]
+    ],
+    "dup_d": -0.43,
+    "max_d": [
+     "PDCD1",
+     -0.79
+    ]
+   },
+   "mc_at": {
+    "step": 69,
+    "top": [
+     [
+      "CD163",
+      -0.72
+     ],
+     [
+      "CD8A",
+      -0.55
+     ]
+    ],
+    "dup_d": -0.28,
+    "max_d": [
+     "CD163",
+     -0.72
+    ]
+   },
+   "noise": [
+    "LOW_MEDIUM",
+    "Bruit blanc avec signaux faibles - Quelques flux montrent des signatures de proxy",
+    0.396
+   ],
+   "f1_ratio": 0.47,
+   "f2_ratio": 0.45,
+   "react_med": 68.9,
+   "react_iqr": [
+    23.5,
+    76.5
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_GZMB": {
+  "real": {
+   "casc": [
+    0.0,
+    15.96,
+    72.88,
+    84.86,
+    84.86
+   ],
+   "mc": 0.4681395001084054,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 1.2365623988087668,
+    "s_norm": 0.549930166521376,
+    "stability": 0.9862021202879074,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.03649907032810176
+   },
+   "delta": 4.213061,
+   "dvec": {
+    "d_sat": 1.557,
+    "d_crit": 3.271,
+    "d_div": 5.77,
+    "d_null": 2.457
+   },
+   "l7a": "up",
+   "l7a_conf": 0.18559312317748936,
+   "fals": 0.813555,
+   "t0": {
+    "step": 129,
+    "top": [
+     [
+      "GZMB.1",
+      2.97
+     ],
+     [
+      "CD274",
+      1.13
+     ],
+     [
+      "CD163",
+      0.91
+     ],
+     [
+      "FOXP3",
+      0.79
+     ],
+     [
+      "CD4",
+      0.78
+     ],
+     [
+      "CTLA4",
+      0.69
+     ],
+     [
+      "CD8A",
+      0.66
+     ],
+     [
+      "PDCD1",
+      0.65
+     ],
+     [
+      "CD8B",
+      0.59
+     ],
+     [
+      "CD68",
+      0.52
+     ]
+    ],
+    "dup_d": 2.97,
+    "max_d": [
+     "GZMB.1",
+     2.97
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "GZMB.1",
+      2.35
+     ],
+     [
+      "CD274",
+      0.91
+     ],
+     [
+      "PDCD1",
+      0.86
+     ],
+     [
+      "CTLA4",
+      0.81
+     ],
+     [
+      "FOXP3",
+      0.6
+     ],
+     [
+      "CD4",
+      0.59
+     ],
+     [
+      "CD163",
+      0.57
+     ],
+     [
+      "CD8A",
+      0.52
+     ]
+    ],
+    "dup_d": 2.35,
+    "max_d": [
+     "GZMB.1",
+     2.35
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.75
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 37.0,
+   "react_iqr": [
+    24.2,
+    77.3
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    2.66,
+    11.18,
+    29.55,
+    90.09,
+    90.09
+   ],
+   "mc": 0.4773122040190294,
+   "mc_thr": 13.043478260869565,
+   "mc_met": {
+    "max_separation": 0.21356277554919348,
+    "s_norm": 0.10637738042860548,
+    "stability": 0.9890912300129885,
+    "robustness": 0.7109097224621518,
+    "sharpness": 0.0324483819706046
+   },
+   "delta": 4.218218,
+   "dvec": {
+    "d_sat": 1.551,
+    "d_crit": 3.444,
+    "d_div": 5.769,
+    "d_null": 2.422
+   },
+   "l7a": "up",
+   "l7a_conf": 0.1627015097296617,
+   "fals": 1.022438,
+   "t0": {
+    "step": 52,
+    "top": [
+     [
+      "CD163",
+      -1.14
+     ],
+     [
+      "CD4",
+      -1.04
+     ],
+     [
+      "CD274",
+      -0.99
+     ],
+     [
+      "PDCD1",
+      -0.79
+     ],
+     [
+      "FOXP3",
+      -0.78
+     ],
+     [
+      "GZMB.1",
+      -0.75
+     ],
+     [
+      "CD8A",
+      -0.74
+     ],
+     [
+      "CD8B",
+      -0.71
+     ],
+     [
+      "CTLA4",
+      -0.7
+     ],
+     [
+      "CD68",
+      -0.63
+     ],
+     [
+      "IFNG",
+      -0.57
+     ]
+    ],
+    "dup_d": -0.75,
+    "max_d": [
+     "CD163",
+     -1.14
+    ]
+   },
+   "mc_at": {
+    "step": 23,
+    "top": [],
+    "dup_d": -0.08,
+    "max_d": [
+     "CD163",
+     0.42
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.627
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.02,
+   "react_med": 33.6,
+   "react_iqr": [
+    15.1,
+    52.9
+   ],
+   "n_estimators": 17
+  }
+ },
+ "IMMROT_IFNG": {
+  "real": {
+   "casc": [
+    0.0,
+    10.12,
+    77.87,
+    94.26,
+    94.26
+   ],
+   "mc": 0.4359894027451213,
+   "mc_thr": 23.913043478260867,
+   "mc_met": {
+    "max_separation": 0.9531017264001075,
+    "s_norm": 0.4434770644751259,
+    "stability": 0.9926866394929343,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.025701457773516123
+   },
+   "delta": 4.241006,
+   "dvec": {
+    "d_sat": 1.568,
+    "d_crit": 3.358,
+    "d_div": 5.809,
+    "d_null": 2.443
+   },
+   "l7a": "up",
+   "l7a_conf": 0.1928056714221258,
+   "fals": 0.915051,
+   "t0": {
+    "step": 138,
+    "top": [
+     [
+      "IFNG.1",
+      2.0
+     ]
+    ],
+    "dup_d": 2.0,
+    "max_d": [
+     "IFNG.1",
+     2.0
+    ]
+   },
+   "mc_at": {
+    "step": 42,
+    "top": [
+     [
+      "IFNG.1",
+      2.77
+     ],
+     [
+      "CD163",
+      0.59
+     ],
+     [
+      "CD19",
+      0.59
+     ],
+     [
+      "FOXP3",
+      0.59
+     ],
+     [
+      "CD4",
+      0.57
+     ],
+     [
+      "GZMB",
+      0.56
+     ]
+    ],
+    "dup_d": 2.77,
+    "max_d": [
+     "IFNG.1",
+     2.77
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.711
+   ],
+   "f1_ratio": 0.1,
+   "f2_ratio": 0.07,
+   "react_med": 25.2,
+   "react_iqr": [
+    10.9,
+    47.9
+   ],
+   "n_estimators": 17
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    1.6,
+    5.86,
+    53.28,
+    53.28
+   ],
+   "mc": 0.39070398281502083,
+   "mc_thr": 66.66666666666666,
+   "mc_met": {
+    "max_separation": 0.0843429710291616,
+    "s_norm": 0.042146503548708684,
+    "stability": 0.9812696284278863,
+    "robustness": 0.4111122905071885,
+    "sharpness": 0.007283425603023248
+   },
+   "delta": 1.845366,
+   "dvec": {
+    "d_sat": 1.533,
+    "d_crit": 3.308,
+    "d_div": 3.378,
+    "d_null": 2.534
+   },
+   "l7a": "up",
+   "l7a_conf": 0.34122162349114676,
+   "fals": 0.773822,
+   "t0": {
+    "step": 10,
+    "top": [
+     [
+      "IFNG.1",
+      0.96
+     ],
+     [
+      "CD8A",
+      0.88
+     ],
+     [
+      "CTLA4",
+      0.88
+     ],
+     [
+      "GZMB",
+      0.81
+     ],
+     [
+      "CD8B",
+      0.77
+     ],
+     [
+      "FOXP3",
+      0.68
+     ],
+     [
+      "PDCD1",
+      0.62
+     ],
+     [
+      "CD4",
+      0.57
+     ]
+    ],
+    "dup_d": 0.96,
+    "max_d": [
+     "IFNG.1",
+     0.96
+    ]
+   },
+   "mc_at": {
+    "step": 118,
+    "top": [],
+    "dup_d": 0.16,
+    "max_d": [
+     "GZMB",
+     0.3
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.472
+   ],
+   "f1_ratio": 1.18,
+   "f2_ratio": 6.53,
+   "react_med": 76.9,
+   "react_iqr": [
+    28.2,
+    77.3
+   ],
+   "n_estimators": 24
+  }
+ },
+ "IMMROT_CD19": {
+  "real": {
+   "casc": [
+    1.06,
+    49.11,
+    70.53,
+    78.34,
+    78.34
+   ],
+   "mc": 0.4360028090602736,
+   "mc_thr": 58.69565217391304,
+   "mc_met": {
+    "max_separation": 0.9679608077026901,
+    "s_norm": 0.44942571395558517,
+    "stability": 0.9951879324551818,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.01309357568521769
+   },
+   "delta": 4.287818,
+   "dvec": {
+    "d_sat": 1.562,
+    "d_crit": 3.347,
+    "d_div": 5.85,
+    "d_null": 2.473
+   },
+   "l7a": "up",
+   "l7a_conf": 0.18446368093533122,
+   "fals": 0.873993,
+   "t0": {
+    "step": 125,
+    "top": [
+     [
+      "CD19.1",
+      2.99
+     ],
+     [
+      "CTLA4",
+      -0.58
+     ],
+     [
+      "GZMB",
+      -0.52
+     ],
+     [
+      "CD68",
+      -0.51
+     ]
+    ],
+    "dup_d": 2.99,
+    "max_d": [
+     "CD19.1",
+     2.99
+    ]
+   },
+   "mc_at": {
+    "step": 104,
+    "top": [
+     [
+      "CD19.1",
+      3.22
+     ],
+     [
+      "CTLA4",
+      1.1
+     ],
+     [
+      "FOXP3",
+      0.96
+     ],
+     [
+      "CD4",
+      0.88
+     ],
+     [
+      "CD8B",
+      0.86
+     ],
+     [
+      "GZMB",
+      0.69
+     ],
+     [
+      "CD8A",
+      0.59
+     ],
+     [
+      "CD68",
+      0.53
+     ],
+     [
+      "CD163",
+      0.52
+     ]
+    ],
+    "dup_d": 3.22,
+    "max_d": [
+     "CD19.1",
+     3.22
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.768
+   ],
+   "f1_ratio": 1.81,
+   "f2_ratio": 1.86,
+   "react_med": 27.3,
+   "react_iqr": [
+    13.4,
+    61.3
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    21.53,
+    75.1,
+    97.91,
+    97.91
+   ],
+   "mc": 0.48407741012505207,
+   "mc_thr": 10.714285714285715,
+   "mc_met": {
+    "max_separation": 0.30217267038004697,
+    "s_norm": 0.1499471160912444,
+    "stability": 0.975496778306755,
+    "robustness": 0.6925693242051979,
+    "sharpness": 0.03965188482306332
+   },
+   "delta": 3.229127,
+   "dvec": {
+    "d_sat": 1.598,
+    "d_crit": 3.311,
+    "d_div": 4.828,
+    "d_null": 2.581
+   },
+   "l7a": "up",
+   "l7a_conf": 0.180574055325783,
+   "fals": 0.729903,
+   "t0": {
+    "step": 133,
+    "top": [
+     [
+      "CTLA4",
+      0.7
+     ],
+     [
+      "PDCD1",
+      0.59
+     ],
+     [
+      "CD8A",
+      0.52
+     ]
+    ],
+    "dup_d": 0.34,
+    "max_d": [
+     "CTLA4",
+     0.7
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CTLA4",
+      -0.61
+     ],
+     [
+      "FOXP3",
+      -0.6
+     ],
+     [
+      "CD274",
+      -0.58
+     ]
+    ],
+    "dup_d": -0.22,
+    "max_d": [
+     "CTLA4",
+     -0.61
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.671
+   ],
+   "f1_ratio": 0.01,
+   "f2_ratio": 0.01,
+   "react_med": 26.9,
+   "react_iqr": [
+    16.0,
+    56.3
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_PARP1": {
+  "real": {
+   "casc": [
+    0.0,
+    0.0,
+    1.6,
+    99.48,
+    99.48
+   ],
+   "mc": 0.3680161901884072,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.4454676486444746,
+    "s_norm": 0.2191221760159618,
+    "stability": 0.9897384633452542,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.026789991900212175
+   },
+   "delta": 4.295214,
+   "dvec": {
+    "d_sat": 1.57,
+    "d_crit": 3.419,
+    "d_div": 5.866,
+    "d_null": 2.462
+   },
+   "l7a": "up",
+   "l7a_conf": 0.21723204479182764,
+   "fals": 0.957026,
+   "t0": {
+    "step": 3,
+    "top": [
+     [
+      "PARP1.1",
+      3.12
+     ],
+     [
+      "PARP2",
+      -2.4
+     ],
+     [
+      "ATR",
+      1.09
+     ],
+     [
+      "CHEK1",
+      -0.94
+     ],
+     [
+      "RAD51",
+      0.71
+     ],
+     [
+      "XRCC1",
+      -0.53
+     ]
+    ],
+    "dup_d": 3.12,
+    "max_d": [
+     "PARP1.1",
+     3.12
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "PARP1.1",
+      1.7
+     ],
+     [
+      "ATR",
+      0.84
+     ],
+     [
+      "BRCA2",
+      0.68
+     ],
+     [
+      "BRCA1",
+      0.63
+     ],
+     [
+      "POLQ",
+      0.57
+     ],
+     [
+      "CHEK1",
+      0.52
+     ]
+    ],
+    "dup_d": 1.7,
+    "max_d": [
+     "PARP1.1",
+     1.7
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.649
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 63.4,
+   "react_iqr": [
+    48.5,
+    83.0
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    21.53,
+    24.57,
+    31.32,
+    34.8
+   ],
+   "mc": 0.339926282202372,
+   "mc_thr": 71.73913043478261,
+   "mc_met": {
+    "max_separation": 0.2451897837525325,
+    "s_norm": 0.12198438159840362,
+    "stability": 0.9956327456592464,
+    "robustness": 1.4760390634809145e-07,
+    "sharpness": 0.023205572521478538
+   },
+   "delta": 4.336649,
+   "dvec": {
+    "d_sat": 1.559,
+    "d_crit": 3.307,
+    "d_div": 5.896,
+    "d_null": 2.518
+   },
+   "l7a": "up",
+   "l7a_conf": 0.2617367445884476,
+   "fals": 0.788531,
+   "t0": {
+    "step": 43,
+    "top": [
+     [
+      "POLQ",
+      -0.61
+     ]
+    ],
+    "dup_d": -0.47,
+    "max_d": [
+     "POLQ",
+     -0.61
+    ]
+   },
+   "mc_at": {
+    "step": 127,
+    "top": [
+     [
+      "CHEK1",
+      0.94
+     ],
+     [
+      "CHEK2",
+      0.77
+     ],
+     [
+      "BRCA1",
+      0.76
+     ],
+     [
+      "FANCD2",
+      0.76
+     ],
+     [
+      "POLQ",
+      0.72
+     ],
+     [
+      "PARP2",
+      0.66
+     ],
+     [
+      "RAD51",
+      0.58
+     ],
+     [
+      "BRCA2",
+      0.51
+     ]
+    ],
+    "dup_d": 0.34,
+    "max_d": [
+     "CHEK1",
+     0.94
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.585
+   ],
+   "f1_ratio": 8.61,
+   "f2_ratio": 10.1,
+   "react_med": 22.7,
+   "react_iqr": [
+    16.0,
+    55.5
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_PARP2": {
+  "real": {
+   "casc": [
+    0.53,
+    37.71,
+    90.09,
+    98.44,
+    100.0
+   ],
+   "mc": 0.36836563779482284,
+   "mc_thr": 52.17391304347826,
+   "mc_met": {
+    "max_separation": 0.45525238436552157,
+    "s_norm": 0.22377461448733765,
+    "stability": 0.9978421981207787,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.00940297006193992
+   },
+   "delta": 4.203267,
+   "dvec": {
+    "d_sat": 1.586,
+    "d_crit": 3.297,
+    "d_div": 5.789,
+    "d_null": 2.481
+   },
+   "l7a": "up",
+   "l7a_conf": 0.40327360950695684,
+   "fals": 0.815895,
+   "t0": {
+    "step": 159,
+    "top": [
+     [
+      "PARP2.1",
+      2.23
+     ],
+     [
+      "ATM",
+      -0.72
+     ]
+    ],
+    "dup_d": 2.23,
+    "max_d": [
+     "PARP2.1",
+     2.23
+    ]
+   },
+   "mc_at": {
+    "step": 92,
+    "top": [
+     [
+      "PARP2.1",
+      3.55
+     ],
+     [
+      "ATM",
+      -0.57
+     ],
+     [
+      "RAD51",
+      0.55
+     ]
+    ],
+    "dup_d": 3.55,
+    "max_d": [
+     "PARP2.1",
+     3.55
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.64
+   ],
+   "f1_ratio": 2.92,
+   "f2_ratio": 1.99,
+   "react_med": 72.3,
+   "react_iqr": [
+    26.9,
+    86.1
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    61.8,
+    82.06,
+    85.47,
+    92.7
+   ],
+   "mc": 0.4688358075412402,
+   "mc_thr": 10.714285714285715,
+   "mc_met": {
+    "max_separation": 0.23673459774075659,
+    "s_norm": 0.1178175719757032,
+    "stability": 0.9671504490986386,
+    "robustness": 0.6925693242051979,
+    "sharpness": 0.02415768188949063
+   },
+   "delta": 3.125975,
+   "dvec": {
+    "d_sat": 1.587,
+    "d_crit": 3.207,
+    "d_div": 4.713,
+    "d_null": 2.516
+   },
+   "l7a": "up",
+   "l7a_conf": 0.27917900876984636,
+   "fals": 0.69177,
+   "t0": {
+    "step": 145,
+    "top": [
+     [
+      "BRCA2",
+      -1.14
+     ],
+     [
+      "BRCA1",
+      -1.0
+     ],
+     [
+      "POLQ",
+      -0.82
+     ],
+     [
+      "RAD51",
+      -0.67
+     ],
+     [
+      "PARP1",
+      -0.57
+     ],
+     [
+      "FANCD2",
+      -0.57
+     ],
+     [
+      "CHEK1",
+      -0.53
+     ]
+    ],
+    "dup_d": -0.37,
+    "max_d": [
+     "BRCA2",
+     -1.14
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CHEK1",
+      -0.74
+     ]
+    ],
+    "dup_d": -0.36,
+    "max_d": [
+     "CHEK1",
+     -0.74
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.727
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.02,
+   "react_med": 38.7,
+   "react_iqr": [
+    21.8,
+    58.8
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_BRCA1": {
+  "real": {
+   "casc": [
+    2.13,
+    5.86,
+    84.42,
+    88.01,
+    92.7
+   ],
+   "mc": 0.4208361180492606,
+   "mc_thr": 88.04347826086956,
+   "mc_met": {
+    "max_separation": 0.8463996844592175,
+    "s_norm": 0.39962269835896025,
+    "stability": 0.9925811466282269,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.015874822765521948
+   },
+   "delta": 4.234708,
+   "dvec": {
+    "d_sat": 1.563,
+    "d_crit": 3.351,
+    "d_div": 5.798,
+    "d_null": 2.456
+   },
+   "l7a": "up",
+   "l7a_conf": 0.38244614168804425,
+   "fals": 0.894718,
+   "t0": {
+    "step": 149,
+    "top": [
+     [
+      "BRCA1.1",
+      2.87
+     ],
+     [
+      "CHEK2",
+      0.99
+     ],
+     [
+      "FANCD2",
+      0.76
+     ],
+     [
+      "RAD51",
+      0.75
+     ],
+     [
+      "POLQ",
+      0.64
+     ],
+     [
+      "PARP1",
+      0.64
+     ],
+     [
+      "CHEK1",
+      0.57
+     ]
+    ],
+    "dup_d": 2.87,
+    "max_d": [
+     "BRCA1.1",
+     2.87
+    ]
+   },
+   "mc_at": {
+    "step": 156,
+    "top": [
+     [
+      "BRCA1.1",
+      3.22
+     ],
+     [
+      "CHEK1",
+      0.93
+     ],
+     [
+      "CHEK2",
+      0.56
+     ],
+     [
+      "ATM",
+      -0.54
+     ]
+    ],
+    "dup_d": 3.22,
+    "max_d": [
+     "BRCA1.1",
+     3.22
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.605
+   ],
+   "f1_ratio": 35.32,
+   "f2_ratio": 40.61,
+   "react_med": 63.9,
+   "react_iqr": [
+    34.5,
+    80.7
+   ],
+   "n_estimators": 17
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    22.09,
+    72.88,
+    93.74,
+    93.74
+   ],
+   "mc": 0.3252873916811365,
+   "mc_thr": 78.26086956521739,
+   "mc_met": {
+    "max_separation": 0.15475756308158858,
+    "s_norm": 0.07722471598763972,
+    "stability": 0.9967899008587833,
+    "robustness": 0.005651674519245554,
+    "sharpness": 0.00976335861680258
+   },
+   "delta": 4.222211,
+   "dvec": {
+    "d_sat": 1.598,
+    "d_crit": 3.375,
+    "d_div": 5.82,
+    "d_null": 2.528
+   },
+   "l7a": "up",
+   "l7a_conf": 0.374798828366499,
+   "fals": 0.846853,
+   "t0": {
+    "step": 129,
+    "top": [
+     [
+      "PARP1",
+      -1.1
+     ],
+     [
+      "BRCA1.1",
+      -0.86
+     ],
+     [
+      "PARP2",
+      -0.65
+     ],
+     [
+      "CHEK1",
+      -0.63
+     ]
+    ],
+    "dup_d": -0.86,
+    "max_d": [
+     "PARP1",
+     -1.1
+    ]
+   },
+   "mc_at": {
+    "step": 139,
+    "top": [
+     [
+      "BRCA1.1",
+      -0.68
+     ]
+    ],
+    "dup_d": -0.68,
+    "max_d": [
+     "BRCA1.1",
+     -0.68
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.481
+   ],
+   "f1_ratio": 7.44,
+   "f2_ratio": 23.12,
+   "react_med": 52.9,
+   "react_iqr": [
+    44.5,
+    77.3
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_BRCA2": {
+  "real": {
+   "casc": [
+    0.0,
+    0.0,
+    1.06,
+    96.87,
+    96.87
+   ],
+   "mc": 0.406287739563188,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.7269420170673538,
+    "s_norm": 0.34826772179177656,
+    "stability": 0.9904606215540506,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.023346182797199192
+   },
+   "delta": 4.231287,
+   "dvec": {
+    "d_sat": 1.564,
+    "d_crit": 3.355,
+    "d_div": 5.795,
+    "d_null": 2.507
+   },
+   "l7a": "up",
+   "l7a_conf": 0.24081121457630303,
+   "fals": 0.848101,
+   "t0": {
+    "step": 2,
+    "top": [
+     [
+      "BRCA2.1",
+      2.43
+     ],
+     [
+      "PARP1",
+      -1.23
+     ],
+     [
+      "PARP2",
+      0.69
+     ],
+     [
+      "ATM",
+      0.61
+     ]
+    ],
+    "dup_d": 2.43,
+    "max_d": [
+     "BRCA2.1",
+     2.43
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "BRCA2.1",
+      2.37
+     ],
+     [
+      "ATR",
+      1.43
+     ],
+     [
+      "FANCD2",
+      0.85
+     ],
+     [
+      "POLQ",
+      0.78
+     ],
+     [
+      "CHEK2",
+      0.67
+     ],
+     [
+      "ATM",
+      0.66
+     ],
+     [
+      "CHEK1",
+      -0.63
+     ],
+     [
+      "XRCC1",
+      -0.61
+     ],
+     [
+      "BRCA1",
+      -0.56
+     ],
+     [
+      "PARP2",
+      -0.53
+     ],
+     [
+      "RAD51",
+      0.52
+     ]
+    ],
+    "dup_d": 2.37,
+    "max_d": [
+     "BRCA2.1",
+     2.37
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.661
+   ],
+   "f1_ratio": 0.01,
+   "f2_ratio": 0.01,
+   "react_med": 22.7,
+   "react_iqr": [
+    12.0,
+    55.9
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    21.53,
+    25.04,
+    48.16,
+    48.16
+   ],
+   "mc": 0.3251478723277746,
+   "mc_thr": 89.28571428571429,
+   "mc_met": {
+    "max_separation": 0.16825445854373847,
+    "s_norm": 0.08392932242845383,
+    "stability": 0.9924952470316929,
+    "robustness": 1.4407624984028267e-41,
+    "sharpness": 0.011102507448653182
+   },
+   "delta": 3.088184,
+   "dvec": {
+    "d_sat": 1.586,
+    "d_crit": 3.259,
+    "d_div": 4.674,
+    "d_null": 2.49
+   },
+   "l7a": "up",
+   "l7a_conf": 0.4142827340821202,
+   "fals": 0.768742,
+   "t0": {
+    "step": 44,
+    "top": [],
+    "dup_d": 0.0,
+    "max_d": [
+     "XRCC1",
+     0.29
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [],
+    "dup_d": -0.03,
+    "max_d": [
+     "CHEK2",
+     0.3
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.67
+   ],
+   "f1_ratio": 31.97,
+   "f2_ratio": 101.35,
+   "react_med": 59.7,
+   "react_iqr": [
+    52.1,
+    68.1
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_ATM": {
+  "real": {
+   "casc": [
+    0.0,
+    24.57,
+    97.91,
+    100.0,
+    100.0
+   ],
+   "mc": 0.37181344162702756,
+   "mc_thr": 88.04347826086956,
+   "mc_met": {
+    "max_separation": 0.48570748138606645,
+    "s_norm": 0.23818940920278162,
+    "stability": 0.9940999088977913,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.010633230984278663
+   },
+   "delta": 4.113517,
+   "dvec": {
+    "d_sat": 1.569,
+    "d_crit": 3.212,
+    "d_div": 5.683,
+    "d_null": 2.5
+   },
+   "l7a": "up",
+   "l7a_conf": 0.16521598706533694,
+   "fals": 0.712472,
+   "t0": {
+    "step": 173,
+    "top": [
+     [
+      "ATM.1",
+      3.7
+     ],
+     [
+      "FANCD2",
+      1.95
+     ],
+     [
+      "PARP1",
+      1.86
+     ],
+     [
+      "CHEK2",
+      1.66
+     ],
+     [
+      "BRCA2",
+      1.25
+     ],
+     [
+      "RAD51",
+      1.08
+     ],
+     [
+      "POLQ",
+      1.02
+     ],
+     [
+      "CHEK1",
+      0.82
+     ],
+     [
+      "BRCA1",
+      0.82
+     ],
+     [
+      "PARP2",
+      0.73
+     ],
+     [
+      "ATR",
+      0.72
+     ]
+    ],
+    "dup_d": 3.7,
+    "max_d": [
+     "ATM.1",
+     3.7
+    ]
+   },
+   "mc_at": {
+    "step": 156,
+    "top": [
+     [
+      "ATM.1",
+      1.9
+     ],
+     [
+      "PARP1",
+      0.68
+     ]
+    ],
+    "dup_d": 1.9,
+    "max_d": [
+     "ATM.1",
+     1.9
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.663
+   ],
+   "f1_ratio": 24.3,
+   "f2_ratio": 55.05,
+   "react_med": 57.1,
+   "react_iqr": [
+    33.6,
+    64.7
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    24.57,
+    29.55,
+    84.42,
+    84.42
+   ],
+   "mc": 0.48833966370328885,
+   "mc_thr": 89.28571428571429,
+   "mc_met": {
+    "max_separation": 0.15353511250350038,
+    "s_norm": 0.07661710723192312,
+    "stability": 0.965896587864988,
+    "robustness": 0.849365816568312,
+    "sharpness": 0.028561959302765533
+   },
+   "delta": 3.118154,
+   "dvec": {
+    "d_sat": 1.598,
+    "d_crit": 3.238,
+    "d_div": 4.716,
+    "d_null": 2.516
+   },
+   "l7a": "up",
+   "l7a_conf": 0.3899480292018085,
+   "fals": 0.722693,
+   "t0": {
+    "step": 52,
+    "top": [
+     [
+      "CHEK1",
+      -0.53
+     ]
+    ],
+    "dup_d": -0.14,
+    "max_d": [
+     "CHEK1",
+     -0.53
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [],
+    "dup_d": -0.45,
+    "max_d": [
+     "ATM.1",
+     -0.45
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.779
+   ],
+   "f1_ratio": 58.28,
+   "f2_ratio": 77.29,
+   "react_med": 35.3,
+   "react_iqr": [
+    26.1,
+    53.8
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_ATR": {
+  "real": {
+   "casc": [
+    0.0,
+    0.19,
+    3.19,
+    10.12,
+    15.48
+   ],
+   "mc": 0.38474520453386435,
+   "mc_thr": 10.714285714285715,
+   "mc_met": {
+    "max_separation": 0.5830691117457535,
+    "s_norm": 0.28354660546824406,
+    "stability": 0.9946121996605799,
+    "robustness": 1.4407624984028267e-41,
+    "sharpness": 0.006487814976085744
+   },
+   "delta": 3.12911,
+   "dvec": {
+    "d_sat": 1.582,
+    "d_crit": 3.133,
+    "d_div": 4.711,
+    "d_null": 2.507
+   },
+   "l7a": "down",
+   "l7a_conf": 0.19163962861233616,
+   "fals": 0.625468,
+   "t0": {
+    "step": 6,
+    "top": [
+     [
+      "ATR.1",
+      3.68
+     ],
+     [
+      "PARP1",
+      -1.39
+     ],
+     [
+      "POLQ",
+      1.31
+     ],
+     [
+      "BRCA2",
+      1.29
+     ],
+     [
+      "FANCD2",
+      1.29
+     ],
+     [
+      "BRCA1",
+      1.04
+     ],
+     [
+      "RAD51",
+      0.68
+     ],
+     [
+      "XRCC1",
+      0.64
+     ]
+    ],
+    "dup_d": 3.68,
+    "max_d": [
+     "ATR.1",
+     3.68
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "ATR.1",
+      1.82
+     ],
+     [
+      "BRCA2",
+      0.74
+     ],
+     [
+      "XRCC1",
+      -0.74
+     ],
+     [
+      "PARP2",
+      -0.54
+     ]
+    ],
+    "dup_d": 1.82,
+    "max_d": [
+     "ATR.1",
+     1.82
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.593
+   ],
+   "f1_ratio": 0.03,
+   "f2_ratio": 0.01,
+   "react_med": 52.1,
+   "react_iqr": [
+    29.4,
+    71.4
+   ],
+   "n_estimators": 17
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    84.86,
+    88.01,
+    94.26,
+    94.79
+   ],
+   "mc": 0.3379463516793768,
+   "mc_thr": 84.44444444444444,
+   "mc_met": {
+    "max_separation": 0.19381088439441427,
+    "s_norm": 0.09660324178558662,
+    "stability": 0.9851677389980232,
+    "robustness": 0.05040553336275385,
+    "sharpness": 0.01666975385871516
+   },
+   "delta": 2.347674,
+   "dvec": {
+    "d_sat": 1.574,
+    "d_crit": 3.411,
+    "d_div": 3.922,
+    "d_null": 2.496
+   },
+   "l7a": "flat",
+   "l7a_conf": 0.26518208183158193,
+   "fals": 0.914855,
+   "t0": {
+    "step": 156,
+    "top": [
+     [
+      "RAD51",
+      -0.83
+     ],
+     [
+      "FANCD2",
+      -0.61
+     ],
+     [
+      "CHEK1",
+      -0.59
+     ],
+     [
+      "POLQ",
+      -0.56
+     ],
+     [
+      "BRCA2",
+      -0.54
+     ]
+    ],
+    "dup_d": 0.03,
+    "max_d": [
+     "RAD51",
+     -0.83
+    ]
+   },
+   "mc_at": {
+    "step": 149,
+    "top": [],
+    "dup_d": 0.06,
+    "max_d": [
+     "RAD51",
+     -0.43
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.64
+   ],
+   "f1_ratio": 24.72,
+   "f2_ratio": 26.05,
+   "react_med": 72.7,
+   "react_iqr": [
+    11.6,
+    89.9
+   ],
+   "n_estimators": 22
+  }
+ },
+ "PARPROT_CHEK1": {
+  "real": {
+   "casc": [
+    1.06,
+    10.12,
+    60.9,
+    83.96,
+    83.96
+   ],
+   "mc": 0.408172907712265,
+   "mc_thr": 89.13043478260869,
+   "mc_met": {
+    "max_separation": 0.7356064250934936,
+    "s_norm": 0.3520687124335163,
+    "stability": 0.9814655028981354,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.04056321556384753
+   },
+   "delta": 4.347306,
+   "dvec": {
+    "d_sat": 1.556,
+    "d_crit": 3.355,
+    "d_div": 5.904,
+    "d_null": 2.488
+   },
+   "l7a": "up",
+   "l7a_conf": 0.2535119363767022,
+   "fals": 0.867221,
+   "t0": {
+    "step": 108,
+    "top": [
+     [
+      "CHEK1.1",
+      4.2
+     ],
+     [
+      "BRCA2",
+      0.79
+     ],
+     [
+      "BRCA1",
+      0.78
+     ],
+     [
+      "POLQ",
+      0.76
+     ],
+     [
+      "FANCD2",
+      0.65
+     ]
+    ],
+    "dup_d": 4.2,
+    "max_d": [
+     "CHEK1.1",
+     4.2
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [
+     [
+      "CHEK1.1",
+      3.01
+     ],
+     [
+      "RAD51",
+      0.97
+     ],
+     [
+      "POLQ",
+      0.89
+     ],
+     [
+      "FANCD2",
+      0.84
+     ],
+     [
+      "CHEK2",
+      0.82
+     ]
+    ],
+    "dup_d": 3.01,
+    "max_d": [
+     "CHEK1.1",
+     3.01
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.628
+   ],
+   "f1_ratio": 38.9,
+   "f2_ratio": 166.05,
+   "react_med": 64.3,
+   "react_iqr": [
+    26.9,
+    78.6
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    5.32,
+    16.54,
+    84.86,
+    84.86
+   ],
+   "mc": 0.3250313743820577,
+   "mc_thr": 83.69565217391303,
+   "mc_met": {
+    "max_separation": 0.1610016569672372,
+    "s_norm": 0.0803273859821412,
+    "stability": 0.9915191337830618,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.017387092262483802
+   },
+   "delta": 4.133282,
+   "dvec": {
+    "d_sat": 1.6,
+    "d_crit": 3.289,
+    "d_div": 5.733,
+    "d_null": 2.504
+   },
+   "l7a": "up",
+   "l7a_conf": 0.23994092351106183,
+   "fals": 0.785059,
+   "t0": {
+    "step": 29,
+    "top": [
+     [
+      "ATM",
+      -0.64
+     ]
+    ],
+    "dup_d": 0.14,
+    "max_d": [
+     "ATM",
+     -0.64
+    ]
+   },
+   "mc_at": {
+    "step": 148,
+    "top": [
+     [
+      "CHEK2",
+      0.55
+     ],
+     [
+      "PARP2",
+      -0.53
+     ]
+    ],
+    "dup_d": -0.18,
+    "max_d": [
+     "CHEK2",
+     0.55
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.685
+   ],
+   "f1_ratio": 23.21,
+   "f2_ratio": 24.15,
+   "react_med": 38.7,
+   "react_iqr": [
+    34.5,
+    68.9
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_CHEK2": {
+  "real": {
+   "casc": [
+    0.0,
+    0.0,
+    2.66,
+    53.79,
+    53.79
+   ],
+   "mc": 0.38617027889464095,
+   "mc_thr": 89.13043478260869,
+   "mc_met": {
+    "max_separation": 0.5762130070571183,
+    "s_norm": 0.2803911091771848,
+    "stability": 0.9854243252537919,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.03212824282674007
+   },
+   "delta": 4.338434,
+   "dvec": {
+    "d_sat": 1.556,
+    "d_crit": 3.367,
+    "d_div": 5.894,
+    "d_null": 2.472
+   },
+   "l7a": "down",
+   "l7a_conf": 0.25934452964958954,
+   "fals": 0.895217,
+   "t0": {
+    "step": 5,
+    "top": [
+     [
+      "CHEK2.1",
+      3.57
+     ],
+     [
+      "BRCA2",
+      2.33
+     ],
+     [
+      "POLQ",
+      2.31
+     ],
+     [
+      "ATR",
+      1.76
+     ],
+     [
+      "RAD51",
+      1.46
+     ],
+     [
+      "FANCD2",
+      1.35
+     ],
+     [
+      "PARP2",
+      -1.27
+     ],
+     [
+      "XRCC1",
+      -0.85
+     ],
+     [
+      "CHEK1",
+      0.61
+     ],
+     [
+      "PARP1",
+      -0.57
+     ],
+     [
+      "ATM",
+      0.53
+     ]
+    ],
+    "dup_d": 3.57,
+    "max_d": [
+     "CHEK2.1",
+     3.57
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [
+     [
+      "CHEK2.1",
+      1.75
+     ],
+     [
+      "RAD51",
+      0.8
+     ],
+     [
+      "ATM",
+      -0.61
+     ],
+     [
+      "ATR",
+      -0.59
+     ]
+    ],
+    "dup_d": 1.75,
+    "max_d": [
+     "CHEK2.1",
+     1.75
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.672
+   ],
+   "f1_ratio": 21.04,
+   "f2_ratio": 46.29,
+   "react_med": 22.7,
+   "react_iqr": [
+    13.0,
+    65.1
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    22.63,
+    84.42,
+    88.53,
+    91.66
+   ],
+   "mc": 0.32607328063547414,
+   "mc_thr": 67.39130434782608,
+   "mc_met": {
+    "max_separation": 0.16814427317837108,
+    "s_norm": 0.08387461757295912,
+    "stability": 0.9979507437830737,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.007628361143321473
+   },
+   "delta": 4.228082,
+   "dvec": {
+    "d_sat": 1.578,
+    "d_crit": 3.294,
+    "d_div": 5.806,
+    "d_null": 2.49
+   },
+   "l7a": "up",
+   "l7a_conf": 0.2738975105810526,
+   "fals": 0.803965,
+   "t0": {
+    "step": 149,
+    "top": [
+     [
+      "PARP1",
+      0.57
+     ]
+    ],
+    "dup_d": -0.01,
+    "max_d": [
+     "PARP1",
+     0.57
+    ]
+   },
+   "mc_at": {
+    "step": 119,
+    "top": [
+     [
+      "FANCD2",
+      -0.82
+     ],
+     [
+      "RAD51",
+      -0.76
+     ],
+     [
+      "CHEK2.1",
+      -0.71
+     ],
+     [
+      "ATR",
+      -0.7
+     ],
+     [
+      "POLQ",
+      -0.68
+     ],
+     [
+      "BRCA2",
+      -0.54
+     ]
+    ],
+    "dup_d": -0.71,
+    "max_d": [
+     "FANCD2",
+     -0.82
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.714
+   ],
+   "f1_ratio": 3.29,
+   "f2_ratio": 4.05,
+   "react_med": 58.8,
+   "react_iqr": [
+    37.8,
+    70.6
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_RAD51": {
+  "real": {
+   "casc": [
+    0.0,
+    0.0,
+    1.6,
+    20.88,
+    20.88
+   ],
+   "mc": 0.4167474438169387,
+   "mc_thr": 10.714285714285715,
+   "mc_met": {
+    "max_separation": 0.8332399030244754,
+    "s_norm": 0.3940791082889486,
+    "stability": 0.9854591314420451,
+    "robustness": 1.4407624984028267e-41,
+    "sharpness": 0.014429859488202766
+   },
+   "delta": 3.113201,
+   "dvec": {
+    "d_sat": 1.583,
+    "d_crit": 3.217,
+    "d_div": 4.696,
+    "d_null": 2.489
+   },
+   "l7a": "up",
+   "l7a_conf": 0.26686762280416865,
+   "fals": 0.727838,
+   "t0": {
+    "step": 3,
+    "top": [
+     [
+      "RAD51.1",
+      2.78
+     ],
+     [
+      "ATR",
+      1.98
+     ],
+     [
+      "PARP2",
+      -1.95
+     ],
+     [
+      "PARP1",
+      1.75
+     ],
+     [
+      "BRCA2",
+      1.58
+     ],
+     [
+      "FANCD2",
+      1.47
+     ],
+     [
+      "ATM",
+      1.41
+     ],
+     [
+      "POLQ",
+      1.21
+     ],
+     [
+      "XRCC1",
+      -1.11
+     ],
+     [
+      "CHEK1",
+      -0.98
+     ],
+     [
+      "CHEK2",
+      0.7
+     ],
+     [
+      "BRCA1",
+      0.58
+     ]
+    ],
+    "dup_d": 2.78,
+    "max_d": [
+     "RAD51.1",
+     2.78
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "RAD51.1",
+      2.11
+     ],
+     [
+      "POLQ",
+      1.93
+     ],
+     [
+      "FANCD2",
+      1.74
+     ],
+     [
+      "CHEK2",
+      1.36
+     ],
+     [
+      "BRCA2",
+      1.13
+     ],
+     [
+      "PARP2",
+      -0.96
+     ],
+     [
+      "ATR",
+      0.83
+     ],
+     [
+      "XRCC1",
+      -0.54
+     ]
+    ],
+    "dup_d": 2.11,
+    "max_d": [
+     "RAD51.1",
+     2.11
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.716
+   ],
+   "f1_ratio": 0.02,
+   "f2_ratio": 0.01,
+   "react_med": 14.3,
+   "react_iqr": [
+    10.9,
+    47.1
+   ],
+   "n_estimators": 17
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    29.55,
+    96.35,
+    99.35,
+    100.0
+   ],
+   "mc": 0.3254026260942062,
+   "mc_thr": 39.130434782608695,
+   "mc_met": {
+    "max_separation": 0.156326058363236,
+    "s_norm": 0.0780042392744017,
+    "stability": 0.9974191469937708,
+    "robustness": 1.1736778264111107e-18,
+    "sharpness": 0.01387805106877262
+   },
+   "delta": 4.269225,
+   "dvec": {
+    "d_sat": 1.573,
+    "d_crit": 3.36,
+    "d_div": 5.842,
+    "d_null": 2.512
+   },
+   "l7a": "flat",
+   "l7a_conf": 0.25400369030582537,
+   "fals": 0.848715,
+   "t0": {
+    "step": 171,
+    "top": [
+     [
+      "PARP1",
+      0.95
+     ]
+    ],
+    "dup_d": 0.04,
+    "max_d": [
+     "PARP1",
+     0.95
+    ]
+   },
+   "mc_at": {
+    "step": 69,
+    "top": [
+     [
+      "BRCA1",
+      -0.79
+     ]
+    ],
+    "dup_d": -0.27,
+    "max_d": [
+     "BRCA1",
+     -0.79
+    ]
+   },
+   "noise": [
+    "LOW_MEDIUM",
+    "Bruit blanc avec signaux faibles - Quelques flux montrent des signatures de proxy",
+    0.358
+   ],
+   "f1_ratio": 0.25,
+   "f2_ratio": 0.24,
+   "react_med": 34.5,
+   "react_iqr": [
+    20.2,
+    58.8
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_XRCC1": {
+  "real": {
+   "casc": [
+    0.53,
+    60.9,
+    96.87,
+    99.87,
+    100.0
+   ],
+   "mc": 0.3678988004376037,
+   "mc_thr": 89.28571428571429,
+   "mc_met": {
+    "max_separation": 0.4634407315958322,
+    "s_norm": 0.22766019047228994,
+    "stability": 0.9941196540044852,
+    "robustness": 1.4407624984028267e-41,
+    "sharpness": 0.006824235472855983
+   },
+   "delta": 3.105563,
+   "dvec": {
+    "d_sat": 1.583,
+    "d_crit": 3.166,
+    "d_div": 4.688,
+    "d_null": 2.521
+   },
+   "l7a": "down",
+   "l7a_conf": 0.3817404748700205,
+   "fals": 0.644468,
+   "t0": {
+    "step": 171,
+    "top": [
+     [
+      "XRCC1.1",
+      3.74
+     ],
+     [
+      "PARP1",
+      -0.98
+     ],
+     [
+      "BRCA1",
+      -0.83
+     ]
+    ],
+    "dup_d": 3.74,
+    "max_d": [
+     "XRCC1.1",
+     3.74
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [
+     [
+      "XRCC1.1",
+      1.78
+     ],
+     [
+      "BRCA2",
+      -0.62
+     ],
+     [
+      "RAD51",
+      -0.58
+     ],
+     [
+      "PARP1",
+      -0.56
+     ],
+     [
+      "FANCD2",
+      -0.51
+     ]
+    ],
+    "dup_d": 1.78,
+    "max_d": [
+     "XRCC1.1",
+     1.78
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.661
+   ],
+   "f1_ratio": 30.43,
+   "f2_ratio": 98.55,
+   "react_med": 43.7,
+   "react_iqr": [
+    26.9,
+    61.3
+   ],
+   "n_estimators": 17
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    3.19,
+    7.99,
+    57.77,
+    57.77
+   ],
+   "mc": 0.33271606972966,
+   "mc_thr": 30.43478260869565,
+   "mc_met": {
+    "max_separation": 0.2073459923772055,
+    "s_norm": 0.10330315722958709,
+    "stability": 0.9944729735398091,
+    "robustness": 9.110895649388757e-12,
+    "sharpness": 0.016916152485094982
+   },
+   "delta": 4.298123,
+   "dvec": {
+    "d_sat": 1.537,
+    "d_crit": 3.32,
+    "d_div": 5.835,
+    "d_null": 2.462
+   },
+   "l7a": "down",
+   "l7a_conf": 0.3453830519968387,
+   "fals": 0.858723,
+   "t0": {
+    "step": 14,
+    "top": [
+     [
+      "BRCA2",
+      0.68
+     ],
+     [
+      "ATM",
+      0.6
+     ],
+     [
+      "ATR",
+      0.54
+     ]
+    ],
+    "dup_d": -0.36,
+    "max_d": [
+     "BRCA2",
+     0.68
+    ]
+   },
+   "mc_at": {
+    "step": 54,
+    "top": [
+     [
+      "ATR",
+      0.71
+     ],
+     [
+      "RAD51",
+      -0.71
+     ],
+     [
+      "FANCD2",
+      -0.63
+     ],
+     [
+      "CHEK2",
+      -0.63
+     ],
+     [
+      "XRCC1.1",
+      -0.52
+     ]
+    ],
+    "dup_d": -0.52,
+    "max_d": [
+     "ATR",
+     0.71
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.452
+   ],
+   "f1_ratio": 0.17,
+   "f2_ratio": 0.11,
+   "react_med": 62.2,
+   "react_iqr": [
+    31.9,
+    68.9
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_POLQ": {
+  "real": {
+   "casc": [
+    0.0,
+    0.0,
+    1.6,
+    88.53,
+    88.53
+   ],
+   "mc": 0.43366100448747386,
+   "mc_thr": 85.8695652173913,
+   "mc_met": {
+    "max_separation": 0.9507962447471137,
+    "s_norm": 0.4425505621542405,
+    "stability": 0.9895678271811232,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.02012743843432381
+   },
+   "delta": 4.311708,
+   "dvec": {
+    "d_sat": 1.555,
+    "d_crit": 3.287,
+    "d_div": 5.867,
+    "d_null": 2.478
+   },
+   "l7a": "down",
+   "l7a_conf": 0.22843691218006043,
+   "fals": 0.809317,
+   "t0": {
+    "step": 3,
+    "top": [
+     [
+      "FANCD2",
+      3.78
+     ],
+     [
+      "POLQ.1",
+      2.87
+     ],
+     [
+      "BRCA2",
+      1.93
+     ],
+     [
+      "CHEK2",
+      1.71
+     ],
+     [
+      "RAD51",
+      1.62
+     ],
+     [
+      "PARP1",
+      -0.93
+     ],
+     [
+      "ATR",
+      0.76
+     ],
+     [
+      "BRCA1",
+      0.57
+     ]
+    ],
+    "dup_d": 2.87,
+    "max_d": [
+     "FANCD2",
+     3.78
+    ]
+   },
+   "mc_at": {
+    "step": 152,
+    "top": [
+     [
+      "POLQ.1",
+      2.84
+     ],
+     [
+      "BRCA1",
+      1.13
+     ],
+     [
+      "FANCD2",
+      1.1
+     ],
+     [
+      "CHEK1",
+      0.96
+     ],
+     [
+      "RAD51",
+      0.9
+     ],
+     [
+      "BRCA2",
+      0.71
+     ],
+     [
+      "PARP2",
+      0.57
+     ]
+    ],
+    "dup_d": 2.84,
+    "max_d": [
+     "POLQ.1",
+     2.84
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.71
+   ],
+   "f1_ratio": 27.32,
+   "f2_ratio": 28.21,
+   "react_med": 42.4,
+   "react_iqr": [
+    22.3,
+    70.8
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.0,
+    44.04,
+    88.53,
+    94.26,
+    100.0
+   ],
+   "mc": 0.3963607170020587,
+   "mc_thr": 10.869565217391305,
+   "mc_met": {
+    "max_separation": 0.18258602500538468,
+    "s_norm": 0.09104023059372551,
+    "stability": 0.9933734228330132,
+    "robustness": 0.33533421115221107,
+    "sharpness": 0.0198488937179744
+   },
+   "delta": 4.028006,
+   "dvec": {
+    "d_sat": 1.607,
+    "d_crit": 3.297,
+    "d_div": 5.635,
+    "d_null": 2.499
+   },
+   "l7a": "up",
+   "l7a_conf": 0.3689462592960236,
+   "fals": 0.798635,
+   "t0": {
+    "step": 157,
+    "top": [
+     [
+      "CHEK2",
+      0.52
+     ]
+    ],
+    "dup_d": 0.18,
+    "max_d": [
+     "CHEK2",
+     0.52
+    ]
+   },
+   "mc_at": {
+    "step": 19,
+    "top": [
+     [
+      "CHEK1",
+      0.7
+     ]
+    ],
+    "dup_d": 0.03,
+    "max_d": [
+     "CHEK1",
+     0.7
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.617
+   ],
+   "f1_ratio": 0.04,
+   "f2_ratio": 0.02,
+   "react_med": 76.5,
+   "react_iqr": [
+    12.6,
+    89.9
+   ],
+   "n_estimators": 17
+  }
+ },
+ "PARPROT_FANCD2": {
+  "real": {
+   "casc": [
+    0.0,
+    0.0,
+    2.13,
+    6.39,
+    13.01
+   ],
+   "mc": 0.41772175968043684,
+   "mc_thr": 89.13043478260869,
+   "mc_met": {
+    "max_separation": 0.8198703080553732,
+    "s_norm": 0.38841761882881654,
+    "stability": 0.9894214697388054,
+    "robustness": 3.3705048381947964e-41,
+    "sharpness": 0.021850165550751394
+   },
+   "delta": 4.302375,
+   "dvec": {
+    "d_sat": 1.561,
+    "d_crit": 3.342,
+    "d_div": 5.864,
+    "d_null": 2.47
+   },
+   "l7a": "down",
+   "l7a_conf": 0.3853871325048516,
+   "fals": 0.872407,
+   "t0": {
+    "step": 4,
+    "top": [
+     [
+      "FANCD2.1",
+      4.44
+     ],
+     [
+      "POLQ",
+      2.53
+     ],
+     [
+      "BRCA2",
+      1.97
+     ],
+     [
+      "CHEK2",
+      1.93
+     ],
+     [
+      "RAD51",
+      1.39
+     ],
+     [
+      "ATR",
+      1.38
+     ],
+     [
+      "PARP1",
+      -1.13
+     ],
+     [
+      "PARP2",
+      -1.12
+     ],
+     [
+      "BRCA1",
+      0.94
+     ],
+     [
+      "XRCC1",
+      -0.56
+     ],
+     [
+      "CHEK1",
+      -0.54
+     ]
+    ],
+    "dup_d": 4.44,
+    "max_d": [
+     "FANCD2.1",
+     4.44
+    ]
+   },
+   "mc_at": {
+    "step": 158,
+    "top": [
+     [
+      "FANCD2.1",
+      2.4
+     ],
+     [
+      "CHEK2",
+      1.16
+     ],
+     [
+      "POLQ",
+      1.13
+     ],
+     [
+      "PARP2",
+      1.08
+     ],
+     [
+      "RAD51",
+      0.77
+     ],
+     [
+      "CHEK1",
+      0.7
+     ],
+     [
+      "BRCA2",
+      0.57
+     ]
+    ],
+    "dup_d": 2.4,
+    "max_d": [
+     "FANCD2.1",
+     2.4
+    ]
+   },
+   "noise": [
+    "MEDIUM_HIGH",
+    "Proxy de variance mod\u00e9r\u00e9 - Plusieurs flux agissent comme proxies de variance r\u00e9siduelle",
+    0.68
+   ],
+   "f1_ratio": 35.96,
+   "f2_ratio": 68.85,
+   "react_med": 43.7,
+   "react_iqr": [
+    32.8,
+    75.0
+   ],
+   "n_estimators": 18
+  },
+  "_nul": {
+   "casc": [
+    0.53,
+    17.82,
+    20.88,
+    45.62,
+    45.62
+   ],
+   "mc": 0.33486573109001994,
+   "mc_thr": 88.04347826086956,
+   "mc_met": {
+    "max_separation": 0.22571588119451946,
+    "s_norm": 0.11238121526436592,
+    "stability": 0.9930434348712681,
+    "robustness": 1.3274327663430909e-05,
+    "sharpness": 0.016178405918985533
+   },
+   "delta": 4.120011,
+   "dvec": {
+    "d_sat": 1.603,
+    "d_crit": 3.333,
+    "d_div": 5.723,
+    "d_null": 2.508
+   },
+   "l7a": "down",
+   "l7a_conf": 0.16939761851804083,
+   "fals": 0.825473,
+   "t0": {
+    "step": 37,
+    "top": [],
+    "dup_d": -0.16,
+    "max_d": [
+     "CHEK2",
+     -0.49
+    ]
+   },
+   "mc_at": {
+    "step": 156,
+    "top": [],
+    "dup_d": 0.08,
+    "max_d": [
+     "ATR",
+     0.41
+    ]
+   },
+   "noise": [
+    "MEDIUM",
+    "Mixte - Coexistence de bruit blanc et de proxies de variance r\u00e9siduelle",
+    0.551
+   ],
+   "f1_ratio": 16.06,
+   "f2_ratio": 49.45,
+   "react_med": 61.3,
+   "react_iqr": [
+    33.6,
+    67.2
+   ],
+   "n_estimators": 17
+  }
+ }
+}
