@@ -634,6 +634,24 @@ ce sont des actifs de Release uniquement. Détail et réassemblage :
 
 ---
 
+## 23. Confirmation indépendante GSE60979 (20 nov. 2026)
+
+- **GSE60979** (NCBI GEO, Sandhu et coll. 2015, *Molecular Oncology* 9:758–771, PMID 25579086 ; plateforme Agilent SurePrint G3 Human GE 8x60K GPL14550 ; cohorte monocentrique d'Oslo, Oslo University Hospital, Norvège) — URL exacte de la matrice : `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE60nnn/GSE60979/matrix/GSE60979_series_matrix.txt.gz` (HTTP 200, 20 nov. 2026) — SHA-256 `819408bf8dacb01c38eede69287d255eea76f74e2b1b18ec8863933f4700c4eb`, 20 547 348 octets, 49 tumeurs PDAC réséquées (tissus frais congelés) retenues par caractéristique ch1 « tissue: pancreatic ductal adenocarcinoma » (12 normaux adjacents et 32 autres adénocarcinomes périampullaires exclus et comptés). Mapping `data/GPL14550_probe2symbol.tsv`, SHA-256 `cc034a76285b0785bff4dd5249d68becb58acacedb157a8032d0c9309dac3909` (42 545 lignes, 30 436 sondes avec symbole, 22 070 symboles uniques). Intensités log2 normalisées par les déposants (correction de fond + normalisation quantile), sondes agrégées par médiane, ordre par KRAS. Flux : `data_flux/pdac_871_geo60979_fluxes.csv` (49 lignes, SHA `51a7fa56…554e`), nul graine 42 SHA `d427359a…4740`. Cohortes écartées documentées : GSE77858 (MUC17 absent du mapping GPL7264, SHA `41a47160…27e`), GSE43797, GSE161369, GSE63158, GSE79670 (mêmes patients que §8.70). Piste restante nommée : GSE131050. Détail au §8.71 et dans `PROVENANCE_871.md`.
+
+---
+
+## 24. Nuls frais GSE79668 — consolidation §8.72 (20 nov. 2026)
+
+- **10 nuls frais** (graines 8721–8730, lignes permutées, même construction que §8.70, CSV réel inchangé SHA `7744bc5a…6107a`), joints aux 3 nuls anciens (graines 42 / 8701 / 8702) : médiane des 13 nuls 0,2657, écart médian `d_médian = +0,1447` (réel 0,4104 contre nul médian 0,2657), rang 14/14, 12/13 écarts au-dessus du plancher 0,07. Le nul graine 42 (0,3538) est le PLUS HAUT des 13 nuls : le verdict PARTIEL du §8.70 tenait au tirage le plus défavorable. SHA des 10 nuls consignés dans `results/nulls_872_files.json` (SHA `15731361…f8`). Données relues, rien re-téléchargé (matrice SHA `b2226fd0…88e4754`, comptages SHA `721cd3a0…54f8`, voir §22). Addendum daté ajouté au §8.70, texte original intact. Détail au §8.72.
+
+---
+
+## 25. Pic étroit — interventions §8.73 (20 nov. 2026)
+
+- **Aucune donnée nouvelle** hors des CSV déjà sur disque et de 20 nuls ICGC frais (graines 41–60, `data_flux/pdac_immune_icgc_fluxes_nul_s41.csv` … `s60.csv`, SHA dans `results/nulls_icgc_873_files.json`). Corpus : 82 runs existants (14 MTAP + 68 immunitaires) relus ; 11 courbes rob-on (MTAP NUL42, NUL_S123, NUL_S11111 ; icgc_s1, geo62452_nul_s12, tcga_s2, tcga_nul_s11, tcga_nul_s12, icgc_nul_s32, icgc_nul_s35, icgc_nul_s37) et 6 contrôles (MTAP s7, s1011 ; ICGC s31, s33 ; GSE62452 s11 ; TCGA s13). Interventions : déplacement du bloc (swap), winsorisation du bloc (échelle 2/4/8 fenêtres), winsorisation d'une seule ligne, transplantations B1/B0/B2 — CSV modifiés `data_flux/pic873_interv_<run>_<variante>.csv` (66 fichiers, constructions explicites, jamais des mesures), SHA consignés dans `results/pic_etroit_873_extract.json` (SHA `4d0a52cb…e767`). Verdict : NON ÉLUCIDÉ — aucun déclencheur identifiable ; artefact winsorisation documenté (le maxsep monte par déflation de variance). Détail au §8.73.
+
+---
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash

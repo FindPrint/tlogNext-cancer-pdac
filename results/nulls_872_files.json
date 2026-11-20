@@ -1,0 +1,58 @@
+{
+  "real_csv": "pdac_870_geo79668_fluxes.csv",
+  "real_sha": "7744bc5a82fe80055b5ab9231fc7ae5395354f643b5b7cd1fdfce8aa6656107a",
+  "seeds": [
+    8721,
+    8722,
+    8723,
+    8724,
+    8725,
+    8726,
+    8727,
+    8728,
+    8729,
+    8730
+  ],
+  "nulls": {
+    "8721": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8721.csv",
+      "sha256": "3a2017ec0855e8771ae2daa03d4f701590675ecaf322037129953bc9195d53f0"
+    },
+    "8722": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8722.csv",
+      "sha256": "19c0aaacfca162445a083bb838e3990437074af35c8995dae33b7ff8ff2841bb"
+    },
+    "8723": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8723.csv",
+      "sha256": "392974d0f3110d30623bb1d007754d11383ca9c503c1d3124900ccba7b73a889"
+    },
+    "8724": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8724.csv",
+      "sha256": "14dac08df61290f12a96bfe2c80379aee6fe7d50f200a8bb2a5dd26070064913"
+    },
+    "8725": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8725.csv",
+      "sha256": "d246216f085e4da49ba38eb592e81d31a1829dcc4b66e36e4bfd43ad67e20779"
+    },
+    "8726": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8726.csv",
+      "sha256": "194130d96ca53c7fa5902a4fe8837462b36e179c39d684722383028c171350c2"
+    },
+    "8727": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8727.csv",
+      "sha256": "3254083e49500cdd4707ad09456058c0b3de04e234f85267d7e3bfc617f42e32"
+    },
+    "8728": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8728.csv",
+      "sha256": "09203dd172aa73863200103c3a5288a8d1a50384788112a4c1484273260af8b2"
+    },
+    "8729": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8729.csv",
+      "sha256": "6fd1f1b3516227e29f4c19a9de30b01a8cb3de5cf66040f68e9e9e7aab980903"
+    },
+    "8730": {
+      "file": "pdac_870_geo79668_fluxes_nul_s8730.csv",
+      "sha256": "a8aa618cb8bfb6046de672d782a15657932eae3593abfc938dab6f8726874552"
+    }
+  }
+}

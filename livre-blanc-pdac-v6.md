@@ -227,6 +227,9 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 74 | 20 nov. 2026 | **xCell, 64 types de cellules (§8.68)** (go de Zackary « Fait tout cela », 20 nov. 2026 13h04, 2e des 4 étapes ; protocole gelé avant tout téléchargement, avant tout calcul et avant tout run `PROTOCOL_xcell_868.md`, SHA `416de4bc…6c33` ; scores xCell publiés Aran et al. 2017, Additional file 6, zip Europe PMC SHA `93c9a7b0…581d20c`, 12 092 617 o, 17 fichiers ; jointure **178/178, n effectif 178, aucune sélection** ; **8/8 runs v6.2 exit 0** (lot 18h15–18h52 UTC, unité `v62-xcell-868`) ; **H1-xcell PARTIELLE SOUTENUE** : les cellules dendritiques activées (**aDC**, moyenne |r| = 0,6102) retirent à elles seules **41,2 % de la cohésion (0,5563 → 0,3270)** ; les trois premiers types (aDC, DC, Macrophages M1) l'effondrent à 0,2600 (−53,3 %), les cinq premiers à 0,2239 (−59,8 %) ; ordonner les flux par les DC sépare à **+1,1804** (au-dessus de CD8A brut +0,9838), par les aDC à **+0,8820** ; mais les flux résidualisés séparent encore **+0,6040** (61,4 % du brut) — aucun type ne porte tout ; contraste avec le §8.60 (CIBERSORT : aucun porteur, −4,7 %) : xCell trouve un porteur partiel). Détail au §8.68. |
 | 75 | 20 nov. 2026 | **Confirmation indépendante pour `maxsep` (C3) (§8.69)** (go de Zackary « Fait tout cela », 20 nov. 2026 13h04, 3e des 4 étapes ; protocole gelé avant tout run `PROTOCOL_maxsep_independent_869.md`, SHA `be0a02ca…8ab9` (corps gelé SHA `86c239b4…e61a52` + addendum « cohorte #3 ») ; cohorte GSE21501 (Stratford et coll. 2010, PMID 20644708, GPL4133), matrice 12 575 998 o, SHA `1bbbd9d2…c5dcb6d9b7b`, n = 132 ; **2/2 runs v6.2 exit 0** ; **NON** : la paire indépendante ne sépare pas (**d_maxsep −0,0100**, réel 0,2121 contre nul 0,2221, très loin sous le plancher 0,07) ; A2 étendu **6/9** (7/9 positifs), LOO 5/8 — **C3 du §8.59.8 NON levée** ; extraction 2/2 à 0,0 exact ; l'adoption pleine de `maxsep`, décidée par Zackary à 13h04, reste sa décision — ce chantier ne la rouvre pas ; la confirmation indépendante reste ouverte (piste restante : GSE79668, non vérifiée) ; **correction** : la plateforme GSE57495 est **GPL15048** (matrice SHA `995dbeff…532efc`), pas GPL6244 comme l'affirmait à tort le §8.66 §1.2 — le mapping GPL6244 n'a pas été utilisé pour GSE57495). Détail au §8.69. |
 | 76 | 20 nov. 2026 | **Confirmation indépendante pour `maxsep` (C3) (§8.70)** (go de Zackary « Allez s'y », 20 nov. 2026 14h29 ; protocole gelé avant tout run `PROTOCOL_maxsep_gse79668_870.md`, SHA `fd479d50…6980` ; cohorte GSE79668 (Kirby et coll. 2016, *Molecular Oncology* 10(8):1169–1182, PMID 27282075, GPL11154), matrice 3 724 o, SHA `b2226fd0…88e4754` — en-tête seul, 0 ligne de données — valeurs dans le fichier supplémentaire de la série, 3 588 753 o, SHA `721cd3a0…54f8`, comptages bruts GENCODE v.9, n = 51 ; **4/4 runs v6.2 exit 0** ; **PARTIEL** : la paire donne **d_maxsep +0,0567** (réel 0,4104 contre nul 0,3538), positif mais sous le plancher 0,07 ; A2 étendu **6/10** (8/10 positifs), LOO 5/9 — **C3 du §8.59.8 NON levée** (elle exige **7 paires passantes au total**, soit 7/10 avec la dixième paire, LOO pire cas 6/9) ; 2 nuls frais passent le plancher (+0,0890 et +0,1538), verdict fragile, non consolidé ; MC inversé (−0,0053), Delta plat (+0,0467), L7a UP des deux côtés, falsification indisponible (n = 51 < 75) ; extraction 4/4 à 0,0 exact ; test de Cohen marginal vacueux par construction (d = 0,0000 pour les 12 gènes — le nul est une permutation de lignes), test de Spearman contre le pas ajouté (Δρ médian +0,186, 9/12 positifs) — correction de méthode à reporter dans les protocoles futurs ; incident de lancement réparé (systemd-run Permission denied, chmod +x, relance, aucune donnée perdue) ; l'adoption pleine de `maxsep`, décidée par Zackary à 13h04, reste sa décision — ce chantier ne la rouvre pas ; la confirmation indépendante reste ouverte). Détail au §8.70. |
+| 77 | 20 nov. 2026 | **Confirmation indépendante pour `maxsep` (C3) (§8.71)** (go de Zackary « Fait les3 », 20 nov. 2026 15h35, 1er des 3 chantiers ; protocole gelé avant tout run `PROTOCOL_maxsep_cohort_871.md`, SHA `82a2c93d…6eef` ; cohorte GSE60979 (Sandhu et coll. 2015, *Molecular Oncology* 9:758–771, PMID 25579086, GPL14550), matrice 20 547 348 o, SHA `819408bf…c4eb`, n = 49 tumeurs PDAC, Oslo ; **2/2 runs v6.2 exit 0** ; **CONFIRME** : la paire donne **d_maxsep +0,2045** (réel 0,4418 contre nul 0,2373), nettement au-dessus du plancher 0,07 ; A2 étendu **7/11** (9/11 positifs), LOO 6/10 — **C3 du §8.59.8 LEVÉE** (7 paires passantes au total, LOO pire cas 6/10) ; extraction 2/2 à 0,0 exact ; aucun nul frais (règle gelée §7 : +0,2045 hors de l'intervalle [−0,07 ; +0,14[) ; candidates écartées documentées (GSE77858 MUC17 absent, GSE43797, GSE161369, GSE63158, GSE79670 mêmes patients que §8.70) ; piste restante nommée : GSE131050 ; l'adoption pleine de `maxsep`, décidée par Zackary à 13h04, reste sa décision — ce chantier ne la rouvre pas, il la consolide ; la confirmation indépendante est désormais close sur ce critère). Détail au §8.71. |
+| 78 | 20 nov. 2026 | **Consolidation de §8.70 : 10 nuls frais sur GSE79668 (§8.72)** (go de Zackary « Fait les3 », 20 nov. 2026 15h35, 2e des 3 chantiers ; protocole gelé avant construction et runs `PROTOCOL_nulls_gse79668_872.md`, SHA `95acdd45…cf41` ; **10/10 runs v6.2 exit 0** (10 nuls frais, graines 8721–8730, joints aux 3 nuls anciens) ; **RENVERSE** : contre 13 nuls, GSE79668 passe — **d_médian +0,1447** (réel 0,4104 contre nul médian 0,2657), rang **14/14**, **12/13 écarts au-dessus du plancher 0,07** ; le nul graine 42 (0,3538), celui qui faisait le verdict §8.70, est le PLUS HAUT des 13 nuls — le verdict PARTIEL tenait au tirage le plus défavorable ; extraction 14/14 à 0,0 exact ; **C3, au sens gelé (paires graine 42), n'est PAS levée par ce chantier seul** (A2 gelé 6/10) — la décision de la lever sur la base de la distribution appartient à Zackary et au coordinateur (§8.72.2) ; addendum daté ajouté au §8.70, texte original intact, lecture corrigée). Détail au §8.72. |
+| 79 | 20 nov. 2026 | **Le déclencheur du pic étroit (§8.73)** (go de Zackary « Fait les3 », 20 nov. 2026 15h35, 3e des 3 chantiers ; protocole gelé avant tout nouveau script et tout nouveau run `PROTOCOL_pic_etroit_873.md`, SHA `28d2326c…1a4c` ; calibration de la réplique du scan **22/22 à 0,00e+00** ; corpus 82 runs, 11 courbes rob-on, 6 contrôles, lot frais **20/20 runs v6.2 exit 0** (nuls ICGC s41–s60) ; **NON ÉLUCIDÉ** : aucun déclencheur identifiable du pic étroit — bloc extrême 1/11, transplantation 0/3 et 0/6, ligne unique 4/11, queues globales AUC 0,31–0,47, bord seul insuffisant ; l'étroitesse est une propriété fragile de l'arrangement exact des lignes ; artefact winsorisation documenté (le maxsep monte par déflation de variance) ; P1 non testable (0 courbe rob-on fraîche), P2 en échec (23 faux positifs, 0 vrai positif)). Détail au §8.73. |
 
 ---
 
@@ -14339,7 +14342,1445 @@ présente section fusionnée.
 - Section : `section_8.70_gse79668.md` (ce fichier ;
   SHA noté au rapport).
 
+---
+
+## ADDENDUM — 20 novembre 2026 (§8.72) : NOTE DATÉE DE CORRECTION — LECTURE RENVERSE
+
+*Cet addendum est ajouté le 20 nov. 2026 par le chantier §8.72. Le
+texte original ci-dessus est intact : rien n'y est modifié, rien
+n'y est effacé. Seule la LECTURE du verdict est corrigée, comme le
+protocole §8.72 §4.3 l'avait gelé.*
+
+**Correction.** La lecture « sous le plancher » du §8.70 est
+RENVERSE par la distribution des nuls mesurée au §8.72
+(`section_8.72_nulls_gse79668.md`, protocole
+`PROTOCOL_nulls_gse79668_872.md`, SHA `95acdd45…cf41`) :
+10 nuls frais (graines 8721–8730) courus en v6.2 fast, joints
+aux 3 nuls anciens, donnent une médiane des 13 nuls de 0,2657
+et un écart médian `d_médian = +0,1447` (réel 0,4104 contre nul
+médian 0,2657) — plus de deux fois le plancher 0,07. Le réel
+bat les 13 nuls sur 13 (rang 14/14) ; 12 écarts sur 13
+dépassent le plancher. Le nul graine 42 (0,3538), celui qui
+faisait le verdict §8.70, est le PLUS HAUT des 13 nuls
+mesurés : le verdict PARTIEL tenait au tirage le plus
+défavorable possible.
+
+**Ce qui ne change pas.** Le verdict de la paire graine 42
+reste PARTIEL (+0,0567, sous le plancher) — règle gelée §8.70
+§7. L'A2 étendu gelé reste 6/10 (8/10 positifs) : aucun
+recomptage. La condition C3, au sens gelé (7 paires passantes
+en paires graine 42), n'est pas levée par le §8.72 : la
+décision de la lever sur la base de la distribution appartient
+à Zackary et au coordinateur (§8.72.2). L'adoption pleine de
+`maxsep` (décision de Zackary, 20 nov. 13h04) n'est ni
+rouverte ni conditionnée.
+
+— Fin de l'addendum du 20 nov. 2026 (§8.72). —
+
 — Fin de la §8.70. —
+
+---
+
+### 8.71 Confirmation indépendante pour `maxsep` (C3) : la paire GSE60979 CONFIRME (20 novembre 2026)
+Go de Zackary « Fait les3 » (20 nov. 2026 15h35, 1er des 3 chantiers — onzième paire indépendante, cohorte GSE60979 choisie par le chantier, protocole gelé avant tout run).
+
+## Verdict d'abord
+
+**CONFIRME — la onzième paire principale indépendante, GSE60979
+(n = 49), donne `d_maxsep = +0,2045` (réel 0,4418 contre nul
+0,2373), nettement au-dessus du plancher 0,07 : elle passe.
+A2 étendu : 7/11 au-dessus du plancher, 9/11 positifs — la
+condition C3 du §8.59.8 est LEVÉE (7 paires passantes au total,
+LOO pire cas 6/10). L'adoption pleine de `maxsep`, décidée par
+Zackary le 20 nov. 2026 à 13h04, reste sa décision : ce chantier
+ne la rouvre pas — il la consolide par une confirmation
+indépendante mesurée, comme le protocole le prévoyait. La
+confirmation indépendante est désormais close sur ce critère.**
+
+| Porte (PROTOCOL_maxsep_cohort_871.md §7, gelé) | Exigé | Mesuré 20 nov. 2026 | Sort |
+|---|---|---|---|
+| Paire indépendante : `d_maxsep > 0,07` et positif | > 0,07 | **+0,2045** (réel 0,4418, nul 0,2373) | **CONFIRME** |
+| A2 étendu (11 paires) | 7/11 et 9/11 positifs | **7/11, 9/11 positifs** | **C3 LEVÉE** |
+| LOO sur 11 paires (descriptif) | Retrait d'une paire passante : 6/10 | **6/10** après retrait de chaque paire passante | **PASSE** |
+| Exactitude de l'extraction | 2/2 à 0,0 exact | **2/2, écart max 0,0** | **PASSE** |
+| Nuls frais (§7, `d` dans [−0,07 ; +0,14[) | 2 nuls frais si proche du plancher | **Non courus : +0,2045 hors de l'intervalle** | **SANS OBJET** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que la
+onzième paire principale, mesurée aujourd'hui sur une cohorte
+jamais utilisée dans ce projet (Oslo, 49 PDAC, plateforme
+Agilent GPL14550), sépare le réel du nul en `maxsep` dans le
+bon sens et au-delà du plancher gelé : +0,2045 contre 0,07
+exigé — près de trois fois le plancher, et le plus grand écart
+positif des paires GEO du dossier (les deux écarts plus grands,
+immunitaire +0,3675 et TCGA v4 +0,2928, sont des paires TCGA,
+pas GEO). Il dit aussi que le verdict de suffisance
+ne tient plus à une seule paire : retirer n'importe laquelle
+des 7 paires passantes laisse 6/10, qui satisfait encore la
+barre A2 d'origine (≥ 6/8). Il ne dit pas que `maxsep` est
+validé en général : c'est une confirmation sur 11 paires
+comptées, dont 4 restent non passantes (GSE71729, GSE62452,
+GSE21501, GSE79668), et les scores compagnons ne suivent pas
+tous (Delta plat −0,015, MC à peine positif +0,026 — voir
+§8.71.5). Il ne dit pas non plus que l'adoption pleine est
+« prouvée » par ce chantier seul : elle a été décidée par
+Zackary après lecture des §8.56/§8.59/§8.64, et cette section
+est la vérification a posteriori que le protocole prévoyait —
+elle consolide la décision, elle ne la fonde pas rétroactivement.
+
+**Fragilité, dite en tête.** Le verdict tient à une seule paire
+mesurée aujourd'hui — comme tous les verdicts de ce dossier.
+Mais ici la fragilité est bornée par le protocole lui-même :
++0,2045 est hors de l'intervalle des nuls frais ([−0,07 ;
++0,14[), donc aucun nul frais n'a été couru et aucun tirage
+de nul ne peut renverser le passage par la règle gelée — à la
+différence du §8.70, où le verdict tenait au tirage du nul
+(étendue 0,0972 entre 3 nuls à n = 51, écart 0,0567). À n = 49,
+l'écart mesuré (+0,2045) dépasse de loin l'étendue des nuls
+mesurée au §8.70 à n comparable. En revanche, la paire échoue
+à la barre descriptive du plancher équivalent-sep (0,1146
+contre 0,1249 exigé — voir §8.71.3) : `sep` ne suit pas
+`maxsep` jusqu'à sa propre barre, comme aux §8.59/§8.64 où
+`sep` seul avait été rejeté. C'est consigné tel quel, sans
+sauver ni condamner le verdict, dont le critère gelé est
+`maxsep` et lui seul.
+
+Protocole gelé : `PROTOCOL_maxsep_cohort_871.md` (20 nov.
+2026, SHA `82a2c93d…96eef` au gel, inchangé). Critère de
+passage écrit AVANT tout run (§7 du protocole) ; aucune
+repondération, aucun nouveau terme, aucune redéfinition du
+plancher après avoir vu les chiffres. Les nombres des §8.56/
+§8.59/§8.64/§8.69/§8.70 étaient la motivation, pas le verdict :
+le verdict repose sur les 2 runs mesurés ci-dessous.
+
+## 8.71.1 — La paire mesurée : GSE60979, et pourquoi elle est indépendante
+
+**Cohorte : GSE60979, NCBI GEO** — Sandhu et coll., 49 tumeurs
+PDAC réséquées (tissus frais congelés), plateforme Agilent
+SurePrint G3 Human GE 8x60K GPL14550, article Sandhu et coll.
+2015 (*Molecular Oncology*, 9:758–771, PMID 25579086,
+doi 10.1016/j.molonc.2014.12.002). Provenance complète :
+`PROVENANCE_871.md`.
+
+**Indépendance, en cinq points (protocole §2).**
+1. **Jamais utilisée dans ce projet.** Aucun CSV de flux, aucun
+   run, aucun JSON, aucune valeur `maxsep` n'existait pour
+   GSE60979 avant ce chantier. Vérifié par grep avant le gel :
+   la chaîne exacte « GSE60979 » (comme « GSE60980 ») ne
+   figurait dans AUCUN fichier du projet.
+2. **Nouveaux patients, nouveau centre, nouvelle plateforme.**
+   Cohorte monocentrique d'Oslo (Oslo University Hospital,
+   Norvège), patients distincts de TCGA, ICGC PACA-AU et des
+   cohortes GEO déjà utilisées ; plateforme Agilent GPL14550,
+   distincte de toutes les plateformes V1 et des confirmations
+   (RNA-seq TCGA, Illumina ICGC, Affymetrix GPL20769/GPL6244/
+   GPL13667/GPL15048/GPL570, Agilent GPL4133/GPL7264, Illumina
+   HiSeq GPL11154).
+3. **Traitée comme indépendante par la littérature.** Sandhu et
+   coll. constituent leur propre cohorte périampullaire
+   d'Oslo (2014) ; aucune des cohortes du projet n'y figure
+   comme sous-ensemble, et la cohorte n'est un re-découpage
+   d'aucune série déjà tenue (les 49 PDAC sont identifiés par
+   caractéristique ch1, titres `PDAC_1 [mRNA]` …
+   `PDAC_49 [mRNA]`, aucun code-barres TCGA).
+4. **Même construction que les autres paires principales GEO.**
+   Variante (a) : les 12 mêmes gènes que la v4 TCGA (PGC, REG4,
+   CLDN18, MUC17, DPCR1, CR2, KRT20, MUC2, GSTM1, CEACAM5,
+   CLCA1, MUC16), ordre = KRAS croissant, sans correction, cas
+   complets, nul = lignes permutées graine 42. La paire est donc
+   comparable aux 10 paires comptées par construction.
+5. **Pas un re-test déguisé.** Ce n'est ni une relecture d'un JSON
+   existant (§8.64.7 : « pas une relecture »), ni une rotation
+   déjà comptée, ni un sous-ensemble d'une paire V1, ni un nouvel
+   ordre sur des CSV existants (nouveaux CSV, nouveaux runs,
+   2 runs v6.2 frais). La sous-série miRNA GSE60978 n'est pas
+   utilisée : ce n'est pas de l'expression génique codante.
+
+**Ce que GSE60979 n'est pas.** Ce n'est pas une cohorte choisie
+pour ses résultats : aucun `maxsep` GSE60979 n'existait quand
+le protocole a été gelé. Ce n'est pas non plus une cohorte
+périampullaire prise en bloc : seuls les 49 PDAC servent à la
+paire — les 12 normaux adjacents et les 32 autres
+adénocarcinomes périampullaires (duodénal 9, cholédoque 8,
+ampoule pancréatobiliaire 8, ampoule intestinal 7) sont exclus
+et comptés, comme le protocole l'exigeait. C'est la première
+paire principale GEO sur plateforme Agilent 8x60K à
+intensités log2 normalisées par les déposants (voir §8.71.4).
+
+**Convention d'affichage (§8.64.6, adoption pleine — le verdict
+de suffisance ne tient plus à une paire).** La table ci-dessous
+affiche `maxsep` comme score principal, l'ancien MC en second,
+`sep` en compagnon borné [0, 1], plancher 0,07 en unités |d|.
+
+## 8.71.2 — Le résultat : GSE60979 réel contre nul (v6.2, mode fast, 2 runs, exits 0/0)
+
+| Indicateur | Réel | Nul (graine 42) | Écart (réel − nul) | Lecture |
+|---|---|---|---|---|
+| **`maxsep` (principal, \|d\|, plancher 0,07)** | **0,4418** | **0,2373** | **+0,2045** | **CONFIRME — passe, ~3× le plancher** |
+| `sep` (compagnon borné [0, 1]) | 0,3064 | 0,1918 | +0,1146 | Positif, comme `maxsep` (monotonie) |
+| Ancien MC (secondaire) | 0,3606 (seuil 76,19 %) | 0,3346 (seuil 23,81 %) | +0,0260 | Positif, petit |
+| S_sep (= maxsep × stability) | 0,4316 | 0,2356 | +0,1959 | Positif, passe aussi le plancher |
+| Delta | 1,8707 | 1,8860 | **−0,0153** | Plat des deux côtés — voir §8.71.5 |
+| L7a | UP 0,1388 | UP 0,3442 | même sens | Descriptif — voir §8.71.5 |
+| L7b | FRAGILE | FRAGILE | — | Non-informatif, comme partout |
+| Falsification | indisponible (n = 49 < 75) | indisponible | — | Règle du projet — voir §8.71.5 |
+| Cascade (%) | 0,0 / 83,6 / 91,8 / 94,8 / 97,8 (pas 0/40/44/45/47) | 2,0 / 8,1 / 14,1 / 26,3 / 26,3 (pas 1/4/7/13/13) | formes très différentes | Descriptif — voir §8.71.5 |
+| Régime | criticality | criticality | — | Descriptif |
+| Bruit | Scores proxy complets indisponibles | Scores proxy complets indisponibles | — | Même verdict |
+| F1 / F2 « Tous » (après/avant) | ×9,91 / ×19,52 | ×0,041 / ×0,058 | sens opposé, sans direction | Descriptif — voir §8.71.5 |
+
+Valeurs exactes (extraction) : réel `maxsep` 0,4417749548909115,
+`stability` 0,9768744847619764, MC 0,36063527837854986 ; nul
+`maxsep` 0,23726557228635847, `stability` 0,9930728408602641, MC
+0,3345954612679557. Écart exact `d_maxsep` =
++0,20450938260455304. `d_sep` = +0,11464439635911555 ;
+`d_MC` = +0,026039817110594166 ; `d_Ssep` =
++0,19593668553105414 ; `d_Delta` = −0,01528. Plancher
+équivalent-sep (descriptif, §8.71.3) :
+0,07·(1+0,4418)·(1+0,2373) = 0,1249 — la paire échoue à cette
+barre descriptive (0,1146 < 0,1249), alors qu'elle passe au
+plancher `maxsep`.
+
+**Lecture.** Les deux scores `maxsep` sont positifs, mais
+l'écart est net : le réel (0,4418) dépasse le nul (0,2373) de
+0,2045 — le plus grand écart positif des paires GEO du dossier,
+devant GSE79668 (+0,0567) et GSE71729 (+0,0402), et sans commune
+mesure avec les échecs négatifs (GSE62452 −0,0036, GSE21501
+−0,0100). Les deux écarts plus grands du dossier (immunitaire
++0,3675, TCGA v4 +0,2928) sont des paires TCGA, pas GEO. L'ancien MC est positif
+d'un cheveu (+0,0260) : il ne porte rien ici, mais il ne
+contredit pas — à la différence des §8.69/§8.70, où il était
+inversé. S_sep est positif de 0,1959, au-dessus du plancher
+lui aussi. Les cascades diffèrent fortement en forme (réel
+97,8 % à T_+2, pas 47 ; nul 26,3 %, pas 13) — la plus grande
+différence de forme de cascade entre réel et nul parmi les
+paires GEO à petit n, et elle va dans le même sens que
+l'écart de score. La paire passe : c'est un résultat, pas un
+bruit de mesure — la vérification indépendante le confirme à
+0,0 exact (§8.71.3), et l'écart est hors de portée d'un tirage
+de nul (§7 : aucun nul frais couru, +0,2045 hors de
+[−0,07 ; +0,14[).
+
+**Lot.** Pipeline `universal_v6.2.0_cohen.py`, SHA
+`f07567c4…c3abf`, revérifié inchangé avant ET après le lot ;
+mode fast ; 2 runs, exits 0/0, 35 fichiers chacun. Lancement en
+`systemd-run` (unité `v62-871`), surveillance `watch_v62_871.sh`
+(arrêtée d'elle-même à 2/2, `WATCH 871 TERMINE 2/2`, tour 2,
+20h55:47Z) ; journal `runs_v62_871.log` (100 lignes ; lot FIN
+20h55:27Z, déjà faits 0, terminés 2, échecs 0). Durée du lot :
+20h46:50Z → 20h55:27Z (~9 min). Aucun incident de lancement,
+aucun redémarrage de machine pendant le lot. Le livre blanc
+n'est PAS édité, le PDF N'EST PAS régénéré, rien n'est poussé
+sur GitHub dans ce chantier.
+
+## 8.71.3 — A2 étendu, leave-one-out, exactitude
+
+**A2 étendu (11 paires).** Les 10 paires comptées gardent leurs
+valeurs (§8.56.3, §8.69.2, §8.70.2, re-vérifiées à l'identique,
+0 écart) ; la onzième, GSE60979, passe :
+
+| Paire | Écart `maxsep` | > 0,07 ? | Positif ? |
+|---|---|---|---|
+| HP35 | +1,6512 | oui | oui |
+| TCGA v4 | +0,2928 | oui | oui |
+| GSE71729 | +0,0402 | non | oui |
+| GSE62452 | −0,0036 | non | non |
+| ICGC | +0,0970 | oui | oui |
+| Immunitaire TCGA | +0,3675 | oui | oui |
+| PARP TCGA | +0,1688 | oui | oui |
+| DepMap | +0,1904 | oui | oui |
+| GSE21501 (§8.69) | −0,0100 | non | non |
+| GSE79668 (§8.70) | +0,0567 | non | oui |
+| **GSE60979 (nouvelle)** | **+0,2045** | **oui** | **oui** |
+| **Total** | — | **7/11** | **9/11** |
+
+**Condition C3 du §8.59.8 : LEVÉE.** Sept paires passantes au
+total — c'est le nombre exigé par la lecture précise (§8.69 §7,
+§8.70 §8.70.8). La confirmation indépendante consolide
+l'adoption pleine décidée par Zackary le 20 nov. 13h04.
+
+**Leave-one-out sur les 11 paires (descriptif, même règle que
+D3).** Retirer n'importe laquelle des 7 paires passantes donne
+6/10 — au-dessus de la barre A2 d'origine en nombre de
+passantes (6). Retirer GSE71729, GSE62452, GSE21501 ou GSE79668
+(les quatre non passantes) donne 7/10. Le verdict de suffisance
+ne tient donc plus à une seule paire — c'est la première fois
+depuis le §8.59 que le LOO pire cas satisfait la barre A2
+d'origine. L'ajout d'une paire passante consolide le comptage
+en nombre (7/11 au lieu de 6/10) et en robustesse (LOO 6/10 au
+lieu de 5/9).
+
+**Nuls frais (règle gelée §7 : `d_maxsep` dans [−0,07 ; +0,14[,
+donc NON courus).** `d_maxsep` = +0,2045 est hors de
+l'intervalle : aucun nul frais n'a été construit ni couru, et
+le script `build_nul_871.py` (graines 8711, 8712) n'a pas été
+exécuté. Le verdict de la paire graine 42 est donc le verdict,
+sans contrôle de robustesse par nuls frais — par règle gelée,
+parce que l'écart dépasse le plancher de près de trois fois et
+sort de la zone où le tirage du nul pouvait renverser le
+passage (c'est exactement le cas que la règle prévoyait : un
+écart loin du plancher n'a pas besoin de nuls frais).
+
+**Plancher équivalent-sep (descriptif).** La paire échoue à la
+barre `0,07·(1+m_R)(1+m_N)` = 0,1249 (d_sep 0,1146 < 0,1249),
+de 0,0103 — comme elle passe au plancher `maxsep` de 0,1345
+de marge. `sep` ne suit pas `maxsep` jusqu'à sa propre barre :
+c'est le même fait structurel qu'aux §8.59/§8.64 (`sep` seul
+rejeté, A2 5/8), consigné tel quel. Le critère gelé est
+`maxsep`, et lui seul ; la barre équivalent-sep ne décide
+rien ici (D4 n'est pas rejoué : il porte sur les paires V1,
+déjà tranché).
+
+**Exactitude.** Extracteur `extract_871.py` (2/2 runs, 0
+manquant, versions `v6.2.0-L7aL7b-CohenD-short` partout) ;
+second calcul indépendant `verify_871.py` (chemin de code
+distinct, relecture directe des 2 JSON) : **2/2 comparaisons,
+écart max 0,0 exact** sur `maxsep`, ancien MC et `stability`,
+verdict OK. SHA du pipeline revérifié après travaux, inchangé.
+Les 10 valeurs comptées sont reprises telles quelles de
+`sep_maxsep_856_table.json` (SHA
+`ec5ee6382d5fd80d691ae7983ffbb31f14bb9074ded2bc6aad16327b1cc34f8b`),
+de `extract_869.json` (SHA
+`644339e47b05e1445c1e78df053f9f8dc77a48e609a76a7f54b7aefd372d882b`)
+et de `extract_870.json` (SHA
+`4ffa851a83668b2369097703862e0413ff9af54af3a66ef70aea9333b40c444f`),
+jamais recalculées ici — les §8.56/§8.59/§8.64/§8.69/§8.70 sont
+clos.
+
+## 8.71.4 — La construction : portes §5, intensités log2 normalisées
+
+La paire GSE60979 passe les 7 portes §5 sur le fichier officiel
+(aucun run lancé avant leur vérification).
+
+| Porte §5 | Exigé | Mesuré 20 nov. 2026 | Sort |
+|---|---|---|---|
+| Matrice HTTP 200, lecture complète | 200, SHA consigné | **200, 20 547 348 o, SHA `819408bf…c4eb`, 42 545 sondes x 93 échantillons, 0 NaN** | **OK** |
+| Plateforme lue dans l'en-tête | GPL14550 | **GPL14550** (`!Series_platform_id`) | **OK** |
+| n ≥ 40 tumeurs PDAC | ≥ 40 | **49/49 tumeurs** (caractéristique ch1) ; 44 exclus comptés (12 normaux + 32 autres périampullaires) | **OK** |
+| Aucun code-barres TCGA | 0 | **0** (titres et GSM inspectés) | **OK** |
+| KRAS présent | oui | **oui, 2 sondes** (médiane) | **OK** |
+| 12 gènes v4 présents | 12/12 | **12/12** (sondes : PGC 2, REG4 2, CLDN18 1, MUC17 2, DPCR1 1, CR2 2, KRT20 1, MUC2 4, GSTM1 1, CEACAM5 1, CLCA1 1, MUC16 2) | **OK** |
+| Cas complets ≥ 40 | ≥ 40 | **49/49** (0 NaN) | **OK** |
+
+**Mapping.** `data/GPL14550_probe2symbol.tsv` (SHA
+`cc034a76…c3909`), construit à neuf dans l'enquête et repris
+tel quel : 42 545 lignes de table, 30 436 sondes avec symbole,
+22 070 symboles uniques, colonne `GENE_SYMBOL`, marqueur
+`!platform_table_end` vu. Symboles dupliqués : 14 723 lignes —
+agrégation par médiane (règle du projet) ; les 13 gènes utiles
+(12 v4 + KRAS) ont chacun 1 à 4 sondes, agrégées par médiane.
+**Nature des valeurs : intensités log2 normalisées Agilent**,
+d'après `!Sample_data_processing` : « The scanned images were
+analyzed using Feature Extraction Software 10.7.3.1 (Agilent
+Technologies) using default parameters. The expression profiles
+were backgroundcorrected and quantile normalized for mRNA. »
+Plage sur la matrice complète : min 4,02 / médiane 6,72 /
+max 18,81, 0 NaN. Ce sont des log-intensités comme les autres
+paires GEO V1 (GSE71729, GSE62452) — pas des log-ratios comme
+GSE21501, pas des comptages bruts comme GSE79668. Aucune
+renormalisation, aucune transformation log ajoutée (protocole
+§4.2). KRAS (valeurs puce) : min 7,90 / médiane 8,75 /
+max 10,03. CSV de flux : `pdac_871_geo60979_fluxes.csv`
+(49 lignes, SHA `51a7fa56…0554e`), nul SHA `d427359a…34740`.
+
+**Enquête préalable, dite plainement.** Le choix de GSE60979
+repose sur une enquête GEO menée avant le gel du protocole
+(20 nov. 2026) : recherche E-utilities `pancreatic AND
+Series[ET]` (789 séries), résumés récupérés, filtre humain +
+n ≥ 40, examen des sous-séries et des matrices des candidats
+en copies temporaires `/tmp` (vérifications de portes
+uniquement, supprimées, jamais utilisées pour construire un
+flux ni lancer un run). Le téléchargement officiel (dans
+`data/`, SHA consigné) n'a eu lieu qu'après le gel — et son
+SHA est identique bit à bit à la copie d'enquête. Les
+candidats écartés dans cette enquête sont documentés au
+protocole §2.3, avec la raison pour chacun — dont GSE77858
+(46 PDAC, UCLA, GPL7264 : **MUC17 absent, 12/13** — même
+porte échouée que GSE57495 et GSE62165) et GSE43797 (7 PCA
+seulement). Piste restante nommée, non vérifiée : GSE131050
+(PurIST, 191 échantillons, deux lots Linehan/Yeh, deux
+plateformes) — elle reste ouverte comme cohorte future, mais
+la confirmation C3 n'en a plus besoin.
+
+## 8.71.5 — Contrôles descriptifs (à publier, ne décident pas)
+
+**Delta ne diverge PAS sur cette paire — il est plat des deux
+côtés.** Delta réel 1,8707 contre nul 1,8860 (−0,0153 en
+faveur du nul, d'un cheveu) — à la différence du §8.69, où
+Delta favorisait fortement le réel (+2,01) pendant que
+`maxsep` était négatif (−0,01). Ici, Delta ne dit rien pendant
+que `maxsep` passe de 0,2045 : les deux scores ne divergent
+pas, ils se taisent sur des registres différents. C'est
+consigné tel quel, sans élucider sans preuve. La divergence
+Delta/`maxsep` du §8.69 ne se reproduit pas — deuxième paire
+de suite où elle ne se reproduit pas dans le même sens
+(§8.70 : Delta plat +0,05 contre `maxsep` +0,06).
+
+**L7a ne change pas de sens.** Réel UP 0,1388, nul UP 0,3442 —
+même direction, confiance plus faible côté réel. Descriptif :
+L7a n'est pas le critère gelé, et il ne distingue pas les deux
+séries ici (le nul est même plus « confiant »). Comme au
+§8.70, UP des deux côtés.
+
+**Falsification : indisponible (n = 49 < 75, règle du projet).**
+Notée « indisponible », non imputée (protocole §7). Les
+valeurs brutes du JSON sont rapportées ici à titre descriptif
+seulement, sans statut de test : réel 0,174647, nul 0,30342
+(écart −0,1288, statut « ok » dans le JSON des deux côtés,
+seuil 0,5, les deux en dessous). Elles ne comptent pas comme
+un test de falsification.
+
+**Cascades : formes très différentes, dans le sens de l'écart.**
+Cascade réelle [0,0 / 83,6 / 91,8 / 94,8 / 97,8] (pas
+0/40/44/45/47) contre nul [2,0 / 8,1 / 14,1 / 26,3 / 26,3]
+(pas 1/4/7/13/13) : le réel atteint 97,8 % à T_+2, le nul
+s'arrête à 26,3 %. C'est la plus grande différence de forme
+de cascade réel−nul parmi les paires GEO à petit n du dossier
+— et elle accompagne l'écart de score, au lieu de le
+contredire comme au §8.70 (où les cascades des nuls frais
+allaient de 21,3 % à 98,1 % à T_+2). Aucune rupture visible
+qui distinguerait le réel du nul au-delà de ce que le score
+dit déjà.
+
+**F1/F2 sans direction.** Réel ×9,91 / ×19,52, nul ×0,041 /
+×0,058 — les rapports après/avant varient sans direction
+cohérente (même figure qu'aux §8.58/§8.66/§8.69/§8.70 : des
+rapports sans direction ne font pas un signal). L7b est
+FRAGILE sur les 2 runs — même non-informativité que partout.
+Bruit : « Scores proxy complets indisponibles » sur les
+2 runs — aucun score de bruit mesuré, consigné tel quel.
+
+**Tests directs (§9) : l'ordre est là, et `maxsep` le passe
+cette fois.** (1) d de Cohen marginal des 12 flux, réel vs
+nul graine 42 : **+0,0000 pour les 12 gènes** (valeurs exactes :
+|d| moyen 6,0×10⁻¹⁶, max 3,2×10⁻¹⁵ — zéro à la précision
+machine) — par construction, pas par hasard : le nul est une
+permutation des lignes, donc chaque flux garde exactement ses
+49 valeurs (moyennes et écarts-types identiques). Le test ne
+mesure pas la séparation : il valide la construction du nul
+(marginales préservées exactement). C'est la correction de
+méthode du §8.70, appliquée ici comme prévu au protocole §9 :
+le Cohen marginal est rapporté, il ne décide rien, et le test
+informatif est le suivant. (2) Test de Spearman contre le
+pas (ordre KRAS) : |ρ| moyen réel 0,228 contre nul 0,097 ;
+**Δρ médian +0,180 ; Δρ positifs 8/12**. Les plus forts :
+CEACAM5 Δρ +0,713 (ρ réel +0,547), MUC17 +0,362 (ρ +0,293),
+PGC +0,360 (ρ +0,143), KRT20 +0,320 (ρ +0,295), DPCR1 +0,310
+(ρ +0,190) ; les négatifs : GSTM1 −0,388, CLCA1 −0,288,
+MUC2 −0,188, CR2 −0,003. La série réelle porte donc des
+tendances ordonnées par KRAS (8 flux sur 12 montent ou
+descendent avec KRAS plus que leur nul) — et cette fois le
+pipeline convertit ces tendances en +0,2045 de `maxsep`,
+au-dessus du plancher. L'ordre est mesurable directement, et
+le score gelé le passe : les deux lectures concordent, pour
+la première fois sur une paire de confirmation indépendante.
+
+**Nature des valeurs.** Les flux sont des intensités log2
+normalisées Agilent, comme les paires V1 GSE71729 et GSE62452 :
+la comparaison est faite à construction égale (variante (a),
+12 gènes, ordre KRAS) et à nature de mesure égale aux paires
+V1 — c'est nommé, pas corrigé après coup. Rien ne permet de
+dire que la nature des valeurs, plutôt que la cohorte,
+explique le passage : GSE71729 et GSE62452, de même nature,
+ne passent pas.
+
+## 8.71.6 — Ce que ça change, et ce que ça ne change pas
+
+| Poste | Change ? | Détail |
+|---|---|---|
+| Condition C3 (§8.59.8) | **LEVÉE** | Une paire indépendante mesurée, elle CONFIRME : A2 étendu 7/11 (9/11 positifs), LOO pire cas 6/10. La confirmation indépendante est close sur ce critère. |
+| Adoption pleine de `maxsep` | **Non — décidée par Zackary le 20 nov. 13h04** | Ce chantier est une vérification a posteriori, pas une condition. L'adoption pleine reste sa décision ; la présente section la consolide par une confirmation mesurée, elle ne la fonde pas rétroactivement. |
+| Score MC affiché (convention §8.64.6) | Non | `maxsep` principal, ancien MC secondaire, `sep` compagnon, mention de fragilité — inchangée. |
+| Sélection du best_config, seuil MC, cascade, S_sep, Delta, L7a | Non | Inchangés par construction. |
+| Code v6.2 / v6.1 / v6 | Non | Aucune modification, aucune v6.5. |
+| Verdicts des §8.56, §8.59, §8.64, §8.69, §8.70 | Non | Confirmés, pas rouverts ; les 10 paires comptées gardent leurs valeurs. |
+| Pistes ouvertes | Oui, une de moins | (a) La confirmation indépendante C3 est close — aucune autre paire indépendante n'est requise par ce critère ; la piste GSE131050 reste nommée comme cohorte future possible, pas comme condition ; (b) la fragilité du nul à petit n (§8.70 : étendue 0,0972 entre 3 nuls à n = 51) reste un chantier propre ouvert — à rapprocher du §8.53 (∼200 nuls pour un plancher stable à petit n) ; (c) la divergence Delta/`maxsep` du §8.69 ne se reproduit pas
+sur deux paires de suite — elle reste une piste ouverte, pas
+une loi ; (d) la barre descriptive du plancher équivalent-sep (échouée ici de 0,0103, comme aux §8.59/§8.64 pour `sep` seul) reste une limite affichée de `sep`, pas du critère gelé. |
+
+**Suite du dossier.** Si Zackary veut une nouvelle confirmation
+sur une autre cohorte (GSE131050, piste nommée) : un chantier
+ultérieur, avec son propre protocole gelé — pas une relecture,
+pas un re-test déguisé, et pas GSE60979 (mesurée, CONFIRME).
+Si Zackary ne veut pas de nouvelle tentative : C3 est levée,
+l'adoption pleine tient par sa décision du 20 nov. 13h04
+consolidée par la présente confirmation, et la présente
+section consigne le passage mesuré avec ses chiffres. Dans
+les deux cas, le PDF et GitHub sont régénérés et poussés par
+le coordinateur (règle permanente « Toujours github et
+pdf !!! »), avec la présente section fusionnée.
+
+## 8.71.7 — Limites et ce qui reste
+
+- Une seule paire nouvelle a été mesurée : le verdict porte sur
+  elle, pas sur « `maxsep` en général ». 7/11 et 9/11 sont des
+  comptages sur 11 paires, pas des estimations de population.
+  Quatre paires restent non passantes (GSE71729, GSE62452,
+  GSE21501, GSE79668) : la confirmation n'efface pas les
+  échecs, elle les dépasse en nombre.
+- À n = 49, aucun nul frais n'a été couru (règle gelée §7 :
+  +0,2045 hors de [−0,07 ; +0,14[) — la distribution des nuls
+  à n ≈ 50 n'a pas été mesurée ici, et le verdict repose sur
+  la paire graine 42, par règle gelée. Un chantier futur qui
+  voudrait mesurer cette distribution devrait courir 10 nuls
+  frais — mais le verdict de la paire graine 42 resterait
+  CONFIRME, par construction.
+- Le d de Cohen marginal du §9 est vacueux par construction
+  (0,0000 pour les 12 gènes, à la précision machine) : le
+  protocole gelait ce test en sachant qu'il l'était, et la
+  section applique la correction du §8.70 — le test de
+  Spearman contre le pas porte l'information d'ordre.
+- La paire échoue à la barre descriptive du plancher
+  équivalent-sep (0,1146 contre 0,1249) : `sep` ne suit pas
+  `maxsep` jusqu'à sa propre barre. Le critère gelé est
+  `maxsep`, et lui seul — c'est nommé, pas corrigé après coup.
+- Delta est plat (−0,0153) et MC à peine positif (+0,0260) :
+  les scores compagnons ne portent pas le passage — seul
+  `maxsep` (et S_sep, +0,1959) le portent. L7b est FRAGILE
+  sur les 2 runs — non-informatif, comme partout.
+- Rien de clinique : l'étude porte sur l'instrument.
+
+## 8.71.8 — Provenance
+
+- Protocole gelé : `PROTOCOL_maxsep_cohort_871.md`, SHA-256
+  `82a2c93d2975274e9a900343ef626b8d37b5634bb008d107e8bff9b106496eef`
+  (au gel, avant téléchargement officiel ; fichier inchangé
+  depuis).
+- Provenance complète : `PROVENANCE_871.md`, SHA-256
+  `74e603ab392b890f4935022fb0491c4d9c1931449f10ead240ad683b334bf430`
+  (sections 3 et 5 complétées après construction et runs ;
+  fichier inchangé depuis).
+- Construction : `build_fluxes_871.py`, SHA-256
+  `1134c574d6727b6d4fa2e13cfe4a69efca01143602b9ca4e47791b57fa268ed9`
+  (variante (a) seulement ; règle tumeur = caractéristique ch1
+  « tissue: pancreatic ductal adenocarcinoma »).
+- Données : `data/GSE60979_series_matrix.txt.gz`, 20 547 348 o,
+  SHA-256
+  `819408bf8dacb01c38eede69287d255eea76f74e2b1b18ec8863933f4700c4eb`
+  (HTTP 200, 20 nov. 2026) ; `data/GPL14550_probe2symbol.tsv`,
+  SHA-256
+  `cc034a76285b0785bff4dd5249d68becb58acacedb157a8032d0c9309dac3909`
+  (42 545 lignes, 30 436 sondes avec symbole, 22 070 symboles
+  uniques, colonne `GENE_SYMBOL`) ; `data/GPL7264_probe2symbol.tsv`,
+  SHA-256
+  `41a4716063d9cb37518670dd0ab54b26064e52e34f8cb156614dc73e3aa6c27e`
+  (mapping de la cohorte écartée GSE77858, MUC17 absent).
+- Flux : `pdac_871_geo60979_fluxes.csv` (49 lignes), SHA-256
+  `51a7fa56869a2d8db788bc02f78f24d435a98cb3cefa50bbcb2b51bbb190554e` ;
+  `pdac_871_geo60979_fluxes_nul.csv`, SHA-256
+  `d427359aa9e244608150a707f54caa831ffd45938cd78eeeaf0dced2bca34740`.
+  Aucun nul frais (règle gelée §7).
+- Runs : manifeste `manifest_v62_871.txt`, SHA-256
+  `a1dbe6dd2dd105a233bf77d8548e6c5d916020bb304ee55ef7e301a2ec5afd2e` ;
+  journal `runs_v62_871.log` (100 lignes), SHA-256
+  `b0620b8b91bd130b8eba6a855c29fb91c7dd563d8dbec111be885cd5eb6aae55` ;
+  surveillance `watch_v62_871.sh`, SHA-256
+  `34ccad3fc8f004d89ca1c6acebf9bc586cf0891f3af472f530e848eec86b5717` ;
+  dossiers `results_fast_v62_871_geo60979[_nul]`
+  (2 runs, exits 0/0, 35 fichiers chacun).
+- Extraction : `extract_871.py`, SHA-256
+  `687bf9fe383633aa2bc5faa579e0bfa99f8cd08bd619ef3275a4e737ad1359e8`
+  → `extract_871.json`, SHA-256
+  `85e9089a9f4c5ee0d7984bfd44ed2646dc0842174401395642cb479cd1f55e3b` /
+  `extract_871.csv`, SHA-256
+  `6e474668eb24bbccb2d889d4ac38a80c528f1276b21d094ca0ac88c362166e25`.
+- Vérification indépendante : `verify_871.py`, SHA-256
+  `5cc8cc1d180f5b8571e21563c1cd9237cbd2ebb29774029e2a0e6ae0d408638d`
+  → `maxsep_871_verify.json`, SHA-256
+  `ca8795b39e39e34a0155a5725834e809ea3bfa21819a1d1a66b117696117b063`
+  (2/2 comparaisons, écart max 0,0 exact, verdict OK).
+- Tests directs : `direct_tests_871.py`, SHA-256
+  `c543044a82b74d9e4b79b978f5971889a82aa0b664de2c6a8700dc2525295cbc`
+  → `direct_tests_871.json`, SHA-256
+  `2c94e28a8bfb3aaeca83a4f4076a27d9436c2f7225572531a2a47b35d5811f94`.
+- Références re-vérifiées : `sep_maxsep_856_table.json`, SHA-256
+  `ec5ee6382d5fd80d691ae7983ffbb31f14bb9074ded2bc6aad16327b1cc34f8b`
+  (8 paires V1 reprises telles quelles, jamais recalculées ici) ;
+  `extract_869.json`, SHA-256
+  `644339e47b05e1445c1e78df053f9f8dc77a48e609a76a7f54b7aefd372d882b`
+  (GSE21501 reprise telle quelle) ; `extract_870.json`, SHA-256
+  `4ffa851a83668b2369097703862e0413ff9af54af3a66ef70aea9333b40c444f`
+  (GSE79668 reprise telle quelle) ; protocole §8.70
+  `PROTOCOL_maxsep_gse79668_870.md` (SHA-256
+  `fd479d50414a18c2daa2b7cb9aeab55dcc24a49ae30ed6ceee363b4d47c96980`) ;
+  section §8.70 `section_8.70_gse79668.md`.
+- Livre blanc de référence consulté :
+  `livre-blanc-pdac-v6.md`, 14 483 lignes, SHA-256
+  `072c0f51…` (§8.1–§8.70, état au 20 nov. 2026) — le livre blanc
+  n'a PAS été modifié par ce chantier. Fusion de la présente
+  section par le coordinateur.
+- Données : séries réelles = intensités log2 normalisées Agilent
+  (mesures instrumentales transformées : correction de fond +
+  normalisation quantile par les déposants, sondes agrégées par
+  médiane, ordre par KRAS). Nul = lignes permutées, graine 42 —
+  échantillon hypothétique, pas une mesure. Aucune valeur
+  inventée ; aucune valeur recopiée à la main (tables générées
+  depuis `extract_871.json`, vérifiées paire par paire à 0,0
+  exact par `verify_871.py` ; les valeurs des §8.71.2–§8.71.3
+  sont lues dans cette sortie, pas recopiées des
+  §8.56/§8.59/§8.64/§8.69/§8.70).
+- Codes jamais modifiés : v6.2 (`f07567c4…c3abf`, revérifié avant
+  ET après le lot), v6.1 (`2af5e5ce…c1c9`), v6
+  (`bb8bbdba…c0773`). Aucune nouvelle version construite dans ce
+  chantier — pas de v6.5. Deux runs du pipeline lancés dans ce
+  chantier (GSE60979 réel + nul, exits 0/0) ; aucun push GitHub,
+  aucune Release dans ce chantier.
+- Section : `section_8.71_gse60979.md` (ce fichier ;
+  SHA noté au rapport).
+
+— Fin de la §8.71. —
+
+---
+
+### 8.72 Consolidation de §8.70 : 10 nuls frais sur GSE79668 — RENVERSE (20 novembre 2026)
+Go de Zackary « Fait les3 » (20 nov. 2026 15h35, 2e des 3 chantiers — consolidation de §8.70 contre 10 nuls frais, protocole gelé avant construction et runs).
+
+## Verdict d'abord
+
+**RENVERSE — contre la distribution des 13 nuls, la paire
+GSE79668 PASSE le plancher : `d_médian = +0,1447` (réel 0,4104
+contre nul médian 0,2657), plus de deux fois le plancher 0,07.
+Le réel bat les 13 nuls sur 13 (rang 14/14) et 12 écarts sur 13
+dépassent le plancher. La lecture « sous le plancher » du §8.70
+(+0,0567 contre le nul graine 42) était un artefact du tirage :
+le nul graine 42 est le PLUS HAUT des 13 nuls mesurés (0,3538),
+à 0,0881 au-dessus du nul médian. Le verdict de la paire
+graine 42 reste PARTIEL — règle gelée §8.70 §7, l'histoire
+n'est pas réécrite — mais sa lecture est renversée, et une
+note datée de correction est ajoutée en addendum au §8.70.**
+
+| Porte (PROTOCOL_nulls_gse79668_872.md §4.3, gelé) | Exigé | Mesuré 20 nov. 2026 | Sort |
+|---|---|---|---|
+| `d_médian` (réel − médiane des 13 nuls) | < 0,05 CONSOLIDÉ ; 0,05–0,09 INCONCLUSIF ; > 0,09 RENVERSE | **+0,1447** | **RENVERSE** |
+| Médiane 10 frais vs médiane 13 nuls | écart ≤ 0,03 | **−0,0002** | **cohérent** |
+| Exactitude de l'extraction | 14/14 à 0,0 exact | **14/14, écart max 0,0** | **PASSE** |
+| Relecture des valeurs §8.70 | 4/4 à 0,0 exact | **4/4, écart 0,0** | **PASSE** |
+| Exits des 10 runs | 10 × 0 | **10 × 0, 0 échec** | **PASSE** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que
+la paire GSE79668, jugée non contre un tirage unique mais
+contre la distribution de son nul, sépare le réel du nul en
+`maxsep` au-dessus du plancher gelé — et largement : +0,1447
+contre 0,07 exigé, avec une marge de 0,0547 au-dessus du seuil
+de renversement (0,09). Il dit aussi que le §8.70 avait
+raison de se dire fragile : son verdict tenait au tirage le
+plus défavorable possible — le nul graine 42, le plus haut des
+13. Il ne dit pas que le verdict §8.70 est effacé : la paire
+graine 42 reste PARTIELLE par règle gelée, et l'A2 étendu gelé
+(6/10, paires graine 42) n'est PAS recompté ici — le
+renversement est une correction de lecture, pas un recomptage.
+Il ne dit pas non plus que C3 est levée au sens gelé : C3
+exige 7 paires passantes comptées en paires graine 42, et ce
+chantier ne recompte rien (§8.72.2). Il dit, en substance, que
+la dixième paire indépendante passe contre son nul typique —
+et que la décision de lever C3 sur cette base appartient à
+Zackary et au coordinateur, pas à ce chantier. L'adoption
+pleine de `maxsep`, décidée par Zackary le 20 nov. 13h04,
+n'est ni rouverte ni conditionnée ici : ce chantier est une
+vérification a posteriori, comme le §8.70.
+
+**Le fait nouveau, dit en tête.** Sur 3 nuls, le §8.70 voyait
+une étendue de 0,0972 — plus grande que l'écart mesuré
+(0,0567) — et concluait « un seul nul ne suffit pas à
+trancher ». Sur 13 nuls, la distribution est désormais
+décrite : médiane 0,2657, p95 0,3344, étendue 0,1110. Le réel
+(0,4104) est au-dessus du p95 des nuls — et même au-dessus du
+p95 de plus que le plancher (`d` contre p95 = +0,0760). Le
+seul écart sous le plancher, parmi les 13, est celui contre
+le nul graine 42 (+0,0567). Les 12 autres vont de +0,0890 à
++0,1676. Ce n'est plus un quasi-passage : c'est un passage
+contre le nul typique, confirmé par 12 tirages sur 13.
+
+Protocole gelé : `PROTOCOL_nulls_gse79668_872.md` (20 nov.
+2026, SHA `95acdd45…cf41` au gel, inchangé). Critère de
+verdict écrit AVANT toute construction et tout run (§4.3 du
+protocole) ; aucune repondération, aucun nouveau terme, aucune
+redéfinition du plancher après avoir vu les chiffres. Les
+nombres du §8.70 étaient la motivation, pas le verdict : le
+verdict repose sur les 10 runs neufs mesurés ci-dessous, joints
+aux 3 nuls anciens relus à 0,0 exact.
+
+## 8.72.1 — La distribution des 13 nuls : le réel bat tout le monde
+
+**Les 13 nuls, triés par `maxsep` croissant** (réel 0,4104 en
+tête de liste, hors distribution) :
+
+| Rang | Nul | `maxsep` nul | `d_maxsep` (réel − nul) | > 0,07 ? |
+|---|---|---|---|---|
+| 1 (min) | s8725 | 0,2428 | **+0,1676** | oui |
+| 2 | s8730 | 0,2508 | **+0,1596** | oui |
+| 3 | s8702 | 0,2566 | **+0,1538** | oui |
+| 4 | s8723 | 0,2601 | **+0,1504** | oui |
+| 5 | s8728 | 0,2614 | **+0,1490** | oui |
+| 6 | s8726 | 0,2653 | **+0,1452** | oui |
+| 7 (médiane) | **s8721** | **0,2657** | **+0,1447** | **oui** |
+| 8 | s8727 | 0,2747 | **+0,1357** | oui |
+| 9 | s8729 | 0,3074 | **+0,1031** | oui |
+| 10 | s8724 | 0,3160 | **+0,0944** | oui |
+| 11 | s8722 | 0,3211 | **+0,0894** | oui |
+| 12 | s8701 | 0,3215 | **+0,0890** | oui |
+| 13 (max) | **graine 42** | **0,3538** | **+0,0567** | **non** |
+
+Valeurs exactes : réel `maxsep` 0,41044843843771645 ; médiane
+des 13 nuls 0,2657078111639579 (le nul s8721) ; `d_médian` =
++0,14474062727375853. Écarts triés : +0,0567 / +0,0890 /
++0,0894 / +0,0944 / +0,1031 / +0,1357 / +0,1447 / +0,1452 /
++0,1490 / +0,1504 / +0,1538 / +0,1596 / +0,1676.
+
+**Statistiques des distributions** (`numpy.percentile`,
+interpolation linéaire — méthode gelée §4.1) :
+
+| Statistique | 13 nuls (primaire) | 10 frais seuls (contrôle) |
+|---|---|---|
+| Médiane | **0,2657** | 0,2655 |
+| p95 | **0,3344** | 0,3188 |
+| Min / max | 0,2428 / 0,3538 | 0,2428 / 0,3211 |
+| Étendue | **0,1110** | 0,0782 |
+| Q1 / Q3 | 0,2601 / 0,3160 | 0,2604 / 0,2992 |
+| IQR | 0,0560 | 0,0388 |
+| Écart-type | 0,0349 | 0,0280 |
+
+Valeurs exactes (13 nuls) : p95 0,33440202574442535 ; étendue
+0,11095254467578725 ; IQR 0,055960582020429195 ; écart-type
+0,03490438297729817. (10 frais) : médiane
+0,2654792677948886 ; p95 0,3188097055470229 ; étendue
+0,0782478240669992 ; IQR 0,03879953079455112 ; écart-type
+0,02796398531378161.
+
+**Lecture.** La médiane des 10 frais (0,2655) diffère de la
+médiane totale (0,2657) de −0,0002 — très loin du seuil
+d'alerte gelé (0,03) : les 3 anciens nuls ne tirent pas la
+distribution. L'écart contre la médiane des 10 frais seuls
+est +0,1450 — identique à `d_médian` (+0,1447) à 0,0003 près :
+le verdict ne dépend pas de l'inclusion des 3 anciens nuls. Le nul graine 42 (0,3538) est le maximum des
+13 — il dépasse le deuxième plus haut (s8701, 0,3215) de
+0,0323 et le p95 (0,3344) : c'est un tirage de queue, pas un
+nul typique. Le nul médian (s8721, 0,2657) donne un écart de
++0,1447 — le verdict ne tient donc plus à un tirage : 12
+tirages sur 13 passent le plancher, et le réel est au-dessus
+du p95 des nuls de +0,0760, soit plus que le plancher lui-même.
+À l'inverse du §8.70, où l'étendue des nuls (0,0972)
+dépassait l'écart mesuré (0,0567), l'écart médian (+0,1447)
+dépasse désormais l'étendue des 10 frais (0,0782) et
+l'étendue totale (0,1110) : le signal est plus grand que la
+dispersion du nul. Le rang du réel est 14/14 : aucun nul ne
+le bat.
+
+**Lot.** Pipeline `universal_v6.2.0_cohen.py`, SHA
+`f07567c4…c3abf`, revérifié inchangé avant ET après le lot ;
+mode fast ; 10 runs, exits 0/0/0/0/0/0/0/0/0/0, 0 échec,
+0 déjà fait. Lancement en `systemd-run` (unité `v62-872`),
+surveillance `watch_v62_872.sh` (arrêtée d'elle-même à 10/10,
+`WATCH 872 TERMINE 10/10`, tour 3) ; journal
+`runs_v62_872.log` (SHA du pipeline en tête, FIN
+21h07:33Z, déjà faits 0, terminés 10, échecs 0). Durée du lot :
+20h39:33Z → 21h07:33Z (~28 min). Aucun redémarrage de machine
+pendant le lot, aucune relance, aucun dossier supprimé. Le
+livre blanc n'est PAS édité, le PDF N'EST PAS régénéré, rien
+n'est poussé sur GitHub dans ce chantier.
+
+## 8.72.2 — Ce que le renversement dit, et ce qu'il ne dit pas
+
+**Ce qui est renversé.** La lecture du §8.70, pas son verdict.
+Le §8.70 disait, sur la paire graine 42 : PARTIEL, +0,0567,
+sous le plancher — et il disait aussi que ce verdict était
+fragile, parce que les 2 nuls frais passaient. La présente
+section confirme la fragilité dans le sens exact où le §8.70
+la craignait : le verdict tenait au tirage, et le tirage
+gelé était le pire des 13. Contre le nul typique, la paire
+passe — et elle passe largement (+0,1447, soit 2,07 fois le
+plancher). La note datée de correction ajoutée en addendum au
+fichier `section_8.70_gse79668.md` dit exactement cela, sans
+toucher au texte original.
+
+**Ce qui n'est pas renversé.** Le verdict de la paire graine
+42 reste PARTIEL : la règle gelée §8.70 §7 l'interdit de
+changer, et ce chantier la respecte — l'histoire n'est pas
+réécrite, elle est complétée. L'A2 étendu gelé reste 6/10
+(8/10 positifs) : les 9 paires comptées gardent leurs valeurs,
+et la dixième garde sa valeur de paire graine 42 (+0,0567).
+Le protocole §4.3 l'a gelé ainsi : le renversement est une
+correction de lecture, pas un recomptage.
+
+**C3, dite plainement.** Au sens gelé — 7 paires passantes
+comptées en paires graine 42 — C3 n'est PAS levée par ce
+chantier : il faudrait 7/10, il y en a 6/10, et ce chantier
+ne recompte rien. En substance, en revanche, la dixième paire
+indépendante passe contre son nul typique (+0,1447) : c'est
+ce que C3 attendait d'une confirmation indépendante, mesuré
+sur 13 tirages et non sur un seul. Les deux faits coexistent
+et sont dits tels quels : C3 gelée ouverte, confirmation de
+substance mesurée. Trancher entre les deux lectures — lever
+C3 sur la base de la distribution, ou exiger une onzième
+paire en paire graine 42 — est une décision de Zackary et du
+coordinateur, pas de ce chantier. Ce chantier mesure ; il ne
+recompte pas et ne lève pas de condition.
+
+**Ce que le renversement ne prouve pas.** Il ne prouve pas
+que `maxsep` sépare « en général » : c'est une paire, à
+n = 51, sur une distribution de 13 nuls — pas un plancher
+stable (le §8.53 estime ~200 nuls pour un plancher stable à
+petit n). Il ne prouve pas que le nul graine 42 était un
+« mauvais » tirage au sens d'une erreur : c'est un tirage
+légitime de la même distribution, simplement un tirage de
+queue (au-dessus du p95). Il ne change rien à l'adoption
+pleine : elle a été décidée par Zackary le 20 nov. 13h04, et
+ce chantier la consolide par son honnêteté, comme le §8.70
+l'avait fait par la sienne.
+
+## 8.72.3 — Contrôles descriptifs (à publier, ne décident pas)
+
+**Ancien MC : positif contre le nul médian, pas contre tous
+les nuls.** Réel 0,3566 ; nuls médiane 0,3388, min 0,3326,
+max 0,3790 ; `d_MC` contre le nul médian +0,0178. Un nul
+frais (s8722, MC 0,3790) bat le réel en MC — comme au §8.70,
+où le MC était inversé (−0,0053) contre graine 42. Le MC ne
+porte pas la séparation ici : c'est `maxsep` qui la porte,
+et le critère gelé est `maxsep` seul.
+
+**S_sep : même histoire que `maxsep`.** Réel 0,4022 ; nuls
+médiane 0,2638 ; `d_Ssep` contre le nul médian +0,1384 —
+du même ordre que `d_médian` (+0,1447), comme au §8.70 où
+S_sep (+0,0675) suivait `maxsep` (+0,0567).
+
+**Delta : plat, comme au §8.70.** Réel 0,6353 ; nuls médiane
+0,6010, min 0,5839, max 0,6387 — un nul frais (s8728, 0,6387)
+dépasse le réel. Delta ne diverge pas ici et ne porte rien :
+la divergence Delta/`maxsep` du §8.69 ne se reproduit ni au
+§8.70 ni ici.
+
+**L7a : UP presque partout.** Réel UP 0,3459. Sur les 13
+nuls : 10 UP, 3 DOWN (s8723 0,1757 ; s8724 0,1944 ; s8729
+0,1745 — confiances faibles, ~0,17–0,19, contre ~0,33–0,36
+pour les UP). Descriptif : L7a n'est pas le critère gelé, et
+il ne distingue pas les séries ici — les 3 DOWN sont des
+nuls, mais 10 nuls sont UP comme le réel.
+
+**L7b : FRAGILE sur les 14 runs** — même non-informativité
+que partout (réel + 13 nuls). **Falsification :
+indisponible** (n = 51 < 75, règle du projet) — valeurs
+brutes rapportées à titre descriptif seulement, sans statut
+de test : réel 1,40578, nuls 1,16613–1,49965, tous au-dessus
+du seuil 0,5 du JSON.
+
+**Cascades : formes instables, comme au §8.70.** Réel
+[3,9 / 72,4 / 76,3 / 82,2 / 100,0] (pas 2/36/38/41/50).
+Nuls frais à T_+2 : de 27,1 % (s8727) à 100,0 % (s8723,
+s8729) — la forme de la cascade nulle n'est pas une
+caractéristique stable à n = 51 : elle mesure le tirage,
+elle ne distingue pas les séries. Aucune rupture visible
+qui distinguerait le réel des 13 nuls à la fois — la
+séparation est dans le score `maxsep`, pas dans la forme
+de la cascade.
+
+## 8.72.4 — Ce que ça change, et ce que ça ne change pas
+
+| Poste | Change ? | Détail |
+|---|---|---|
+| Lecture du §8.70 (« sous le plancher ») | **Oui — RENVERSE** | Contre le nul médian, la paire passe (+0,1447). Note datée de correction en addendum au §8.70, texte original intact. |
+| Verdict de la paire graine 42 (§8.70) | **Non — reste PARTIEL** | Règle gelée §8.70 §7. L'histoire n'est pas réécrite. |
+| A2 étendu gelé (paires graine 42) | **Non — reste 6/10, 8/10 positifs** | Pas de recomptage (protocole §4.3). |
+| Condition C3 (§8.59.8, sens gelé) | **Non levée par ce chantier** | 7 paires passantes exigées en paires graine 42 ; la décision de lever C3 sur la base de la distribution appartient à Zackary et au coordinateur (§8.72.2). |
+| Adoption pleine de `maxsep` | **Non — décidée par Zackary le 20 nov. 13h04** | Ce chantier est une vérification a posteriori, pas une condition. |
+| Score MC affiché (convention §8.64.6) | Non | `maxsep` principal, ancien MC secondaire, `sep` compagnon, mention de fragilité — inchangée. |
+| Sélection du best_config, seuil MC, cascade, S_sep, Delta, L7a | Non | Inchangés par construction. |
+| Code v6.2 / v6.1 / v6 | Non | Aucune modification, aucune v6.5. |
+| Verdicts des §8.56, §8.59, §8.64, §8.69, §8.70 | Non | Confirmés, pas rouverts ; les 9 paires comptées et la dixième en paire graine 42 gardent leurs valeurs. |
+| Pistes ouvertes | Oui, une de plus | (a) La question « combien de nuls faut-il pour un plancher stable à n ≈ 50 ? » (§8.70.6, §8.53) reste ouverte : 13 nuls décrivent la distribution, ils ne stabilisent pas un plancher — ~200 nuls seraient nécessaires ; (b) la divergence Delta/`maxsep` du §8.69 ne se reproduit ni au §8.70 ni ici — elle reste une piste ouverte, pas une loi ; (c) si Zackary veut lever C3, la voie est soit une décision sur la base de la distribution mesurée ici, soit une onzième paire indépendante avec son propre protocole gelé. |
+
+**Suite du dossier.** Si Zackary veut une nouvelle paire
+indépendante : un chantier ultérieur, avec son propre
+protocole gelé, sur une autre cohorte vérifiée indépendante —
+pas une relecture, pas un re-test déguisé, et pas GSE79668
+(mesurée, consolidée par distribution). Si Zackary décide de
+lever C3 sur la base de la distribution : la présente section
+fournit les chiffres, et la levée est consignée par le
+coordinateur avec sa date et sa décision — pas par ce
+chantier. Dans les deux cas, le PDF et GitHub sont régénérés
+et poussés par le coordinateur (règle permanente « Toujours
+github et pdf !!! »), avec la présente section fusionnée.
+
+## 8.72.5 — Limites et ce qui reste
+
+- 13 nuls ne font pas un plancher stable : §8.53 estime ~200
+  nuls pour un plancher stable à petit n. La médiane de 13
+  nuls porte ~±0,02 — d'où la bande d'inconclusivité gelée
+  (±0,02 autour du plancher). Ici `d_médian` (+0,1447) est
+  loin au-dessus de la bande (0,09) : le verdict RENVERSE ne
+  tient pas à la bande. Mais la queue de la distribution
+  (p95) reste estimée sur 13 tirages seulement.
+- Le nul est une permutation par lignes (corrélations
+  inter-flux préservées) : la distribution mesurée est celle
+  du nul du projet, pas d'un nul à corrélations brisées
+  (même réserve qu'au §8.53 §8).
+- Le nul graine 42 est un tirage légitime, pas une erreur :
+  il est au-dessus du p95, mais il appartient à la
+  distribution. Le renversement dit que le verdict §8.70
+  tenait à ce tirage — il ne dit pas que ce tirage était
+  invalide.
+- Une seule paire nouvelle a été consolidée : le verdict
+  porte sur elle, pas sur « `maxsep` en général ».
+- La paire est construite sur des comptages bruts RNA-seq
+  (§8.70.4) : la nature des valeurs est nommée comme limite,
+  pas corrigée après coup — comme au §8.70.
+- Delta ne diverge pas ici (+0,03 contre le nul médian) :
+  la divergence du §8.69 (+2,01 contre −0,01) n'est ni
+  confirmée ni infirmée comme phénomène — une seule paire
+  de plus, dans l'autre sens. L7b est FRAGILE sur les 14 runs
+  — non-informatif, comme partout.
+- Rien de clinique : l'étude porte sur l'instrument.
+
+## 8.72.6 — Provenance
+
+- Protocole gelé : `PROTOCOL_nulls_gse79668_872.md`, SHA-256
+  `95acdd453a2c65e40e4a497231cd189906b0d7bc2d8e242a084e85dbd52bcf41`
+  (au gel, avant construction et runs ; fichier inchangé
+  depuis).
+- Provenance de la cohorte et des données : `PROVENANCE_870.md`,
+  SHA-256
+  `5e5d26a71d9b1eef7cccfd822496c10ea623b361b517fb31cbaeb6e93b21aad0`
+  (GSE79668, Kirby et coll. Mol Oncol 2016, GPL11154, 51
+  tumeurs ; matrice SHA `b2226fd0…88e4754`, comptages SHA
+  `721cd3a0…54f8` — relus, rien re-téléchargé).
+- Construction : `build_fluxes_870.py` (original intact,
+  SHA noté au §8.70.8) invoqué par `build_nulls_872.py`,
+  SHA-256
+  `1ae03f50d56f3591874e4a86b1cd8627cb38ab5e8c8a9dda0d91f6f08450330f`
+  (graines gelées 8721–8730 ; CSV réel re-vérifié inchangé
+  après chaque invocation).
+- Flux : `pdac_870_geo79668_fluxes.csv` (51 lignes), SHA-256
+  `7744bc5a82fe80055b5ab9231fc7ae5395354f643b5b7cd1fdfce8aa6656107a`
+  (inchangé) ; nuls frais
+  `pdac_870_geo79668_fluxes_nul_s8721.csv` …
+  `pdac_870_geo79668_fluxes_nul_s8730.csv`, SHA consignés dans
+  `nulls_872_files.json`, SHA-256
+  `15731361ebdcb0d821c6f8a1a31542cb54c6f2d7cb91cf82220d1ae481600ef8`
+  (s8721 `3a2017ec…`, s8722 `19c0aaac…`, s8723 `392974d0…`,
+  s8724 `14dac08d…`, s8725 `d246216f…`, s8726 `194130d9…`,
+  s8727 `3254083e…`, s8728 `09203dd1…`, s8729 `6fd1f1b3…`,
+  s8730 `a8aa618c…`).
+- Runs : manifeste `manifest_v62_872.txt`, SHA-256
+  `2011af26a0c801047a0d93c3d09ee7cc61757949dd95dc37685c8d0ef4861be7` ;
+  journal `runs_v62_872.log`, SHA-256
+  `2a2455996fb8114ef7b58aeeb811e250fb93e25291059550c909ec8ab71b6c35` ;
+  surveillance `watch_v62_872.sh`, SHA-256
+  `8b872b75e3936d3e2a07581dc89635fcb9daff0f2a8d1e39a19418eb4ec18def` ;
+  dossiers `results_fast_v62_872_geo79668_nul_s8721` … `s8730`
+  (10 runs, exits 0 × 10, 35 fichiers chacun — sans
+  `csd_consensus.png`, comme au §8.70).
+- Extraction : `extract_872.py`, SHA-256
+  `92c68a1c40a3f52222d9d4f1eca0411aaf4dd55a9717f416dae64412b8900a8c`
+  → `extract_872.json`, SHA-256
+  `2df41832608bd0bc5770fb6b981a2fe5a1c7aa14ba4e89fd7a555ae118deca43` /
+  `extract_872.csv`, SHA-256
+  `db3564264d9bfac1ae691dcfd5c87bb795ec24693335c60b9cc56cdffaaaa736` /
+  `dist_872.json`, SHA-256
+  `fa5193eb47d507e180f981f821682fb6dbebe481aec8f557077401bb02ad5619`.
+- Vérification indépendante : `verify_872.py`, SHA-256
+  `3b9be9d49ca54813647e55af7eaefe17d0e7b0089bd8801ee14339da2c60f921`
+  → `maxsep_872_verify.json`, SHA-256
+  `a9380adfe83f0636b48403a84dc1e266386bd5fa252065997304042357005f48`
+  (14/14 comparaisons, écart max 0,0 exact, verdict OK).
+- Valeurs §8.70 relues : `extract_870.json`, SHA-256
+  `4ffa851a83668b2369097703862e0413ff9af54af3a66ef70aea9333b40c444f`
+  (réel 0,41044843843771645 ; nuls 0,3537953187066359 /
+  0,3214731637696184 / 0,2566001863019332 — relecture à 0,0
+  exact dans `extract_872.py`).
+- Codes jamais modifiés : v6.2 (`f07567c4…c3abf`, revérifié
+  avant ET après le lot), v6.1 (`2af5e5ce…c1c9`), v6
+  (`bb8bbdba…c0773`). Aucune nouvelle version construite dans
+  ce chantier — pas de v6.5. Dix runs du pipeline lancés dans
+  ce chantier (10 nuls frais, exits 0 × 10) ; aucun run réel
+  relancé ; aucun push GitHub, aucune Release dans ce chantier.
+- Section : `section_8.72_nulls_gse79668.md` (ce fichier ;
+  SHA noté au rapport).
+- Données : série réelle = comptages bruts RNA-seq (mesures
+  instrumentales transformées : comptages par les déposants,
+  symboles extraits mécaniquement, agrégation des doublons par
+  médiane, ordre par KRAS). Nuls = lignes permutées, graines
+  42 / 8701 / 8702 / 8721–8730 — échantillons hypothétiques,
+  pas des mesures. Aucune valeur inventée ; aucune valeur
+  recopiée à la main (tables générées depuis
+  `extract_872.json` et `dist_872.json`, vérifiées à 0,0 exact
+  par `verify_872.py`).
+
+— Fin de la §8.72. —
+
+---
+
+### 8.73 Le déclencheur du pic étroit — non élucidé, le bloc extrême écarté (20 novembre 2026)
+Go de Zackary « Fait les3 » (20 nov. 2026 15h35, 3e des 3 chantiers — déclencheur du pic étroit du §8.63, protocole gelé avant tout nouveau script et tout nouveau run).
+
+**Verdict d'abord, en trois phrases. (a) NON ÉLUCIDÉ — aucun déclencheur
+identifiable du pic étroit : le bloc de lignes extrêmes au bord ne porte
+pas le pic (déplacement du bloc : succès 1/11 au critère gelé ;
+transplantation de valeurs donneuses au bord : 0/3 ; transplantation du
+propre bloc extrême : 0/6), aucune statistique globale ne sépare les
+courbes rob-on des rob-off (AUC 0,31–0,47), et un bloc d'extrémité
+médiane déplacé au bord crée même un pic (1/2). (b) Ce qui est établi :
+l'étroitesse est une propriété fragile de l'arrangement exact des
+lignes — le déplacement du bloc détruit la robustesse (rob < 0,1) dans
+10/11 cas sans détruire le niveau du pic (10/11), tandis que le pic
+étroit survit à la poussière numérique (0/11 bascule à 10⁻³) : c'est une
+caractéristique réelle de la matrice, pas un artefact de calcul, mais
+elle n'est portée par aucun bloc, aucune ligne en général (une seule
+ligne tue le pic dans 4/11 cas seulement, contre 5/33 pour une ligne
+prise au hasard) et aucune queue de distribution. (c) La winsorisation
+du bloc, qui semblait tuer le pic (10/11 à l'échelon 4 fenêtres), est
+un artefact de déflation de variance — elle fait MONTER le maxsep dans
+8/11 cas à l'échelon 2 fenêtres (0,1434 → 0,2916 ; 0,2072 → 0,3583) en
+aplatissant la courbe, et winsoriser n'importe quel autre bloc fait la
+même chose (6/11) : le critère gelé A1 compte un effet générique, pas
+la suppression d'un déclencheur, et il est rapporté comme tel sans
+peser dans le verdict.**
+
+## 8.73.1 Question, méthode, règles
+
+**Question.** §8.63 a expliqué M1 (le MC haut est une propriété de la
+permutation, le Delta bas une propriété de w = 27) mais a laissé ouvert
+le résidu : qu'est-ce qui DÉCLENCHE le pic étroit de la courbe de scan
+(FWHM ≈ 11–15 %, rob > 0,5) quand on permute — quelle propriété de la
+matrice permutée le fait apparaître, et pourquoi certaines permutations
+le déclenchent et d'autres non ? Les pics tombent presque tous près
+d'un bord (seuil 10–33 % ou 76–89 %) et, pour un même CSV, à la MÊME
+position (±2 candidats) sous plusieurs configs — compatible avec un
+bloc fixe dans l'ordre des lignes, pas avec une propriété de la grille.
+
+**Hypothèses nommées d'avance (protocole §3).** **H1 (principale — bloc
+extrême au bord)** : un bloc de w+1 lignes consécutives aux valeurs
+extrêmes sur plusieurs flux, isolé comme petit groupe par un seuil
+proche d'un bord, déclenche le pic. **H2 (une seule ligne)** : le pic
+est porté par une seule ligne extrême du bloc. **H3 (queues
+globales)** : les CSV rob-on ont des queues plus lourdes, indépendamment
+de la position des lignes extrêmes. **H4/H5 (bord seul)** : un seuil
+proche du bord suffit, même sans bloc extrême. **H0 (fluctuation
+d'ordre / comparaisons multiples)** : aucun bloc, aucune propriété de
+ligne ne déclenche le pic — c'est le max sur ~12 configs × ~30–90
+candidats de courbes bruitées.
+
+**Méthode.** Protocole gelé `PROTOCOL_pic_etroit_873.md` (SHA
+`28d2326c3ae83676d3e15f7283f0b37ae69a1791bcaa1f50c7b06ee368651a4c`,
+écrit avant tout nouveau script, toute nouvelle construction et tout
+nouveau run). Quatre volets, dans l'ordre : (A) calibration de la
+réplique du scan (fonctions DU PIPELINE importées en lecture seule) ;
+(B) statistiques de corpus sur les 82 runs existants (14 MTAP + 68
+immunitaires) ; (C) interventions sur les 11 courbes GAGNANTES rob-on
+(relues §8.63 : MTAP NUL42, NUL_S123, NUL_S11111 ; icgc_s1,
+geo62452_nul_s12, tcga_s2, tcga_nul_s11, tcga_nul_s12, icgc_nul_s32,
+icgc_nul_s35, icgc_nul_s37) — déplacement du bloc (swap), winsorisation
+du bloc (échelle 2/4/8 fenêtres), winsorisation d'une seule ligne ;
+(D) interventions sur 6 contrôles (gagnante rob = 0,0000 : MTAP s7,
+s1011 ; ICGC s31, s33 ; GSE62452 s11 ; TCGA s13) — transplantation du
+propre bloc extrême au bord (B1), bloc médian au bord (B0),
+transplantation de valeurs donneuses (B2 : s11111 → s1011,
+s37 → s31, s33) ; (E) lot frais hors échantillon de 20 nuls ICGC
+(graines 41–60, jamais utilisées), avec prédictions écrites AVANT toute
+lecture des résultats frais (§8.73.6).
+
+**Mécanique lue dans le code v6.2 (pas devinée).** Scan
+(`_scan_critical_threshold_fast`, lignes 3125–3287) : lignes triées par
+l'axe de progression (monotone en l'indice de ligne) ; fenêtres
+glissantes de longueur w ; candidats = linspace(0, 100, ncand) ; à
+chaque candidat c, split(c) = nombre de fenêtres avec win_progress < c ;
+score(c) = moyenne sur les 12 flux du |d de Cohen| entre les contenus
+des fenêtres basses et hautes (chaque ligne apparaît dans jusqu'à w
+fenêtres, avec recouvrement ; win_order = identité, vérifié et asserté
+à chaque usage). Robustesse (lignes 3314–3389) :
+rob = exp(−((FWHM − 10)²)/(2·5²)), FWHM = largeur à mi-hauteur contiguë
+autour du pic. Deux candidats voisins ne diffèrent que par le passage
+d'environ n_windows/ncand fenêtres d'un groupe à l'autre : un pic
+étroit exige que les fenêtres qui franchissent la coupure aient des
+contenus collectivement très différents du reste — d'où la recherche
+du déclencheur comme un BLOC DE LIGNES (w+1 lignes : les deux fenêtres
+frontières au seuil du pic).
+
+**Définitions gelées.** Extrémité de ligne e_i = moyenne sur les 12
+flux de |z_ij|, z robuste (médiane/MAD, facteur 1,4826). Extrémité de
+fenêtre E_k = moyenne de e_i sur les lignes k..k+w−1. G(c) = moyenne de
+e_i sur les lignes distinctes du petit côté à c (non signée, sans
+cohérence de signe) ; H(c) = moyenne sur les flux de |moyenne de z sur
+le petit côté| (écart cohérent — voisin du numérateur du |d| du scan ;
+sa valeur prédictive mesure si le déclencheur est localisable à un
+petit groupe, pas une preuve indépendante du scan). Candidats de bord :
+min(split, n_windows − split) ≤ 20 % des fenêtres.
+
+**Règles de décision écrites avant (protocole §5).** DÉCLENCHEUR
+IDENTIFIÉ (H1) si calibration OK ET A-swap ≥ 9/11 ET A1 ≥ 9/11
+(échelon 2 ou 4 fenêtres) ET B2 ≥ 2/3 ET B0 = 0/2. PARTIELLEMENT
+IDENTIFIÉ si A-swap et A1 tiennent mais B2 ou B0 échoue.
+NON ÉLUCIDÉ si A-swap < 9/11 ou A1 < 9/11 à tous les échelons.
+P1/P2 hors échantillon : qualification seulement (succès P1 si ≥ 70 %
+des pics frais à ±2 pas du candidat prédit par G, avec ≥ 5 courbes
+rob-on fraîches ; succès P2 si AUC de H_max ≥ 0,80).
+
+## 8.73.2 Calibration — la réplique est exacte, 22/22 à 0,00e+00
+
+La réplique du scan (fonctions du pipeline importées, même pattern que
+§8.63) reproduit à **0,00e+00** (métriques et courbes) les 5 entrées
+§8.63 × 12 configs (MTAP réel, s11111, s123, ICGC réel, ICGC nul s29)
+ET les 11 courbes rob-on + 6 contrôles à leur config gagnante — 22/22,
+aucune exclusion. Toutes les interventions ci-dessous sont donc lues
+sur des courbes exactes, pas approchées.
+
+## 8.73.3 Corpus — aucune statistique globale ne sépare rob-on de rob-off (H3 écartée)
+
+Sur les 82 gagnantes (11 rob-on, 67 rob-off avec rob < 0,05) :
+
+| Statistique (gagnante) | Médiane rob-on | Médiane rob-off | AUC | p (Mann-Whitney) |
+|---|---|---|---|---|
+| H_max (écart cohérent du petit côté) | 0,2287 | 0,2785 | 0,309 | 0,044 |
+| E_max (fenêtre la plus extrême) | 1,0018 | 1,0191 | 0,400 | 0,29 |
+| max e_i (ligne la plus extrême) | 2,1878 | 2,1878 | 0,468 | 0,73 |
+| Kurtosis moyenne des flux | 0,0457 | 0,0457 | 0,387 | 0,24 |
+
+Aucune ne sépare — et H_max est même INVERSÉE (plus faible chez les
+rob-on, p = 0,044) : les courbes à pic étroit ont un écart cohérent du
+petit côté plus petit que les courbes sans pic. **H3 est écartée** : ce
+n'est pas une histoire de queues lourdes. La position du pic n'est pas
+non plus prédite par l'extrémité des lignes : le candidat argmax G(c)
+tombe à ±2 pas du vrai pic dans 5/11 cas seulement — le niveau du
+hasard (~45 % sur ~11 candidats de bord). Les fenêtres frontières
+elles-mêmes sont banales : leur rang d'extrémité parmi toutes les
+fenêtres est de 63/70 (s11111), 86/88 (s123), 112/130 (NUL42, parmi
+les MOINS extrêmes), 37/36 (icgc_s1) — seules geo s12 (11/14), s35
+(17/20) et s37 (16/12) ont des frontières plutôt extrêmes. Le bloc
+n'est pas extrême là où le pic se produit : H1 est déjà fragilisée
+avant toute intervention.
+
+## 8.73.4 Interventions sur les 11 courbes rob-on — le bloc ne porte pas le pic
+
+### A-swap (déplacer le bloc au milieu) : 1/11 — le niveau survit, l'étroitesse meurt
+
+| Run | Score au vieux seuil après swap | 0,5 × maxsep ancien | rob après swap | FWHM avant → après |
+|---|---|---|---|---|
+| NUL42 | 0,0857 | 0,0717 | 0,0000 | 11,11 → 68,89 |
+| NUL_S123 | 0,1171 | 0,1046 | 0,0000 | 14,81 → 77,78 |
+| NUL_S11111 | 0,2194 | 0,0941 | 0,2343 | 11,11 → 18,52 |
+| icgc_s1 | 0,1630 | 0,0898 | 0,0869 | 10,53 → 21,05 |
+| geo62452_nul_s12 | 0,1926 | 0,1036 | 0,0000 | 14,29 → 52,38 |
+| tcga_s2 | 0,1050 | 0,0707 | 0,9756 | 11,11 → 11,11 |
+| tcga_nul_s11 | 0,0816 | 0,0995 | 0,0000 | 9,78 → 78,26 |
+| tcga_nul_s12 | 0,2904 | 0,1149 | 0,0010 | 14,29 → 28,57 |
+| icgc_nul_s32 | 0,1082 | 0,0905 | 0,0000 | 15,38 → 46,15 |
+| icgc_nul_s35 | 0,1752 | 0,1242 | 0,0000 | 14,71 → 57,14 |
+| icgc_nul_s37 | 0,1888 | 0,2077 | 0,0000 | 14,29 → 33,33 |
+
+Succès au critère gelé (score au vieux seuil < 0,5 × maxsep ET aucun
+voisin à ±2 pas au-dessus) : **1/11** (seule tcga_nul_s11). Dans 10/11
+cas le niveau au vieux seuil survit au déplacement du bloc — il monte
+même dans 3 cas (s11111 : 0,1882 → 0,2194 ; tcga_nul_s12 :
+0,2298 → 0,2904 ; le maxsep après swap monte aussi pour s35 et s37
+en partie). Mais la ROBUSTESSE, elle, s'effondre : rob < 0,1 dans
+10/11 cas (toutes sauf tcga_s2, où rob reste 0,9756 et FWHM 11,11 —
+le pic survit intégralement au swap, seul contre-exemple). Lecture :
+le déplacement du bloc détruit l'ÉTROITESSE, pas le niveau. Le bloc
+ne porte donc pas le pic comme un objet (son niveau survit à son
+départ) ; sa position participe à la forme étroite — avec une réserve
+de lecture (§8.73.7) : le swap confond le départ de B et l'arrivée du
+bloc médian M à sa place, on ne peut pas départager les deux moitiés
+de l'intervention. Après le swap, le nouveau pic reste à l'ancienne
+position dans 6/11 cas, suit le bloc B dans 1/11 cas seulement
+(NUL42), et va ailleurs dans 4/11 cas : le pic ne suit pas le bloc.
+
+### A1 (winsoriser le bloc) : le critère gelé compte 10/11 — mais c'est un artefact
+
+| Échelon | Succès (rob < 0,1) |
+|---|---|
+| (a) 2 fenêtres frontières | 8/11 |
+| (b) 4 fenêtres | 10/11 |
+| (c) 8 fenêtres | 11/11 |
+
+Ce comptage est trompeur, et il est rapporté comme tel : à l'échelon
+(a), le maxsep MONTE dans 8/11 cas (NUL42 : 0,1434 → 0,2916 ; s123 :
+0,2092 → 0,2750 ; s11111 : 0,1882 → 0,2644 ; geo s12 :
+0,2072 → 0,3583 ; s35 : 0,2484 → 0,2771 ; s37 : 0,4154 → 0,2770 est
+une des 3 baisses, avec tcga_s11 0,1989 → 0,1483 et s32
+0,1810 → 0,1774) et le score au vieux seuil devient le maximum (ou
+presque) de la nouvelle courbe : la courbe ne s'effondre pas, elle
+MONTE partout et s'aplatit. Mécanisme : winsoriser des lignes à la
+médiane les rend constantes, ce qui déflate l'écart-type poolé du |d|
+de Cohen et gonfle les scores sur tous les candidats — la courbe
+plate à haut niveau a une FWHM énorme, donc rob → 0. Le critère
+« rob < 0,1 » mesure l'aplatissement, pas la mort du pic. Preuve par
+le contrôle (diagnostic post-hoc D1, §8.73.7) : winsoriser le bloc
+médian M, qui n'a rien à voir avec le pic, tue rob dans 6/11 cas de
+la même façon. **A1 ne prouve donc pas que le bloc porte le pic** —
+il prouve que la winsorisation déflate la variance. Le comptage gelé
+(10/11 à l'échelon b) est consigné tel quel, mais il ne pèse pas
+dans l'interprétation du verdict.
+
+### A2 (winsoriser une seule ligne) : 4/11 — parfois une ligne, jamais en général
+
+Winsoriser la seule ligne la plus extrême du bloc (argmax e_i) tue
+rob dans 4/11 cas : NUL42 (ligne 126, e = 1,85, rob 0,9756 → 0,0000),
+NUL_S11111 (ligne 31, e = 2,05, 0,9756 → 0,0000), icgc_nul_s32
+(ligne 42, e = 1,86, 0,5600 → 0,0000), icgc_nul_s35 (ligne 10,
+e = 1,85, 0,6926 → 0,0221). Dans les 7 autres cas rob reste > 0,1
+(0,1945 à 0,9991 ; s123, geo s12 et tcga_s2 inchangés à la 4e
+décimale). **H2 est partielle** : dans 4 cas le pic tient à une
+seule ligne, dans 7 cas non — ce n'est pas le déclencheur général.
+Et le contrôle post-hoc D5 relativise même ces 4 cas : winsoriser
+une ligne prise AU HASARD tue le pic dans 5/33 cas (15 %), contre
+4/11 (36 %) pour la ligne la plus extrême — la ligne extrême compte
+plus qu'une ligne quelconque, mais la sensibilité à une seule ligne
+est en partie une fragilité générique de ces courbes (NUL42 et s35 :
+2/3 lignes aléatoires tuent aussi le pic ; s11111 et s32 : 0/3 et
+1/3 — là, c'est bien la ligne extrême qui compte).
+
+## 8.73.5 Interventions sur les contrôles — l'extrême au bord ne crée rien, l'ordinaire crée un pic
+
+| Contrôle | B1 (propre bloc extrême au bord) | B2 (valeurs donneuses au bord) | B0 (bloc médian au bord) |
+|---|---|---|---|
+| MTAP s7 | rob 0,0000, maxsep 0,2685 | — | — |
+| MTAP s1011 | rob 0,0000, maxsep 0,2178 | rob ~0, maxsep 0,2283 (donneur s11111) | — |
+| ICGC s31 | rob 0,0000, maxsep 0,2557 | rob ~0, maxsep 0,2483 (donneur s37) | — |
+| ICGC s33 | rob 0,0000, maxsep 0,2480 | rob 0,0257, maxsep 0,2235 (donneur s37) | — |
+| GSE62452 s11 | rob 0,0000, maxsep 0,3704 | — | rob ~0, pas de pic |
+| TCGA s13 | rob 0,0000, maxsep 0,4670 | — | **rob 0,9263, maxsep 0,3012, seuil 10,87 % : pic créé** |
+
+**B1 : 0/6.** Déplacer le propre bloc le plus extrême d'un contrôle
+au bord ne crée AUCUN pic étroit : rob = 0,0000 partout, avec des
+maxsep de 0,22 à 0,47 — la courbe devient un plateau large. Un bloc
+extrême au bord élève les scores sur une large plage de candidats
+(il reste dans le petit groupe tant que la coupure ne l'a pas
+dépassé), il ne crée pas un pic étroit. **B2 : 0/3.** Transplanter
+les valeurs exactes d'un bloc donneur rob-on (s11111, s37) au bord
+d'un contrôle ne crée rien non plus (rob ~0 à 0,026) : les valeurs
+ne suffisent pas. **B0 : 1/2.** Déplacer un bloc d'extrémité MÉDIANE
+au bord crée un pic étroit chez TCGA s13 (rob 0,9263, FWHM ≈ 10,9 %,
+seuil 10,87 %, au bord comme prédit) et rien chez GSE62452 s11.
+L'extrémité n'est donc ni nécessaire (un bloc médian crée un pic) ni
+suffisante (un bloc extrême n'en crée pas). Le pic apparaît ou non
+selon le réarrangement exact — c'est la signature d'une fluctuation
+d'arrangement (H0), pas d'un déclencheur identifiable.
+
+## 8.73.6 Confirmation hors échantillon (lot frais s41–s60) — aucun pic étroit, la prédiction H_max échoue
+
+Lot v6.2 fast terminé le 20 nov. 2026 à 21:44:34Z (unité systemd
+`v62-873`, 20 runs, graines 41–60 ; **20/20 exit 0, 0 échec** — dont
+une reprise après redémarrage machine vers 21:21Z : le run s52,
+interrompu sans `master_results.json`, a été relancé tel quel après
+suppression de son dossier partiel, sans changer de graine ;
+SHA v6.2 vérifié avant le lot, avant la relance et après le lot :
+`f07567c4…ec3abf`). Prédictions écrites AVANT toute lecture des
+résultats frais : `pic_etroit_873_predictions.json`
+(SHA `10c599f7c6d460bda9b294a553808abc9d81bd0776cc9633540c80b57779f2cd`,
+20:46:17Z, 0 résultat frais existant alors). Réplique des 240 courbes
+fraîches : écart **0,00e+00** (métriques et courbes).
+
+**Résultat : 0 courbe rob-on sur 240, 0 gagnante rob-on sur 20.**
+La gagnante est (35, 16, 6) dans 17/20 cas et (22, 16, 7) dans 3/20
+(s42, s47, s51) ; MC gagnant 0,319–0,409 (médiane 0,340) ; rob
+gagnante 0,0000 partout sauf s50 (0,3105) et s51 (0,0010). Le max de
+rob sur les 12 configs d'un run est ≤ 0,0327 pour 19/20 runs (seul
+s50 atteint 0,3105) ; 3/240 courbes dépassent rob > 0,1, 1/240
+dépasse 0,3, aucune ne dépasse 0,5. Dans le corpus existant, 25/996
+courbes (2,51 %) et 11/83 gagnantes (13,25 %) sont rob-on — mais
+concentrées dans 11 runs seulement (5, 4, 2, 2, 2, 2, 2, 2, 2, 1, 1
+courbes par run ; 72 runs à zéro). L'absence observée ici n'est donc
+PAS significative au niveau run, le seul niveau honnête vu la
+corrélation des 12 courbes d'un run : P(0/20 gagnantes | p = 0,1325)
+= 0,058 ; le p naïf par courbe (0,002) surestime la significativité
+et il est rapporté comme tel, avec sa réserve.
+
+**P1 (position) : non testable.** Aucune courbe rob-on fraîche :
+0/0 — descriptive seulement, comme prévu au protocole §5 quand il y
+a moins de 5 courbes rob-on fraîches. **P2 (magnitude) : échec.**
+Sur les 140 courbes à T_H défini (100 exclues, T_H indéfini pour 4
+configs sur 12), H_max prédit 23 courbes rob-on — **0 réelle** :
+TP = 0, FP = 23, FN = 0, TN = 117 ; AUC indéfinie (aucun positif).
+H_max sur-prédit (16 % de faux positifs) et ne prédit rien de vrai :
+la prédiction par l'écart cohérent du petit côté ne se généralise
+pas hors échantillon. La généralisation du déclencheur n'est donc
+pas confirmée — et, avec 0 courbe rob-on fraîche, il n'y avait rien
+à généraliser dans ce lot. Ce lot ne change pas le verdict
+(NON ÉLUCIDÉ) : il le renforce en montrant que le pic étroit est
+rare et imprévisible par H_max, et que le taux de gagnantes rob-on
+(13 % dans le corpus) ne se reproduit pas sur 20 tirages frais
+(0/20, p = 0,058).
+
+## 8.73.7 Diagnostics post-hoc (hors protocole gelé — interprétation seulement)
+
+Ajoutés après lecture des premiers résultats d'intervention, ils
+n'entrent pas dans les règles de décision du §5.
+
+- **D1 — winsoriser le bloc médian M tue rob dans 6/11 cas.** Même
+  ordre de grandeur qu'A1 à l'échelon (a) (8/11) : la winsorisation
+  tue la robustesse quel que soit le bloc, par déflation de variance
+  (§8.73.4, A1). Le maxsep après winsorisation de M monte lui aussi
+  (ex. NUL42 : 0,1434 → 0,1533 ; s123 : 0,2092 → 0,2283).
+- **D2 — la courbe de scan n'est pas l'excursion de la moyenne
+  cumulative.** Spearman entre le score par candidat et l'écart de
+  la moyenne du groupe bas : de −0,49 (tcga_s2) à +0,69
+  (tcga_nul_s12), médiane ~0,26, sans signe systématique. Le pic
+  n'est pas porté par la moyenne cumulative des premières lignes.
+- **D3 — après le swap, le pic ne suit pas le bloc.** Nouveau pic à
+  l'ancienne position dans 6/11 cas, à la position du bloc déplacé
+  dans 1/11 cas (NUL42), ailleurs dans 4/11 cas.
+- **D5 — sensibilité à une ligne quelconque : 5/33 (15 %).** Contre
+  4/11 (36 %) pour la ligne la plus extrême (A2). La ligne extrême
+  compte plus qu'une ligne au hasard, mais la sensibilité à une
+  seule ligne est en partie générique.
+- **D6 — le pic survit à la poussière numérique.** Arrondi à 6
+  décimales : 0/11 bascule de rob ; bruit gaussien 10⁻³ de
+  l'écart-type du flux : 0/11 ; bruit 10⁻² : 2/11 (NUL42, s37).
+  Le pic est une caractéristique réelle de la matrice, pas un
+  artefact de calcul en virgule flottante — sa fragilité est au
+  réarrangement des lignes, pas au bruit numérique.
+
+## 8.73.8 Ce que ça change, et ce que ça ne change pas
+
+**Change.** (1) Le résidu ouvert de §8.63 est fermé comme question
+de déclencheur identifiable : il n'y a PAS de bloc déclencheur — ni
+bloc extrême (A-swap 1/11, B1 0/6, B2 0/3), ni ligne unique en
+général (A2 4/11), ni queues globales (AUC ≤ 0,47), ni bord seul
+(B0 1/2, dans les deux sens). Ce qui déclenche le pic étroit, c'est
+l'arrangement exact des lignes : une fluctuation de la courbe de
+scan dont l'étroitesse meurt au réarrangement (rob < 0,1 dans
+10/11 swaps) et qui peut naître d'un réarrangement ordinaire
+(B0 1/2). (2) La robustesse du MC est un interrupteur fragile à
+l'arrangement : une seule ligne peut la faire basculer (4/11 pour
+la ligne extrême, 5/33 pour une ligne au hasard), et la winsorisation
+la tue par déflation de variance — toute lecture « rob-on = signal »
+doit en tenir compte, et le critère « rob < 0,1 » ne prouve pas à
+lui seul qu'un pic est mort (§8.73.4, A1). (3) Le niveau du pic et
+son étroitesse sont deux choses différentes : le niveau survit au
+réarrangement (10/11), l'étroitesse non (10/11) — les lectures
+futures doivent les séparer. (4) Le lot frais ne reproduit pas le
+taux de pics étroits du corpus (0/20 gagnantes rob-on, 0/240
+courbes ; §8.73.6) et la prédiction H_max y échoue (23 faux positifs,
+0 vrai positif) : le pic étroit est rare et imprévisible par les
+statistiques locales testées.
+**Ne change pas.** Aucun verdict de séparation n'est touché : S_sep
+sépare toujours sur la série MTAP (§8.50), le réel ICGC reste sous
+le plancher n≈70 (§8.53), le rationnel vopimetostat + daraxonrasib
+n'est ni renforcé ni affaibli. La marche de niveau multi-flux (§8.46)
+vit dans les CSV, pas dans ces mécanismes. Le Delta reste une
+propriété de w (§8.63). Le taux de courbes rob-on sur les nuls
+frais (§8.73.6) ne change rien à ces verdicts.
+
+## 8.73.9 Méthode
+
+Protocole gelé avant tout nouveau script et tout nouveau run :
+`PROTOCOL_pic_etroit_873.md`, SHA
+`28d2326c3ae83676d3e15f7283f0b37ae69a1791bcaa1f50c7b06ee368651a4c`.
+**(A)** `pic_etroit_873.py` (SHA `33821df3d894a0e2a7eb4b882a546fe2f4f66fa21366c239b155aa26de24bba7`) :
+calibration 22/22 EXACTE (écart 0,00e+00 sur métriques et courbes).
+**(B)** Corpus : 82 gagnantes relues (extract §8.63), H(c)/G(c)/E_max/
+kurtosis calculés depuis les CSV. **(C)** Interventions A/A1/A2 sur
+les 11 courbes rob-on (réplique exacte, CSV modifiés
+`pic873_interv_<run>_<variante>.csv`, SHA consignés dans l'extract).
+**(D)** Interventions B1/B0/B2 sur les 6 contrôles. **(E)** Lot v6.2 :
+`build_nulls_icgc_873.py` (SHA `3e0e222eedb9600c53a94daa97ae570614b9d6c3749852722cb098bf51cd2d2e`),
+`run_v62_873.sh` (SHA `3d9093efae9678fa2c66953d71c807904cc8d7382d9b3b6c9cc6ee1a84065768`),
+`watch_v62_873.sh` (SHA `5c38496482785eee4a28d826b6a6ff4d7ec5fa27cc268609ba712bdc0e5b6404`),
+manifeste `manifest_v62_873.txt`, unité systemd `v62-873` (lancée
+20:43:56Z, 11/20 à 21:20:25Z ; redémarrage machine vers 21:21Z,
+reprise 21:22:44Z après suppression du dossier partiel s52 ;
+terminée 21:44:34Z, 20/20 exit 0, 0 échec). **Prédictions** :
+`predict_pic_etroit_873.py` (SHA `473e4dddfa7559f1406b3a773c92f879b766b15b2e480dc0b344c5128cc63627`),
+`pic_etroit_873_predictions.json` (SHA `10c599f7c6d460bda9b294a553808abc9d81bd0776cc9633540c80b57779f2cd`,
+écrit 20:46:17Z, avant toute lecture des frais). Diagnostics post-hoc
+D1/D2/D3/D5/D6 : mêmes scripts, volets `diag`/`diag2`, hors protocole
+gelé, étiquetés comme tels.
+
+## 8.73.10 Limites
+
+- Mode fast seulement : 12 configs par run. Les nombres (taux,
+  échelons) sont propres au mode fast.
+- Le critère gelé A-swap porte sur le NIVEAU au vieux seuil, pas sur
+  l'étroitesse : il échoue (1/11) alors que l'étroitesse, elle, meurt
+  dans 10/11 swaps — la distinction niveau/étroitesse n'était pas
+  dans le protocole, elle est consignée ici comme lecture
+  descriptive, pas comme un succès d'A-swap.
+- Le critère gelé A1 (rob < 0,1) est confondu par la déflation de
+  variance de la winsorisation (§8.73.4) : son comptage (10/11 à
+  l'échelon b) est rapporté mais ne prouve pas que le bloc porte le
+  pic ; le contrôle D1 (6/11 en winsorisant un autre bloc) le montre.
+- Le swap confond le départ de B et l'arrivée de M à sa place : on
+  ne peut pas départager les deux moitiés de l'intervention. Un
+  contrôle par rotation/décalage pur des lignes (sans bloc
+  désigné) départagerait — piste, non faite ici.
+- H(c) est voisin du numérateur du |d| du scan : P2 mesure la
+  localisabilité du déclencheur, pas une indépendance vis-à-vis du
+  scan (protocole §7).
+- 20 nuls frais donnent ~2–3 gagnantes rob-on attendues et ~9
+  courbes rob-on attendues : P1/P2 peuvent manquer de puissance et
+  rester descriptives (protocole §5, §7).
+- Le lot §8.72 tourne en parallèle : les deux lots se partagent le
+  CPU et durent plus longtemps ; chaque lot est reprenable et
+  indépendant.
+- Aucune donnée nouvelle hors des CSV déjà sur disque et des 20
+  nuls frais ; aucun test direct ; aucun verdict biologique.
+
+## 8.73.11 Provenance
+
+- **Protocole gelé.** `PROTOCOL_pic_etroit_873.md` (SHA-256
+  `28d2326c3ae83676d3e15f7283f0b37ae69a1791bcaa1f50c7b06ee368651a4c`),
+  écrit avant tout nouveau script, toute nouvelle construction et
+  tout nouveau run de ce chantier.
+- **Codes (jamais modifiés).** Pipeline v6.2
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`,
+  SHA-256
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+  (vérifié avant le lot, avant la relance après redémarrage et après
+  le lot : `f07567c4…ec3abf` à chaque fois). Scripts neufs :
+  `pic_etroit_873.py` (SHA-256
+  `33821df3d894a0e2a7eb4b882a546fe2f4f66fa21366c239b155aa26de24bba7`),
+  `predict_pic_etroit_873.py` (SHA-256
+  `473e4dddfa7559f1406b3a773c92f879b766b15b2e480dc0b344c5128cc63627`),
+  `build_nulls_icgc_873.py` (SHA-256
+  `3e0e222eedb9600c53a94daa97ae570614b9d6c3749852722cb098bf51cd2d2e`),
+  `run_v62_873.sh` (SHA-256
+  `3d9093efae9678fa2c66953d71c807904cc8d7382d9b3b6c9cc6ee1a84065768`),
+  `watch_v62_873.sh` (SHA-256
+  `5c38496482785eee4a28d826b6a6ff4d7ec5fa27cc268609ba712bdc0e5b6404`).
+- **Entrées (SHA-256 vérifiés).** Série MTAP :
+  `pdac_tcga_fluxes_v4_mtap.csv` et ses 13 nuls (§8.63.11, relus) ;
+  flux immunitaires `pdac_immune_{tcga,geo62452,icgc}_fluxes.csv`
+  (SHA dans PROVENANCE_immune_v6.md, re-vérifiés §8.53.6a ; ICGC
+  réel `10823879c0632d8c3ec7a07b0e73047a81ece2052aff9c2e5cd96bbf4d388adc`,
+  re-vérifié avant construction des nuls s41–s60). Nuls ICGC frais
+  s41–s60 : SHA dans `nulls_icgc_873_files.json` (s41
+  `ac80ea4c3daf…`, s42 `3393ecd662e6…`, s43 `7bc0b6c79f22…`, s44
+  `664300c0a761…`, s45 `6f7de0889c02…`, s46 `8827790ab7b6…`, s47
+  `be67bf2ee612…`, s48 `d392f52668b5…`, s49 `0d7c337e1604…`, s50
+  `b90fc3f97dc0…`, s51 `58cda104a89d…`, s52 `e8cc77c6ade9…`, s53
+  `524b91f1996a…`, s54 `fbe7e6c34c76…`, s55 `61f6d571f41b…`, s56
+  `22c48d622d52…`, s57 `ab4f10f6a591…`, s58 `9158bef95ccf…`, s59
+  `07817ecf1408…`, s60 `1a2e17d00d57…`). Extract §8.63 relu :
+  `mechanisms_863_extract.json` (SHA
+  `2224df358546285afa1332d6ea09f28afd12742b2ce3a9e716adbea0d557c62e`).
+- **Sorties.** `pic_etroit_873_extract.json` (SHA-256
+  `4d0a52cba0ddb331760964c7ca91195b62e8e3022ae32f9eb638e733ec2ea767`),
+  `pic_etroit_873_results.csv`
+  (SHA `3a07fc97e36140b0…`), `pic_etroit_873_interv.csv` (SHA
+  `4e7da4eb4a7ccdc0…`), `pic_etroit_873_predictions.json` (SHA
+  `10c599f7c6d460bda9b294a553808abc9d81bd0776cc9633540c80b57779f2cd`),
+  `nulls_icgc_873_files.json`, `manifest_v62_873.txt`,
+  `runs_v62_873.log` (SHA `f7c41c1ec7f22adc90279a981f53117d4942dba8fa6fc6f44e834b7e9e1b3018`,
+  20/20 exit 0), dossiers
+  `results_fast_v62_873_icgc_nul_s41/` … `s60/`.
+- **Faits de départ.** `section_8.63_mechanisms.md` (protocole
+  `PROTOCOL_mechanisms_863.md` SHA `4e05dfc2…f35e`) — relus, jamais
+  réimportés comme verdicts.
+- **Nature des lignes.** Résidus d'expression TCGA (mesures
+  instrumentales — séquençage ARN — transformées) ordonnés par CN
+  MTAP ; flux immunitaires (ARN bulk) ; nuls = lignes permutées
+  (échantillons hypothétiques, pas des mesures) ; CSV modifiés des
+  interventions = constructions explicites (valeurs médianes ou
+  blocs déplacés/copiés), étiquetés comme tels, jamais des mesures ;
+  aucune autre donnée nouvelle dans ce chantier.
+- **Ce qui manque, ce qui reste ouvert.** Le mécanisme fin de
+  l'étroitesse (ce qui, dans l'arrangement exact, fait la largeur
+  de 11–15 % plutôt que 40–70 %) ; le départage départ de B /
+  arrivée de M dans le swap (contrôle par rotation pure) ;
+  P1 non testable sur ce lot (0 courbe rob-on fraîche) et P2 en
+  échec (23 faux positifs, 0 vrai positif) — un second lot frais
+  avec des courbes rob-on serait nécessaire pour tester la
+  position ; les modes autres que fast (12 configs) ; PDF non
+  régénéré, rien poussé sur GitHub (hors de ce chantier).
+
+— Fin de la §8.73. —
 
 ---
 
@@ -14479,5 +15920,9 @@ présente section fusionnée.
 - **20 nov. 2026, 14h26 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `3a162a83`, §8.67–§8.69.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `7161c8b2` → nouvelle tête `3a162a83` (4 commits, vérifiés en lecture directe : `7216b678`, `088df16e`, `88a38cf6`, `3a162a83`). Contenu : livre blanc §8.1–§8.69 (13 896 lignes, SHA `10203890…`), PDF 988 pages. Release `v6.2-8.69` : PDF 988 p., créée par le parent, marquée Latest. Cette entrée clôt la mention « Poussée GitHub à venir » de l'entrée de fusion §8.67–§8.69 ci-dessus.
 
 - **20 nov. 2026 (heure de Montréal) : FUSION §8.70, PDF RÉGÉNÉRÉ.** Go de Zackary « Allez s'y » (20 nov. 2026 14h29, règle permanente « Toujours github et pdf !!! »). Section rédigée dans `section_8.70_gse79668.md` (576 lignes, SHA `408ab10f…9e4eb`), fusionnée par le coordinateur : titre normalisé « ### 8.70 », ligne 76 au §7, entrée de journal pour la poussée `3a162a83` ; aucune correction de titre nécessaire (zéro titre doublé, zéro marqueur en double) ; ligne de go et marqueur de fin ajoutés au §8.70 ; zéro résidu. Livre blanc fusionné : 14 481 lignes, SHA-256 `c7c762c6…ae1a5` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-870`, FIN 20 nov. 2026 19h56 UTC, soit 14h56 heure de Montréal) : **1007 pages A4, 12 937 137 octets, SHA-256 `e780e860…755e42`** (ancien 988 pages, SHA `7cf042a5…`) ; couverture §8.1–§8.70 ; §8.70 et entrée 3a162a83 vérifiés présents par lecture du PDF, chiffres clés présents (+0,0567 ; 6/10 ; C3 non levée ; PARTIEL). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Correction de chaîne : le PDF 988 p. du lot précédent avait été construit depuis la copie staging périmée (couverture « 16 novembre 2026, §8.1–§8.29, dépôts privés ») — le présent PDF utilise la chaîne `.src/` à jour, couverture §8.1–§8.70. Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
+
+- **20 nov. 2026, 15h30 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `fc8b152c`, §8.70, RELEASE v6.2-8.70.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `3a162a83` → nouvelle tête `fc8b152c` (4 commits, vérifiés en lecture directe : `34c0bd23`, `a22d277c`, `9368f5df`, `fc8b152c`). Contenu : livre blanc §8.1–§8.70 (14 483 lignes, SHA `072c0f51…`), PDF 1007 pages (12 937 137 octets, SHA `e780e860…`). Release `v6.2-8.70` : PDF 1007 p., créée par le parent, marquée Latest. Cette entrée clôt la mention « Poussée GitHub à venir » de l'entrée de fusion §8.70 ci-dessus.
+
+- **20 nov. 2026 (heure de Montréal) : FUSION §8.71–§8.73 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1061 PAGES.** Go de Zackary « Fait les3 » (20 nov. 2026 15h35, 3 chantiers). Sections rédigées dans `section_8.71_gse60979.md` (544 lignes, SHA `fe55c4d8…999`), `section_8.72_nulls_gse79668.md` (370 lignes, SHA `80ef4cbb…7346`), `section_8.73_pic_etroit.md` (473 lignes, SHA `17c0de63…54d9`), fusionnées par le coordinateur : titres normalisés « ### 8.7X », lignes 77–79 au §7, entrée de journal pour la poussée `fc8b152c` ; addendum daté §8.72 porté dans le §8.70 du livre blanc (texte original intact, lecture corrigée) ; lignes de go et marqueurs de fin ajoutés aux §8.71/§8.72 (§8.73 les avait déjà) ; zéro résidu. **Réconciliation C3, dite plainement :** §8.72 ne lève pas C3 au sens gelé (paires graine 42, A2 6/10) — il consolide la dixième paire contre sa distribution de nuls ; §8.71 lève C3 par la onzième paire (7/11, LOO 6/10) — **C3 est donc LEVÉE**, la confirmation indépendante est close sur ce critère ; les deux sections ne sont pas contradictoires, elles parlent de deux sens différents de C3. Livre blanc fusionné : 15 927 lignes, SHA-256 `4d987a13…2f4d7` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-873`, FIN 20 nov. 2026 ~21:57 UTC, soit ~16h57 heure de Montréal) : **1061 pages A4, 13 184 128 octets, SHA-256 `d5f0ed07…40e1`** (ancien 1007 pages, SHA `e780e860…`) ; couverture §8.1–§8.73 (nouveau paragraphe §8.71–§8.73 ; le paragraphe §8.67–§8.70 reste tel qu'écrit à l'époque, comme les paragraphes antérieurs restés historiques) ; §8.71 à §8.73 et entrée fc8b152c vérifiés présents par lecture du PDF, chiffres clés présents (+0,2045 ; 7/11 ; C3 levée ; +0,1447 ; RENVERSE ; NON ÉLUCIDÉ). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
 
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*

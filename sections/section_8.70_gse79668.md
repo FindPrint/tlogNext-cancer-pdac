@@ -574,3 +574,38 @@ présente section fusionnée.
   GitHub, aucune Release dans ce chantier.
 - Section : `section_8.70_gse79668.md` (ce fichier ;
   SHA noté au rapport).
+
+---
+
+## ADDENDUM — 20 novembre 2026 (§8.72) : NOTE DATÉE DE CORRECTION — LECTURE RENVERSE
+
+*Cet addendum est ajouté le 20 nov. 2026 par le chantier §8.72. Le
+texte original ci-dessus est intact : rien n'y est modifié, rien
+n'y est effacé. Seule la LECTURE du verdict est corrigée, comme le
+protocole §8.72 §4.3 l'avait gelé.*
+
+**Correction.** La lecture « sous le plancher » du §8.70 est
+RENVERSE par la distribution des nuls mesurée au §8.72
+(`section_8.72_nulls_gse79668.md`, protocole
+`PROTOCOL_nulls_gse79668_872.md`, SHA `95acdd45…cf41`) :
+10 nuls frais (graines 8721–8730) courus en v6.2 fast, joints
+aux 3 nuls anciens, donnent une médiane des 13 nuls de 0,2657
+et un écart médian `d_médian = +0,1447` (réel 0,4104 contre nul
+médian 0,2657) — plus de deux fois le plancher 0,07. Le réel
+bat les 13 nuls sur 13 (rang 14/14) ; 12 écarts sur 13
+dépassent le plancher. Le nul graine 42 (0,3538), celui qui
+faisait le verdict §8.70, est le PLUS HAUT des 13 nuls
+mesurés : le verdict PARTIEL tenait au tirage le plus
+défavorable possible.
+
+**Ce qui ne change pas.** Le verdict de la paire graine 42
+reste PARTIEL (+0,0567, sous le plancher) — règle gelée §8.70
+§7. L'A2 étendu gelé reste 6/10 (8/10 positifs) : aucun
+recomptage. La condition C3, au sens gelé (7 paires passantes
+en paires graine 42), n'est pas levée par le §8.72 : la
+décision de la lever sur la base de la distribution appartient
+à Zackary et au coordinateur (§8.72.2). L'adoption pleine de
+`maxsep` (décision de Zackary, 20 nov. 13h04) n'est ni
+rouverte ni conditionnée.
+
+— Fin de l'addendum du 20 nov. 2026 (§8.72). —

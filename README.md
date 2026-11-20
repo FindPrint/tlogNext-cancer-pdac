@@ -6,11 +6,11 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## État au 20 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 1007 pages (PDF partagé séparément),
-  SHA-256 `e780e8604f6d947e15921f7ce329070b09a11e5999a8d6adb69c565877655e42`
-  (12937137 octets), sections §8.1–§8.70. Le fichier Markdown ici a pour SHA-256
-  `072c0f512beefc8f42da5d27ffc8663fc188e8b67cb22242429214c0fb3c8f79`
-  (14483 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 1061 pages (PDF partagé séparément),
+  SHA-256 `d5f0ed07b694caf40fa2cb6ca30232c1226cc32c6903fc984d02b29b0c4240e1`
+  (13184128 octets), sections §8.1–§8.73. Le fichier Markdown ici a pour SHA-256
+  `bf999cdd40a0a82dce6d6382d2a98122a53721486182de91f299a2414c096e28`
+  (15929 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -19,6 +19,26 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   `universal_v6.4.0_cohen.py` (recomposition du MC par la
   récurrence-concentration) est joint pour vérification : proposition
   REJETÉE (§8.52), v6.2 reste la version de travail.
+- Les 3 verdicts §8.71–§8.73 : (§8.71) confirmation indépendante maxsep (C3) —
+  CONFIRME : la paire GSE60979 (n = 49, Sandhu et coll. 2015, PMID 25579086,
+  GPL14550, Oslo) donne d_maxsep +0,2045 (réel 0,4418 contre nul 0,2373),
+  nettement au-dessus du plancher 0,07 ; A2 étendu 7/11 (9/11 positifs), LOO
+  6/10 — **C3 LEVÉE** (7 paires passantes au total, LOO pire cas 6/10) ;
+  extraction 2/2 à 0,0 exact ; aucun nul frais (règle gelée §7) ; la
+  confirmation indépendante est désormais close sur ce critère.
+  (§8.72) consolidation de §8.70 — **RENVERSE** : contre 13 nuls (10 frais,
+  graines 8721–8730, + 3 anciens), GSE79668 passe — d_médian +0,1447 (réel
+  0,4104 contre nul médian 0,2657), rang 14/14, 12/13 écarts au-dessus du
+  plancher ; le nul graine 42 (0,3538), qui faisait le verdict PARTIEL, est
+  le PLUS HAUT des 13 nuls ; extraction 14/14 à 0,0 exact ; C3 au sens gelé
+  (paires graine 42) n'est pas levée par ce chantier seul (A2 gelé 6/10) —
+  §8.71 la lève par la onzième paire ; addendum daté ajouté au §8.70, texte
+  original intact. (§8.73) déclencheur du pic étroit — **NON ÉLUCIDÉ** :
+  aucun déclencheur identifiable (bloc extrême 1/11, transplantation 0/3 et
+  0/6, ligne unique 4/11, queues globales AUC 0,31–0,47) ; l'étroitesse est
+  une propriété fragile de l'arrangement exact des lignes ; la winsorisation
+  qui semblait tuer le pic est un artefact de déflation de variance (le
+  maxsep monte) ; calibration 22/22 à 0,00e+00, lot frais 20/20 exit 0.
 - Le verdict §8.70 : confirmation indépendante maxsep (C3) —
   PARTIEL : la paire GSE79668 (n = 51, Kirby et coll. 2016, PMID 27282075,
   GPL11154) donne d_maxsep +0,0567 (réel 0,4104 contre nul 0,3538), positif
@@ -34,7 +54,7 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   le test de Spearman contre le pas porte l'information (Δρ médian
   +0,186, 9/12 positifs). L'adoption pleine de maxsep, décidée par
   Zackary le 20 nov. 2026 à 13h04, reste sa décision — la confirmation
-  reste ouverte.
+  reste ouverte. Addendum 20 nov. 2026 (§8.72) : lecture RENVERSE — contre 13 nuls, GSE79668 passe (d_médian +0,1447, rang 14/14) ; le verdict de la paire graine 42 reste PARTIEL (+0,0567), l'A2 gelé reste 6/10.
 - Les 3 verdicts §8.67–§8.69 : (§8.67) fraction leucocytaire —
   PARTIEL : elle retire un tiers de la cohésion (0,5035 → 0,3372,
   −33,0 %) et ordonne les flux bruts (+0,7129), mais une fois les flux
@@ -126,22 +146,22 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.70).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.73).
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
 - `README.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier,
   les sources des données, les SHA-256 de chaque fichier du dépôt.
-- `provenance/` — 76 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 80 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 93 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668).
-- `sections/` — sections §8.38–§8.70 du livre blanc, fichiers sources.
-- `scripts/` — 171 scripts de construction des flux, d'extraction et
+- `results/` — 107 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit).
+- `sections/` — sections §8.38–§8.73 du livre blanc, fichiers sources.
+- `scripts/` — 186 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 623 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.70.
+- `data_flux/` — 724 CSV/JSON : flux d'entrée des runs, tests directs,
+  extraits ssep / v62_delta / §8.46–§8.73.
 
 ## Données brutes
 
@@ -152,7 +172,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (1007 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (1061 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 
