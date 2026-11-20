@@ -1,0 +1,98 @@
+{
+ "runs": [
+  {
+   "run": "HP35_REAL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.7247548280001812,
+   "mc2_offline": 0.7247548280001812,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "HP35_NUL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.17187438259955706,
+   "mc2_offline": 0.17187438259955706,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "TCGAV4_REAL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.47020029351434245,
+   "mc2_offline": 0.47020029351434245,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "TCGAV4_NUL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.18207128085927354,
+   "mc2_offline": 0.18207128085927354,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "CEACAM5_REAL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.4584295431888209,
+   "mc2_offline": 0.4584295431888209,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "CEACAM5_NUL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.17394654751323307,
+   "mc2_offline": 0.17394654751323307,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "GSTM1_REAL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.14019539348720672,
+   "mc2_offline": 0.14019539348720672,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "GSTM1_NUL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.3015160574137359,
+   "mc2_offline": 0.3015160574137359,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "TESTA_REAL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.3722849020042429,
+   "mc2_offline": 0.3722849020042429,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  },
+  {
+   "run": "TESTA_NUL",
+   "version_v64": "v6.4.0-L7aL7b-CohenD-short",
+   "mc2_code": 0.22671715804788012,
+   "mc2_offline": 0.22671715804788012,
+   "abs_diff_mc2": 0.0,
+   "best_config_identique": true,
+   "diffs": []
+  }
+ ],
+ "problemes": [],
+ "gigue_mc2_mesuree": 0.0,
+ "n_runs_verifies": 10,
+ "n_identiques_best_config_cascade": 10
+}
