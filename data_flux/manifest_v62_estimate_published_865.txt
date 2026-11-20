@@ -1,0 +1,6 @@
+ESTPUB865_EPIMM|/home/hatch/workspace/runs/pdac-v6/estpub865_epimm.csv|results_fast_v62_estpub865_epimm
+ESTPUB865_EPIMM_NUL|/home/hatch/workspace/runs/pdac-v6/estpub865_epimm_nul.csv|results_fast_v62_estpub865_epimm_nul
+ESTPUB865_EPSTR|/home/hatch/workspace/runs/pdac-v6/estpub865_epstr.csv|results_fast_v62_estpub865_epstr
+ESTPUB865_EPSTR_NUL|/home/hatch/workspace/runs/pdac-v6/estpub865_epstr_nul.csv|results_fast_v62_estpub865_epstr_nul
+ESTPUB865_EPRES|/home/hatch/workspace/runs/pdac-v6/estpub865_epres.csv|results_fast_v62_estpub865_epres
+ESTPUB865_EPRES_NUL|/home/hatch/workspace/runs/pdac-v6/estpub865_epres_nul.csv|results_fast_v62_estpub865_epres_nul
