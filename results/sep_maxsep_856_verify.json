@@ -1,0 +1,9 @@
+{
+ "dossiers_lus": 120,
+ "dossiers_attendus": 120,
+ "dossiers_introuvables": [],
+ "ecarts_par_paire": [],
+ "ecart_max_global_multiset": 0.0,
+ "multisets_egaux": true,
+ "verdict_verification": "OK"
+}

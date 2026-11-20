@@ -1,0 +1,6 @@
+INFIL854_IIMM|/home/hatch/workspace/runs/pdac-v6/infil854_iimm.csv|results_fast_v62_infil854_iimm
+INFIL854_IIMM_NUL|/home/hatch/workspace/runs/pdac-v6/infil854_iimm_nul.csv|results_fast_v62_infil854_iimm_nul
+INFIL854_ISTR|/home/hatch/workspace/runs/pdac-v6/infil854_istr.csv|results_fast_v62_infil854_istr
+INFIL854_ISTR_NUL|/home/hatch/workspace/runs/pdac-v6/infil854_istr_nul.csv|results_fast_v62_infil854_istr_nul
+INFIL854_IRES|/home/hatch/workspace/runs/pdac-v6/infil854_ires.csv|results_fast_v62_infil854_ires
+INFIL854_IRES_NUL|/home/hatch/workspace/runs/pdac-v6/infil854_ires_nul.csv|results_fast_v62_infil854_ires_nul

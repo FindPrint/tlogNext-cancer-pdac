@@ -1,0 +1,10 @@
+# Manifeste §8.58-B — G4+G5, v6.2 fast (2e lot parallele, unite v62-858b).
+# Protocole gele : PROTOCOL_stomach_mucus_flux_858.md.
+858_G4_kras_reel|pdac_tcga_858_G4_kras.csv|results_fast_v62_858_G4_kras
+858_G4_kras_nul|pdac_tcga_858_G4_kras_nul.csv|results_fast_v62_858_G4_kras_nul
+858_G4_stage_reel|pdac_tcga_858_G4_stage.csv|results_fast_v62_858_G4_stage
+858_G4_stage_nul|pdac_tcga_858_G4_stage_nul.csv|results_fast_v62_858_G4_stage_nul
+858_G5_kras_reel|pdac_tcga_858_G5_kras.csv|results_fast_v62_858_G5_kras
+858_G5_kras_nul|pdac_tcga_858_G5_kras_nul.csv|results_fast_v62_858_G5_kras_nul
+858_G5_stage_reel|pdac_tcga_858_G5_stage.csv|results_fast_v62_858_G5_stage
+858_G5_stage_nul|pdac_tcga_858_G5_stage_nul.csv|results_fast_v62_858_G5_stage_nul

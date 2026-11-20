@@ -210,6 +210,11 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 57 | 19–20 nov. 2026 | **Pureté / infiltration (§8.51)** (go de Zackary « Faite tout cela », 19 nov. 2026 ~18h27, 2e des 4 chantiers ; question ouverte du §8.48.8 ; protocole gelé avant tout calcul `PROTOCOL_purity_infiltration_851.md`, SHA `568d93d2…0867ab5` ; 6 runs v6.2 fast, 6/6 exit 0 ; **NON, la corrélation immunitaire n'est pas un artefact de composition** — après régression de chaque gène immunitaire sur les deux scores de pureté (acineux + îlots), la corrélation moyenne intra-famille ne bouge presque pas : **0,5563 → 0,5480, chute de 1,5 %** (41/66 paires |r| > 0,5 inchangées) ; ordre par score acineux : écart S_sep +0,0118 (rien) ; ordre par score îlots : +0,2876 (sous le seuil gelé 0,30) ; test décisif : CD8A résidualisé +0,9174 contre +0,9838 brut (**93,3 % conservés**, prédit +0,9185 à 0,0011 près) ; petit effet îlots réel nommé (CD4 r +0,357, R² 13,2 %), 2,6× plus petit que la moyenne IMMROT ; pureté externe (ABSOLUTE/ESTIMATE) et déconvolution indépendante non testées). Détail au §8.51. |
 | 58 | 19–20 nov. 2026 | **Recomposition du MC par la récurrence-concentration — proposition v6.4 (§8.52)** (go de Zackary « Faite tout cela », 19 nov. 2026 ~18h27, 3e des 4 chantiers ; protocole gelé avant tout calcul `PROTOCOL_v6.4_mc.md`, SHA `074b1bce…359051f6` ; MC2 gelé `MC2 = 0,70·sep + 0,30·conc`, `conc = 1 − médiane_i(|θ_i − θ*|)/(θ_max − θ_min)` ; code v6.4 copie de v6.2, SHA `9ed728da…8199ea3d`, v6.2/v6.1/v6/v6.3 revérifiés inchangés ; validation hors-ligne 120 runs lus : rotations **28/48** contre 12/48 (ancien) et 31/48 (v6.3), principales **4/8** (5/8 positifs), HP35 **+0,5529** contre +0,1950 et +0,2271 ; validation en code 10/10 exit 0, MC2 en code = hors-ligne à 0,0 près, best_config + cascade + S_sep identiques à v6.2 ; **REJETÉE : A1 franchie (28/48 ≥ 24/48), A2 en échec (4/8 < 6/8, 5/8 < 7/8 positifs), A3 franchie (+0,5529 ≥ 0,30), A4 franchie** — la concentration ne suffit pas sur les paires principales ; variante E (suppression de stability seule) : 4/8 aussi ; **v6.2 reste la version de travail**, ancien MC affiché avec ses défauts documentés). Détail au §8.52. |
 | 59 | 19–20 nov. 2026 | **Distribution des nuls à n≈70 — plancher honnête et nombre de nuls requis (§8.53)** (go de Zackary « Faite tout cela », 19 nov. 2026 ~18h27, 4e des 4 chantiers ; suite du §8.47 ; protocole gelé avant tout calcul `PROTOCOL_nulls_n70_853.md`, SHA `38689f8a…590da2d` ; réplique calibrée 8/8 EXACTS, 1000 tirages × 6 lignes (6000 valeurs), graine maîtresse `default_rng(20261119)` ; lot pipeline v6.2 fast 45/45 exit 0 (20 nuls ICGC + 20 GSE62452 + 5 TCGA frais ; distributions complètes avec nuls anciens : 24 / 23 / 8) ; **planchers honnêtes (p95 réplique, config nulle) : 0,38 en ICGC et 0,36 en GSE62452** (médianes 0,239 / 0,236, p95 0,383 / 0,363) contre TCGA n=178 (médiane 0,166, p95 0,292) — effet de n, pas de cohorte ; réel ICGC 0,2289 au 43,5e percentile (sous le plancher, indistinguable d'un nul), réel GSE62452 0,4656 au 99,2e percentile ; plancher pipeline « tel qu'il tourne » 0,44 ICGC / 0,33 GSE62452 ; **≈200 nuls requis** pour qu'un écart S_sep devienne une mesure (médiane stable dès ~50–100, p95 stable à ~100–200) ; un écart réel−médiane nulle < IQR nul (~0,08) est un bruit de tirage). Détail au §8.53. |
+| 60 | 19–20 nov. 2026 | **Infiltration par déconvolution indépendante (§8.54)** (go de Zackary « Oui continue tout c'est piste la », 19 nov. 2026 ~22h14, 1er des 5 chantiers, jumeau du §8.51 ; protocole gelé avant tout calcul `PROTOCOL_infiltration_854.md`, SHA `f0f12473…19fbdc7` ; ImmuneScore ESTIMATE calculé depuis la matrice détenue (141 gènes, indépendant des flux à 140/141 près) ; 6 runs v6.2 fast, 6/6 exit 0 ; **H1 SOUTENUE — la corrélation immunitaire EST expliquée par l'infiltration** : cohésion intra-famille **0,5563 → 0,2002, chute de 64,0 %** (paires |r| > 0,5 : 41/66 → 3/66) ; ordre par ImmuneScore : écart S_sep **+1,1942** (réel 1,4063 contre nul 0,2121, au-dessus du +0,9838 de CD8A brut) ; ordre par StromalScore : **+0,9407** ; test décisif : flux résidualisés par CD8A résidualisé **+0,1982 contre +0,9838 brut (20,2 % conservés)**, sous le seuil gelé 0,30 ; contraste total avec le §8.51 (pureté : 93,3 % conservés) ; résidu structuré nommé (CD8A–CD8B 0,6409, deux chaînes du même récepteur), T4 non concluant, corrélation ≠ causalité, pas de fractions par type cellulaire (CIBERSORT/xCell toujours inaccessibles) ; **révise l'interprétation du §8.51.8 : la corrélation immunitaire n'est pas une « propriété propre aux tumeurs »**). Détail au §8.54. |
+| 61 | 19–20 nov. 2026 | **Pureté externe ABSOLUTE / ESTIMATE (§8.55)** (go de Zackary « Oui continue tout c'est piste la », 19 nov. 2026 ~22h14, 2e des 5 chantiers ; protocole gelé avant tout calcul `PROTOCOL_purity_external_855.md`, SHA `734a9b17…134db7` ; ABSOLUTE obtenue via pdacR `data/TCGA_PAAD.rds` (Raphael et al. 2017, Table S1), SHA `52020679…ea76`, **178/178 barcodes appariées, 149 avec ABSOLUTE non nul** (médiane 0,33) ; cohérence : ABSOLUTE vs pureté méthylation r = +0,8556 (n = 149, p = 7,0×10⁻⁴⁴) ; ESTIMATE publiée pour PAAD NON obtenue (fichier piloté par JS, récupération échouée, non contournée) ; 4 runs v6.2 fast, 4/4 exit 0 ; **H1-ext PARTIELLE : la pureté externe explique une partie substantielle de la corrélation immunitaire, mais pas toute** — ABSOLUTE corrèle avec les 12 flux immunitaires (|r| moyen **0,4932**, CD8A −0,676, R² 45,7 %) contre 0,146/0,198 pour les proxys internes du §8.51 ; après régression sur ABSOLUTE : cohésion **0,5040 → 0,3757 (−25,5 %)** ; E-ABS **+0,6911**, E-RES **+0,6499 (66,1 % du brut +0,9838)** ; le verdict « H0 soutenue » du §8.51 est **qualifié, pas renversé dans ses chiffres** — les proxys acineux/îlots étaient de faibles mesures de la pureté). Détail au §8.55. |
+| 62 | 19–20 nov. 2026 | **« sep seul ou maxsep seul suffisent-ils » (§8.56)** (go de Zackary « Oui continue tout c'est piste la », 19 nov. 2026 ~22h14, 3e des 5 chantiers ; question ouverte §8.52.6 ; protocole gelé avant tout calcul `PROTOCOL_sep_maxsep_856.md`, SHA `06e36725…fd4e` ; lecture seule des 120 `master_results.json` (60 paires), second calcul indépendant à 0,0 exact ; **maxsep seul SUFFIT aux quatre barres gelées** : rotations **37/48** (somme +17,3623), paires principales **6/8** (7/8 positifs), HP35 **+1,6512** ; **sep seul NE SUFFIT PAS** : rotations 35/48, paires principales **5/8** (manque ICGC +0,0525), HP35 +0,5316 ; **fragilité dite plainement** : les deux candidats ont mêmes ordres et mêmes signes sur les 60 paires — toute la différence vient du plancher 0,07 appliqué en unités propres (facteur médian 1,80, étendue 1,30–3,11) ; à échelle de plancher égale, aucun des deux ne suffirait ; maxsep passe A2 exactement au minimum (6/8) ; **proposition d'adoption seulement** (afficher le |d de Cohen| maximal déjà émis par v6.2, retirer le composite), décision finale à Zackary — **v6.2 reste la version de travail**). Détail au §8.56. |
+| 63 | 19–20 nov. 2026 | **Delta depuis les séries complètes (§8.57)** (go de Zackary « Oui continue tout c'est piste la », 19 nov. 2026 ~22h14, 4e des 5 chantiers ; protocole gelé avant tout calcul `PROTOCOL_delta_series_857.md`, SHA `965a88dc…66bdc` ; circularité nommée et traitée — la cible EST la médiane-de-médianes des 120 lignes de scan, les modèles honnêtes n'utilisent qu'une partie stricte (préfixe, demi-flux, trans-estimateur, matrice d'entrée seule) ; ensemble gelé 222 runs (156 matrices, 9 cohortes), identique aux §8.39/§8.42 ; critère : paires ≥ 90 % ET valeurs ±0,10 ≥ 90 % en LOCO et split par matrice ; **NON ÉLUCIDÉ** : meilleur modèle honnête (demi-flux direct S2d) **89,2 % paires / 90,5 % valeurs en LOCO** (manque 2 runs), **89,4 % / 89,4 % en split** (manque 1 run sur les deux volets) ; nouveauté : le résidu intra-groupe, imprévisible au §8.42, est capturé par S2d (r = 0,937 poolé) — ce qui résiste, c'est le basculement de la paire sur les cas limites, concentré sur LevinaBickel ; les ridge font pire que les fonctionnelles directes ; S4 (seule voie à contenu indépendant) échoue comme les résumés du §8.42 — la pleine résolution n'ajoute rien ; d_sat entièrement déterminée par la moitié des flux (222/222)). Détail au §8.57. |
+| 64 | 19–20 nov. 2026 | **Bloc estomac / mucus — nouveaux flux inattendus, odeurs comprises (§8.58)** (go de Zackary « Oui continue tout c'est piste la » + demande explicite d'explorer les flux inattendus dont les odeurs, 19 nov. 2026 ~22h14, 5e des 5 chantiers ; protocole gelé avant tout calcul `PROTOCOL_stomach_mucus_flux_858.md`, SHA `3a0762ef…4117935` ; inventaire DANS les matrices détenues : gènes gastriques/mucus supplémentaires, enzymes digestives, récepteurs olfactifs OR, métabolisme volatil ; lots de confirmation GSE71729 10/10 et GSE62452 20/20, exits 0/0, 3 redémarrages machine récupérés sans perte ; pipeline MC favorise le réel **13/15**, S_sep **14/15** ; tests directs : **G5 neuroendocrine CONFIRME** (SYP −0,503 p 1,1e-05, INSM1 −0,413 en GSE62452 ; CHGA −0,359, INSM1 −0,296 en GSE71729) — le programme neuroendocrine s'efface avec KRAS ; **G4 métabolisme volatil CONFIRME, plus fort qu'en TCGA** (AOX1 −0,611 p 2,6e-08, UGT1A1 +0,541, NOS1 −0,529 en GSE62452) ; **G1 mucus PARTIEL** (AGR2 +0,383 même sens, mais MUC4 plat et MUC6 en chute −0,436) — pas de programme mucus unique ; **G3 odeurs : chute, pas montée** — plusieurs OR chutent avec KRAS (OR2W3 −0,338, OR13A1 −0,423), **aucun OR ne monte**, OR2A4 (seul OR montant de TCGA) absent des deux puces de confirmation ; G2 chute acineuse retrouvée, rien sous le stade). Détail au §8.58. |
 
 ---
 
@@ -5869,6 +5874,2323 @@ donc aucun run n'est compté deux fois. Début 19 nov. 23h35 UTC, fin
 
 — Fin de la §8.53. —
 
+### 8.54 Infiltration par déconvolution indépendante : la corrélation immunitaire EST expliquée par l'infiltration
+
+Date : 20 novembre 2026. Go : 5 pistes PDAC approuvées le 19 nov. 2026 au
+soir (dont celle-ci : « infiltration par déconvolution indépendante ») ;
+tâche confiée 19 nov. 22h15. Chantier jumeau du §8.51 ; question ouverte
+du §8.51.10.
+Protocole gelé avant tout calcul et avant tout run :
+`PROTOCOL_infiltration_854.md` (SHA-256 `f0f12473…bdc7` — version amendée,
+cf. §8.54.9).
+
+## Verdict d'abord
+
+**La corrélation intra-famille immunitaire EST expliquée par
+l'infiltration immunitaire — en totalité selon la règle gelée.** Les trois
+conditions de H1 totale sont remplies, test par test. Après régression de
+chaque gène immunitaire sur l'ImmuneScore ESTIMATE (calculé depuis la
+matrice détenue, 141 gènes, indépendant des flux à 140/141 près), la
+corrélation moyenne intra-famille s'effondre : **0,5563 → 0,2002, chute
+de 64,0 %** (fraction de paires |r| > 0,5 : 41/66 → 3/66). Ordonner les
+flux immunitaires par l'ImmuneScore les sépare massivement (**écart S_sep
++1,1942**, réel 1,4063 contre nul 0,2121 — au-dessus du +1,0466 prédit et
+au-dessus du +0,9838 de CD8A brut) ; ordonner par le StromalScore les
+sépare aussi (**+0,9407**). Et le test décisif : ordonner les flux
+immunitaires RÉSIDUALISÉS par CD8A résidualisé ne sépare presque plus —
+**écart +0,1982 contre +0,9838 pour CD8A brut (20,2 % conservés)**,
+sous le seuil gelé de 0,30. **Le contraste avec le §8.51 est total : la
+pureté laissait 93,3 % de la séparation ; l'infiltration n'en laisse que
+20,2 %. La corrélation immunitaire est un effet de composition — la
+quantité de cellules immunitaires infiltrantes — pas une propriété
+propre aux tumeurs.**
+
+**Les trois nuances sont nommées, pas cachées.** (a) Le résidu n'est pas
+zéro : +0,1982, et 3 paires restent fortes après régression, en tête
+CD8A–CD8B (0,6409) — deux chaînes du même récepteur, un reste structuré,
+pas du bruit (§8.54.8). (b) La stratification T4 ne s'effondre pas
+(moitiés 0,3638 / 0,3926) — mais ses moitiés restent larges (écart-type
+554 / 475 contre 815 global), la prémisse de bande étroite n'est pas
+remplie : T4 est non concluant ici, pas une réfutation (§8.54.6). (c) Le
+bras stromal n'est pas une preuve indépendante : r(Immune, Stromal) =
+0,7831, les deux scores co-varient — I-STR est une seconde vue du même
+axe de composition (§8.54.7).
+
+## 8.54.1 Question, méthode, inventaire des données (avant le gel)
+
+**Question (§8.51.10).** Le §8.51 a établi que la corrélation
+intra-famille immunitaire (0,5563) n'est PAS expliquée par la pureté
+tumorale telle que le projet la mesure (0,5480 après régression, chute
+1,5 % ; P-RES +0,9174, 93,3 % conservés). Reste ouverte la seconde
+branche du §8.48.8 : l'infiltration immunitaire INDÉPENDANTE — un score
+de déconvolution ou un score ESTIMATE immunitaire par tumeur —
+explique-t-elle la corrélation ? Ce chantier teste cette branche. Il ne
+re-teste pas la pureté (§8.51) et n'importe aucune conclusion d'une autre
+expérience : seuls les chiffres de ce chantier (T1–T5 du jour) et les
+écarts relus des §8.44/§8.48/§8.51 font le verdict.
+
+**Ce qui existe réellement.** (a) Tarball TCGA-PAAD RSEM, Broad GDAC
+Firehose 2016-01-28, MD5 `b09569ce…ac0a` (détenu) — la même matrice que
+§8.51. (b) Base immunitaire TCGA `pdac_immune_tcga_fluxes.csv`, n = 178,
+12 gènes BRUTS log2(RSEM+1) : CD8A, CD8B, CD4, FOXP3, CD68, CD163,
+CD274, PDCD1, CTLA4, GZMB, IFNG, CD19, lignes ordonnées par KRAS brut
+croissant ; fichier d'axe joint `immune_kras_order_tcga.csv` (step,
+barcode, KRAS brut) — clé de jointure PAR BARCODE, jamais par index.
+(c) AUCUN score d'infiltration détenu : recherche dans tout
+`~/workspace/runs/pdac-v6/` — 0 occurrence de CIBERSORT, xCell, TIMER,
+ESTIMATE, déconvolution (hors le mot « estimateurs » du pipeline, sans
+rapport).
+
+**Sources externes publiées : tentées, inaccessibles en accès direct.**
+Toutes gratuites en principe, toutes bloquées par un obstacle d'accès
+concret (accès direct curl, sans navigateur vivant) — AUCUNE contournée,
+AUCUNE donnée inventée pour les remplacer :
+- **Yoshihara et al. 2013, Suppl. Data 2** — scores stromal/immunitaire/
+  ESTIMATE publiés par tumeur TCGA (RNAseqV2), la source externe idéale —
+  et **Suppl. Data 1** (les 141+141 gènes) : fichiers
+  `ncomms3612-s3.xlsx` (551,5 Ko) et `ncomms3612-s2.xlsx` (168,6 Ko),
+  PMC3826632, doi 10.1038/ncomms3612. Téléchargement PMC direct renvoie
+  une page interstitielle « Preparing to download... » avec défi
+  proof-of-work JS (cookie `cloudpmc-viewer-pow`) — non franchi. Miroir
+  Nature static-content : 403 AccessDenied. Europe PMC
+  `supplementaryFiles` : 502 Bad Gateway. Statut : ACCESSIBLE PAR
+  NAVIGATEUR VIVANT (tâche pour le coordinateur, hors de ce chantier —
+  sous-agent sans navigateur). La comparaison de mes scores calculés aux
+  scores publiés devient un chantier ultérieur (§8.54b), pas un ajout
+  rétroactif.
+- **Aran et al. 2015, Suppl. Data 1** — pureté ESTIMATE/ABSOLUTE/LUMP/
+  IHC/CPE par tumeur, `ncomms9971-s2.xlsx` (540,1 Ko), PMC4671203,
+  doi 10.1038/ncomms9971 : même interstitiel proof-of-work PMC, même
+  statut (navigateur vivant).
+- **Thorsson et al. 2018 / CRI iAtlas** — fractions CIBERSORT 22 types,
+  fraction leucocytaire, PMC5982584, doi 10.1016/j.immuni.2018.03.023 :
+  tableaux supplémentaires derrière le même interstitiel PMC ; API
+  GraphQL iAtlas exige le package R `iatlasGraphQLClient` (pas de R sur
+  cette machine) ; magasin Synapse exige un compte. Inaccessible ici.
+- **TIMER / TIMER2.0** (Li et al., doi 10.1093/nar/gkaa407) : serveur web,
+  pas de fichier de scores en vrac ; lien historique
+  `http://cistrome.org/TIMER/misc/AGPall.zip` → 404 Not Found. Mort.
+- **CIBERSORTx** (Newman et al. 2019) : accès web, compte requis — non
+  tenté au-delà du constat (compte = hors périmètre).
+- **UCSC Xena** : aucune route d'accès directe vérifiée sans navigateur
+  dans ce chantier. Nommée comme ouverte.
+Les fichiers HTML d'échec ont été supprimés ; rien de ces tentatives
+n'entre dans les calculs.
+
+**Voie retenue : ESTIMATE calculé depuis les données détenues (Voie C).**
+Faute de scores publiés accessibles, le score d'infiltration est CALCULÉ
+dans ce chantier, par une méthode publiée, depuis la matrice détenue :
+ESTIMATE (Yoshihara et al., Nat Commun 2013) — ssGSEA (Barbie et al.,
+Nature 2009, doi 10.1038/nature08460) sur deux signatures publiées de
+141 gènes chacune (stromale, immunitaire). Implémentation : PORT PYTHON
+FIDÈLE de `tidyestimate::estimate_score` (Aragaki, CRAN 1.1.1, 2023),
+code source lu en clair (`R/estimate_score.R`, GitHub
+KaiAragaki/tidyestimate) : rangs par échantillon (ex æquo moyennés),
+rangs remis à l'échelle 10000/n, ssGSEA exposant 0,25, ES = somme des
+écarts cumulés. Filtre aux gènes communs aux six plateformes (10 391
+symboles HGNC uniques) AVEC appariement d'alias conservateur
+(`find_alias`, 1-à-1) tel qu'utilisé dans la vignette.
+`is_affymetrix = FALSE` : pas de conversion en pureté (formule cosinus
+réservée aux puces Affymetrix par Yoshihara) — les scores sont relatifs,
+comme le prescrit la méthode pour le RNA-seq. Signatures extraites du
+tarball CRAN `tidyestimate` 1.1.1 (SHA-256 `cc747f78…514b`), fichiers
+`data/gene_sets.rda` (SHA `5d058439…69a`) et `data/common_genes.rda`
+(SHA `f09453b2…2ff3`), lus en Python avec le parseur `rdata` (venv
+dédié `/tmp/venv854`, pas de R sur cette machine). Les mises à jour
+d'alias de tidyestimate sont conservées (ex. FYB→FYB1, WISP1→CCN4) et
+listées dans les sorties JSON.
+
+**Circularité vérifiée à l'inventaire, avant le gel.** La signature
+immunitaire (141 gènes) ne contient qu'UN des 12 gènes de flux : GZMB.
+La signature stromale n'en contient qu'un : CD163. Les deux signatures
+sont disjointes (recouvrement 0). Le score immunitaire est donc
+indépendant des flux à 140/141 gènes près — et la variante
+« leave-12-out » (ImmuneScore_wo12 : signature immunitaire moins GZMB,
+140 gènes) est le test strictement non circulaire, pré-enregistré.
+
+**Ce que « infiltration » veut dire ici — et sa limite.** L'ImmuneScore
+ESTIMATE est un score d'enrichissement ssGSEA sur 141 gènes — une mesure
+ARN d'infiltration, pas un comptage de cellules. Il partage la mesure
+ARN avec les flux (même matrice), mais pas les gènes (140/141
+indépendants) : une corrélation flux↔score n'est pas circulaire par
+construction — et la variante wo12 le vérifie. Il ne distingue pas les
+types cellulaires (pas de fractions CD8/macrophages/B) — ce que ferait
+CIBERSORT, toujours inaccessible. Le StromalScore (141 gènes, 0 gène de
+flux sauf CD163) sert de bras de contrôle (stroma, pas immunité).
+
+**Hypothèses gelées.** H1 (infiltration explique) : (a) chaque flux
+corrèle substantiellement avec l'ImmuneScore ; (b) la corrélation
+intra-famille s'effondre après régression ; (c) ordonner par
+l'ImmuneScore sépare les flux (S_sep au niveau IMMROT) ; (d) ordonner
+les flux RÉSIDUALISÉS par CD8A résidualisé ne sépare plus. H0 (propriété
+propre) : la corrélation persiste après contrôle de l'infiltration, par
+toutes les voies (a)–(d).
+
+**Critères gelés.** T1 : lien substantiel si moyenne |r| ≥ 0,30 pour
+l'ImmuneScore (ou wo12) ; faible si < 0,15 pour les deux scores
+immunitaires. T2 : EFFONDREMENT si moyenne |r| résiduelle < 0,30
+(chute ≥ 45 % depuis 0,5563) ET fraction |r| > 0,5 < 0,20 ;
+PERSISTANCE si chute < 20 % (moyenne résiduelle > 0,44) ; entre les
+deux : partielle, à dire. T5 : I-IMM ou I-STR soutient H1 si écart
+S_sep ≥ 0,45 (minimum IMMROT sans doublon) ; I-RES soutient H1 si écart
+< 0,30, soutient H0 si écart ≥ 0,45. Verdict de synthèse : H1 totale si
+T2 = effondrement ET I-RES < 0,30 ET (I-IMM ≥ 0,45 OU I-STR ≥ 0,45) ;
+H1 partielle si T2 = partielle OU (I-IMM/I-STR entre 0,30 et 0,45) avec
+I-RES < 0,70 ; H0 si T2 = persistance ET I-IMM < 0,30 ET I-STR < 0,30
+ET I-RES ≥ 0,45 ; toute autre combinaison : zone grise. Références :
+IMMROT sans doublon, moyenne +0,7521, minimum +0,4508 (CD68), CD8A
+écart +0,9838 (réel 1,2310, nul 0,2472) ; P-RES §8.51 +0,9174 ;
+régression §8.48 d_ssep = −0,175 + 1,705·C.
+
+## 8.54.2 Porte J (jointure + validation du port) : OUVERTE
+
+Rechargement du tarball (MD5 conforme) : 178 tumeurs primaires
+(code 01) ; 0 NaN sur KRAS + 12 gènes immunitaires ; ordre KRAS brut
+recalculé = `immune_kras_order_tcga.csv` (178/178 barcodes, valeurs
+KRAS et immunitaires égales à 10⁻⁹ près). Signatures : 141 + 141 gènes
+présents dans la matrice TCGA, disjointes, 1 seul gène de flux dans
+chacune (GZMB immunitaire, CD163 stromale) — re-vérifié en machine.
+**Porte J OUVERTE, les trois conditions tiennent.**
+
+**Validation du port ssGSEA sur les données `ov` de tidyestimate**
+(17 256 gènes × 10 échantillons, `data/ov.rda`, SHA
+`3fe246db…478`) : 10 364 gènes communs trouvés (9 903 exacts + 461
+récupérés par alias — l'attendu de la vignette est 10 364). Les 4
+valeurs publiées de la vignette sont reproduites très en dessous du
+critère gelé de 1 % relatif :
+
+| Échantillon | Score | Calculé | Publié | Erreur relative |
+|---|---|---|---|---|
+| s516 | stromal | −285,49841 | −285,50 | 1,7×10⁻⁸ |
+| s516 | immune | +165,75062 | +165,75 | 6,8×10⁻⁹ |
+| s520 | stromal | +1927,51431 | +1927,51 | 6,9×10⁻¹⁰ |
+| s520 | immune | +2326,15984 | +2326,16 | 1,5×10⁻⁹ |
+
+Dans la matrice TCGA : 10 363 / 10 391 gènes communs (99,73 % ;
+9 903 exacts + 460 alias). Les 460–461 renommages par alias sont
+listés dans `infiltration_854_results.json` (ex. CTGF→CCN2, IL8→CXCL8,
+WISP1→CCN4, FYB→FYB1).
+
+Scores (n = 178) :
+
+| Score | min | médiane | max | moyenne | écart-type |
+|---|---|---|---|---|---|
+| ImmuneScore (141 gènes) | −1556,6 | 598,5 | 3022,7 | 621,0 | 814,6 |
+| ImmuneScore_wo12 (140 gènes) | −1546,5 | 620,3 | 3044,6 | 641,9 | 816,9 |
+| StromalScore (141 gènes) | −1839,1 | 692,4 | 2166,6 | 581,7 | 825,7 |
+| ESTIMATEScore (somme) | −3170,8 | 1267,1 | 4410,0 | 1202,6 | 1548,8 |
+
+**r(ImmuneScore, StromalScore) = 0,7831** — les deux scores co-varient
+fortement (tissu non tumoral partagé). **r(ImmuneScore,
+ImmuneScore_wo12) = 0,9999948** — la variante non circulaire est quasi
+identique au score complet : le seul gène partagé (GZMB) ne porte rien.
+Descriptif vs pureté §8.51 : r(ImmuneScore, score acineux) = 0,133 ;
+r(ImmuneScore, score îlots) = 0,221 ; StromalScore : 0,139 / 0,245.
+L'infiltration ne re-mesure pas les proxys de pureté.
+
+## 8.54.3 T1 — Chaque flux immunitaire suit l'infiltration : OUI, fortement
+
+Pearson r (+ Spearman ρ) de chaque flux contre les trois scores ; R²
+par flux (OLS sur [ImmuneScore] et sur [ImmuneScore, StromalScore]) ;
+p brutes bilatérales, sans correction pour tests multiples (36 tests,
+~1,8 faux positifs attendus à p < 0,05 sous le nul — le jugement porte
+sur la moyenne, pas sur une p isolée).
+
+| Gène | r Immune (p) | ρ Immune | r wo12 | r Stromal (p) | R² Immune |
+|---|---|---|---|---|---|
+| CD4 | **+0,893 (9,2×10⁻⁶³)** | +0,920 | +0,893 | +0,834 (2,9×10⁻⁴⁷) | **0,797** |
+| CTLA4 | +0,851 (3,9×10⁻⁵¹) | +0,816 | +0,851 | +0,654 (4,1×10⁻²³) | 0,724 |
+| FOXP3 | +0,827 (6,5×10⁻⁴⁶) | +0,817 | +0,827 | +0,725 (2,3×10⁻³⁰) | 0,684 |
+| PDCD1 | +0,811 (6,6×10⁻⁴³) | +0,765 | +0,811 | +0,545 (3,9×10⁻¹⁵) | 0,658 |
+| CD8A | +0,797 (2,4×10⁻⁴⁰) | +0,790 | +0,796 | +0,639 (8,1×10⁻²²) | 0,635 |
+| CD163 | +0,731 (5,7×10⁻³¹) | +0,777 | +0,731 | +0,827 (6,5×10⁻⁴⁶) | 0,534 |
+| CD8B | +0,721 (6,9×10⁻³⁰) | +0,702 | +0,721 | +0,535 (1,4×10⁻¹⁴) | 0,520 |
+| GZMB | +0,696 (4,1×10⁻²⁷) | +0,665 | +0,694 | +0,491 (3,6×10⁻¹²) | 0,484 |
+| CD19 | +0,678 (2,7×10⁻²⁵) | +0,623 | +0,678 | +0,449 (3,1×10⁻¹⁰) | 0,460 |
+| CD68 | +0,661 (1,1×10⁻²³) | +0,633 | +0,661 | +0,613 (9,3×10⁻²⁰) | 0,436 |
+| IFNG | +0,480 (1,2×10⁻¹¹) | +0,510 | +0,479 | +0,369 (4,0×10⁻⁷) | 0,231 |
+| CD274 | +0,451 (2,6×10⁻¹⁰) | +0,490 | +0,451 | +0,521 (9,2×10⁻¹⁴) | 0,204 |
+
+Moyenne |r| : **ImmuneScore 0,7164**, **wo12 0,7161**, StromalScore
+0,6002 (Spearman 0,7089 / 0,7086 / 0,5928). **R² médian 0,527
+(52,7 %), maximum 0,797 (CD4).** Avec [Immune, Stromal] : R² médian
+0,579, maximum 0,844 (CD4). Critère gelé : lien SUBSTANTIEL
+(≥ 0,30), largement dépassé — 2,4× le seuil. Les 12 corrélations sont
+POSITIVES et toutes significatives à p ≤ 2,6×10⁻¹⁰. Les deux plus
+faibles (CD274 0,451, IFNG 0,480) restent au-dessus du seuil gelé.
+Deux remarques : (a) CD4 est le gène le plus lié à l'infiltration
+(R² 79,7 %) — c'était aussi le plus lié à la pureté au §8.51 (R²
+13,2 %) : CD4 est le gène le plus sensible à la composition, par les
+deux voies, avec un ordre de grandeur d'écart ; (b) la variante wo12
+donne les mêmes chiffres à la 3e décimale — le résultat n'est pas
+porté par le gène partagé GZMB (r wo12 de GZMB lui-même : 0,694 contre
+0,696 brut).
+
+## 8.54.4 T2 — La corrélation intra-famille s'effondre après régression infiltration
+
+Matrice 66 paires, brute contre résidus OLS ([1, ImmuneScore] et
+sensibilités [wo12], [ImmuneScore, StromalScore]).
+
+| Matrice | Pearson moyenne \|r\| | médiane \|r\| | fraction \|r\| > 0,5 | max \|r\| | Spearman moyenne \|r\| |
+|---|---|---|---|---|---|
+| Brute | **0,5563** | 0,5677 | 0,621 (41/66) | 0,8430 | 0,5403 |
+| Résidus [ImmuneScore] | **0,2002** | 0,1739 | **0,045 (3/66)** | 0,6409 | 0,2044 |
+| Résidus [wo12] | 0,2007 | 0,1761 | 0,045 (3/66) | 0,6412 | 0,2049 |
+| Résidus [Imm, Strom] | 0,1902 | 0,1575 | 0,030 (2/66) | 0,6458 | 0,1992 |
+
+**Chute : 64,0 % avec l'ImmuneScore, 63,9 % avec wo12, 65,8 % avec
+les deux scores.** Critère gelé : EFFONDREMENT (moyenne résiduelle
+0,2002 < 0,30 ET fraction > 0,5 de 0,045 < 0,20) — rempli sur les trois
+variantes, à l'identique pour la variante non circulaire. La fraction
+de paires fortes passe de 41/66 à 3/66. Retirer linéairement
+l'infiltration mesurable retire les deux tiers de la corrélation
+immunitaire — l'inverse exact du §8.51, où retirer la pureté ne
+retirait rien (chute 1,5 %).
+
+Les 3 paires qui restent fortes après régression : CD8A–CD8B (0,6409),
+CD4–CD163 (0,5811), GZMB–IFNG (0,5202) ; suivent CD68–CD19 (0,4905)
+et PDCD1–CTLA4 (0,4419). Le résidu n'est pas du bruit uniforme : il
+est concentré sur quelques paires, en tête les deux chaînes du même
+récepteur CD8 — un reste structuré, nommé au §8.54.8.
+
+## 8.54.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après
+
+Couplage C par contrôle immunitaire (moyenne des |r| avec les 11 autres
+flux), brut contre résidualisé ; d_ssep prédit par d = −0,175 + 1,705·C.
+
+| | C moyen | d_ssep prédit moyen |
+|---|---|---|
+| Brut | 0,5563 | **0,7735** (observé IMMROT : 0,7521) |
+| Résidualisé [ImmuneScore] | 0,2002 | **0,1663** |
+
+Sanité : la prédiction brute retrouve la moyenne IMMROT observée à 0,02
+près (0,7735 contre 0,7521) — la régression §8.48 se réplique sur ces
+données, comme au §8.51. Après résidualisation, la prédiction tombe à
+0,1663 (d_pred résiduel par contrôle : 0,058 à 0,297). CD8A seul :
+C 0,6514 → 0,2766, d_pred 0,9356 → **0,2966**. Le T3 ne fait que
+traduire T2 en S_sep prédit ; le verdict se joue au T5.
+
+## 8.54.6 T4 — Stratification : la cohésion persiste dans chaque moitié — test faible ici
+
+Médiane de l'ImmuneScore (598,5), n = 89/89 ; matrice intra-famille
+dans chaque moitié. La stratification wo12 (médiane 620,3) donne la
+partition identique (r ≈ 1 entre les deux scores).
+
+| Stratification | Moitié haute : moyenne \|r\| (frac. > 0,5) | Moitié basse : moyenne \|r\| (frac. > 0,5) |
+|---|---|---|
+| ImmuneScore (méd. 598,5) | 0,3638 (0,288) | 0,3926 (0,303) |
+
+Si la cohésion venait de l'infiltration, elle devrait s'effondrer dans
+chaque moitié (bande d'infiltration étroite). Elle ne s'effondre pas :
+0,3638 / 0,3926 contre 0,5563 global — baisse de ~35 % / ~29 %, pas
+d'effondrement. **Mais la prémisse de bande étroite n'est pas remplie
+ici** : l'écart-type de l'ImmuneScore reste de 553,9 dans la moitié
+haute et 474,8 dans la moitié basse, contre 814,6 global (58–68 %
+conservés) ; les plages restent [601, 3023] et [−1557, 596]. Une
+médiane ne fait pas une bande étroite : chaque moitié couvre encore une
+énorme plage d'infiltration, et la cohésion résiduelle dans la moitié
+est cohérente avec le résidu de T2 (0,2002) plus la variance
+d'infiltration restante. **T4 est donc non concluant ici** — il ne
+soutient pas H1, mais il ne la réfute pas non plus : c'est un test
+faible, à refaire par terciles ou quartiles pour être tranchant (non
+fait ici, §8.54.10). T4 n'entre pas dans la règle de verdict gelée.
+
+## 8.54.7 T5 — Runs v6.2 : l'infiltration ordonne l'immunitaire, les résidus presque plus
+
+Prédictions calculées AVANT de lire les sorties (depuis T1/T2 du jour) :
+I-IMM d_pred +1,0466 (C = 0,7164) ; I-STR d_pred +0,8483
+(C = 0,6002) ; I-RES d_pred +0,2966 (C_résid CD8A = 0,2766). 6 runs
+v6.2, mode fast, graine 42, **6/6 exit 0** (lot 03:27–05:51 UTC
+20 nov. ; §8.54.10 pour les deux redémarrages machine).
+
+| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w | t0 |
+|---|---|---|---|---|---|---|---|---|---|
+| I-IMM | ImmuneScore → 12 imm. bruts | 1,4063 | 0,2121 | **+1,1942** | +1,0466 | 0,4832 / 0,3320 | 3,27 / 3,82 | 27 | 75,10 % |
+| I-STR | StromalScore → 12 imm. bruts | 1,1248 | 0,1841 | **+0,9407** | +0,8483 | 0,4575 / 0,3627 | 4,30 / 4,55 | 30 | 49,11 % |
+| I-RES | CD8A résid. → 11 imm. résid. | 0,4716 | 0,2733 | **+0,1982** | +0,2966 | 0,3696 / 0,3445 | 3,06 / 4,24 | 27 | 75,10 % |
+
+Lecture par critère gelé :
+- **I-IMM : séparation massive, au-dessus de la prédiction.** Écart
+  +1,1942 — 1,14× la prédiction (+1,0466, +0,1476 au-dessus), 2,65× le
+  minimum IMMROT (+0,4508), 1,21× CD8A brut (+0,9838). MC +0,1512
+  (0,4832 contre 0,3320) : ici MC sépare, contrairement aux rotations
+  §8.44 — noté, non utilisé pour le verdict (le verdict porte sur
+  S_sep, gelé). L7a sépare en direction (up 0,2617 contre down
+  −0,3500) : non utilisé, comme au §8.48. Seuil à 75,10 % de la série
+  ordonnée. Critère gelé : I-IMM ≥ 0,45 → **soutient H1, fortement**.
+- **I-STR : séparation massive aussi — mais pas une preuve
+  indépendante.** Écart +0,9407 — 1,11× la prédiction (+0,8483,
+  +0,0924 au-dessus), 2,09× le minimum IMMROT. MC +0,0948 (0,4575
+  contre 0,3627). Seuil à 49,11 %. Critère gelé : I-STR ≥ 0,45 →
+  **soutient H1**. Mais r(ImmuneScore, StromalScore) = 0,7831 : le
+  score stromal porte l'axe de composition partagé (et CD163, gène
+  de flux, est dans sa signature) — I-STR est une seconde vue du
+  même axe, pas une confirmation indépendante d'I-IMM. Les deux bras
+  disent la même chose parce qu'ils mesurent en partie la même chose.
+- **I-RES : la séparation s'effondre, sans disparaître.** Écart
+  +0,1982 contre +0,9838 pour CD8A brut (**20,2 % conservés, baisse
+  de 79,8 %**) et contre +0,2966 prédit (−0,0984 en dessous — la
+  régression §8.48 sur-prédit légèrement le résiduel ici). MC
+  +0,0251 (0,3696 contre 0,3445) : MC ne sépare presque plus. L7a ne
+  sépare pas (up 0,4183 contre up 0,1815, même direction) : non
+  utilisé. Seuil à 75,10 %, comme I-IMM. Critère gelé : I-RES < 0,30
+  → **soutient H1**. Mais +0,1982 n'est pas zéro : un résidu de
+  séparation subsiste, cohérent avec les 3 paires fortes de T2 —
+  c'est le reste structuré du §8.54.8, pas une réfutation de H1
+  (le critère gelé est < 0,30, pas = 0).
+- **Delta ne sépare pas** (nul supérieur au réel sur les 3 paires :
+  3,82 contre 3,27 ; 4,55 contre 4,30 ; 4,24 contre 3,06) — rapporté
+  descriptivement, comme au §8.51, non utilisé pour le verdict
+  (Delta non élucidé, §8.49).
+
+## 8.54.8 Verdict de synthèse
+
+Règle gelée, test par test : T2 = EFFONDREMENT (0,5563 → 0,2002,
+chute 64,0 %, fraction 0,621 → 0,045) ; I-IMM = +1,1942 (≥ 0,45) ;
+I-STR = +0,9407 (≥ 0,45) ; I-RES = +0,1982 (< 0,30).
+**Les trois conditions de H1 totale sont remplies : H1 est SOUTENUE.
+La corrélation intra-famille immunitaire est expliquée par
+l'infiltration immunitaire (score ESTIMATE calculé depuis la matrice
+détenue).** H1 partielle est rejetée (les conditions de la totale sont
+remplies) ; H0 est rejetée (aucune de ses conditions n'est remplie :
+T2 n'est pas une persistance ; I-IMM/I-STR ne sont pas < 0,30 ; I-RES
+n'est pas ≥ 0,45). Aucun consensus exigé entre les tests : le verdict
+suit la règle gelée, et T4 — non concluant ici — est rapporté comme
+tel, pas moyenné.
+
+**Ce que cela ne dit pas.** (a) Cela ne dit pas que TOUTE la
+corrélation est de l'infiltration : le résidu +0,1982 (20,2 % de CD8A
+brut) et les 3 paires fortes restantes (CD8A–CD8B 0,6409, CD4–CD163
+0,5811, GZMB–IFNG 0,5202) sont un reste structuré. CD8A–CD8B sont les
+deux chaînes du même récepteur CD8 : une part du résidu peut être de
+la biologie de récepteur (co-régulation des deux chaînes), pas de la
+composition — non tranché ici. (b) Cela ne dit pas que la stratification
+T4 est réfutée : ses moitiés sont trop larges pour être tranchantes ;
+un découpage par terciles/quartiles reste à faire. (c) Cela ne dit pas
+que le stroma explique quoi que ce soit indépendamment : I-STR suit
+l'axe partagé (r = 0,7831). (d) Cela ne dit pas que l'infiltration
+CAUSE la corrélation : le score partage la mesure ARN avec les flux
+(la variante wo12 écarte la circularité au niveau des gènes, pas au
+niveau de la mesure) ; une corrélation n'est pas une causalité, et
+T4/T5 sont les garde-fous, pas une preuve causale. (e) Cela ne dit pas
+quelles cellules portent la corrélation : pas de fractions par type
+cellulaire (CIBERSORT/xCell toujours inaccessibles) — T CD8,
+macrophages ou B, la question reste ouverte. (f) Cela ne dit pas que
+la pureté est innocentée par une autre voie : le §8.51 reste valide
+pour les proxys acineux/îlots — l'infiltration et la pureté sont deux
+axes de composition différents, et c'est l'infiltration qui porte la
+corrélation, pas la pureté. **En revanche, cela RÉVISE
+l'interprétation du §8.51.8** : la corrélation immunitaire n'est pas
+une « propriété propre aux tumeurs » — elle est largement un effet de
+composition (infiltration). Le §8.51 avait raison sur la pureté, et
+son H0 ne portait que sur la pureté ; la cause amont de la domination
+IMMROT du §8.48 est désormais identifiée : le couplage contrôle↔flux
+est porté par l'infiltration, pas par un artefact de pureté ni par une
+co-régulation tumorale intrinsèque — à 80 % près, le reste nommé en
+(a). (g) Les scores publiés de Yoshihara n'ont pas été comparés :
+la validation externe du score calculé reste ouverte (§8.54b).
+
+## 8.54.9 Provenance
+
+- **Codes (jamais modifiés).** Pipeline v6.2
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`, SHA-256
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+  (vérifié avant les calculs, dans les trois logs de lot, et après
+  l'extraction). Mode `fast`, graine 42 (défaut), nul = bloc analysé
+  permuté conjointement, graine 42 (default_rng frais par fichier),
+  contrôle intact.
+- **Protocole.** `PROTOCOL_infiltration_854.md`, SHA-256
+  `f0f1247345941e9b014fa41cd842b9d5f1de07d833c0c2c74756c117e19fbdc7`,
+  gelé le 20 nov. 2026 avant tout calcul et avant tout run de ce
+  chantier. **Amendement, AVANT tout calcul T1–T5** : la première
+  version (SHA `89be31ed…6918`) disait l'appariement d'alias NON
+  appliqué ; la porte J a montré que la vignette de référence
+  l'applique (461/488 gènes manquants récupérés dans `ov`) — sans lui,
+  la validation du port sur `ov` est impossible (premier essai :
+  9 903 gènes trouvés au lieu de 10 364, assertion échouée, arrêt
+  propre avant tout résultat). L'amendement applique le port fidèle de
+  `find_alias` (conservateur 1-à-1) ; le critère de validation (1 %
+  relatif sur s516/s520) est inchangé. Aucun autre changement au
+  protocole après le gel.
+- **Entrées.** Tarball TCGA-PAAD RSEM, MD5
+  `b09569ce3f4721f514bc137bd109ac0a` (vérifié) ; base immunitaire
+  `pdac_immune_tcga_fluxes.csv`, SHA-256
+  `66dbb672ea2a305ea67b51be3f9522a47e5003425f271c9cc4f42bc0427bbd2e` ;
+  axe `immune_kras_order_tcga.csv`, SHA-256
+  `31d31ae64baf0a4a9247424f877ae6b0c3524cf97cf15c19d4bab80af417b62d` ;
+  écarts §8.44/§8.51 relus en machine dans `ssep_844_rotations.csv` /
+  `purity_851_runs.json` (CD8A : réel 1,2310, nul 0,2472, écart
+  +0,9838 ; P-RES : réel 1,1240, nul 0,2066, écart +0,9174). Sources :
+  TCGA Firehose PAAD 2016-01-28 ; méthode ESTIMATE : Yoshihara et al.,
+  Nat Commun 2013, doi 10.1038/ncomms3612 ; ssGSEA : Barbie et al.,
+  Nature 2009, doi 10.1038/nature08460 ; implémentation de référence :
+  tidyestimate 1.1.1 (CRAN, GitHub KaiAragaki/tidyestimate), tarball
+  SHA-256 `cc747f787b6548a62219f3388ff6d93ad93cfcb60fe75f322fd712f41509514b`.
+- **Nature des lignes.** Les flux immunitaires sont des mesures
+  instrumentales (séquençage ARN, log2(RSEM+1), brutes) ; les scores
+  ESTIMATE sont des valeurs calculées (ssGSEA sur 141 gènes, port
+  Python validé à ~10⁻⁸ sur les valeurs publiées de la vignette) ;
+  les résidus sont des valeurs calculées (OLS sur [1, ImmuneScore]) ;
+  les nuls sont des lignes permutées (graine 42) — des échantillons
+  hypothétiques, pas des mesures. Aucun mot humain, aucun échantillon
+  hypothétique dans les séries réelles. Les scores publiés externes
+  (Yoshihara Suppl. Data 2) n'ont pas été obtenus : aucune valeur
+  externe n'entre dans ce chantier.
+- **Sorties et scripts de ce chantier.**
+  `estimate_ssgsea.py` (SHA `5e1205b0…4330`) : port ssGSEA +
+  `filter_common_genes` (alias conservateur).
+  `extract_estimate_data_854.py` : extraction .rda → CSV en clair
+  (venv `/tmp/venv854`, parseur `rdata`).
+  `analyze_infiltration_854.py` (SHA `cc20bbdb…42b`) : porte J, T1–T4.
+  `build_infiltration_854.py` (SHA `7b9942de…ccd`) : scores + 6 CSV T5
+  (résidus vérifiés : moyenne |r| = 0,2002, identique à T2).
+  `extract_infiltration_854.py` (SHA `0135e1de…2f`) : lecture des
+  6 runs (SHA des CSV vérifiés, version
+  `v6.2.0-L7aL7b-CohenD-short`).
+  `infiltration_854_gene_sets.csv` (SHA `35ea4150…9f8`, 141+141 gènes),
+  `infiltration_854_scores.csv` (SHA `628732ec…aa7`, 178 tumeurs :
+  barcode, KRAS brut, ImmuneScore, ImmuneScore_wo12, StromalScore,
+  ESTIMATEScore),
+  `infiltration_854_results.json` (SHA `2810bb3b…61`, T1–T4),
+  `infiltration_854_results.csv` (SHA `7f6d4b4c…c0`, T1 par flux),
+  `infiltration_854_immune_resid.csv` (SHA `61e0ecff…57b`, 12 flux
+  résidualisés),
+  `infiltration_854_csv_sha.json` (SHA `d98e0659…923`, SHA des 6 CSV T5),
+  `infiltration_854_runs.json` (SHA `c04df5c5…af12`) / `.csv`
+  (SHA `4386d766…fa3`, 6 runs).
+  `data_infiltration_854/` : tarball tidyestimate + `.rda` extraits +
+  `filter_common_genes.R` (SHA `1a6a1822…62fb`).
+  Manifeste `manifest_v62_infiltration_854.txt`
+  (SHA `3a8ca68c…bd5`) ; log `runs_v62_infiltration_854.log` ; unités
+  systemd `v62-infil-854`, `v62-infil-854b`, `v62-infil-854c`.
+- **Ce qui manque :** scores publiés externes (Yoshihara Suppl. Data 2,
+  Aran Suppl. Data 1, Thorsson CIBERSORT/LF) — tentés, inaccessibles en
+  accès direct (cf. §8.54.1) ; fractions par type cellulaire ; les
+  moitiés T4 sont à n = 89 (estimations plus bruitées) et larges
+  (§8.54.6) ; les p de T1 sont brutes, sans correction pour tests
+  multiples.
+
+## 8.54.10 Ce qui manque, ce qui reste ouvert
+
+- **Comparaison aux scores publiés de Yoshihara (§8.54b).** Les scores
+  ESTIMATE publiés par tumeur (Suppl. Data 2, PMC3826632) sont la
+  validation externe du score calculé ici (même méthode, mêmes données
+  TCGA RNAseqV2) : corrélation score calculé ↔ score publié, et
+  re-lecture de T2/T5 avec le score publié. Nécessite un navigateur
+  vivant (défi proof-of-work PMC) — tâche pour le coordinateur.
+- **Fractions par type cellulaire.** CIBERSORT/xCell diraient si la
+  corrélation est portée par les T CD8, les macrophages, les B, ou
+  tous ensemble — et si le résidu CD8A–CD8B suit une fraction
+  particulière. Inaccessible ici (compte CIBERSORTx, interstitiel PMC).
+- **Stratification fine (T4 tranchant).** Terciles ou quartiles
+  d'ImmuneScore, ou bandes étroites (±0,5 écart-type) : la médiane ne
+  suffit pas (§8.54.6). Non fait ici.
+- **Le résidu structuré.** CD8A–CD8B 0,6409, CD4–CD163 0,5811,
+  GZMB–IFNG 0,5202 après régression : biologie de récepteur, autre
+  variable latente (sous-type moléculaire — autre piste du §8.48.8,
+  toujours non testée), ou queue de l'infiltration non linéaire ?
+  Non tranché ici.
+- **Pureté par scores externes.** Autre piste approuvée le 19 nov. au
+  soir (chantier jumeau de celui-ci, non lancé) : les estimations
+  ABSOLUTE / ESTIMATE / CPE d'Aran et al. 2015 donneraient le contrôle
+  indépendant des proxys ARN du projet — et fermeraient la boucle
+  pureté/infiltration (ESTIMATE publie aussi une pureté).
+- **Incident d'exécution.** La machine a redémarré DEUX fois pendant
+  le lot : ~03h44 UTC (uptime 0 min à 03h45:38) et ~05h43 UTC (uptime
+  0 min à 05h43:53) — cause non établie, comme aux §8.41/§8.44/§8.48/
+  §8.51 ; unités `--collect`, donc introuvables après leur mort. La
+  première unité `v62-infil-854` est morte avec le 1er redémarrage
+  (1/6 terminé, EXIT 0, aucune sortie perdue) ; la relance reprenable
+  `v62-infil-854b` a repris au 2e run à 03h45 et en a terminé 4 autres
+  avant de mourir au 2e redémarrage (5/6 terminés, EXIT 0) ; la
+  relance `v62-infil-854c` a terminé le dernier run à 05h51:19 UTC.
+  Bilan final : **6/6 exit 0, 0 échec**, lot 03:27:11–05:51:19 UTC
+  20 nov. (`=== FIN 2026-11-20T05:51:19Z deja_faits=5 termines=1
+  echecs=0 ===` ; 6 lignes `EXIT_` à 0 dans le log).
+- **Périmètre.** 6 nouveaux runs v6.2 au maximum (protocole §6), aucun
+  autre. Aucun nouveau seuil proposé, aucun code modifié, aucun push
+  GitHub dans ce chantier (publication sur go séparé ; règle permanente
+  « Toujours github et pdf !!! » — par le coordinateur).
+
+— Fin de la §8.54. —
+
+---
+
+### 8.55 Pureté externe ABSOLUTE : la corrélation immunitaire est en partie un effet de pureté
+
+Date : 20 novembre 2026 (03h16–05h02 UTC ; 22h16–00h02 heure de Montréal,
+19–20 nov.). Go : coordinateur, 19 nov. 2026 ~22h15.
+Protocole gelé avant tout téléchargement, avant tout calcul et avant tout run :
+`PROTOCOL_purity_external_855.md` (SHA-256 `734a9b171cf0ce155d456288d8f617528aa237820269d1c3e429505bce134db7`).
+
+## Verdict d'abord
+
+**La pureté externe explique une partie substantielle de la corrélation
+intra-famille immunitaire — mais pas toute. Verdict gelé : H1-ext PARTIELLE.**
+La pureté ABSOLUTE (ADN, indépendante de l'ARN) corrèle fortement avec les
+12 flux immunitaires — tous négativement, moyenne |r| = **0,4932**
+(CD8A r = −0,676, R² = 45,7 %) — contre 0,146 / 0,198 pour les proxys
+internes acineux / îlots du §8.51. Après régression sur ABSOLUTE, la
+corrélation intra-famille chute d'un quart : **0,5040 → 0,3757 (−25,5 %)**,
+fraction de paires fortes 37/66 → 18/66. Ordonner les flux par ABSOLUTE les
+sépare fortement (**écart S_sep +0,6911**, prédit +0,6659, seuil trouvé tôt
+à 25,77 %). Et le test décisif : ordonner les flux RÉSIDUALISÉS par CD8A
+résidualisé sépare encore **+0,6499** — réduit à 66,1 % du brut (+0,9838),
+mais loin sous le seuil H1 (< 0,30) et au-dessus du seuil H0 (≥ 0,45).
+**La pureté porte environ un tiers de la corrélation et de la séparation ;
+les deux tiers restants sont propres aux tumeurs.**
+
+**Conséquence directe pour le §8.51 : son verdict « H0 soutenue » est
+qualifié, pas renversé dans ses chiffres.** Les chiffres du §8.51 restent
+vrais (0,5563 → 0,5480 après régression sur les proxys ; P-RES +0,9174).
+Ce qui change, c'est l'interprétation : les proxys acineux/îlots étaient
+de FAIBLES mesures de la pureté (moyenne |r| avec les flux 0,146/0,198,
+contre 0,493 pour ABSOLUTE ; signes majoritairement positifs, contre
+négatifs pour ABSOLUTE — le sens attendu d'une dilution). Le §8.51 a testé
+les proxys, pas la pureté elle-même. Avec la vraie pureté, la réponse
+n'est plus « pas un artefact » mais « en partie un effet de pureté, en
+partie une propriété propre ». La domination IMMROT du §8.48 n'est pas
+remise en cause : elle reste expliquée par le couplage ; ce chantier en
+précise la cause amont — le couplage est porté pour environ un tiers par
+la pureté tumorale.
+
+## 8.55.1 Question, méthode, inventaire des sources (avant le gel)
+
+**Question (§8.51.10).** Le §8.51 a innocenté la pureté avec des proxys
+internes ARN. Une pureté EXTERNE, indépendante, donne-t-elle un autre
+chiffre ? Deux mesures visées : ABSOLUTE (nombre de copies ADN — la plus
+indépendante de l'ARN) et ESTIMATE-purity (ARN, signature indépendante).
+
+**Sources candidates gelées :** (1) Aran et al., Nat Commun 2015, 6:8971,
+tableau supplémentaire (ABSOLUTE, ESTIMATE, LUMP, IHC, CPE) via Nature /
+UCSC Xena ; (2) ESTIMATE, Yoshihara et al., Nat Commun 2013 (site
+MD Anderson, scores par maladie) ; (3) GDC / autres portails TCGA.
+
+**Critères gelés.** T1' : lien substantiel si moyenne |r| ≥ 0,30 pour au
+moins une pureté ; faible si < 0,15 pour les deux. T2' : EFFONDREMENT si
+moyenne |r| résiduelle < 0,30 (chute ≥ 45 %) ET fraction |r| > 0,5 < 0,20 ;
+PERSISTANCE si chute < 20 % (moyenne résiduelle > 0,80 × brute appariée) ;
+entre les deux : partielle. T5' : E-ABS ou E-EST soutient H1-ext si écart
+S_sep ≥ 0,45 ; E-RES soutient H1-ext si écart < 0,30, soutient H0-ext si
+écart ≥ 0,45. Verdict : H1 totale si T2' = effondrement ET E-RES < 0,30
+ET (E-ABS ≥ 0,45 OU E-EST ≥ 0,45) ; H1 PARTIELLE si T2' = partielle OU
+(E-ABS/E-EST entre 0,30 et 0,45) avec E-RES < 0,70 ; H0 si T2' =
+persistance ET E-ABS < 0,30 ET E-EST < 0,30 ET E-RES ≥ 0,45 ; toute autre
+combinaison : zone grise. Références : IMMROT sans doublon, moyenne
++0,7521, minimum +0,4508 (CD68), CD8A écart +0,9838 (réel 1,2310, nul
+0,2472) ; régression §8.48 d_ssep = −0,175 + 1,705·C. Le score immunitaire
+ESTIMATE n'est PAS utilisé comme contrôle des flux immunitaires
+(circulaire : il dérive d'une signature immunitaire ARN).
+
+## 8.55.2 Porte S (source) : OUVERTE pour ABSOLUTE, fermée pour ESTIMATE publiée
+
+### Aran et al. 2015 : obtenu, mais 0 PAAD
+Supplementary Data 1 (« Tumor purity estimates for TCGA samples ») obtenu
+via Europe PMC (`https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4671203/supplementaryFiles`,
+zip SHA-256 `4685a8b2…541a5`, 8 048 764 octets ; xlsx extrait
+`ncomms9971-s2.xlsx`, SHA-256 `fce1ba13…7529`, 553 082 octets, feuille
+« Supp Data 1 », 9 364 lignes, colonnes Sample ID, Cancer type, ESTIMATE,
+ABSOLUTE, LUMP, IHC, CPE). **Types couverts : 21, PAAD absent — 0 ligne
+PAAD, 0 appariement sur 178.** Le téléchargement direct depuis PMC est
+bloqué par un défi de preuve de travail (« Preparing to download… »,
+page HTML au lieu du xlsx — tenté, documenté, non contourné). ABSOLUTE
+n'existe dans ce tableau que pour 11 types (BLCA 101, BRCA 838, COAD 400,
+GBM 548, HNSC 299, KIRC 416, LUAD 354, LUSC 332, OV 555, READ 159,
+UCEC 396) — PAAD n'en fait pas partie, comme l'article l'annonçait
+(« estimations available for only 11 cancer types »).
+
+### UCSC Xena : même tableau, 0 PAAD (confirmation indépendante)
+Le jeu `tcga_purity` du package UCSCXenaShiny 2.2.1 (tarball CRAN SHA
+`377c0f3f…a597`, `data/tcga_purity.rda`) est exactement le tableau d'Aran :
+9 364 lignes, mêmes colonnes, mêmes premières lignes (TCGA-OR-A5J1-01,
+ACC, ESTIMATE 0,9368…) — 21 types, **PAAD absent**. La source Xena ne
+donne rien de plus que la source 1a.
+
+### ESTIMATE publiée pour PAAD : NON obtenue (tentative documentée)
+Le site MD Anderson (`bioinformatics.mdanderson.org/estimate/`) liste
+bien « Pancreatic ductal adenocarcinoma — RNA-seqV2 179 » avec un
+téléchargement des scores par maladie (stromal, immunitaire, ESTIMATE).
+Mais le téléchargement est piloté par JavaScript (`disease.html` +
+`js/disease_histogram.js`, fonction `startDownload`) et le fichier JS
+n'a pas pu être récupéré : curl en échec répété (000, 3 tentatives) puis
+timeout du fetch de page sur ce même fichier — cette requête n'a pas été
+répétée ensuite. **Aucun score ESTIMATE publié pour PAAD n'a donc été
+obtenu.** Le repli par recalcul (package R `estimate` depuis notre
+tarball) n'a PAS été fait : ce ne serait pas un score publié, et ABSOLUTE
+(ADN, indépendant de l'ARN) est le contrôle externe le plus fort — il est
+disponible. L'ESTIMATE-purity publiée reste un contrôle manquant, nommé
+au §8.55.10.
+
+### ABSOLUTE pour PAAD : obtenu via pdacR / Raphael et al. 2017
+**Source primaire :** Raphael et al., « Integrated Genomic Characterization
+of Pancreatic Ductal Adenocarcinoma », Cancer Cell 2017, 32(2):185–203.e13
+(PMID 28810144, PMCID PMC5964983, DOI 10.1016/j.ccell.2017.07.007),
+Table S1 — la table d'échantillons TCGA-PAAD avec la pureté ABSOLUTE.
+Le téléchargement direct de la Table S1 depuis PMC
+(NIHMS898701-supplement-10.xlsx, 40,2 Ko) est bloqué par le même défi de
+preuve de travail que pour Aran (tenté, page HTML reçue, non contourné) ;
+Europe PMC refuse le supplément (« Article with id PMC5964983 is not
+open access one »).
+**Copie curée utilisée :** pdacR (Torre-Healy et al., Commun Biol 2023,
+6:163, doi 10.1038/s42003-023-04461-6), GitHub `rmoffitt/pdacR`,
+fichier `data/TCGA_PAAD.rds`, URL
+`https://raw.githubusercontent.com/rmoffitt/pdacR/master/data/TCGA_PAAD.rds`,
+SHA-256 `52020679350d1539d7516f7d38f7bf09e510225eba2f228a4fe874f3c496ea76`
+(12 311 529 octets, jamais modifié ; copie dans `data/pdacR_TCGA_PAAD.rds`).
+Le script de construction du package (`R/parse_TCGA_PAAD.R`, copie dans
+`pdacr_parse_TCGA_PAAD.R`, SHA `a65f716a…dd30`) lit explicitement la
+Table S1 de Raphael (`Supplemental_Table_1_PAAD_sample_table_for_TCGA.xlsx`,
+feuilles 1–4) pour construire le `sampInfo` — la colonne `ABSOLUTE.Purity`
+vient de cette Table S1. Le `sampInfo` transcrit (181 lignes × 55 colonnes)
+est `purity_855_sampinfo.csv` (SHA `7a09dde3…b014`) ; la transcription est
+mécanique (lecture seule par le package `rdata`, aucune valeur calculée).
+
+**Cohérence de la colonne ABSOLUTE — trois vérifications indépendantes :**
+(a) ABSOLUTE corrèle à **r = +0,8556 (n = 149, p = 7,0×10⁻⁴⁴)** avec la
+pureté par méthylation (`DNA.hypermethylation.mode.purity`, même table,
+mesure ADN indépendante) — deux mesures ADN s'accordent ; (b) la
+classification haut/bas publiée est EXACTEMENT le seuil ABSOLUTE 0,33 :
+classe high n = 76, ABSOLUTE [0,33 ; 0,89], moyenne 0,503 ; classe low
+n = 73, ABSOLUTE [0,09 ; 0,32], moyenne 0,194 — aucun chevauchement, la
+colonne ABSOLUTE est bien celle qui a servi à la classification publiée ;
+(c) la distribution reproduit le sous-ensemble indépendant ShrinkageTrees
+`pdac` (CRAN 2.1.1, `data/pdac.rda`, n = 130, sans barcode — comparaison
+de distribution seulement) : moyenne 0,3557 contre 0,3517, min 0,09,
+max 0,89 identiques. Ces trois vérifications ne remplacent pas une
+relecture directe de la Table S1 (restée inaccessible derrière le défi
+PMC — à refaire par le coordinateur en navigateur si voulu) ; elles
+rendent une erreur de transcription invraisemblable.
+
+## 8.55.3 Porte S / jointure : OUVERTE
+
+Jointure sur les **15 premiers caractères** du barcode (protocole §4) :
+178/178 tumeurs du projet appariées (0 collision de clé des deux côtés) ;
+**ABSOLUTE non nul pour 149/178 (83,7 %)** — au-dessus du seuil gelé
+(≥ 100). Toutes les valeurs dans [0, 1]. Les 3 échantillons externes hors
+projet sont TCGA-HZ-A9TJ-06A (06A, métastase), TCGA-H6-8124-11A et
+TCGA-YB-A89D-11A (11A, tissu normal adjacent) — correctement exclus par
+notre critère « tumeurs primaires code 01 ». Les 29 tumeurs sans ABSOLUTE
+sont les non-whitelistées de Raphael (181 − 150 = 31 dans pdacR) : le
+sous-ensemble apparié est le sous-ensemble whitelisting — effet de
+sélection nommé au §8.55.8 (la cohésion brute passe de 0,5563 à n = 178
+à 0,5040 à n = 149 par la seule exclusion de ces 29 tumeurs).
+
+ABSOLUTE (n = 149) : min 0,09, médiane 0,33, moyenne 0,3517, écart-type
+0,1845, max 0,89. Fichier apparié : `purity_855_external.csv`
+(SHA `03f34fe0…bd6f`, 149 lignes : sample, purity_absolute, + colonnes de
+provenance : pureté méthylation, leucocytes méthylation, classe, cellularité
+pathologiste).
+
+## 8.55.4 T1' — Chaque flux immunitaire suit ABSOLUTE : fortement, tous négativement
+
+Pearson r (+ Spearman ρ) de chaque flux contre ABSOLUTE ; R² par flux
+(OLS sur [1, ABSOLUTE]) ; p brutes bilatérales, sans correction pour tests
+multiples (12 tests — le jugement porte sur la moyenne, pas sur une p
+isolée).
+
+| Gène | r ABSOLUTE (p) | ρ ABSOLUTE | R² ABSOLUTE |
+|---|---|---|---|
+| CD8A | **−0,676 (3,2×10⁻²¹)** | −0,689 | **0,457** |
+| CD8B | −0,563 (7,6×10⁻¹⁴) | −0,583 | 0,317 |
+| CD4 | −0,633 (4,6×10⁻¹⁸) | −0,624 | 0,401 |
+| FOXP3 | −0,533 (2,7×10⁻¹²) | −0,555 | 0,284 |
+| CD68 | −0,212 (9,6×10⁻³) | −0,156 | 0,045 |
+| CD163 | −0,584 (5,3×10⁻¹⁵) | −0,544 | 0,341 |
+| CD274 | −0,308 (1,3×10⁻⁴) | −0,349 | 0,095 |
+| PDCD1 | −0,564 (6,7×10⁻¹⁴) | −0,576 | 0,318 |
+| CTLA4 | −0,593 (1,6×10⁻¹⁵) | −0,587 | 0,352 |
+| GZMB | −0,451 (7,9×10⁻⁹) | −0,475 | 0,203 |
+| IFNG | −0,306 (1,5×10⁻⁴) | −0,320 | 0,094 |
+| CD19 | −0,495 (1,4×10⁻¹⁰) | −0,525 | 0,245 |
+
+Moyenne |r| : **0,4932** (Spearman 0,4985). **R² médian 0,3006 (30,1 %),
+maximum 0,4569 (CD8A).** Significatifs à p < 0,05 : 12/12 ; à p < 0,001 :
+11/12 (seul CD68 est à p = 9,6×10⁻³). Critère gelé : lien SUBSTANTIEL
+(≥ 0,30 — dépassé de 64 %). Trois remarques : (a) les 12 corrélations
+sont NÉGATIVES — le sens attendu d'une dilution : plus la tumeur est
+pure, moins le signal immunitaire est fort ; c'est le sens inverse des
+proxys internes du §8.51 (22/24 positives, petites), qui ne mesuraient
+donc pas la pureté ; (b) ABSOLUTE explique 30 % de la variance du gène
+immunitaire médian et 46 % de CD8A — contre 5,7 % et 13,2 % pour les
+proxys internes (facteur ~5) ; (c) CD68 est l'exception (r = −0,212,
+R² = 4,5 %) — les macrophages suivent moins la pureté que les lymphocytes.
+
+## 8.55.5 T2' — La corrélation intra-famille chute d'un quart, ne s'effondre pas
+
+Matrice 66 paires, sur les n = 149 appariées (la brute de référence est
+recalculée sur ce sous-ensemble, jamais importée du §8.51).
+
+| Matrice | Pearson moyenne \|r\| | médiane \|r\| | fraction \|r\| > 0,5 | Spearman moyenne \|r\| |
+|---|---|---|---|---|
+| Brute (n = 149) | **0,5040** | 0,5429 | 0,561 (37/66) | 0,4880 |
+| Résidus [1, ABSOLUTE] | **0,3757** | 0,3746 | 0,273 (18/66) | 0,3617 |
+| Brute (n = 178, réf.) | 0,5563 | — | — | 0,5403 |
+
+**Chute : 25,5 %** (0,5040 → 0,3757) ; la fraction de paires fortes est
+divisée par deux (37/66 → 18/66). Critère gelé : ni EFFONDREMENT
+(résiduelle 0,3757 > 0,30 ; chute 25,5 % < 45 %) ni PERSISTANCE (chute
+25,5 % > 20 % ; résiduelle 0,3757 < 0,80 × 0,5040 = 0,4032) : **T2' =
+PARTIELLE**. Retirer linéairement toute la pureté ABSOLUTE retire un
+quart de la corrélation — et en laisse trois quarts.
+
+## 8.55.6 T3' — Couplage prédit : la régression §8.48 tient, avant comme après
+
+Couplage C par contrôle immunitaire (moyenne des |r| avec les 11 autres
+flux), brut contre résidualisé ; d_ssep prédit par d = −0,175 + 1,705·C.
+
+| | C moyen | d_ssep prédit moyen |
+|---|---|---|
+| Brut (n = 149) | 0,5040 | **0,6844** |
+| Résidualisé [ABSOLUTE] | 0,3757 | **0,4656** |
+
+CD8A seul : C 0,6059 → 0,4522, d_pred 0,8581 → **0,5960**. Le T3' ne fait
+que traduire T2' en S_sep prédit ; le verdict se joue au T5'.
+
+## 8.55.7 T4' — Stratification : la cohésion persiste dans chaque moitié
+
+Médiane d'ABSOLUTE = 0,33 (n = 76/73 — exactement les classes high/low
+publiées, cf. §8.55.2) ; matrice intra-famille dans chaque moitié.
+
+| Stratification | Moitié haute : moyenne \|r\| (frac. > 0,5) | Moitié basse : moyenne \|r\| (frac. > 0,5) |
+|---|---|---|
+| ABSOLUTE (méd. 0,33) | 0,3802 (0,273) | 0,4283 (0,394) |
+
+Si la cohésion venait entièrement de la pureté, elle devrait s'effondrer
+dans chaque moitié (bande de pureté étroite). Elle persiste dans les deux
+moitiés (0,38 et 0,43, contre 0,5040 global) — réduite, pas effondrée.
+Argument non paramétrique, indépendant de toute linéarité : il confirme
+T2' par une autre voie — la pureté porte une partie, pas le tout.
+
+## 8.55.8 T5' — Runs v6.2 : ABSOLUTE ordonne l'immunitaire, les résidus aussi
+
+Prédictions calculées AVANT de lire les sorties (depuis T1'/T2' du jour) :
+E-ABS d_pred +0,6659 (C = 0,4932) ; E-RES d_pred +0,5960 (C_résid CD8A =
+0,4522). 4 runs v6.2, mode fast, graine 42, 4/4 exit 0 (lot 03h29:22 UTC –
+05h02:00 UTC 20 nov. ; §8.55.10 pour l'incident de redémarrage machine).
+
+| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w |
+|---|---|---|---|---|---|---|---|---|
+| E-ABS | ABSOLUTE → 12 imm. bruts | 0,9278 | 0,2367 | **+0,6911** | +0,6659 | 0,4316 / 0,3473 | 2,89 / 3,04 | 26 |
+| E-RES | CD8A résid. → 11 imm. résid. | 0,7902 | 0,1403 | **+0,6499** | +0,5960 | 0,4162 / 0,3224 | 2,92 / 2,90 | 26 |
+
+Lecture par critère gelé :
+- **E-ABS : la pureté externe ordonne les flux immunitaires.** Écart
+  +0,6911 — au-dessus du seuil H1 (0,45), à 92 % de la moyenne IMMROT
+  (+0,7521), prédit +0,6659 à 0,025 près. MC sépare aussi (+0,0844 :
+  0,4316 contre 0,3473) ; Delta non (2,89 contre 3,04, nul devant de
+  0,14) — noté, non utilisé pour le verdict (le verdict porte sur S_sep,
+  gelé). Le seuil est trouvé TÔT (T0 = 25,77 %, contre 84,78 % pour P-IS
+  au §8.51) : une marche nette en début de course, pas une queue de
+  distribution. L7a ne sépare pas dans le sens attendu (down 0,2019
+  contre up 0,3785) : L7a n'est pas utilisé ici, comme au §8.48/§8.51.
+- **E-RES : la séparation survit réduite.** Écart +0,6499 contre +0,9838
+  pour CD8A brut (**66,1 % conservés, baisse de 33,9 %**) et contre
+  +0,5960 prédit (écart à la prédiction +0,0539). MC +0,0939 (0,4162
+  contre 0,3224) ; Delta quasi égal (2,92 contre 2,90). Critère gelé :
+  E-RES < 0,70 → réduit (condition de H1 partielle remplie) ; E-RES
+  ≥ 0,45 → encore séparant (la condition H0-ext sur E-RES seule serait
+  aussi remplie — c'est pourquoi le verdict suit la règle de synthèse,
+  pas un vote : T2' = partielle tranche).
+
+## 8.55.9 Verdict de synthèse
+
+Règle gelée, test par test : T1' = lien substantiel (moyenne |r| 0,4932) ;
+T2' = PARTIELLE (chute 25,5 %) ; T4' = persistance réduite dans les deux
+moitiés ; E-ABS = +0,6911 (≥ 0,45) ; E-RES = +0,6499 (< 0,70, ≥ 0,45).
+**H1-ext totale est rejetée** (T2' n'est pas un effondrement, E-RES n'est
+pas < 0,30). **H0-ext est rejetée** (T2' n'est pas une persistance,
+E-ABS ≥ 0,45). **H1-ext PARTIELLE est SOUTENUE par la règle gelée**
+(T2' = partielle). La corrélation intra-famille immunitaire est portée
+pour environ un tiers par la pureté tumorale (ABSOLUTE) et pour environ
+deux tiers par une co-expression propre aux tumeurs.
+
+**Ce que cela dit, et ce que cela ne dit pas.** (a) Cela dit que la
+pureté est un vrai contributeur, mesuré par une voie ADN indépendante de
+l'ARN — pas un artefact des proxys du projet. (b) Cela ne dit pas que
+l'infiltration est expliquée : aucune infiltration INDÉPENDANTE n'a été
+testée ici (cf. §8.51.1) — ABSOLUTE mesure la fraction tumorale, pas la
+composition de l'infiltrat. (c) Cela ne dit pas que les deux tiers
+restants sont « biologiques » au sens d'une régulation : ils peuvent
+venir d'une variable latente non testée (sous-type moléculaire, état
+d'activation, stroma). (d) La mesure porte sur le sous-ensemble
+whitelisting (n = 149) ; la brute y est déjà plus faible (0,5040 contre
+0,5563 à n = 178) — la sélection elle-même retire 0,0523 de cohésion,
+à ne pas confondre avec l'effet ABSOLUTE (0,1283 de chute par
+régression, mesuré dans le même n = 149). (e) La domination IMMROT du
+§8.48 n'est pas remise en cause : elle reste expliquée par le couplage,
+dont un tiers environ vient de la pureté.
+
+**Comparaison directe avec le §8.51 (scores internes) :**
+
+| Test | §8.51 (proxys internes, n = 178) | §8.55 (ABSOLUTE externe, n = 149) |
+|---|---|---|
+| T1 moyenne \|r\| | acineux 0,146 / îlots 0,198 | ABSOLUTE **0,4932** |
+| T1 R² médian | 0,057 | **0,3006** |
+| T2 brute → résiduelle | 0,5563 → 0,5480 (−1,5 %) | 0,5040 → 0,3757 (−25,5 %) |
+| T5 contrôle → flux | P-AC +0,0118 ; P-IS +0,2876 | E-ABS **+0,6911** |
+| T5 résidualisé | P-RES +0,9174 (93,3 % du brut) | E-RES +0,6499 (66,1 % du brut) |
+| Verdict | H0 soutenue | **H1 partielle** |
+
+## 8.55.10 Provenance
+
+- **Codes (jamais modifiés).** Pipeline v6.2
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`, SHA-256
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+  (vérifié avant les calculs, dans les deux logs de lot, et après
+  l'extraction). Mode `fast`, graine 42 (défaut), nul = lignes permutées,
+  graine 42 (default_rng frais par fichier), contrôle intact.
+- **Protocole.** `PROTOCOL_purity_external_855.md`, SHA-256
+  `734a9b171cf0ce155d456288d8f617528aa237820269d1c3e429505bce134db7`,
+  gelé le 19 nov. 2026 avant tout téléchargement, tout calcul et tout run
+  de ce chantier.
+- **Entrées externes.** (1) pdacR `data/TCGA_PAAD.rds`, SHA-256
+  `52020679350d1539d7516f7d38f7bf09e510225eba2f228a4fe874f3c496ea76`
+  (12 311 529 octets ; URL
+  `https://raw.githubusercontent.com/rmoffitt/pdacR/master/data/TCGA_PAAD.rds`) ;
+  publication source Raphael et al. 2017 (PMID 28810144, PMCID PMC5964983,
+  DOI 10.1016/j.ccell.2017.07.007, Table S1) ; curation Torre-Healy et
+  al. 2023 (doi 10.1038/s42003-023-04461-6). (2) Aran et al. 2015 Suppl.
+  Data 1, `data/aran2015_supp_data1_ncomms9971-s2.xlsx`, SHA-256
+  `fce1ba13ff3a6432b7e4f260eb516e407c967d615ca87bc8dffa7765baf97529`
+  (via Europe PMC, zip SHA `4685a8b2…541a5`) — 0 PAAD, non utilisé pour
+  les tests. (3) ShrinkageTrees 2.1.1 `data/pdac.rda` (tarball CRAN SHA
+  `7c55b4d3…3c85c`, transcrit dans `data/shrinkagetrees_pdac.csv`, SHA
+  `a582bc6f…5bab`) — vérification de distribution seulement. (4) Site
+  ESTIMATE (MD Anderson) consulté, scores PAAD non récupérés (cf.
+  §8.55.2).
+- **Entrées du projet.** Base immunitaire `pdac_immune_tcga_fluxes.csv`,
+  SHA-256 `66dbb672ea2a305ea67b51be3f9522a47e5003425f271c9cc4f42bc0427bbd2e` ;
+  axe `immune_kras_order_tcga.csv`, SHA-256
+  `31d31ae64baf0a4a9247424f877ae6b0c3524cf97cf15c19d4bab80af417b62d` ;
+  écarts §8.48/§8.51 relus en machine dans `ssep_844_rotations.csv` et
+  `purity_851_runs.csv` (CD8A : réel 1,2310, nul 0,2472, écart +0,9838).
+- **Nature des lignes.** Les flux immunitaires sont des mesures
+  instrumentales (séquençage ARN, log2(RSEM+1), brutes) ; ABSOLUTE est
+  une estimation publiée depuis le nombre de copies ADN (indépendante de
+  l'ARN) ; les résidus sont des valeurs calculées (OLS sur [1, ABSOLUTE]) ;
+  les nuls sont des lignes permutées (graine 42) — des échantillons
+  hypothétiques, pas des mesures. Aucun mot humain, aucun échantillon
+  hypothétique dans les séries réelles.
+- **Sorties et scripts de ce chantier.**
+  `extract_pdacr_sampinfo_855.py` (SHA `70e72a53…5990`) : transcription
+  du sampInfo (181 × 55). `analyze_purity_855.py` (SHA `6bc27fb9…5d75`) :
+  porte S, jointure, T1'–T4'. `build_purity_855.py` (SHA `01ee8107…99b2`) :
+  4 CSV T5' (résidus vérifiés : moyenne |r| = 0,3757, identique à T2').
+  `extract_purity_855.py` (SHA `b6122f89…4dd1`) : lecture des 4 runs.
+  `purity_855_sampinfo.csv` (SHA `7a09dde3…b014`, 181 lignes),
+  `purity_855_external.csv` (SHA `03f34fe0…bd6f`, 149 tumeurs appariées),
+  `purity_855_results.json` (SHA `4ab24df6…7213`, T1'–T4' + porte S),
+  `purity_855_results.csv` (SHA `92736cb4…f71c`, T1' par flux),
+  `purity_855_immune_resid.csv` (SHA `e7cad0d4…6b9f`, 12 flux résidualisés),
+  `purity_855_csv_sha.json` (SHA `f1c5e18f…6183`, SHA des 4 CSV T5'),
+  `purity_855_runs.json` (SHA `59a0fc16…a2ce`) / `.csv` (SHA `0c37af88…21a5`,
+  4 runs). Manifeste `manifest_v62_purity_855.txt`
+  (SHA `9d195acd…7772`) ; log `runs_v62_purity_855.log` ; surveillance
+  `watch_v62_purity_855.sh` (SHA `bd643472…ca31`) ; unités systemd
+  `v62-purity-855` puis `v62-purity-855b`.
+- **Ce qui manque :** ESTIMATE-purity publiée pour PAAD (non récupérée,
+  cf. §8.55.2) ; relecture directe de la Table S1 de Raphael (défi PMC
+  non contourné — trois vérifications de cohérence à la place, §8.55.2) ;
+  les moitiés T4' sont à n = 76/73 ; les p de T1' sont brutes, sans
+  correction pour tests multiples.
+
+## 8.55.11 Ce qui manque, ce qui reste ouvert
+
+- **ESTIMATE-purity publiée pour PAAD.** Le site MD Anderson liste PAAD
+  (n = 179, RNA-seqV2) : récupérer le fichier par maladie (navigateur ou
+  autre voie) donnerait le second contrôle externe gelé — E-EST et E-RES
+  sur [ABSOLUTE, ESTIMATE] — et testerait si l'ARN (ESTIMATE) et l'ADN
+  (ABSOLUTE) s'accordent sur la part de pureté (~un tiers chacun, ou
+  l'un plus que l'autre).
+- **Pureté par méthylation.** La même Table S1 contient
+  `DNA.hypermethylation.mode.purity` (150/178 appariées, r = 0,856 avec
+  ABSOLUTE) : une troisième mesure externe, ADN elle aussi, non testée
+  ici (hors protocole gelé) — candidate pour un chantier jumeau, avec la
+  fraction leucocytaire par méthylation comme piste d'infiltration
+  indépendante (non circulaire, contrairement aux gènes immunitaires).
+- **Infiltration indépendante non testée.** Comme au §8.51 : aucun score
+  de déconvolution (CIBERSORT/xCell) n'a été joint ; la part « deux
+  tiers » restante pourrait encore contenir de l'infiltration (quantité
+  de cellules immunitaires) en plus de la co-expression.
+- **Le petit effet îlots du §8.51.** +0,2876 au T5, CD4 le plus lié
+  (R² 13,2 %) : avec ABSOLUTE, CD4 est aussi très lié (r = −0,633,
+  R² = 40,1 %) — l'effet îlots était probablement l'ombre de la vraie
+  pureté, vue par un proxy faible. Non tranché formellement (pas de
+  régression conjointe [îlots, ABSOLUTE] dans ce chantier).
+- **Incident d'exécution.** La machine a redémarré pendant le lot
+  (~03h44 UTC, `uptime` : 1 min à 03h45:37 UTC) ; la première unité
+  `v62-purity-855` est morte avec elle (aucune entrée dans `journalctl`,
+  cause non établie — comme aux §8.41/§8.44/§8.48/§8.51 ; unité
+  `--collect`, donc introuvable après sa mort). Aucune sortie n'était
+  perdue (1/4 terminé, EXIT 0) ; la relance reprenable `v62-purity-855b`
+  a repris au 2e run à 03h45:40 UTC. Bilan final : **4/4 exit 0,
+  0 échec**, lot 03h29:22 UTC – 05h02:00 UTC 20 nov.
+  (`=== FIN 2026-11-20T05:02:00Z deja_faits=1 termines=3 echecs=0` ;
+  surveillance arrêtée d'elle-même à 4/4, tour 1/12). Ralentissement
+  noté : d'autres lots v6.2 tournaient en parallèle sur la même machine
+  partagée (2 vCPU) — EABS_NUL ~30 min, ERES ~30 min, contre ~10 min
+  pour EABS seul.
+- **Périmètre.** 4 nouveaux runs v6.2 au maximum (protocole §7,
+  substitution ESTIMATE indisponible), aucun autre. Aucun nouveau seuil
+  proposé, aucun code modifié, aucun push GitHub dans ce chantier
+  (publication sur go séparé ; règle permanente « Toujours github et
+  pdf !!! » — par le coordinateur).
+
+— Fin de la §8.55. —
+
+---
+
+### 8.56 — « sep seul ou maxsep seul suffisent-ils » comme score MC ?
+
+## Verdict d'abord
+
+**`maxsep` seul SUFFIT aux quatre barres gelées — `sep` seul NE SUFFIT PAS.
+La question ouverte du §8.52.6 est tranchée, et la marge est mince :
+elle tient à trois paires et à l'échelle du plancher.**
+
+| Candidat | A1 rotations (≥ 30/48) | A2 principales (≥ 6/8, ≥ 7/8 positifs) | A3 HP35 (≥ 0,30) | A4 relecture exacte | Sort |
+|---|---|---|---|---|---|
+| `sep` seul | **35/48** | **5/8**, 7/8 positifs | **+0,5316** | franchie | **REJETÉ** (A2) |
+| `maxsep` seul | **37/48** | **6/8**, 7/8 positifs | **+1,6512** | franchie | **SUFFIT** — proposition d'adoption |
+
+**Proposition (pas adoption) :** remplacer le score MC affiché — le
+composite ancien `0.3·s_norm + 0.3·stability + 0.2·robustness +
+0.2·sharpness` — par `max_separation` lui-même, le |d de Cohen| maximal
+du scan de seuil, déjà émis par v6.2. La décision finale d'adoption
+revient à Zackary ; ce chantier propose, il n'adopte pas. La v6.2 reste
+la version de travail tant que la décision n'est pas prise.
+
+**Fragilité, dite en tête et pas en note de bas de page.** Les deux
+candidats ont le même ordre et les mêmes signes d'écart sur les 60
+paires (`sep` est une transformée strictement croissante de `maxsep`) ;
+sans plancher, ils sont identiques : 42/48 rotations et 7/8
+principales, positifs, pour les deux. Toute la différence vient du
+plancher 0,07 appliqué dans les unités propres de chaque candidat —
+0,07 en |d| est plus facile à franchir que 0,07 en unités `sep`,
+d'un facteur (1+m_R)(1+m_N) — médiane 1,80, étendue 1,30–3,11 sur les
+60 paires (§8.56.4). Les trois
+paires qui font basculer le verdict sont nommées : **ICGC** (A2 :
+maxsep +0,0970 contre sep +0,0525), **DEPMAPROT_MYH9** et **V4ROT_MUC16**
+(A1 : maxsep +0,0913 et +0,0703 — ce dernier passe le plancher de
+0,0003). `maxsep` passe A2 exactement au minimum (6/8). Un verdict qui
+tient à une paire et à l'échelle du plancher est un verdict à prendre
+avec sa fragilité, pas un triomphe. Il dit tout de même quelque chose
+de net : **aucun terme annexe n'est nécessaire** — la meilleure
+composante du composite, seule, fait mieux que tous les composites
+essayés (ancien 12/48, v6.3 31/48, v6.4 28/48, `sep` seul 35/48).
+
+Protocole gelé : `PROTOCOL_sep_maxsep_856.md` (19 nov. 2026). Barres
+écrites AVANT toute extraction du présent chantier (§4 du protocole) ;
+aucune repondération, aucun nouveau terme, aucune redéfinition du
+plancher après avoir vu les chiffres.
+
+## 8.56.1 — Les quatre portes, et leur sort
+
+| Porte (PROTOCOL_sep_maxsep_856.md §4) | Exigé | `sep` seul | `maxsep` seul |
+|---|---|---|---|
+| A1 — rotations sans doublon (48 paires), sépare au plancher 0,07 | ≥ 30/48 | **35/48** (direction réel > nul, somme +7,9306, moyenne +0,1652) | **37/48** (somme +17,3623, moyenne +0,3617) |
+| A2 — paires principales, > 0,07 et positif | ≥ 6/8 > 0,07 et ≥ 7/8 positifs | **5/8** > 0,07 ; **7/8** positifs | **6/8** > 0,07 ; **7/8** positifs |
+| A3 — HP35 (contrôle positif), écart | ≥ 0,30 | **+0,5316** (ancien +0,1950) | **+1,6512** (ancien +0,1950) |
+| A4 — relecture exacte (pas de nouveau code pipeline) | 120/120 à 0,0 exact + recoupements à 1e-9 + SHA inchangés | **franchie** | **franchie** |
+
+Références : ancien MC — rotations 12/48 (moyenne +0,0152),
+principales 1/8 au plancher 0,07 (7/8 positifs), HP35 +0,1950 ;
+v6.3 MC_new — 31/48, 4/8, +0,2271 ; v6.4 MC2 — 28/48, 4/8, +0,5529.
+`sep` seul bat les deux recompositions sur les rotations (35/48 contre
+31 et 28) et égale leur meilleur score aux principales (5/8 contre 4/8)
+— et reste en retrait de `maxsep` sur les deux ensembles. La leçon des
+§8.49.6 et §8.52.4 se confirme une troisième fois : chaque terme annexe
+ajouté à la séparation coûte plus qu'il ne rapporte.
+
+## 8.56.2 — Définitions exactes (lues dans le code v6.2)
+
+Fichier `universal_v6.2.0_cohen.py`, fonction `evaluate_scan_quality`
+(lignes 3314–3390). Par tirage, le scan de seuil donne une courbe de
+scores = |d de Cohen| pré/post-seuil :
+
+- **`maxsep`** = score maximal de la courbe (ligne 3333 :
+  `max_separation = scores[max_idx]`). C'est un |d de Cohen|, sans
+  dimension mais NON borné (plage [0, ∞[). Champ JSON lu :
+  `run_pipeline.threshold_metadata.threshold_optimization.best_config.metrics.max_separation`.
+- **`sep`** = `maxsep / (1 + maxsep)` (définition des protocoles v6.3 §4
+  et v6.4 §3, reprise telle quelle ; absente du code v6.2, qui émet
+  `s_norm = tanh(maxsep/2)` à la ligne 3336). Plage [0, 1[. Ancrage :
+  sep = 0,5 quand |d| = 1.
+
+Les deux scores sont lus sur le best_config ANCIEN (sélection par
+l'ancien composite, lignes 3480–3484) : la question porte sur le SCORE
+AFFICHÉ, pas sur la sélection du tirage. Seuil MC, cascade, S_sep,
+Delta, L7a inchangés par construction pour les deux candidats.
+
+**Identité d'échelle (consignée au protocole §1 avant le calcul) :**
+pour une paire (R, N),
+`d_sep = d_maxsep / ((1 + maxsep_R)·(1 + maxsep_N))`. Le plancher 0,07
+en unités `sep` équivaut donc, en unités `maxsep`, à un plancher
+`0,07·(1 + maxsep_R)·(1 + maxsep_N)` — toujours plus grand que 0,07.
+C'est le mécanisme du §8.56.4.
+
+## 8.56.3 — Validation hors-ligne (60 paires, JSON v6.2 existants, aucun run)
+
+Extracteur `extract_sep_maxsep_856.py` : 60/60 paires lues, 0 manquante,
+0 version non attendue (v6.2 partout sauf CLDN18 en v6.1, comme en
+§8.49/§8.52) ; ancien MC relu sans écart vs §8.44 (rotations) et phase 2
+v6.2 (principales), tol. 1e-9 ; `sep`/`maxsep` recoupés sans écart vs
+`v64_mc_table.json`, tol. 1e-9. Second calcul indépendant
+(`verify_sep_maxsep_856.py`, chemin de code distinct) : 120/120 dossiers
+relus, écart max 0,0 exact, multisets égaux. Gigue_eff = max(gigue
+mesurée 0, 0,07) = 0,07 (même plancher que S_sep et que v6.3/v6.4).
+Les chiffres ci-dessous sont la RE-VÉRIFICATION du présent chantier ;
+ils confirment exactement les diagnostics publiés au §8.52.3/§8.52.6
+(`sep` 35/48 et 5/8, `maxsep` 37/48 et 6/8) — aucun écart constaté.
+
+### Paires principales (V1) — `sep` 5/8, `maxsep` 6/8
+
+| Paire | maxsep R / N (écart) | sep R / N (écart) | Ancien MC (écart) |
+|---|---|---|---|
+| HP35 | 1,7718 / 0,1206 (**+1,6512**) | 0,6392 / 0,1076 (**+0,5316**) | +0,1950 |
+| TCGA v4 | 0,4623 / 0,1696 (**+0,2928**) | 0,3162 / 0,1450 (**+0,1712**) | +0,0453 |
+| GSE71729 | 0,2593 / 0,2191 (+0,0402) | 0,2059 / 0,1797 (+0,0262) | +0,0059 |
+| GSE62452 | 0,3100 / 0,3136 (−0,0036) | 0,2367 / 0,2387 (−0,0021) | −0,0031 |
+| ICGC | 0,4080 / 0,3110 (**+0,0970**) | 0,2898 / 0,2372 (+0,0525) | +0,0150 |
+| Immunitaire TCGA | 0,5309 / 0,1634 (**+0,3675**) | 0,3468 / 0,1405 (**+0,2063**) | +0,0545 |
+| PARP TCGA | 0,3680 / 0,1992 (**+0,1688**) | 0,2690 / 0,1661 (**+0,1029**) | +0,0244 |
+| DepMap | 0,4436 / 0,2532 (**+0,1904**) | 0,3073 / 0,2020 (**+0,1052**) | +0,0115 |
+
+`sep` passe le plancher sur HP35, TCGA v4, immunitaire, PARP et DepMap ;
+il échoue sur GSE71729 (+0,0262), **ICGC (+0,0525, à 0,0175 du plancher)**
+et reste négatif sur GSE62452 (−0,0021, quasi nul, pas une inversion
+forte). `maxsep` passe le plancher sur les mêmes cinq paires PLUS ICGC
+(+0,0970) — c'est la seule différence aux principales, et c'est elle
+qui fait basculer A2. Positifs : 7/8 pour les deux (seul GSE62452 est
+négatif). Sommes des écarts V1 : `sep` +1,1939 (moyenne +0,1492),
+`maxsep` +2,8043 (moyenne +0,3505).
+
+### Rotations sans doublon (V2) — `sep` 35/48, `maxsep` 37/48
+
+| Famille | `sep` > 0,07 | `maxsep` > 0,07 | Positifs (les deux) | Écart moyen `sep` | Écart moyen `maxsep` |
+|---|---|---|---|---|---|
+| IMMROT (n=178) | **12/12** | **12/12** | 12/12 | +0,301 | +0,760 |
+| V4ROT (n=178) | **9/12** | **10/12** | 10/12 | +0,153 | +0,303 |
+| PARPROT (n=178) | **9/12** | **9/12** | 12/12 | +0,162 | +0,306 |
+| DEPMAPROT (n=45) | **5/12** | **6/12** | 8/12 | +0,045 | +0,078 |
+| **Toutes** | **35/48** | **37/48** | **42/48** | **+0,165** | **+0,362** |
+
+Échecs `sep` (13 paires, écart ≤ 0,07) : les 7 DEPMAPROT restantes
+(ACO2, CCND1, CFLAR, MYC, MYH9, RAB10, UROD), PARPROT PARP1 (+0,0120),
+PARP2 (+0,0127), XRCC1 (+0,0352), V4ROT CR2 (−0,0224), GSTM1 (−0,0949),
+MUC16 (+0,0427). Échecs `maxsep` (11 paires) : les mêmes moins MYH9
+(+0,0913) et MUC16 (+0,0703) — les deux seules paires qui séparent
+`maxsep` de `sep` sur les rotations. Table complète par paire :
+
+| Paire | maxsep (écart) | sep (écart) | Paire | maxsep (écart) | sep (écart) |
+|---|---|---|---|---|---|
+| DEPMAPROT_ACO2 | −0,0229 | −0,0146 | IMMROT_CD163 | +0,7945 | +0,2933 |
+| DEPMAPROT_CCND1 | −0,1195 | −0,0808 | IMMROT_CD19 | +0,4464 | +0,1952 |
+| DEPMAPROT_CFLAR | +0,0166 | +0,0099 | IMMROT_CD274 | +0,5022 | +0,2385 |
+| DEPMAPROT_CRKL | +0,2049 | +0,1114 | IMMROT_CD4 | +0,7431 | +0,2404 |
+| DEPMAPROT_DOCK5 | +0,2674 | +0,1681 | IMMROT_CD68 | +0,4610 | +0,2374 |
+| DEPMAPROT_EFR3A | +0,2297 | +0,1256 | IMMROT_CD8A | +0,9955 | +0,3546 |
+| DEPMAPROT_MYC | −0,1434 | −0,0890 | IMMROT_CD8B | +0,8450 | +0,3343 |
+| DEPMAPROT_MYH9 | +0,0913 | +0,0603 | IMMROT_CTLA4 | +0,9089 | +0,3079 |
+| DEPMAPROT_RAB10 | +0,0621 | +0,0319 | IMMROT_FOXP3 | +0,8480 | +0,2976 |
+| DEPMAPROT_RAB6A | +0,2402 | +0,1460 | IMMROT_GZMB | +0,9215 | +0,3585 |
+| DEPMAPROT_SCAP | +0,1431 | +0,0853 | IMMROT_IFNG | +0,7287 | +0,3707 |
+| DEPMAPROT_UROD | −0,0289 | −0,0175 | IMMROT_PDCD1 | +0,9199 | +0,3830 |
+| PARPROT_ATM | +0,1638 | +0,1077 | V4ROT_CEACAM5 | +0,5143 | +0,2615 |
+| PARPROT_ATR | +0,2381 | +0,1469 | V4ROT_CLCA1 | +0,3053 | +0,1780 |
+| PARPROT_BRCA1 | +0,5300 | +0,2738 | V4ROT_CLDN18 | +0,6831 | +0,3074 |
+| PARPROT_BRCA2 | +0,4028 | +0,2154 | V4ROT_CR2 | −0,0292 | −0,0224 |
+| PARPROT_CHEK1 | +0,3872 | +0,2135 | V4ROT_DPCR1 | +0,4186 | +0,2127 |
+| PARPROT_CHEK2 | +0,2648 | +0,1574 | V4ROT_GSTM1 | −0,1354 | −0,0949 |
+| PARPROT_FANCD2 | +0,4414 | +0,2166 | V4ROT_KRT20 | +0,2565 | +0,1516 |
+| PARPROT_PARP1 | +0,0191 | +0,0120 | V4ROT_MUC16 | +0,0703 | +0,0427 |
+| PARPROT_PARP2 | +0,0203 | +0,0127 | V4ROT_MUC17 | +0,5688 | +0,2736 |
+| PARPROT_POLQ | +0,6151 | +0,2809 | V4ROT_MUC2 | +0,2002 | +0,1142 |
+| PARPROT_RAD51 | +0,5359 | +0,2762 | V4ROT_PGC | +0,2378 | +0,1283 |
+| PARPROT_XRCC1 | +0,0542 | +0,0352 | V4ROT_REG4 | +0,5439 | +0,2818 |
+
+Table complète machine : `sep_maxsep_856_table.csv` / `.json`.
+
+### Contrôles descriptifs (V3–V5, ne décident pas de l'adoption)
+
+| Paire | Ancien MC (écart) | maxsep R / N (écart) | sep R / N (écart) | Lecture |
+|---|---|---|---|---|
+| Test A (prolifération) | −0,0948 | 0,3943 / 0,1442 (**+0,2501**) | 0,2828 / 0,1260 (**+0,1567**) | Suivent maxsep, comme prévu ; ne ressuscitent pas Test A (verdict NON du §8.34 portait sur la chaîne et MC/Delta) |
+| MTAP série PRMT5-flux (§8.43) | +0,0004 | 0,1919 / 0,2955 (**−0,1036**) | 0,1610 / 0,2281 (**−0,0671**) | Restent négatifs, cohérent avec le verdict NON du §8.43 |
+| MTAP série (§8.31) | −0,1642 | 0,3392 / 0,1434 (**+0,1957**) | 0,2533 / 0,1254 (**+0,1278**) | Suivent maxsep ; l'ancien MC était fortement inversé ici |
+| V4R_PURITY (artefact §8.31) | +0,1520 | 0,1444 / 0,2114 (**−0,0670**) | 0,1262 / 0,1745 (**−0,0483**) | **Artefact CORRIGÉ** : les deux candidats reprennent le sens de maxsep, comme MC_new (−0,0353) et MC2 (−0,1197) avant eux |
+
+Aucun écart de signe entre `sep` et `maxsep` sur les 60 paires : les
+deux candidats disent la même chose partout, à l'échelle près — comme
+l'exige leur relation monotone (§8.56.2).
+
+## 8.56.4 — Pourquoi `maxsep` passe et `sep` échoue : l'échelle du plancher
+
+C'est le cœur du verdict, et il est entièrement mécanique. Pour chaque
+paire, le plancher `sep` de 0,07 équivaut en unités `maxsep` à
+`0,07·(1 + maxsep_R)·(1 + maxsep_N)`. Les trois paires qui passent le
+plancher littéral 0,07 en `maxsep` mais pas le plancher équivalent sont
+exactement les trois paires qui séparent les deux candidats :
+
+| Paire charnière | d_maxsep | Plancher équivalent-sep | d_sep | Effet sur le verdict |
+|---|---|---|---|---|
+| ICGC (V1) | +0,0970 | 0,1292 | +0,0525 | Fait passer A2 : 5/8 → 6/8 |
+| DEPMAPROT_MYH9 (V2) | +0,0913 | 0,1061 | +0,0603 | Fait passer A1 : 35/48 → 36/48 |
+| V4ROT_MUC16 (V2) | +0,0703 | 0,1152 | +0,0427 | Fait passer A1 : 36/48 → 37/48, par 0,0003 au-dessus du plancher |
+
+Autrement dit : **si le plancher était appliqué à `maxsep` à son
+équivalent d'échelle `sep`, les deux candidats auraient exactement les
+mêmes comptages (35/48, 5/8) et le verdict serait « aucun des deux ne
+suffit ».** Le verdict « `maxsep` suffit » tient donc à la convention
+du projet — le plancher 0,07 appliqué littéralement, dans les unités
+propres du score jugé (§3 du protocole) — et non à un signal que `sep`
+manquerait. Cette convention est la même que pour S_sep, MC_new et MC2 ;
+l'appliquer autrement ici aurait été une redéfinition après coup,
+interdite par le protocole gelé. Mais elle doit être nommée : 0,07 en
+|d| est une barre laxiste — en conventions de Cohen, 0,2 est déjà un
+« petit » effet, et 0,07 en |d| est en dessous. Le même constat vaut
+pour A3 : +1,6512 en |d| contre une barre de 0,30 calibrée pour des
+scores en [0, 1] — `maxsep` franchit A3 trivialement, par l'échelle
+autant que par le signal. Pour `sep`, en revanche, les barres sont
+homogènes (même échelle [0, 1] que MC_new/MC2) : son échec à A2 est un
+échec « propre », à 0,0175 du plancher sur ICGC.
+
+Deux lectures honnêtes coexistent, et la section les donne toutes les
+deux : (a) aux barres gelées, littéralement appliquées comme pour tous
+les scores précédents, `maxsep` seul suffit et `sep` seul ne suffit
+pas — c'est le verdict du chantier ; (b) à échelle de plancher égale,
+les deux candidats sont le même score, et ni l'un ni l'autre ne franchit
+A2. La proposition d'adoption porte sur (a) ; elle ne doit pas être
+lue comme une preuve que `maxsep` détecte quelque chose que `sep`
+ne détecte pas — il détecte exactement la même chose, moins comprimée.
+
+## 8.56.5 — Sensibilités (descriptives, ne décident pas)
+
+- **S1 — sans plancher** : V1 7/8 positifs pour les deux candidats
+  (seul GSE62452 négatif, −0,0036 / −0,0021, quasi nul) ; V2 42/48
+  positifs pour les deux (négatifs : DEPMAPROT_ACO2, CCND1, MYC,
+  UROD, V4ROT_CR2, GSTM1). Sans plancher, S et M sont indiscernables.
+- **S2 — barre A1 à 24/48** (protocoles v6.3/v6.4) : les deux candidats
+  la franchissent (35/48 et 37/48) — le verdict ne change pas sous
+  l'ancienne barre.
+- **S3 — équivalence d'échelle** : voir le tableau du §8.56.4 — les
+  trois paires charnières sont ICGC, MYH9, MUC16, et rien d'autre.
+- **S4 — ventilation par famille** : IMMROT 12/12 pour les deux ;
+  V4ROT 9/12 (`sep`) contre 10/12 (`maxsep`, +MUC16) ; PARPROT 9/12
+  pour les deux (les trois échecs, PARP1/PARP2/XRCC1, sont positifs
+  mais sous le plancher dans les deux échelles) ; DEPMAPROT 5/12
+  contre 6/12 (+MYH9). DEPMAPROT (n=45) reste le point faible commun
+  à l'ancien MC, MC_new, MC2, `sep` seul et `maxsep` : les petites
+  cohortes séparent mal, quel que soit le score.
+
+## 8.56.6 — Ce que « adopter `maxsep` » voudrait dire
+
+Adopter `maxsep` seul comme score MC, ce serait **retirer le composite,
+pas en composer un nouveau** : afficher `best_config.metrics.max_separation`
+— le |d de Cohen| maximal du scan — comme le score, et abandonner
+`s_norm`, `stability`, `robustness`, `sharpness` dans l'affichage (la
+sélection du best_config, elle, continuerait d'utiliser l'ancien
+composite, sauf décision contraire — ce chantier ne propose pas de
+changer la sélection). Conséquences à peser avant toute adoption :
+
+- **Ce qui est gagné :** plus de saturation artificielle (D4 tombe :
+  `sep` et `s_norm` comprimaient les écarts PDAC), plus de terme mort
+  (D1), plus de terme anti-discriminant (D2, D3), plus de malédiction
+  du vainqueur déguisée en composite (D5) — le score est la séparation
+  elle-même, lisible directement en |d de Cohen|.
+- **Ce qui est perdu :** le plafond [0, 1] et la comparabilité immédiate
+  avec les scores publiés (MC ancien, MC_new, MC2, S_sep) ; un |d| brut
+  n'a pas d'échelle commune entre études sans son contexte (n, flux,
+  contrôle). `maxsep` existe déjà comme indicateur (§8.37–§8.38, S_sep
+  = maxsep × stability) : l'adopter comme « score MC » n'ajoute aucun
+  nouvel indicateur, il en retire un.
+- **Ce qui n'est pas prouvé :** que `maxsep` sépare « le réel du nul »
+  en général — il sépare 37/48 rotations et 6/8 principales aux barres
+  gelées, avec les fragilités du §8.56.4, et 5/12 seulement sur
+  DEPMAPROT. Le verdict porte sur le score, pas sur l'instrument.
+
+Si Zackary adopte, le chantier d'adoption devra : geler le changement
+d'affichage (le champ `score` reste l'ancien composite pour la sélection
+ou bascule aussi — à trancher explicitement), régénérer le PDF, pousser
+sur GitHub (règle permanente), et mettre à jour les sections qui citent
+le MC. Si Zackary n'adopte pas, le statu quo tient : v6.2 reste la
+version de travail, l'ancien MC reste le score affiché avec ses défauts
+connus (§8.49.3), et `maxsep` reste l'indicateur de référence qu'il est
+déjà.
+
+## 8.56.7 — Limites et ce qui reste
+
+- La validation hors-ligne réutilise les JSON v6.2 : elle ne teste que
+  la RELECTURE, pas une nouvelle mesure. La porte A4 (§8.56.3) est le
+  seul contrôle d'exactitude, sur 120 runs relus deux fois.
+- Le plancher 0,07 est une convention du projet, pas une propriété
+  statistique de `sep` ou de `maxsep` ; le verdict « `maxsep` suffit »
+  tient à son application littérale en unités |d| (§8.56.4). À échelle
+  de plancher égale, le verdict serait « aucun des deux ».
+- `maxsep` passe A2 exactement au minimum (6/8) et A1 avec deux paires
+  dont une passe le plancher de 0,0003 (V4ROT_MUC16, +0,0703) : le
+  verdict est fragile à une paire près sur les deux portes à la fois.
+- DEPMAPROT (n=45) reste le point faible commun à tous les scores.
+- `sep` seul est rejeté comme score MC unique — mais `sep` reste la
+  transformée bornée de `maxsep` : là où un score en [0, 1] est voulu
+  (comparaison inter-études, affichage), `sep` demeure l'option
+  bornée, avec son échec à A2 consigné.
+- La question du §8.52.6 est close telle que posée ici : « `sep` seul,
+  ou `maxsep` lui-même, suffisent-ils » — réponse : `maxsep` seul, aux
+  barres gelées, avec la fragilité dite ; `sep` seul, non. Aucune autre
+  recomposition n'est proposée : trois chantiers (v6.3, v6.4, §8.56)
+  ont maintenant montré que le problème n'était pas le terme annexe
+  — c'était le composite lui-même.
+- Rien de clinique : l'étude porte sur l'instrument.
+
+## 8.56.8 — Provenance
+
+- Protocole gelé : `PROTOCOL_sep_maxsep_856.md`, SHA
+  `06e36725eedb3d52b1549290e1e8cccff381650928fbf4e6a28a090aec27fd4e`.
+- Extracteur hors-ligne : `extract_sep_maxsep_856.py` (SHA noté au
+  rapport) ; sorties `sep_maxsep_856_table.csv` /
+  `sep_maxsep_856_table.json` (SHA notés au rapport).
+- Vérification indépendante : `verify_sep_maxsep_856.py` (SHA noté au
+  rapport) → `sep_maxsep_856_verify.json` (120/120 dossiers, écart
+  max 0,0 exact).
+- Section : `section_8.56_sep_maxsep.md` (ce fichier ; SHA noté au rapport).
+- Données : JSON v6.2 existants (lots §8.44, phase 2, §8.43, Test A) ;
+  CSV inchangés, SHA déjà publiés dans `PROVENANCE_rotations_dedup_844.md`,
+  `PROVENANCE_tcga_v4.md`, `PROVENANCE_mtap_prmt5_flux.md`,
+  `PROVENANCE_testA_proliferation.md`. Nuls = lignes permutées, graine
+  42 — échantillons hypothétiques, pas des mesures. Séries réelles =
+  résidus d'expression génique ou de dépendance CRISPR (mesures
+  instrumentales transformées). Aucune valeur inventée ; aucune valeur
+  recopiée à la main (tables générées depuis `sep_maxsep_856_table.json`,
+  vérifiées paire par paire contre `v64_mc_table.json` à 1e-9).
+- Codes jamais modifiés : v6.2 (`f07567c4…c3abf`), v6.1 (`2af5e5ce…c1c9`),
+  v6 (`bb8bbdba…c0773`), v6.3 (`552e7359…44ffb`), v6.4 (`9ed728da…9ea3d`).
+  Aucune nouvelle version construite dans ce chantier.
+
+---
+
+### 8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2026)
+
+**Verdict d'abord : Delta reste NON ÉLUCIDÉ.** La voie ouverte au §8.42.9
+point 1 — modéliser depuis les séries entières, pas des résumés — a été
+testée avec un protocole gelé, sept modèles honnêtes et trois hold-outs :
+aucun n'atteint le critère ≥ 90 % paires ET valeurs. Le meilleur,
+**S2d (médiane calculée sur la moitié des flux seulement), manque le
+critère de 2 runs en leave-one-cohort-out — 198/222 paires (89,2 %) et
+201/222 valeurs (90,5 %) — et de 1 run en split aléatoire par matrice —
+59/66 (89,4 %) aux deux volets.** La série complète, elle, recalcule la
+cible exactement (diagnostic C0 : 2886/2886) : l'échec des modèles
+honnêtes est un manque d'information, pas un manque de capacité. Delta
+garde son statut de **piste fragile** et ne devient **pas** un
+discriminateur recommandé.
+
+## §8.57.1 Ce qui était acquis avant ce chantier
+
+Le §8.39 avait clos la voie « variables structurelles » (meilleur hold-out
+87,9 % / 81,8 %, H9e) et le §8.42 la voie « résumés de flux » (meilleur
+score honnête LOCO : 68,9 % paires / 6,3 % valeurs ; split par matrice :
+83,3 % / 42,4 %). Le §8.42 avait réduit la question à : lequel des trois
+estimateurs hauts {MFA, LevinaBickel, PCAIntrinsic} est le plus petit,
+une fois LocalPCA fixée en 3e position — et à quelle magnitude. Sa leçon
+positive était nette : « les magnitudes des estimateurs sont des
+fonctionnelles de la série ordonnée complète, pas de ses résumés — et leur
+échelle est portée par n », avec l'avertissement joint : « un modèle qui
+voudrait les prédire devrait partir des séries entières, et il devra
+prouver qu'il ne se contente pas de recalculer l'estimateur » (§8.42.8).
+Ce chantier est cette preuve : il nomme la circularité d'avance et ne
+donne jamais à un modèle la série complète de sa cible.
+
+## §8.57.2 Méthode du chantier
+
+Protocole gelé `PROTOCOL_delta_series_857.md` avant toute modélisation
+(SHA `965a88dc90c8af0ca701af2da1c31d124ceccef059d13a0972fae15ba6266bdc`) ;
+script `v62_delta_series_857.py`
+(SHA `59c1b78b4cdc0d2997660f9eb953a7b605b8575cc2c1ed2fd220d0a8dbb964f0`).
+Lecture seule, aucun run du pipeline, aucun code modifié. Cibles : les 13
+médianes par estimateur (6 divergence + 7 saturation), parsées depuis
+`v62_delta_levels.csv` ; identités d_div / d_sat re-vérifiées depuis les
+médianes parsées : 0 écart > 10⁻³ sur 222/222.
+
+**La série d'estimateurs — ce qu'elle est.** Chaque run possède
+`df_feat.csv` (120 lignes, Progress 0 → 100) dont les colonnes
+`<flux>_<estimateur>_mean` portent, pour chaque flux et chaque estimateur,
+la valeur de l'estimateur le long des positions de scan. Dans le pipeline,
+la médiane brute d'un estimateur est la médiane-sur-flux des
+médianes-sur-scan de sa colonne (NaN écartés). Vérification d'inventaire,
+avant le gel, sur 12 runs × 13 estimateurs (156/156 à 10⁻⁶ près), puis
+refaite sur tout l'ensemble par le script (diagnostic C0, §8.57.7) :
+**2886/2886**. Disponibilité : `df_feat.csv` présent dans 222/222
+dossiers, 120 lignes partout, 60 lignes Progress ≤ 50 partout ;
+`fluxes_raw.csv` présent dans 222/222 ; p (nombre de flux) de 6 à 12.
+Les 185 dossiers v62 postérieurs (§8.47, §8.53) sont hors de l'ensemble
+gelé de 222 runs, pour garder la comparabilité avec §8.39/§8.42.
+
+**La circularité — nommée, et traitée.** La cible `raw_median(e)` EST une
+fonctionnelle déterministe de la série complète de e (médiane-de-médianes
+sur les 120 lignes). Tout modèle nourri de la série complète de e peut
+donc recalculer la cible exactement : ce serait une recomputation
+déguisée, pas une élucidation. Le traitement gelé : un prédicteur honnête
+n'utilise qu'une **partie stricte** de la série de la cible, ou aucune
+information de cet estimateur, ou la série d'entrée brute :
+
+- **S1d / S1r — PRÉFIXE :** seules les lignes de scan Progress ≤ 50
+  (les 60 premières lignes). S1d est le prédicteur direct, sans
+  apprentissage : la médiane-de-médianes du préfixe. S1r est un ridge
+  λ = 10 sur 15 traits (médiane-de-médianes du préfixe de e, IQR
+  inter-flux, médianes-de-médianes du préfixe des 12 autres estimateurs,
+  log n).
+- **S2d / S2r — DEMI-FLUX :** seuls les flux d'indice pair (0, 2, 4, …
+  dans l'ordre des colonnes de `df_feat`), sur tout le scan. S2d est le
+  prédicteur direct : la médiane-de-médianes sur la moitié des flux.
+  S2r est le ridge λ = 10 analogue (15 traits).
+- **S3r — TRANS-ESTIMATEUR PRÉFIXE :** ridge λ = 10 sur 13 traits —
+  le préfixe des 12 AUTRES estimateurs et log n. Aucune information de
+  l'estimateur cible.
+- **S4r / S4k — SÉRIES DE FLUX ENTIÈRES :** la matrice de flux
+  d'entrée seule, en pleine résolution : chaque série de flux
+  rééchantillonnée à K = 20 positions par interpolation linéaire ; à
+  chaque position, moyenne, écart-type, min, max, médiane inter-flux
+  (100 traits), plus log n et p (102 traits). S4r est un ridge λ = 10,
+  S4k un kNN k = 5. Aucune colonne d'estimateur n'entre.
+- **B0 (base) :** constante = médiane du TRAIN par cible.
+- **C0 (diagnostic circulaire, hors critère) :** recomputation directe
+  de la médiane-de-médianes depuis la série complète (120 lignes, tous
+  les flux). Étiqueté CIRCULAIRE, exclu de la candidature : il sert à
+  prouver le plafond (100 %) et donc à montrer que l'échec des modèles
+  honnêtes est un manque d'information, pas un manque de capacité.
+
+Interprétation fixée d'avance : un succès de S1 ou S2 aurait signifié
+« déjà déterminé » — la magnitude déjà fixée par la moitié de la
+construction, une réduction, pas une explication causale du pourquoi de
+la valeur. Un succès de S3 aurait signifié une redondance
+inter-estimateurs. Seul un succès de S4 aurait compté comme explication
+depuis un contenu indépendant (la série d'entrée brute, avant tout
+estimateur). Traits manquants (préfixe ou demi-flux sans aucune valeur
+finie alors que la cible existe) : imputés par la médiane du TRAIN de ce
+trait ; pour les prédicteurs directs, repli sur la médiane du TRAIN de la
+cible — un seul cas dans tout l'ensemble (voir §8.57.7). MFA : prédiction
+rapportée brute ET snapée sur la plus proche des valeurs MFA observées
+au TRAIN.
+
+**L'unité d'indépendance est la matrice, pas le run.** Inventaire
+préalable : les 222 runs ne reposent que sur **156 matrices distinctes**,
+réparties en 9 cohortes (tcga 100 matrices / 126 runs, depmap 26/30,
+geo71729 10/20, geo62452 6/14, cptac 4/8, icgc 4/10, coad 2/4, luad 2/4,
+hp35 2/6) — identique au §8.42. Trois hold-outs gelés, repris du §8.42 :
+**PRIMAIRE — leave-one-cohort-out (LOCO)**, 9 plis, toutes les lignes
+d'une matrice du même côté, scores poolés sur 222 runs ; **SECONDAIRE A
+— split aléatoire par matrice** (graine 42, 70/30 : 108 matrices / 156
+runs au train, 48 / 66 au test) ; **SECONDAIRE B — version v6.1 → v6.2,
+DIAGNOSTIC, FUITE NOMMÉE** (mêmes matrices, ne compte pas pour le
+critère). Critère §5.4 : ÉLUCIDÉ si au moins un modèle honnête S1d, S1r,
+S2d, S2r, S3r, S4r, S4k atteint paires ≥ 90 % ET valeurs ±0,10 ≥ 90 %
+sur le LOCO poolé ET sur le split par matrice. Les prédictions sont
+dérivées par la construction connue (paire = 3e/4e triées après application
+du masque vrai ; d_div et d_sat recalculés depuis les médianes prédites ;
+Delta = d_div − d_sat).
+
+Les séries `csd_fractal_estimators.json` (trajectoires par fenêtres,
+dérivées du même paysage `df_feat`) sont disponibles mais NON utilisées :
+même information, même statut circulaire — les utiliser serait compter
+deux fois la même série. `scan_curve.json` (score en fonction du
+candidat) n'est pas une série d'estimateurs et n'est pas utilisée.
+
+## §8.57.3 Résultats : aucun modèle, aucun hold-out ne passe — de peu pour S2d
+
+| Hold-out | Modèle | Paires | Valeurs ±0,10 | MAE d_div | 3-voies |
+|---|---|---|---|---|---|
+| LOCO (222 runs) | B0 constante | 136/222 (61,3 %) | 0/222 (0,0 %) | 2,129 | 56,2 % (= majorité) |
+| LOCO | **S1d préfixe direct** | 189/222 (85,1 %) | 188/222 (84,7 %) | 0,061 | 81,3 % |
+| LOCO | S1r ridge préfixe | 119/222 (53,6 %) | 43/222 (19,4 %) | 0,304 | 55,7 % |
+| LOCO | **S2d demi-flux direct** | **198/222 (89,2 %)** | **201/222 (90,5 %)** | **0,037** | **86,4 %** |
+| LOCO | S2r ridge demi-flux | 116/222 (52,3 %) | 54/222 (24,3 %) | 0,434 | 55,1 % |
+| LOCO | S3r ridge trans-estimateur | 113/222 (50,9 %) | 22/222 (9,9 %) | 2,403 | 52,8 % |
+| LOCO | S4r ridge séries de flux | 139/222 (62,6 %) | 2/222 (0,9 %) | 1,027 | 55,7 % |
+| LOCO | S4k kNN séries de flux | 138/222 (62,2 %) | 5/222 (2,3 %) | 1,373 | 58,0 % |
+| Split matrices (66 runs) | B0 | 38/66 (57,6 %) | 16/66 (24,2 %) | 0,949 | 55,6 % |
+| Split matrices | S1d | 60/66 (90,9 %) | 53/66 (80,3 %) | 0,074 | 88,9 % |
+| Split matrices | **S2d** | **59/66 (89,4 %)** | **59/66 (89,4 %)** | **0,037** | **87,0 %** |
+| Split matrices | S1r | 51/66 (77,3 %) | 40/66 (60,6 %) | 0,105 | 72,2 % |
+| Split matrices | S2r | 48/66 (72,7 %) | 51/66 (77,3 %) | 0,084 | 66,7 % |
+| Split matrices | S3r | 43/66 (65,2 %) | 23/66 (34,8 %) | 0,177 | 57,4 % |
+| Split matrices | S4r | 42/66 (63,6 %) | 9/66 (13,6 %) | 0,512 | 59,3 % |
+| Split matrices | S4k | 46/66 (69,7 %) | 23/66 (34,8 %) | 0,368 | 66,7 % |
+| Version v6.1→v6.2 — FUITE (66 runs) | S1d | 57/66 (86,4 %) | 57/66 (86,4 %) | 0,055 | 83,3 % |
+| Version v6.1→v6.2 — FUITE | S2d | 59/66 (89,4 %) | 61/66 (92,4 %) | 0,031 | 87,0 % |
+| En-échantillon (222 runs) | S2d (= LOCO, sans apprentissage) | 198/222 (89,2 %) | 201/222 (90,5 %) | 0,037 | 86,4 % |
+| En-échantillon | S1d (= LOCO, sans apprentissage) | 189/222 (85,1 %) | 188/222 (84,7 %) | 0,061 | 81,3 % |
+
+Lecture :
+
+- **Le critère est manqué de peu, et des deux côtés.** S2d passe le
+  volet valeur en LOCO (201/222, 90,5 %) mais manque les paires de 2
+  runs (198/222 au lieu des 200 requis) ; en split, il manque les deux
+  volets de 1 run (59/66 au lieu de 60). S1d passe les paires en split
+  (60/66, 90,9 %) mais échoue aux valeurs (53/66, 80,3 %) et aux deux
+  volets en LOCO (85,1 % / 84,7 %). Aucun modèle ne remplit les deux
+  volets sur les deux hold-outs.
+- **Même avec la fuite, S2d ne passe pas.** En hold-out version
+  (mêmes matrices des deux côtés), S2d fait 89,4 % / 92,4 % : les
+  paires restent sous 90 % alors même que le test voit les matrices du
+  train. L'échec n'est pas un artefact du hold-out : la médiane sur la
+  moitié des flux ne détermine pas la paire à 90 %.
+- **La médiane est plus stable d'un flux à l'autre que d'une moitié de
+  scan à l'autre.** S2d (89,2 % / 90,5 % en LOCO) bat nettement S1d
+  (85,1 % / 84,7 %) : la seconde moitié du scan déplace les médianes
+  davantage que l'autre moitié des flux. d_sat, elle, est entièrement
+  déterminée par la moitié des flux : S2d 222/222 (100 %) en LOCO et
+  66/66 en split ; S1d aussi 222/222 et 66/66 en d_sat.
+- **LOCO par pli (S2d, paire/valeur) :** coad 1,00/1,00 (n=4) ; cptac
+  1,00/1,00 (n=8) ; depmap 1,00/0,97 (n=30) ; geo62452 1,00/1,00
+  (n=14) ; geo71729 0,80/0,90 (n=20) ; hp35 1,00/1,00 (n=6) ; icgc
+  1,00/1,00 (n=10) ; luad 1,00/1,00 (n=4) ; **tcga 0,84/0,86 (n=126
+  — le pli dominant porte presque tout l'échec : 20 des 24 échecs de
+  paire, 18 des 21 échecs de valeur)**. À l'inverse, S1d échoue aussi
+  sur tcga (0,74/0,79) et vaut 0,00 en valeur sur luad (0/4) là où
+  S2d fait 4/4.
+- **Les modèles appris font pire que les fonctionnelles directes.**
+  S1r (53,6 % / 19,4 %) et S2r (52,3 % / 24,3 %) sont loin derrière
+  S1d et S2d en LOCO, alors qu'ils reçoivent strictement plus
+  d'information (les mêmes médianes partielles, plus les autres
+  estimateurs, plus log n). Les poids appris sur 8 cohortes explosent
+  sur la 9e : R² LOCO jusqu'à −35 pour MFA (S1r), −388 pour Hurst2mH
+  (S1r), −50 pour PCAIntrinsic (S2r). L'apprentissage linéaire dégrade
+  l'information que la médiane partielle porte déjà — la fonctionnelle
+  directe EST le modèle, et toute repondération apprise n'ajoute que de
+  l'erreur inter-cohortes. En split (mêmes cohortes des deux côtés),
+  les ridge remontent (S2r 72,7 % / 77,3 %), sans jamais approcher S2d.
+
+## §8.57.4 Par cible : tout est presque déterminé, sauf LevinaBickel et PersistentHomology
+
+R² hold-out (LOCO poolé) et MAE, meilleur modèle honnête S2d :
+
+LevinaBickel 0,961 / 0,155 ; PCAIntrinsic 0,978 / 0,078 ; LocalPCA
+0,998 / 0,025 ; GraphDimension 0,995 / 0,009 ; PersistentHomology
+0,728 / 0,110 ; MFA 0,989 / 0,048 ; Higuchi 0,666 / 0,007 ; Katz
+0,994 / 0,002 ; Petrosian 0,984 / 0,001 ; Sevcik 0,982 / 0,005 ;
+BoxCounting 0,998 / 0,010 ; Hurst2mH 0,933 / 0,012 ; DFA 0,946 / 0,383.
+
+Les deux cibles les plus faibles sont les deux estimateurs masqués
+(PersistentHomology R² 0,728) et la cible de plus petite variance
+(Higuchi R² 0,666 pour une MAE de 0,007 — le R² y est sévère pour de
+petits écarts absolus). MFA exact (snapé sur les valeurs du train) en
+LOCO : 91,0 % (202/222) pour S2d, 84,7 % (188/222) pour S1d ; brut :
+90,5 % (201/222) et 82,4 % (183/222). Le concours des trois hauts
+(k=6, LocalPCA 3e, n=176 ; majorité globale MFA, 56,2 %) : S2d 86,4 %
+(152/176) en LOCO, 87,0 % (47/54) en split ; S1d 81,3 % / 88,9 %.
+
+**Dérive préfixe / demi-flux — le plafond direct, par cible**
+(fraction des runs avec |médiane partielle − médiane complète| ≤ 0,10 ;
+écart moyen entre parenthèses) :
+
+| Cible | Préfixe ≤ 0,10 | Demi-flux ≤ 0,10 |
+|---|---|---|
+| LevinaBickel | 27,1 % (0,231) | 46,4 % (0,155) |
+| PCAIntrinsic | 68,5 % (0,086) | 72,5 % (0,078) |
+| LocalPCA | 93,7 % (0,052) | 95,9 % (0,025) |
+| GraphDimension | 100 % (0,011) | 100 % (0,009) |
+| PersistentHomology | 72,0 % (0,078) | 56,8 % (0,105) |
+| MFA | 82,4 % (0,095) | 90,5 % (0,048) |
+| Higuchi | 100 % (0,011) | 100 % (0,007) |
+| Katz | 100 % (0,003) | 100 % (0,002) |
+| Petrosian | 100 % (0,001) | 100 % (0,001) |
+| Sevcik | 100 % (0,006) | 100 % (0,005) |
+| BoxCounting | 100 % (0,008) | 98,6 % (0,010) |
+| Hurst2mH | 100 % (0,017) | 100 % (0,012) |
+| DFA | 90,5 % (0,771) | 91,0 % (0,383) |
+
+Dix cibles sur treize sont déjà déterminées à ±0,10 par la moitié des
+flux sur plus de 90 % des runs — et la saturation presque partout à
+100 %. Seules LevinaBickel (46,4 %) et PersistentHomology (56,8 %)
+résistent, avec PCAIntrinsic (72,5 %) entre les deux. Côté préfixe, la
+dérive est pire encore pour LevinaBickel (27,1 % seulement ≤ 0,10) :
+sa valeur bouge le long du scan — la seconde moitié du scan la déplace
+davantage que l'autre moitié des flux.
+
+## §8.57.5 Pourquoi ça résiste : LevinaBickel au bord de la paire
+
+Les 24 échecs de paire de S2d en LOCO se répartissent par vraie paire :
+LocalPCA+LevinaBickel 13, LocalPCA+PCAIntrinsic 8, LocalPCA+MFA 3.
+LevinaBickel figure dans la vraie paire ou dans la paire prédite sur
+17/24. La dérive |demi-flux − complet| de LevinaBickel vaut en moyenne
+0,190 (médiane 0,197) sur les runs en échec de paire, contre 0,150
+(médiane 0,094) sur les réussites. Le mécanisme est le même que celui
+du §8.39.3, vu de plus près : LevinaBickel est l'estimateur dont la
+médiane par flux varie le plus d'un flux à l'autre, et c'est lui qui
+occupe le plus souvent la 4e place — la place décisive. Quand il est
+proche du seuil entre la 3e et la 4e valeur triée, la médiane sur la
+moitié des flux le fait basculer, et la paire change ; quand il est
+loin du seuil, la paire tient. La structure qui résiste n'est donc pas
+un niveau — c'est le **basculement de LevinaBickel au bord de la
+paire**, porté par la dispersion inter-flux de ses médianes par flux.
+
+Les trois autres voies honnêtes échouent pour des raisons distinctes,
+et il faut les nommer séparément :
+
+- **S4 (séries de flux entières, seule voie à contenu indépendant) :**
+  62,6 % / 0,9 % (ridge) et 62,2 % / 2,3 % (kNN) en LOCO — pas mieux
+  que les résumés du §8.42 (68,9 % / 6,3 %). La pleine résolution
+  n'ajoute rien : les magnitudes ne se lisent pas dans le contenu des
+  séries de flux par ces modèles. En split, S4r monte à 63,6 % / 13,6 %
+  et S4k à 69,7 % / 34,8 % — toujours loin du critère, et le kNN
+  en-échantillon (82,0 % / 46,4 %) montre que même en mémorisant, il
+  plafonne.
+- **S3r (préfixe des 12 autres estimateurs) :** 50,9 % / 9,9 % en LOCO,
+  65,2 % / 34,8 % en split. Il n'y a pas de redondance inter-estimateurs
+  qui porte la magnitude de la cible : chaque estimateur tient sa
+  valeur de sa propre série, pas de celles des autres.
+- **S1r / S2r (ridge) :** l'apprentissage dégrade (voir §8.57.3). Ce
+  n'est pas un manque de données d'entraînement : en-échantillon, S1r
+  plafonne à 77,5 % / 63,5 % et S2r à 78,8 % / 76,1 %, quand les
+  fonctionnelles directes font 85,1 % / 84,7 % et 89,2 % / 90,5 %
+  sans aucun apprentissage.
+
+## §8.57.6 Le résidu intra-groupe est capturé — mais la paire bascule quand même
+
+C'est la nouveauté de ce chantier par rapport au §8.42.6. Le résidu
+intra-groupe, déclaré imprévisible au §8.42 (r = +0,06 / +0,14 dans les
+deux plus gros groupes, r poolée +0,09), est CAPTURÉ par S2d en LOCO :
+groupe (LP, MFA 6,0, n=178), n=62 : r(prédit, vrai) = **0,977**,
+écart-type résiduel 0,069 (d_div vrai 4,62–5,46) ; groupe (LP, MFA 7,0,
+n=178), n=53 : r = **0,726**, résiduel 0,092 (d_div vrai 5,58–6,13) ;
+corrélation intra-groupe poolée (groupes ≥ 10 runs, n=183) : r =
+**0,937**. La moitié des flux suffit à retrouver le niveau de d_div
+dans chaque groupe structurel — ce que les résumés du §8.42 ne faisaient
+pas. Ce qui reste, ce n'est plus le niveau intra-groupe, c'est le
+basculement de la paire sur les cas limites (§8.57.5) : 24 runs sur 222
+où la paire prédite n'est pas la vraie, concentrés dans le pli tcga.
+Le critère paire est donc manqué non par ignorance du niveau, mais par
+l'instabilité de l'identité du 4e membre.
+
+## §8.57.7 Contrôles d'honnêteté
+
+- **C0 (diagnostic circulaire) :** recomputation de la
+  médiane-de-médianes depuis la série complète : **2886/2886 à 10⁻⁶
+  près** (222 runs × 13 cibles, contre `raw_median` des
+  `master_results.json`). Le plafond est 100 % : un modèle nourri de la
+  série complète atteint le critère trivialement — c'est pourquoi C0
+  est exclu de la candidature. L'échec des modèles honnêtes est un
+  manque d'information, pas un manque de capacité.
+- **Paire prédite identique réel/nul (LOCO, S2d) :** 66/106 (62,3 %).
+  C'est moins que §8.42 M1 (101/121, 83,5 %) et plus que la base H10
+  (44,6 %) : la prédiction demi-flux est plus bruitée que la paire
+  complète, donc elle diverge entre réel et nul plus souvent que la
+  paire vraie, qui est insensible à la permutation (§8.39 H10). S2d
+  n'hérite pas de l'invariance réel/nul de la paire complète.
+- **Déduplication** (153 runs, §8.39.6), LOCO S2d : 137/153 (89,5 %) /
+  137/153 (89,5 %) — stable, pas un artefact de duplication.
+- **Variante masque ignoré** (k=6 forcé), LOCO S2d : 89,2 % / 90,5 % —
+  inchangée : le masque n'est pas le blocage.
+- **Sensibilité λ** (S1r, LOCO) : λ=1 → 58,1 % / 47,3 % ; λ=100 →
+  51,8 % / 7,2 %. Aucun λ ne sauve le modèle.
+- **Un seul cas de repli gelé.** PersistentHomology sur
+  `results_fast_v61_depmaprot_aco2` : un seul flux fini (n_fluxes_used
+  = 1), d'indice impair — la médiane demi-flux est donc indéfinie
+  alors que la cible existe (0,5975). La règle gelée (repli sur la
+  médiane du TRAIN) s'applique une seule fois dans tout l'ensemble, et
+  ce run est un succès de paire grâce à elle : sans ce repli, S2d LOCO
+  serait à 197/222 (88,7 %) en paires. Le préfixe, lui, ne déclenche
+  aucun repli (0 cas).
+- Les 156 matrices ont été lues avec SHA-256 noté (traits de série
+  dans `v62_delta_series_857_features.csv`) ; 0 écart entre n matrice
+  et n run ; 70 cibles manquantes, toutes LevinaBickel (41) ou
+  PersistentHomology (29), c'est-à-dire le masque — aucune autre.
+
+## §8.57.8 Conséquence : Delta reste une piste fragile
+
+Quatre voies ont maintenant échoué à élucider Delta au critère ≥ 90 % :
+les variables structurelles (§8.39 : 87,9 % / 81,8 %), les rangs
+eux-mêmes (§8.39.5 : même en connaissant le rang, la valeur plafonne à
+80,3 %), les résumés de flux (§8.42 : 68,9 % / 6,3 % en LOCO), et
+maintenant les séries entières (ce chantier : 89,2 % / 90,5 % en LOCO
+pour le meilleur modèle honnête, 89,4 % / 89,4 % en split). Le 6/8 de
+Delta en phase 2 reste une piste fragile (échec sur HP35, deux écarts
+≤ 0,15, 13/23 en annexe) et Delta ne devient pas un discriminateur
+recommandé. La leçon positive est nette, et elle déplace la question :
+**la moitié des flux suffit presque à déterminer Delta** — la médiane
+est déjà écrite à ~90 % dans la moitié de sa propre construction, le
+niveau intra-groupe est capturé (r = 0,937), d_sat l'est entièrement
+(222/222) — **mais l'identité du 4e membre, LevinaBickel le plus
+souvent, bascule sur les cas limites, et rien dans les séries d'entrée
+ne la prédit** (S4 : 62,6 % / 0,9 %). Delta n'est pas expliqué par les
+séries : il est presque recalculé par elles, sans l'être tout à fait.
+La différence entre 89,2 % et 90 % n'est pas un bruit d'échantillonnage
+à combler en ajoutant des runs du même plan : elle est portée par la
+dispersion inter-flux de LevinaBickel dans le pli tcga, structure
+déjà visible sur 126 runs.
+
+## §8.57.9 Ce qui reste ouvert
+
+1. **La loi d'échelle en n, analytiquement.** Pourquoi chaque estimateur
+   croît ou décroît avec n, et avec quelle forme (log ? puissance ?) —
+   à établir estimateur par estimateur, y compris pour DFA et ses
+   extrêmes (−38,16). Les séries n'ont pas répondu ; la question reste
+   analytique, pas un modèle de plus.
+2. **La dispersion inter-flux de LevinaBickel.** Pourquoi ses médianes
+   par flux s'étalent-elles davantage que celles des autres estimateurs,
+   et que se passe-t-il sur les flux qui la font basculer ? Une lecture
+   par flux (quels flux portent la médiane, lesquels la déplacent),
+   pas un nouveau modèle global.
+3. **d_sat.** Entièrement déterminée par la moitié des flux (222/222)
+   : son élucidation est acquise au sens de ce chantier — la question
+   se déplace vers pourquoi la saturation est si stable entre flux,
+   quand la divergence ne l'est pas.
+4. **Généralisation à une source nouvelle.** LOCO teste une cohorte
+   tenue à l'écart, pas une source inconnue (nouvel omique, nouvel
+   organisme) — les scores s'y dégraderaient probablement encore, et
+   le pli tcga montre déjà que la portabilité n'est pas acquise
+   intra-cohorte.
+
+## Provenance (§8.57)
+
+- **Demande et go :** chantier §8.57 du projet PDAC v6.2, 19 novembre
+  2026 (suite du §8.42, voie ouverte au §8.42.9 point 1). Protocole
+  gelé avant toute modélisation : `PROTOCOL_delta_series_857.md`,
+  SHA-256
+  `965a88dc90c8af0ca701af2da1c31d124ceccef059d13a0972fae15ba6266bdc`.
+- **Pipeline :** v6.2 `universal_v6.2.0_cohen.py`,
+  SHA-256 `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+  (vérifié avant travail, jamais modifié) ; v6.1
+  `universal_v6.1.0_cohen.py`,
+  SHA-256 `2af5e5cea3a99ff227c7f76dff48c678eb07baba92625ca57e3c1c412546a9c9` ;
+  v6 SHA-256
+  `bb8bbdba4eb1f8c55b49748274ae8fbfef8a43f6c1b890964f18ba77960c0773`.
+  **Aucun run du pipeline dans ce chantier.**
+- **Données lues (lecture seule) :** 222 `master_results.json`
+  (156 `results_fast_v61_*`, 66 `results_fast_v62_*`) dans
+  `~/workspace/runs/pdac-v6/` ; les 222 `df_feat.csv` (séries
+  d'estimateurs, 120 lignes de scan par run) ; les 156 matrices de flux
+  d'entrée (`metadata.csv_path` : TCGA, GEO, ICGC, CPTAC, DepMap, COAD,
+  LUAD, HP35 — voir les `PROVENANCE_*.md` du dossier — et leurs nuls
+  permutés, graine 42). Nature des lignes : sorties instrumentales du
+  pipeline (médianes par estimateur) ; séries d'estimateurs = valeurs
+  de l'estimateur le long du scan, par flux ; matrices de flux =
+  mesures omiques publiques ; contrôles = noms de flux (étiquettes,
+  mots humains).
+- **Script et sorties :** `v62_delta_series_857.py` (SHA-256
+  `59c1b78b4cdc0d2997660f9eb953a7b605b8575cc2c1ed2fd220d0a8dbb964f0`),
+  `v62_delta_series_857.log` (SHA-256
+  `7916fdd320c035a33d2f0393575b836de56ebcbfed39171646befb4d60ee8ed8`),
+  `v62_delta_series_857.json` (SHA-256
+  `c41e13103b802c41498f8993e42d2b086bdefd2773b97b5180d05185311db931`),
+  `v62_delta_series_857.md` (résumé d'exécution),
+  `v62_delta_series_857_features.csv` (SHA-256
+  `5e515fd253269ee0a545f9f1bbe9eaa2f234ca8b3bb8f7aa2ef2e2d9cca74c4e` :
+  médianes préfixe / demi-flux / complètes par cible et par run, SHA
+  de chaque `df_feat.csv` et de chaque matrice d'entrée).
+- **Vérifications préalables :** C0 2886/2886 à 10⁻⁶ près ; identités
+  d_div / d_sat 0 écart > 10⁻³ sur 222/222 ; 60 lignes Progress ≤ 50
+  dans chaque `df_feat.csv` ; 0 écart n matrice vs n run ; 70 cibles
+  manquantes (LevinaBickel 41, PersistentHomology 29) — le masque.
+- **Limites déclarées :** les séries `df_feat` ne sont pas les séries
+  de flux brutes (ce sont des valeurs d'estimateurs le long du scan) ;
+  les traits S1–S3 sont des médianes de parties de séries, pas les
+  séries point par point ; les 185 dossiers v62 postérieurs (§8.47,
+  §8.53) ne sont pas dans l'ensemble gelé de 222 runs ; aucune famille
+  entièrement nouvelle au-delà des 9 cohortes n'est testée ; les
+  trajectoires `csd_fractal_estimators.json` n'ont pas été utilisées
+  (dérivées du même paysage `df_feat`).
+- Section rédigée dans `section_8.57_delta_series.md` (ce fichier) ;
+  le livre blanc et le PDF ne sont pas régénérés dans ce chantier
+  (coordinateur) ; rien n'est poussé sur GitHub dans ce chantier.
+
+— Fin de la §8.57. —
+
+---
+
+### 8.58 Bloc estomac / mucus : nouveaux flux inattendus (y compris les odeurs) (19–20 nov. 2026)
+
+**Verdict d'abord : les flux inattendus existent et bougent, mais
+pas comme un seul programme, et pas comme la chaîne KRAS — et le
+pipeline ne les sépare pas nettement du nul.** Le signal le plus
+net vient du groupe qu'on n'attendait pas là : les marqueurs
+neuroendocrines (G5) s'effondrent quand KRAS monte — SYP
+rho −0,392 (p = 6,1e-08), INSM1 −0,343, CHGB −0,311, pendant que
+les kératines KRT19 (+0,333) et KRT7 (+0,308) montent — et ils
+baissent aussi avec le stade (SYP −0,276, CHGB −0,250).
+**Confirmations (30/30 runs, GSE71729 + GSE62452) : le programme
+neuroendocrine tient dans les deux cohortes** (GSE62452 SYP
+−0,503, KRT19 +0,416 ; GSE71729 CHGA −0,359, INSM1 −0,296,
+KRT19 +0,281) **et le volatil aussi, plus fort qu'en TCGA**
+(GSE62452 AOX1 −0,611, UGT1A1 +0,541, NOS1 −0,529 ; GSE71729
+NOS1 −0,369, ALDH3A1 +0,367). **Le mucus ne confirme que
+partiellement** (AGR2 +0,383 dans GSE71729, mais MUC4 plat et
+MUC6 en chute −0,436). **Les odeurs confirment dans l'autre
+sens : plusieurs OR CHUTENT avec KRAS dans les deux cohortes**
+(OR2W3 −0,338, OR13A1 −0,423, OR2T10 −0,418) **et aucun ne
+monte** ; OR2A4, le seul OR montant de TCGA, est absent des
+deux puces. Le mucus
+étendu (G1) fait l'inverse du bloc v4 sous KRAS : MUC4, AGR2 et
+MUC5B MONTENT avec KRAS (rho +0,313, +0,328, +0,222), et montent
+aussi avec le stade (TFF1 top-12 +0,54) — même sens que le bloc
+v4 avec le stade, sens opposé avec KRAS. Les odeurs (G3) ne
+portent pas de signal de groupe : 356 gènes OR sont présents
+comme lignes dans TCGA, mais 336 d'entre eux sont quasi
+silencieux (médiane 0, détectés dans moins de 25 % des tumeurs) ;
+seuls 19 OR sont détectés dans plus de la moitié des tumeurs,
+et un seul d'entre eux, OR2A4, monte avec KRAS (rho +0,259).
+Les enzymes digestives (G2) chutent avec KRAS, mais exactement
+comme le témoin acineux (CELA2A −0,76 dans les deux) : c'est la
+perte du programme acineux, pas un nouveau signal — et c'est un
+artefact de construction (les flux G2 sont des résidus après
+régression sur un score construit à partir d'eux-mêmes). Le
+métabolisme volatil (G4) est partagé : UGT1A1 (+0,378) et
+ALDH3B1 (+0,303) montent avec KRAS, ADH1A (−0,313) et AOX1
+(−0,289) descendent — des pistes par gène, pas un programme.
+Côté pipeline (lot complet, 24/24, exits 0/0) : MC favorise le
+réel sur les 12 paires (+0,006 à +0,161), S_sep sur 10/12
+(exceptions : G1/stage −0,058 et G3/stage 0,000), mais Delta et
+la falsification sont partagés et L7b est FRAGILE partout sauf
+sur 2 nuls — aucune séparation démontrée, seulement des pistes
+dans le sens réel, comme partout ailleurs dans ce projet. Les
+deux plus grands écarts MC sont sur le stade (G3 +0,161,
+G5 +0,152, G1 +0,138), là où les tests directs ne montrent
+pourtant rien de cohérent pour G3 : un score seul ne fait pas
+un signal. Aucun composé volatil n'est mesuré ici : la piste
+« odeurs » est testée au niveau des gènes, pas des molécules.
+
+**Le lot.** Chantier §8.58, mission parent 19 nov. 2026 (5 pistes
+approuvées le soir du 19 nov., dont « bloc estomac/mucus avec flux
+inattendus — récepteurs olfactifs, métabolisme volatil — cherchés
+seulement dans les matrices déjà détenues, absent noté absent, rien
+inventé »). Protocole gelé `PROTOCOL_stomach_mucus_flux_858.md`
+(SHA `3a0762ef…7935`, écrit avant tout inventaire, toute
+construction et tout run). Listes candidates définies AVANT tout
+regard aux matrices (protocole §1) ; inventaire
+`inventory_858.py` (SHA `5105603f…88cd`) ; construction
+`build_fluxes_858_tcga.py` (SHA `e861cbd3…2d25`) ; tests directs
+`reading_858.py` (SHA `949eb28d…48ff7`) ; extraction pipeline
+`extract_858.py` (SHA `a6765721…f6af`) ; construction confirmation
+`build_fluxes_858_geo.py` (SHA `3f7d4978…69a4b`).
+Provenance complète `PROVENANCE_858.md`.
+Pipeline `universal_v6.2.0_cohen.py`, SHA `f07567c4…c3abf`,
+revérifié inchangé avant ET après le lot (v6.1 `2af5e5ce…c1c9`,
+v6 `bb8bbdba…c0773`) ; mode fast ; 24 runs TCGA (6 groupes ×
+2 ordres × réel/nul), exits 0/0, 36 fichiers chacun.
+Lancement en `systemd-run` (unités `v62-858` et `v62-858b`,
+cette dernière pour G4+G5 en parallèle), surveillance
+`watch_v62_858.sh` (arrêtée d'elle-même à 24/24, tour 2,
+06h44:36Z) ; journaux `runs_v62_858.log` (FIN 06h44:16Z,
+déjà faits 13, terminés 11, échecs 0) et `runs_v62_858b.log`
+(FIN 06h16:50Z, déjà faits 3, terminés 5, échecs 0).
+Incidents : la machine a redémarré deux fois pendant le lot
+(20 nov. vers 03h44 UTC et vers 05h43 UTC), tuant les unités
+à chaque fois — relancées à chaque fois, reprise sans perte
+(jamais de dossier de run supprimé, le lanceur saute les
+sorties déjà complètes). Durée totale du lot TCGA : 03h20Z →
+06h44Z (~3 h 24, charge partagée avec les autres chantiers).
+Aucun dossier de run supprimé, aucun CSV modifié. Le livre
+blanc n'est PAS édité, le PDF N'EST PAS régénéré, rien n'est
+poussé sur GitHub dans ce chantier.
+
+**Construction des flux (TCGA, méthode v4 exacte).**
+log2(RSEM+1), scores acineux (médiane des 11 gènes) et îlots (INS,
+GCG, PPY, SST), régression linéaire par gène sur [1, acineux,
+îlots], flux = résidu. Vérification de reproduction du CSV v4
+(`pdac_tcga_fluxes_v4.csv`, SHA `e7a2adab…a0b0`) : écart max
+1,776e-15 (atol 1e-9) — PASSÉE avant toute construction.
+Matrice source : `data/tcga_paad_rsem.tar.gz`, MD5
+`b09569ce3f4721f514bc137bd109ac0a`. Stade clinique :
+`data_clinical_patient.txt`, SHA-256 `0c274268…efe5` (même
+fichier qu'au §8.45). Séries : KRAS 178 lignes (ordre = résidu
+KRAS croissant, colonne `step`) ; stade 175 lignes (rang
+principal I=1..IV=4, départage ex æquo par code-barres, colonne
+`STAGE`), mêmes 3 tumeurs exclues qu'au §8.45
+(TCGA-3A-A9I5-01, TCGA-3A-A9IO-01, TCGA-IB-7654-01).
+Règle de plafonnement gelée : plus de 20 gènes présents → les
+20 de plus forte variance des résidus. Nuls : bloc des flux
+permuté par lignes, graine 42, `rng(42)`, contrôle intact.
+Le contrôle n'est jamais un flux : pas de doublon.
+SHA des fichiers dans `manifest_858_files.txt` et
+`PROVENANCE_858.md`.
+
+**Groupes construits (flux retenus).**
+- G1 mucus/gastrique étendu : 33/36 présents dans TCGA
+  (absents : MUC3A, MUC5AC, MUC19), 20 retenus : TFF1, TFF2,
+  MUC6, MUC5B, MUC4, AQP5, REG1A, TFF3, GKN1, PGA3, REG3A,
+  MUC21, PGA4, GKN2, AGR2, GAST, SPDEF, FCGBP, MUC13, REG1B.
+- G2 enzymes digestives : 24/30 présents (absents : AMY1B,
+  AMY1C, PRSS2, ELA2A, ELA3A, ELA3B), 20 retenus : PRSS1,
+  PRSS3, AMY1A, PNLIPRP2, AMY2B, AMY2A, CPB2, CELA2A, CPA3,
+  CELA2B, PNLIP, PLA2G1B, CEL, CPB1, PNLIPRP1, CLPS, CPA2,
+  CTRB2, CTRB1, CELA3B. Dont 8 gènes du score acineux
+  (PNLIP, CELA2A, CPB1, CLPS, CPA2, CTRB2, CTRB1, CELA3B) —
+  voir la réserve G2 ci-dessous.
+- G3 récepteurs olfactifs : 356 présents dans TCGA (355 par
+  regex `^OR[0-9]+[A-Z]?[0-9]*$` + OR2AT4 par la liste
+  fermée), 20 retenus par variance des résidus : OR7D2,
+  OR13A1, OR2A4, OR52N4, OR2B6, OR51E2, OR51E1, OR2A7, OR52N2,
+  OR2L13, OR1J2, OR2W3, OR10H1, OR2A1, OR4C6, OR7A5, OR3A2,
+  OR5K2, OR2T10, OR2C1.
+- G4 métabolisme volatil / signalisation : 63/65 présents
+  (absents : TAS2R44, TAS2R45), 20 retenus : UGT1A1, ALDH3A1,
+  CYP2C9, CYP3A4, ADH1B, UGT2B7, ADH4, ADH1C, ADH6, ADH1A,
+  AOX1, FMO1, CYP2E1, NOS1, NOS2, CYP2A6, CBS, TAS1R3,
+  ALDH3B1, TAS2R38.
+- G5 intestinal / neuroendocrine : 15/15 présents, 15 retenus :
+  CDX1, CDX2, VIL1, SI, LCT, FABP2, APOA4, APOB, KRT7, KRT19,
+  CHGA, CHGB, SYP, INSM1, NEUROD1.
+- TEMOIN acineux (11 gènes du score de pureté) : 11/11
+  présents, 11 retenus : PNLIP, CTRB2, CELA3A, CTRB1, CPA1,
+  CELA2A, CPB1, CELA3B, CLPS, CTRC, CPA2.
+
+**Inventaire — présence/absence par matrice (comptes exacts).**
+Fichier vérifié `inventory_858.csv` (SHA `808de016…3ae9`),
+scan OR `or_scan_858.csv` (SHA `5e90a9e4…b73`), résumé
+`inventory_858_summary.txt`. Univers : TCGA 20 502 symboles
+(178 tumeurs) ; GSE71729 19 749 (matrice complète 357
+échantillons, dont les 145 tumeurs PDAC du projet) ; GSE62452
+27 086 (matrice complète 130 échantillons, dont les 69 tumeurs
+du projet ; mapping GPL6244, 25 293 sondes avec symbole) ;
+ICGC 18 247 (96 échantillons → 70 tumeurs) ; CPTAC UMich
+11 419 gènes-protéines (68 tumeurs) ; CPTAC BCM 11 403
+(52 tumeurs) ; DepMap CRISPR 17 916 gènes (dépendance, pas
+expression). Comptes présents / listés :
+
+| Groupe (n listé) | TCGA | GSE71729 | GSE62452 | ICGC | CPTAC UMich | CPTAC BCM | DepMap CRISPR |
+|---|---|---|---|---|---|---|---|
+| G1 mucus/gastrique (36) | 33 | 32 | 33 | 27 | 26 | 26 | 27 |
+| G2 enzymes digestives (30) | 24 | 21 | 23 | 21 | 23 | 22 | 21 |
+| G4 volatil/signalisation (65) | 63 | 58 | 62 | 38 | 26 | 26 | 60 |
+| G5 intestinal/neuroendocrine (15) | 15 | 15 | 15 | 15 | 12 | 12 | 15 |
+| REF bloc v4 (12) | 12 | 12 | 12 | 12 | 11 | 11 | 10 |
+| G3 OR, liste fermée (6) | 6 | 4 | 6 | 1 | 0 | 0 | 6 |
+| TEMOIN acineux (11) | 11 | 8 | 10 | 11 | 11 | 10 | 11 |
+
+Absents notables (listes complètes dans `inventory_858.csv`) :
+TCGA — G1 : MUC3A, MUC5AC, MUC19 ; G2 : AMY1B, AMY1C, PRSS2,
+ELA2A, ELA3A, ELA3B ; G4 : TAS2R44, TAS2R45 ; G5 : aucun.
+ICGC — G1 : MUC7, MUC19, PGA3, PGA4, PGA5, ATP4A, ATP4B,
+LIPF, GAST ; G2 : CELA1, CPB2, AMY1A, AMY1B, AMY1C, PRSS2,
+ELA2A, ELA3A, ELA3B ; G4 : ADH1A, ADH7, CYP2A6, CYP2A13,
+CYP1A2, tous les TAAR (1, 2, 5, 6, 8, 9), TAS1R1, TAS1R2,
+et 17 TAS2R (dont TAS2R38, TAS2R44, TAS2R45) ; G5 : aucun.
+CPTAC (UMich et BCM, identiques à un gène près) — G1 :
+MUC7, MUC12, MUC15, MUC19, MUC21, PGA3, PGA4, PGA5, ATP4B,
+GIF ; G4 : tous les TAAR, tous les TAS1R/TAS2R, CYP2E1,
+CYP2A6, CYP2A13, CYP1A2, CBS (39 absents sur 65) ; G5 :
+CDX2, INSM1, NEUROD1. Les récepteurs du goût et de l'odorat
+sont absents des matrices protéiques : une protéine
+membranaire à 7 domaines transmembranaires, exprimée à bas
+niveau, n'y est pas détectée — c'est une limite de mesure,
+pas une preuve d'absence biologique.
+DepMap CRISPR (dépendance, pas expression) — G1 absents :
+MUC3A, MUC5AC, MUC13, MUC19, PGA3, PGA4, PGA5, GIF, FCGBP ;
+G2 : PNLIPRP2, AMY2B, AMY1A, AMY1B, AMY1C, PRSS2, ELA2A,
+ELA3A, ELA3B ; G4 : ADH1C, ALDH3B1, TAAR9, TAS2R44, TAS2R45 ;
+REF : DPCR1, MUC2 absents (DPCR1 est un symbole ambigu,
+déjà exclu en protéine au §8.33).
+
+**Les odeurs, en chiffres (G3).** Scan regex sur les univers :
+TCGA 355 symboles OR, GSE71729 113, GSE62452 360, ICGC 3
+(OR2A7, OR51E1, OR7D2), CPTAC UMich 1, CPTAC BCM 1,
+DepMap CRISPR 302. La présence comme ligne de matrice ne dit
+rien de l'expression : dans TCGA, la fraction médiane de
+tumeurs avec RSEM > 0 est de 0,011 sur les 355 OR ; 19 OR
+seulement sont détectés (RSEM > 0) dans plus de la moitié des
+tumeurs, 34 dans plus du quart. Les plus exprimés
+(médiane log2(RSEM+1) ; fraction de tumeurs RSEM > 0) :
+OR2A7 7,569 ; 1,000 — OR2A4 4,845 ; 1,000 — OR51E1 4,179 ;
+1,000 — OR51E2 2,783 ; 0,994 — OR2A1 2,260 ; 0,972 —
+OR13A1 2,097 ; 0,966 — OR7D2 1,182 ; 0,871 — OR2W3 1,028 ;
+0,764 — OR52N4 1,239 ; 0,747 — OR1L8 0,592 ; 0,702.
+Les 6 OR de la liste fermée sont présents dans TCGA (6/6) ;
+dans GSE71729, OR2AT4 et OR2J3 sont absents ; dans ICGC,
+seul OR51E1 est présent sur les 6 (OR51E2, OR2AT4, OR1A1,
+OR2J3, OR10J5 absents) — la matrice ICGC a filtré les
+gènes à basse expression, ce n'est pas une mesure d'absence.
+En protéine (CPTAC), aucun des 6 n'est détecté. Une
+expression mesurée n'est PAS une preuve de fonction
+olfactive ; un OR présent à expression quasi nulle n'est
+PAS une preuve d'olfaction. Aucun composé volatil n'est
+mesuré dans ce chantier (pas de volatilome détenu).
+
+**Tests directs (harnais, hors pipeline ; `direct_tests_858.csv`,
+SHA `6ff4d9aa…8ba`, 212 lignes ; d de Cohen, + = plus haut
+chez les 12 dernières lignes ; rho de Spearman contre le rang
+de contrôle ; mêmes indices sur le nul).** Seuil de Bonferroni
+sur les 212 rho : 0,05/212 ≈ 0,00024. Les p sont nominales,
+bilatérales, sauf mention.
+
+- G5 / KRAS — le signal le plus net du chantier : SYP
+  rho −0,392 (p = 6,1e-08), INSM1 −0,343 (p = 2,8e-06),
+  KRT19 +0,333 (p = 5,5e-06), CHGB −0,311 (p = 2,4e-05),
+  KRT7 +0,308 (p = 2,9e-05), CHGA −0,212 (p = 0,0046) —
+  tous au-delà du nul (max |rho| du nul : 0,090) et tous
+  sauf CHGA sous le seuil de Bonferroni. Tertiles haut
+  contre bas (D2b) : SYP −0,88 (p = 5,9e-06, nul −0,01),
+  KRT19 +0,79 (p = 8,3e-05, nul −0,02), INSM1 −0,77
+  (p = 9,1e-05, nul −0,06), KRT7 +0,74 (p = 0,00034,
+  nul −0,08). Lecture : le programme neuroendocrine
+  (SYP, CHGB, CHGA, INSM1, NEUROD1) s'efface quand KRAS
+  monte, pendant que les kératines ductales (KRT7, KRT19)
+  montent. Top-12 (D1) : SYP −0,58 (nul +0,47), CHGB
+  −0,47 (nul +0,62) — le nul va dans l'autre sens.
+- G5 / stade — même sens, plus faible : SYP rho −0,276
+  (p = 0,00022), CHGB −0,250 (p = 0,00084), NEUROD1 −0,210
+  (p = 0,0052), INSM1 −0,198 (p = 0,0085) ; nul max |rho|
+  0,206. Top-12 : VIL1 +0,40, SYP −0,30. D2a (IV contre I,
+  n = 4 contre 21) : SYP −0,91 (p = 0,047), mais le nul
+  atteint +2,13 (SI) sur ce contraste — non distinctif
+  à n = 4, comme au §8.45.
+- G1 / KRAS — le mucus étendu MONTE avec KRAS, à l'inverse
+  du bloc v4 qui chute : MUC4 rho +0,313 (p = 2,0e-05),
+  AGR2 +0,328 (p = 7,7e-06), MUC5B +0,222 (p = 0,0028),
+  SPDEF +0,192 (p = 0,010) ; nul max |rho| 0,088. D2b :
+  MUC4 +0,80 (p = 4,9e-05, nul −0,15), AGR2 +0,76
+  (p = 1,3e-05, nul −0,13), MUC5B +0,66 (p = 0,0074,
+  nul +0,02). Top-12 : MUC6 −0,52, MUC4 +0,51 — le top-12
+  seul mélange les sens, la tendance (rho, tertiles) est
+  la lecture qui tient.
+- G1 / stade — même sens que le bloc v4 (§8.45 : PGC +0,51,
+  CLDN18 +0,57) : TFF1 top-12 +0,54 (nul −0,24),
+  rho +0,204 (p = 0,0067) ; GKN1 +0,46 ; AQP5 +0,45 ;
+  AGR2 rho +0,208 (p = 0,0056) ; nul max |rho| 0,096.
+  D2b : REG1B −0,59 (p = 0,10), PGA4 +0,59 (p = 0,19) —
+  non significatifs, lus contre le nul seulement.
+- G4 / KRAS — partagé, par gène : UGT1A1 rho +0,378
+  (p = 2,0e-07), ALDH3B1 +0,303 (p = 3,9e-05), ADH1A
+  −0,313 (p = 2,1e-05), AOX1 −0,289 (p = 9,2e-05),
+  TAS2R38 top-12 +0,85 mais rho +0,151 seulement ;
+  nul max |rho| 0,174. D2b : UGT1A1 +0,83 (p = 1,8e-05,
+  nul −0,01), ALDH3B1 +0,74 (p = 0,00038, nul −0,13),
+  ADH1A −0,59 (p = 0,00045, nul +0,03), AOX1 −0,58
+  (p = 0,0012, nul +0,04). Pas un programme unique :
+  une détoxification (UGT1A1, ALDH3B1) qui monte et un
+  métabolisme de l'alcool (ADH1A, AOX1) qui descend.
+- G4 / stade — faible : CYP2C9 rho +0,237 (p = 0,0016),
+  UGT1A1 +0,203 (p = 0,0072), UGT2B7 +0,177 (p = 0,019) ;
+  top-12 max +0,44 (CYP2C9), nul max +0,55 — dans
+  l'enveloppe du nul. D2b : rien de significatif
+  (ADH4 +0,61, p = 0,055).
+- G3 / KRAS — pas de signal de groupe : rho max 0,259
+  (OR2A4, p = 0,00048 ; D2b +0,65, p = 0,00078,
+  nul +0,26), OR2C1 −0,208, OR2L13 −0,192 ; top-12 :
+  OR7A5 +0,77 mais rho +0,071 (artefact de top-12, pas
+  de tendance), OR2A1 −0,64, OR52N4 −0,49 ; le nul
+  atteint +0,72 (OR7D2) en top-12 — dans l'enveloppe.
+  Un seul OR, OR2A4 — le deuxième plus exprimé de la
+  famille (médiane 4,845, détecté dans 100 % des tumeurs)
+  — monte avec KRAS : une piste par gène, pas un
+  programme olfactif.
+- G3 / stade — rien : rho max 0,223, top-12 max 0,57
+  (OR10H1), nul max 0,73 — dans l'enveloppe du nul.
+- G2 / KRAS — chute, mais c'est le témoin : CELA2A −0,76,
+  AMY2B −0,70, AMY1A −0,69 (D2b, p ≤ 0,0024, nul ≤ +0,37),
+  CELA3B −0,48, AMY2A −0,42 ; rho max 0,262. Le TEMOIN
+  acineux donne les mêmes chiffres gène pour gène
+  (CELA2A −0,76, rho −0,228 ; CELA3B −0,48 ; CLPS −0,40)
+  parce que ce sont les mêmes résidus : la chute G2 avec
+  KRAS EST la perte du programme acineux, déjà connue
+  (§8.31–§8.33), pas un nouveau signal.
+- G2 / stade — rien au-delà du nul : rho max 0,244
+  (PLA2G1B, p = 0,0011, non significatif après
+  Bonferroni) ; top-12 max 0,57 (CPB1), nul max 0,64.
+- TEMOIN / KRAS : chute acineuse (CELA2A −0,76 D1,
+  CTRC rho −0,269, p = 0,00028) ; TEMOIN / stade : plat
+  (rho max 0,166, top-12 dans l'enveloppe du nul).
+  Le témoin fait exactement ce qu'il doit faire : il
+  valide que la méthode voit la perte acineuse sous
+  KRAS et rien sous le stade — et il disqualifie toute
+  lecture « nouvelle » de G2 sous KRAS.
+
+**Le pipeline (lot complet — 24/24 runs, exits 0/0).**
+Lecture `extract_858.py` (`extract_858.json`, `extract_858.csv`) ;
+cascade en % (T_-2 / T_-1 / T_0 / T_+1 / T_+2) ; MC = best_config
+score (seuil entre parenthèses, en %) ; S_sep = max_separation ×
+stability ; Delta ; L7a (direction, confiance) ; falsification ;
+L7b ; bruit (score moyen) ; F1/F2 « Tous » (rapport après/avant,
+médiane sur 29 estimateurs). Aucun seuil de séparation n'était
+pré-enregistré : les écarts sont des pistes, jamais des preuves.
+
+| Groupe / ordre | MC réel (seuil) | MC nul | ΔMC | S_sep réel | S_sep nul | ΔS_sep | Delta réel | Delta nul | L7a réel | fals réel | fals nul | L7b |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G1 / KRAS | 0,3606 (10,9 %) | 0,3173 | +0,043 | 0,3711 | 0,1126 | +0,259 | 4,088 | 3,922 | UP 0,181 | 0,737 | 0,700 | FRAGILE / FRAGILE |
+| G1 / stade | 0,5106 (25,7 %) | 0,3731 | +0,138 | 0,1325 | 0,1908 | −0,058 | 4,026 | 3,178 | UP 0,344 | 0,424 | 0,678 | FRAGILE / ROBUSTE (nul) |
+| G2 / KRAS | 0,3390 (65,2 %) | 0,3225 | +0,017 | 0,2538 | 0,1467 | +0,107 | 4,243 | 3,094 | UP 0,172 | 0,856 | 0,903 | FRAGILE / FRAGILE |
+| G2 / stade | 0,3358 (11,0 %) | 0,3260 | +0,010 | 0,2204 | 0,1608 | +0,060 | 4,267 | 3,947 | UP 0,208 | 0,838 | 0,837 | FRAGILE / FRAGILE |
+| G3 / KRAS | 0,3417 (89,3 %) | 0,3272 | +0,015 | 0,2795 | 0,1763 | +0,103 | 3,125 | 3,820 | DOWN 0,198 | 0,669 | 0,671 | FRAGILE / FRAGILE |
+| G3 / stade | 0,4862 (17,4 %) | 0,3252 | +0,161 | 0,1605 | 0,1609 | −0,000 | 3,996 | 3,819 | UP 0,203 | 1,041 | 0,839 | FRAGILE / FRAGILE |
+| G4 / KRAS | 0,3472 (10,9 %) | 0,3287 | +0,019 | 0,3046 | 0,1798 | +0,125 | 4,260 | 4,248 | UP 0,241 | 0,903 | 0,823 | FRAGILE / FRAGILE |
+| G4 / stade | 0,3405 (11,0 %) | 0,3301 | +0,010 | 0,2441 | 0,1765 | +0,068 | 4,203 | 4,209 | UP 0,395 | 0,830 | 0,900 | FRAGILE / ROBUSTE (nul) |
+| G5 / KRAS | 0,3557 (76,1 %) | 0,3290 | +0,027 | 0,3609 | 0,1856 | +0,175 | 3,785 | 3,759 | UP 0,399 | 0,682 | 0,593 | FRAGILE / FRAGILE |
+| G5 / stade | 0,5607 (11,0 %) | 0,4085 | +0,152 | 0,3843 | 0,2892 | +0,095 | 3,827 | 3,808 | UP 0,191 | 0,716 | 0,707 | FRAGILE / FRAGILE |
+| TEMOIN / KRAS | 0,3409 (67,4 %) | 0,3243 | +0,017 | 0,2679 | 0,1561 | +0,112 | 4,166 | 3,085 | DOWN 0,168 | 0,889 | 1,014 | FRAGILE / FRAGILE |
+| TEMOIN / stade | 0,3348 (14,3 %) | 0,3286 | +0,006 | 0,2178 | 0,1718 | +0,046 | 4,287 | 3,937 | DOWN 0,408 | 0,914 | 0,839 | FRAGILE / FRAGILE |
+
+Cascades : G1/KRAS réelle 0,0 / 2,1 / 99,0 / 100 / 100 %
+(T_0 au pas 176, dégénérée en bout d'axe) contre nul 0,0 / 8,5 /
+79,5 / 96,9 / 96,9 % ; G2/KRAS réelle 0,0 / 8,5 / 99,0 / 100 /
+100 % (même dégénérescence) ; G1/stade réelle 0,0 / 1,3 / 4,3 /
+54,1 / 54,1 % (T_0 au pas 7, très précoce) contre nul 0,5 /
+10,3 / 23,2 / 88,8 / 88,8 % ; G5/stage réelle 0,0 / 0,2 / 3,2 /
+37,8 / 37,8 % (T_0 au pas 5) contre nul 1,1 / 69,9 / 97,9 /
+100 / 100 % ; G3/KRAS réelle 0,0 / 1,6 / 5,9 / 61,3 / 61,3 %
+(T_0 précoce) contre nul 0,0 / 11,2 / 47,1 / 76,2 / 76,2 % ;
+G5/KRAS réelle 0,0 / 3,7 / 8,0 / 97,4 / 97,4 % contre nul 0,5 /
+6,9 / 70,0 / 75,6 / 76,7 % ; TEMOIN/KRAS réelle 0,0 / 84,0 /
+96,9 / 99,9 / 100 % (T_-1 à 84 %, cascade tardive) contre nul
+2,1 / 39,3 / 43,0 / 93,2 / 93,2 %. Les cascades stade ont
+leur T_0 très tôt (pas 5–9 sur 174) et leur T_+1 = T_+2
+figé : avec 4 niveaux de stade et 146 tumeurs au stade II,
+un « seuil » précoce tombe dans le bloc des ties — il ne
+mesure rien, comme au §8.45. Les cascades KRAS ont leur
+T_0 très tard (pas 171–176 sur 177) pour G1 et G2 : il ne
+reste que 1–2 lignes après le seuil.
+Lecture d'ensemble : MC favorise le réel sur les 12 paires
+(+0,006 à +0,161 ; les trois plus grands écarts sont sur le
+stade : G3 +0,161, G5 +0,152, G1 +0,138) ; S_sep favorise
+le réel sur 10/12 (exceptions G1/stade −0,058 et G3/stade
+−0,000) ; Delta est partagé (réel devant sur 9/12, dont
+G2/KRAS +1,149 et TEMOIN/KRAS +1,081, mais G3/KRAS −0,695) ;
+la falsification est partagée (réel devant sur 6/12) ;
+L7a est UP partout dans le réel sauf G3/KRAS et TEMOIN
+(DOWN), et UP partout dans le nul sauf G4/KRAS (DOWN) ;
+L7b est FRAGILE partout sauf sur 2 nuls (G1/stade,
+G4/stade) ; régime divergence partout ; bruit « proxy de
+variance modéré » presque partout (scores 0,46–0,78).
+F1/F2 « Tous » : les rapports après/avant s'effondrent ou
+explosent sans direction cohérente (F1 ×0,010 à ×28,2 réel
+contre ×0,019 à ×33,7 nul ; F2 ×0,008 à ×68,5 réel contre
+×0,011 à ×53,1 nul) et le signe de F1 change chez 19 à 27
+estimateurs sur 29 des deux côtés. Même figure qu'aux
+§8.31/§8.32/§8.34/§8.36/§8.45 : des pistes dans le sens
+réel sur MC et S_sep, contredites ou non confirmées par
+Delta, la falsification et L7b — pas une séparation
+démontrée. Le cas G3/stade est l'avertissement : le plus
+grand écart MC du lot (+0,161) avec S_sep à égalité
+(0,1605 contre 0,1609), Delta +0,177 seulement, et des
+tests directs plats — un score seul ne fait pas un signal.
+
+**Confirmation sur autres cohortes (règle conditionnelle gelée,
+protocole §6 — statuée à 24/24 TCGA).** Critère : (MC réel − MC
+nul > 0,05) OU (S_sep réel − S_sep nul > 0,05) OU (un test direct
+D1 |d| ≥ 0,50 au-delà du nul), sur au moins un ordre TCGA.
+- G1 : QUALIFIÉ (MC stade +0,138 ; S_sep KRAS +0,259 ;
+  D1 TFF1 +0,54 stade, D2b MUC4 +0,80 / AGR2 +0,76 KRAS).
+- G2 : QUALIFIÉ (S_sep KRAS +0,107, stade +0,060 ; D1 CELA2A
+  −0,76 KRAS) — avec la réserve que ses tests directs sont
+  expliqués par le témoin acineux (voir G2 ci-dessus) : la
+  confirmation teste si la même chute se retrouve ailleurs,
+  pas si elle est « nouvelle ».
+- G3 : QUALIFIÉ (MC stade +0,161 ; S_sep KRAS +0,103 ; D1
+  OR7A5 +0,77 KRAS) — avec l'avertissement que ses tests
+  directs sont plats et sa S_sep stade à égalité : la
+  confirmation dira si l'écart MC stade tient ailleurs.
+- G4 : QUALIFIÉ (S_sep KRAS +0,125, stade +0,068 ; D1 ADH1C
+  −0,86, TAS2R38 +0,85 KRAS).
+- G5 : QUALIFIÉ (MC stade +0,152 ; S_sep KRAS +0,175, stade
+  +0,095 ; D2b SYP −0,88, KRT19 +0,79 KRAS).
+- TEMOIN : non candidat (témoin de construction), pas de
+  confirmation.
+Les 5 groupes qualifiés sont donc confirmés. Construction
+`build_fluxes_858_geo.py` (SHA `3f7d4978…69a4b`, variante (a)
+des scripts du projet : mêmes gènes que les listes retenues
+TCGA — ceux présents dans la cohorte — ordre KRAS brut,
+sans correction de pureté, cas complets) :
+- GSE71729 (145 tumeurs primaires) : 5 groupes × KRAS
+  (réel + nul) = 10 runs. Gènes retenus présents : G1 17/20
+  (absents : MUC5B, MUC21, PGA4), G2 15/20 (absents : AMY1A,
+  AMY2A, CELA2A, CELA2B, CELA3B), G3 11/20 (absents :
+  OR13A1, OR2A4, OR52N4, OR52N2, OR1J2, OR2A1, OR4C6,
+  OR5K2, OR2T10 — dont OR2A4, la piste OR/KRAS de TCGA :
+  elle ne peut pas être confirmée sur cette puce, c'est
+  dit tel quel), G4 17/20 (absents : UGT1A1, ADH1B,
+  TAS1R3 — dont UGT1A1, le plus fort rho G4/KRAS de TCGA :
+  non confirmable ici), G5 15/15.
+- GSE62452 (69 tumeurs) : 5 groupes × (KRAS + stade)
+  (réel + nul) = 20 runs. Gènes retenus présents : G1 19/20
+  (absent : PGA4), G2 18/20 (absents : AMY1A, CTRB1),
+  G3 17/20 (absents : OR2A4, OR2A1, OR3A2 — OR2A4 absent
+  ici aussi : la piste OR2A4/KRAS n'est confirmable dans
+  aucune des deux cohortes), G4 20/20, G5 15/15. Stade
+  GSE62452 (règle gelée dans `build_fluxes_858_geo.py`
+  avant la construction : IA/IB → I, IIA/IIB → II,
+  III → III, IVA/IVB/IV → IV, « >IIB » exclu car ambigu,
+  départage GSM lexicographique) : I 4, II 45, III 13,
+  IV 6, 1 exclue (« >IIB ») — série stade 68 lignes
+  (≥ 40, seuil respecté).
+Lots de confirmation lancés le 20 nov. (unités `v62-858c`
+pour GSE71729, 10 runs, manifeste `manifest_v62_858_71729.txt` ;
+`v62-858d` pour GSE62452, 20 runs, manifeste
+`manifest_v62_858_62452.txt` ; surveillance
+`watch_v62_858_geo.sh`). **TERMINÉS 30/30, exits 0/0** :
+`WATCH 858-71729 TERMINE 10/10`, `WATCH 858-62452 TERMINE
+20/20` (20 nov. 08h37Z). Trois redémarrages de machine
+durant le lot (vers 07h21 UTC et avant), unités relancées
+à chaque fois, reprise sans perte. Pipeline revérifié
+inchangé après le lot : SHA `f07567c48a562506…c3abf`.
+Lecture `extract_858_geo.py` (`extract_858_geo.json` /
+`extract_858_geo.csv`, 30 runs, 0 manquant).
+
+**Table pipeline — confirmations (réel contre nul).**
+MC / S_sep / Delta / L7a / falsification ; écart réel − nul
+entre parenthèses.
+
+GSE71729, ordre KRAS (n=145) :
+| Groupe | MC réel | MC nul | S_sep réel | S_sep nul | Delta réel | Delta nul | L7a | fals. réel | fals. nul |
+|---|---|---|---|---|---|---|---|---|---|
+| G1 | 0,352 | 0,337 (+0,015) | 0,328 | 0,243 (+0,085) | 2,885 | 2,916 (−0,031) | up / down | 0,523 | 0,592 |
+| G2 | 0,350 | 0,348 (+0,002) | 0,322 | 0,295 (+0,027) | 2,829 | 2,025 (+0,804) | down / down | 0,443 | 0,496 |
+| G3 | 0,357 | 0,344 (+0,013) | 0,365 | 0,284 (+0,082) | 2,893 | 2,902 (−0,009) | up / up | 0,536 | 0,560 |
+| G4 | 0,342 | 0,323 (+0,019) | 0,267 | 0,142 (+0,125) | 2,877 | 2,872 (+0,005) | up / up | 0,552 | 0,500 |
+| G5 | 0,335 | 0,328 (+0,007) | 0,233 | 0,183 (+0,050) | 2,901 | 2,883 (+0,018) | down / up | 0,620 | 0,559 |
+
+GSE62452, ordre KRAS (n=69) :
+| Groupe | MC réel | MC nul | S_sep réel | S_sep nul | Delta réel | Delta nul | L7a | fals. réel | fals. nul |
+|---|---|---|---|---|---|---|---|---|---|
+| G1 | 0,361 | 0,338 (+0,023) | 0,422 | 0,251 (+0,171) | 1,425 | 1,342 (+0,083) | up / up | 0,127 | 0,263 |
+| G2 | 0,386 | 0,335 (+0,051) | 0,603 | 0,229 (+0,374) | 1,648 | 1,221 (+0,427) | down / down | 0,221 | 0,201 |
+| G3 | 0,348 | 0,329 (+0,020) | 0,334 | 0,193 (+0,141) | 1,474 | 1,438 (+0,036) | up / down | 0,027 | 0,109 |
+| G4 | 0,376 | 0,331 (+0,045) | 0,533 | 0,206 (+0,327) | 1,447 | 1,376 (+0,071) | up / up | 0,139 | 0,190 |
+| G5 | 0,367 | 0,342 (+0,024) | 0,462 | 0,286 (+0,176) | 1,393 | 1,429 (−0,036) | up / down | 0,102 | 0,140 |
+
+GSE62452, ordre stade (n=68) :
+| Groupe | MC réel | MC nul | S_sep réel | S_sep nul | Delta réel | Delta nul | L7a | fals. réel | fals. nul |
+|---|---|---|---|---|---|---|---|---|---|
+| G1 | 0,345 | 0,335 (+0,010) | 0,316 | 0,241 (+0,075) | 1,474 | 1,531 (−0,057) | up / up | 0,128 | 0,159 |
+| G2 | 0,381 | **0,519 (−0,138)** | 0,469 | 0,220 (+0,249) | 1,619 | 1,399 (+0,220) | down / down | 0,322 | 0,180 |
+| G3 | 0,330 | 0,336 (−0,006) | 0,207 | 0,251 (−0,044) | 1,453 | 1,380 (+0,073) | down / up | 0,012 | 0,103 |
+| G4 | 0,337 | 0,333 (+0,004) | 0,245 | 0,215 (+0,030) | 1,451 | 1,361 (+0,090) | up / up | 0,116 | 0,237 |
+| G5 | 0,333 | 0,333 (+0,000) | 0,233 | 0,224 (+0,009) | 1,490 | 1,402 (+0,088) | down / flat | 0,183 | 0,105 |
+
+Lecture d'ensemble (15 paires réel/nul) : MC favorise le
+réel 13/15 (écarts +0,002 à +0,051 ; exceptions : G2/stade
+−0,138 — le nul y atteint 0,519, plus haut que n'importe
+quel réel du chantier — et G3/stade −0,006) ; S_sep
+favorise le réel 14/15 (seule exception G3/stade −0,044) ;
+Delta favorise le réel 11/15 ; falsification 5/15. L7a :
+réel up dans 9/15, nul up dans 7/15 — sans direction
+propre. L7b FRAGILE dans 28/30 runs (ROBUSTE seulement
+G3/stade réel et G4/stade réel, GSE62452) — même
+non-informativité que dans TCGA : FRAGILE partout, réel
+comme nul. Delta : 1,39–2,90 dans ces cohortes contre
+~3,8–4,2 dans TCGA — l'échelle suit n (n=69/145 contre
+178), cohérent avec §8.40. Le pipeline, dans ces
+confirmations comme dans TCGA, donne de petits écarts
+favorables au réel sur MC et S_sep, partagés sur Delta,
+inversés ou plats sur la falsification : il ne sépare pas
+nettement du nul — le même verdict que dans TCGA, tenu
+sur trois cohortes.
+
+**Tests directs — confirmations** (`reading_858_geo.py`,
+`direct_tests_858_geo.csv`, 253 lignes, mêmes D1/D3 que
+TCGA ; seuil de Bonferroni 0,05/253 ≈ 0,0002 ; nul max
+|rho| indiqué par groupe).
+- G5 (neuroendocrine) CONFIRME dans les deux cohortes,
+  ordre KRAS : GSE62452 SYP rho −0,503 (p 1,1e-05),
+  KRT19 +0,416, INSM1 −0,413, KRT7 +0,398, CDX1 −0,387
+  (nul max 0,283) ; GSE71729 CHGA −0,359 (p 9,2e-06),
+  INSM1 −0,296, KRT19 +0,281, KRT7 +0,278 (nul max
+  0,137). SYP est plat dans GSE71729 (rho −0,086, p 0,31)
+  — la confirmation porte sur le programme (CHGA/INSM1
+  chutent, KRT7/KRT19 montent), pas sur chaque gène.
+  Ordre stade (GSE62452) : NEUROD1 −0,416 (p 0,00042),
+  CHGA −0,348 (nul max 0,202) — même sens que TCGA
+  (SYP −0,276, CHGB −0,250).
+- G4 (volatil) CONFIRME, ordre KRAS, et plus fort qu'en
+  TCGA : GSE62452 AOX1 −0,611 (p 2,6e-08), UGT1A1 +0,541
+  (p 1,6e-06), NOS1 −0,529 (p 3,0e-06), NOS2 −0,424,
+  CBS −0,423 (nul max 0,336) ; GSE71729 NOS1 −0,369
+  (p 4,9e-06), ALDH3A1 +0,367 (p 5,7e-06), CBS −0,275,
+  AOX1 −0,253 (nul max 0,173). Deux nuances : NOS1 était
+  plat dans TCGA (rho +0,067) — sa chute n'apparaît que
+  dans les deux cohortes GEO ; UGT1A1 est absent de
+  GSE71729 (confirmé seulement dans GSE62452). Ordre
+  stade (GSE62452) : rien (rho max 0,291, FMO1) — comme
+  dans TCGA.
+- G1 (mucus étendu) CONFIRME PARTIELLEMENT, ordre KRAS :
+  AGR2 +0,383 (p 1,9e-06) dans GSE71729, même sens que
+  TCGA (+0,328) ; MUC13 +0,264, TFF1 +0,236. Mais MUC4
+  est plat dans GSE71729 (rho −0,083, contre +0,313 dans
+  TCGA) et MUC6 CHUTE dans GSE71729 (rho −0,436,
+  p 4,2e-08 ; D1 −0,29) alors qu'il était plat dans TCGA
+  (rho +0,035). La montée du mucus avec KRAS n'est donc
+  pas un programme : AGR2 monte dans les deux, MUC4
+  seulement dans TCGA, MUC6 chute dans GSE71729.
+- G3 (odeurs) : le sens est une CHUTE, pas une montée.
+  GSE71729 ordre KRAS : OR2W3 −0,338 (p 3,3e-05),
+  OR10H1 −0,275, OR3A2 −0,246, OR2B6 −0,220, OR2C1
+  −0,212 (nul max 0,154) ; GSE62452 ordre KRAS :
+  OR13A1 −0,423 (p 0,00029, D1 −1,16), OR2T10 −0,418
+  (p 0,00036), OR5K2 −0,302 (nul max 0,207). Dans TCGA
+  ces mêmes gènes étaient déjà négatifs ou plats
+  (OR13A1 −0,152, OR2T10 −0,154, OR2C1 −0,208) —
+  la chute de plusieurs OR avec KRAS est cohérente sur
+  les trois cohortes, mais aucun OR ne monte. OR2A4, le
+  seul OR qui montait dans TCGA (+0,259), est absent des
+  deux puces : sa piste reste non confirmable, et le
+  bilan des odeurs est donc : plusieurs OR chutent avec
+  KRAS, aucun ne monte. Ordre stade (GSE62452) : rien
+  de net (rho max 0,303, OR2B6, p 0,012, non significatif
+  après Bonferroni).
+- G2 (enzymes digestives) : chute acineuse retrouvée,
+  ordre KRAS : GSE62452 PNLIP −0,381, PNLIPRP1 −0,378,
+  CTRB2 −0,374 (nul max 0,138) ; GSE71729 faible
+  (CPA3 +0,273 en tête, puis CEL −0,175, CTRB2 −0,173)
+  — comme dans TCGA, c'est la perte acineuse, pas un
+  nouveau signal. Ordre stade : rien (rho max 0,163).
+
+**Réserve de méthode — à lire avec le verdict.** Les flux sont
+des résidus après correction de pureté : ils mesurent
+l'expression tumorale une fois retirée la composante tissu
+normal acineux/îlots, sous l'hypothèse linéaire de la v4.
+G2 est biaisé par construction (8/20 flux retenus sont des
+gènes du score acineux) : ses lectures sous KRAS sont
+disqualifiées comme « nouvelles » par le témoin, et ses
+lectures sous le stade sont nulles. Le stade est une variable
+clinique (AJCC 7e édition), pas une mesure du système :
+4 niveaux, ties massives (IIB 118/175), ordre intra-stade
+arbitraire, sommet mince (III + IV = 8 tumeurs) — mêmes
+limites qu'au §8.45 ; un d à n = 4 bouge de ~0,5 quand une
+seule tumeur change. Les OR sont mesurés comme transcrits :
+aucune odeur, aucun ligand, aucun test fonctionnel dans ce
+chantier. Les p sont nominales ; seul le seuil de Bonferroni
+0,05/212 ≈ 0,00024 protège contre les 212 tests directs —
+les rho G5/KRAS (SYP, INSM1, KRT19, KRT7, CHGB) et G4/KRAS
+(UGT1A1, ALDH3B1, ADH1A) le passent ; les autres sont des
+pistes. Ne jamais exiger de consensus entre flux ou
+contrôles : les groupes ne bougent pas ensemble — G1 monte
+quand G5 descend sous KRAS, et c'est l'information.
+
+**Ce que ça change.** Trois choses neuves, toutes mesurées
+aujourd'hui, aucune importée : (1) le programme
+neuroendocrine s'efface quand KRAS monte et quand le stade
+avance, pendant que les kératines ductales montent — c'est
+le seul groupe cohérent dans les deux ordres, et il passe
+Bonferroni ; **il tient dans les deux cohortes de
+confirmation, gène par gène dans les deux sens** — c'est le
+signal le plus solide du chantier ; (2) le mucus étendu
+(MUC4/AGR2/MUC5B) monte avec KRAS alors que le bloc v4 chute
+— le « bloc estomac/mucus » n'est pas un bloc unique : une
+partie monte, l'autre chute, sous le même axe ; **mais la
+confirmation est partielle : AGR2 monte partout, MUC4
+seulement dans TCGA, MUC6 chute dans GSE71729** — il n'y a
+pas de programme mucus unique ; (3) les odeurs existent
+comme transcrits (19 OR détectés dans plus de la moitié des
+tumeurs, OR2A7/OR2A4/OR51E1 en tête) mais ne forment pas un
+programme : un seul OR, OR2A4, suit KRAS — et il est absent
+des deux puces de confirmation, donc non confirmable
+ailleurs. **Quatrième chose, venue des confirmations : le
+volatil (G4) est le deuxième signal confirmé — AOX1 chute
+dans les trois cohortes (−0,289 / −0,253 / −0,611), UGT1A1
+monte dans TCGA et GSE62452 (+0,378 / +0,541), NOS1 chute
+dans les deux cohortes GEO (−0,369 / −0,529) alors qu'il
+était plat dans TCGA ; et les odeurs, confirmées dans
+l'autre sens : plusieurs OR chutent avec KRAS dans les deux
+cohortes GEO, aucun ne monte.** Le reste — enzymes
+digestives, volatil sous le stade, OR sous le stade — ne
+sort pas du nul. Le pipeline, dans les confirmations comme
+dans TCGA, donne de petits écarts favorables au réel sur MC
+(13/15) et S_sep (14/15), partagés sur Delta (11/15),
+inversés sur la falsification (5/15) : il ne sépare pas
+nettement du nul — le même verdict, tenu sur trois cohortes.
+Prochaines étapes : intégration au livre blanc et publication
+(PDF + GitHub) sur go de Zackary ; rien n'a été poussé, rien
+n'a été régénéré dans ce chantier.
+
+---
+
 ### 8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas
 
 | | v1 (brute) | v2 (hors pureté) | v3 (+ correction) | v4 (+ hors sexe) |
@@ -5985,5 +8307,9 @@ donc aucun run n'est compté deux fois. Début 19 nov. 23h35 UTC, fin
 - **19 nov. 2026, 18h19 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — commit `8d158b50`, RELEASE v6.2-8.49.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `0a5ef225` → nouvelle tête `8d158b50`. Contenu : 5 commits, 524 fichiers, 15,6 Mo, livre blanc §8.1–§8.49. PDF 675 pages A4, 11 287 512 octets (10,8 Mo), SHA-256 `40643a828ea22879f0d976b319c939fa1b65022c7999c79ad17994e9c55d605c`. Release `v6.2-8.49` créée 18h19, marquée Latest. PDF binaire exclu du snapshot (limites snapshot), partagé via la Release. Entrée écrite a posteriori le 20 nov. 2026 : elle manquait au journal (constaté à la fusion §8.50–§8.53).
 
 - **19–20 nov. 2026 : FUSION §8.50–§8.53 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 723 PAGES.** Go de Zackary « Faite tout cela » (19 nov. 2026 ~18h27, 4 chantiers). Sections rédigées dans `section_8.50_mtap_consolidation.md` (243 lignes, SHA `48b15610…954f434`), `section_8.51_purity_infiltration.md` (369 lignes, SHA `7b8ec3e4…ec71494d`), `section_8.52_mc_recurrence.md` (287 lignes, SHA `c016676c…b7ab7dd70`), `section_8.53_nulls_n70.md` (372 lignes, SHA `ebd885d0…553b70`), fusionnées par le coordinateur : titres normalisés « ### 8.5X », go corrigé au §8.51 (« Fait tes 3 propositions » ~08h16 → « Faite tout cela » ~18h27) et lignes de date/go ajoutées aux §8.50/§8.52/§8.53, résidu de fusion du §8.47 corrigé (phrase neutre, sans « à fusionner »), lignes de fin ajoutées aux §8.52/§8.53, résidu de provenance du §8.53 corrigé ; lignes 56–59 au §7 ; entrée de journal ajoutée pour la poussée `8d158b50` du 19 nov. 18h19 (elle manquait). Livre blanc fusionné : 5 987 lignes, SHA-256 `195a948b38c39e60751682216669b1cb18fc196e22d9c3258c4bd43da0203b03`. PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-853`, FIN 2026-11-20T02:49:37Z, soit 19 nov. 21h49 heure de Montréal) : **723 pages A4, 11 517 610 octets, SHA-256 `bfab0598c2fdbf4408dbed1a86ca65ab92fa6cfe62b4529fe1ab5a584147e32d`** (ancien 675 pages, SHA `40643a82…`) ; couverture §8.1–§8.53, 19–20 nov. 2026, mention v6.4 rejetée (§8.52) ; §8.50 à §8.53 vérifiés présents par lecture du PDF, chiffres clés présents (0,1110 ; 0,9174 ; 28/48 ; 0,38) ; zéro résidu de fusion, zéro « Fait tes 3 propositions » dans les §8.50–§8.53. Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Poussée GitHub à venir (par un autre agent — hors de ce chantier) ; le hash du commit GitHub n'existe pas encore.
+
+- **19 nov. 2026, 22h07 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — commit `365ab4ad`, RELEASE v6.2-8.53.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `8d158b50` → nouvelle tête `365ab4ad`. Contenu : 4 commits, 104 fichiers, 3,4 Mo, livre blanc §8.1–§8.53. PDF 723 pages A4, 11 522 319 octets (11,0 Mo), SHA-256 `16fa081114b2aa6c3a1af7985639d908151d671b0a560861425d9a8c8c48b57b`. Release `v6.2-8.53` créée 22h07, marquée Latest. PDF binaire exclu du snapshot (limites snapshot), partagé via la Release. Entrée écrite a posteriori le 20 nov. 2026 : elle manquait au journal (constaté à la fusion §8.54–§8.58).
+
+- **19–20 nov. 2026 : FUSION §8.54–§8.58 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 811 PAGES.** Go de Zackary « Oui continue tout c'est piste la » (19 nov. 2026 ~22h14, 5 chantiers) + demande explicite d'explorer les flux inattendus dont les odeurs (§8.58). Sections rédigées dans `section_8.54_infiltration.md` (539 lignes, SHA `688f62b0…ddad8`), `section_8.55_purity_external.md` (421 lignes, SHA `c7b56c89…34f1`), `section_8.56_sep_maxsep.md` (326 lignes, SHA `9015ab0c…9012`), `section_8.57_delta_series.md` (426 lignes, SHA `d323a965…cea1a2afd`), `section_8.58_stomach_mucus_flux.md` (590 lignes, SHA `687d9327…020ed`), fusionnées par le coordinateur : titres normalisés « ### 8.5X » (sauf §8.58 déjà au bon format), lignes 60–64 au §7 ; entrée de journal ajoutée pour la poussée `365ab4ad` du 19 nov. 22h07 (elle manquait). Livre blanc fusionné : 8 313 lignes, SHA-256 `12b61ad8504be9efcc67b299e7f18388a713d5d37400e2a810f03d3dd4b3037c`. PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-858`, FIN 2026-11-20T08:54:18Z, soit 20 nov. 03h54 heure de Montréal) : **811 pages A4, 11 948 453 octets, SHA-256 `451a16a7a7c2db36246cbe3a8b34d40297c193cee553eab60280206b762e9291`** (ancien 723 pages, SHA `16fa0811…`) ; couverture §8.1–§8.58, 19–20 nov. 2026 ; §8.54 à §8.58 vérifiés présents par lecture du PDF, chiffres clés présents (0,2002 ; 0,3757 ; 37/48 ; 89,2 % ; OR13A1 ; AOX1) ; zéro résidu de fusion. Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication. Après ajout de cette entrée (et de celle de la poussée `365ab4ad`), le livre blanc compte 8 315 lignes, SHA-256 `a9b687f222a998c4b72f1e00d035c15bc315b1c64eb8a5fe849047ab68a7a6aa`.
 
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*

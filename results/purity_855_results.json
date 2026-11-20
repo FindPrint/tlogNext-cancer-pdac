@@ -1,0 +1,327 @@
+{
+  "sha_checks": {
+    "immune": true,
+    "axis": true,
+    "v62": true,
+    "pdacr_rds": true,
+    "sampinfo_csv": true,
+    "aran_supp_data1": true,
+    "shrinkagetrees_pdac": true
+  },
+  "porte_S": {
+    "aran2015_supp_data1": {
+      "rows": 9364,
+      "cancer_types": 21,
+      "paad_rows": 0,
+      "absolute_non_null_total": 4398,
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4671203/supplementaryFiles",
+      "zip_sha256": "4685a8b2e903e34f0da3f4da4139448cdb8c80e141d42329d1f78581ebb541a5",
+      "xlsx_sha256": "fce1ba13ff3a6432b7e4f260eb516e407c967d615ca87bc8dffa7765baf97529"
+    },
+    "ucscxena_tcga_purity": {
+      "note": "même tableau qu'Aran 2015 (9 364 lignes, mêmes colonnes et premières lignes) : 0 PAAD — vérifié sur UCSCXenaShiny 2.2.1 data/tcga_purity.rda, tarball SHA 377c0f3ff0444b68ecb2db65f3d71f18516a53e586c2c2f16efbb2283abca597"
+    },
+    "estimate_publie_paad": {
+      "obtenu": false,
+      "note": "site MD Anderson (bioinformatics.mdanderson.org/estimate/) liste PAAD RNA-seqV2 n=179 avec téléchargement par maladie, mais le fichier de données n'a pas pu être récupéré : téléchargement piloté par JS (disease.html + js/disease_histogram.js), fetch du JS en échec répété (curl 000 x3, timeout du fetch de page) ; repli par recalcul (package R estimate) NON fait — ce ne serait pas un score publié, et ABSOLUTE (ADN, indépendant de l'ARN) est le contrôle externe le plus fort et il est disponible."
+    },
+    "pdacr_absolute": {
+      "fichier": "data/pdacR_TCGA_PAAD.rds",
+      "url": "https://raw.githubusercontent.com/rmoffitt/pdacR/master/data/TCGA_PAAD.rds",
+      "sha256": "52020679350d1539d7516f7d38f7bf09e510225eba2f228a4fe874f3c496ea76",
+      "sampinfo_sha256": "7a09dde3d374d1afb64f1d1d053193fc884c04d62e63e519fcf4dbf17378b014",
+      "publication": "Raphael et al. 2017, Cancer Cell 32(2):185-203.e13, PMID 28810144, PMCID PMC5964983, DOI 10.1016/j.ccell.2017.07.007, Table S1",
+      "curation": "Torre-Healy et al. 2023, Commun Biol 6:163, doi 10.1038/s42003-023-04461-6 (pdacR, github.com/rmoffitt/pdacR)"
+    }
+  },
+  "gate_S": {
+    "n_ours": 178,
+    "n_externes": 181,
+    "matched_barcode": 178,
+    "absolute_non_null": 149,
+    "absolute_dans_[0,1]": true,
+    "unmatched_ours": [],
+    "externes_hors_projet": [
+      "TCGA-HZ-A9TJ-06A",
+      "TCGA-H6-8124-11A",
+      "TCGA-YB-A89D-11A"
+    ],
+    "open": true
+  },
+  "matched": {
+    "n": 149,
+    "absolute": {
+      "min": 0.09,
+      "median": 0.33,
+      "mean": 0.35167785234899335,
+      "sd": 0.1845205719306839,
+      "max": 0.89
+    }
+  },
+  "coherence": {
+    "absolute_vs_methylation_purity": {
+      "n": 149,
+      "r_pearson": 0.8556163985516381,
+      "p": 6.960648161293438e-44
+    },
+    "purity_class_vs_absolute": {
+      "n_high": 76,
+      "n_low": 73,
+      "high_min": 0.33,
+      "high_max": 0.89,
+      "low_min": 0.09,
+      "low_max": 0.32,
+      "high_mean": 0.503157894736842,
+      "low_mean": 0.19397260273972602
+    },
+    "shrinkagetrees_distribution": {
+      "n": 130,
+      "mean": 0.3556589147286822,
+      "sd": 0.18586001634655464,
+      "min": 0.09,
+      "max": 0.89,
+      "source": "CRAN ShrinkageTrees 2.1.1, data/pdac.rda (sous-ensemble réduit de pdacR, sans barcode — comparaison de distribution seulement)"
+    }
+  },
+  "T1_per_flux": [
+    {
+      "gene": "CD8A",
+      "r_absolute": -0.675941109030682,
+      "p_absolute": 3.148566725594291e-21,
+      "rho_absolute": -0.6893720239906306,
+      "R2_absolute": 0.4568963828776287
+    },
+    {
+      "gene": "CD8B",
+      "r_absolute": -0.5631917266632787,
+      "p_absolute": 7.622526710399986e-14,
+      "rho_absolute": -0.5832969237803468,
+      "R2_absolute": 0.31718492098196494
+    },
+    {
+      "gene": "CD4",
+      "r_absolute": -0.6331073184397712,
+      "p_absolute": 4.592122475922048e-18,
+      "rho_absolute": -0.6235151002456384,
+      "R2_absolute": 0.40082487666199773
+    },
+    {
+      "gene": "FOXP3",
+      "r_absolute": -0.5328459148517263,
+      "p_absolute": 2.650542507565411e-12,
+      "rho_absolute": -0.5551342205582495,
+      "R2_absolute": 0.2839247689741734
+    },
+    {
+      "gene": "CD68",
+      "r_absolute": -0.21155805888061552,
+      "p_absolute": 0.009596719137582766,
+      "rho_absolute": -0.15589918807675968,
+      "R2_absolute": 0.04475681227733386
+    },
+    {
+      "gene": "CD163",
+      "r_absolute": -0.5841526221413171,
+      "p_absolute": 5.275774420555604e-15,
+      "rho_absolute": -0.5441365951327528,
+      "R2_absolute": 0.34123428595457683
+    },
+    {
+      "gene": "CD274",
+      "r_absolute": -0.30837542681097985,
+      "p_absolute": 0.00013014910057386998,
+      "rho_absolute": -0.3485167170065264,
+      "R2_absolute": 0.09509540386085402
+    },
+    {
+      "gene": "PDCD1",
+      "r_absolute": -0.5642806845355689,
+      "p_absolute": 6.66568836839284e-14,
+      "rho_absolute": -0.57562888796973,
+      "R2_absolute": 0.3184126909399305
+    },
+    {
+      "gene": "CTLA4",
+      "r_absolute": -0.5930296400262944,
+      "p_absolute": 1.6053347923841415e-15,
+      "rho_absolute": -0.5872180372178156,
+      "R2_absolute": 0.35168415394971686
+    },
+    {
+      "gene": "GZMB",
+      "r_absolute": -0.45083083469420543,
+      "p_absolute": 7.943247132966047e-09,
+      "rho_absolute": -0.47482488194540035,
+      "R2_absolute": 0.2032484415110738
+    },
+    {
+      "gene": "IFNG",
+      "r_absolute": -0.30618477315837006,
+      "p_absolute": 0.00014609999436839832,
+      "rho_absolute": -0.31967749100104637,
+      "R2_absolute": 0.09374911531404273
+    },
+    {
+      "gene": "CD19",
+      "r_absolute": -0.49489905642906024,
+      "p_absolute": 1.4019304182627976e-10,
+      "rho_absolute": -0.5247373140638845,
+      "R2_absolute": 0.24492507605437408
+    }
+  ],
+  "T1_summary": {
+    "mean_abs_r_absolute": 0.49319976380515573,
+    "mean_abs_rho_absolute": 0.4984964484157317,
+    "median_R2_absolute": 0.30055484497806917,
+    "max_R2_absolute": 0.4568963828776287
+  },
+  "T2_matrix": {
+    "brut_n149": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.5040345996620198,
+      "pearson_median_abs_r": 0.5429243443384287,
+      "pearson_frac_gt_0.5": 0.5606060606060606,
+      "pearson_max_abs_r": 0.8523128350450377,
+      "spearman_mean_abs_r": 0.48797405110915504,
+      "spearman_median_abs_r": 0.5250680210411753
+    },
+    "resid_absolute": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.3756970333866229,
+      "pearson_median_abs_r": 0.37463652317898066,
+      "pearson_frac_gt_0.5": 0.2727272727272727,
+      "pearson_max_abs_r": 0.7744743608788565,
+      "spearman_mean_abs_r": 0.361709526029633,
+      "spearman_median_abs_r": 0.36495737348086343
+    }
+  },
+  "T2_summary": {
+    "drop_absolute_pct": 25.462054859220697
+  },
+  "T2_reference_178": {
+    "n_pairs": 66,
+    "pearson_mean_abs_r": 0.5563291004266693,
+    "pearson_median_abs_r": 0.5677419828795567,
+    "pearson_frac_gt_0.5": 0.6212121212121212,
+    "pearson_max_abs_r": 0.8429866183240017,
+    "spearman_mean_abs_r": 0.540251655358166,
+    "spearman_median_abs_r": 0.5651791378153717
+  },
+  "T3_coupling": [
+    {
+      "control": "CD8A",
+      "C_brut": 0.6059100595188374,
+      "C_resid": 0.45221725249677386,
+      "d_pred_brut": 0.8580766514796176,
+      "d_pred_resid": 0.5960304155069995
+    },
+    {
+      "control": "CD8B",
+      "C_brut": 0.5389273468525833,
+      "C_resid": 0.3840380845791287,
+      "d_pred_brut": 0.7438711263836546,
+      "d_pred_resid": 0.47978493420741447
+    },
+    {
+      "control": "CD4",
+      "C_brut": 0.6040878332810181,
+      "C_resid": 0.4493691385063024,
+      "d_pred_brut": 0.8549697557441358,
+      "d_pred_resid": 0.5911743811532457
+    },
+    {
+      "control": "FOXP3",
+      "C_brut": 0.5842218234823484,
+      "C_resid": 0.4539830354768178,
+      "d_pred_brut": 0.8210982090374042,
+      "d_pred_resid": 0.5990410754879745
+    },
+    {
+      "control": "CD68",
+      "C_brut": 0.27475173356663796,
+      "C_resid": 0.22375834403923936,
+      "d_pred_brut": 0.29345170573111773,
+      "d_pred_resid": 0.20650797658690312
+    },
+    {
+      "control": "CD163",
+      "C_brut": 0.5140078626437382,
+      "C_resid": 0.3452606531965635,
+      "d_pred_brut": 0.7013834058075736,
+      "d_pred_resid": 0.4136694137001408
+    },
+    {
+      "control": "CD274",
+      "C_brut": 0.3863749771819291,
+      "C_resid": 0.2873574845595955,
+      "d_pred_brut": 0.4837693360951892,
+      "d_pred_resid": 0.3149445111741103
+    },
+    {
+      "control": "PDCD1",
+      "C_brut": 0.5526620035519594,
+      "C_resid": 0.4043415317455578,
+      "d_pred_brut": 0.7672887160560908,
+      "d_pred_resid": 0.5144023116261762
+    },
+    {
+      "control": "CTLA4",
+      "C_brut": 0.596541853393806,
+      "C_resid": 0.4556511489277245,
+      "d_pred_brut": 0.8421038600364392,
+      "d_pred_resid": 0.6018852089217703
+    },
+    {
+      "control": "GZMB",
+      "C_brut": 0.540590026256564,
+      "C_resid": 0.4221427755623451,
+      "d_pred_brut": 0.7467059947674417,
+      "d_pred_resid": 0.5447534323337984
+    },
+    {
+      "control": "IFNG",
+      "C_brut": 0.42921767074085454,
+      "C_resid": 0.34019013496409234,
+      "d_pred_brut": 0.556816128613157,
+      "d_pred_resid": 0.40502418011377744
+    },
+    {
+      "control": "CD19",
+      "C_brut": 0.42112200547396256,
+      "C_resid": 0.2900548165853341,
+      "d_pred_brut": 0.5430130193331062,
+      "d_pred_resid": 0.3195434622779947
+    }
+  ],
+  "T3_summary": {
+    "mean_C_brut": 0.5040345996620199,
+    "mean_C_resid": 0.3756970333866229,
+    "mean_d_pred_brut": 0.6843789924237439,
+    "mean_d_pred_resid": 0.4655634419241921
+  },
+  "T4_stratification": {
+    "absolute": {
+      "median": 0.33,
+      "n_hi": 76,
+      "n_lo": 73,
+      "hi": {
+        "n_pairs": 66,
+        "pearson_mean_abs_r": 0.38024823902102267,
+        "pearson_median_abs_r": 0.38818217391938237,
+        "pearson_frac_gt_0.5": 0.2727272727272727,
+        "pearson_max_abs_r": 0.7907270606171644,
+        "spearman_mean_abs_r": 0.38671744358938553,
+        "spearman_median_abs_r": 0.3782678624794297
+      },
+      "lo": {
+        "n_pairs": 66,
+        "pearson_mean_abs_r": 0.42825654798100193,
+        "pearson_median_abs_r": 0.42962114885003333,
+        "pearson_frac_gt_0.5": 0.3939393939393939,
+        "pearson_max_abs_r": 0.8957214783417305,
+        "spearman_mean_abs_r": 0.39803921192254765,
+        "spearman_median_abs_r": 0.40511230408490684
+      }
+    }
+  }
+}

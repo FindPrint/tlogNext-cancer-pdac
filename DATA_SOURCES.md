@@ -499,6 +499,66 @@ Aucune URL n'a été devinée. Voici, fichier par fichier, ce qui manque et pour
 
 ---
 
+## 18. Nouvelles sources brutes §8.55 (pureté externe, 20 nov. 2026)
+
+Trois fichiers bruts ajoutés dans `data/` pour le chantier §8.55 (pureté
+externe ABSOLUTE / ESTIMATE). Ils ne sont PAS dans ce dépôt (limite snapshot)
+mais sont documentés ici avec URL exacte et hachage vérifié, comme les autres
+sources. Provenance complète : `section_8.55_purity_external.md` §8.55.1 et
+`PROTOCOL_purity_external_855.md` (protocole gelé SHA `734a9b17…`).
+
+### 18.1 pdacR — TCGA_PAAD.rds (ABSOLUTE pour PAAD)
+
+- **Fichier local :** `data/pdacR_TCGA_PAAD.rds`, 12 311 529 octets.
+- **SHA-256 :** `52020679350d1539d7516f7d38f7bf09e510225eba2f228a4fe874f3c496ea76`
+  (vérifié localement le 20 nov. 2026).
+- **URL exacte :** `https://raw.githubusercontent.com/rmoffitt/pdacR/master/data/TCGA_PAAD.rds`
+- **Origine :** pdacR (Torre-Healy et al., *Commun Biol* 2023, 6:163,
+  doi `10.1038/s42003-023-04461-6`), dépôt GitHub `rmoffitt/pdacR` ;
+  curation de la Table S1 de Raphael et al. 2017 (*Cancer Cell*,
+  PMID 28810144, PMCID PMC5964983, doi `10.1016/j.ccell.2017.07.007`).
+  Colonne ABSOLUTE (pureté par analyse de nombre de copies) pour 178
+  tumeurs PAAD, non nulle pour 149/178 (83,7 %).
+- **Usage :** §8.55 — jointure par barcode (15 premiers caractères),
+  178/178 appariées ; ABSOLUTE corrèle r = +0,8556 avec la pureté par
+  méthylation de la même table (mesure ADN indépendante).
+
+### 18.2 Aran et al. 2015 — Suppl. Data 1 (tableau de pureté pan-cancer)
+
+- **Fichier local :** `data/aran2015_supp_data1_ncomms9971-s2.xlsx`, 553 082 octets.
+- **SHA-256 :** `fce1ba13ff3a6432b7e4f260eb516e407c967d615ca87bc8dffa7765baf97529`
+  (vérifié localement le 20 nov. 2026).
+- **URL exacte :** via Europe PMC,
+  `https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4671203/supplementaryFiles`
+  (zip SHA `4685a8b2…541a5`).
+- **Origine :** Aran et al., *Nat Commun* 2015, 6:8971 — « Systematic
+  pan-cancer analysis of tumour purity » (jeu « Aran et al. 2015 purity »,
+  tableau `tcga_purity.rda` du package UCSCXenaShiny 2.2.1).
+- **Usage :** §8.55 — obtenu, mais **0 PAAD** dans le tableau : non utilisé
+  pour les tests (les scores ESTIMATE publiés pour PAAD n'ont pas pu être
+  récupérés — site piloté par JS, non contourné, cf. §8.55.2).
+
+### 18.3 ShrinkageTrees 2.1.1 — sous-ensemble `pdac` (vérification de distribution)
+
+- **Fichier local :** `data/shrinkagetrees_pdac.csv` (transcription de
+  `data/pdac.rda`), 3 885 250 octets.
+- **SHA-256 :** `a582bc6f62c68e9a419c39a665b9e45a52baea7f31f5afee944147be587a5bab`
+  (vérifié localement le 20 nov. 2026).
+- **Origine :** package R ShrinkageTrees 2.1.1 (CRAN), `data/pdac.rda`,
+  n = 130, sans barcode — comparaison de distribution seulement
+  (tarball CRAN SHA `7c55b4d3…3c85c`).
+- **Usage :** §8.55 — la distribution ABSOLUTE reproduit ce sous-ensemble
+  indépendant (moyenne 0,3557 contre 0,3517, min 0,09, max 0,89 identiques).
+
+### 18.4 Outil exclu du dépôt (binaire, documenté en provenance §8.54)
+
+- `data_infiltration_854/tidyestimate_1.1.1.tar.gz` — tarball du package R
+  tidyestimate (déconvolution ESTIMATE) : binaire, non poussé (snapshots
+  UTF-8 uniquement) ; documenté dans la provenance §8.54
+  (`section_8.54_infiltration.md`).
+
+---
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash

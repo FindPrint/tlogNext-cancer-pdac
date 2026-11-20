@@ -1,0 +1,4 @@
+PURITY855_EABS|/home/hatch/workspace/runs/pdac-v6/purity855_eabs.csv|results_fast_v62_purity855_eabs
+PURITY855_EABS_NUL|/home/hatch/workspace/runs/pdac-v6/purity855_eabs_nul.csv|results_fast_v62_purity855_eabs_nul
+PURITY855_ERES|/home/hatch/workspace/runs/pdac-v6/purity855_eres.csv|results_fast_v62_purity855_eres
+PURITY855_ERES_NUL|/home/hatch/workspace/runs/pdac-v6/purity855_eres_nul.csv|results_fast_v62_purity855_eres_nul
