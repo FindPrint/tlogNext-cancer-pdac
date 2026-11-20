@@ -1,0 +1,350 @@
+{
+  "sha_checks": {
+    "immune": true,
+    "axis": true,
+    "v62": true,
+    "tarball_md5": true
+  },
+  "gate_J": {
+    "n_tumors": 178,
+    "order_178_178": true,
+    "kras_values_match_1e-9": true,
+    "purity_col_matches_v4r_purity_1e-9": true,
+    "nan_in_scores": false,
+    "open": true,
+    "immune_values_match_tarball_1e-9": true
+  },
+  "scores": {
+    "score_acineux": {
+      "min": 0.0,
+      "median": 8.535699296843035,
+      "max": 20.925161008521464,
+      "mean": 8.611597163626262,
+      "sd": 5.936256919998817,
+      "frac_zero": 0.07865168539325842
+    },
+    "score_ilots": {
+      "min": 0.0,
+      "median": 11.534847603742499,
+      "max": 16.012458994928398,
+      "mean": 10.477894821065757,
+      "sd": 3.8997853904009716,
+      "frac_zero": 0.0056179775280898875
+    },
+    "r_acineux_ilots_pearson": 0.48258978522003965,
+    "p_acineux_ilots": 9.00778860299294e-12
+  },
+  "T1_per_flux": [
+    {
+      "gene": "CD8A",
+      "r_acineux": 0.2705420577129389,
+      "p_acineux": 0.0002597989271117063,
+      "rho_acineux": 0.27077535521310964,
+      "r_ilots": 0.2773418936639638,
+      "p_ilots": 0.00017830240728036834,
+      "rho_ilots": 0.3072242690671317,
+      "R2_purity_both": 0.10127862646219865
+    },
+    {
+      "gene": "CD8B",
+      "r_acineux": 0.21204006794039815,
+      "p_acineux": 0.004491322055755474,
+      "rho_acineux": 0.19846515671781476,
+      "r_ilots": 0.2081507853586015,
+      "p_ilots": 0.0053015260763320336,
+      "rho_ilots": 0.2635230958934132,
+      "R2_purity_both": 0.05955919113937347
+    },
+    {
+      "gene": "CD4",
+      "r_acineux": 0.23364663401568683,
+      "p_acineux": 0.0016962133249988451,
+      "rho_acineux": 0.20618569373155077,
+      "r_ilots": 0.3565794942514022,
+      "p_ilots": 1.0321700698915917e-06,
+      "rho_ilots": 0.3705992686681654,
+      "R2_purity_both": 0.13208990258753917
+    },
+    {
+      "gene": "FOXP3",
+      "r_acineux": 0.05719469583251428,
+      "p_acineux": 0.44826099447087553,
+      "rho_acineux": 0.08826952221617701,
+      "r_ilots": 0.15699031448070155,
+      "p_ilots": 0.03637146412407345,
+      "rho_ilots": 0.15782575066840154,
+      "R2_purity_both": 0.025095364006426424
+    },
+    {
+      "gene": "CD68",
+      "r_acineux": 0.15872233900715083,
+      "p_acineux": 0.03433338264275265,
+      "rho_acineux": 0.12193021226186758,
+      "r_ilots": 0.22817857726780555,
+      "p_ilots": 0.0021887394101671306,
+      "rho_ilots": 0.13120884662564938,
+      "R2_purity_both": 0.055145232491799034
+    },
+    {
+      "gene": "CD163",
+      "r_acineux": 0.2584623054696974,
+      "p_acineux": 0.0004950841411841136,
+      "rho_acineux": 0.24326874725569417,
+      "r_ilots": 0.2274196344564041,
+      "p_ilots": 0.0022665281927476445,
+      "rho_ilots": 0.2686341202367413,
+      "R2_purity_both": 0.08054908445177733
+    },
+    {
+      "gene": "CD274",
+      "r_acineux": 0.08489017914059162,
+      "p_acineux": 0.25989814717879195,
+      "rho_acineux": 0.10927518752888558,
+      "r_ilots": 0.16792519294408487,
+      "p_ilots": 0.0250551116204256,
+      "rho_ilots": 0.1534095412576812,
+      "R2_purity_both": 0.028218205030998478
+    },
+    {
+      "gene": "PDCD1",
+      "r_acineux": 0.15799919833465673,
+      "p_acineux": 0.035172227553348166,
+      "rho_acineux": 0.18231428280224313,
+      "r_ilots": 0.24313554706078536,
+      "p_ilots": 0.001074743729429881,
+      "rho_ilots": 0.2957276560250827,
+      "R2_purity_both": 0.06127052397333099
+    },
+    {
+      "gene": "CTLA4",
+      "r_acineux": 0.10136851146619662,
+      "p_acineux": 0.17818414032414842,
+      "rho_acineux": 0.10091508125123407,
+      "r_ilots": 0.24215611321126182,
+      "p_ilots": 0.0011275057804978998,
+      "rho_ilots": 0.25720573426599386,
+      "R2_purity_both": 0.0589525124200897
+    },
+    {
+      "gene": "GZMB",
+      "r_acineux": 0.0912384312935243,
+      "p_acineux": 0.2258093734868186,
+      "rho_acineux": 0.11052552650360302,
+      "r_ilots": -0.006876307763018641,
+      "p_ilots": 0.9274162148858586,
+      "rho_ilots": 0.029760758525377982,
+      "R2_purity_both": 0.011702763189077592
+    },
+    {
+      "gene": "IFNG",
+      "r_acineux": 0.10916199640073518,
+      "p_acineux": 0.14692466129903292,
+      "rho_acineux": 0.14462411565390232,
+      "r_ilots": 0.10986700058584183,
+      "p_ilots": 0.14431623524289874,
+      "rho_ilots": 0.1647956770684321,
+      "R2_purity_both": 0.016179500963115157
+    },
+    {
+      "gene": "CD19",
+      "r_acineux": -0.02068289639841907,
+      "p_acineux": 0.7840619726039826,
+      "rho_acineux": 0.0231724834083066,
+      "r_ilots": 0.15106431345165713,
+      "p_ilots": 0.04413398011907472,
+      "rho_ilots": 0.23506646378523804,
+      "R2_purity_both": 0.03423754253919997
+    }
+  ],
+  "T1_summary": {
+    "mean_abs_r_acineux": 0.14632910941770919,
+    "mean_abs_r_ilots": 0.19797376454129403,
+    "mean_abs_rho_acineux": 0.14997678037869908,
+    "mean_abs_rho_ilots": 0.21958176517394237,
+    "median_R2_purity_both": 0.057048872455944366,
+    "max_R2_purity_both": 0.13208990258753917
+  },
+  "T2_matrix": {
+    "brut": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.5563291004266693,
+      "pearson_median_abs_r": 0.5677419828795567,
+      "pearson_frac_gt_0.5": 0.6212121212121212,
+      "pearson_max_abs_r": 0.8429866183240017,
+      "spearman_mean_abs_r": 0.540251655358166,
+      "spearman_median_abs_r": 0.5651791378153717
+    },
+    "resid_both": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.5479621449541048,
+      "pearson_median_abs_r": 0.5676021091944053,
+      "pearson_frac_gt_0.5": 0.6212121212121212,
+      "pearson_max_abs_r": 0.8325197368386549,
+      "spearman_mean_abs_r": 0.5242620356527897,
+      "spearman_median_abs_r": 0.5639372761134085
+    },
+    "resid_acineux_only": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.5528286132372217,
+      "pearson_median_abs_r": 0.5628463414242201,
+      "pearson_frac_gt_0.5": 0.6363636363636364,
+      "pearson_max_abs_r": 0.8350410017215197,
+      "spearman_mean_abs_r": 0.5336692955466864,
+      "spearman_median_abs_r": 0.5613580896562008
+    },
+    "resid_ilots_only": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.5451646642977419,
+      "pearson_median_abs_r": 0.5607983319197183,
+      "pearson_frac_gt_0.5": 0.6060606060606061,
+      "pearson_max_abs_r": 0.8356229567315387,
+      "spearman_mean_abs_r": 0.5236049582984299,
+      "spearman_median_abs_r": 0.5619286137569965
+    }
+  },
+  "T2_summary": {
+    "drop_both_pct": 1.5039579030015813,
+    "drop_ac_only_pct": 0.6292115919808919,
+    "drop_is_only_pct": 2.0068042675396542
+  },
+  "T3_coupling": [
+    {
+      "control": "CD8A",
+      "C_brut": 0.6513958300491404,
+      "C_resid": 0.6413632676953271,
+      "d_pred_brut": 0.9356298902337843,
+      "d_pred_resid": 0.9185243714205329
+    },
+    {
+      "control": "CD8B",
+      "C_brut": 0.5859014606552809,
+      "C_resid": 0.5728288892237355,
+      "d_pred_brut": 0.8239619904172539,
+      "d_pred_resid": 0.8016732561264692
+    },
+    {
+      "control": "CD4",
+      "C_brut": 0.6516491904074443,
+      "C_resid": 0.64232717318896,
+      "d_pred_brut": 0.9360618696446925,
+      "d_pred_resid": 0.920167830287177
+    },
+    {
+      "control": "FOXP3",
+      "C_brut": 0.624129052775336,
+      "C_resid": 0.621707200796295,
+      "d_pred_brut": 0.889140034981948,
+      "d_pred_resid": 0.885010777357683
+    },
+    {
+      "control": "CD68",
+      "C_brut": 0.4260601505117565,
+      "C_resid": 0.4022926024538909,
+      "d_pred_brut": 0.5514325566225449,
+      "d_pred_resid": 0.510908887183884
+    },
+    {
+      "control": "CD163",
+      "C_brut": 0.5720827760822714,
+      "C_resid": 0.5594108288570602,
+      "d_pred_brut": 0.8004011332202727,
+      "d_pred_resid": 0.7787954632012877
+    },
+    {
+      "control": "CD274",
+      "C_brut": 0.4106635484818398,
+      "C_resid": 0.3946801817325248,
+      "d_pred_brut": 0.5251813501615368,
+      "d_pred_resid": 0.49792970985395474
+    },
+    {
+      "control": "PDCD1",
+      "C_brut": 0.6197316433232989,
+      "C_resid": 0.6066068702250704,
+      "d_pred_brut": 0.8816424518662247,
+      "d_pred_resid": 0.859264713733745
+    },
+    {
+      "control": "CTLA4",
+      "C_brut": 0.6526533111060477,
+      "C_resid": 0.6448740182082543,
+      "d_pred_brut": 0.9377738954358115,
+      "d_pred_resid": 0.9245102010450736
+    },
+    {
+      "control": "GZMB",
+      "C_brut": 0.5723937630217196,
+      "C_resid": 0.5902484575270452,
+      "d_pred_brut": 0.8009313659520321,
+      "d_pred_resid": 0.8313736200836122
+    },
+    {
+      "control": "IFNG",
+      "C_brut": 0.437023188095457,
+      "C_resid": 0.42726097917932643,
+      "d_pred_brut": 0.5701245357027542,
+      "d_pred_resid": 0.5534799695007515
+    },
+    {
+      "control": "CD19",
+      "C_brut": 0.4722652906104388,
+      "C_resid": 0.47194527036176587,
+      "d_pred_brut": 0.6302123204907981,
+      "d_pred_resid": 0.6296666859668107
+    }
+  ],
+  "T3_summary": {
+    "mean_C_brut": 0.5563291004266694,
+    "mean_C_resid": 0.5479621449541047,
+    "mean_d_pred_brut": 0.7735411162274713,
+    "mean_d_pred_resid": 0.7592754571467485
+  },
+  "T4_stratification": {
+    "acineux": {
+      "median": 8.535699296843035,
+      "n_hi": 89,
+      "n_lo": 89,
+      "hi": {
+        "n_pairs": 66,
+        "pearson_mean_abs_r": 0.49867928850107324,
+        "pearson_median_abs_r": 0.5226750861561931,
+        "pearson_frac_gt_0.5": 0.5303030303030303,
+        "pearson_max_abs_r": 0.913111196201128,
+        "spearman_mean_abs_r": 0.4807130912424119,
+        "spearman_median_abs_r": 0.5088389132249218
+      },
+      "lo": {
+        "n_pairs": 66,
+        "pearson_mean_abs_r": 0.5812726175332575,
+        "pearson_median_abs_r": 0.6090489526444521,
+        "pearson_frac_gt_0.5": 0.6212121212121212,
+        "pearson_max_abs_r": 0.8669461051762835,
+        "spearman_mean_abs_r": 0.5643263198325693,
+        "spearman_median_abs_r": 0.5941351719441608
+      }
+    },
+    "ilots": {
+      "median": 11.534847603742499,
+      "n_hi": 89,
+      "n_lo": 89,
+      "hi": {
+        "n_pairs": 66,
+        "pearson_mean_abs_r": 0.5327426467125037,
+        "pearson_median_abs_r": 0.5634163452401628,
+        "pearson_frac_gt_0.5": 0.6363636363636364,
+        "pearson_max_abs_r": 0.8677090048050962,
+        "spearman_mean_abs_r": 0.5129939868307378,
+        "spearman_median_abs_r": 0.5464845080013618
+      },
+      "lo": {
+        "n_pairs": 66,
+        "pearson_mean_abs_r": 0.5648577878776277,
+        "pearson_median_abs_r": 0.5738228779599002,
+        "pearson_frac_gt_0.5": 0.6212121212121212,
+        "pearson_max_abs_r": 0.8667423133769527,
+        "spearman_mean_abs_r": 0.5499434515633908,
+        "spearman_median_abs_r": 0.5587814002660294
+      }
+    }
+  }
+}

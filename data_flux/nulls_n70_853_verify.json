@@ -1,0 +1,56 @@
+{
+  "sha": {
+    "pdac_immune_icgc_fluxes.csv": "10823879c0632d8c3ec7a07b0e73047a81ece2052aff9c2e5cd96bbf4d388adc",
+    "pdac_immune_icgc_fluxes_nul.csv": "3393ecd662e6decfa41416b535e509089cb43bd63345097fe3f25ad9b7860955",
+    "pdac_immune_icgc_fluxes.csv_conforme_PROVENANCE": true,
+    "pdac_immune_geo62452_fluxes.csv": "97c4689a6ecacd0a73a77804200a72a90994d60bea7e6b2c079195acbffd79a3",
+    "pdac_immune_geo62452_fluxes_nul.csv": "b0496cb923d49ef4913f90b895d856e3c02a1b1b4d78a2cc11a9f198c367d3a9",
+    "pdac_immune_geo62452_fluxes.csv_conforme_PROVENANCE": true,
+    "pdac_immune_tcga_fluxes.csv": "66dbb672ea2a305ea67b51be3f9522a47e5003425f271c9cc4f42bc0427bbd2e",
+    "pdac_immune_tcga_fluxes_nul.csv": "9100d181e3391d558eec6bc97e82f93b16c118b807b4a5f0c0992f4bda51a405",
+    "pdac_immune_tcga_fluxes.csv_conforme_PROVENANCE": true
+  },
+  "permutation_par_ligne": {
+    "icgc": {
+      "step_inchange": true,
+      "meme_multi_ensemble": true
+    },
+    "geo62452": {
+      "step_inchange": true,
+      "meme_multi_ensemble": true
+    },
+    "tcga": {
+      "step_inchange": true,
+      "meme_multi_ensemble": true
+    }
+  },
+  "n": {
+    "icgc": {
+      "reel": 70,
+      "nul": 70
+    },
+    "geo62452": {
+      "reel": 69,
+      "nul": 69
+    },
+    "tcga": {
+      "reel": 178,
+      "nul": 178
+    }
+  },
+  "manquantes": {
+    "icgc": {
+      "reel": 0,
+      "nul": 0
+    },
+    "geo62452": {
+      "reel": 0,
+      "nul": 0
+    },
+    "tcga": {
+      "reel": 0,
+      "nul": 0
+    }
+  },
+  "ok": true
+}
