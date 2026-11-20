@@ -220,6 +220,9 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 67 | 20 nov. 2026 | **Pureté par méthylation (§8.61)** (go de Zackary « Lance les 5 pistes », 20 nov. 2026 06h42, 3e des 5 chantiers ; protocole gelé avant tout calcul `PROTOCOL_methylation_purity_861.md`, SHA `93f4f777…0993` ; source Raphael et al. 2017 Table S1, colonne `DNA.hypermethylation.mode.purity`, via pdacR `TCGA_PAAD.rds` re-téléchargé et vérifié SHA `52020679…ea76` inchangé ; couverture **150/178** tumeurs appariées, 0 collision ; METH vs ABSOLUTE r = +0,8556 (n = 149) ; **4/4 runs v6.2 exit 0** ; **ZONE GRISE** : METH ordonne les flux presque comme ABSOLUTE (**M-METH +0,6739, 97,5 % d'E-ABS +0,6911**) mais ne retire que **15,9 %** de la corrélation en régression linéaire (0,5035 → 0,4235) contre 25,5 % pour ABSOLUTE ; M-RES +0,5427 (55,2 % du brut) ; le « environ un tiers » du §8.55 n'est pas contredit sur la séparation, il est qualifié sur la part linéaire (≈ un sixième par METH seule) ; METH et ABSOLUTE partagent la même Table S1 — une seule table, pas deux sources indépendantes ; piste la plus forte pour la suite : la fraction leucocytaire (annexe descriptive, moyenne |r| 0,5456 avec les flux). Détail au §8.61. |
 | 68 | 20 nov. 2026 | **Loi d'échelle en n pour Delta (§8.62)** (go de Zackary « Lance les 5 pistes », 20 nov. 2026 06h42, 4e des 5 chantiers ; protocole gelé avant toute modélisation et tout run `PROTOCOL_delta_scaling_862.md`, SHA `8e67f8c7…95b0` ; ensemble A 222 runs + ensemble B **31/31 runs v6.2 exit 0** (reprise après un redémarrage machine, 0 run perdu) ; **AUCUNE LOI D'ÉCHELLE EN n TROUVÉE POUR DELTA, ET ELLE NE SUFFIT PAS** : F1 (ln n) R² = 0,599, LOCO R² = −0,005 ; réel/nul |Δ| ≤ 0,10 sur 53/106 paires (50 %) ; transfert A→B 2/31 à ±0,10 ; pentes intra-courbe non universelles (HP35 1,084, LUAD 0,817, TCGA 1,908) ; **en revanche, une loi est TROUVÉE pour quatre estimateurs** (Katz, Petrosian, Sevcik, GraphDimension, forme quadratique en ln n, transfert vérifié), qui ne portent pas Delta ; Delta reste une piste fragile, pas un discriminateur recommandé). Détail au §8.62. |
 | 69 | 20 nov. 2026 | **Mécanismes non élucidés §8.50 / §8.53 (§8.63)** (go de Zackary « Lance les 5 pistes », 20 nov. 2026 06h42, 5e des 5 chantiers ; protocole gelé avant tout run `PROTOCOL_mechanisms_863.md`, SHA `4e05dfc2…f35e` ; **10/10 runs v6.2 exit 0** sur nuls ICGC frais s31–s40, SHA v6.2 vérifié avant/après ; **M1 EXPLIQUÉ** : la configuration (28, 27, 6) ne cause ni le MC haut ni le Delta bas — le MC haut est une propriété de la permutation (pic étroit qui allume la robustesse), le Delta bas une propriété de w = 27 (w porte 96,8 % de l'effet, ratio w/CSV = 34,16) ; **M2 PARTIELLEMENT EXPLIQUÉ** : l'optimiseur maximise le MC sur 12 configs fixes par n, la « config réelle » est le point petit-w + grille fine qui maximise maxsep et stabilité (victoires ICGC 23/30, GSE 17/20), mais la réplication hors échantillon est INDÉCISE (6/10, P = 0,050), les 4 écarts venant de basculements de robustesse ; résidu ouvert : le déclencheur du pic étroit par permutation reste non élucidé ; conséquence générale : **Delta dépend de w de façon monotone et forte (≈ +0,7 entre w = 27 et w = 30) — toute comparaison de Delta doit se faire à w égal**). Détail au §8.63. |
+| 70 | 20 nov. 2026 | **Adoption de maxsep : dossier de décision (§8.64)** (go de Zackary « Oui allez s'y », 20 nov. 2026 09h35, 1er des 3 chantiers ; protocole gelé avant tout calcul `PROTOCOL_maxsep_decision_864.md`, SHA `69c40d73…4ae8` ; troisième lecture indépendante des 120 `master_results.json`, script propre `verify_maxsep_decision_864.py` ; **ADOPTER SOUS CONDITION CONFIRMÉ, 0 écart contre le §8.59** : D1 PASSE (37/48, 6/8, HP35 +1,6512), D2 PASSE (120/120, écart max 0,0 exact), D3 ÉCHOUE (LOO 5/7), D4 ÉCHOUE (5/8, ICGC tombe), D5 PASSE (0 changement de classe sur 60 paires) ; **30 changements de classe ancien → maxsep, tous en gain, 0 en perte** ; convention d'affichage figée : maxsep score principal dans les sections futures, ancien MC secondaire, sep compagnon borné, plancher 0,07 en |d| ; aucune v6.5 créée, v6.2 reste la version de travail ; décision finale à Zackary, pleine adoption différée jusqu'à C3). Détail au §8.64. |
+| 71 | 20 nov. 2026 | **Scores ESTIMATE publiés pour TCGA-PAAD (§8.65)** (go de Zackary « Oui allez s'y », 20 nov. 2026 09h35, 2e des 3 chantiers ; protocole gelé avant tout téléchargement `PROTOCOL_estimate_published_865.md`, SHA `b105e87b…961d` ; table publiée MD Anderson `pancreatic_ductal_adenocarcinoma_RNAseqV2.txt`, SHA `46004731…59fce1`, 179 lignes — la voie qui avait échoué au §8.55 (JS) a fonctionné ; jointure **178/178** ; **6/6 runs v6.2 exit 0** ; **H1-pub TOTALE SOUTENUE : le §8.54 est confirmé à la décimale près** — scores publiés ↔ recalculés r = 0,9999998, cohésion **0,5563 → 0,2001 (−64,0 %)**, E-PIMM +1,1928, E-PRES +0,2001 ; résidu structuré reproduit paire par paire (CD8A–CD8B 0,6409) ; ESTIMATEScore publié vs ABSOLUTE r = −0,701 — les deux axes de composition ne sont pas orthogonaux ; pas de colonne de pureté ESTIMATE dans la table publiée, la comparaison se fait par les scores). Détail au §8.65. |
+| 72 | 20 nov. 2026 | **Bloc estomac / mucus : quatrième cohorte, GSE62165 (§8.66)** (go de Zackary « Oui allez s'y », 20 nov. 2026 09h35, 3e des 3 chantiers ; protocole gelé avant tout téléchargement `PROTOCOL_stomach_mucus_cohort4_866.md`, SHA `3a25a391…91bc` ; cohorte GSE62165 (Janky et coll., PMID 27520560, GPL13667), SHA `fd50fc41…03727f`, **n = 118 tumeurs PDAC** ; **20/20 runs v6.2 exit 0** (2 redémarrages machine récupérés, 0 run perdu) ; **le cœur du §8.58 est confirmé et deux bords cassent** : **G5/KRAS CONFIRME 4/4** (KRT19 +0,577 p = 7,7e-12, INSM1 −0,350, NEUROD1 −0,341, CHGA −0,338) et **G1/KRAS CONFIRME** (AGR2 +0,414, MUC13 +0,422) ; G4 PARTIEL (AOX1 −0,382 dans 4/4 cohortes, UGT1A1 absent de la puce) ; **G1/stade NON CONFIRMÉ, sens inverse de TCGA** (MUC4 −0,238) et **G5/stade plat** ; **G3 NON CONFIRMÉ** (OR2B6 **MONTE** +0,293, premier OR montant en confirmation, sans passer Bonferroni ; aucun OR ne chute ; OR2A4 absent, 3e cohorte d'affilée) ; pipeline : pas de séparation du nul (MC 4/10, S_sep 5/10, L7b FRAGILE 20/20) — un score seul ne fait pas un signal ; stade dominé par le stade II (92/118)). Détail au §8.66. |
 
 ---
 
@@ -10537,6 +10540,1472 @@ SHA v6.2 vérifié avant le lot (`f07567c4…ec3abf`) et après
 
 ---
 
+### 8.8.64 Adoption de `maxsep` : dossier de décision — adoption provisoire confirmée, comme convention d'affichage (20 novembre 2026)
+Go de Zackary « Oui allez s'y » (20 nov. 2026 09h35, 1er des 3 chantiers).
+
+## Verdict d'abord
+
+**ADOPTER SOUS CONDITION — recommandation du §8.59 CONFIRMÉE par une
+troisième lecture indépendante, sans aucun écart.**
+
+| Porte (PROTOCOL_maxsep_decision_864.md §4) | Exigé | Re-vérifié 20 nov. 2026 (§8.64) | §8.59 | Écart | Sort |
+|---|---|---|---|---|---|
+| D1 — re-confirmation de la suffisance (§8.56 A1–A3) | A1 ≥ 30/48, A2 ≥ 6/8 et ≥ 7/8 positifs, A3 HP35 ≥ 0,30 | **A1 37/48, A2 6/8 (7/8 positifs), A3 +1,6512** | identique | **0** | **PASSE** |
+| D2 — exactitude de la re-vérification | 120/120 à 0,0 exact + recoupements à 1e-9 + SHA inchangés | **120/120, écart max 0,0, 0 recoupement en écart, 5 SHA inchangés** | identique | **0** | **PASSE** |
+| D3 — robustesse à une paire (leave-one-out) | Retirer n'importe quelle paire : V1 ≥ 6/7, V2 ≥ 30/47 | **V1 ÉCHOUE : retirer n'importe laquelle des 6 paires passantes donne 5/7 ; V2 passe (pire 36/47)** | identique | **0** | **ÉCHOUE** |
+| D4 — robustesse d'échelle (plancher équivalent-sep) | A2 tient au plancher `0,07·(1+m_R)(1+m_N)` | **5/8 — ICGC tombe (0,0970 < 0,1292)** | identique | **0** | **ÉCHOUE** |
+| D5 — stabilité des classes | 0 changement de classe vs §8.56 ; 0 changement de signe `maxsep` vs `sep` | **0 et 0, sur les 60 paires** | identique | **0** | **PASSE** |
+
+Règle de verdict gelée avant tout calcul (protocole §4) : pleine adoption
+si et seulement si D1 ∧ D2 ∧ D3 ∧ D4 ∧ D5 ; adoption sous condition si
+D1 ∧ D2 ∧ D5 passent mais D3 ou D4 échoue ; non-adoption si D1, D2 ou D5
+échoue. **D3 et D4 échouent, D1, D2 et D5 passent — exactement comme au
+§8.59, sans un seul chiffre qui bouge : la recommandation est donc
+ADOPTER SOUS CONDITION, confirmée.** La décision finale revient à
+Zackary ; ce chantier recommande, il n'adopte pas. Aucune v6.5 n'est
+créée, aucun code n'est modifié : l'adoption, si elle est décidée, est
+une décision d'AFFICHAGE sur la v6.2 existante, dont la forme exacte
+est figée au §8.64.6 ci-dessous, et la v6.2 reste la version de travail.
+
+**Ce que ce chantier ajoute au §8.59.** Le §8.59 a tranché l'adoption
+comme question ; le §8.64 en fait le dossier de décision : (a) une
+troisième lecture des sorties détenues, par un chemin de code distinct
+des deux lectures du §8.59, qui reproduit chaque chiffre à l'identique
+— 540 valeurs recoupées (60 paires × 9 champs) à 0,0 exact contre la
+table §8.59, 0 écart ; (b) la convention d'affichage écrite en toutes
+lettres — score principal, score secondaire, compagnon borné, mention
+de fragilité, champ d'application aux sections futures — prête à
+appliquer dès le go de Zackary, sans rien à re-trancher ; (c) la
+confirmation que rien n'a bougé entre le §8.56, le §8.59 et la présente
+re-vérification : le dossier est stable, c'est le verdict d'adoption
+qui est fragile, pas les chiffres — et cette stabilité même est
+désormais vérifiée trois fois.
+
+Protocole gelé : `PROTOCOL_maxsep_decision_864.md` (20 nov. 2026,
+SHA `69c40d73…4ae8`). Barres écrites AVANT toute extraction du
+présent chantier (§4 du protocole) ; aucune repondération, aucun
+nouveau terme, aucune redéfinition du plancher après avoir vu les
+chiffres. Les nombres du §8.59 étaient la motivation, pas le verdict :
+le verdict repose sur la re-vérification ci-dessous.
+
+## 8.64.1 — Les cinq portes, et leur sort
+
+| Porte | Exigé | `maxsep` seul (re-vérifié) | `sep` seul (rappel, re-vérifié) | Ancien MC (rappel) |
+|---|---|---|---|---|
+| D1 — A1 rotations | ≥ 30/48 | **37/48** (somme +17,3623, moyenne +0,3617) | 35/48 (somme +7,9306) | 12/48 (somme +0,7295) |
+| D1 — A2 principales | ≥ 6/8 et ≥ 7/8 positifs | **6/8, 7/8 positifs** (somme +2,8043) | 5/8, 7/8 positifs (somme +1,1939) | 1/8, 7/8 positifs (somme +0,3485) |
+| D1 — A3 HP35 | ≥ 0,30 | **+1,6512** | +0,5316 | +0,1950 |
+| D2 — exactitude | 120/120 à 0,0 | **120/120, écart max 0,0** | idem (même relecture) | recoupements 0 écart |
+| D3 — LOO V1 | ≥ 6/7 après tout retrait | **5/7 après retrait de chaque paire passante** | — (non testé, porte sur `maxsep`) | — |
+| D3 — LOO V2 | ≥ 30/47 après tout retrait | **36/47 au pire** | — | — |
+| D4 — A2 au plancher équivalent | ≥ 6/8 et ≥ 7/8 positifs | **5/8** | 5/8 (par identité) | — |
+| D5a — classes vs §8.56 | 0 changement / 60 | **0** | — | — |
+| D5b — signes `maxsep` vs `sep` | 0 changement / 60 | **0** | — | — |
+
+## 8.64.2 — Méthode de re-vérification (60 paires, JSON v6.2 existants, aucun run)
+
+Script propre du chantier, `verify_maxsep_decision_864.py` : 60/60
+paires lues, 0 manquante, 0 version non attendue (v6.2 partout sauf
+CLDN18 en v6.1, comme en §8.49/§8.52/§8.56/§8.59) ; chemin de code
+distinct des deux scripts du §8.59 — descente récursive générique à la
+recherche de `best_config`, re-écrite, listes de dossiers reconstruites
+depuis le manifest §8.44 et les listes figées du protocole §8.59,
+comptages re-écrits. **Troisième lecture des sorties détenues** :
+extracteur §8.59, vérifieur §8.59, présent chantier — trois parcours
+indépendants, un seul jeu de chiffres.
+
+**D2a — exactitude :** le présent calcul reproduit `sep` et `maxsep`
+à **0,0 exact** sur les **120/120** runs contre la table §8.59
+(540 valeurs : 60 paires × 9 champs, égalité stricte, pas de tolérance).
+**D2b — recoupements à 1e-9 :** 0 écart contre
+`maxsep_adoption_859_table.json`, 0 écart contre
+`sep_maxsep_856_table.json`, 0 écart de l'ancien MC contre §8.44
+(rotations) et phase 2 v6.2 (principales), 0 écart de `d_maxsep`
+contre §8.44. **D2d — SHA revérifiés après travaux, inchangés :**
+v6.2 `f07567c4…c3abf`, v6.1 `2af5e5ce…c1c9`, v6 `bb8bbdba…c0773`,
+v6.3 `552e7359…44ffb`, v6.4 `9ed728da…9ea3d`.
+
+**Aucun run du pipeline n'a été nécessaire** (protocole §5) : les 120
+`master_results.json` étaient présents et valides. Aucun run lancé,
+aucun exit code à noter — la règle de rattrapage (systemd-run,
+jamais nohup) n'a pas eu à s'appliquer. La re-vérification est
+hors-ligne, comme aux §8.56 et §8.59.
+
+Définitions (reprises du §8.59, inchangées) : `maxsep` =
+`best_config.metrics.max_separation`, |d de Cohen| maximal du scan
+de seuil, [0, ∞[ ; `sep` = `maxsep/(1+maxsep)`, [0, 1[ ; les deux
+sont lus sur le best_config ANCIEN (sélection par l'ancien
+composite) : la question porte sur le SCORE AFFICHÉ, pas sur la
+sélection du tirage. Seuil MC, cascade, S_sep, Delta, L7a inchangés
+par construction, quelle que soit la décision d'adoption.
+
+## 8.64.3 — Re-vérification chiffre par chiffre : 0 écart contre le §8.59
+
+Chaque chiffre du §8.59 a été re-calculé de zéro et comparé. Le
+tableau ci-dessous est le compte rendu exhaustif de cette comparaison ;
+il n'y a aucun écart à cacher, donc aucun à consigner comme écart.
+
+| Chiffre du §8.59 | Valeur §8.59 | Valeur re-vérifiée (§8.64) | Écart |
+|---|---|---|---|
+| A1 rotations `maxsep` | 37/48, somme +17,3623, moyenne +0,3617 | 37/48, somme +17,3623, moyenne +0,3617 | 0 |
+| A1 rotations `sep` | 35/48, somme +7,9306 | 35/48, somme +7,9306 | 0 |
+| A2 principales `maxsep` | 6/8, 7/8 positifs, somme +2,8043 | 6/8, 7/8 positifs, somme +2,8043 | 0 |
+| A2 principales `sep` | 5/8, 7/8 positifs, somme +1,1939 | 5/8, 7/8 positifs, somme +1,1939 | 0 |
+| A3 HP35 `maxsep` | +1,6512 | +1,6512 (+1,6511952353773127) | 0 |
+| A3 HP35 `sep` / ancien MC | +0,5316 / +0,1950 | +0,5316 / +0,1950 (+0,1949845784557579) | 0 |
+| Re-vérification 120/120 | 120/120, écart max 0,0 | 120/120, écart max 0,0 exact | 0 |
+| Multisets | égaux | égaux | 0 |
+| Recoupements 1e-9 | 0 écart (60 paires × 9 champs) | 0 écart (60 paires × 9 champs) | 0 |
+| D3 LOO V1 | 5/7 après retrait de chaque paire passante | 5/7, les 6 suppressions passantes | 0 |
+| D3 LOO V2 pire cas | 36/47 (retirer DEPMAPROT_CRKL) | 36/47 (retirer DEPMAPROT_CRKL) | 0 |
+| D4 A2 plancher équivalent | 5/8, ICGC tombe | 5/8, ICGC tombe (0,0970 < 0,1292) | 0 |
+| D5a classes vs §8.56 | 0 changement / 60 | 0 changement / 60 | 0 |
+| D5b signes `maxsep` vs `sep` | 0 changement / 60 | 0 changement / 60 | 0 |
+| S7 ancien → `maxsep` | 30 changements, 0 perte (5/8 + 25/48) | 30 changements, 0 perte (5 + 25) | 0 |
+| Ancien MC | 12/48, 1/8, sommes +0,7295 / +0,3485 | 12/48, 1/8, sommes +0,7295 / +0,3485 | 0 |
+| Marges charnières | ICGC +0,0270 / −0,0322 ; MYH9 +0,0213 ; MUC16 +0,0003 | ICGC +0,0270 / −0,0322 ; MYH9 +0,0213 ; MUC16 +0,0003 (+0,00031206232338357176) | 0 |
+| SHA des codes | v6.2 `f07567c4…c3abf`, v6.1 `2af5e5ce…c1c9`, v6 `bb8bbdba…c0773`, v6.3 `552e7359…44ffb`, v6.4 `9ed728da…9ea3d` | identiques, revérifiés après travaux | 0 |
+
+**Lecture de ce tableau.** Zéro écart ne veut pas dire « preuve » :
+trois lectures du même jeu de JSON ne peuvent que confirmer la
+relecture, pas la mesure — la porte D2 reste le seul contrôle
+d'exactitude, sur 120 runs relus trois fois. Mais zéro écart veut
+dire ceci : la recommandation du §8.59 ne repose sur aucune erreur
+de lecture, aucune valeur recopiée, aucun comptage fragile. Ce qui
+échoue (D3, D4) échoue sur des chiffres exacts, et ce qui passe
+(D1, D2, D5) passe sur des chiffres exacts. La fragilité est une
+propriété du dossier, pas un artefact de calcul — c'est précisément
+pour cela qu'elle est confirmée plutôt que dissoute par la
+re-vérification.
+
+## 8.64.4 — D3 et D4 confirmés : l'échec est exact, pas approximatif
+
+**D3 — leave-one-out exhaustif (V1, 8 suppressions ; V2, 48
+suppressions), même règle de comptage, même plancher 0,07 :**
+
+| Ensemble | Retrait testé | Résultat | Porte |
+|---|---|---|---|
+| V1 (8 paires) | Retirer GSE71729 (échec) ou GSE62452 (négative) | **6/7** — passe | — |
+| V1 | Retirer HP35, TCGA v4, ICGC, IMMUNE_TCGA, PARP_TCGA ou DEPMAP (les 6 passantes) | **5/7** — échoue | **D3 ÉCHOUE** |
+| V2 (48 paires) | Pire cas : retirer DEPMAPROT_CRKL | **36/47** — passe | D3 (V2) passe |
+| V2 | Toutes les autres suppressions | 36 ou 37/47 — passe | D3 (V2) passe |
+
+D3 exigeait ≥ 6/7 après tout retrait en V1, ce qui équivaut à
+exiger 7/8 avant retrait : avec 6/8, CHAQUE paire passante est
+charnière. La fragilité est confirmée à l'identique : elle tient à
+six paires à la fois, c'est-à-dire à l'ensemble des paires qui
+passent. En V2, la marge est confortable (37/48, pire cas 36/47) :
+la fragilité est concentrée aux principales, pas aux rotations.
+
+**D4 — plancher à échelle égale (A2) :**
+
+| Paire (V1) | d_maxsep | Plancher équivalent-sep | d_sep | Passe au plancher équivalent ? |
+|---|---|---|---|---|
+| HP35 | +1,6512 | 0,2174 | +0,5316 | oui |
+| TCGA v4 | +0,2928 | 0,1197 | +0,1712 | oui |
+| GSE71729 | +0,0402 | 0,1075 | +0,0262 | non |
+| GSE62452 | −0,0036 | 0,1205 | −0,0021 | non |
+| ICGC | +0,0970 | 0,1292 | +0,0525 | **non — c'est la paire qui fait échouer D4** |
+| IMMUNE_TCGA | +0,3675 | 0,1247 | +0,2063 | oui |
+| PARP_TCGA | +0,1688 | 0,1148 | +0,1029 | oui |
+| DEPMAP | +0,1904 | 0,1266 | +0,1052 | oui |
+
+**Total : 5/8** (7/8 positifs) — D4 échoue. Par l'identité du
+§8.56.2, c'est exactement le comptage de `sep` (5/8). Aux rotations,
+les deux paires qui passent le plancher littéral mais pas le
+plancher équivalent sont les mêmes qu'aux §8.56 et §8.59 :
+DEPMAPROT_MYH9 (+0,0913 contre 0,1061) et V4ROT_MUC16 (+0,0703
+contre 0,1152). Rien d'autre ne change entre les deux échelles.
+
+Marges confirmées : ICGC passe le plancher littéral de +0,0270 mais
+échoue au plancher équivalent de −0,0322 ; MYH9 passe le plancher
+littéral de +0,0213 ; MUC16 passe le plancher littéral de **+0,0003**
+(+0,0703) — la plus petite marge du dossier, inchangée depuis le
+§8.56, re-vérifiée deux fois depuis. DEPMAPROT_RAB10 est la prochaine
+paire près du plancher (+0,0621, à −0,0079) : elle ne passe ni l'un
+ni l'autre plancher, dans aucune des deux échelles.
+
+## 8.64.5 — D5 et S7 : les classes sont stables, et le changement est tout en gain
+
+**D5a :** 0 changement de classe de séparation `maxsep` entre la
+re-vérification et les classes publiées au §8.56, sur les 60 paires.
+**D5b :** 0 changement de classe de signe entre `d_maxsep` et
+`d_sep`, sur les 60 paires — comme l'exige la monotonie, vérifié et
+non supposé. Trois lectures, un seul jeu de classes.
+
+**S7 — ancien composite → `maxsep` seul (descriptif) :**
+
+| Ensemble | Ancien MC | `maxsep` seul | Gagnent la classe « sépare » | Perdent la classe | Changements |
+|---|---|---|---|---|---|
+| V1 (8) | 1/8 | 6/8 | DEPMAP, ICGC, IMMUNE_TCGA, PARP_TCGA, TCGA_v4 (5) | aucune | 5 |
+| V2 (48) | 12/48 | 37/48 | 25 paires (liste en table) | aucune | 25 |
+| **Total** | **13/56** | **43/56** | **30** | **0** | **30** |
+
+Les 25 gains aux rotations : DEPMAPROT_CRKL, DOCK5, EFR3A, MYH9,
+RAB6A, SCAP ; IMMROT_CD19, CD8A, FOXP3, GZMB, IFNG ; PARPROT_ATM,
+ATR, BRCA2, CHEK1, CHEK2, FANCD2, POLQ ; V4ROT_CEACAM5, CLCA1,
+DPCR1, KRT20, MUC16, MUC2, PGC. **Aucune paire ne perd sa classe
+en passant à `maxsep`** : le changement proposé ne dégrade rien de
+ce que l'ancien composite séparait déjà. Même au plancher
+équivalent-sep, `maxsep` (= `sep`) sépare 35/48 rotations et 5/8
+principales, contre 12/48 et 1/8 pour l'ancien composite.
+
+## 8.64.6 — La convention d'affichage : adoption provisoire, en toutes lettres
+
+**Recommandation à Zackary : ADOPTER `maxsep` seul comme score MC
+affiché, À TITRE PROVISOIRE, selon la convention ci-dessous — qui est
+la forme exacte, figée ici, de l'adoption provisoire du §8.59.8.**
+Tant que Zackary n'a pas donné son go explicite après lecture de la
+présente section (C1), rien ne change : v6.2 reste la version de
+travail, l'ancien MC reste le score affiché avec ses défauts connus
+(§8.49.3).
+
+**Convention d'affichage (applicable aux sections FUTURES, à compter
+du go ; les sections §8.1–§8.63 gardent leurs valeurs historiques,
+avec mention du changement et sa date) :**
+
+1. **Score principal — `maxsep`.** Le score MC AFFICHÉ devient
+   `best_config.metrics.max_separation` (le |d de Cohen| maximal du
+   scan), à la place de l'ancien composite.
+2. **Score secondaire — ancien MC.** L'ancien composite
+   (`0.3·s_norm + 0.3·stability + 0.2·robustness + 0.2·sharpness`)
+   reste AFFICHÉ EN SECOND, comme score secondaire, partout où
+   `maxsep` est affiché comme score principal. Aucune table future
+   n'affiche `maxsep` sans son ancien MC en second — c'est la
+   nouveauté du présent dossier par rapport au §8.59.8, qui ne
+   nommait que le compagnon `sep` : le dossier de décision ajoute
+   l'ancien MC comme second, pour que le lecteur voie à chaque table
+   ce qui est gagné et ce qui est abandonné.
+3. **Compagnon borné — `sep`.** `sep` (= maxsep/(1+maxsep)) est
+   affiché EN COMPAGNON borné [0, 1] partout où `maxsep` est affiché,
+   pour garder une échelle comparable aux scores publiés.
+4. **Plancher publié en unités |d|.** Le plancher 0,07 est publié EN
+   UNITÉS |d| à chaque table, avec le rappel que 0,07 en |d| est en
+   dessous du « petit » effet de Cohen (0,2).
+5. **Mention de fragilité en tête de chaque table.** Chaque table qui
+   cite le score porte en tête la mention exacte : « adoption
+   provisoire (§8.59, §8.64) — le verdict de suffisance tient à une
+   paire aux principales (ICGC) et à l'échelle du plancher ». Pas de
+   table qui affiche `maxsep` sans cette mention tant que C3 n'est
+   pas levée.
+6. **Sélection inchangée.** La sélection du best_config continue
+   d'utiliser l'ancien composite. Ce chantier ne propose pas de
+   changer la sélection ; la changer demanderait son propre
+   protocole et son propre go.
+7. **Aucune nouvelle version de code.** Pas de v6.5, pas de
+   modification de v6.2. L'adoption est une décision d'affichage
+   consignée sur la v6.2 existante.
+
+**Conditions (reprises du §8.59.8, inchangées) :**
+
+- **C1 — Go explicite de Zackary** après lecture de la présente
+  section. Sans ce go, rien ne change.
+- **C2 — Affichage conjoint et fragilité en tête.** Points 2–5
+  ci-dessus, à chaque table.
+- **C3 — Levée de la condition par confirmation indépendante.**
+  La pleine adoption (sans étiquette « provisoire ») est différée
+  jusqu'à ce qu'une confirmation indépendante porte A2 à 7/8 —
+  soit une paire principale supplémentaire indépendante qui sépare
+  au plancher 0,07 en `maxsep` (ce qui porterait aussi le
+  leave-one-out V1 à 6/7 après retrait d'une paire passante),
+  soit un lot de paires nouvelles confirmant A2 à ≥ 7/8 — à
+  consigner dans une section ultérieure, avec son propre protocole
+  gelé. Tant que C3 n'est pas levée, l'adoption reste provisoire.
+
+**Modèle de table future (à titre d'exemple de forme, pas de chiffres
+nouveaux) :** en-tête « adoption provisoire (§8.59, §8.64) — le
+verdict de suffisance tient à une paire aux principales (ICGC) et à
+l'échelle du plancher » ; colonnes : paire | `maxsep` (principal,
+|d|, plancher 0,07) | ancien MC (secondaire) | `sep` (compagnon
+borné [0, 1]) | sépare (oui/non, au plancher 0,07 en |d|).
+
+**Ce qui est gagné** (si Zackary adopte, même provisoirement) : plus
+de saturation artificielle, plus de terme mort, plus de terme
+anti-discriminant, plus de malédiction du vainqueur déguisée en
+composite — le score est la séparation elle-même, lisible
+directement en |d de Cohen| ; et 30 paires gagnent la classe
+« sépare », zéro n'en perd — avec, à chaque table, l'ancien MC en
+second pour le montrer.
+
+**Ce qui est perdu / ce qui reste fragile** : le plafond [0, 1] et
+la comparabilité immédiate avec les scores publiés (MC ancien,
+MC_new, MC2, S_sep) — d'où le compagnon `sep` et le second ancien MC
+en C2 ; un |d| brut n'a pas d'échelle commune entre études sans son
+contexte (n, flux, contrôle) ; DEPMAPROT reste à 6/12 ; et le verdict
+de suffisance reste à une paire près (D3) et à une convention
+d'échelle près (D4) — d'où l'étiquette « provisoire » en C2 et la
+confirmation en C3.
+
+**Ce qui n'est pas prouvé** par cette adoption : que `maxsep`
+sépare « le réel du nul » en général — il sépare 37/48 rotations
+et 6/8 principales aux barres gelées, avec les fragilités dites,
+et 5/12 seulement sur DEPMAPROT. Le verdict porte sur le score,
+pas sur l'instrument. Rien de clinique : l'étude porte sur
+l'instrument.
+
+## 8.64.7 — Ce que la décision change, et ce qu'elle ne change pas
+
+| Poste | Change ? | Détail |
+|---|---|---|
+| Score MC affiché, sections futures | **Oui, si go (C1)** | `maxsep` principal, ancien MC secondaire, `sep` compagnon, mention §8.64.6 point 5 |
+| Score MC affiché, sections §8.1–§8.63 | Non | Valeurs historiques gardées, avec mention du changement et sa date |
+| Sélection du best_config | Non | Ancien composite, lignes 3480–3484 de v6.2 |
+| Seuil MC, cascade, S_sep, Delta, L7a | Non | Inchangés par construction |
+| Code v6.2 / v6.1 / v6 / v6.3 / v6.4 | Non | Aucune modification, aucune v6.5 |
+| Verdicts des §8.34, §8.43, §8.56, §8.59 | Non | Confirmés, pas rouverts ; les §8.56/§8.59 restent les sections de référence pour la suffisance et le premier tranchement |
+| Pleine adoption (sans « provisoire ») | Non, différée | Attend C3 : confirmation indépendante portant A2 à 7/8 |
+
+**Suite du dossier, si Zackary donne son go :** le coordinateur gèle
+le changement d'affichage, régénère le PDF, pousse sur GitHub (règle
+permanente « Toujours github et pdf !!! »), et met à jour les sections
+qui citent le MC. **Suite du dossier, si Zackary ne donne pas son go
+ou refuse :** le statu quo tient, `maxsep` reste l'indicateur de
+référence qu'il est déjà, et la présente section consigne la
+recommandation non suivie avec ses chiffres — elle n'est pas effacée.
+**Suite du dossier, pour lever C3 :** une section ultérieure, avec son
+propre protocole gelé, mesurant une paire principale supplémentaire
+indépendante ou un lot de paires nouvelles — pas une relecture : les
+relectures sont épuisées comme preuve, trois lectures disent la même
+chose, et une quatrième ne dirait rien de plus.
+
+## 8.64.8 — Sensibilités (descriptives, ne décident pas)
+
+- **S1 — sans plancher** : V1 7/8 positifs pour les deux candidats
+  (seul GSE62452 négatif, −0,0036 / −0,0021, quasi nul) ; V2 42/48
+  positifs pour les deux (négatifs : DEPMAPROT_ACO2, CCND1, MYC,
+  UROD, V4ROT_CR2, GSTM1). Identique aux §8.56 et §8.59.
+- **S2 — barre A1 à 24/48** (protocoles v6.3/v6.4) : les deux
+  candidats la franchissent (35/48 et 37/48) — le verdict ne change
+  pas sous l'ancienne barre.
+- **S5 — plancher de Cohen 0,20 en |d|** : `maxsep` sépare 3/8
+  principales (HP35, TCGA v4, IMMUNE_TCGA) et 33/48 rotations.
+  Le plancher 0,07 est laxiste en unités |d| : 0,2 est déjà un
+  « petit » effet chez Cohen, et 0,07 est en dessous. Le même
+  constat vaut pour A3 : +1,6512 contre une barre de 0,30 calibrée
+  pour des scores en [0, 1] — `maxsep` franchit A3 trivialement,
+  par l'échelle autant que par le signal. S5 ne décide de rien ;
+  elle situe la barre.
+
+## 8.64.9 — Contrôles descriptifs (V3–V5, ne décident pas)
+
+| Paire | Ancien MC (écart) | maxsep (écart) | sep (écart) | Lecture |
+|---|---|---|---|---|
+| Test A (prolifération) | −0,0948 | **+0,2501** | +0,1567 | Suivent maxsep ; ne ressuscitent pas Test A (verdict NON du §8.34 portait sur la chaîne et MC/Delta) |
+| MTAP série PRMT5-flux (§8.43) | +0,0004 | **−0,1036** | −0,0671 | Restent négatifs, cohérent avec le verdict NON du §8.43 |
+| MTAP série (§8.31) | −0,1642 | **+0,1957** | +0,1278 | Suivent maxsep ; l'ancien MC était fortement inversé ici |
+| V4R_PURITY (artefact §8.31) | +0,1520 | **−0,0670** | −0,0483 | Artefact CORRIGÉ : les deux candidats reprennent le sens de maxsep |
+
+Aucun écart de signe entre `sep` et `maxsep` sur les 60 paires
+(D5b). L'adoption ne change aucun de ces verdicts : ils portaient
+sur la chaîne, sur MC/Delta, ou sur des tests directs — pas sur le
+score MC affiché.
+
+## 8.64.10 — Limites et ce qui reste
+
+- La validation hors-ligne réutilise les JSON v6.2 : elle ne teste
+  que la RELECTURE, pas une nouvelle mesure. Trois lectures disent
+  la même chose — c'est une garantie d'exactitude, pas une mesure
+  nouvelle. La porte D2 est le seul contrôle d'exactitude, sur 120
+  runs relus trois fois.
+- D3 a été gelée comme exigeant 7/8 en V1 avant retrait : c'est une
+  barre d'adoption volontairement plus dure que la barre de
+  suffisance (6/8). Elle est justifiée parce qu'adopter change le
+  dossier public — mais elle doit être lue comme telle : une barre
+  de prudence, pas une propriété mesurée du score.
+- D4 équivaut par construction à « `sep` franchit A2 » : son échec
+  ne dit rien de nouveau sur `maxsep` que le §8.56 n'ait déjà dit
+  sur `sep` — il dit que le verdict de suffisance ne survit pas à
+  l'expression du plancher à échelle égale. C'est une limite de la
+  CONVENTION (plancher 0,07 littéral), pas une découverte sur les
+  données.
+- Aucune paire principale supplémentaire n'a été mesurée dans ce
+  chantier : C3 attend des données nouvelles, pas une relecture.
+  Tant qu'elles n'existent pas, l'adoption reste provisoire — et
+  c'est un état stable, pas un état transitoire honteux : le score
+  affiché est le meilleur connu, avec sa fragilité dite.
+- `sep` seul reste rejeté comme score MC unique (§8.56) — mais il
+  demeure le compagnon borné de `maxsep` (convention §8.64.6 point 3),
+  avec son échec à A2 consigné.
+- La seule nouveauté de forme du présent dossier par rapport au
+  §8.59.8 est le point 2 de la convention (ancien MC affiché en
+  second) : c'est un ajout d'affichage, pas un nouveau verdict — il
+  ne change aucun chiffre, aucune porte, aucune condition C1–C3.
+- La question du §8.56.6 (« que voudrait dire adopter `maxsep` »)
+  est close telle que posée ici : adopter, provisoirement, selon la
+  convention §8.64.6 ; la pleine adoption attend une confirmation
+  indépendante. Aucune autre recomposition n'est proposée : cinq
+  chantiers (v6.3, v6.4, §8.56, §8.59, §8.64) ont maintenant montré
+  que le problème n'était pas le terme annexe — c'était le composite
+  lui-même, et que le remplacer se fait avec une marge d'une paire,
+  pas avec un triomphe.
+
+## 8.64.11 — Provenance
+
+- Protocole gelé : `PROTOCOL_maxsep_decision_864.md`, SHA-256
+  `69c40d73258bab6855fe65c65198fc8ec524f455ac1ff15ef7641d1f578b4ae8`.
+- Re-vérification indépendante : `verify_maxsep_decision_864.py`
+  (SHA-256
+  `0f456b78b0479c5b969d90574cdf7c8756083f9f68c8fbb2ce8c0f0d2fcc24e1`)
+  → `maxsep_decision_864_verify.json` (SHA-256
+  `0f2e182eb8fed122a81c2eb8960ac977e84248d50803e9f3686893e35b98e799` ;
+  120/120 dossiers, écart max 0,0 exact, multisets égaux,
+  0 recoupement en écart).
+- Section : `section_8.64_maxsep_decision.md` (ce fichier ; SHA noté
+  au rapport).
+- Références re-vérifiées : `maxsep_adoption_859_table.json` (SHA-256
+  `702f166d76351ab62760655bbc35ed48a9cdcaf77002008d5f4ae172814c2c7f`),
+  `maxsep_adoption_859_table.csv` (SHA-256
+  `c9ac12e4240b215ed54df43a97a55163a94635dae2baaee3919471d482b3bd9b`),
+  `sep_maxsep_856_table.json` (SHA-256
+  `ec5ee6382d5fd80d691ae7983ffbb31f14bb9074ded2bc6aad16327b1cc34f8b`) ;
+  protocole §8.59 `PROTOCOL_maxsep_adoption_859.md` (SHA-256
+  `efb5da799d245d8e5db570945acc480f1c5bae42d63ed29b7cfeb780610e675b`) ;
+  section §8.59 `section_8.59_maxsep_adoption.md` (SHA-256
+  `9951d22c1e3de415914f5ed9cf1271972a7e6a17bb5c0489684240177dee36f4`) ;
+  protocole §8.56 `PROTOCOL_sep_maxsep_856.md` (SHA-256
+  `06e36725eedb3d52b1549290e1e8cccff381650928fbf4e6a28a090aec27fd4e`) ;
+  section §8.56 `section_8.56_sep_maxsep.md` (SHA-256
+  `9015ab0cf8d4b577a5ba3bd37512032461762f31f9daa177f63ba41120fe9012`).
+- Données : JSON v6.2 existants (lots §8.44, phase 2, §8.43, Test A) ;
+  CSV inchangés, SHA déjà publiés dans `PROVENANCE_rotations_dedup_844.md`,
+  `PROVENANCE_tcga_v4.md`, `PROVENANCE_mtap_prmt5_flux.md`,
+  `PROVENANCE_testA_proliferation.md`. Nuls = lignes permutées, graine
+  42 — échantillons hypothétiques, pas des mesures. Séries réelles =
+  résidus d'expression génique ou de dépendance CRISPR (mesures
+  instrumentales transformées). Aucune valeur inventée ; aucune valeur
+  recopiée à la main (tables générées depuis
+  `maxsep_decision_864_verify.json`, vérifiées paire par paire contre
+  `maxsep_adoption_859_table.json` à 0,0 exact et contre
+  `sep_maxsep_856_table.json` à 1e-9 ; les valeurs des §8.64.4 et
+  §8.64.9 sont lues dans cette sortie, pas recopiées des §8.56/§8.59).
+- Livre blanc de référence consulté : `livre-blanc-pdac-v6.md`,
+  10 665 lignes, SHA-256
+  `ba88761dd160afd360dab3c1fc831c3d2a0db54a729bed0f5bf796dc6882eebf`
+  (§8.1–§8.63, état au 20 nov. 2026) — à noter : il diffère de la
+  référence donnée dans la mission du présent chantier (10 661 lignes,
+  SHA `fe036c92…`, 4 lignes de moins) ; le livre blanc n'a PAS été
+  modifié par ce chantier, et l'écart est consigné ici tel que
+  constaté, sans explication inventée. Fusion de la présente section
+  par le coordinateur.
+- Codes jamais modifiés : v6.2 (`f07567c4…c3abf`), v6.1 (`2af5e5ce…c1c9`),
+  v6 (`bb8bbdba…c0773`), v6.3 (`552e7359…44ffb`), v6.4 (`9ed728da…9ea3d`).
+  Aucune nouvelle version construite dans ce chantier — pas de v6.5.
+  Aucun run du pipeline lancé dans ce chantier (re-vérification
+  hors-ligne, 120 JSON existants, troisième lecture).
+  Aucun push GitHub, aucune Release dans ce chantier.
+
+— Fin de la §8.8.64. —
+### 8.8.65 Scores ESTIMATE publiés pour TCGA-PAAD : le §8.54 est confirmé à la décimale près (20 novembre 2026)
+
+Date : 20 novembre 2026. Go de Zackary « Oui allez s'y » (20 nov. 2026 09h35, 2e des 3 chantiers).
+Protocole gelé avant tout téléchargement, avant tout calcul et avant tout run :
+`PROTOCOL_estimate_published_865.md` (SHA-256 `b105e87b26c7f11b1bd29ec5eccfc05b8cb16cd5dbb5ff35db3f2df0dfd2961d`).
+
+## Verdict d'abord
+
+**Les scores ESTIMATE publiés pour TCGA-PAAD ont été obtenus — et ils
+confirment le §8.54 à la décimale près.** La table publiée du site
+MD Anderson (PAAD, RNA-seqV2, 179 échantillons) s'apparie à 178/178
+tumeurs du projet, et ses scores corrèlent à **r = 0,9999998** avec
+l'ImmuneScore recalculé au §8.54 (0,9999999 pour le StromalScore et
+l'ESTIMATEScore). Le test refait avec les scores publiés donne les
+mêmes chiffres que le §8.54 : cohésion **0,5563 → 0,2001 (−64,0 %)**
+contre 0,5563 → 0,2002 au §8.54 ; moyenne |r| flux↔ImmuneScore publié
+**0,7164** contre 0,7164 recalculé ; R² médian 0,5272 contre 0,527.
+**Chaque valeur de ce tableau est identique à celle du §8.54.3 à la
+3e décimale près** (moyenne |r| Immune 0,7164 contre 0,7164 ;
+Stromal 0,6002 contre 0,6002 ; R² médian 0,5272 contre 0,527) :
+le test refait avec les scores publiés ne change rien au T1. Ordonner
+les flux par l'ImmuneScore publié les sépare massivement (**écart S_sep
++1,1928**, contre +1,1942 au §8.54) ; ordonner par le StromalScore
+publié les sépare aussi (**+1,0443**, contre +0,9407 au §8.54) ; et
+ordonner les flux RÉSIDUALISÉS par CD8A résidualisé ne sépare presque
+plus (**+0,2001**, contre +0,1982 au §8.54). **Verdict gelé :
+H1-pub TOTALE SOUTENUE — les scores publiés confirment le §8.54, et
+le §8.54 est validé de l'extérieur.** La corrélation immunitaire est
+un effet de composition (infiltration), pas une propriété propre aux
+tumeurs — désormais établi avec les scores publiés eux-mêmes, pas
+seulement avec un recalcul.
+
+## 8.65.1 Question, méthode, inventaire des sources (avant le gel)
+
+**Question (§8.55.11 et §8.54.10).** Le §8.54 a recalculé l'ImmuneScore
+ESTIMATE depuis la matrice détenue (port Python de tidyestimate, validé
+à ~10⁻⁸ sur la vignette) et conclu H1 totale : la corrélation
+intra-famille immunitaire est expliquée par l'infiltration
+(0,5563 → 0,2002, I-IMM +1,1942, I-STR +0,9407, I-RES +0,1982). Le
+§8.55 n'avait pas pu obtenir les scores ESTIMATE PUBLIÉS pour PAAD
+(site MD Anderson piloté par JS, fichier JS non récupéré : curl en
+échec répété, 000, 3 tentatives) et avait testé ABSOLUTE à la place
+(H1 partielle). Ce chantier cherche les scores publiés et, s'ils sont
+obtenus, refait le test avec ces scores et les compare directement
+(a) à ABSOLUTE (§8.55) et (b) à l'ImmuneScore recalculé (§8.54).
+Deux questions distinctes, jugées séparément : (Q1) les scores publiés
+confirment-ils le score recalculé du §8.54 ? (Q2) le test refait avec
+les scores publiés donne-t-il le même verdict que le §8.54 ?
+
+**Sources candidates gelées :** (1) Yoshihara et al. 2013, Suppl. Data 2
+(`ncomms3612-s3.xlsx`, PMC3826632) via Europe PMC / PMC / Nature /
+miroirs ; (2) site ESTIMATE MD Anderson, téléchargement par maladie
+(PAAD, RNA-seqV2, 179) ; (3) Aran et al. 2015 Suppl. Data 1, déjà détenu
+(0 PAAD au §8.55, à re-vérifier) ; (4) UCSC Xena / dépôts publics.
+
+**Critères gelés.** T0 : CONCORDANCE si r ≥ 0,95 entre publié et
+recalculé (ImmuneScore) ; DIVERGENCE si r < 0,90. T1'' : lien
+substantiel si moyenne |r| ≥ 0,30 pour l'ImmuneScore publié. T2'' :
+EFFONDREMENT si moyenne |r| résiduelle < 0,30 ET fraction |r| > 0,5
+< 0,20 ; PERSISTANCE si chute < 20 % ; entre les deux : partielle.
+T5'' : E-PIMM ou E-PSTR soutient H1-pub si écart S_sep ≥ 0,45 ;
+E-PRES soutient H1-pub si écart < 0,30, soutient H0-pub si ≥ 0,45.
+Verdict : H1-pub TOTALE si T2'' = effondrement ET E-PRES < 0,30 ET
+(E-PIMM ≥ 0,45 OU E-PSTR ≥ 0,45) ET T0 = concordance ; H1-pub
+PARTIELLE si T2'' = partielle OU (E-PIMM/E-PSTR entre 0,30 et 0,45)
+avec E-PRES < 0,70 ; H0-pub si T2'' = persistance ET E-PIMM < 0,30 ET
+E-PSTR < 0,30 ET E-PRES ≥ 0,45 ; DIVERGENCE si T0 = divergence.
+Références : §8.54 — H brute 0,5563, H résiduelle 0,2002, I-IMM
++1,1942, I-STR +0,9407, I-RES +0,1982, r(Immune, Stromal) recalculés
+0,7831 ; §8.55 — H brute (n = 149) 0,5040, H résiduelle [ABSOLUTE]
+0,3757, E-ABS +0,6911, E-RES +0,6499 ; CD8A brut +0,9838 ; régression
+§8.48 d_ssep = −0,175 + 1,705·C.
+
+## 8.65.2 Porte S (source) : OUVERTE — table publiée MD Anderson, PAAD RNA-seqV2
+
+### Europe PMC, Yoshihara Suppl. Data 2 : en échec (HTTP 500)
+`https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3826632/supplementaryFiles`
+renvoie HTTP 500 et une page HTML d'erreur (19 606 octets) — le fichier
+a été supprimé, rien n'en est utilisé. Même statut qu'au §8.54 (502
+alors, 500 aujourd'hui) : la voie Europe PMC ne donne pas ce supplément.
+PMC direct et Nature static-content n'ont pas été re-tentés : la source
+2 a abouti avant (cf. ci-dessous), et le protocole n'exige pas
+d'épuiser les voies redondantes une fois la porte S ouverte.
+
+### Site ESTIMATE MD Anderson : OBTENU — la voie qui avait échoué au §8.55
+Le site (`bioinformatics.mdanderson.org/estimate/`) liste bien
+« Pancreatic ductal adenocarcinoma — RNA-seqV2 179 » et présente les
+scores pour tous les types TCGA (citation Yoshihara et al. 2013,
+connexion non requise, gratuit). Au §8.55, le fichier JS n'avait pas pu
+être récupéré (curl 000, 3 tentatives). Cette fois, les deux fichiers
+ont été récupérés du premier coup (HTTP 200) :
+`disease.html` (5 940 octets, SHA `1f5ebd01…edb7`) et
+`js/disease_histogram.js` (14 013 octets, SHA `7b8124ad…467`).
+Le JS lu en clair donne le mécanisme de téléchargement
+(`startDownload`) : le fichier est `tables/<maladie> <plateforme>.txt`,
+espaces remplacés par `_`, colonnes ID, Stromal_score, Immune_score,
+ESTIMATE_score. Les valeurs exactes des menus déroulants lues dans
+`disease.html` sont `pancreatic ductal adenocarcinoma` et `RNAseqV2`.
+L'URL qui en découle — et seulement celle-là — a été téléchargée :
+`https://bioinformatics.mdanderson.org/estimate/tables/pancreatic_ductal_adenocarcinoma_RNAseqV2.txt`
+(HTTP 200, 6 928 octets, SHA-256
+`46004731c2bc4479931ec19e50e12ce5f1656c890ba09e16a4e166316d59fce1`,
+20 nov. 2026 14h38 UTC ; copie dans
+`data_estimate_published_865/pancreatic_ductal_adenocarcinoma_RNAseqV2.txt`).
+**179 lignes** (en-tête + 179 échantillons), colonnes ID, Stromal_score,
+Immune_score, ESTIMATE_score. La somme est vérifiée en machine :
+ESTIMATEScore = Stromal + Immune à 0,01 près au maximum (arrondi à
+2 décimales des valeurs publiées).
+
+### Aran et al. 2015 : re-vérifié, 0 PAAD (confirmation)
+Le tableau déjà détenu (`data/aran2015_supp_data1_ncomms9971-s2.xlsx`,
+SHA `fce1ba13…7529`, feuille « Supp Data 1 », 9 364 lignes, 21 types)
+contient toujours **0 ligne PAAD** — il n'apporte rien de plus qu'au
+§8.55 et n'entre dans aucun test.
+
+**Porte S OUVERTE** : fichier publié obtenu, colonnes de scores
+présentes, couverture appariée 178/178 (cf. §8.65.3) — au-dessus du
+seuil gelé (≥ 100).
+
+## 8.65.3 Porte S / jointure : OUVERTE, 178/178
+
+Jointure sur les **15 premiers caractères** du barcode (protocole §4) :
+**178/178 tumeurs du projet appariées (0 non appariée, 0 collision de
+clé des deux côtés)**. La seule clé publiée hors projet est
+TCGA-HZ-A9TJ-06 (échantillon 06A, métastase — déjà noté au §8.55 comme
+hors critère « tumeurs primaires code 01 »). La table publiée compte
+179 lignes : 178 tumeurs primaires du projet + cette métastase.
+
+Scores publiés (n = 178) :
+
+| Score publié | min | médiane | max | moyenne | écart-type |
+|---|---|---|---|---|---|
+| ImmuneScore | −1559,9 | 603,8 | 3037,8 | 626,6 | 817,9 |
+| StromalScore | −1843,3 | 698,4 | 2179,2 | 587,2 | 829,1 |
+| ESTIMATEScore | −3178,4 | 1278,8 | 4435,6 | 1213,8 | 1555,2 |
+
+À comparer aux recalculés du §8.54 (n = 178) : ImmuneScore min −1556,6,
+médiane 598,5, max 3022,7, moyenne 621,0, écart-type 814,6 ;
+StromalScore min −1839,1, médiane 692,4, max 2166,6, moyenne 581,7,
+écart-type 825,7 ; ESTIMATEScore min −3170,8, médiane 1267,1, max
+4410,0, moyenne 1202,6, écart-type 1548,8. Les descriptifs coïncident
+à quelques unités près sur des scores de l'ordre du millier.
+Fichier apparié : `estimate_published_865_external.csv`
+(SHA `60e1ff96…ac181`, 178 lignes : sample, immune_pub, stromal_pub,
+estimate_pub, key15, source, URL, SHA source).
+
+## 8.65.4 T0 — Publié ↔ recalculé : CONCORDANCE, r = 0,9999998
+
+Pearson r (+ Spearman ρ) entre scores publiés et recalculés (§8.54),
+sur les 178 appariées :
+
+| Comparaison | Pearson r (p) | Spearman ρ | \|diff\| moyenne | \|diff\| max |
+|---|---|---|---|---|
+| ImmuneScore publié vs recalculé | **0,9999998** (0,0) | 0,9999915 | 5,78 | 15,06 |
+| StromalScore publié vs recalculé | **0,9999999** (0,0) | 0,9999894 | 5,80 | 12,55 |
+| ESTIMATEScore publié vs recalculé | **0,9999999** (0,0) | 0,9999915 | 11,49 | 25,54 |
+| ImmuneScore publié vs recalculé wo12 | **0,9999942** (0,0) | — | — | — |
+
+Critère gelé : CONCORDANCE (r ≥ 0,95 — dépassé de loin sur les trois
+scores). **Le port ssGSEA du §8.54 reproduit les scores publiés à
+r ≈ 1,000000.** Les écarts absolus ne sont pas nuls (moyenne 5,8 sur
+l'ImmuneScore, max 15,1) : ce n'est pas un effet d'arrondi (les valeurs
+publiées sont arrondies à 2 décimales, soit ≤ 0,005 d'écart), mais une
+petite différence systématique — vraisemblablement la liste de gènes
+communs (version du package R `estimate` d'origine contre le port
+tidyestimate) — soit ~0,7 % de l'écart-type (817,9). Elle ne change
+aucun test : les corrélations avec les flux sont identiques à la
+3e décimale (cf. T1''). **r(ImmuneScore, StromalScore) publiés =
+0,7833**, contre 0,7831 recalculés : le bras stromal reste une seconde
+vue du même axe de composition, comme au §8.54.7.
+
+**Comparaison à ABSOLUTE (§8.55, n = 149) :** ImmuneScore publié
+r = −0,646, StromalScore publié r = −0,654, ESTIMATEScore publié
+r = **−0,701** (p = 2,4×10⁻²³). Les trois scores publiés corrèlent
+négativement avec la pureté ADN — le sens attendu (plus la tumeur est
+pure, moins les scores d'infiltration sont forts) — et l'ESTIMATEScore
+combiné corrèle plus fortement avec ABSOLUTE que chacun de ses deux
+composants, comme dans Yoshihara et al. 2013 (Fig. 3). Il n'y a pas de
+colonne de pureté ESTIMATE dans la table publiée (les scores seuls
+sont servis par maladie) : la pureté ESTIMATE publiée reste
+indisponible, comme au §8.55 — la comparaison ABSOLUTE ↔ ESTIMATE se
+fait ici par les scores, pas par une pureté publiée.
+
+## 8.65.5 T1'' — Chaque flux immunitaire suit le score publié : OUI, fortement
+
+Pearson r (+ Spearman ρ) de chaque flux contre les trois scores publiés ;
+R² par flux (OLS sur [ImmuneScore_pub] et sur [ImmuneScore_pub,
+StromalScore_pub]) ; p brutes bilatérales, sans correction pour tests
+multiples (36 tests — le jugement porte sur la moyenne, pas sur une p
+isolée).
+
+| Gène | r Immune pub (p) | ρ Immune pub | r Stromal pub | R² Immune pub |
+|---|---|---|---|---|
+| CD4 | **+0,893** | +0,921 | +0,834 | **0,797** |
+| CTLA4 | +0,851 | +0,816 | +0,654 | 0,725 |
+| FOXP3 | +0,827 | +0,817 | +0,725 | 0,684 |
+| PDCD1 | +0,811 | +0,765 | +0,545 | 0,658 |
+| CD8A | +0,797 | +0,790 | +0,639 | 0,635 |
+| CD163 | +0,731 | +0,777 | +0,827 | 0,534 |
+| CD8B | +0,721 | +0,703 | +0,535 | 0,521 |
+| GZMB | +0,696 | +0,665 | +0,491 | 0,485 |
+| CD19 | +0,678 | +0,623 | +0,449 | 0,459 |
+| CD68 | +0,661 | +0,632 | +0,613 | 0,437 |
+| IFNG | +0,480 | +0,511 | +0,369 | 0,231 |
+| CD274 | +0,451 | +0,490 | +0,521 | 0,204 |
+
+Moyenne |r| : **ImmuneScore publié 0,7164**, StromalScore publié
+0,6002, ESTIMATEScore publié 0,6968 (Spearman 0,7089 / 0,5928).
+**R² médian 0,5272 (52,7 %), maximum 0,7967 (CD4).** Avec
+[Immune, Stromal] : R² médian 0,5791, maximum 0,8435 (CD4).
+Critère gelé : lien SUBSTANTIEL (≥ 0,30), largement dépassé — 2,4× le
+seuil. Les 12 corrélations sont POSITIVES et toutes significatives à
+p ≤ 2,6×10⁻¹⁰ (valeurs p affichées 0,0000 à 4 décimales).
+**Chaque valeur de ce tableau est identique à celle du §8.54.3 à la
+3e décimale près** (moyenne |r| Immune 0,7164 contre 0,7164 ;
+Stromal 0,6002 contre 0,6002 ; R² médian 0,5272 contre 0,527) :
+le test refait avec les scores publiés ne change rien au T1.
+
+## 8.65.6 T2'' — La corrélation intra-famille s'effondre après régression publiée
+
+Matrice 66 paires, brute contre résidus OLS ([1, ImmuneScore_pub] et
+sensibilité [ImmuneScore_pub, StromalScore_pub]).
+
+| Matrice | Pearson moyenne \|r\| | médiane \|r\| | fraction \|r\| > 0,5 | max \|r\| | Spearman moyenne \|r\| |
+|---|---|---|---|---|---|
+| Brute | **0,5563** | 0,5677 | 0,621 (41/66) | 0,8430 | 0,5403 |
+| Résidus [ImmuneScore_pub] | **0,2001** | 0,1737 | **0,045 (3/66)** | 0,6409 | 0,2044 |
+| Résidus [Imm_pub, Strom_pub] | 0,1902 | 0,1574 | 0,030 (2/66) | 0,6457 | 0,1992 |
+
+**Chute : 64,0 % avec l'ImmuneScore publié, 65,8 % avec les deux
+scores.** Critère gelé : EFFONDREMENT (moyenne résiduelle 0,2001
+< 0,30 ET fraction > 0,5 de 0,045 < 0,20) — rempli sur les deux
+variantes. La fraction de paires fortes passe de 41/66 à 3/66.
+**Contre le §8.54 (recalculé) : 0,2002 → 0,2001, chute 64,0 % dans les
+deux cas — les deux chiffres sont identiques à 0,0001 près.**
+Les 3 paires qui restent fortes après régression sont les mêmes
+qu'au §8.54.4 : CD8A–CD8B (0,6409), CD4–CD163 (0,5809), GZMB–IFNG
+(0,5201) ; suivent CD68–CD19 (0,4903) et PDCD1–CTLA4 (0,4419).
+Le résidu structuré du §8.54.8 est donc reproduit par les scores
+publiés, paire par paire.
+
+## 8.65.7 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après
+
+Couplage C par contrôle immunitaire (moyenne des |r| avec les 11 autres
+flux), brut contre résidualisé ; d_ssep prédit par d = −0,175 + 1,705·C.
+
+| | C moyen | d_ssep prédit moyen |
+|---|---|---|
+| Brut | 0,5563 | **0,7735** (observé IMMROT : 0,7521) |
+| Résidualisé [ImmuneScore_pub] | 0,2001 | **0,1662** |
+
+CD8A seul : C 0,6514 → 0,2765, d_pred 0,9356 → **0,2965**.
+Contre le §8.54.5 : C résiduel 0,2001 contre 0,2002, d_pred 0,1662
+contre 0,1663, CD8A d_pred résiduel 0,2965 contre 0,2966 — identiques
+à 0,0001 près. Le T3'' ne fait que traduire T2'' en S_sep prédit ;
+le verdict se joue au T5''.
+
+## 8.65.8 T4'' — Stratification : la cohésion persiste dans chaque moitié — test faible ici
+
+Médiane de l'ImmuneScore publié (603,81), n = 89/89 ; matrice
+intra-famille dans chaque moitié.
+
+| Stratification | Moitié haute : moyenne \|r\| (frac. > 0,5) | Moitié basse : moyenne \|r\| (frac. > 0,5) |
+|---|---|---|
+| ImmuneScore_pub (méd. 603,81) | 0,3638 (0,288) | 0,3926 (0,303) |
+
+Identique au §8.54.6 à la 4e décimale (0,3638 / 0,3926). Comme au
+§8.54, la prémisse de bande étroite n'est pas remplie : l'écart-type
+de l'ImmuneScore publié reste de 556,1 dans la moitié haute et 476,7
+dans la moitié basse, contre 817,9 global (58–68 % conservés) ; les
+plages restent [606, 3038] et [−1560, 602]. **T4'' est donc non
+concluant ici** — il ne soutient pas H1-pub, mais il ne la réfute pas
+non plus. T4'' n'entre pas dans la règle de verdict gelée.
+
+## 8.65.9 T5'' — Runs v6.2 : les scores publiés ordonnent l'immunitaire, les résidus presque plus
+
+Prédictions calculées AVANT de lire les sorties (depuis T1''/T2'' du jour) :
+E-PIMM d_pred +1,0466 (C = 0,7164) ; E-PSTR d_pred +0,8483
+(C = 0,6002) ; E-PRES d_pred +0,2965 (C_résid CD8A = 0,2765). 6 runs
+v6.2, mode fast, graine 42, **6/6 exit 0** (lot 14h41:37–15h08:38 UTC
+20 nov. ; §8.65.11 pour l'exécution).
+
+| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w | t0 |
+|---|---|---|---|---|---|---|---|---|---|
+| E-PIMM | ImmuneScore_pub → 12 imm. bruts | 1,4075 | 0,2147 | **+1,1928** | +1,0466 | 0,4835 / 0,3325 | 3,26 / 3,83 | 27 | 75,10 % |
+| E-PSTR | StromalScore_pub → 12 imm. bruts | 1,1243 | 0,0801 | **+1,0443** | +0,8483 | 0,4574 / 0,3911 | 4,30 / 1,82 | 30 | 49,11 % |
+| E-PRES | CD8A résid. → 11 imm. résid. | 0,4718 | 0,2717 | **+0,2001** | +0,2965 | 0,3697 / 0,3446 | 3,11 / 4,26 | 27 | 75,10 % |
+
+Lecture par critère gelé :
+- **E-PIMM : séparation massive, au-dessus de la prédiction.** Écart
+  +1,1928 — 1,14× la prédiction (+1,0466, +0,1462 au-dessus), 2,65× le
+  minimum IMMROT (+0,4508), 1,21× CD8A brut (+0,9838). Contre I-IMM
+  recalculé (+1,1942) : **écart de −0,0014** — le réel (1,4075 contre
+  1,4063) comme le nul (0,2147 contre 0,2121) sont reproduits à 0,003
+  près. MC +0,1509 (0,4835 contre 0,3325) : ici MC sépare, comme au
+  §8.54 — noté, non utilisé pour le verdict (le verdict porte sur
+  S_sep, gelé). L7a sépare en direction (up 0,2614 contre down
+  −0,3528) : non utilisé, comme au §8.54. Seuil à 75,10 % de la série
+  ordonnée — le même qu'au §8.54. Critère gelé : E-PIMM ≥ 0,45 →
+  **soutient H1-pub, fortement**.
+- **E-PSTR : séparation massive aussi — mais pas une preuve
+  indépendante.** Écart +1,0443 — 1,23× la prédiction (+0,8483,
+  +0,1960 au-dessus), 2,32× le minimum IMMROT. Contre I-STR recalculé
+  (+0,9407) : **+0,1036 de plus**, porté entièrement par le nul
+  (0,0801 contre 0,1841 — le réel est identique, 1,1243 contre
+  1,1248). MC +0,0662 (0,4574 contre 0,3911). Seuil à 49,11 % — le
+  même qu'au §8.54. Critère gelé : E-PSTR ≥ 0,45 → **soutient H1-pub**.
+  Mais r(ImmuneScore, StromalScore) publiés = 0,7833 : le score
+  stromal porte l'axe de composition partagé — E-PSTR est une seconde
+  vue du même axe, pas une confirmation indépendante d'E-PIMM, comme
+  au §8.54.7. Le nul E-PSTR a choisi w = 89 (19 candidats) contre
+  w = 42 (22 candidats) pour le nul I-STR au §8.54 : c'est le choix propre du run nul, rapporté tel
+  quel, non lissé.
+- **E-PRES : la séparation s'effondre, sans disparaître.** Écart
+  +0,2001 contre +0,9838 pour CD8A brut (**20,3 % conservés, baisse
+  de 79,7 %**) et contre +0,2965 prédit (−0,0964 en dessous — la
+  régression §8.48 sur-prédit légèrement le résiduel ici, comme au
+  §8.54). Contre I-RES recalculé (+0,1982) : **écart de +0,0019**.
+  MC +0,0251 (0,3697 contre 0,3446) : MC ne sépare presque plus.
+  L7a ne sépare pas (up 0,4174 contre up 0,1804, même direction) :
+  non utilisé. Seuil à 75,10 %, comme E-PIMM. Critère gelé :
+  E-PRES < 0,30 → **soutient H1-pub**. Mais +0,2001 n'est pas zéro :
+  un résidu de séparation subsiste, cohérent avec les 3 paires fortes
+  de T2'' — c'est le reste structuré du §8.54.8, reproduit ici,
+  pas une réfutation de H1-pub (le critère gelé est < 0,30, pas = 0).
+- **Delta ne sépare pas sur E-PIMM et E-PRES** (nul supérieur au réel :
+  3,83 contre 3,26 ; 4,26 contre 3,11) — rapporté descriptivement,
+  comme au §8.54, non utilisé pour le verdict (Delta non élucidé,
+  §8.49). Sur E-PSTR, Delta est supérieur au réel (4,30 contre 1,82)
+  : noté, sans interprétation, le verdict ne portant pas sur Delta.
+
+## 8.65.10 Verdict de synthèse
+
+Règle gelée, test par test : T0 = CONCORDANCE (r = 0,9999998) ;
+T1'' = lien substantiel (moyenne |r| 0,7164) ; T2'' = EFFONDREMENT
+(0,5563 → 0,2001, chute 64,0 %, fraction 0,621 → 0,045) ; E-PIMM =
++1,1928 (≥ 0,45) ; E-PSTR = +1,0443 (≥ 0,45) ; E-PRES = +0,2001
+(< 0,30). **Les trois conditions de H1-pub totale sont remplies, avec
+T0 = concordance : H1-pub TOTALE est SOUTENUE. Les scores ESTIMATE
+publiés confirment le §8.54, test par test, à la décimale près.**
+H1-pub partielle est rejetée (les conditions de la totale sont
+remplies) ; H0-pub est rejetée (aucune de ses conditions n'est remplie :
+T2'' n'est pas une persistance ; E-PIMM/E-PSTR ne sont pas < 0,30 ;
+E-PRES n'est pas ≥ 0,45) ; DIVERGENCE est rejetée (T0 = concordance).
+Aucun consensus exigé entre les tests : le verdict suit la règle gelée,
+et T4'' — non concluant ici — est rapporté comme tel, pas moyenné.
+
+**Ce que cela dit, et ce que cela ne dit pas.** (a) Cela dit que le
+§8.54 est validé de l'extérieur : le score recalculé n'était pas un
+artefact du port Python — il reproduit les scores publiés par les
+auteurs de la méthode, et le verdict H1 totale survit au remplacement
+du recalculé par le publié. La question ouverte du §8.54.10 (« §8.54b »)
+est fermée. (b) Cela dit que la part de la corrélation portée par
+l'infiltration (~64 % en régression, ~80 % en séparation) est mesurée
+par une source indépendante du projet — la même source que Yoshihara
+et al. 2013. (c) Cela ne dit pas que TOUTE la corrélation est de
+l'infiltration : le résidu +0,2001 (20,3 % de CD8A brut) et les 3
+paires fortes restantes sont un reste structuré, identique à celui du
+§8.54.8. (d) Cela ne dit pas que la pureté est innocentée : le §8.55
+(H1 partielle, un tiers porté par ABSOLUTE) reste valide — infiltration
+et pureté sont deux axes de composition différents, et c'est
+l'infiltration qui porte l'essentiel de la corrélation ; les scores
+publiés corrèlent d'ailleurs à ABSOLUTE (ESTIMATEScore publié
+r = −0,701, n = 149), les deux axes n'étant pas orthogonaux.
+(e) Cela ne dit pas quelles cellules portent la corrélation : pas de
+fractions par type cellulaire — question toujours ouverte. (f) Cela ne
+dit pas que la petite différence systématique publié↔recalculé
+(moyenne |diff| 5,8, max 15,1) est expliquée : elle est mesurée,
+rapportée, et sans effet sur aucun test — son origine (liste de gènes
+communs) est une hypothèse, pas un fait établi ici.
+
+**Comparaison directe avec le §8.54 (scores recalculés) et le §8.55 (ABSOLUTE) :**
+
+| Test | §8.54 (recalculé, n = 178) | §8.65 (publié, n = 178) | §8.55 (ABSOLUTE, n = 149) |
+|---|---|---|---|
+| T1 moyenne \|r\| | Immune 0,7164 / Stromal 0,6002 | Immune **0,7164** / Stromal **0,6002** | ABSOLUTE 0,4932 |
+| T1 R² médian | 0,527 | **0,5272** | 0,3006 |
+| T2 brute → résiduelle | 0,5563 → 0,2002 (−64,0 %) | 0,5563 → **0,2001 (−64,0 %)** | 0,5040 → 0,3757 (−25,5 %) |
+| T5 contrôle → flux | I-IMM +1,1942 ; I-STR +0,9407 | E-PIMM **+1,1928** ; E-PSTR **+1,0443** | E-ABS +0,6911 |
+| T5 résidualisé | I-RES +0,1982 (20,2 % du brut) | E-PRES **+0,2001 (20,3 % du brut)** | E-RES +0,6499 (66,1 % du brut) |
+| Verdict | H1 totale | **H1-pub totale** | H1 partielle |
+
+## 8.65.11 Provenance
+
+- **Codes (jamais modifiés).** Pipeline v6.2
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`, SHA-256
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+  (vérifié avant les calculs et dans le log de lot).
+  Mode `fast`, graine 42 (défaut), nul = bloc analysé permuté
+  conjointement, graine 42 (default_rng frais par fichier), contrôle intact.
+- **Protocole.** `PROTOCOL_estimate_published_865.md`, SHA-256
+  `b105e87b26c7f11b1bd29ec5eccfc05b8cb16cd5dbb5ff35db3f2df0dfd2961d`,
+  gelé le 20 nov. 2026 avant tout téléchargement, tout calcul et tout run
+  de ce chantier.
+- **Entrées externes.** (1) Table publiée MD Anderson ESTIMATE, PAAD
+  RNA-seqV2 :
+  `https://bioinformatics.mdanderson.org/estimate/tables/pancreatic_ductal_adenocarcinoma_RNAseqV2.txt`,
+  SHA-256 `46004731c2bc4479931ec19e50e12ce5f1656c890ba09e16a4e166316d59fce1`
+  (6 928 octets, 179 lignes, 20 nov. 2026 14h38 UTC ; copie dans
+  `data_estimate_published_865/pancreatic_ductal_adenocarcinoma_RNAseqV2.txt`) ;
+  mécanisme de téléchargement lu dans `js/disease_histogram.js`
+  (SHA `7b8124ad…467`, 14 013 octets) et valeurs des menus lues dans
+  `disease.html` (SHA `1f5ebd01…edb7`, 5 940 octets) — copies dans
+  `data_estimate_published_865/`. Publication source : Yoshihara et al.,
+  Nat Commun 2013, 4:2612 (PMID 24113773, PMCID PMC3826632,
+  doi 10.1038/ncomms3612). (2) Europe PMC supplementaryFiles PMC3826632
+  tenté, HTTP 500, page HTML d'erreur (19 606 octets, supprimée) — non
+  utilisé. (3) Aran et al. 2015 Suppl. Data 1, déjà détenu
+  (`data/aran2015_supp_data1_ncomms9971-s2.xlsx`, SHA `fce1ba13…7529`,
+  9 364 lignes, 21 types) — 0 PAAD, re-vérifié, non utilisé pour les tests.
+- **Entrées du projet.** Base immunitaire `pdac_immune_tcga_fluxes.csv`,
+  SHA-256 `66dbb672…bd2e` ; axe `immune_kras_order_tcga.csv`, SHA-256
+  `31d31ae6…62d` ; scores recalculés `infiltration_854_scores.csv`, SHA-256
+  `628732ec…aa7` ; ABSOLUTE `purity_855_external.csv`, SHA-256
+  `03f34fe0…bd6f` ; écarts §8.54 relus en machine dans
+  `infiltration_854_runs.csv` (I-IMM +1,1942 ; I-STR +0,9407 ;
+  I-RES +0,1982) et §8.55 dans `purity_855_runs.csv`.
+- **Nature des lignes.** Les flux immunitaires sont des mesures
+  instrumentales (séquençage ARN, log2(RSEM+1), brutes) ; les scores
+  ESTIMATE publiés sont des valeurs publiées (ssGSEA sur 141 gènes,
+  Yoshihara et al. 2013, servies par le site MD Anderson) ; les résidus
+  sont des valeurs calculées (OLS sur [1, ImmuneScore_pub]) ; les nuls
+  sont des lignes permutées (graine 42) — des échantillons hypothétiques,
+  pas des mesures. Aucun mot humain, aucun échantillon hypothétique dans
+  les séries réelles.
+- **Sorties et scripts de ce chantier.**
+  `analyze_estimate_published_865.py` (SHA `1851562b…5965`) : porte S,
+  jointure, T0–T4''. `build_estimate_published_865.py` (SHA `e4227433…551`) :
+  6 CSV T5'' (résidus vérifiés : moyenne |r| = 0,2001, identique à T2'').
+  `extract_estimate_published_865.py` (SHA `64287660…49cf`) : lecture des
+  6 runs. `estimate_published_865_external.csv` (SHA `60e1ff96…ac181`,
+  178 tumeurs appariées), `estimate_published_865_results.json`
+  (T0–T4'' + porte S) / `.csv` (T1'' par flux),
+  `estimate_published_865_immune_resid.csv` (SHA `57ccd353…43b`,
+  12 flux résidualisés), `estimate_published_865_csv_sha.json` (SHA des
+  6 CSV T5''). Manifeste `manifest_v62_estimate_published_865.txt`
+  (SHA `9e668bbe…955aa`) ; log `runs_v62_estimate_published_865.log` ;
+  surveillance `watch_v62_estimate_published_865.sh`
+  (SHA `34f2fd25…9cfe`) ; unité systemd `v62-estpub-865`.
+  Journal des tentatives : `data_estimate_published_865/attempts_865.log`.
+  `estimate_published_865_runs.json` (SHA `f593aa53…2d6`) / `.csv`
+  (SHA `b1ead372…0901`, 6 runs).
+- **Ce qui manque :** pureté ESTIMATE publiée pour PAAD (pas de colonne
+  pureté dans la table par maladie — cf. §8.65.4) ; relecture directe du
+  Suppl. Data 2 de Yoshihara (`ncomms3612-s3.xlsx`, Europe PMC HTTP 500
+  — la table MD Anderson est la même donnée servie par les auteurs, pas
+  une relecture indépendante du xlsx) ; l'origine exacte de la petite
+  différence systématique publié↔recalculé (moyenne |diff| 5,8, max
+  15,1 — hypothèse : liste de gènes communs, non établie ici) ;
+  les p de T1'' sont brutes, sans correction pour tests multiples.
+- **Incident d'exécution.** Aucun : la machine n'a pas redémarré pendant
+  le lot (uptime 1h54 à 15h16 UTC, sans coupure). Bilan final : **6/6
+  exit 0, 0 échec**, lot 14h41:37 UTC – 15h08:38 UTC 20 nov.
+  (`=== FIN 2026-11-20T15:08:38Z deja_faits=0 termines=6 echecs=0` ;
+  surveillance arrêtée d'elle-même à 6/6, tour 1/12). Aucune sortie
+  perdue, aucune relance nécessaire.
+
+## 8.65.12 Ce qui manque, ce qui reste ouvert
+
+- **Pureté ESTIMATE publiée.** La table par maladie ne sert que les
+  trois scores (stromal, immunitaire, ESTIMATE) : aucune colonne de
+  pureté. La comparaison ABSOLUTE ↔ pureté ESTIMATE publiée reste
+  impossible par cette voie ; elle se fait ici par les scores
+  (ESTIMATEScore publié vs ABSOLUTE : r = −0,701, n = 149).
+- **Relecture indépendante du Suppl. Data 2 (xlsx).** La table MD
+  Anderson est servie par les auteurs du site ESTIMATE, mais ce n'est
+  pas une relecture du fichier `ncomms3612-s3.xlsx` lui-même (Europe PMC
+  500, PMC/Nature non re-tentés après l'obtention). Une relecture du
+  xlsx donnerait une seconde source indépendante des mêmes scores.
+- **Fractions par type cellulaire.** Comme au §8.54 : CIBERSORT/xCell
+  diraient quelles cellules portent la corrélation — toujours
+  inaccessibles ici.
+- **Le résidu structuré.** CD8A–CD8B 0,6409, CD4–CD163 0,5809,
+  GZMB–IFNG 0,5201 après régression publiée — identique au §8.54.8 :
+  biologie de récepteur, autre variable latente, ou queue de
+  l'infiltration non linéaire ? Non tranché ici.
+- **Périmètre.** 6 nouveaux runs v6.2 au maximum (protocole §8), aucun
+  autre. Aucun nouveau seuil proposé, aucun code modifié, aucun push
+  GitHub dans ce chantier (publication sur go séparé ; règle permanente
+  « Toujours github et pdf !!! » — par le coordinateur).
+
+— Fin de la §8.65. —
+
+— Fin de la §8.8.65. —
+### 8.8.66 Bloc estomac / mucus : quatrième cohorte, GSE62165 (20 nov. 2026) (20 novembre 2026)
+Go de Zackary « Oui allez s'y » (20 nov. 2026 09h35, 3e des 3 chantiers).
+
+**Verdict d'abord : la quatrième cohorte confirme le cœur du
+§8.58 et en casse deux bords.** Le programme neuroendocrine
+(G5) s'efface quand KRAS monte — c'est la quatrième cohorte
+d'affilée, et la plus forte : KRT19 rho +0,577 (p = 7,7e-12),
+KRT7 +0,420, INSM1 −0,350, NEUROD1 −0,341, CHGA −0,338, tous
+sous le seuil de Bonferroni ; SYP est plat (−0,131), comme en
+GSE71729. Le mucus étendu (G1) monte avec KRAS — AGR2 +0,414,
+MUC13 +0,422, MUC4 +0,264 — troisième cohorte pour AGR2,
+deuxième pour MUC4. Le volatil (G4) confirme à moitié : AOX1
+chute dans les quatre cohortes (−0,382 ici), ALDH3B1 monte
+(+0,356), FMO1 chute le plus fort du groupe (−0,421), mais
+UGT1A1 est ABSENT de la puce et NOS1 est plat — le bras
+« détox qui monte » n'est pas testable ici. **En revanche, le
+mucus ne monte PAS avec le stade dans cette cohorte — il
+descend** (MUC4 −0,238, TFF1 −0,115, AGR2 −0,137, sens
+inverse de TCGA) **et le programme neuroendocrine ne baisse
+pas avec le stade** (rho max 0,102, plat) : les deux lectures
+« stade » du §8.58 ne tiennent pas ici. **Et les odeurs
+cassent leur bilan : un OR MONTE avec KRAS pour la première
+fois dans une cohorte de confirmation — OR2B6 +0,293
+(p = 0,0013, D1 +0,51), au-delà du nul (max 0,144) — pendant
+qu'aucun OR ne chute significativement** (chute max OR2T10
+−0,131, p = 0,16) ; OR2A4 est absent de la puce, comme dans
+les deux cohortes GEO, et OR2W3 aussi. Le pipeline (lot
+complet, 20/20, exits 0/0) ne sépare pas le réel du nul :
+MC favorise le réel sur 4/10 paires seulement, S_sep sur 5/10,
+falsification sur 5/10, L7b FRAGILE 20/20 — et le plus grand
+écart MC du lot (G2/stade +0,199, en faveur du réel) tombe
+sur des tests directs plats : un score seul ne fait pas un
+signal, comme au §8.58 pour G3/stade.
+
+**Le lot.** Chantier §8.66, mission parent du 20 nov. 2026
+(« bloc estomac/mucus, quatrième cohorte »). Protocole gelé
+`PROTOCOL_stomach_mucus_cohort4_866.md` (SHA
+`3a25a391…58d91bc`, écrit avant tout téléchargement).
+Provenance complète `PROVENANCE_866.md` (SHA
+`aedc47d3…a408`). Construction `build_fluxes_866.py` (SHA
+`9975fad0…10de563`) ; mapping sondes → symboles
+`build_probe2symbol_866.py` (SHA `004c8339…1a563b`) ;
+tests directs `reading_866.py` (SHA `cf972deb…5710`) ;
+extraction `extract_866.py` (SHA `87337cfe…fea76`, corrigée
+d'une parenthèse après le lot — même correction que
+`reading_866.py`, vérifiée par relecture avant extraction) ;
+manifeste des fichiers `manifest_866_files.txt` (SHA
+`92542116…a1802`, 41 lignes).
+Pipeline `universal_v6.2.0_cohen.py`, SHA
+`f07567c4…c3abf`, revérifié inchangé avant ET après le lot ;
+mode fast ; 20 runs (5 groupes × 2 ordres × réel/nul),
+exits 0/0, 36 fichiers chacun.
+Lancement en `systemd-run` (unité `v62-866`), surveillance
+`watch_v62_866.sh` (arrêtée d'elle-même à 20/20,
+`WATCH 866-62165 TERMINE 20/20`, tour 2, 17h25:47Z) ;
+journal `runs_v62_866.log` (FIN 17h25:27Z, déjà faits 19,
+terminés 1, échecs 0 — dernier lancement).
+Incidents : la machine a redémarré deux fois pendant le lot
+(entre 15h13Z et 15h22Z, puis entre 17h07Z et 17h22Z), tuant l'unité à
+chaque fois — relancée à chaque fois, reprise sans perte
+(6 SKIP puis 19 SKIP, jamais de dossier de run supprimé,
+jamais de CSV modifié ; le premier lancement avait terminé
+6 runs, le deuxième 13 de plus, le troisième le dernier).
+Durée totale du lot : 14h53Z → 17h25Z (~2 h 32, charge
+partagée avec les autres chantiers). Le livre blanc n'est
+PAS édité, le PDF N'EST PAS régénéré, rien n'est poussé
+sur GitHub dans ce chantier.
+
+**La cohorte.** GSE62165, NCBI GEO, déposants Rekin's Janky
+et coll. (Nucleomics Core, VIB, Leuven) ; soumission 8 oct.
+2014, publique 17 août 2016, dernière mise à jour 21 mars
+2019 ; PMID 27520560 ; analyse par stade : Wang et coll.,
+*Cancer Cell Int* 2018 (doi 10.1186/s12935-018-0718-5).
+Plateforme GPL13667 (Affymetrix Human Genome U219 Array).
+Fichier `data/GSE62165_series_matrix.txt.gz`, URL
+`https://ftp.ncbi.nlm.nih.gov/geo/series/GSE62nnn/GSE62165/matrix/GSE62165_series_matrix.txt.gz`,
+HTTP 200, 51 179 939 o, SHA-256
+`fd50fc415a31…03727f`. Contenu vérifié : 49 386 sondes × 131
+échantillons, 0 NaN ; 118 tumeurs PDAC + 13 tissus non
+tumoraux (exclus) ; valeurs log2 déjà normalisées par les
+déposants (min 2,084 ; max 14,447 ; médiane 4,707) — aucune
+renormalisation faite ici. Stade par échantillon
+(`!Sample_characteristics_ch1`, champ « Stage: ») : 1a 1,
+1b 7, 2a 30, 2b 62, 3 5, 4 13 — soit rangs I 8, II 92,
+III 5, IV 13, identiques aux effectifs publiés ; 0 exclue,
+série stade 118 lignes (≥ 40, seuil respecté). Critères
+d'acceptation du protocole §2 : n = 118 ≥ 40 — PASSÉ ;
+stade par échantillon présent — PASSÉ ; KRAS présent comme
+ligne — PASSÉ ; cohorte jamais utilisée dans ce projet
+(ni TCGA, ni GSE71729, ni GSE62452, ni ICGC PACA-AU, ni
+CPTAC) — PASSÉ. La cohorte de repli GSE57495 (protocole
+§1.2) n'a pas été téléchargée ni utilisée.
+
+**Mapping sondes → symboles — adaptation documentée.**
+Le protocole §1.1 prévoyait l'annotation GEO
+(`GPL13667.annot.gz`, repli SOFT). Constaté après le gel :
+`.annot.gz` → HTTP 403 (page d'erreur, 980 o, pas un
+fichier) ; `GPL13667_family.soft.gz` → HTTP 200 mais
+Content-Length 6 038 451 838 o (~6,0 Go, infaisable sur
+cette VM — téléchargement interrompu à 1 511 849 984 o,
+fichier supprimé) ; `GPL13667_family.xml.tgz` (MINiML,
+539 314 653 o, SHA `ed094f67…ab21f`) → l'archive ne
+contient QUE des tables d'échantillons GSM, aucun fichier
+GPL (vérifié par `tar -tzf` puis extraction
+`--wildcards '*GPL13667*'` : « Not found in archive ») —
+archive supprimée. Adaptation (même nature d'annotation,
+aucune sonde mappée à la main) : chaîne Bioconductor
+AnnotationDbi standard pour la puce hgu219, sonde →
+Entrez Gene (`hgu219.db` 3.2.3, SHA
+`64847ad0…567fb`, 2 002 040 o, source Entrez Gene
+2015-Sep-27) puis Entrez Gene → symbole courant
+(`org.Hs.eg.db` 3.23.1, SHA `47062066…49cfe`,
+103 790 170 o ; la version 3.23.0 n'existe pas, HTTP 404
+vérifié, version exacte lue sur la page du paquet).
+Règles gelées dans `build_probe2symbol_866.py` avant la
+construction : sonde vers plusieurs Entrez ID → EXCLUE ;
+sonde sans Entrez ID → non mappée ; plusieurs sondes vers
+un même symbole → médiane. Résultat
+(`data/GPL13667_probe2symbol.tsv`, SHA
+`c0a5e8fc…8c2b2`) : 46 083 sondes mappées vers 18 448
+symboles distincts ; 2 662 sondes multi-gènes exclues ;
+641 sondes sans symbole ; journal
+`GPL13667_mapping_866.txt`. Limite nommée : la
+correspondance sonde → Entrez date de 2015, le symbole
+est celui d'aujourd'hui via l'Entrez ID stable (ex.
+HIST1H3H → H3C8) ; aucun symbole n'est inventé ni
+corrigé à la main.
+
+**Construction des flux (variante (a) du §8.58).**
+Mêmes gènes que les listes retenues TCGA (ceux présents
+dans la cohorte), ordre = KRAS (valeurs puce brutes,
+croissant), sans correction de pureté, cas complets
+seulement (118/118 pour chaque groupe). Ordre stade :
+IA/IB → I, IIA/IIB → II, III → III, IV → IV ; départage
+ex æquo par GSM lexicographique ; 0 exclue.
+Sondes multiples vers un même symbole : médiane.
+Nuls : bloc des flux permuté par lignes, graine 42,
+`rng(42)`, contrôle intact. Le contrôle n'est jamais un
+flux : pas de doublon. SHA des fichiers dans
+`manifest_866_files.txt` et `PROVENANCE_866.md`.
+
+**Groupes construits (flux retenus).**
+- G1 mucus/gastrique : 18/20 présents (absents : PGA3,
+  PGA4) : TFF1, TFF2, MUC6, MUC5B, MUC4, AQP5, REG1A,
+  TFF3, GKN1, REG3A, MUC21, GKN2, AGR2, GAST, SPDEF,
+  FCGBP, MUC13, REG1B.
+- G2 enzymes digestives : 14/20 présents (absents : PRSS1,
+  AMY1A, AMY2B, AMY2A, CTRB1, CELA3B) : PRSS3, PNLIPRP2,
+  CPB2, CELA2A, CPA3, CELA2B, PNLIP, PLA2G1B, CEL, CPB1,
+  PNLIPRP1, CLPS, CPA2, CTRB2.
+- G3 récepteurs olfactifs : 16/20 présents (absents :
+  OR2A4, OR2A7, OR2W3, OR2A1) : OR7D2, OR13A1, OR52N4,
+  OR2B6, OR51E2, OR51E1, OR52N2, OR2L13, OR1J2, OR10H1,
+  OR4C6, OR7A5, OR3A2, OR5K2, OR2T10, OR2C1.
+- G4 volatil / signalisation : 18/20 présents (absents :
+  UGT1A1, CYP2A6) : ALDH3A1, CYP2C9, CYP3A4, ADH1B,
+  UGT2B7, ADH4, ADH1C, ADH6, ADH1A, AOX1, FMO1, CYP2E1,
+  NOS1, NOS2, CBS, TAS1R3, ALDH3B1, TAS2R38.
+- G5 intestinal / neuroendocrine : 15/15 présents, 15
+  retenus : CDX1, CDX2, VIL1, SI, LCT, FABP2, APOA4,
+  APOB, KRT7, KRT19, CHGA, CHGB, SYP, INSM1, NEUROD1.
+- TEMOIN acineux (inventaire seulement, pas de run) :
+  9/11 présents (absents : CTRB1, CELA3B).
+
+**Inventaire — présence/absence (comptes exacts).**
+Fichier vérifié `inventory_866.csv` (SHA
+`5c7508a2…68b2`), scan OR `or_scan_866.csv` (SHA
+`7e75903c…0ecb`). Univers mappé : 18 448 symboles
+(118 tumeurs). Scan regex `^OR[0-9]+[A-Z]?[0-9]*$` :
+321 symboles OR dans l'univers (TCGA 355, GSE71729 113,
+GSE62452 360). Liste fermée OR du §8.58 : 6/6 présents
+(OR51E2, OR51E1, OR2AT4, OR1A1, OR2J3, OR10J5).
+Absents notables : G1 PGA3, PGA4 (aussi absents en ICGC
+et CPTAC) ; G2 PRSS1, AMY1A, AMY2B, AMY2A, CTRB1,
+CELA3B — dont 3 gènes du score acineux (CTRB1, CELA3B)
+et les deux amylases : la lecture G2 est affaiblie par
+construction ici, comme en GSE71729 ; G3 OR2A4, OR2A7,
+OR2W3, OR2A1 — OR2A4 absent pour la troisième cohorte
+de confirmation d'affilée, OR2W3 (le plus fort OR en
+chute en GSE71729) absent aussi ; G4 UGT1A1, CYP2A6 —
+UGT1A1, le plus fort rho G4/KRAS de TCGA (+0,378), est
+absent ici comme en GSE71729 : son bras « monte » n'est
+testable que dans TCGA et GSE62452.
+
+**Les odeurs, en chiffres (G3).** Les 321 OR ont tous une
+médiane log2 < 5,0 dans les tumeurs (médiane des médianes
+2,99) ; les plus exprimés : OR2A14 4,99, OR5H1 4,42,
+OR2F2 3,90, OR2T4 3,84. Les OR de la liste fermée sont
+tous près du plancher : OR51E1 3,51, OR13A1 3,34, OR51E2
+3,21, OR2J3 3,09, OR2AT4 2,98, OR1A1 2,97, OR10J5 2,86 —
+et OR2B6, le seul OR qui monte avec KRAS ici, est à
+2,80 (min 2,51, max 3,26), c'est-à-dire au niveau du
+bruit de fond de la puce (les valeurs vont de 2,08 à
+14,45, médiane 4,71). Une expression mesurée n'est PAS
+une preuve de fonction olfactive ; un OR présent à
+expression quasi nulle n'est PAS une preuve d'olfaction.
+Aucun composé volatil n'est mesuré dans ce chantier
+(pas de volatilome détenu).
+
+**Tests directs (harnais, hors pipeline ; `direct_tests_866.csv`,
+SHA `148a389f…30daf`, 162 lignes ; d de Cohen, + = plus haut
+chez les 12 dernières lignes ; rho de Spearman contre le rang
+de contrôle ; mêmes indices sur le nul).** Seuil de Bonferroni
+sur les 162 rho : 0,05/162 ≈ 0,00031. Les p sont nominales,
+bilatérales, sauf mention.
+
+- G5 / KRAS — CONFIRME, le plus fort du chantier : KRT19
+  rho +0,577 (p = 7,7e-12), KRT7 +0,420 (p = 2,3e-06),
+  INSM1 −0,350 (p = 0,00010), NEUROD1 −0,341
+  (p = 0,00016), CHGA −0,338 (p = 0,00019), CHGB −0,266
+  (p = 0,0036) — tous au-delà du nul (max |rho| du nul :
+  0,165) et tous sauf CHGB sous le seuil de Bonferroni.
+  D1 : CHGA −1,33, NEUROD1 −1,12, INSM1 −0,89, KRT7
+  +0,74, KRT19 +0,73 (nuls entre −0,45 et +0,06). SYP est
+  plat (rho −0,131, p = 0,16 ; D1 −0,47) — comme en
+  GSE71729 (rho −0,086) : la confirmation porte sur le
+  programme (CHGA/INSM1/NEUROD1 chutent, KRT7/KRT19
+  montent), pas sur chaque gène. VIL1 monte (+0,257,
+  p = 0,0050), CDX1/CDX2 plats.
+- G5 / stade — NON CONFIRME, plat : rho max 0,102 (APOB),
+  SYP +0,025, CHGB −0,037, CHGA −0,091, INSM1 −0,061,
+  NEUROD1 −0,096, KRT7 −0,095, KRT19 −0,061 ; nul max
+  |rho| 0,172. D1 : CHGA −0,89, NEUROD1 −0,83, INSM1
+  −0,72, KRT7 −0,71 — mais les nuls atteignent +0,78
+  (CHGB) et +0,46 (NEUROD1) sur les mêmes contrastes :
+  dans l'enveloppe du nul. Contrairement à TCGA
+  (SYP −0,276, CHGB −0,250) et à GSE62452 (NEUROD1
+  −0,416, CHGA −0,348), le programme neuroendocrine ne
+  baisse pas avec le stade ici.
+- G1 / KRAS — CONFIRME : MUC13 rho +0,422 (p = 1,9e-06),
+  AGR2 +0,414 (p = 3,2e-06), SPDEF +0,357 (p = 7,1e-05),
+  TFF2 +0,323 (p = 0,00035), MUC4 +0,264 (p = 0,0039),
+  TFF1 +0,246, TFF3 +0,252 ; nul max |rho| 0,161. D1 :
+  SPDEF +0,71, MUC13 +0,70, AGR2 +0,62, MUC4 +0,45
+  (nuls −0,44 à +0,21). AGR2 monte dans les trois cohortes
+  chiffrées (TCGA +0,328, GSE71729 +0,383, GSE62165 +0,414 ;
+  GSE62452 non chiffrée au §8.58) ; MUC4 monte en TCGA (+0,313) et
+  ici (+0,264), plat en GSE71729 (−0,083). MUC6 est plat
+  (−0,005) : ni chute comme en GSE71729 (−0,436), ni
+  plat-haut comme en TCGA (+0,035). MUC5B +0,147 (p 0,11).
+- G1 / stade — NON CONFIRME, sens inverse de TCGA :
+  MUC4 rho −0,238 (p = 0,0095), MUC5B −0,182 (p = 0,048),
+  TFF2 −0,152, AGR2 −0,137, TFF1 −0,115, TFF3 −0,119 ;
+  nul max |rho| 0,208. D1 : TFF1 −0,96, TFF2 −0,81,
+  TFF3 −0,79 — mais le contraste top-12 oppose 12 des
+  13 tumeurs de stade IV au reste, et les nuls
+  atteignent +0,44 (TFF2) et +0,42 (TFF3) : un d à
+  n = 13 bouge de ~0,5 quand une seule tumeur change.
+  En TCGA, TFF1 montait avec le stade (rho +0,204) et
+  AGR2 aussi (+0,208) : ici les deux descendent. Le
+  mucus ne monte pas avec le stade dans cette cohorte.
+- G4 / KRAS — PARTIEL : AOX1 rho −0,382 (p = 2,0e-05),
+  FMO1 −0,421 (p = 2,1e-06), ADH1B −0,372
+  (p = 3,4e-05), ALDH3B1 +0,356 (p = 7,4e-05),
+  ALDH3A1 +0,343 (p = 0,00014), ADH1A −0,249
+  (p = 0,0065) — tous au-delà du nul (max |rho| 0,174)
+  et tous sauf ADH1A sous le seuil de Bonferroni. D1 :
+  FMO1 −1,12, ALDH3B1 +0,96, AOX1 −0,90, ADH1B −0,81
+  (nuls −0,39 à +0,36). AOX1 chute dans les quatre
+  cohortes (−0,289 / −0,253 / −0,611 / −0,382) ;
+  ALDH3B1 monte en TCGA (+0,303) et ici (+0,356) ;
+  ALDH3A1 monte en GSE71729 (+0,367) et ici (+0,343).
+  Mais UGT1A1 est ABSENT : le critère gelé Q4
+  (AOX1 chute ET UGT1A1 monte) ne peut pas être rempli
+  — PARTIEL, pas CONFIRME. NOS1 est plat (−0,097,
+  p = 0,30 ; D1 +0,01) alors qu'il chutait dans les deux
+  cohortes GEO (−0,369 / −0,529) : sa chute n'est pas
+  universelle. FMO1, plat en TCGA, est ici la plus forte
+  chute du groupe : une piste par gène, pas un programme.
+- G4 / stade — rien (rho max 0,177, ADH4 ; nul max
+  0,179) — comme dans TCGA et GSE62452.
+- G3 / KRAS — NON CONFIRME : OR2B6 rho +0,293
+  (p = 0,0013 ; D1 +0,51, nul −0,09) MONTE — premier OR
+  qui monte significativement dans une cohorte de
+  confirmation, au-delà du nul (max |rho| 0,144), mais
+  sans passer Bonferroni (0,0013 > 0,00031) et sur un
+  transcrit au niveau du bruit de fond (médiane 2,80).
+  Aucun OR ne chute significativement : chute max
+  OR2T10 −0,131 (p = 0,16), OR52N4 −0,111, OR7A5
+  −0,100, OR13A1 −0,076 (p = 0,41), OR2C1 −0,018 —
+  contre OR13A1 −0,423 et OR2T10 −0,418 en GSE62452,
+  OR2W3 −0,338 en GSE71729. OR2A4, le seul OR montant
+  de TCGA (+0,259), est ABSENT ici (troisième cohorte
+  de confirmation où il est absent) ; OR2W3 et OR2A7
+  sont absents aussi. Le bilan des odeurs n'est donc
+  plus « plusieurs OR chutent, aucun ne monte » : dans
+  cette cohorte, un OR monte et aucun ne chute.
+  En GSE71729, OR2B6 chutait (−0,220) : il change de
+  sens entre cohortes.
+- G3 / stade — rien : rho max 0,163 (OR2L13, p 0,078),
+  nul max 0,174 — dans l'enveloppe du nul.
+- G2 / KRAS — chute faible : CPA3 rho −0,218
+  (p = 0,018), CPA2 −0,154, CPB1 −0,145, CEL −0,133,
+  CELA2A −0,127, CTRB2 −0,127 ; nul max 0,147. D1 :
+  CEL −0,53, CPB1 −0,52, CPA2 −0,53, CTRB2 −0,50 —
+  mais les nuls atteignent +0,54 (CELA2A) et +0,50
+  (PNLIPRP1) : dans l'enveloppe. Comme dans TCGA et
+  GSE62452, c'est la perte acineuse, pas un nouveau
+  signal — et ici elle est affaiblie parce que 3 gènes
+  du score acineux (CTRB1, CELA3B) et les amylases
+  sont absents de la puce.
+- G2 / stade — rien (rho max 0,150, CPA3 ; nul max
+  0,278).
+
+**Verdicts par question (critères gelés, protocole §7).**
+- Q1 (G1/stade) : NON CONFIRME — aucun gène G1 ne monte
+  avec le stade ; TFF1 et AGR2 descendent (sens inverse
+  de TCGA).
+- Q2 (G5/KRAS) : CONFIRME — ≥ 2 marqueurs
+  neuroendocrines chutent sous Bonferroni (INSM1,
+  NEUROD1, CHGA) et les deux kératines montent
+  (KRT19, KRT7), au-delà du nul.
+- Q3 (G3/KRAS) : NON CONFIRME — OR2B6 monte
+  significativement (p = 0,0013) et aucun OR ne chute
+  significativement ; OR2A4 absent.
+- Q4 (G4/KRAS) : PARTIEL — AOX1 chute (4/4 cohortes),
+  ALDH3B1/ALDH3A1 montent, mais UGT1A1 est absent :
+  le critère « AOX1 chute ET UGT1A1 monte » n'est pas
+  testable en entier.
+- Q5 (G1/KRAS) : CONFIRME — AGR2 monte (p = 3,2e-06,
+  sous Bonferroni), MUC4 aussi (p = 0,0039), au-delà
+  du nul.
+- Hors critères : G5/stade NON CONFIRME (plat) ;
+  G4/stade rien ; G2 chute acineuse faible.
+
+**Le pipeline (lot complet — 20/20 runs, exits 0/0).**
+Lecture `extract_866.py` (`extract_866.json`,
+`extract_866.csv`, 20 runs, 0 manquant) ; cascade en %
+(T_-2 / T_-1 / T_0 / T_+1 / T_+2) ; MC = best_config
+score (seuil entre parenthèses, en %) ; S_sep =
+max_separation × stability ; Delta ; L7a (direction,
+confiance) ; falsification ; L7b ; bruit (score moyen) ;
+F1/F2 « Tous » (rapport après/avant, médiane sur 29
+estimateurs). Aucun seuil de séparation n'était
+pré-enregistré : les écarts sont des pistes, jamais des
+preuves.
+
+| Groupe / ordre | MC réel (seuil) | MC nul | ΔMC | S_sep réel | S_sep nul | ΔS_sep | Delta réel | Delta nul | L7a réel | fals réel | fals nul | L7b |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G1 / KRAS | 0,3560 (13,3 %) | 0,3863 | −0,030 | 0,3676 | 0,2144 | +0,153 | 2,048 | 1,870 | UP 0,325 | 0,238 | 0,235 | FRAGILE / FRAGILE |
+| G1 / stade | 0,3432 (86,7 %) | 0,3288 | +0,014 | 0,2903 | 0,1859 | +0,104 | 2,018 | 2,040 | UP 0,167 | 0,274 | 0,222 | FRAGILE / FRAGILE |
+| G2 / KRAS | 0,5078 (88,2 %) | 0,5231 | −0,015 | 0,1801 | 0,3086 | −0,129 | 1,859 | 1,249 | DOWN 0,335 | 0,070 | 0,161 | FRAGILE / FRAGILE |
+| G2 / stade | 0,5378 (86,7 %) | 0,3392 | +0,199 | 0,2554 | 0,2524 | +0,003 | 1,945 | 2,003 | DOWN 0,180 | 0,242 | 0,196 | FRAGILE / FRAGILE |
+| G3 / KRAS | 0,3291 (85,0 %) | 0,3281 | +0,001 | 0,1929 | 0,1896 | +0,003 | 2,036 | 1,942 | UP 0,325 | 0,260 | 0,281 | FRAGILE / FRAGILE |
+| G3 / stade | 0,3336 (62,1 %) | 0,3384 | −0,005 | 0,2169 | 0,2494 | −0,033 | 1,584 | 2,031 | UP 0,320 | 0,749 | 0,333 | FRAGILE / FRAGILE |
+| G4 / KRAS | 0,3508 (13,3 %) | 0,3341 | +0,017 | 0,3341 | 0,2218 | +0,112 | 2,023 | 1,990 | UP 0,269 | 0,225 | 0,247 | FRAGILE / FRAGILE |
+| G4 / stade | 0,3283 (13,3 %) | 0,3336 | −0,005 | 0,1824 | 0,2205 | −0,038 | 2,035 | 1,993 | DOWN 0,191 | 0,292 | 0,229 | FRAGILE / FRAGILE |
+| G5 / KRAS | 0,3584 (13,3 %) | 0,3293 | +0,029 | 0,3879 | 0,1926 | +0,195 | 2,010 | 1,990 | UP 0,302 | 0,172 | 0,261 | FRAGILE / FRAGILE |
+| G5 / stade | 0,3304 (86,7 %) | 0,3339 | −0,004 | 0,1994 | 0,2188 | −0,019 | 1,991 | 1,984 | UP 0,147 | 0,183 | 0,217 | FRAGILE / FRAGILE |
+
+Cascades : G5/KRAS réelle 1,7 / 83,5 / 86,6 / 95,3 / 100 %
+(T_0 au pas 101) contre nul 0,0 / 2,8 / 5,8 / 14,9 / 22,6 %
+— le plus grand contraste de cascade du lot, cohérent
+avec les tests directs G5/KRAS, les plus forts du
+chantier. G1/KRAS réelle 4,1 / 16,6 / 20,0 / 43,0 / 43,0 %
+(T_0 au pas 23) contre nul 2,5 / 87,4 / 90,5 / 93,7 /
+100 % ; G4/KRAS réelle 1,7 / 74,8 / 97,6 / 100 / 100 %
+contre nul 0,0 / 81,9 / 85,0 / 88,2 / 90,5 % ; G2/stade
+réelle 0,0 / 23,5 / 27,1 / 30,9 / 38,2 % (T_0 au pas 32,
+MC 0,5378 au seuil 86,7 %) contre nul 1,7 / 65,2 / 86,6 /
+89,8 / 89,8 % — cascade réelle basse malgré le MC le
+plus haut du lot : le score vient d'un seuil tardif, pas
+d'une rupture visible. Les cascades stade ont leur T_0
+tôt ou figé (G4/stade réelle 0,0 / 5,8 / 97,6 / 100 /
+100 %, T_0 au pas 114 ; G1/stade réelle 0,0 / 39,0 /
+81,1 / 84,2 / 92,1 %) : avec 4 niveaux de stade et 92
+tumeurs au stade II sur 118, un « seuil » tombe dans le
+bloc des ties — il ne mesure rien, comme aux §8.45/§8.58.
+Lecture d'ensemble : MC favorise le réel sur 4/10
+seulement (+0,014 à +0,199 ; le plus grand écart,
+G2/stade +0,199, tombe sur des tests directs plats) ;
+S_sep favorise le réel sur 5/10 (les trois plus grands :
+G5/KRAS +0,195, G1/KRAS +0,153, G4/KRAS +0,112 — les
+trois groupes dont les tests directs confirment sous
+KRAS) ; Delta favorise le réel sur 7/10 mais par de
+petits écarts (sauf G2/KRAS +0,610 et G3/stade −0,447) ;
+la falsification est partagée (réel devant sur 5/10) ;
+L7a est UP partout dans le réel sauf G2 (DOWN) et
+G4/stade (DOWN), et UP partout dans le nul sauf G2/KRAS
+(DOWN), G4/stade (DOWN) et G5/KRAS (DOWN) ; L7b est
+FRAGILE sur les 20 runs — même non-informativité que
+dans TCGA et les confirmations GEO : FRAGILE partout,
+réel comme nul. Delta vaut ~1,6–2,0 partout (contre
+~3,8–4,2 en TCGA à n = 178, ~2,9 en GSE71729 à n = 145,
+~1,4–1,5 en GSE62452 à n = 69) : l'échelle suit n,
+cohérent avec §8.40/§8.62. Régime « criticality »
+partout ; bruit « proxy de variance modéré » ou
+« mixte » presque partout (scores 0,37–0,73).
+F1/F2 « Tous » : les rapports après/avant s'effondrent
+ou explosent sans direction cohérente (F1 ×0,017 à
+×84,8 réel contre ×0,024 à ×114,7 nul ; F2 ×0,011 à
+×152,4 réel contre ×0,022 à ×292,9 nul). Même figure
+qu'aux §8.31/§8.32/§8.34/§8.36/§8.45/§8.58 : des pistes
+dans le sens réel sur S_sep pour les groupes qui
+confirment en direct, contredites ou non confirmées par
+MC, Delta, la falsification et L7b — pas une séparation
+démontrée. Le cas G2/stade est l'avertissement de ce
+lot : le plus grand écart MC (+0,199) avec S_sep à
+égalité (+0,003), Delta −0,058, et des tests directs
+plats — un score seul ne fait pas un signal.
+
+**Comparaison directe avec les trois cohortes du §8.58
+(rho de Spearman, ordre KRAS sauf mention).**
+
+| Lecture | TCGA (n=178) | GSE71729 (n=145) | GSE62452 (n=69) | GSE62165 (n=118) |
+|---|---|---|---|---|
+| G5/KRAS : SYP | −0,392 | −0,086 (plat) | −0,503 | −0,131 (plat) |
+| G5/KRAS : INSM1 | −0,343 | −0,296 | −0,413 | −0,350 |
+| G5/KRAS : CHGA | −0,212 | −0,359 | — | −0,338 |
+| G5/KRAS : KRT19 | +0,333 | +0,281 | +0,416 | +0,577 |
+| G5/KRAS : KRT7 | +0,308 | +0,278 | +0,398 | +0,420 |
+| G5/stade : SYP | −0,276 | — | — | +0,025 (plat) |
+| G5/stade : NEUROD1 | −0,210 | — | −0,416 | −0,096 (plat) |
+| G1/KRAS : AGR2 | +0,328 | +0,383 | — | +0,414 |
+| G1/KRAS : MUC4 | +0,313 | −0,083 (plat) | — | +0,264 |
+| G1/KRAS : MUC6 | +0,035 (plat) | −0,436 | — | −0,005 (plat) |
+| G1/stade : TFF1 | +0,204 | — | — | −0,115 (inverse) |
+| G1/stade : AGR2 | +0,208 | — | — | −0,137 (inverse) |
+| G4/KRAS : AOX1 | −0,289 | −0,253 | −0,611 | −0,382 |
+| G4/KRAS : UGT1A1 | +0,378 | ABSENT | +0,541 | ABSENT |
+| G4/KRAS : NOS1 | +0,067 (plat) | −0,369 | −0,529 | −0,097 (plat) |
+| G4/KRAS : ALDH3B1 | +0,303 | — | — | +0,356 |
+| G3/KRAS : OR2A4 | +0,259 | ABSENT | ABSENT | ABSENT |
+| G3/KRAS : OR2W3 | — | −0,338 | — | ABSENT |
+| G3/KRAS : OR13A1 | −0,152 | — | −0,423 | −0,076 (plat) |
+| G3/KRAS : OR2T10 | −0,154 | — | −0,418 | −0,131 (plat) |
+| G3/KRAS : OR2B6 | — | −0,220 | — | +0,293 (MONTE) |
+
+(« — » : valeur non rapportée au §8.58 pour cette
+cohorte ; « ABSENT » : gène absent de la matrice, noté
+tel quel, jamais remplacé. Les valeurs GSE62452 G1/KRAS
+et G1/stade ne sont pas chiffrées au §8.58 : elles ne
+sont pas inventées ici.)
+
+Bilan à quatre cohortes : G5/KRAS est le seul signal
+cohérent partout (4/4 cohortes, dans les deux sens :
+marqueurs neuroendocrines chutent, kératines montent) —
+avec SYP plat dans deux cohortes sur quatre, la
+confirmation porte sur le programme, pas sur chaque
+gène. G1/KRAS tient pour AGR2 (3/3 cohortes chiffrées :
+TCGA +0,328, GSE71729 +0,383, GSE62165 +0,414 ;
+GSE62452 non chiffrée au §8.58) et MUC4
+(2/3 cohortes testables). G4/KRAS tient pour AOX1
+(4/4 cohortes, toujours en chute) et ALDH3B1 (2/2
+cohortes testables) ; UGT1A1 n'est testable que dans
+2 cohortes sur 4 ; NOS1 chute dans 2 cohortes sur 4
+et est plat dans les deux autres. G1/stade et G5/stade
+ne tiennent que dans TCGA (et G5/stade dans GSE62452)
+: ils ne tiennent pas dans GSE62165 — les lectures
+« stade » du §8.58 sont les plus fragiles du chantier,
+et la structure du stade ici (92/118 au stade II)
+les affaiblit encore. G3/KRAS ne tient plus comme
+« chute sans montée » : dans cette cohorte, un OR
+monte (OR2B6, près du bruit de fond) et aucun ne chute
+significativement ; OR2A4 reste non confirmable
+ailleurs (absent des trois cohortes de confirmation).
+
+**Réserve de méthode — à lire avec le verdict.** Les flux
+sont ici des valeurs de puce brutes (variante (a) du
+§8.58, sans correction de pureté) : ils mesurent
+l'expression telle que déposée, sans retrait de la
+composante tissu normal acineux/îlots — contrairement
+à TCGA, où les flux sont des résidus après régression.
+G2 est biaisé par construction (8/20 flux retenus sont
+des gènes du score acineux) et affaibli ici par
+l'absence de 6 gènes dont 2 du score acineux : ses
+lectures sous KRAS sont rapportées avec cette réserve
+et ne sont pas lues comme « nouvelles ». Le stade est
+une variable clinique (AJCC), pas une mesure du
+système : 4 niveaux, ties massives (II 92/118, soit
+78 %), ordre intra-stade arbitraire (GSM
+lexicographique), sommet mince (III + IV = 18 tumeurs)
+— mêmes limites qu'aux §8.45/§8.58, aggravées ici par
+la domination du stade II. Les OR sont mesurés comme
+transcrits, près du bruit de fond de la puce (médiane
+des médianes 2,99 en log2) : aucune odeur, aucun
+ligand, aucun test fonctionnel dans ce chantier. Les p
+sont nominales ; seul le seuil de Bonferroni
+0,05/162 ≈ 0,00031 protège contre les 162 tests
+directs — les rho G5/KRAS (KRT19, KRT7, INSM1,
+NEUROD1, CHGA), G1/KRAS (MUC13, AGR2, SPDEF) et
+G4/KRAS (FMO1, AOX1, ADH1B, ALDH3B1, ALDH3A1) le
+passent ; OR2B6 (+0,293, p = 0,0013) ne le passe pas
+et reste une piste. Ne jamais exiger de consensus
+entre flux ou contrôles : les groupes ne bougent pas
+ensemble — G1 monte quand G5 descend sous KRAS, et
+c'est l'information. Le mapping (chaîne Bioconductor,
+sonde → Entrez 2015 → symbole courant) est documenté
+dans `PROVENANCE_866.md` avec ses limites ; un symbole
+renommé depuis 2015 apparaît sous son nom actuel.
+
+**Ce que ça change.** Trois choses neuves, toutes
+mesurées aujourd'hui, aucune importée : (1) le
+programme neuroendocrine qui s'efface quand KRAS monte
+tient dans une quatrième cohorte, et c'est la plus
+forte (KRT19 +0,577, p = 7,7e-12) — c'est désormais
+le signal le plus solide du chantier, 4/4 cohortes ;
+(2) le mucus étendu qui monte avec le stade ne tient
+pas ici — il descend — et le neuroendocrine ne baisse
+pas avec le stade ici non plus : les deux lectures
+« stade » du §8.58 sont fragiles, et la domination du
+stade II (78 %) dans cette cohorte en est une cause
+plausible, pas une preuve ; (3) les odeurs perdent
+leur bilan « chute sans montée » : un OR monte
+(OR2B6) et aucun ne chute significativement dans
+cette cohorte, sur des transcrits proches du bruit de
+fond — la piste « odeurs » reste une piste par gène,
+pas un programme, et OR2A4 reste non confirmable
+ailleurs (absent des trois cohortes de confirmation).
+Le volatil (G4) reste partiel : AOX1 chute partout
+(4/4), mais UGT1A1 n'est testable que dans 2 cohortes
+sur 4 et NOS1 chute dans 2 sur 4. Le pipeline, dans
+cette quatrième cohorte comme dans les trois
+premières, donne de petits écarts favorables au réel
+sur S_sep pour les groupes qui confirment en direct
+(G5/KRAS +0,195, G1/KRAS +0,153, G4/KRAS +0,112),
+mais MC ne favorise le réel que sur 4/10 paires et
+L7b est FRAGILE 20/20 : il ne sépare pas nettement du
+nul — le même verdict, tenu sur quatre cohortes.
+Prochaines étapes : intégration au livre blanc et
+publication (PDF + GitHub) sur go de Zackary ; rien
+n'a été poussé, rien n'a été régénéré dans ce chantier.
+
+— Fin de la §8.8.66. —
+
+---
+
 ### 8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas
 
 | | v1 (brute) | v2 (hors pureté) | v3 (+ correction) | v4 (+ hors sexe) |
@@ -10661,5 +12130,9 @@ SHA v6.2 vérifié avant le lot (`f07567c4…ec3abf`) et après
 - **20 nov. 2026, 06h33 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `b3836913`, RELEASE v6.2-8.58.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `365ab4ad` → nouvelle tête `b38369133168c0df2ab01470d42e1f7a39e03b45`. Contenu : 4 commits, 142 fichiers, 6 338 282 octets, livre blanc §8.1–§8.58 (SHA `502d0b2f…`, 8 315 lignes). Snapshot reconstruit car /tmp nettoyé par un redémarrage (écart +18 364 o vs le rapport du coordinateur, README et DATA_SOURCES réécrits depuis les fichiers distants) ; les 4 cartes d'approbation ont été approuvées par Zackary sans expiration. Release `v6.2-8.58` créée 06h33, marquée Latest : PDF 811 pages A4, 11 948 453 octets, SHA-256 `451a16a7a7c2db36246cbe3a8b34d40297c193cee553eab60280206b762e9291` + tarball TCGA. Entrée écrite a posteriori le 20 nov. 2026 : elle manquait au journal (constaté à la fusion §8.59–§8.63).
 
 - **20 nov. 2026 : FUSION §8.59–§8.63 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 891 PAGES.** Go de Zackary « Lance les 5 pistes » (20 nov. 2026 06h42, 5 chantiers). Sections rédigées dans `section_8.59_maxsep_adoption.md` (394 lignes, SHA `9951d22c…36f4`), `section_8.60_deconvolution.md` (651 lignes, SHA `41114ce1…afe6`), `section_8.61_methylation_purity.md` (459 lignes, SHA `599aca3b…21c4`), `section_8.62_delta_scaling.md` (411 lignes, SHA `38674a22…`), `section_8.63_mechanisms.md` (413 lignes, SHA `ec89ccf1…1a7`), fusionnées par le coordinateur : titres normalisés « ### 8.5X », lignes 65–69 au §7 ; une coquille de fusion (« ### 8.8.59 ») a été corrigée avant le PDF, zéro résidu. Livre blanc fusionné : 10 662 lignes, SHA-256 `fe036c92…` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-863`, FIN 20 nov. 2026 14h28 UTC, soit 09h28 heure de Montréal) : **891 pages A4, 12 322 374 octets, SHA-256 `69c3594bb086fb2a…`** (ancien 811 pages, SHA `451a16a7…`) ; couverture §8.1–§8.63 ; §8.59 à §8.63 vérifiés présents par lecture du PDF, chiffres clés présents (37/48 ; ZONE GRISE ; 15,9 % ; LOCO −0,005 ; w = 27). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Matrices DepMap découpées pour la prochaine Release (go de Zackary 20 nov. 08h17) : `CRISPRGeneEffect.csv.gz` en 4 morceaux de 50 Mo, `OmicsCNGene.csv.gz` en 3 morceaux, réassemblage vérifié (SHA `3d8f3ec6…` et `4851d3e9…` retrouvés) — voir `depmap_split/README_depmap_split.md`. Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
+
+- **20 nov. 2026 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `6b2a1fc2`, §8.59–§8.63.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `b3836913` → nouvelle tête `6b2a1fc2` (4 commits, vérifiés en lecture directe : `45df21e9`, `9f2b80fd`, `54e1f39e`, `6b2a1fc2`). Contenu : livre blanc §8.1–§8.63 (10 662 lignes avant journal, SHA `fe036c92…`), PDF 891 pages. Release `v6.2-8.63` : état non vérifié à la fusion §8.64–§8.66 (la lecture directe de la page des Releases n'a pas abouti par lecture texte, HTTP 404) — à créer ou confirmer par le parent. Cette entrée corrige la mention « Poussée GitHub à venir » de l'entrée de fusion §8.59–§8.63 ci-dessus, qui était déjà fausse au moment de son écriture.
+
+- **20 nov. 2026 : FUSION §8.64–§8.66 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 935 PAGES.** Go de Zackary « Oui allez s'y » (20 nov. 2026 09h35, 3 chantiers), puis « Allez s'y » et « reviens-moi quand tu auras fini cela » (12h35–12h38). Sections rédigées dans `section_8.64_maxsep_decision.md` (452 lignes, SHA `6a5a541d…febc`), `section_8.65_estimate_published.md` (482 lignes, SHA `98f4ab7d…a576`), `section_8.66_stomach_mucus_cohort4.md` (521 lignes, SHA `3a606cbd…c108`), fusionnées par le coordinateur : titres normalisés « ### 8.6X », lignes 70–72 au §7 ; entrée de journal ajoutée pour la poussée `6b2a1fc2` du 20 nov. 09h37. Livre blanc fusionné : 12 136 lignes, SHA-256 `8a56ffe3fc50e61c6361a15d808bbdd1cd51ef1a1a8ada6f736f807e9e960354` avant journal. PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-866`, FIN 20 nov. 2026 17h40 UTC, soit 12h40 heure de Montréal) : **935 pages A4, 12 559 085 octets, SHA-256 `686a3ef1f923c4b8cf8b4a1ef2f1e8bbf69892d456a514bc10ab75d615af8542`** (ancien 891 pages, SHA `69c3594b…`) ; couverture §8.1–§8.66 ; §8.64 à §8.66 vérifiés présents par lecture du PDF, chiffres clés présents (37/48 ; 0,2001 ; KRT19 +0,577 ; OR2B6 +0,293). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Correction : la Release `v6.2-8.63` existe bien — créée le 20 nov. 09h40, marquée Latest, 14 actifs vérifiés en lecture directe (PDF 891 p. + tarball TCGA + 7 morceaux DepMap + fichiers de contrôle) — contrairement à la mention « état non vérifié » de l'entrée de poussée `6b2a1fc2` ci-dessus. Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
 
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*

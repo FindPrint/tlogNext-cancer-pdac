@@ -6,11 +6,11 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## État au 20 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 891 pages (PDF partagé séparément),
-  SHA-256 `69c3594bb086fb2aa8c1c5920dac401e1ef807884519d00e529a0af1140e33d6`
-  (12 322 374 octets), sections §8.1–§8.63. Le fichier Markdown ici a pour SHA-256
-  `ba88761dd160afd360dab3c1fc831c3d2a0db54a729bed0f5bf796dc6882eebf`
-  (10 666 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 935 pages (PDF partagé séparément),
+  SHA-256 `686a3ef1f923c4b8cf8b4a1ef2f1e8bbf69892d456a514bc10ab75d615af8542`
+  (12559085 octets), sections §8.1–§8.66. Le fichier Markdown ici a pour SHA-256
+  `f0c8af71e9578a5f21af2369607745e8376c1c7b0b97c2d01202f7e4086c6417`
+  (12138 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -19,6 +19,21 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   `universal_v6.4.0_cohen.py` (recomposition du MC par la
   récurrence-concentration) est joint pour vérification : proposition
   REJETÉE (§8.52), v6.2 reste la version de travail.
+- Les 3 verdicts §8.64–§8.66 : (§8.64) adoption de maxsep —
+  ADOPTER SOUS CONDITION CONFIRMÉ par une troisième lecture indépendante
+  (0 écart contre le §8.59 : 37/48, 6/8, HP35 +1,6512, 120/120 à 0,0
+  exact) ; maxsep devient le score principal affiché, MC reste
+  secondaire, aucune v6.5 créée, v6.2 reste la version de travail.
+  (§8.65) scores ESTIMATE publiés — H1-pub TOTALE SOUTENUE : la table
+  publiée MD Anderson confirme le §8.54 à la décimale près (scores
+  publiés ↔ recalculés r = 0,9999998, cohésion 0,5563 → 0,2001,
+  −64,0 %, jointure 178/178) ; la question ouverte du §8.54 est fermée.
+  (§8.66) bloc estomac/mucus, quatrième cohorte GSE62165 (118 tumeurs)
+  — le cœur du §8.58 est confirmé et deux bords cassent : G5/KRAS
+  CONFIRME 4/4 (KRT19 +0,577, p = 7,7e-12) et G1/KRAS CONFIRME, mais
+  G1/stade NON CONFIRMÉ (sens inverse de TCGA) et G3 NON CONFIRMÉ
+  (OR2B6 MONTE +0,293, premier OR montant en confirmation) ; le
+  pipeline ne sépare pas du nul (MC 4/10, S_sep 5/10).
 - Les 5 verdicts §8.59–§8.63 : (§8.59) maxsep seul — ADOPTER SOUS
   CONDITION (provisoire, pas pleine) : re-confirmé 37/48, 6/8, HP35
   +1,6512 ; le verdict tient à une paire (retirer l'une des 6 paires
@@ -78,22 +93,22 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.63).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.66).
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
 - `README.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier,
   les sources des données, les SHA-256 de chaque fichier du dépôt.
-- `provenance/` — 66 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 70 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 64 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes).
-- `sections/` — sections §8.38–§8.63 du livre blanc, fichiers sources.
-- `scripts/` — 149 scripts de construction des flux, d'extraction et
+- `results/` — 75 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165).
+- `sections/` — sections §8.38–§8.66 du livre blanc, fichiers sources.
+- `scripts/` — 156 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 561 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.63.
+- `data_flux/` — 594 CSV/JSON : flux d'entrée des runs, tests directs,
+  extraits ssep / v62_delta / §8.46–§8.66.
 
 ## Données brutes
 
@@ -104,7 +119,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (891 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (935 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 

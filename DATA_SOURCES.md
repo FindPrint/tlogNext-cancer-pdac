@@ -589,6 +589,35 @@ ce sont des actifs de Release uniquement. Détail et réassemblage :
 
 ---
 
+## 20. Scores ESTIMATE publiés et quatrième cohorte GSE62165 (20 nov. 2026)
+
+- **Table ESTIMATE publiée, TCGA-PAAD RNA-seqV2** (Yoshihara et al. 2013,
+  site MD Anderson ESTIMATE) — URL exacte :
+  `https://bioinformatics.mdanderson.org/estimate/tables/pancreatic_ductal_adenocarcinoma_RNAseqV2.txt`
+  — SHA-256 `46004731c2bc4479931ec19e50e12ce5f1656c890ba09e16a4e166316d59fce1`,
+  6 928 octets, 179 lignes (178 tumeurs + en-tête), colonnes ID,
+  Stromal_score, Immune_score, ESTIMATE_score. Obtenue le 20 nov. 2026
+  en lisant le JS du site (`disease_histogram.js`) et les menus de
+  `disease.html` — la voie qui avait échoué au §8.55 (curl 000) a
+  fonctionné du premier coup. Preuves jointes dans le dépôt :
+  `data_flux/pancreatic_ductal_adenocarcinoma_RNAseqV2.txt`,
+  `data_flux/disease_865.html`, `data_flux/disease_histogram_865.js`.
+  Pas de colonne de pureté ESTIMATE dans cette table : la comparaison
+  ABSOLUTE ↔ pureté ESTIMATE publiée reste impossible. Détail au §8.65.
+- **GSE62165** (NCBI GEO, Janky et coll., VIB Leuven, PMID 27520560 ;
+  plateforme GPL13667, HG-U219) — URL exacte :
+  `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE62nnn/GSE62165/matrix/GSE62165_series_matrix.txt.gz`
+  (HTTP 200) — SHA-256
+  `fd50fc415a31a4d19a4af82e29afc6909e913f4f223d0b4cd4b637ae4a03727f`,
+  51 179 939 octets, **n = 118 tumeurs PDAC** (13 témoins exclus),
+  stades I 8 / II 92 / III 5 / IV 13, valeurs log2 déjà normalisées par
+  les déposants. Chaîne de mapping documentée au §8.66 (sonde → Entrez
+  Gene 2015 via `hgu219.db` 3.2.3, puis → symbole courant via
+  `org.Hs.eg.db` 3.23.1 ; 46 083 sondes → 18 448 symboles). Détail au
+  §8.66 et dans `PROVENANCE_866.md`.
+
+---
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash
