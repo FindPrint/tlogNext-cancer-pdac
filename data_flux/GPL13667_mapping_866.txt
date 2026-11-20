@@ -1,0 +1,10 @@
+Mapping GPL13667 (HG-U219) — §8.66
+hgu219.db_3.2.3.tar.gz SHA256 64847ad0392b2e1f2a79eb24cc90e5359e42c2c8bf265d1ec7d2dd443ee567fb
+org.Hs.eg.db_3.23.1.tar.gz SHA256 470620665cf49d0319422731164f377e3e74253989f1d33a8a1d100cc3d49cfe
+sondes distinctes (table probes) : 49386
+sondes multi-gènes exclues : 2662
+sondes à un seul gène : 46724
+sondes mappées vers un symbole : 46083
+sondes sans symbole (Entrez sans entrée org.Hs.eg) : 641
+symboles distincts : 18448
+Règle : sonde multi-gènes exclue ; agrégation par médiane par symbole.

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESTIMATE: Disease</title>
+  <link rel="home"
+        href="./"
+        title="ESTIMATE Home Page" />
+  <link rel="stylesheet"
+        href="css/site.css" />
+  <link rel="stylesheet"
+        href="css/disease.css" media="screen"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.1.6/d3.min.js"></script>
+  <script src="js/disease_histogram.js"></script>
+  <script src="js/gestalt.js"></script>
+  <script src="js/analytics.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/MDACC_logo_B.png"
+           alt="MDACC logo"
+           width="176"
+           class="ilogo" />
+    </div> 
+    <div class="hbody">
+      <h1 class="project-heading">ESTIMATE</h1>
+      <h3 class="project-heading">
+        Estimation of STromal and Immune cells in MAlignant Tumor tissues using Expression data
+      </h3>
+    </div>
+  </header> 
+  <div class="redline">
+  <ul></ul>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a id="navlink-home" href="index.html">Home</a></li>
+      <li><a id="navlink-disease" href="disease.html">Disease</a></li>
+      <li><a id="navlink-sample" href="sample.html">Sample</a></li>
+      <li><a id="navlink-overview" href="/public-software/estimate/" rel="external">Overview</a></li>
+      <li><a id="navlink-rpackage" href="rpackage.html">R Package</a></li>
+      <li><a id="navlink-contact" href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main class="content" role="main">
+    <h2 class="hIntro">Disease-Centric ESTIMATE Results</h2>
+    <table class="tIntro" align="left">
+      <tr>
+        <td>
+          <label for="disease">Disease Type:</label>
+        </td>
+        <td>
+          <select name="diseaseD" id="disease" >
+            <option value="">Select a disease</option>
+            <option value="adrenocortical carcinoma">Adrenocortical Carcinoma</option>
+            <option value="bladder urothelial carcinoma">Bladder Urothelial Carcinoma</option>
+            <option value="breast cancer">Breast Cancer</option>
+            <option value="cervical carcinoma">Cervical Cancer</option>
+            <option value="colorectal adenocarcinoma">Colorectal Cancer</option>
+            <option value="esophageal carcinoma">Esophageal Carcinoma</option>
+            <option value="glioblastoma multiforme">Glioblastoma Multiforme</option>
+            <option value="head and neck squamous cell carcinoma">Head and Neck Cancer</option>
+            <option value="kidney chromophobe renal cell carcinoma">Kidney Chromophobe Renal Cell Carcinoma</option>
+            <option value="kidney renal clear cell carcinoma">Kidney Renal Clear Cell Carcinoma</option>
+            <option value="kidney renal papillary cell carcinoma">Kidney renal Papillary Cell Carcinoma</option>
+            <option value="acute myeloid leukemia">Acute Myeloid Leukemia</option>
+            <option value="liver hepatocellular carcinoma">Liver Hepatocellular Carcinoma</option>
+            <option value="low grade glioma">Low Grade Glioma</option>
+            <option value="lung adenocarcinoma">Lung Adenocarcinoma</option>
+            <option value="lung squamous cell carcinoma">Lung Squamous Cell Carcinoma</option>
+            <option value="ovarian serous cystadenocarcinoma">Ovarian Cancer</option>
+            <option value="pancreatic ductal adenocarcinoma">Pancreatic Ductal Adenocarcinoma</option>
+            <option value="paraganglioma and pheochromocytoma">Paraganglioma and Pheochromocytoma</option>
+            <option value="prostate adenocarcinoma">Prostate Adenocarcinoma</option>
+            <option value="skin cutaneous melanoma">Skin Cutaneous Melanoma</option>
+            <option value="stomach adenocarcinoma">Stomach Adenocarcinoma</option>
+            <option value="thyroid papillary carcinoma">Thyroid Papillary Carcinoma</option>
+            <option value="uterine corpus endometrial carcinoma">Uterine Corpus Endometrial Carcinoma</option>
+            <option value="uterine carcinosarcoma">Uterine Carcinosarcoma</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>  
+          <label for="platform">Platform Type:</label>
+        </td>
+        <td>  
+          <select name="platformD" id="platform">
+            <option value="">Select a platform</option>
+            <option value="Agilent">Agilent G4502A</option>
+            <option value="Affymetrix">Affymetrix HT_HG-U133A</option>
+            <option value="RNAseq">RNA-Seq</option>
+            <option value="RNAseqV2">RNA-Seq-V2</option>
+          </select>
+        </td>
+      </tr> 
+      <tr>
+        <td>
+          <button id="displayButton">View</button>
+        </td>
+        <td>
+          <button id="startDownload">Download</button>
+        </td>
+      </tr>
+    </table>
+    <div id="plot" class="plot"></div>
+    <div id="viz" class="table"></div>
+    <script>
+      var query = window.location.search;
+      // Skip the leading ?, which should always be there, 
+      // but be careful anyway
+      if (query.substring(0, 1) == '?') {
+        query = query.substring(1);
+      }
+      var data = query.split('_');
+      for (var i = 0, len = data.length; i < len; i++) {
+        data[i] = unescape(data[i]);
+      }
+      if (data.length > 1) {
+        document.getElementById('disease').value = data[0];
+        document.getElementById('platform').value = data[1];  
+        Display();  
+      } 
+    </script>
+  </main>
+
+  <footer>
+    <p class="dontsueus">
+      This website is for educational and research purposes only.
+    </p>
+  </footer>
+</body>
+</html>
+
