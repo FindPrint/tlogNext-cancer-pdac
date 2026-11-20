@@ -1,0 +1,4 @@
+LEUKO867_LRES|/home/hatch/workspace/runs/pdac-v6/leukocyte867_lres.csv|results_fast_v62_leuko867_lres
+LEUKO867_LRES_NUL|/home/hatch/workspace/runs/pdac-v6/leukocyte867_lres_nul.csv|results_fast_v62_leuko867_lres_nul
+LEUKO867_LORD|/home/hatch/workspace/runs/pdac-v6/leukocyte867_lord.csv|results_fast_v62_leuko867_lord
+LEUKO867_LORD_NUL|/home/hatch/workspace/runs/pdac-v6/leukocyte867_lord_nul.csv|results_fast_v62_leuko867_lord_nul

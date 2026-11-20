@@ -1,0 +1,4 @@
+# Manifeste §8.69 confirmation independante maxsep (C3) — cohorte #3 GSE21501, v6.2 fast.
+# Protocole gele : PROTOCOL_maxsep_independent_869.md (+ addendum cohorte #3) ; construction build_fluxes_869.py --cohort 21501.
+869_geo21501_reel|pdac_869_geo21501_fluxes.csv|results_fast_v62_869_geo21501
+869_geo21501_nul|pdac_869_geo21501_fluxes_nul.csv|results_fast_v62_869_geo21501_nul
