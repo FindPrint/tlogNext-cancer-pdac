@@ -628,6 +628,12 @@ ce sont des actifs de Release uniquement. Détail et réassemblage :
 
 ---
 
+## 22. Confirmation indépendante GSE79668 (20 nov. 2026)
+
+- **GSE79668** (NCBI GEO, Kirby et coll. 2016, *Molecular Oncology* 10(8):1169–1182, PMID 27282075 ; plateforme Illumina HiSeq 2000 GPL11154 ; cohorte monocentrique UAB, Birmingham, AL, USA) — URL exacte de la matrice : `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE79nnn/GSE79668/matrix/GSE79668_series_matrix.txt.gz` (HTTP 200, 20 nov. 2026) — SHA-256 `b2226fd096f27a9e5caf32cca3491d1f1e52082ce6e9876b2b1c1f67d88e4754`, 3 724 octets, 80 lignes décompressées, **0 ligne de données** : la table de la matrice ne contient que l'en-tête. Les valeurs sont dans le fichier supplémentaire de la série elle-même, nommé dans l'en-tête (`!Series_supplementary_file`) : `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE79nnn/GSE79668/suppl/GSE79668_51_tumors_sharedgenecounts.txt.gz` (HTTP 200, 20 nov. 2026) — SHA-256 `721cd3a0d1155375ea054f410f65497568284135f32ad59157d62a564cba54f8`, 3 588 753 octets, 48 957 lignes décompressées (48 956 gènes x 51 échantillons, 0 NaN), **comptages bruts de transcrits** (entiers, min 0 / médiane 17 / max 17 823 551), GENCODE v.9, d'après `!Sample_data_processing`. Aucun mapping GPL11154 construit (non nécessaire — identifiants de lignes de la forme `SYMBOLE_ENSG...`, symbole = préfixe avant `_ENSG`, extraction mécanique 48 956/48 956 ; doublons agrégés par médiane, les 13 gènes utiles ont chacun exactement 1 ligne). 12/12 gènes v4 présents, 51/51 cas complets, 7/7 portes §5 OK. Flux : `data_flux/pdac_870_geo79668_fluxes.csv` (51 lignes, SHA `7744bc5a…6107a`), nul graine 42 SHA `50ae9a36…423e3`, nuls frais s8701 SHA `6fffd4fa…baee`, s8702 SHA `69c95e26…08b3`. Détail au §8.70 et dans `PROVENANCE_870.md`.
+
+---
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash
