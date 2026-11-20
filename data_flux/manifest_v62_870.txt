@@ -1,0 +1,6 @@
+# Manifeste §8.70 confirmation independante maxsep (C3) — GSE79668, v6.2 fast.
+# Protocole gele : PROTOCOL_maxsep_gse79668_870.md ; construction build_fluxes_870.py.
+870_geo79668_reel|pdac_870_geo79668_fluxes.csv|results_fast_v62_870_geo79668
+870_geo79668_nul|pdac_870_geo79668_fluxes_nul.csv|results_fast_v62_870_geo79668_nul
+870_geo79668_nul_s8701|pdac_870_geo79668_fluxes_nul_s8701.csv|results_fast_v62_870_geo79668_nul_s8701
+870_geo79668_nul_s8702|pdac_870_geo79668_fluxes_nul_s8702.csv|results_fast_v62_870_geo79668_nul_s8702
