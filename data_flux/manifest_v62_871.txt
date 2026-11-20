@@ -1,0 +1,4 @@
+# Manifeste §8.71 confirmation independante maxsep (C3) — GSE60979, v6.2 fast.
+# Protocole gele : PROTOCOL_maxsep_cohort_871.md ; construction build_fluxes_871.py.
+871_geo60979_reel|pdac_871_geo60979_fluxes.csv|results_fast_v62_871_geo60979
+871_geo60979_nul|pdac_871_geo60979_fluxes_nul.csv|results_fast_v62_871_geo60979_nul
