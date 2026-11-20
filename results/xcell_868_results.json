@@ -1,0 +1,3373 @@
+{
+  "n_eff": 178,
+  "n_matched": 178,
+  "n_missing": [],
+  "types": [
+    "aDC",
+    "Adipocytes",
+    "Astrocytes",
+    "B-cells",
+    "Basophils",
+    "CD4+ memory T-cells",
+    "CD4+ naive T-cells",
+    "CD4+ T-cells",
+    "CD4+ Tcm",
+    "CD4+ Tem",
+    "CD8+ naive T-cells",
+    "CD8+ T-cells",
+    "CD8+ Tcm",
+    "CD8+ Tem",
+    "cDC",
+    "Chondrocytes",
+    "Class-switched memory B-cells",
+    "CLP",
+    "CMP",
+    "DC",
+    "Endothelial cells",
+    "Eosinophils",
+    "Epithelial cells",
+    "Erythrocytes",
+    "Fibroblasts",
+    "GMP",
+    "Hepatocytes",
+    "HSC",
+    "iDC",
+    "Keratinocytes",
+    "ly Endothelial cells",
+    "Macrophages",
+    "Macrophages M1",
+    "Macrophages M2",
+    "Mast cells",
+    "Megakaryocytes",
+    "Melanocytes",
+    "Memory B-cells",
+    "MEP",
+    "Mesangial cells",
+    "Monocytes",
+    "MPP",
+    "MSC",
+    "mv Endothelial cells",
+    "Myocytes",
+    "naive B-cells",
+    "Neurons",
+    "Neutrophils",
+    "NK cells",
+    "NKT",
+    "Osteoblast",
+    "pDC",
+    "Pericytes",
+    "Plasma cells",
+    "Platelets",
+    "Preadipocytes",
+    "pro B-cells",
+    "Sebocytes",
+    "Skeletal muscle",
+    "Smooth muscle",
+    "Tgd cells",
+    "Th1 cells",
+    "Th2 cells",
+    "Tregs"
+  ],
+  "groups": {
+    "aDC": "Immune",
+    "Adipocytes": "Non-Hematopoietic",
+    "Astrocytes": "Non-Hematopoietic",
+    "B-cells": "Immune",
+    "Basophils": "Immune",
+    "CD4+ memory T-cells": "Immune",
+    "CD4+ naive T-cells": "Immune",
+    "CD4+ T-cells": "Immune",
+    "CD4+ Tcm": "Immune",
+    "CD4+ Tem": "Immune",
+    "CD8+ naive T-cells": "Immune",
+    "CD8+ T-cells": "Immune",
+    "CD8+ Tcm": "Immune",
+    "CD8+ Tem": "Immune",
+    "cDC": "Immune",
+    "Chondrocytes": "Non-Hematopoietic",
+    "Class-switched memory B-cells": "Immune",
+    "CLP": "HSC",
+    "CMP": "HSC",
+    "DC": "Immune",
+    "Endothelial cells": "Non-Hematopoietic",
+    "Eosinophils": "Immune",
+    "Epithelial cells": "Non-Hematopoietic",
+    "Erythrocytes": "HSC",
+    "Fibroblasts": "Non-Hematopoietic",
+    "GMP": "HSC",
+    "Hepatocytes": "Non-Hematopoietic",
+    "HSC": "HSC",
+    "iDC": "Immune",
+    "Keratinocytes": "Non-Hematopoietic",
+    "ly Endothelial cells": "Non-Hematopoietic",
+    "Macrophages": "Immune",
+    "Macrophages M1": "Immune",
+    "Macrophages M2": "Immune",
+    "Mast cells": "Immune",
+    "Megakaryocytes": "HSC",
+    "Melanocytes": "Non-Hematopoietic",
+    "Memory B-cells": "Immune",
+    "MEP": "HSC",
+    "Mesangial cells": "Non-Hematopoietic",
+    "Monocytes": "Immune",
+    "MPP": "HSC",
+    "MSC": "Non-Hematopoietic",
+    "mv Endothelial cells": "Non-Hematopoietic",
+    "Myocytes": "Non-Hematopoietic",
+    "naive B-cells": "Immune",
+    "Neurons": "Non-Hematopoietic",
+    "Neutrophils": "Immune",
+    "NK cells": "Immune",
+    "NKT": "Immune",
+    "Osteoblast": "Non-Hematopoietic",
+    "pDC": "Immune",
+    "Pericytes": "Non-Hematopoietic",
+    "Plasma cells": "Immune",
+    "Platelets": "HSC",
+    "Preadipocytes": "Non-Hematopoietic",
+    "pro B-cells": "Immune",
+    "Sebocytes": "Non-Hematopoietic",
+    "Skeletal muscle": "Non-Hematopoietic",
+    "Smooth muscle": "Non-Hematopoietic",
+    "Tgd cells": "Immune",
+    "Th1 cells": "Immune",
+    "Th2 cells": "Immune",
+    "Tregs": "Immune"
+  },
+  "stromal_types": [
+    "Adipocytes",
+    "Astrocytes",
+    "Chondrocytes",
+    "Endothelial cells",
+    "Epithelial cells",
+    "Fibroblasts",
+    "Hepatocytes",
+    "Keratinocytes",
+    "MSC",
+    "Melanocytes",
+    "Mesangial cells",
+    "Myocytes",
+    "Neurons",
+    "Osteoblast",
+    "Pericytes",
+    "Preadipocytes",
+    "Sebocytes",
+    "Skeletal muscle",
+    "Smooth muscle",
+    "ly Endothelial cells",
+    "mv Endothelial cells"
+  ],
+  "top1": "aDC",
+  "top2": "DC",
+  "top3": "Macrophages M1",
+  "top_strom": "Osteoblast",
+  "top_strom_mean_abs_r": 0.48226404098487624,
+  "top_strom_rank": 6,
+  "verif": {
+    "xCell CD8+ T-cells vs CIBERSORT T.Cells.CD8 (§8.60)": {
+      "r": 0.4404686340851102,
+      "p": 1.5167977772852366e-08,
+      "n": 151
+    },
+    "xCell CD8+ T-cells vs flux CD8A": {
+      "r": 0.5851475050451053,
+      "p": 9.716555588148671e-18,
+      "n": 178
+    },
+    "xCell CD8+ T-cells vs ImmuneScore (§8.54)": {
+      "r": 0.44995248297817175,
+      "p": 2.955390733321589e-10,
+      "n": 178
+    },
+    "xCell B-cells vs flux CD19": {
+      "r": 0.6767956164969098,
+      "p": 3.4159948559986343e-25,
+      "n": 178
+    },
+    "xCell Macrophages vs flux CD68": {
+      "r": 0.716948007432077,
+      "p": 2.2062644501507775e-29,
+      "n": 178
+    }
+  },
+  "circularity": {
+    "aDC": {
+      "n_genes_signature": 181,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Adipocytes": {
+      "n_genes_signature": 21,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Astrocytes": {
+      "n_genes_signature": 219,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "B-cells": {
+      "n_genes_signature": 135,
+      "flux_dans_signature": [
+        "CD19"
+      ],
+      "n_flux": 1
+    },
+    "Basophils": {
+      "n_genes_signature": 260,
+      "flux_dans_signature": [
+        "GZMB"
+      ],
+      "n_flux": 1
+    },
+    "CD4+ memory T-cells": {
+      "n_genes_signature": 232,
+      "flux_dans_signature": [
+        "CTLA4",
+        "PDCD1"
+      ],
+      "n_flux": 2
+    },
+    "CD4+ naive T-cells": {
+      "n_genes_signature": 152,
+      "flux_dans_signature": [
+        "CD4",
+        "CTLA4"
+      ],
+      "n_flux": 2
+    },
+    "CD4+ T-cells": {
+      "n_genes_signature": 158,
+      "flux_dans_signature": [
+        "CD4",
+        "CTLA4",
+        "FOXP3"
+      ],
+      "n_flux": 3
+    },
+    "CD4+ Tcm": {
+      "n_genes_signature": 163,
+      "flux_dans_signature": [
+        "CD4",
+        "CTLA4"
+      ],
+      "n_flux": 2
+    },
+    "CD4+ Tem": {
+      "n_genes_signature": 180,
+      "flux_dans_signature": [
+        "CD4",
+        "CTLA4",
+        "PDCD1"
+      ],
+      "n_flux": 3
+    },
+    "CD8+ naive T-cells": {
+      "n_genes_signature": 65,
+      "flux_dans_signature": [
+        "CD8A",
+        "CD8B"
+      ],
+      "n_flux": 2
+    },
+    "CD8+ T-cells": {
+      "n_genes_signature": 116,
+      "flux_dans_signature": [
+        "CD8A",
+        "CD8B"
+      ],
+      "n_flux": 2
+    },
+    "CD8+ Tcm": {
+      "n_genes_signature": 94,
+      "flux_dans_signature": [
+        "CD8A",
+        "CD8B",
+        "PDCD1"
+      ],
+      "n_flux": 3
+    },
+    "CD8+ Tem": {
+      "n_genes_signature": 308,
+      "flux_dans_signature": [
+        "CD8A",
+        "CD8B",
+        "GZMB",
+        "IFNG",
+        "PDCD1"
+      ],
+      "n_flux": 5
+    },
+    "cDC": {
+      "n_genes_signature": 38,
+      "flux_dans_signature": [
+        "CD163"
+      ],
+      "n_flux": 1
+    },
+    "Chondrocytes": {
+      "n_genes_signature": 224,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Class-switched memory B-cells": {
+      "n_genes_signature": 42,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "CLP": {
+      "n_genes_signature": 31,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "CMP": {
+      "n_genes_signature": 257,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "DC": {
+      "n_genes_signature": 94,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Endothelial cells": {
+      "n_genes_signature": 174,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Eosinophils": {
+      "n_genes_signature": 89,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Epithelial cells": {
+      "n_genes_signature": 131,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Erythrocytes": {
+      "n_genes_signature": 123,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Fibroblasts": {
+      "n_genes_signature": 253,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "GMP": {
+      "n_genes_signature": 222,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Hepatocytes": {
+      "n_genes_signature": 322,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "HSC": {
+      "n_genes_signature": 40,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "iDC": {
+      "n_genes_signature": 14,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Keratinocytes": {
+      "n_genes_signature": 121,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "ly Endothelial cells": {
+      "n_genes_signature": 45,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Macrophages": {
+      "n_genes_signature": 258,
+      "flux_dans_signature": [
+        "CD163"
+      ],
+      "n_flux": 1
+    },
+    "Macrophages M1": {
+      "n_genes_signature": 188,
+      "flux_dans_signature": [
+        "CD163"
+      ],
+      "n_flux": 1
+    },
+    "Macrophages M2": {
+      "n_genes_signature": 159,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Mast cells": {
+      "n_genes_signature": 125,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Megakaryocytes": {
+      "n_genes_signature": 17,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Melanocytes": {
+      "n_genes_signature": 212,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Memory B-cells": {
+      "n_genes_signature": 162,
+      "flux_dans_signature": [
+        "CD19"
+      ],
+      "n_flux": 1
+    },
+    "MEP": {
+      "n_genes_signature": 105,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Mesangial cells": {
+      "n_genes_signature": 244,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Monocytes": {
+      "n_genes_signature": 303,
+      "flux_dans_signature": [
+        "CD163",
+        "CD4"
+      ],
+      "n_flux": 2
+    },
+    "MPP": {
+      "n_genes_signature": 182,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "MSC": {
+      "n_genes_signature": 105,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "mv Endothelial cells": {
+      "n_genes_signature": 358,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Myocytes": {
+      "n_genes_signature": 214,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "naive B-cells": {
+      "n_genes_signature": 97,
+      "flux_dans_signature": [
+        "CD19"
+      ],
+      "n_flux": 1
+    },
+    "Neurons": {
+      "n_genes_signature": 365,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Neutrophils": {
+      "n_genes_signature": 80,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "NK cells": {
+      "n_genes_signature": 100,
+      "flux_dans_signature": [
+        "GZMB",
+        "IFNG"
+      ],
+      "n_flux": 2
+    },
+    "NKT": {
+      "n_genes_signature": 18,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Osteoblast": {
+      "n_genes_signature": 122,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "pDC": {
+      "n_genes_signature": 38,
+      "flux_dans_signature": [
+        "GZMB"
+      ],
+      "n_flux": 1
+    },
+    "Pericytes": {
+      "n_genes_signature": 156,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Plasma cells": {
+      "n_genes_signature": 270,
+      "flux_dans_signature": [
+        "CD19"
+      ],
+      "n_flux": 1
+    },
+    "Platelets": {
+      "n_genes_signature": 173,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Preadipocytes": {
+      "n_genes_signature": 175,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "pro B-cells": {
+      "n_genes_signature": 239,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Sebocytes": {
+      "n_genes_signature": 35,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Skeletal muscle": {
+      "n_genes_signature": 100,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Smooth muscle": {
+      "n_genes_signature": 307,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Tgd cells": {
+      "n_genes_signature": 217,
+      "flux_dans_signature": [
+        "CTLA4",
+        "GZMB",
+        "IFNG"
+      ],
+      "n_flux": 3
+    },
+    "Th1 cells": {
+      "n_genes_signature": 36,
+      "flux_dans_signature": [
+        "IFNG"
+      ],
+      "n_flux": 1
+    },
+    "Th2 cells": {
+      "n_genes_signature": 22,
+      "flux_dans_signature": [],
+      "n_flux": 0
+    },
+    "Tregs": {
+      "n_genes_signature": 39,
+      "flux_dans_signature": [
+        "CTLA4",
+        "FOXP3"
+      ],
+      "n_flux": 2
+    }
+  },
+  "desc": {
+    "aDC": {
+      "ImmuneScore": 0.8038346879158429,
+      "ABSOLUTE": -0.5345554212245914
+    },
+    "Adipocytes": {
+      "ImmuneScore": 0.3973713344248302,
+      "ABSOLUTE": -0.379567793164466
+    },
+    "Astrocytes": {
+      "ImmuneScore": 0.3430031994634046,
+      "ABSOLUTE": -0.2615657787321258
+    },
+    "B-cells": {
+      "ImmuneScore": 0.6067341910447215,
+      "ABSOLUTE": -0.3184775712359127
+    },
+    "Basophils": {
+      "ImmuneScore": -0.27365950289427454,
+      "ABSOLUTE": -0.00999489101731216
+    },
+    "CD4+ memory T-cells": {
+      "ImmuneScore": 0.6678210493056664,
+      "ABSOLUTE": -0.3011042339684506
+    },
+    "CD4+ naive T-cells": {
+      "ImmuneScore": 0.6989802764188218,
+      "ABSOLUTE": -0.40370932538296056
+    },
+    "CD4+ T-cells": {
+      "ImmuneScore": 0.37714961466043895,
+      "ABSOLUTE": -0.18026231816513477
+    },
+    "CD4+ Tcm": {
+      "ImmuneScore": -0.43932162046675244,
+      "ABSOLUTE": 0.4330700542083372
+    },
+    "CD4+ Tem": {
+      "ImmuneScore": -0.38886007020711105,
+      "ABSOLUTE": 0.6352232590874981
+    },
+    "CD8+ naive T-cells": {
+      "ImmuneScore": 0.2531944344186341,
+      "ABSOLUTE": 0.05034574390676256
+    },
+    "CD8+ T-cells": {
+      "ImmuneScore": 0.44995248297817175,
+      "ABSOLUTE": -0.3702915453652131
+    },
+    "CD8+ Tcm": {
+      "ImmuneScore": 0.6672778956363824,
+      "ABSOLUTE": -0.3802021163034676
+    },
+    "CD8+ Tem": {
+      "ImmuneScore": 0.483117338025141,
+      "ABSOLUTE": -0.21667908604555652
+    },
+    "cDC": {
+      "ImmuneScore": 0.5237593622317852,
+      "ABSOLUTE": -0.4238166155165875
+    },
+    "Chondrocytes": {
+      "ImmuneScore": 0.5173600511759724,
+      "ABSOLUTE": -0.4856615154235434
+    },
+    "Class-switched memory B-cells": {
+      "ImmuneScore": 0.5020339713531798,
+      "ABSOLUTE": -0.32004401813902444
+    },
+    "CLP": {
+      "ImmuneScore": -0.3044612969383783,
+      "ABSOLUTE": 0.36775606358691226
+    },
+    "CMP": {
+      "ImmuneScore": -0.09377227472777538,
+      "ABSOLUTE": -0.14047443580231656
+    },
+    "DC": {
+      "ImmuneScore": 0.8111988767401508,
+      "ABSOLUTE": -0.53418357435438
+    },
+    "Endothelial cells": {
+      "ImmuneScore": 0.4985215824855197,
+      "ABSOLUTE": -0.6252109922298632
+    },
+    "Eosinophils": {
+      "ImmuneScore": -0.020362456106884422,
+      "ABSOLUTE": 0.03668549072161255
+    },
+    "Epithelial cells": {
+      "ImmuneScore": -0.18497115276672407,
+      "ABSOLUTE": 0.6122129167253869
+    },
+    "Erythrocytes": {
+      "ImmuneScore": 0.02274219961492261,
+      "ABSOLUTE": -0.08678502317835694
+    },
+    "Fibroblasts": {
+      "ImmuneScore": 0.5049982706458308,
+      "ABSOLUTE": -0.4729887847599042
+    },
+    "GMP": {
+      "ImmuneScore": 0.1888860658303419,
+      "ABSOLUTE": -0.23597352296944682
+    },
+    "Hepatocytes": {
+      "ImmuneScore": -0.04917139095988503,
+      "ABSOLUTE": -0.2600520563574683
+    },
+    "HSC": {
+      "ImmuneScore": 0.5099518744888193,
+      "ABSOLUTE": -0.616554691608216
+    },
+    "iDC": {
+      "ImmuneScore": 0.5128910541837685,
+      "ABSOLUTE": -0.26275377720593224
+    },
+    "Keratinocytes": {
+      "ImmuneScore": -0.1879674225566565,
+      "ABSOLUTE": 0.44570927900671664
+    },
+    "ly Endothelial cells": {
+      "ImmuneScore": 0.4505366450661215,
+      "ABSOLUTE": -0.5542904563810954
+    },
+    "Macrophages": {
+      "ImmuneScore": 0.6571932922306984,
+      "ABSOLUTE": -0.37590064921885363
+    },
+    "Macrophages M1": {
+      "ImmuneScore": 0.6702075528843368,
+      "ABSOLUTE": -0.4238852987378683
+    },
+    "Macrophages M2": {
+      "ImmuneScore": 0.3448766444339608,
+      "ABSOLUTE": -0.2725515341533287
+    },
+    "Mast cells": {
+      "ImmuneScore": 0.40705313026933915,
+      "ABSOLUTE": -0.2676663406178369
+    },
+    "Megakaryocytes": {
+      "ImmuneScore": 0.47600839212937635,
+      "ABSOLUTE": -0.28721768519271124
+    },
+    "Melanocytes": {
+      "ImmuneScore": 0.35261866185880203,
+      "ABSOLUTE": -0.5036105345987247
+    },
+    "Memory B-cells": {
+      "ImmuneScore": 0.5372347791276573,
+      "ABSOLUTE": -0.2730452955807474
+    },
+    "MEP": {
+      "ImmuneScore": -0.3349866420145863,
+      "ABSOLUTE": 0.21858418570331464
+    },
+    "Mesangial cells": {
+      "ImmuneScore": 0.3440815271945441,
+      "ABSOLUTE": -0.2143266447689131
+    },
+    "Monocytes": {
+      "ImmuneScore": 0.6275418347465201,
+      "ABSOLUTE": -0.34364600989251537
+    },
+    "MPP": {
+      "ImmuneScore": 0.008133263877418343,
+      "ABSOLUTE": -0.009580363472620673
+    },
+    "MSC": {
+      "ImmuneScore": 0.10571020133678971,
+      "ABSOLUTE": -0.13289477307471517
+    },
+    "mv Endothelial cells": {
+      "ImmuneScore": 0.4024155568115068,
+      "ABSOLUTE": -0.506356189219857
+    },
+    "Myocytes": {
+      "ImmuneScore": 0.00961962800672761,
+      "ABSOLUTE": -0.07043379962201786
+    },
+    "naive B-cells": {
+      "ImmuneScore": 0.5521596713173428,
+      "ABSOLUTE": -0.2728971632012857
+    },
+    "Neurons": {
+      "ImmuneScore": -0.32455484137948887,
+      "ABSOLUTE": -0.37596153466307364
+    },
+    "Neutrophils": {
+      "ImmuneScore": 0.22415758982549444,
+      "ABSOLUTE": -0.1676421316915018
+    },
+    "NK cells": {
+      "ImmuneScore": 0.11988677140678344,
+      "ABSOLUTE": 0.20957593228591073
+    },
+    "NKT": {
+      "ImmuneScore": -0.30358883839663625,
+      "ABSOLUTE": 0.39038416675988535
+    },
+    "Osteoblast": {
+      "ImmuneScore": -0.6387207798606197,
+      "ABSOLUTE": 0.3162758530848302
+    },
+    "pDC": {
+      "ImmuneScore": 0.5422293962323096,
+      "ABSOLUTE": -0.30443230744378497
+    },
+    "Pericytes": {
+      "ImmuneScore": 0.22392954791774,
+      "ABSOLUTE": -0.18131246605135223
+    },
+    "Plasma cells": {
+      "ImmuneScore": -0.3316168537314192,
+      "ABSOLUTE": 0.18200400842475503
+    },
+    "Platelets": {
+      "ImmuneScore": -0.11563820389833852,
+      "ABSOLUTE": 0.16005794298071957
+    },
+    "Preadipocytes": {
+      "ImmuneScore": 0.3461092921800764,
+      "ABSOLUTE": -0.2697352955803261
+    },
+    "pro B-cells": {
+      "ImmuneScore": 0.3992475691696658,
+      "ABSOLUTE": -0.1662819575945431
+    },
+    "Sebocytes": {
+      "ImmuneScore": -0.18745696621029648,
+      "ABSOLUTE": 0.449400056392989
+    },
+    "Skeletal muscle": {
+      "ImmuneScore": 0.3522509084608665,
+      "ABSOLUTE": -0.23250421992052298
+    },
+    "Smooth muscle": {
+      "ImmuneScore": -0.5355564316392437,
+      "ABSOLUTE": 0.35148918912756494
+    },
+    "Tgd cells": {
+      "ImmuneScore": -0.2564943268491706,
+      "ABSOLUTE": 0.1551092646088445
+    },
+    "Th1 cells": {
+      "ImmuneScore": -0.47940610840215714,
+      "ABSOLUTE": 0.4621403972405434
+    },
+    "Th2 cells": {
+      "ImmuneScore": -0.13302294410617724,
+      "ABSOLUTE": 0.15131281229387514
+    },
+    "Tregs": {
+      "ImmuneScore": 0.07845381827170997,
+      "ABSOLUTE": -0.11374323374978736
+    }
+  },
+  "t1": [
+    {
+      "type": "aDC",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.6101917014515643,
+      "mean_abs_rho": 0.6096051073109975,
+      "median_abs_r": 0.6174864610450659,
+      "median_R2": 0.38130362785990757,
+      "max_R2": 0.5587766217963919,
+      "r_par_flux": {
+        "CD8A": 0.6986960213234927,
+        "CD8B": 0.6212412294730594,
+        "CD4": 0.7475136264954585,
+        "FOXP3": 0.6759112039718257,
+        "CD68": 0.44934282042950635,
+        "CD163": 0.5898605811038573,
+        "CD274": 0.3685211685637706,
+        "PDCD1": 0.7176583054535906,
+        "CTLA4": 0.743486832989862,
+        "GZMB": 0.6137316926170724,
+        "IFNG": 0.4906579098306282,
+        "CD19": 0.6056790251666487
+      },
+      "p_par_flux": {
+        "CD8A": 2.1595529073308634e-27,
+        "CD8B": 2.2080882406075927e-20,
+        "CD4": 4.2952768034413966e-33,
+        "FOXP3": 4.152835666349683e-25,
+        "CD68": 3.143676232416803e-10,
+        "CD163": 4.580646375437696e-18,
+        "CD274": 4.163559379626641e-07,
+        "PDCD1": 1.8323925330584256e-29,
+        "CTLA4": 1.4185173825450483e-32,
+        "GZMB": 8.356703032403055e-20,
+        "IFNG": 3.5851620293147453e-12,
+        "CD19": 3.349403977277609e-19
+      }
+    },
+    {
+      "type": "DC",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.5796035444306284,
+      "mean_abs_rho": 0.6429522281596737,
+      "median_abs_r": 0.576663439918689,
+      "median_R2": 0.33269589377403097,
+      "max_R2": 0.585986198559399,
+      "r_par_flux": {
+        "CD8A": 0.6173123710302716,
+        "CD8B": 0.5642066813043647,
+        "CD4": 0.765497353724622,
+        "FOXP3": 0.7398364988646269,
+        "CD68": 0.517979837335147,
+        "CD163": 0.6313553929024088,
+        "CD274": 0.4497826723151468,
+        "PDCD1": 0.5891201985330133,
+        "CTLA4": 0.6886909688077429,
+        "GZMB": 0.5395126355672378,
+        "IFNG": 0.3340033992352141,
+        "CD19": 0.5179445235477457
+      },
+      "p_par_flux": {
+        "CD8A": 4.449977645997603e-20,
+        "CD8B": 2.3802611467822127e-16,
+        "CD4": 1.5496012099234933e-35,
+        "FOXP3": 4.1101621657590347e-32,
+        "CD68": 1.315167686573483e-13,
+        "CD163": 3.471003509690731e-21,
+        "CD274": 3.0067081408226784e-10,
+        "PDCD1": 5.159198861703774e-18,
+        "CTLA4": 2.3076276493309703e-26,
+        "GZMB": 7.828834873236123e-15,
+        "IFNG": 5.206178963420535e-06,
+        "CD19": 1.3210531919654117e-13
+      }
+    },
+    {
+      "type": "Macrophages M1",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.509033502674724,
+      "mean_abs_rho": 0.4964549871501029,
+      "median_abs_r": 0.5066886131499801,
+      "median_R2": 0.256766940889975,
+      "max_R2": 0.49950453353004476,
+      "r_par_flux": {
+        "CD8A": 0.45052873785091746,
+        "CD8B": 0.4230355774057722,
+        "CD4": 0.6952264213224592,
+        "FOXP3": 0.5229797948069603,
+        "CD68": 0.6840856073910722,
+        "CD163": 0.7067563466499928,
+        "CD274": 0.3551029468935375,
+        "PDCD1": 0.5124843179496313,
+        "CTLA4": 0.5376032545279902,
+        "GZMB": 0.500892908350329,
+        "IFNG": 0.46533873159124844,
+        "CD19": 0.254367387356778
+      },
+      "p_par_flux": {
+        "CD8A": 2.7874884467575277e-10,
+        "CD8B": 4.0339839529530445e-09,
+        "CD4": 4.964922347157505e-27,
+        "FOXP3": 6.952560957578561e-14,
+        "CD68": 6.650889200063655e-26,
+        "CD163": 2.9791920530686192e-28,
+        "CD274": 1.151862982005452e-06,
+        "PDCD1": 2.618653333394775e-13,
+        "CTLA4": 1.0136597008637096e-14,
+        "GZMB": 1.0755731592801593e-12,
+        "IFNG": 5.968274619291327e-11,
+        "CD19": 0.0006118457166863152
+      }
+    },
+    {
+      "type": "Macrophages",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.4923189809008282,
+      "mean_abs_rho": 0.5095550103034804,
+      "median_abs_r": 0.4628527705675981,
+      "median_R2": 0.2143157081893999,
+      "max_R2": 0.5140144453608255,
+      "r_par_flux": {
+        "CD8A": 0.4282668171331644,
+        "CD8B": 0.3993462069267455,
+        "CD4": 0.6978914384339922,
+        "FOXP3": 0.5369814150746417,
+        "CD68": 0.716948007432077,
+        "CD163": 0.6953426609611549,
+        "CD274": 0.40655266546175395,
+        "PDCD1": 0.41687020779927314,
+        "CTLA4": 0.4888245243522009,
+        "GZMB": 0.453741186331129,
+        "IFNG": 0.4719643548040673,
+        "CD19": 0.19509828609973867
+      },
+      "p_par_flux": {
+        "CD8A": 2.4707698254649773e-09,
+        "CD8B": 3.3537630265383205e-08,
+        "CD4": 2.6221986851530216e-27,
+        "FOXP3": 1.1022467208482392e-14,
+        "CD68": 2.2062644501507775e-29,
+        "CD163": 4.829286746532068e-27,
+        "CD274": 1.7916430972029647e-08,
+        "PDCD1": 7.112676267131299e-09,
+        "CTLA4": 4.42944828696371e-12,
+        "GZMB": 2.007860044458181e-10,
+        "IFNG": 2.923132301040875e-11,
+        "CD19": 0.009061518354076632
+      }
+    },
+    {
+      "type": "CD8+ Tcm",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.49174280994417924,
+      "mean_abs_rho": 0.5152310132422414,
+      "median_abs_r": 0.564576729508662,
+      "median_R2": 0.31876734843527377,
+      "max_R2": 0.4213882477051486,
+      "r_par_flux": {
+        "CD8A": 0.6491442426034052,
+        "CD8B": 0.5774962254058638,
+        "CD4": 0.4895811661120331,
+        "FOXP3": 0.5699231120719299,
+        "CD68": 0.20994028399660497,
+        "CD163": 0.3408274610899216,
+        "CD274": 0.3484981061632559,
+        "PDCD1": 0.585849110387674,
+        "CTLA4": 0.5600529111461638,
+        "GZMB": 0.5691005478711602,
+        "IFNG": 0.4178591081269757,
+        "CD19": 0.5826414443551624
+      },
+      "p_par_flux": {
+        "CD8A": 1.1298348733618506e-22,
+        "CD8B": 3.2105176479613206e-17,
+        "CD4": 4.059877106223974e-12,
+        "FOXP3": 1.0166517775985681e-16,
+        "CD68": 0.004913756844856811,
+        "CD163": 3.2347954917474335e-06,
+        "CD274": 1.869057619554481e-06,
+        "PDCD1": 8.694219943729836e-18,
+        "CTLA4": 4.371719902010137e-16,
+        "GZMB": 1.1502043799496315e-16,
+        "IFNG": 6.499215939552845e-09,
+        "CD19": 1.442191963979225e-17
+      }
+    },
+    {
+      "type": "Osteoblast",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.48226404098487624,
+      "mean_abs_rho": 0.4648290766507692,
+      "median_abs_r": 0.4868140042990876,
+      "median_R2": 0.23701116359267743,
+      "max_R2": 0.4500402520484414,
+      "r_par_flux": {
+        "CD8A": -0.4819881560870778,
+        "CD8B": -0.41699004372662385,
+        "CD4": -0.6152591874513644,
+        "FOXP3": -0.5556536739958124,
+        "CD68": -0.6708503946845685,
+        "CD163": -0.5245060042445551,
+        "CD274": -0.4016701623746927,
+        "PDCD1": -0.49163985251109743,
+        "CTLA4": -0.5937021947769318,
+        "GZMB": -0.3970087423505365,
+        "IFNG": -0.3093054910223915,
+        "CD19": -0.32859458859286345
+      },
+      "p_par_flux": {
+        "CD8A": 9.63910913841025e-12,
+        "CD8B": 7.035466062796545e-09,
+        "CD4": 6.393115881652714e-20,
+        "FOXP3": 8.24702455553217e-16,
+        "CD68": 1.253510756433777e-24,
+        "CD163": 5.711294100911614e-14,
+        "CD274": 2.7442998208856695e-08,
+        "PDCD1": 3.1995932606148485e-12,
+        "CTLA4": 2.45906412108046e-18,
+        "GZMB": 4.0970230893281994e-08,
+        "IFNG": 2.6566663380203203e-05,
+        "CD19": 7.53121009106855e-06
+      }
+    },
+    {
+      "type": "CD4+ memory T-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.45933836764715225,
+      "mean_abs_rho": 0.5144209109817165,
+      "median_abs_r": 0.5209356871035207,
+      "median_R2": 0.27144228741977616,
+      "max_R2": 0.3310825501882448,
+      "r_par_flux": {
+        "CD8A": 0.5395709261645718,
+        "CD8B": 0.5126714677357317,
+        "CD4": 0.4772834169906771,
+        "FOXP3": 0.5587855799343526,
+        "CD68": 0.22223888778679382,
+        "CD163": 0.30941824930460216,
+        "CD274": 0.3221906349799748,
+        "PDCD1": 0.5529401961462763,
+        "CTLA4": 0.5747015161192831,
+        "GZMB": 0.5291999064713098,
+        "IFNG": 0.337661897960633,
+        "CD19": 0.5753977321716213
+      },
+      "p_par_flux": {
+        "CD8A": 7.767134506972113e-15,
+        "CD8B": 2.558469980837392e-13,
+        "CD4": 1.6297673346322314e-11,
+        "FOXP3": 5.253845900800225e-16,
+        "CD68": 0.002868175306811131,
+        "CD163": 2.6378203142334694e-05,
+        "CD274": 1.1555973597418603e-05,
+        "PDCD1": 1.2142388293071807e-15,
+        "CTLA4": 4.929605289374068e-17,
+        "GZMB": 3.09995058327493e-14,
+        "IFNG": 4.039514244916831e-06,
+        "CD19": 4.4318235667900766e-17
+      }
+    },
+    {
+      "type": "CD4+ naive T-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.4541363053821285,
+      "mean_abs_rho": 0.6038383371978923,
+      "median_abs_r": 0.5168486341464218,
+      "median_R2": 0.26713348988910657,
+      "max_R2": 0.441493602331636,
+      "r_par_flux": {
+        "CD8A": 0.5564862885018459,
+        "CD8B": 0.5158590533842908,
+        "CD4": 0.5178382149085529,
+        "FOXP3": 0.5988029568229504,
+        "CD68": 0.13933771193835384,
+        "CD163": 0.2895255532276218,
+        "CD274": 0.23644084670760035,
+        "PDCD1": 0.6131748902941903,
+        "CTLA4": 0.5889867566996441,
+        "GZMB": 0.48594335155657925,
+        "IFNG": 0.24279019117103795,
+        "CD19": 0.6644498493728748
+      },
+      "p_par_flux": {
+        "CD8A": 7.31878502004705e-16,
+        "CD8B": 1.718078030366113e-13,
+        "CD4": 1.3389262183881948e-13,
+        "FOXP3": 1.0628113727423364e-18,
+        "CD68": 0.06360206778190443,
+        "CD163": 8.861253076967407e-05,
+        "CD274": 0.0014856791808930713,
+        "PDCD1": 9.21043235658967e-20,
+        "CTLA4": 5.270821385758462e-18,
+        "GZMB": 6.159984111898751e-12,
+        "IFNG": 0.001093083949377128,
+        "CD19": 4.915275455015117e-24
+      }
+    },
+    {
+      "type": "Monocytes",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.42072515440163594,
+      "mean_abs_rho": 0.5187417081377522,
+      "median_abs_r": 0.3914120579856495,
+      "median_R2": 0.15321445812255413,
+      "max_R2": 0.4290714947144303,
+      "r_par_flux": {
+        "CD8A": 0.3947375633596778,
+        "CD8B": 0.3326694788252097,
+        "CD4": 0.6550354911868748,
+        "FOXP3": 0.5353493020015125,
+        "CD68": 0.5654916455690132,
+        "CD163": 0.5983430191742811,
+        "CD274": 0.38808655261162117,
+        "PDCD1": 0.32408036913483806,
+        "CTLA4": 0.45168360842190236,
+        "GZMB": 0.36537987817586365,
+        "IFNG": 0.225435946193126,
+        "CD19": 0.21240899816571215
+      },
+      "p_par_flux": {
+        "CD8A": 4.9693371976491064e-08,
+        "CD8B": 5.706191806311124e-06,
+        "CD4": 3.453864407229069e-23,
+        "FOXP3": 1.37222844647375e-14,
+        "CD68": 1.9687813428893266e-16,
+        "CD163": 1.147023682169139e-18,
+        "CD274": 8.673491352750066e-08,
+        "PDCD1": 1.0194696769318786e-05,
+        "CTLA4": 2.4783486989077446e-10,
+        "GZMB": 5.305599192234544e-07,
+        "IFNG": 0.0024818502542417117,
+        "CD19": 0.004420565408721619
+      }
+    },
+    {
+      "type": "HSC",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.3941196514754959,
+      "mean_abs_rho": 0.422598078854298,
+      "median_abs_r": 0.40460886549360736,
+      "median_R2": 0.16376885311056968,
+      "max_R2": 0.39204508774524827,
+      "r_par_flux": {
+        "CD8A": 0.6261350395443848,
+        "CD8B": 0.5005611987376034,
+        "CD4": 0.5417370650903245,
+        "FOXP3": 0.39682946483895304,
+        "CD68": 0.1988297329490418,
+        "CD163": 0.507449592811199,
+        "CD274": 0.2641026138176043,
+        "PDCD1": 0.4276848384099615,
+        "CTLA4": 0.4123882661482617,
+        "GZMB": 0.33370845863245935,
+        "IFNG": 0.148290024815599,
+        "CD19": 0.3717195219105578
+      },
+      "p_par_flux": {
+        "CD8A": 9.096495097447025e-21,
+        "CD8B": 1.1190763974280548e-12,
+        "CD4": 5.782196638130006e-15,
+        "FOXP3": 4.1601454340384474e-08,
+        "CD68": 0.007799026484858688,
+        "CD163": 4.86885103304491e-13,
+        "CD274": 0.0003677557308173073,
+        "PDCD1": 2.6103427884141766e-09,
+        "CTLA4": 1.0665722950078901e-08,
+        "GZMB": 5.313017338676421e-06,
+        "IFNG": 0.048219073981041874,
+        "CD19": 3.2443704868569895e-07
+      }
+    },
+    {
+      "type": "cDC",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.39303665632280677,
+      "mean_abs_rho": 0.468428644958021,
+      "median_abs_r": 0.42418446040911,
+      "median_R2": 0.18004431107358804,
+      "max_R2": 0.2733149747934589,
+      "r_par_flux": {
+        "CD8A": 0.5055896190710809,
+        "CD8B": 0.44379842500049815,
+        "CD4": 0.5227953469508493,
+        "FOXP3": 0.47243344308235324,
+        "CD68": 0.23434440474443444,
+        "CD163": 0.43476059491185776,
+        "CD274": 0.35100091506604464,
+        "PDCD1": 0.41360832590636226,
+        "CTLA4": 0.45193046891867983,
+        "GZMB": 0.36640358991729094,
+        "IFNG": 0.13288779530153685,
+        "CD19": 0.38688694700269277
+      },
+      "p_par_flux": {
+        "CD8A": 6.106875048771221e-13,
+        "CD8B": 5.482188175628868e-10,
+        "CD4": 7.119311909686904e-14,
+        "FOXP3": 2.7774599598790776e-11,
+        "CD68": 0.0016412323475214151,
+        "CD163": 1.328780335777866e-09,
+        "CD274": 1.557836082880361e-06,
+        "PDCD1": 9.557564637210768e-09,
+        "CTLA4": 2.4167138728331035e-10,
+        "GZMB": 4.904004649083366e-07,
+        "IFNG": 0.0770100236974785,
+        "CD19": 9.577622807786196e-08
+      }
+    },
+    {
+      "type": "pDC",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.38490874827528776,
+      "mean_abs_rho": 0.3551211205590557,
+      "median_abs_r": 0.39585977407417827,
+      "median_R2": 0.15670622915956994,
+      "max_R2": 0.24055971465513457,
+      "r_par_flux": {
+        "CD8A": 0.42380224550921425,
+        "CD8B": 0.38131329749279586,
+        "CD4": 0.43886200934437697,
+        "FOXP3": 0.42132078170865284,
+        "CD68": 0.23881835858913963,
+        "CD163": 0.27499390772510673,
+        "CD274": 0.3283730251377507,
+        "PDCD1": 0.396986019833547,
+        "CTLA4": 0.3947335283148095,
+        "GZMB": 0.4904688722591216,
+        "IFNG": 0.4783583220925131,
+        "CD19": 0.35087461129642555
+      },
+      "p_par_flux": {
+        "CD8A": 3.756286904054112e-09,
+        "CD8B": 1.5104336455181034e-07,
+        "CD4": 8.919955411297442e-10,
+        "FOXP3": 4.7286441528020326e-09,
+        "CD68": 0.0013256454548246103,
+        "CD163": 0.0002032768055570352,
+        "CD274": 7.644839498301094e-06,
+        "PDCD1": 4.104972277092494e-08,
+        "CTLA4": 4.971035246789405e-08,
+        "GZMB": 3.664406302081243e-12,
+        "IFNG": 1.4465028075670798e-11,
+        "CD19": 1.572279955339668e-06
+      }
+    },
+    {
+      "type": "CD4+ Tem",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.3787799525972699,
+      "mean_abs_rho": 0.3615677119684038,
+      "median_abs_r": 0.4005210987893577,
+      "median_R2": 0.16053654713003335,
+      "max_R2": 0.25712068579395675,
+      "r_par_flux": {
+        "CD8A": -0.5062905184721387,
+        "CD8B": -0.4323916268120766,
+        "CD4": -0.43203265337067054,
+        "FOXP3": -0.41144797183698206,
+        "CD68": 0.025911226248626455,
+        "CD163": -0.5070706911210278,
+        "CD274": -0.3895942257417334,
+        "PDCD1": -0.36924566035126766,
+        "CTLA4": -0.3432346581068632,
+        "GZMB": -0.3678951955893708,
+        "IFNG": -0.3074182943708243,
+        "CD19": -0.45282670914565654
+      },
+      "p_par_flux": {
+        "CD8A": 5.60804434841721e-13,
+        "CD8B": 1.6687221873379875e-09,
+        "CD4": 1.7270655507025048e-09,
+        "FOXP3": 1.1603228392028197e-08,
+        "CD68": 0.7313569902397461,
+        "CD163": 5.099396069675194e-13,
+        "CD274": 7.652918209489505e-08,
+        "PDCD1": 3.9357457691881256e-07,
+        "CTLA4": 2.727508496049099e-06,
+        "GZMB": 4.3705019613961473e-07,
+        "IFNG": 2.9915545145374545e-05,
+        "CD19": 2.2051780598075525e-10
+      }
+    },
+    {
+      "type": "Chondrocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.37769020896587496,
+      "mean_abs_rho": 0.37681939174814455,
+      "median_abs_r": 0.3797157158152238,
+      "median_R2": 0.14526277278770577,
+      "max_R2": 0.339327895582658,
+      "r_par_flux": {
+        "CD8A": 0.4440649098719479,
+        "CD8B": 0.34262932854620276,
+        "CD4": 0.581786090741489,
+        "FOXP3": 0.47010086591910166,
+        "CD68": 0.4125600144169288,
+        "CD163": 0.5825185796029668,
+        "CD274": 0.24832769846471475,
+        "PDCD1": 0.3385285196714455,
+        "CTLA4": 0.43378980491014446,
+        "GZMB": 0.1870048986744373,
+        "IFNG": 0.14410037955760222,
+        "CD19": 0.34687141721351883
+      },
+      "p_par_flux": {
+        "CD8A": 5.338813805360873e-10,
+        "CD8B": 2.8474301992852655e-06,
+        "CD4": 1.6490187125765102e-17,
+        "FOXP3": 3.578576150062119e-11,
+        "CD68": 1.0502557756679583e-08,
+        "CD163": 1.4702591534103518e-17,
+        "CD274": 0.0008309523794411247,
+        "PDCD1": 3.8020781837178762e-06,
+        "CTLA4": 1.459105360901744e-09,
+        "GZMB": 0.012437972108085121,
+        "IFNG": 0.05498156651968062,
+        "CD19": 2.1021815703318855e-06
+      }
+    },
+    {
+      "type": "Fibroblasts",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.3758629386232992,
+      "mean_abs_rho": 0.40346968227398466,
+      "median_abs_r": 0.40178048428171276,
+      "median_R2": 0.16152257743204035,
+      "max_R2": 0.24562942997610454,
+      "r_par_flux": {
+        "CD8A": 0.48555490356502845,
+        "CD8B": 0.39203267004503706,
+        "CD4": 0.47695218744275897,
+        "FOXP3": 0.4503242543346574,
+        "CD68": 0.2484544423756541,
+        "CD163": 0.49561015927450935,
+        "CD274": 0.24452989319256202,
+        "PDCD1": 0.4115282985183884,
+        "CTLA4": 0.45584605621994995,
+        "GZMB": 0.30512177491217934,
+        "IFNG": 0.1543644592511478,
+        "CD19": 0.390036164347718
+      },
+      "p_par_flux": {
+        "CD8A": 6.4385514045393005e-12,
+        "CD8B": 6.241926177089455e-08,
+        "CD4": 1.6906484748905635e-11,
+        "FOXP3": 2.8459831222670734e-10,
+        "CD68": 0.0008256944829553844,
+        "CD163": 2.012266260044366e-12,
+        "CD274": 0.0010035302811478878,
+        "PDCD1": 1.1520135527583329e-08,
+        "CTLA4": 1.6164812941031385e-10,
+        "GZMB": 3.4527604674660376e-05,
+        "IFNG": 0.03965575223569963,
+        "CD19": 7.376308321593971e-08
+      }
+    },
+    {
+      "type": "B-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.3660101704745333,
+      "mean_abs_rho": 0.4864248746461888,
+      "median_abs_r": 0.41602058964421984,
+      "median_R2": 0.17315414733511658,
+      "max_R2": 0.4580523065094322,
+      "r_par_flux": {
+        "CD8A": 0.4368756549733282,
+        "CD8B": 0.42502149666474726,
+        "CD4": 0.37410828120029993,
+        "FOXP3": 0.47168736803988476,
+        "CD68": 0.06644963219194318,
+        "CD163": 0.16126316472157035,
+        "CD274": 0.12981034974140954,
+        "PDCD1": 0.5592427339451033,
+        "CTLA4": 0.49603762327864914,
+        "GZMB": 0.4070196826236925,
+        "IFNG": 0.18781044181686246,
+        "CD19": 0.6767956164969098
+      },
+      "p_par_flux": {
+        "CD8A": 1.0826298909609958e-09,
+        "CD8B": 3.3522625069267366e-09,
+        "CD4": 2.6881563541335646e-07,
+        "FOXP3": 3.012601476792262e-11,
+        "CD68": 0.3781677883165256,
+        "CD163": 0.03151914572407724,
+        "CD274": 0.08416779093015114,
+        "PDCD1": 4.917244925821089e-16,
+        "CTLA4": 1.9135750768670274e-12,
+        "GZMB": 1.7194220884067523e-08,
+        "IFNG": 0.012058401202818371,
+        "CD19": 3.4159948559986343e-25
+      }
+    },
+    {
+      "type": "CD8+ T-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.36585044031763925,
+      "mean_abs_rho": 0.35746156781184385,
+      "median_abs_r": 0.39077179900997605,
+      "median_R2": 0.15308016122981535,
+      "max_R2": 0.3423976026605115,
+      "r_par_flux": {
+        "CD8A": 0.5851475050451053,
+        "CD8B": 0.5200872577766228,
+        "CD4": 0.35877825085236914,
+        "FOXP3": 0.41020276214416573,
+        "CD68": -0.052640224665868,
+        "CD163": 0.2522951787298355,
+        "CD274": 0.25834786846278396,
+        "PDCD1": 0.43349333509390325,
+        "CTLA4": 0.42066212590786384,
+        "GZMB": 0.37134083587578637,
+        "IFNG": 0.28403023098252356,
+        "CD19": 0.44317970827484343
+      },
+      "p_par_flux": {
+        "CD8A": 9.716555588148671e-18,
+        "CD8B": 1.0065848446044596e-13,
+        "CD4": 8.756875711227459e-07,
+        "FOXP3": 1.2967579983913482e-08,
+        "CD68": 0.4852745832709574,
+        "CD163": 0.0006801633249577037,
+        "CD274": 0.0004980457897922095,
+        "PDCD1": 1.5013093271404054e-09,
+        "CTLA4": 5.0250236458472824e-09,
+        "GZMB": 3.3420908230514344e-07,
+        "IFNG": 0.00012195011389204212,
+        "CD19": 5.82957986558734e-10
+      }
+    },
+    {
+      "type": "Endothelial cells",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.3634916338855259,
+      "mean_abs_rho": 0.40655537517621004,
+      "median_abs_r": 0.4221089657170014,
+      "median_R2": 0.178184755890262,
+      "max_R2": 0.28750907785632906,
+      "r_par_flux": {
+        "CD8A": 0.5361987298160348,
+        "CD8B": 0.4191463736787118,
+        "CD4": 0.5126537156179396,
+        "FOXP3": 0.4387089506994638,
+        "CD68": 0.08043650227744048,
+        "CD163": 0.4432792175630268,
+        "CD274": 0.1835879456918318,
+        "PDCD1": 0.44464459314480487,
+        "CTLA4": 0.4055938543388021,
+        "GZMB": 0.35105889068700125,
+        "IFNG": 0.12151927535596307,
+        "CD19": 0.425071557755291
+      },
+      "p_par_flux": {
+        "CD8A": 1.2245348570202808e-14,
+        "CD8B": 5.776703433390764e-09,
+        "CD4": 2.564120362310754e-13,
+        "FOXP3": 9.054482965166395e-10,
+        "CD68": 0.28582438449725084,
+        "CD163": 5.772305977190267e-10,
+        "CD274": 0.014167100141557944,
+        "PDCD1": 5.039350615751317e-10,
+        "CTLA4": 1.949178741986049e-08,
+        "GZMB": 1.5512485236185073e-06,
+        "IFNG": 0.1061286874180655,
+        "CD19": 3.336603939209559e-09
+      }
+    },
+    {
+      "type": "CD4+ Tcm",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.3601620431512645,
+      "mean_abs_rho": 0.39207667652897055,
+      "median_abs_r": 0.34017393630595516,
+      "median_R2": 0.11625288393414117,
+      "max_R2": 0.25165023955605265,
+      "r_par_flux": {
+        "CD8A": -0.4162486087736764,
+        "CD8B": -0.4126579017407488,
+        "CD4": -0.4616546907952577,
+        "FOXP3": -0.3632948574003481,
+        "CD68": -0.3102891364072309,
+        "CD163": -0.501647525216713,
+        "CD274": -0.44408351557828746,
+        "PDCD1": -0.31705301521156215,
+        "CTLA4": -0.30453924093246376,
+        "GZMB": -0.2911002696300326,
+        "IFNG": -0.2447585509935148,
+        "CD19": -0.2546172051353385
+      },
+      "p_par_flux": {
+        "CD8A": 7.526462711606122e-09,
+        "CD8B": 1.0410641119109857e-08,
+        "CD4": 8.817898214645064e-11,
+        "FOXP3": 6.222886115237166e-07,
+        "CD68": 2.4964522655658356e-05,
+        "CD163": 9.82645521864974e-13,
+        "CD274": 5.328940179914299e-10,
+        "PDCD1": 1.6179216094579736e-05,
+        "CTLA4": 3.579969673223551e-05,
+        "GZMB": 8.076563835466321e-05,
+        "IFNG": 0.000992274195612932,
+        "CD19": 0.0006040517809107431
+      }
+    },
+    {
+      "type": "Th1 cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.3587098270101876,
+      "mean_abs_rho": 0.43339162171764545,
+      "median_abs_r": 0.371788287131466,
+      "median_R2": 0.138255076305482,
+      "max_R2": 0.29376869168279707,
+      "r_par_flux": {
+        "CD8A": -0.4802193472959398,
+        "CD8B": -0.36644545479902096,
+        "CD4": -0.5420043281033806,
+        "FOXP3": -0.4956153405533512,
+        "CD68": -0.30156832930923794,
+        "CD163": -0.44555772609537014,
+        "CD274": -0.44237583064919445,
+        "PDCD1": -0.29595696854282083,
+        "CTLA4": -0.37713111946391104,
+        "GZMB": -0.15126431082653255,
+        "IFNG": -0.10110628120320868,
+        "CD19": -0.30527288728028323
+      },
+      "p_par_flux": {
+        "CD8A": 1.1754323727070889e-11,
+        "CD8B": 4.888216247947954e-07,
+        "CD4": 5.574621617284206e-15,
+        "FOXP3": 2.011040910524599e-12,
+        "CD68": 4.300297957045051e-05,
+        "CD163": 4.600315589839519e-10,
+        "CD274": 6.312859297770585e-10,
+        "PDCD1": 6.047013491244437e-05,
+        "CTLA4": 2.114243205116287e-07,
+        "GZMB": 0.04385103210758547,
+        "IFNG": 0.1793152889406497,
+        "CD19": 3.4204638658184124e-05
+      }
+    },
+    {
+      "type": "Mast cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.35355398640911834,
+      "mean_abs_rho": 0.31184328233105446,
+      "median_abs_r": 0.3574044608313184,
+      "median_R2": 0.12865705565779081,
+      "max_R2": 0.21405650970115608,
+      "r_par_flux": {
+        "CD8A": 0.4320967490193085,
+        "CD8B": 0.39495228207440475,
+        "CD4": 0.418568497354422,
+        "FOXP3": 0.3877212389527715,
+        "CD68": 0.2249603675379754,
+        "CD163": 0.46266241440293815,
+        "CD274": 0.4370752478952187,
+        "PDCD1": 0.30159168518410095,
+        "CTLA4": 0.32708768270986527,
+        "GZMB": 0.31098331838433996,
+        "IFNG": 0.2717411743620314,
+        "CD19": 0.27320717903204306
+      },
+      "p_par_flux": {
+        "CD8A": 1.716505661774488e-09,
+        "CD8B": 4.879777724536987e-08,
+        "CD4": 6.090917479743938e-09,
+        "FOXP3": 8.939768486428637e-08,
+        "CD68": 0.0025361559344795163,
+        "CD163": 7.928601238116519e-11,
+        "CD274": 1.06182325182372e-09,
+        "PDCD1": 4.294137811836592e-05,
+        "CTLA4": 8.336762504289965e-06,
+        "GZMB": 2.3889181259085054e-05,
+        "IFNG": 0.00024328578679658894,
+        "CD19": 0.00022442406393685985
+      }
+    },
+    {
+      "type": "iDC",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.34828306978089074,
+      "mean_abs_rho": 0.36762142106945106,
+      "median_abs_r": 0.3537149141992762,
+      "median_R2": 0.12611136371905193,
+      "max_R2": 0.25023038485497545,
+      "r_par_flux": {
+        "CD8A": 0.28442238933763675,
+        "CD8B": 0.2744409826532631,
+        "CD4": 0.47515057949257494,
+        "FOXP3": 0.5002303318022363,
+        "CD68": 0.43064900394693173,
+        "CD163": 0.4480260879029877,
+        "CD274": 0.39482598962320015,
+        "PDCD1": 0.28648024465973504,
+        "CTLA4": 0.3852921717124076,
+        "GZMB": 0.3221376566861448,
+        "IFNG": 0.13615674856565177,
+        "CD19": 0.24158465098791912
+      },
+      "p_par_flux": {
+        "CD8A": 0.00011922833416266537,
+        "CD8B": 0.00020961404861068433,
+        "CD4": 2.0624725709367623e-11,
+        "FOXP3": 1.164172360152703e-12,
+        "CD68": 1.9709385059530135e-09,
+        "CD163": 3.5907795236175593e-10,
+        "CD274": 4.9322648257721055e-08,
+        "PDCD1": 0.00010585283425002409,
+        "CTLA4": 1.0920487362464915e-07,
+        "GZMB": 1.1596509522639804e-05,
+        "IFNG": 0.06995401994484524,
+        "CD19": 0.001159376685109228
+      }
+    },
+    {
+      "type": "Smooth muscle",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.3338883057785305,
+      "mean_abs_rho": 0.30242573598157124,
+      "median_abs_r": 0.3613139387504327,
+      "median_R2": 0.13058558440126583,
+      "max_R2": 0.26608626725925855,
+      "r_par_flux": {
+        "CD8A": -0.3550695762270392,
+        "CD8B": -0.35516397404204697,
+        "CD4": -0.4430900133063482,
+        "FOXP3": -0.4481990749065905,
+        "CD68": -0.36746390345881846,
+        "CD163": -0.25756110192000947,
+        "CD274": 0.07360810720517563,
+        "PDCD1": -0.5158355040701043,
+        "CTLA4": -0.48364756813545323,
+        "GZMB": -0.2536282539862626,
+        "IFNG": -0.05791306958080752,
+        "CD19": -0.39547952250371
+      },
+      "p_par_flux": {
+        "CD8A": 1.1547153801926672e-06,
+        "CD8B": 1.1466639889079382e-06,
+        "CD4": 5.881675751642291e-10,
+        "FOXP3": 3.5287078688426757e-10,
+        "CD68": 4.518769515156442e-07,
+        "CD163": 0.0005188549708822572,
+        "CD274": 0.3288359866945161,
+        "PDCD1": 1.7231660496128383e-13,
+        "CTLA4": 7.993833305675392e-12,
+        "GZMB": 0.0006354521658201294,
+        "IFNG": 0.44257161131563777,
+        "CD19": 4.6663970284569345e-08
+      }
+    },
+    {
+      "type": "Megakaryocytes",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.33229761859641366,
+      "mean_abs_rho": 0.3246348321361421,
+      "median_abs_r": 0.3530070981153106,
+      "median_R2": 0.1248843624320504,
+      "max_R2": 0.22471372503878687,
+      "r_par_flux": {
+        "CD8A": 0.47403979267439866,
+        "CD8B": 0.3979080140169632,
+        "CD4": 0.36944945537507945,
+        "FOXP3": 0.37675255001166075,
+        "CD68": 0.31934774337811667,
+        "CD163": 0.2675461291137649,
+        "CD274": 0.18581955262649863,
+        "PDCD1": 0.3365647408555418,
+        "CTLA4": 0.3832247692970177,
+        "GZMB": 0.2984324925047654,
+        "IFNG": 0.14811251592619804,
+        "CD19": 0.4303736673769584
+      },
+      "p_par_flux": {
+        "CD8A": 2.3300642969036836e-11,
+        "CD8B": 3.794038033702074e-08,
+        "CD4": 3.8738436766779975e-07,
+        "FOXP3": 2.1790892940502342e-07,
+        "CD68": 1.393185936976838e-05,
+        "CD163": 0.00030571829444388926,
+        "CD274": 0.01301557694752751,
+        "PDCD1": 4.36035647159184e-06,
+        "CTLA4": 1.2931984338863392e-07,
+        "GZMB": 5.207216781071703e-05,
+        "IFNG": 0.04849083418714867,
+        "CD19": 2.0232865288042455e-09
+      }
+    },
+    {
+      "type": "naive B-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.32111552125772047,
+      "mean_abs_rho": 0.2610825179126594,
+      "median_abs_r": 0.36759126917387985,
+      "median_R2": 0.13517164905719825,
+      "max_R2": 0.42291490243314345,
+      "r_par_flux": {
+        "CD8A": 0.3793950150739724,
+        "CD8B": 0.3745416565252759,
+        "CD4": 0.31492534847413023,
+        "FOXP3": 0.42105254468514036,
+        "CD68": 0.033974725017111004,
+        "CD163": 0.1071418453285443,
+        "CD274": 0.08254078629051223,
+        "PDCD1": 0.5398081882976836,
+        "CTLA4": 0.4578971974028709,
+        "GZMB": 0.3606408818224838,
+        "IFNG": 0.1311489887728017,
+        "CD19": 0.6503190774021191
+      },
+      "p_par_flux": {
+        "CD8A": 1.763384666623458e-07,
+        "CD8B": 2.597564122590894e-07,
+        "CD4": 1.8565375932562125e-05,
+        "FOXP3": 4.8472505053849275e-09,
+        "CD68": 0.6525547667797154,
+        "CD163": 0.15459691401043185,
+        "CD274": 0.2733663105459419,
+        "PDCD1": 7.520852520596455e-15,
+        "CTLA4": 1.3067492410227778e-10,
+        "GZMB": 7.611019999562704e-07,
+        "IFNG": 0.08099127082799641,
+        "CD19": 8.938804270502953e-23
+      }
+    },
+    {
+      "type": "CD8+ Tem",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.32069242773258166,
+      "mean_abs_rho": 0.13652377357024353,
+      "median_abs_r": 0.3674663314107363,
+      "median_R2": 0.13530232999353442,
+      "max_R2": 0.22876649446207697,
+      "r_par_flux": {
+        "CD8A": 0.38392310123562384,
+        "CD8B": 0.3510095615858488,
+        "CD4": 0.3103729741190117,
+        "FOXP3": 0.3882691855022076,
+        "CD68": 0.07464216580269974,
+        "CD163": 0.13623528958698577,
+        "CD274": 0.17006598243734639,
+        "PDCD1": 0.4782954050187781,
+        "CTLA4": 0.4133937438717618,
+        "GZMB": 0.41820940011990865,
+        "IFNG": 0.2971122079828276,
+        "CD19": 0.42678011552797984
+      },
+      "p_par_flux": {
+        "CD8A": 1.221576530827958e-07,
+        "CD8B": 1.5568519213839868e-06,
+        "CD4": 2.483226901406272e-05,
+        "FOXP3": 8.543241232051198e-08,
+        "CD68": 0.3220681699615116,
+        "CD163": 0.06979119066450475,
+        "CD274": 0.023235732244220514,
+        "PDCD1": 1.4566546949206142e-11,
+        "CTLA4": 9.74407073316512e-09,
+        "GZMB": 6.294407944699216e-09,
+        "IFNG": 5.64042061953047e-05,
+        "CD19": 2.8425485918514072e-09
+      }
+    },
+    {
+      "type": "ly Endothelial cells",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.31332866381133484,
+      "mean_abs_rho": 0.3474016060981493,
+      "median_abs_r": 0.3809334073442511,
+      "median_R2": 0.14511080453715403,
+      "max_R2": 0.24736876088758417,
+      "r_par_flux": {
+        "CD8A": 0.49736180079252584,
+        "CD8B": 0.38826745142736696,
+        "CD4": 0.4280880645650945,
+        "FOXP3": 0.38167077174054176,
+        "CD68": 0.03540252649362813,
+        "CD163": 0.33280986435451904,
+        "CD274": 0.06600823722067764,
+        "PDCD1": 0.4404628642451342,
+        "CTLA4": 0.3801960429479604,
+        "GZMB": 0.3200266580525986,
+        "IFNG": 0.08337531705486947,
+        "CD19": 0.4062743668411014
+      },
+      "p_par_flux": {
+        "CD8A": 1.6368092571092734e-12,
+        "CD8B": 8.544469063964732e-08,
+        "CD4": 2.5128538138695744e-09,
+        "FOXP3": 1.4673127331079016e-07,
+        "CD68": 0.6389638172248009,
+        "CD163": 5.651498003874797e-06,
+        "CD274": 0.3813506148915,
+        "PDCD1": 7.623852903284953e-10,
+        "CTLA4": 1.6531772858645678e-07,
+        "GZMB": 1.3325745854882053e-05,
+        "IFNG": 0.2685290991388863,
+        "CD19": 1.836059382762928e-08
+      }
+    },
+    {
+      "type": "Class-switched memory B-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.3090139840286235,
+      "mean_abs_rho": 0.23867168767628755,
+      "median_abs_r": 0.3242400052050434,
+      "median_R2": 0.1051660932814513,
+      "max_R2": 0.4354966884806431,
+      "r_par_flux": {
+        "CD8A": 0.3925376883124607,
+        "CD8B": 0.3301147227373774,
+        "CD4": 0.31836528767270944,
+        "FOXP3": 0.41052909069943916,
+        "CD68": -0.07558958854256087,
+        "CD163": 0.10403984756422215,
+        "CD274": 0.10108064216757635,
+        "PDCD1": 0.4733549033348023,
+        "CTLA4": 0.41212555592048145,
+        "GZMB": 0.2971977707707454,
+        "IFNG": 0.13331098156481727,
+        "CD19": 0.6599217290562898
+      },
+      "p_par_flux": {
+        "CD8A": 5.98271497038553e-08,
+        "CD8B": 6.7937093646988584e-06,
+        "CD4": 1.4855282008947257e-05,
+        "FOXP3": 1.259578866573695e-08,
+        "CD68": 0.31594707090624224,
+        "CD163": 0.1669597473365252,
+        "CD274": 0.17942616814561121,
+        "PDCD1": 2.5115358723429605e-11,
+        "CTLA4": 1.0920038728784086e-08,
+        "GZMB": 5.611350968692465e-05,
+        "IFNG": 0.07606540044630786,
+        "CD19": 1.2665378530594802e-23
+      }
+    },
+    {
+      "type": "Memory B-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.305527732284054,
+      "mean_abs_rho": 0.2334360348080461,
+      "median_abs_r": 0.35352479222962535,
+      "median_R2": 0.12498321385457964,
+      "max_R2": 0.3508457864573917,
+      "r_par_flux": {
+        "CD8A": 0.3602601813057004,
+        "CD8B": 0.3553782035654793,
+        "CD4": 0.3113407668722903,
+        "FOXP3": 0.4051714337156793,
+        "CD68": 0.039818520446872854,
+        "CD163": 0.08960905541530047,
+        "CD274": 0.08600797818460455,
+        "PDCD1": 0.49958264170916566,
+        "CTLA4": 0.4346850307407158,
+        "GZMB": 0.3516713808937714,
+        "IFNG": 0.1404852275515484,
+        "CD19": 0.5923223670075204
+      },
+      "p_par_flux": {
+        "CD8A": 7.83290398237981e-07,
+        "CD8B": 1.1285901024111735e-06,
+        "CD4": 2.335265636512227e-05,
+        "FOXP3": 2.0227393379900318e-08,
+        "CD68": 0.5976993012595703,
+        "CD163": 0.23424074787774105,
+        "CD274": 0.25365284603746563,
+        "PDCD1": 1.257623823578162e-12,
+        "CTLA4": 1.3385069023890877e-09,
+        "GZMB": 1.4832560520283691e-06,
+        "IFNG": 0.06142991317911616,
+        "CD19": 3.0776424013101764e-18
+      }
+    },
+    {
+      "type": "Mesangial cells",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.2842952561202245,
+      "mean_abs_rho": 0.20601124966086035,
+      "median_abs_r": 0.2895552421232812,
+      "median_R2": 0.08396190352637353,
+      "max_R2": 0.17304249905493693,
+      "r_par_flux": {
+        "CD8A": 0.3004944050392231,
+        "CD8B": 0.2554744363219187,
+        "CD4": 0.3382571593235378,
+        "FOXP3": 0.3720249985086541,
+        "CD68": 0.3301653236801937,
+        "CD163": 0.2473474251878941,
+        "CD274": 0.25671650351561387,
+        "PDCD1": 0.3141174052713326,
+        "CTLA4": 0.4159837725860673,
+        "GZMB": 0.2230501100709748,
+        "IFNG": 0.07929545472994469,
+        "CD19": 0.2786160792073394
+      },
+      "p_par_flux": {
+        "CD8A": 4.5926944092110736e-05,
+        "CD8B": 0.0005779986436542444,
+        "CD4": 3.874960500508211e-06,
+        "FOXP3": 3.167540652578366e-07,
+        "CD68": 6.7703791171641964e-06,
+        "CD163": 0.0008726703607461789,
+        "CD274": 0.0005420858377148462,
+        "PDCD1": 1.9555655016719838e-05,
+        "CTLA4": 7.709723311213016e-09,
+        "GZMB": 0.002765310733837144,
+        "IFNG": 0.29273642252521803,
+        "CD19": 0.0001659774534374867
+      }
+    },
+    {
+      "type": "NKT",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.2812923424338014,
+      "mean_abs_rho": 0.29642810908279166,
+      "median_abs_r": 0.2329059563916713,
+      "median_R2": 0.05424518646881517,
+      "max_R2": 0.20678153644819977,
+      "r_par_flux": {
+        "CD8A": -0.3372152932541618,
+        "CD8B": -0.3544521458496758,
+        "CD4": -0.35186803702148234,
+        "FOXP3": -0.23286184181270486,
+        "CD68": -0.23295007097063775,
+        "CD163": -0.42404018519074,
+        "CD274": -0.45473237893094853,
+        "PDCD1": -0.15809733988008737,
+        "CTLA4": -0.201496964461732,
+        "GZMB": -0.20741122981976465,
+        "IFNG": -0.21200816696800726,
+        "CD19": -0.20837445504567453
+      },
+      "p_par_flux": {
+        "CD8A": 4.167310020162162e-06,
+        "CD8B": 1.2087225088869846e-06,
+        "CD4": 1.4620345083341051e-06,
+        "FOXP3": 0.0017600544447814068,
+        "CD68": 0.0017527694927479242,
+        "CD163": 3.6739192606604364e-09,
+        "CD274": 1.8133085193267984e-10,
+        "PDCD1": 0.03505737571163206,
+        "CTLA4": 0.0069949286587876955,
+        "GZMB": 0.005469627834233165,
+        "IFNG": 0.004497487831429316,
+        "CD19": 0.005251604954165907
+      }
+    },
+    {
+      "type": "mv Endothelial cells",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.28123968158441764,
+      "mean_abs_rho": 0.28721089967800273,
+      "median_abs_r": 0.3319176027583698,
+      "median_R2": 0.11017656444116336,
+      "max_R2": 0.1885170719351258,
+      "r_par_flux": {
+        "CD8A": 0.3961345246497896,
+        "CD8B": 0.3346137890094319,
+        "CD4": 0.3665800395144315,
+        "FOXP3": 0.32922141650730763,
+        "CD68": -0.011344407980707304,
+        "CD163": 0.26936341351752935,
+        "CD274": -0.07697420303186177,
+        "PDCD1": 0.4341855270908115,
+        "CTLA4": 0.3488168840644666,
+        "GZMB": 0.3100608594914631,
+        "IFNG": 0.07573435882948043,
+        "CD19": 0.4218467553257307
+      },
+      "p_par_flux": {
+        "CD8A": 4.413779603251387e-08,
+        "CD8B": 4.991515897727264e-06,
+        "CD4": 4.837789226442046e-07,
+        "FOXP3": 7.218348418217329e-06,
+        "CD68": 0.8805344095870655,
+        "CD163": 0.00027704038192122077,
+        "CD274": 0.3071384869393118,
+        "PDCD1": 1.4045550053961237e-09,
+        "CTLA4": 1.8263563416279222e-06,
+        "GZMB": 2.532800338143744e-05,
+        "IFNG": 0.31501845472380163,
+        "CD19": 4.5041492432749e-09
+      }
+    },
+    {
+      "type": "Adipocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.2769462442168205,
+      "mean_abs_rho": 0.3495483623019207,
+      "median_abs_r": 0.31582089845853123,
+      "median_R2": 0.09977707192649236,
+      "max_R2": 0.19306859033797585,
+      "r_par_flux": {
+        "CD8A": 0.43939571042282133,
+        "CD8B": 0.3870019588609551,
+        "CD4": 0.32167171236246667,
+        "FOXP3": 0.30997008455459574,
+        "CD68": 0.017049039319798107,
+        "CD163": 0.27983023297730203,
+        "CD274": 0.10869817773598135,
+        "PDCD1": 0.34206815066068746,
+        "CTLA4": 0.3379695632475641,
+        "GZMB": 0.25499925716125177,
+        "IFNG": 0.10962227187665775,
+        "CD19": 0.4150787714217645
+      },
+      "p_par_flux": {
+        "CD8A": 8.4658217832286e-10,
+        "CD8B": 9.487164727950411e-08,
+        "CD4": 1.1958865132642918e-05,
+        "FOXP3": 2.547392464433511e-05,
+        "CD68": 0.8212975234191908,
+        "CD163": 0.00015497670111723534,
+        "CD274": 0.14866012611944976,
+        "PDCD1": 2.9630715034474305e-06,
+        "CTLA4": 3.953651680718176e-06,
+        "GZMB": 0.0005923093533861503,
+        "IFNG": 0.14521768285677178,
+        "CD19": 8.368991980442957e-09
+      }
+    },
+    {
+      "type": "Melanocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.2716465040594755,
+      "mean_abs_rho": 0.34431826805694543,
+      "median_abs_r": 0.25508066114158195,
+      "median_R2": 0.06506618806600573,
+      "max_R2": 0.17512880129822941,
+      "r_par_flux": {
+        "CD8A": 0.3293256163397658,
+        "CD8B": 0.284147442986426,
+        "CD4": 0.37258369199081554,
+        "FOXP3": 0.364364377673725,
+        "CD68": 0.13967356321774074,
+        "CD163": 0.41848393194748756,
+        "CD274": 0.25529132100761237,
+        "PDCD1": 0.2038497484145719,
+        "CTLA4": 0.25487000127555154,
+        "GZMB": 0.17100212973354784,
+        "IFNG": 0.2154623148090889,
+        "CD19": 0.25070390931737224
+      },
+      "p_par_flux": {
+        "CD8A": 7.167549964096313e-06,
+        "CD8B": 0.00012113057781225338,
+        "CD4": 3.0315073228762557e-07,
+        "FOXP3": 5.734915861915765e-07,
+        "CD68": 0.06295991327028687,
+        "CD163": 6.138259442180814e-09,
+        "CD274": 0.0005834751990626961,
+        "PDCD1": 0.006347812296488828,
+        "CTLA4": 0.0005962582649204699,
+        "GZMB": 0.022476590542564186,
+        "IFNG": 0.003872349222103667,
+        "CD19": 0.0007373235723404116
+      }
+    },
+    {
+      "type": "MEP",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.26774161094209564,
+      "mean_abs_rho": 0.3029898324629373,
+      "median_abs_r": 0.2742450120520491,
+      "median_R2": 0.07526384973505582,
+      "max_R2": 0.22423473038490424,
+      "r_par_flux": {
+        "CD8A": -0.28156096035881406,
+        "CD8B": -0.17703380083314102,
+        "CD4": -0.4056930102511502,
+        "FOXP3": -0.3950868475551917,
+        "CD68": -0.3181442637961304,
+        "CD163": -0.35686060241937656,
+        "CD274": -0.4735342969468043,
+        "PDCD1": -0.19385450342274507,
+        "CTLA4": -0.2669290637452842,
+        "GZMB": -0.06773508127117876,
+        "IFNG": -0.12617590889886118,
+        "CD19": -0.1502909918064703
+      },
+      "p_par_flux": {
+        "CD8A": 0.00014046728975875995,
+        "CD8B": 0.01807937110817014,
+        "CD4": 1.9322885852967922e-08,
+        "FOXP3": 4.8244431045996265e-08,
+        "CD68": 1.5070852176575826e-05,
+        "CD163": 1.0107701387617937e-06,
+        "CD274": 2.4627191516941797e-11,
+        "PDCD1": 0.009520834310175707,
+        "CTLA4": 0.00031606669588866347,
+        "GZMB": 0.36899142337257285,
+        "IFNG": 0.09329818156581392,
+        "CD19": 0.04524245909645641
+      }
+    },
+    {
+      "type": "Astrocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.2616061894314902,
+      "mean_abs_rho": 0.2988775660442451,
+      "median_abs_r": 0.23338338134331563,
+      "median_R2": 0.055390231716667876,
+      "max_R2": 0.17318164420260024,
+      "r_par_flux": {
+        "CD8A": 0.1632732194379191,
+        "CD8B": 0.16594316003486306,
+        "CD4": 0.38211129659573134,
+        "FOXP3": 0.3652602802905569,
+        "CD68": 0.36307997760025995,
+        "CD163": 0.4161509872661607,
+        "CD274": 0.33128646482779167,
+        "PDCD1": 0.17192872633616882,
+        "CTLA4": 0.2637548980889179,
+        "GZMB": 0.20301186459771337,
+        "IFNG": 0.15693864248201306,
+        "CD19": 0.15653475561978633
+      },
+      "p_par_flux": {
+        "CD8A": 0.029434063227865986,
+        "CD8B": 0.026847261382676547,
+        "CD4": 1.4157958603222442e-07,
+        "FOXP3": 5.354517099715093e-07,
+        "CD68": 6.32559927969063e-07,
+        "CD163": 7.59352049431816e-09,
+        "CD274": 6.272541113870161e-06,
+        "PDCD1": 0.021746340483922353,
+        "CTLA4": 0.00037462960414609206,
+        "GZMB": 0.006571870598917779,
+        "IFNG": 0.036433804302639344,
+        "CD19": 0.03692419491332283
+      }
+    },
+    {
+      "type": "Plasma cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.25963991265422687,
+      "mean_abs_rho": 0.2053767750893686,
+      "median_abs_r": 0.3006708311966601,
+      "median_R2": 0.09053255316040604,
+      "max_R2": 0.20321510642428403,
+      "r_par_flux": {
+        "CD8A": -0.28928643714534746,
+        "CD8B": -0.15954416197592566,
+        "CD4": -0.45079386245187947,
+        "FOXP3": -0.3835362188953462,
+        "CD68": -0.42313737996332984,
+        "CD163": -0.42712154313943956,
+        "CD274": -0.3345984507080192,
+        "PDCD1": -0.15718132490242878,
+        "CTLA4": -0.31205522524797275,
+        "GZMB": -0.11013682751682759,
+        "IFNG": -0.04690606745424636,
+        "CD19": -0.021381452449959086
+      },
+      "p_par_flux": {
+        "CD8A": 8.986471344863057e-05,
+        "CD8B": 0.03340070271585055,
+        "CD4": 2.713377454930547e-10,
+        "FOXP3": 1.2607717594110424e-07,
+        "CD68": 3.99600049348919e-09,
+        "CD163": 2.7526665551221277e-09,
+        "CD274": 4.9968056254921225e-06,
+        "PDCD1": 0.036141799564879264,
+        "CTLA4": 2.2314150511759645e-05,
+        "GZMB": 0.14332727534624712,
+        "IFNG": 0.5341139081520303,
+        "CD19": 0.7769570071435221
+      }
+    },
+    {
+      "type": "CLP",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.23407427122545446,
+      "mean_abs_rho": 0.2721662774232854,
+      "median_abs_r": 0.25644370026282537,
+      "median_R2": 0.0657671727412528,
+      "max_R2": 0.15654717741249968,
+      "r_par_flux": {
+        "CD8A": -0.30737468715570415,
+        "CD8B": -0.21636830770419763,
+        "CD4": -0.39566043195207135,
+        "FOXP3": -0.3550068076392033,
+        "CD68": -0.16420626942237204,
+        "CD163": -0.28603241062882345,
+        "CD274": -0.24145912820588808,
+        "PDCD1": -0.2882277602443973,
+        "CTLA4": -0.2544939985515408,
+        "GZMB": 0.011439082561568696,
+        "IFNG": 0.030228968665577446,
+        "CD19": -0.25839340197410987
+      },
+      "p_par_flux": {
+        "CD8A": 2.99974372803213e-05,
+        "CD8B": 0.0037218991052771965,
+        "CD4": 4.5952691694022e-08,
+        "FOXP3": 1.1600988674055735e-06,
+        "CD68": 0.028506887415109088,
+        "CD163": 0.00010863817709959234,
+        "CD274": 0.00116648684251644,
+        "PDCD1": 9.561042288287383e-05,
+        "CTLA4": 0.0006078841181539929,
+        "GZMB": 0.8795449243982327,
+        "IFNG": 0.6887478412082167,
+        "CD19": 0.0004968654186625403
+      }
+    },
+    {
+      "type": "pro B-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.22642432986962543,
+      "mean_abs_rho": 0.06592078108066622,
+      "median_abs_r": 0.23900906790696574,
+      "median_R2": 0.057274354455406865,
+      "max_R2": 0.16843254893793658,
+      "r_par_flux": {
+        "CD8A": 0.22680169662358513,
+        "CD8B": 0.25121643919034636,
+        "CD4": 0.2130807455813077,
+        "FOXP3": 0.2757282140897345,
+        "CD68": 0.033777800295374784,
+        "CD163": 0.039160307930709674,
+        "CD274": 0.028685523652345717,
+        "PDCD1": 0.38728313565728134,
+        "CTLA4": 0.343678412945664,
+        "GZMB": 0.3168196041098482,
+        "IFNG": 0.19045473124753254,
+        "CD19": 0.41040534711177507
+      },
+      "p_par_flux": {
+        "CD8A": 0.0023317099106144727,
+        "CD8B": 0.0007184472146040068,
+        "CD4": 0.004294299420507371,
+        "FOXP3": 0.0001951363207301428,
+        "CD68": 0.6544383907986049,
+        "CD163": 0.603773351115182,
+        "CD274": 0.7038752342295875,
+        "PDCD1": 9.269455573120834e-08,
+        "CTLA4": 2.6426654942938024e-06,
+        "GZMB": 1.642608366906311e-05,
+        "IFNG": 0.010883009855706007,
+        "CD19": 1.273554688442807e-08
+      }
+    },
+    {
+      "type": "Neurons",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.22500636320811374,
+      "mean_abs_rho": 0.12374266575180731,
+      "median_abs_r": 0.1825314538554963,
+      "median_R2": 0.03347808883423972,
+      "max_R2": 0.3502060211897591,
+      "r_par_flux": {
+        "CD8A": -0.10417105220968775,
+        "CD8B": -0.16986823200485526,
+        "CD4": -0.19519467570613733,
+        "FOXP3": -0.212422930312201,
+        "CD68": -0.5917820723794859,
+        "CD163": -0.14426643115750054,
+        "CD274": -0.12813114533247502,
+        "PDCD1": -0.27392608908562044,
+        "CTLA4": -0.3534750632839228,
+        "GZMB": -0.2618732369563575,
+        "IFNG": -0.11510734567219919,
+        "CD19": -0.1498580843969215
+      },
+      "p_par_flux": {
+        "CD8A": 0.1664223484478712,
+        "CD8B": 0.0233988858067341,
+        "CD4": 0.009026755572270968,
+        "FOXP3": 0.00441791311603139,
+        "CD68": 3.35930159073832e-18,
+        "CD163": 0.054699361272123256,
+        "CD274": 0.0882929688989331,
+        "PDCD1": 0.00021568035966007716,
+        "CTLA4": 1.2991411295502974e-06,
+        "GZMB": 0.0004139386887704164,
+        "IFNG": 0.12601820133978323,
+        "CD19": 0.04587308294529249
+      }
+    },
+    {
+      "type": "Macrophages M2",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.2217577321136458,
+      "mean_abs_rho": 0.20965995373827392,
+      "median_abs_r": 0.18439001241189001,
+      "median_R2": 0.03422646846947655,
+      "max_R2": 0.1314008554675644,
+      "r_par_flux": {
+        "CD8A": 0.2216841885487519,
+        "CD8B": 0.1994496203822056,
+        "CD4": 0.3511436423712924,
+        "FOXP3": 0.26386654542108745,
+        "CD68": 0.3586477718212542,
+        "CD163": 0.3624925591892396,
+        "CD274": 0.16249361721800734,
+        "PDCD1": 0.1508021454845561,
+        "CTLA4": 0.15493178191636792,
+        "GZMB": 0.16933040444157446,
+        "IFNG": 0.16087081052651975,
+        "CD19": 0.10537969804289238
+      },
+      "p_par_flux": {
+        "CD8A": 0.0029404928400644454,
+        "CD8B": 0.007605156770153695,
+        "CD4": 1.5416662528353473e-06,
+        "FOXP3": 0.00037240961471067074,
+        "CD68": 8.843033766288124e-07,
+        "CD163": 6.61471955016311e-07,
+        "CD274": 0.030228363066468374,
+        "PDCD1": 0.044507197185954105,
+        "CTLA4": 0.038925795288809434,
+        "GZMB": 0.02384761497944302,
+        "IFNG": 0.03194046994917683,
+        "CD19": 0.16153238910069745
+      }
+    },
+    {
+      "type": "CD4+ T-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.21796263073845137,
+      "mean_abs_rho": 0.08091070216604827,
+      "median_abs_r": 0.24013263175665683,
+      "median_R2": 0.05766528833244719,
+      "max_R2": 0.11691796271644998,
+      "r_par_flux": {
+        "CD8A": 0.24140050322846981,
+        "CD8B": 0.23886476028484385,
+        "CD4": 0.23187442504276423,
+        "FOXP3": 0.32638663563972176,
+        "CD68": 0.014547499053865067,
+        "CD163": 0.04319681843251051,
+        "CD274": 0.09939322400237008,
+        "PDCD1": 0.3030875491706579,
+        "CTLA4": 0.31415005518529476,
+        "GZMB": 0.30479227607428777,
+        "IFNG": 0.1559251353409809,
+        "CD19": 0.34193268740565
+      },
+      "p_par_flux": {
+        "CD8A": 0.001169821284143205,
+        "CD8B": 0.0013226852894732354,
+        "CD4": 0.0018434877026887258,
+        "FOXP3": 8.738748005965854e-06,
+        "CD68": 0.8471699239519673,
+        "CD163": 0.5669667148550961,
+        "CD274": 0.1868351784215115,
+        "PDCD1": 3.9164427233102343e-05,
+        "CTLA4": 1.951468791034485e-05,
+        "GZMB": 3.524181175105351e-05,
+        "IFNG": 0.03767493018192624,
+        "CD19": 2.991648184877864e-06
+      }
+    },
+    {
+      "type": "Skeletal muscle",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.21463110132998456,
+      "mean_abs_rho": 0.10146534142982332,
+      "median_abs_r": 0.2652008635918146,
+      "median_R2": 0.07033538748856182,
+      "max_R2": 0.0872849865498607,
+      "r_par_flux": {
+        "CD8A": 0.26871995629839174,
+        "CD8B": 0.23273110884251164,
+        "CD4": 0.26322869759536527,
+        "FOXP3": 0.29530171873101396,
+        "CD68": 0.07348645473436978,
+        "CD163": 0.18291506445106473,
+        "CD274": 0.058437177083571004,
+        "PDCD1": 0.29544032654642916,
+        "CTLA4": 0.2929750129844371,
+        "GZMB": 0.26925370231616946,
+        "IFNG": 0.07591096678822704,
+        "CD19": 0.26717302958826394
+      },
+      "p_par_flux": {
+        "CD8A": 0.0002868958219895043,
+        "CD8B": 0.0017708996262402385,
+        "CD4": 0.00038525862159977835,
+        "FOXP3": 6.2897002013897e-05,
+        "CD68": 0.3296381566936621,
+        "CD163": 0.014531363758920344,
+        "CD274": 0.4384467453363147,
+        "PDCD1": 6.237613705683551e-05,
+        "CTLA4": 7.227330053189037e-05,
+        "GZMB": 0.0002786982039607756,
+        "IFNG": 0.31388802895152795,
+        "CD19": 0.00031193704671050057
+      }
+    },
+    {
+      "type": "Preadipocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.21320145371230423,
+      "mean_abs_rho": 0.08004961332872478,
+      "median_abs_r": 0.24963065690759773,
+      "median_R2": 0.06231886604363212,
+      "max_R2": 0.11085819203904107,
+      "r_par_flux": {
+        "CD8A": 0.3169163905163889,
+        "CD8B": 0.26518319098801246,
+        "CD4": 0.2514748845273232,
+        "FOXP3": 0.25560835713621394,
+        "CD68": 0.037879390570700416,
+        "CD163": 0.1776194571124308,
+        "CD274": 0.16632685679696566,
+        "PDCD1": 0.24345652389835326,
+        "CTLA4": 0.25685497016434183,
+        "GZMB": 0.24778642928787223,
+        "IFNG": 0.006357254962076602,
+        "CD19": 0.3329537385869711
+      },
+      "p_par_flux": {
+        "CD8A": 1.632328853280154e-05,
+        "CD8B": 0.00034713320279607796,
+        "CD4": 0.0007090984962773957,
+        "FOXP3": 0.000574023465917331,
+        "CD68": 0.6156718615610463,
+        "CD163": 0.01769517688709795,
+        "CD274": 0.026492000431515443,
+        "PDCD1": 0.0010579516244226285,
+        "CTLA4": 0.0005382125953320927,
+        "GZMB": 0.0008537549763793027,
+        "IFNG": 0.9328817907798108,
+        "CD19": 5.595961425457518e-06
+      }
+    },
+    {
+      "type": "Epithelial cells",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.2015153913507454,
+      "mean_abs_rho": 0.30797539833826754,
+      "median_abs_r": 0.1795131913637017,
+      "median_R2": 0.032260486450167304,
+      "max_R2": 0.10829728514832945,
+      "r_par_flux": {
+        "CD8A": -0.32908552862186063,
+        "CD8B": -0.23693235898808254,
+        "CD4": -0.2391135887139998,
+        "FOXP3": -0.16726400464524388,
+        "CD68": 0.2739578195224924,
+        "CD163": -0.26865314259736384,
+        "CD274": -0.17355495533394316,
+        "PDCD1": -0.14688410543256863,
+        "CTLA4": -0.07797526235913178,
+        "GZMB": -0.15569491720231962,
+        "IFNG": -0.16359758539847852,
+        "CD19": -0.18547142739346026
+      },
+      "p_par_flux": {
+        "CD8A": 7.285108089422399e-06,
+        "CD8B": 0.0014512154446626748,
+        "CD4": 0.0013069143488639219,
+        "FOXP3": 0.025641190946411412,
+        "CD68": 0.0002153018464057769,
+        "CD163": 0.00028793761690465116,
+        "CD274": 0.020514141830698676,
+        "PDCD1": 0.05040664276543362,
+        "CTLA4": 0.3008713936771672,
+        "GZMB": 0.037961768997207775,
+        "IFNG": 0.029108864471921625,
+        "CD19": 0.013189623056468045
+      }
+    },
+    {
+      "type": "Basophils",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.20069584503923524,
+      "mean_abs_rho": 0.06217830193549643,
+      "median_abs_r": 0.19465621825473733,
+      "median_R2": 0.03789186404070105,
+      "max_R2": 0.19434907779185553,
+      "r_par_flux": {
+        "CD8A": -0.18889578864137757,
+        "CD8B": -0.1573061834463647,
+        "CD4": -0.2177687667918651,
+        "FOXP3": -0.25250264298007885,
+        "CD68": -0.44085040296211087,
+        "CD163": -0.19375027373926273,
+        "CD274": -0.22268751648658724,
+        "PDCD1": -0.19556216277021193,
+        "CTLA4": -0.2694960884417478,
+        "GZMB": -0.08265395926719438,
+        "IFNG": -0.0060769536438566585,
+        "CD19": -0.1807994013001653
+      },
+      "p_par_flux": {
+        "CD8A": 0.011563101828613781,
+        "CD8B": 0.03599233723646565,
+        "CD4": 0.0034996845260958547,
+        "FOXP3": 0.0006730196595720327,
+        "CD68": 7.338613724929814e-10,
+        "CD163": 0.009560244164323597,
+        "CD274": 0.002810868153915868,
+        "PDCD1": 0.00889530249425091,
+        "CTLA4": 0.00027504780051204386,
+        "GZMB": 0.27270688350154443,
+        "IFNG": 0.9358346581601694,
+        "CD19": 0.01573054546902166
+      }
+    },
+    {
+      "type": "CD8+ naive T-cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.19571289566442976,
+      "mean_abs_rho": 0.14952568528748658,
+      "median_abs_r": 0.22043063653225015,
+      "median_R2": 0.04930046221125725,
+      "max_R2": 0.11700709107969129,
+      "r_par_flux": {
+        "CD8A": 0.24709140713709707,
+        "CD8B": 0.3420629928532043,
+        "CD4": 0.05792343783288963,
+        "FOXP3": 0.17166251060495746,
+        "CD68": 0.09419665591964604,
+        "CD163": 0.053751916048000545,
+        "CD274": -0.0056179234973753895,
+        "PDCD1": 0.28633150139665364,
+        "CTLA4": 0.2796391931354851,
+        "GZMB": 0.28258542134153736,
+        "IFNG": 0.19376986592740325,
+        "CD19": 0.33392192227890705
+      },
+      "p_par_flux": {
+        "CD8A": 0.0008838784867776345,
+        "CD8B": 2.964154798900339e-06,
+        "CD4": 0.4424897976364375,
+        "FOXP3": 0.021954018931730022,
+        "CD68": 0.2110553106197313,
+        "CD163": 0.4760914844083165,
+        "CD274": 0.9406722376254236,
+        "PDCD1": 0.0001067704595171645,
+        "CTLA4": 0.00015666126308310648,
+        "GZMB": 0.00013248706996614386,
+        "IFNG": 0.009552825255586152,
+        "CD19": 5.235487259995498e-06
+      }
+    },
+    {
+      "type": "GMP",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.18352094261665516,
+      "mean_abs_rho": 0.15949012206468385,
+      "median_abs_r": 0.18813041083886461,
+      "median_R2": 0.03603752577510823,
+      "max_R2": 0.07070731750017921,
+      "r_par_flux": {
+        "CD8A": 0.2659084757960513,
+        "CD8B": 0.25449964122382307,
+        "CD4": 0.2610518084305382,
+        "FOXP3": 0.16274391260243498,
+        "CD68": 0.11736001742574892,
+        "CD163": 0.25448706043034497,
+        "CD274": 0.23890660221008791,
+        "PDCD1": 0.12447858346256421,
+        "CTLA4": 0.10971151990478074,
+        "GZMB": 0.21351690907529425,
+        "IFNG": 0.09048677004855905,
+        "CD19": 0.10910001078963424
+      },
+      "p_par_flux": {
+        "CD8A": 0.0003338985126917098,
+        "CD8B": 0.0006077081139683744,
+        "CD4": 0.00043226838651294256,
+        "FOXP3": 0.02997138196647224,
+        "CD68": 0.11872609717102228,
+        "CD163": 0.0006081005939779942,
+        "CD274": 0.001320021197793843,
+        "PDCD1": 0.09782388741521433,
+        "CTLA4": 0.1448884475874228,
+        "GZMB": 0.004214060996128163,
+        "IFNG": 0.22967184757893902,
+        "CD19": 0.14715569879501442
+      }
+    },
+    {
+      "type": "Sebocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.17928580893848012,
+      "mean_abs_rho": 0.2546542848259615,
+      "median_abs_r": 0.16998318390608466,
+      "median_R2": 0.02890566223394142,
+      "max_R2": 0.12275952084176499,
+      "r_par_flux": {
+        "CD8A": -0.3503705479085892,
+        "CD8B": -0.24628626306674822,
+        "CD4": -0.2603344349478887,
+        "FOXP3": -0.18366908259635512,
+        "CD68": 0.16660984385627944,
+        "CD163": -0.255905134709099,
+        "CD274": -0.17335652395588988,
+        "PDCD1": -0.12297528336951256,
+        "CTLA4": -0.08132984078015945,
+        "GZMB": -0.07446082399777006,
+        "IFNG": -0.09433196465518508,
+        "CD19": -0.14179996341828427
+      },
+      "p_par_flux": {
+        "CD8A": 1.6312049061570231e-06,
+        "CD8B": 0.0009199945509840396,
+        "CD4": 0.0004488877431405487,
+        "FOXP3": 0.014123721048142818,
+        "CD68": 0.026232572440016397,
+        "CD163": 0.0005653039780025875,
+        "CD274": 0.020661185536430177,
+        "PDCD1": 0.10197590639892931,
+        "CTLA4": 0.2804898066986298,
+        "GZMB": 0.3232484719616381,
+        "IFNG": 0.21039739733904222,
+        "CD19": 0.05901646929255614
+      }
+    },
+    {
+      "type": "Tregs",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.17419180267665865,
+      "mean_abs_rho": 0.16138589750677904,
+      "median_abs_r": 0.1564306901687498,
+      "median_R2": 0.024470578641283804,
+      "max_R2": 0.1744233603092692,
+      "r_par_flux": {
+        "CD8A": 0.07093699262383799,
+        "CD8B": -0.03480510617271666,
+        "CD4": 0.22836572963617957,
+        "FOXP3": 0.15656416156047295,
+        "CD68": 0.15629721877702665,
+        "CD163": 0.3499365781831435,
+        "CD274": 0.4176402283177103,
+        "PDCD1": -0.0747793698767486,
+        "CTLA4": 0.09372384394662199,
+        "GZMB": 0.10310787785474591,
+        "IFNG": 0.19837369931407242,
+        "CD19": -0.20577082585662726
+      },
+      "p_par_flux": {
+        "CD8A": 0.34673778299288005,
+        "CD8B": 0.6446362580752347,
+        "CD4": 0.002169933713041752,
+        "FOXP3": 0.036888303721142476,
+        "CD68": 0.03721520114807848,
+        "CD163": 1.6836161640157068e-06,
+        "CD274": 6.630436134869206e-09,
+        "PDCD1": 0.32117700328082127,
+        "CTLA4": 0.21336584998224506,
+        "GZMB": 0.1708142509708496,
+        "IFNG": 0.0079444410455156,
+        "CD19": 0.005859628755624407
+      }
+    },
+    {
+      "type": "Neutrophils",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.16703644217340927,
+      "mean_abs_rho": 0.042988561452071576,
+      "median_abs_r": 0.19408206463996858,
+      "median_R2": 0.03766784839905056,
+      "max_R2": 0.06504119507628711,
+      "r_par_flux": {
+        "CD8A": 0.12015246418911041,
+        "CD8B": 0.08465679836106305,
+        "CD4": 0.19410623357907097,
+        "FOXP3": 0.1940578957008662,
+        "CD68": 0.2216384772175445,
+        "CD163": 0.2550317530745674,
+        "CD274": 0.21925649711666498,
+        "PDCD1": 0.04758601510806811,
+        "CTLA4": 0.17846967023390525,
+        "GZMB": 0.2400457262264419,
+        "IFNG": 0.216018052931377,
+        "CD19": 0.0334177223422313
+      },
+      "p_par_flux": {
+        "CD8A": 0.11014696260083154,
+        "CD8B": 0.2612152830430548,
+        "CD4": 0.009426245439310383,
+        "FOXP3": 0.009444343906391699,
+        "CD68": 0.002946525296905974,
+        "CD163": 0.0005913203709098074,
+        "CD274": 0.0032767982335778325,
+        "PDCD1": 0.5281966617461844,
+        "CTLA4": 0.017150062724241247,
+        "GZMB": 0.0012493521322285478,
+        "IFNG": 0.003779426660897926,
+        "CD19": 0.6578882478755813
+      }
+    },
+    {
+      "type": "Tgd cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.15499674231726482,
+      "mean_abs_rho": 0.07655537315236126,
+      "median_abs_r": 0.17093648248823612,
+      "median_R2": 0.029232569438633053,
+      "max_R2": 0.10081879943447823,
+      "r_par_flux": {
+        "CD8A": -0.18422688931774822,
+        "CD8B": -0.16729115764921185,
+        "CD4": -0.18375350331032672,
+        "FOXP3": -0.2601025216041876,
+        "CD68": 0.10203913822638815,
+        "CD163": -0.04346883562200438,
+        "CD274": -0.08161047891639192,
+        "PDCD1": -0.2374443280362692,
+        "CTLA4": -0.17458180732726036,
+        "GZMB": -0.10548215525037416,
+        "IFNG": -0.0024403302731085107,
+        "CD19": -0.3175197622739067
+      },
+      "p_par_flux": {
+        "CD8A": 0.013828628180768833,
+        "CD8B": 0.02561689295745843,
+        "CD4": 0.014078709698807848,
+        "FOXP3": 0.00045438566284343695,
+        "CD68": 0.17531530913247273,
+        "CD163": 0.5645251885001921,
+        "CD274": 0.2788279034218842,
+        "PDCD1": 0.0014160954440431434,
+        "CTLA4": 0.0197675839446036,
+        "GZMB": 0.16112286475454668,
+        "IFNG": 0.9742098948660141,
+        "CD19": 1.5696037544529257e-05
+      }
+    },
+    {
+      "type": "Pericytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.14248155208145846,
+      "mean_abs_rho": 0.1331024950255205,
+      "median_abs_r": 0.13257873243138485,
+      "median_R2": 0.01852425504593437,
+      "max_R2": 0.09738340921473085,
+      "r_par_flux": {
+        "CD8A": 0.0425694740369633,
+        "CD8B": -0.004550560254761955,
+        "CD4": 0.27488613615762497,
+        "FOXP3": 0.3120631494020575,
+        "CD68": 0.2529817040587597,
+        "CD163": 0.22684893465419836,
+        "CD274": 0.1633542868995278,
+        "PDCD1": 0.06935453028245721,
+        "CTLA4": 0.19734773431489624,
+        "GZMB": 0.04419244708714946,
+        "IFNG": 0.019826489865862943,
+        "CD19": 0.10180317796324193
+      },
+      "p_par_flux": {
+        "CD8A": 0.5726165787459222,
+        "CD8B": 0.9519289475194899,
+        "CD4": 0.00020449783200025617,
+        "FOXP3": 2.2302880507804202e-05,
+        "CD68": 0.0006567874546765698,
+        "CD163": 0.0023266676856545225,
+        "CD274": 0.029352498568071782,
+        "PDCD1": 0.35762811796463423,
+        "CTLA4": 0.00828042163733878,
+        "GZMB": 0.5580548505872327,
+        "IFNG": 0.7927967797106523,
+        "CD19": 0.1763207866854154
+      }
+    },
+    {
+      "type": "Keratinocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.13754207216868372,
+      "mean_abs_rho": 0.18434669953764596,
+      "median_abs_r": 0.1327646004987405,
+      "median_R2": 0.01766348741949787,
+      "max_R2": 0.08917657954478132,
+      "r_par_flux": {
+        "CD8A": -0.29862447914526585,
+        "CD8B": -0.21979656638232534,
+        "CD4": -0.1713104970395161,
+        "FOXP3": -0.12601740802653152,
+        "CD68": 0.1388513298263602,
+        "CD163": -0.16627549436690703,
+        "CD274": 0.006304225540810903,
+        "PDCD1": -0.12667787117112078,
+        "CTLA4": -0.07151745910425843,
+        "GZMB": -0.10069215466254133,
+        "IFNG": -0.07195946362793595,
+        "CD19": -0.1524779171306311
+      },
+      "p_par_flux": {
+        "CD8A": 5.1468907382901044e-05,
+        "CD8B": 0.0031991138073163496,
+        "CD4": 0.02223125446390115,
+        "FOXP3": 0.09371362353571733,
+        "CD68": 0.06454154085188961,
+        "CD163": 0.026539321725894748,
+        "CD274": 0.9334403664937575,
+        "PDCD1": 0.0919921633800032,
+        "CTLA4": 0.34279611254337505,
+        "GZMB": 0.1811124195796526,
+        "IFNG": 0.33981379291635555,
+        "CD19": 0.04216645290102913
+      }
+    },
+    {
+      "type": "Th2 cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.129063157968334,
+      "mean_abs_rho": 0.08952997463564043,
+      "median_abs_r": 0.1382122655841027,
+      "median_R2": 0.019128122006207043,
+      "max_R2": 0.043886644400088826,
+      "r_par_flux": {
+        "CD8A": -0.16236891963069286,
+        "CD8B": -0.1432611910456736,
+        "CD4": -0.1331633401225318,
+        "FOXP3": -0.1456873594446147,
+        "CD68": -0.005078969185483909,
+        "CD163": 0.047506251077930675,
+        "CD274": 0.20949139457287697,
+        "PDCD1": -0.18014109944467868,
+        "CTLA4": -0.11634814876998428,
+        "GZMB": 0.08853257331227178,
+        "IFNG": 0.11048840232012425,
+        "CD19": -0.20669024669314487
+      },
+      "p_par_flux": {
+        "CD8A": 0.03035709048501042,
+        "CD8B": 0.05642623993626384,
+        "CD4": 0.07639389096042662,
+        "FOXP3": 0.05233313075907611,
+        "CD68": 0.9463548717474092,
+        "CD163": 0.5288890902272109,
+        "CD274": 0.005008559730471109,
+        "PDCD1": 0.0161208749376301,
+        "CTLA4": 0.12195996752294495,
+        "GZMB": 0.23993100349130891,
+        "IFNG": 0.14204644035879352,
+        "CD19": 0.005638083860842039
+      }
+    },
+    {
+      "type": "MSC",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.11220101614364185,
+      "mean_abs_rho": 0.11563516742232954,
+      "median_abs_r": 0.09421278663203853,
+      "median_R2": 0.008895137155146024,
+      "max_R2": 0.0657265722286471,
+      "r_par_flux": {
+        "CD8A": 0.05219647614072948,
+        "CD8B": 0.07007716836912528,
+        "CD4": 0.17943413567109254,
+        "FOXP3": 0.10275487051015575,
+        "CD68": 0.2563719411882804,
+        "CD163": 0.23835201181353832,
+        "CD274": -0.01573740037746481,
+        "PDCD1": 0.12178869263210892,
+        "CTLA4": 0.0898438061820931,
+        "GZMB": 0.07464880560257904,
+        "IFNG": 0.09858176708198396,
+        "CD19": -0.046625118154550324
+      },
+      "p_par_flux": {
+        "CD8A": 0.4889665330152564,
+        "CD8B": 0.3526287782569083,
+        "CD4": 0.016549431228824598,
+        "FOXP3": 0.1722913696603831,
+        "CD68": 0.000551836085425377,
+        "CD163": 0.0013557340570946174,
+        "CD274": 0.8348411007415973,
+        "PDCD1": 0.1053503996478526,
+        "CTLA4": 0.23301255690972716,
+        "GZMB": 0.32202500638797243,
+        "IFNG": 0.19047681803901007,
+        "CD19": 0.5365685224038914
+      }
+    },
+    {
+      "type": "NK cells",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.10794028927726497,
+      "mean_abs_rho": 0.04577242437988659,
+      "median_abs_r": 0.11469548195411672,
+      "median_R2": 0.013157800645154715,
+      "max_R2": 0.035975779259098235,
+      "r_par_flux": {
+        "CD8A": 0.11635290901664494,
+        "CD8B": 0.09190126463758656,
+        "CD4": 0.14558214658327653,
+        "FOXP3": 0.12025939052653116,
+        "CD68": 0.11754442092198637,
+        "CD163": 0.11303805489158851,
+        "CD274": 0.09822855835189029,
+        "PDCD1": 0.04929656474549803,
+        "CTLA4": 0.09466266498158499,
+        "GZMB": 0.12352472767781805,
+        "IFNG": 0.18967282161421609,
+        "CD19": 0.035219947378558276
+      },
+      "p_par_flux": {
+        "CD8A": 0.1219445958358178,
+        "CD8B": 0.22244168666001626,
+        "CD4": 0.05250537987950731,
+        "FOXP3": 0.10982837535934428,
+        "CD68": 0.11814400159394396,
+        "CD163": 0.13301708872855011,
+        "CD274": 0.19207802551707812,
+        "PDCD1": 0.5134584761602019,
+        "CTLA4": 0.20879562476394936,
+        "GZMB": 0.10044253879483286,
+        "IFNG": 0.011219582700880505,
+        "CD19": 0.6406951850876714
+      }
+    },
+    {
+      "type": "Eosinophils",
+      "n": 178,
+      "group": "Immune",
+      "mean_abs_r": 0.08521238431716584,
+      "mean_abs_rho": 0.088383313786133,
+      "median_abs_r": 0.0690034808695094,
+      "median_R2": 0.005028641644266743,
+      "max_R2": 0.037187684896927434,
+      "r_par_flux": {
+        "CD8A": -0.052658412128204185,
+        "CD8B": -0.08534854961081462,
+        "CD4": -0.02861315209585457,
+        "FOXP3": -0.0007216148245065175,
+        "CD68": 0.021039510801720077,
+        "CD163": -0.14884615917535785,
+        "CD274": -0.1810229910634083,
+        "PDCD1": 0.09974779281058364,
+        "CTLA4": 0.03229508369416003,
+        "GZMB": -0.19284108715968035,
+        "IFNG": -0.17846876280494275,
+        "CD19": 0.0009454956367570839
+      },
+      "p_par_flux": {
+        "CD8A": 0.4851235850436433,
+        "CD8B": 0.2573245185602741,
+        "CD4": 0.7045874678265148,
+        "FOXP3": 0.9923725671763526,
+        "CD68": 0.7804326014186949,
+        "CD163": 0.04737585129453814,
+        "CD274": 0.015599859732500741,
+        "PDCD1": 0.18526005931144293,
+        "CTLA4": 0.6686902727966492,
+        "GZMB": 0.009910174101323731,
+        "IFNG": 0.017150636647003448,
+        "CD19": 0.9900062662888562
+      }
+    },
+    {
+      "type": "Platelets",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.08500224754706642,
+      "mean_abs_rho": 0.08065027865669498,
+      "median_abs_r": 0.08317087844322238,
+      "median_R2": 0.006999513975755273,
+      "max_R2": 0.028832426128928917,
+      "r_par_flux": {
+        "CD8A": -0.049174980359873895,
+        "CD8B": -0.10528780532626325,
+        "CD4": -0.12419625967372168,
+        "FOXP3": -0.09223282937765151,
+        "CD68": -0.020366730036391636,
+        "CD163": -0.07410892750879323,
+        "CD274": 0.07374165022160221,
+        "PDCD1": -0.16980113700717353,
+        "CTLA4": -0.11010032496217777,
+        "GZMB": 0.002414419449273733,
+        "IFNG": 0.06253059884862075,
+        "CD19": -0.13607130779325383
+      },
+      "p_par_flux": {
+        "CD8A": 0.5144990010971706,
+        "CD8B": 0.1619003492903324,
+        "CD4": 0.09859326245040943,
+        "FOXP3": 0.2207705341328869,
+        "CD68": 0.7872835939273454,
+        "CD163": 0.3255468307827994,
+        "CD274": 0.3279568568525654,
+        "PDCD1": 0.02345446592970659,
+        "CTLA4": 0.1434607608866788,
+        "GZMB": 0.9744836347603383,
+        "IFNG": 0.40699322992420933,
+        "CD19": 0.07013150453813517
+      }
+    },
+    {
+      "type": "CMP",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.08481841914501657,
+      "mean_abs_rho": 0.04479377319394279,
+      "median_abs_r": 0.0743470504195226,
+      "median_R2": 0.005535222913731885,
+      "max_R2": 0.03793897111927734,
+      "r_par_flux": {
+        "CD8A": -0.014003595016126509,
+        "CD8B": 0.1811775341295637,
+        "CD4": -0.05948204089375838,
+        "FOXP3": -0.07712895761582689,
+        "CD68": -0.19477928821945453,
+        "CD163": -0.0715651432232183,
+        "CD274": -0.10714823612016755,
+        "PDCD1": -0.009629082015129128,
+        "CTLA4": -0.10089830478288445,
+        "GZMB": -0.12860893801783224,
+        "IFNG": -0.046174936892712015,
+        "CD19": -0.027224972813525136
+      },
+      "p_par_flux": {
+        "CD8A": 0.8528179947437688,
+        "CD8B": 0.01551008549564482,
+        "CD4": 0.4302891111392384,
+        "FOXP3": 0.3061640916364034,
+        "CD68": 0.009177411055553848,
+        "CD163": 0.3424735795398723,
+        "CD274": 0.1545721758762869,
+        "PDCD1": 0.8984925644706377,
+        "CTLA4": 0.1802161668929758,
+        "GZMB": 0.0871030923343935,
+        "IFNG": 0.540513387010035,
+        "CD19": 0.7182980838654075
+      }
+    },
+    {
+      "type": "Hepatocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.07422521078513224,
+      "mean_abs_rho": 0.06022772397709649,
+      "median_abs_r": 0.0660230831073705,
+      "median_R2": 0.0043604003107414625,
+      "max_R2": 0.022789475143909395,
+      "r_par_flux": {
+        "CD8A": 0.12606191512283757,
+        "CD8B": 0.06011082089462895,
+        "CD4": 0.024219095393131523,
+        "FOXP3": -0.15096183340139122,
+        "CD68": -0.06718618574201218,
+        "CD163": 0.015509461036242053,
+        "CD274": -0.10989034467662495,
+        "PDCD1": 0.07475895759977542,
+        "CTLA4": -0.06485998047272881,
+        "GZMB": -0.02728265572223299,
+        "IFNG": -0.06263867534227707,
+        "CD19": -0.10722260401770396
+      },
+      "p_par_flux": {
+        "CD8A": 0.09359681902924309,
+        "CD8B": 0.4254223948706279,
+        "CD4": 0.748291004408002,
+        "FOXP3": 0.04427955568192027,
+        "CD68": 0.3728928698762911,
+        "CD163": 0.8371998123564811,
+        "CD274": 0.14423047095262054,
+        "PDCD1": 0.32130948370850887,
+        "CTLA4": 0.38970654696412266,
+        "GZMB": 0.7177265372414228,
+        "IFNG": 0.4061812825629589,
+        "CD19": 0.15428452413600777
+      }
+    },
+    {
+      "type": "Myocytes",
+      "n": 178,
+      "group": "Non-Hematopoietic",
+      "mean_abs_r": 0.055430639924625054,
+      "mean_abs_rho": 0.056023728888318976,
+      "median_abs_r": 0.048593220975541314,
+      "median_R2": 0.0023618480393465978,
+      "max_R2": 0.0176329953803742,
+      "r_par_flux": {
+        "CD8A": 0.09642530679239733,
+        "CD8B": 0.016653277059176602,
+        "CD4": -0.021265407575373853,
+        "FOXP3": 0.008189474474238062,
+        "CD68": -0.10426802377755699,
+        "CD163": 0.0946735968431547,
+        "CD274": 0.04785368424973972,
+        "PDCD1": 0.004978602841766244,
+        "CTLA4": 0.024798378517459436,
+        "GZMB": 0.1327892894038303,
+        "IFNG": -0.049332757701342905,
+        "CD19": 0.06393987985946446
+      },
+      "p_par_flux": {
+        "CD8A": 0.20040582042871455,
+        "CD8B": 0.8253786756418168,
+        "CD4": 0.7781360286763936,
+        "FOXP3": 0.9136044263771719,
+        "CD68": 0.16602599368733836,
+        "CD163": 0.20874282545249911,
+        "CD274": 0.5258763875963578,
+        "PDCD1": 0.9474134234247078,
+        "CTLA4": 0.7424797911069015,
+        "GZMB": 0.07723125997533489,
+        "IFNG": 0.5131489450525739,
+        "CD19": 0.3964811878631535
+      }
+    },
+    {
+      "type": "Erythrocytes",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.053902459582609384,
+      "mean_abs_rho": 0.08150093734764702,
+      "median_abs_r": 0.046749878914872076,
+      "median_R2": 0.0021929949235841763,
+      "max_R2": 0.015541910869543969,
+      "r_par_flux": {
+        "CD8A": -0.03172606009885046,
+        "CD8B": 0.049478201665020226,
+        "CD4": 0.06769204503892941,
+        "FOXP3": 0.028190825801013022,
+        "CD68": 0.06478846622090052,
+        "CD163": 0.12466720045603001,
+        "CD274": 0.09375931599701913,
+        "PDCD1": -0.07658038415173112,
+        "CTLA4": -0.04402155616472392,
+        "GZMB": 0.020523268914933297,
+        "IFNG": 0.02875790470677691,
+        "CD19": -0.016644285775384543
+      },
+      "p_par_flux": {
+        "CD8A": 0.6741916711520712,
+        "CD8B": 0.5119060446362499,
+        "CD4": 0.36929640429549654,
+        "FOXP3": 0.7087488328861917,
+        "CD68": 0.39023058642802755,
+        "CD163": 0.09731253322549163,
+        "CD274": 0.21319187955768718,
+        "PDCD1": 0.3096272978390735,
+        "CTLA4": 0.5595796810044703,
+        "GZMB": 0.7856880643101709,
+        "IFNG": 0.7031631646540151,
+        "CD19": 0.8254714497568384
+      }
+    },
+    {
+      "type": "MPP",
+      "n": 178,
+      "group": "HSC",
+      "mean_abs_r": 0.037156513523139444,
+      "mean_abs_rho": 0.10188494778946604,
+      "median_abs_r": 0.03518691782128079,
+      "median_R2": 0.0012497934950157518,
+      "max_R2": 0.006755285850713601,
+      "r_par_flux": {
+        "CD8A": -0.038603686653698996,
+        "CD8B": -0.020814536414270515,
+        "CD4": -0.028336490187508,
+        "FOXP3": -0.039789429245110336,
+        "CD68": -0.01928988770545632,
+        "CD163": -0.01059247150573141,
+        "CD274": -0.05964681306299813,
+        "PDCD1": 0.03177014898886258,
+        "CTLA4": -0.017157815104048183,
+        "GZMB": -0.05255079909738794,
+        "IFNG": -0.045135538319076754,
+        "CD19": 0.0821905459935241
+      },
+      "p_par_flux": {
+        "CD8A": 0.608931260620102,
+        "CD8B": 0.782721685993724,
+        "CD4": 0.7073125568529858,
+        "FOXP3": 0.5979671755113244,
+        "CD68": 0.7982830249063736,
+        "CD163": 0.8883996683754566,
+        "CD274": 0.42901069671295466,
+        "PDCD1": 0.67376479120467,
+        "CTLA4": 0.8201766480222197,
+        "GZMB": 0.4860173902854346,
+        "IFNG": 0.549676035733773,
+        "CD19": 0.2754139066081714
+      }
+    }
+  ],
+  "t2_brute": {
+    "mean_abs_r": 0.5563291004266693,
+    "median_abs_r": 0.5677419828795567,
+    "frac_gt_0.5": 0.6212121212121212,
+    "n_gt_0.5": 41,
+    "n_pairs": 66,
+    "max_abs_r": 0.8429866183240017
+  },
+  "t2_a": {
+    "mean_abs_r": 0.3269905582093907,
+    "median_abs_r": 0.32543721145561094,
+    "frac_gt_0.5": 0.15151515151515152,
+    "n_gt_0.5": 10,
+    "n_pairs": 66,
+    "max_abs_r": 0.7294260089537963
+  },
+  "t2_b": {
+    "mean_abs_r": 0.2600196367195419,
+    "median_abs_r": 0.23477339443969053,
+    "frac_gt_0.5": 0.12121212121212122,
+    "n_gt_0.5": 8,
+    "n_pairs": 66,
+    "max_abs_r": 0.7114830178839738
+  },
+  "t2_c": {
+    "mean_abs_r": 0.22385995076525014,
+    "median_abs_r": 0.20692117599976573,
+    "frac_gt_0.5": 0.07575757575757576,
+    "n_gt_0.5": 5,
+    "n_pairs": 66,
+    "max_abs_r": 0.6608005736038626
+  },
+  "t2_d": {
+    "markers_top1": [],
+    "keep_genes": [
+      "CD8A",
+      "CD8B",
+      "CD4",
+      "FOXP3",
+      "CD68",
+      "CD163",
+      "CD274",
+      "PDCD1",
+      "CTLA4",
+      "GZMB",
+      "IFNG",
+      "CD19"
+    ],
+    "brute": {
+      "mean_abs_r": 0.5563291004266693,
+      "median_abs_r": 0.5677419828795567,
+      "frac_gt_0.5": 0.6212121212121212,
+      "n_gt_0.5": 41,
+      "n_pairs": 66,
+      "max_abs_r": 0.8429866183240017
+    },
+    "residuelle": {
+      "mean_abs_r": 0.3269905582093907,
+      "median_abs_r": 0.32543721145561094,
+      "frac_gt_0.5": 0.15151515151515152,
+      "n_gt_0.5": 10,
+      "n_pairs": 66,
+      "max_abs_r": 0.7294260089537963
+    }
+  },
+  "t3": {
+    "C_brut_moyen": 0.5563291004266696,
+    "d_pred_brut": 0.7735411162274717,
+    "C_res_moyen": 0.3269905582093909,
+    "d_pred_res": 0.3825189017470115,
+    "C_CD8A_brut": 0.6513958300491405,
+    "C_CD8A_res": 0.4217870347787022,
+    "d_pred_CD8A_brut": 0.9356298902337845,
+    "d_pred_CD8A_res": 0.5441468942976873
+  },
+  "t4": {
+    "top1": "aDC",
+    "median": 0.095055,
+    "n_hi": 89,
+    "n_lo": 89,
+    "coh_hi": {
+      "mean_abs_r": 0.3954854303614505,
+      "median_abs_r": 0.40641829440577837,
+      "frac_gt_0.5": 0.4090909090909091,
+      "n_gt_0.5": 27,
+      "n_pairs": 66,
+      "max_abs_r": 0.9056673656586589
+    },
+    "coh_lo": {
+      "mean_abs_r": 0.43242810185831365,
+      "median_abs_r": 0.4552441263033995,
+      "frac_gt_0.5": 0.42424242424242425,
+      "n_gt_0.5": 28,
+      "n_pairs": 66,
+      "max_abs_r": 0.8412995785345125
+    },
+    "sd_global": 0.06464129336361178,
+    "sd_hi": 0.042035480612507024,
+    "sd_lo": 0.02939875558053658
+  }
+}

@@ -6,11 +6,11 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## État au 20 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 935 pages (PDF partagé séparément),
-  SHA-256 `686a3ef1f923c4b8cf8b4a1ef2f1e8bbf69892d456a514bc10ab75d615af8542`
-  (12559085 octets), sections §8.1–§8.66. Le fichier Markdown ici a pour SHA-256
-  `f0c8af71e9578a5f21af2369607745e8376c1c7b0b97c2d01202f7e4086c6417`
-  (12138 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 988 pages (PDF partagé séparément),
+  SHA-256 `7cf042a5f5537a8331dc20a1aa0f63a8a20f03f9bdb1ce72673e9d02b5c281b7`
+  (12836519 octets), sections §8.1–§8.69. Le fichier Markdown ici a pour SHA-256
+  `102038901e8421b36c65e561112f1537a0386ee81d5a2e2b86f57986e7385855`
+  (13896 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -19,6 +19,23 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   `universal_v6.4.0_cohen.py` (recomposition du MC par la
   récurrence-concentration) est joint pour vérification : proposition
   REJETÉE (§8.52), v6.2 reste la version de travail.
+- Les 3 verdicts §8.67–§8.69 : (§8.67) fraction leucocytaire —
+  PARTIEL : elle retire un tiers de la cohésion (0,5035 → 0,3372,
+  −33,0 %) et ordonne les flux bruts (+0,7129), mais une fois les flux
+  résidualisés elle ne les ordonne plus du tout (−0,0099) et la
+  séparation survit (+0,5662, 57,6 % du brut CD8A conservés) ; la
+  quantité de leucocytes ne porte pas la séparation. (§8.68) xCell
+  64 types — H1-xcell PARTIELLE SOUTENUE : les cellules dendritiques
+  activées (aDC) retirent à elles seules 41,2 % de la cohésion
+  (0,5563 → 0,3270) ; les DC ordonnent les flux à +1,1804 ; mais les
+  flux résidualisés séparent encore +0,6040 (61,4 % du brut) — aucun
+  type ne porte tout. (§8.69) confirmation indépendante maxsep (C3) —
+  NON : la paire GSE21501 ne sépare pas (d_maxsep −0,0100), A2 étendu
+  6/9, C3 non levée ; l'adoption pleine de maxsep, décidée par Zackary
+  le 20 nov. 2026 à 13h04 (note §8.64.12), reste sa décision — la
+  confirmation reste ouverte (piste GSE79668) ; correction : la
+  plateforme GSE57495 est GPL15048, pas GPL6244 comme l'affirmait le
+  §8.66 §1.2.
 - Les 3 verdicts §8.64–§8.66 : (§8.64) adoption de maxsep —
   ADOPTER SOUS CONDITION CONFIRMÉ par une troisième lecture indépendante
   (0 écart contre le §8.59 : 37/48, 6/8, HP35 +1,6512, 120/120 à 0,0
@@ -93,22 +110,22 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.66).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.69).
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
 - `README.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier,
   les sources des données, les SHA-256 de chaque fichier du dépôt.
-- `provenance/` — 70 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 74 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 75 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165).
-- `sections/` — sections §8.38–§8.66 du livre blanc, fichiers sources.
-- `scripts/` — 156 scripts de construction des flux, d'extraction et
+- `results/` — 89 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501).
+- `sections/` — sections §8.38–§8.69 du livre blanc, fichiers sources.
+- `scripts/` — 167 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 594 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.66.
+- `data_flux/` — 618 CSV/JSON : flux d'entrée des runs, tests directs,
+  extraits ssep / v62_delta / §8.46–§8.69.
 
 ## Données brutes
 
@@ -119,7 +136,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (935 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (988 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 
