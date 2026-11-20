@@ -1,0 +1,435 @@
+{
+  "sha_checks": {
+    "immune": true,
+    "axis": true,
+    "v62": true,
+    "pdacr_rds": true,
+    "sampinfo_csv": true
+  },
+  "gate_S": {
+    "n_ours": 178,
+    "n_externes": 181,
+    "matched_barcode": 178,
+    "methylation_non_null": 150,
+    "methylation_dans_[0,1]": true,
+    "unmatched_ours": [],
+    "externes_hors_projet": [
+      "TCGA-HZ-A9TJ-06A",
+      "TCGA-H6-8124-11A",
+      "TCGA-YB-A89D-11A"
+    ],
+    "sans_methylation": [
+      "TCGA-HV-A7OP-01A-11R-A33R-07",
+      "TCGA-3A-A9IJ-01A-11R-A39D-07",
+      "TCGA-US-A77J-01A-11R-A32O-07",
+      "TCGA-2J-AABP-01A-11R-A41B-07",
+      "TCGA-F2-6880-01A-11R-2156-07",
+      "TCGA-3A-A9IR-01A-11R-A38C-07",
+      "TCGA-3A-A9IN-01A-11R-A39D-07",
+      "TCGA-RL-AAAS-01A-32R-A39D-07",
+      "TCGA-3A-A9IL-01A-11R-A38C-07",
+      "TCGA-3A-A9IV-01A-11R-A41B-07",
+      "TCGA-3A-A9IO-01A-11R-A38C-07",
+      "TCGA-2L-AAQM-01A-11R-A39D-07",
+      "TCGA-3A-A9IS-01A-21R-A39D-07",
+      "TCGA-FB-AAPP-01A-12R-A41B-07",
+      "TCGA-IB-AAUV-01A-11R-A38C-07",
+      "TCGA-HZ-7923-01A-12R-2156-07",
+      "TCGA-HZ-7920-01A-11R-2204-07",
+      "TCGA-IB-AAUW-01A-12R-A38C-07",
+      "TCGA-H8-A6C1-01A-11R-A32O-07",
+      "TCGA-HZ-7918-01A-11R-2156-07",
+      "TCGA-F2-7273-01A-11R-2156-07",
+      "TCGA-F2-7276-01A-11R-2156-07",
+      "TCGA-HZ-8638-01A-11R-2404-07",
+      "TCGA-HZ-7924-01A-11R-2156-07",
+      "TCGA-FB-A7DR-01A-21R-A33R-07",
+      "TCGA-IB-7654-01A-11R-2156-07",
+      "TCGA-L1-A7W4-01A-12R-A36G-07",
+      "TCGA-HZ-7289-01A-11R-2156-07"
+    ],
+    "open": true
+  },
+  "matched": {
+    "n": 150,
+    "n_with_absolute": 149,
+    "methylation": {
+      "min": 0.134502425841154,
+      "median": 0.39964103920229954,
+      "mean": 0.39584315733505787,
+      "sd": 0.1276362472463435,
+      "max": 0.681396280236276
+    }
+  },
+  "coherence": {
+    "methylation_vs_absolute": {
+      "n": 149,
+      "r_pearson": 0.8556163985516381,
+      "p": 6.960648161293438e-44,
+      "reference_855": 0.8556
+    },
+    "purity_class_vs_methylation": {
+      "n_high": 76,
+      "n_low": 74,
+      "high_min": 0.266118163995236,
+      "high_max": 0.681396280236276,
+      "low_min": 0.134502425841154,
+      "low_max": 0.473926577563705,
+      "high_mean": 0.4915407080739199,
+      "low_mean": 0.29755918630595646
+    },
+    "methylation_vs_leukocyte": {
+      "n": 150,
+      "r_pearson": -0.6773939797318527,
+      "p": 1.764582859899773e-21
+    },
+    "absolute_vs_leukocyte": {
+      "n": 149,
+      "r_pearson": -0.6900972419080363,
+      "p": 2.1481396322568075e-22
+    }
+  },
+  "T1_per_flux": [
+    {
+      "gene": "CD8A",
+      "r_methylation": -0.6347937934602642,
+      "p_methylation": 2.7122920421147518e-18,
+      "rho_methylation": -0.6317276323392151,
+      "R2_methylation": 0.40296316021567247
+    },
+    {
+      "gene": "CD8B",
+      "r_methylation": -0.5378127820421074,
+      "p_methylation": 1.2763792134605108e-12,
+      "rho_methylation": -0.535232677007867,
+      "R2_methylation": 0.2892425885278713
+    },
+    {
+      "gene": "CD4",
+      "r_methylation": -0.5556364270841914,
+      "p_methylation": 1.5807740069007162e-13,
+      "rho_methylation": -0.5634508200364461,
+      "R2_methylation": 0.3087318391028858
+    },
+    {
+      "gene": "FOXP3",
+      "r_methylation": -0.45712032622227494,
+      "p_methylation": 4.096570687022631e-09,
+      "rho_methylation": -0.48709187074981114,
+      "R2_methylation": 0.2089589926455585
+    },
+    {
+      "gene": "CD68",
+      "r_methylation": -0.12066073667237334,
+      "p_methylation": 0.14134438139712,
+      "rho_methylation": -0.07953242366327393,
+      "R2_methylation": 0.014559013374319973
+    },
+    {
+      "gene": "CD163",
+      "r_methylation": -0.4855477123829359,
+      "p_methylation": 3.0203574993923905e-10,
+      "rho_methylation": -0.4845033112582782,
+      "R2_methylation": 0.23575658100030217
+    },
+    {
+      "gene": "CD274",
+      "r_methylation": -0.2092393724048437,
+      "p_methylation": 0.010178049031085509,
+      "rho_methylation": -0.2404873465375825,
+      "R2_methylation": 0.04378111496437287
+    },
+    {
+      "gene": "PDCD1",
+      "r_methylation": -0.5396095406245028,
+      "p_methylation": 1.0397785548220231e-12,
+      "rho_methylation": -0.5572140984043736,
+      "R2_methylation": 0.2911784563329872
+    },
+    {
+      "gene": "CTLA4",
+      "r_methylation": -0.5154225718465122,
+      "p_methylation": 1.488045855253258e-11,
+      "rho_methylation": -0.5124796657629228,
+      "R2_methylation": 0.26566042756887276
+    },
+    {
+      "gene": "GZMB",
+      "r_methylation": -0.39707477841186656,
+      "p_methylation": 4.882619109481278e-07,
+      "rho_methylation": -0.43622738788390597,
+      "R2_methylation": 0.1576683796508328
+    },
+    {
+      "gene": "IFNG",
+      "r_methylation": -0.1706192546028196,
+      "p_methylation": 0.03684281946714812,
+      "rho_methylation": -0.2180434944640946,
+      "R2_methylation": 0.029110930041221894
+    },
+    {
+      "gene": "CD19",
+      "r_methylation": -0.4497739669220102,
+      "p_methylation": 7.737302334159749e-09,
+      "rho_methylation": -0.4552624519595575,
+      "R2_methylation": 0.20229662132076132
+    }
+  ],
+  "T1_summary": {
+    "mean_abs_r_methylation": 0.4227759385563919,
+    "mean_abs_rho_methylation": 0.43343776500561065,
+    "median_R2_methylation": 0.22235778682293034,
+    "max_R2_methylation": 0.40296316021567247
+  },
+  "T2_matrix": {
+    "brut_n150": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.5035220551351505,
+      "pearson_median_abs_r": 0.5422061601862136,
+      "pearson_frac_gt_0.5": 0.5606060606060606,
+      "pearson_max_abs_r": 0.8525980768750379,
+      "spearman_mean_abs_r": 0.4871043592331871,
+      "spearman_median_abs_r": 0.5238846170940931
+    },
+    "resid_methylation": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.42347055612139783,
+      "pearson_median_abs_r": 0.433745699417571,
+      "pearson_frac_gt_0.5": 0.36363636363636365,
+      "pearson_max_abs_r": 0.7847435672118749,
+      "spearman_mean_abs_r": 0.40405146626045335,
+      "spearman_median_abs_r": 0.4154140184008178
+    }
+  },
+  "T2_summary": {
+    "drop_methylation_pct": 15.898310351522932
+  },
+  "T2_sensitivity_both": {
+    "brut_n149": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.5040345996620198,
+      "pearson_median_abs_r": 0.5429243443384287,
+      "pearson_frac_gt_0.5": 0.5606060606060606,
+      "pearson_max_abs_r": 0.8523128350450377,
+      "spearman_mean_abs_r": 0.48797405110915504,
+      "spearman_median_abs_r": 0.5250680210411753
+    },
+    "resid_absolute_methylation": {
+      "n_pairs": 66,
+      "pearson_mean_abs_r": 0.3798271669969048,
+      "pearson_median_abs_r": 0.37452876851565664,
+      "pearson_frac_gt_0.5": 0.25757575757575757,
+      "pearson_max_abs_r": 0.7703779181193645,
+      "spearman_mean_abs_r": 0.3656464884652803,
+      "spearman_median_abs_r": 0.37179212769816794
+    }
+  },
+  "T2_sensitivity_summary": {
+    "n": 149,
+    "drop_both_pct": 24.642640157719782
+  },
+  "T2_reference_178": {
+    "n_pairs": 66,
+    "pearson_mean_abs_r": 0.5563291004266693,
+    "pearson_median_abs_r": 0.5677419828795567,
+    "pearson_frac_gt_0.5": 0.6212121212121212,
+    "pearson_max_abs_r": 0.8429866183240017,
+    "spearman_mean_abs_r": 0.540251655358166,
+    "spearman_median_abs_r": 0.5651791378153717
+  },
+  "T3_coupling": [
+    {
+      "control": "CD8A",
+      "C_brut": 0.6055991457598703,
+      "C_resid": 0.50923283614928,
+      "d_pred_brut": 0.8575465435205789,
+      "d_pred_resid": 0.6932419856345224
+    },
+    {
+      "control": "CD8B",
+      "C_brut": 0.538579445762154,
+      "C_resid": 0.42958910785246096,
+      "d_pred_brut": 0.7432779550244726,
+      "d_pred_resid": 0.557449428888446
+    },
+    {
+      "control": "CD4",
+      "C_brut": 0.6039027702525162,
+      "C_resid": 0.5041005346010164,
+      "d_pred_brut": 0.8546542232805401,
+      "d_pred_resid": 0.6844914114947331
+    },
+    {
+      "control": "FOXP3",
+      "C_brut": 0.5840402817590721,
+      "C_resid": 0.5017196351546928,
+      "d_pred_brut": 0.8207886803992179,
+      "d_pred_resid": 0.6804319779387511
+    },
+    {
+      "control": "CD68",
+      "C_brut": 0.27275577960590863,
+      "C_resid": 0.26045519226034475,
+      "d_pred_brut": 0.29004860422807427,
+      "d_pred_resid": 0.26907610280388783
+    },
+    {
+      "control": "CD163",
+      "C_brut": 0.5138875515975099,
+      "C_resid": 0.3976446967087597,
+      "d_pred_brut": 0.7011782754737543,
+      "d_pred_resid": 0.5029842078884352
+    },
+    {
+      "control": "CD274",
+      "C_brut": 0.3862623865287548,
+      "C_resid": 0.34059374606954035,
+      "d_pred_brut": 0.483577369031527,
+      "d_pred_resid": 0.4057123370485663
+    },
+    {
+      "control": "PDCD1",
+      "C_brut": 0.5525241544221081,
+      "C_resid": 0.4484103689800795,
+      "d_pred_brut": 0.7670536832896944,
+      "d_pred_resid": 0.5895396791110357
+    },
+    {
+      "control": "CTLA4",
+      "C_brut": 0.595945088237714,
+      "C_resid": 0.5077541565339255,
+      "d_pred_brut": 0.8410863754453024,
+      "d_pred_resid": 0.690720836890343
+    },
+    {
+      "control": "GZMB",
+      "C_brut": 0.540404718480392,
+      "C_resid": 0.46169981863987425,
+      "d_pred_brut": 0.7463900450090684,
+      "d_pred_resid": 0.6121981907809857
+    },
+    {
+      "control": "IFNG",
+      "C_brut": 0.429076600125857,
+      "C_resid": 0.4093645144075024,
+      "d_pred_brut": 0.5565756032145863,
+      "d_pred_resid": 0.5229664970647916
+    },
+    {
+      "control": "CD19",
+      "C_brut": 0.419286739089949,
+      "C_resid": 0.31108206609929695,
+      "d_pred_brut": 0.5398838901483631,
+      "d_pred_resid": 0.35539492269930134
+    }
+  ],
+  "T3_summary": {
+    "mean_C_brut": 0.5035220551351506,
+    "mean_C_resid": 0.4234705561213978,
+    "mean_d_pred_brut": 0.6835051040054316,
+    "mean_d_pred_resid": 0.5470172981869833
+  },
+  "T4_stratification": {
+    "methylation": {
+      "median": 0.39964103920229954,
+      "n_hi": 75,
+      "n_lo": 75,
+      "hi": {
+        "n_pairs": 66,
+        "pearson_mean_abs_r": 0.4213308146627484,
+        "pearson_median_abs_r": 0.44976175220439574,
+        "pearson_frac_gt_0.5": 0.3484848484848485,
+        "pearson_max_abs_r": 0.8231425377774433,
+        "spearman_mean_abs_r": 0.4195624158560612,
+        "spearman_median_abs_r": 0.42680915173360734
+      },
+      "lo": {
+        "n_pairs": 66,
+        "pearson_mean_abs_r": 0.4349854084028335,
+        "pearson_median_abs_r": 0.4338097197949287,
+        "pearson_frac_gt_0.5": 0.4090909090909091,
+        "pearson_max_abs_r": 0.9150919892973358,
+        "spearman_mean_abs_r": 0.4041711689034647,
+        "spearman_median_abs_r": 0.4034566145092461
+      }
+    }
+  },
+  "annex_leukocyte": {
+    "per_flux": [
+      {
+        "gene": "CD8A",
+        "r_leukocyte": 0.6596757087178429,
+        "p_leukocyte": 4.313818366059361e-20,
+        "rho_leukocyte": 0.6411858304813547
+      },
+      {
+        "gene": "CD8B",
+        "r_leukocyte": 0.581925220974103,
+        "p_leukocyte": 5.731636411909662e-15,
+        "rho_leukocyte": 0.5521152051202277
+      },
+      {
+        "gene": "CD4",
+        "r_leukocyte": 0.6143406107282846,
+        "p_leukocyte": 6.219352724227938e-17,
+        "rho_leukocyte": 0.6115987377216766
+      },
+      {
+        "gene": "FOXP3",
+        "r_leukocyte": 0.6865654859601027,
+        "p_leukocyte": 3.085363088046998e-22,
+        "rho_leukocyte": 0.648535490466243
+      },
+      {
+        "gene": "CD68",
+        "r_leukocyte": 0.21972570623837054,
+        "p_leukocyte": 0.00689930546618149,
+        "rho_leukocyte": 0.22657895906484735
+      },
+      {
+        "gene": "CD163",
+        "r_leukocyte": 0.48269891314970725,
+        "p_leukocyte": 3.965211636575209e-10,
+        "rho_leukocyte": 0.5184461531623628
+      },
+      {
+        "gene": "CD274",
+        "r_leukocyte": 0.27648606358635386,
+        "p_leukocyte": 0.0006149449945232065,
+        "rho_leukocyte": 0.29768105042995935
+      },
+      {
+        "gene": "PDCD1",
+        "r_leukocyte": 0.7039954212669359,
+        "p_leukocyte": 9.340151434649114e-24,
+        "rho_leukocyte": 0.6516716298502155
+      },
+      {
+        "gene": "CTLA4",
+        "r_leukocyte": 0.7128647395091785,
+        "p_leukocyte": 1.426328855226892e-24,
+        "rho_leukocyte": 0.6723552157873685
+      },
+      {
+        "gene": "GZMB",
+        "r_leukocyte": 0.581274131110149,
+        "p_leukocyte": 6.244931883238743e-15,
+        "rho_leukocyte": 0.5560122672118761
+      },
+      {
+        "gene": "IFNG",
+        "r_leukocyte": 0.3248892105184487,
+        "p_leukocyte": 4.984008830913105e-05,
+        "rho_leukocyte": 0.34757643777442615
+      },
+      {
+        "gene": "CD19",
+        "r_leukocyte": 0.7023675440756209,
+        "p_leukocyte": 1.3088014936181402e-23,
+        "rho_leukocyte": 0.6284449920401347
+      }
+    ],
+    "mean_abs_r_leukocyte": 0.5455673963195914,
+    "note": "Descriptif seulement : la fraction leucocytaire par méthylation est une piste d'infiltration indépendante (non circulaire), mais elle ne fait pas partie du verdict H1-meth/H0-meth (protocole §2, §7). Aucun run sur cette colonne."
+  }
+}

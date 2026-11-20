@@ -559,6 +559,36 @@ sources. Provenance complète : `section_8.55_purity_external.md` §8.55.1 et
 
 ---
 
+## 19. Matrices DepMap découpées pour la Release (20 nov. 2026)
+
+Go de Zackary, 20 nov. 2026 08h17 : les deux matrices DepMap doivent être
+dans la prochaine Release, découpées car le navigateur refuse les fichiers
+de 428 Mo et 1,3 Go. Préparation faite le 20 nov. 2026 (coordinateur
+§8.59–§8.63). Les morceaux ne sont PAS dans ce dépôt (limite snapshot) :
+ce sont des actifs de Release uniquement. Détail et réassemblage :
+`depmap_split/README_depmap_split.md` (dossier de travail
+`~/workspace/push_v62_863_build/depmap_split/`).
+
+- `CRISPRGeneEffect.csv` (DepMap Public 24Q4, figshare 27993248),
+  428 678 699 o, SHA-256
+  `3d8f3ec6dbf2db7ff834b79b508622ec0b226f3518003fe96ecf5a4fcf167e3b` →
+  `CRISPRGeneEffect.csv.gz` (192 011 215 o, SHA-256
+  `14041b48060e698ae13da2c59874faa92b92531c8d5001196fc2a7ac2d1a94c8`)
+  en 4 morceaux de 50 Mo (`part-00` à `part-03`).
+- `OmicsCNGene.csv` (DepMap Public 24Q4, figshare 27993248),
+  1 394 554 236 o, SHA-256
+  `4851d3e939d48837a39a0f01294deb90fa507a85703586a927b77474f999134c` →
+  `OmicsCNGene.csv.gz` (148 274 624 o, SHA-256
+  `d12e6b4c1b2aa755e31e0f3eb3e5fd8fcc776174efcfa92c8b047021aa1158e3`)
+  en 3 morceaux de 50 Mo (`part-00` à `part-02`).
+- Réassemblage vérifié le 20 nov. 2026 : `cat *.part-* | gunzip -c` retrouve
+  les deux SHA-256 sources exacts. Commandes complètes dans
+  `depmap_split/README_depmap_split.md`. En cas de refus d'un morceau de
+  50 Mo par le navigateur : tester UN morceau d'abord, puis redescendre à
+  15 Mo (`split -b 15M`).
+
+---
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash
