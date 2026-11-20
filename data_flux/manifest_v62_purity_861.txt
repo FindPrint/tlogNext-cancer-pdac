@@ -1,0 +1,4 @@
+PURITY861_MMETH|/home/hatch/workspace/runs/pdac-v6/purity861_mmeth.csv|results_fast_v62_purity861_mmeth
+PURITY861_MMETH_NUL|/home/hatch/workspace/runs/pdac-v6/purity861_mmeth_nul.csv|results_fast_v62_purity861_mmeth_nul
+PURITY861_MRES|/home/hatch/workspace/runs/pdac-v6/purity861_mres.csv|results_fast_v62_purity861_mres
+PURITY861_MRES_NUL|/home/hatch/workspace/runs/pdac-v6/purity861_mres_nul.csv|results_fast_v62_purity861_mres_nul
