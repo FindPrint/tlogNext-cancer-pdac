@@ -1,0 +1,27 @@
+{
+  "serie": "GSE194249",
+  "url_utilisee": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE194nnn/GSE194249/suppl/GSE194249_PDPCOs_FPKM.txt.gz",
+  "fichier": "data/GSE194249_PDPCOs_FPKM.txt.gz",
+  "taille_octets": 4927876,
+  "sha256": "479517fbed1d8f5bb9d141b6b932b6ab56ba2ba72d4394d13aea2a3da0a50f27",
+  "gzip_integre": true,
+  "n_lignes_total": 15610,
+  "n_colonnes_en_tete": 88,
+  "en_tete_premieres_colonnes": [
+    "GeneSymbol",
+    "CAS-DAC-1",
+    "CAS-IPMN-1",
+    "CAS-DAC-11",
+    "CAS-DAC-12",
+    "CAS-DAC-13"
+  ],
+  "en_tete_derniere_colonne": "NPC-7",
+  "deuxieme_ligne_premieres_colonnes": [
+    "PCDHGB7",
+    "0.150749",
+    "0.169266",
+    "0.407267",
+    "0.431275",
+    "0.206702"
+  ]
+}

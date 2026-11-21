@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+
+<lst name="responseHeader">
+  <int name="status">0</int>
+  <int name="QTime">1</int>
+</lst>
+<result name="response" numFound="1" start="0" numFoundExact="true">
+  <doc>
+    <str name="locus_group">protein-coding gene</str>
+    <str name="agr">HGNC:21666</str>
+    <arr name="ccds_id">
+      <str>CCDS4692</str>
+    </arr>
+    <arr name="rgd_id">
+      <str>RGD:1303125</str>
+    </arr>
+    <date name="date_approved_reserved">2004-02-03T00:00:00Z</date>
+    <arr name="prev_symbol">
+      <str>DPCR1</str>
+    </arr>
+    <arr name="ena">
+      <str>AB064272</str>
+    </arr>
+    <int name="orphanet">183886</int>
+    <str name="location">6p21.33</str>
+    <str name="name">mucin like 3</str>
+    <str name="vega_id">OTTHUMG00000031104</str>
+    <str name="status">Approved</str>
+    <arr name="prev_name">
+      <str>diffuse panbronchiolitis critical region 1</str>
+    </arr>
+    <arr name="mane_select">
+      <str>ENST00000462446.6</str>
+      <str>NM_080870.4</str>
+    </arr>
+    <str name="symbol">MUCL3</str>
+    <arr name="mgd_id">
+      <str>MGI:2685476</str>
+    </arr>
+    <arr name="alias_symbol">
+      <str>PBLT</str>
+      <str>bCX105N19.6</str>
+      <str>C6orf37</str>
+    </arr>
+    <str name="entrez_id">135656</str>
+    <arr name="refseq_accession">
+      <str>NM_080870</str>
+    </arr>
+    <str name="hgnc_id">HGNC:21666</str>
+    <str name="uuid">601d4163-527b-451d-9a50-2cf792c85abc</str>
+    <str name="ucsc_id">uc003nsg.3</str>
+    <arr name="pubmed_id">
+      <long>12185533</long>
+      <long>10677310</long>
+    </arr>
+    <date name="date_modified">2023-01-20T00:00:00Z</date>
+    <str name="ensembl_gene_id">ENSG00000168631</str>
+    <date name="date_name_changed">2018-03-19T00:00:00Z</date>
+    <str name="locus_type">gene with protein product</str>
+    <arr name="omim_id">
+      <str>613928</str>
+    </arr>
+    <date name="date_symbol_changed">2018-03-19T00:00:00Z</date>
+    <arr name="uniprot_ids">
+      <str>Q3MIW9</str>
+    </arr></doc>
+</result>
+</response>

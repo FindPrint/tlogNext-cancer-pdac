@@ -1,0 +1,41 @@
+{
+  "matrice": "data/GSE194249_PDPCOs_FPKM.txt.gz",
+  "matrice_sha256": "479517fbed1d8f5bb9d141b6b932b6ab56ba2ba72d4394d13aea2a3da0a50f27",
+  "matrice_taille_octets": 4927876,
+  "n_lignes_fichier": 15610,
+  "n_lignes_genes": 15609,
+  "n_colonnes_total": 88,
+  "n_colonnes_echantillons": 87,
+  "mise_en_page": "A (col1=GeneSymbol)",
+  "titres_inattendus": [],
+  "titres_esummary_absents_matrice": [],
+  "colonnes_normales_NPC_exclues": [
+    "NPC-4",
+    "NPC-5",
+    "NPC-7"
+  ],
+  "n_normaux_exclus": 3,
+  "n_pdpco_retenus": 84,
+  "n_symboles_dupliques_lignes": 0,
+  "symboles_dupliques": [],
+  "n_genes_uniques_apres_agregation": 15609,
+  "presence_13_genes": {
+    "PGC": true,
+    "REG4": true,
+    "CLDN18": true,
+    "MUC17": true,
+    "DPCR1": false,
+    "CR2": true,
+    "KRT20": true,
+    "MUC2": true,
+    "GSTM1": true,
+    "CEACAM5": true,
+    "CLCA1": true,
+    "MUC16": true,
+    "KRAS": true
+  },
+  "genes_absents": [
+    "DPCR1"
+  ],
+  "MUCL3_present_descriptif": false
+}

@@ -5,6 +5,7 @@
 **Date de rédaction :** 19 novembre 2026.
 **Révision §8.77 :** 21 novembre 2026 — toutes les URL manquantes du §17 ont été retrouvées et vérifiées par SHA-256 (voir §29, chantier §8.77) ; nouvelle §28 (sources du §8.76) et §29 (bilan du chantier). Aucun verdict du livre blanc n'est modifié par cette révision.
 **Révision §8.83 :** 21 novembre 2026 — nouvelles §30 (inventaire §8.78, supplément Chen MOESM13), §31 (13e paire GSE57495 + arrêt C2 GDC, §8.79), §32 (TCGA-UVM, §8.81), §33 (TCGA-GBM, §8.82) et §34 (survie §8.83, aucune source nouvelle) ; §8.80 (veille clinique) sans donnée nouvelle. GSE57495 déjà couverte (ligne §21 / §8.69) — rappelée, pas re-ajoutée. Aucun verdict du livre blanc n'est modifié par cette révision.
+**Révision §8.86 :** 21 novembre 2026 — nouvelles §35 (lot drogue Chen 2025, suppléments MOESM3–MOESM17, §8.84), §36 (remappage DPCR1 → MUCL3, réponses HGNC/Ensembl, §8.85) et §37 (GSE194249, matrice FPKM déposée, §8.86) ; MOESM13 déjà couverte (§30) — rappelée, pas re-ajoutée ; données GDC déjà couvertes (§31) — rappelées, pas re-téléchargées. Aucun verdict du livre blanc n'est modifié par cette révision.
 **Périmètre :** tous les fichiers de `~/workspace/runs/pdac-v6/data/` (87 fichiers, ~2,44 Go) + un fichier brut hors `data/` (`data_clinical_patient.txt`, racine de `pdac-v6/`).
 **Règle appliquée (Zackary, 27 oct. 2026 — provenance toujours nommée) :** chaque URL est copiée telle quelle depuis une provenance lue ; **aucune URL n'a été inventée**. Quand une URL n'est pas dans une provenance, c'est écrit noir sur blanc : « URL non consignée dans les provenances ».
 
@@ -957,6 +958,184 @@ section §8.80 (communiqués Tango / Revolution Medicines, ESMO 2026, ENA 2026),
 
 ---
 
+## 35. Lot drogue Chen 2025 (§8.84, 21 nov. 2026)
+
+**Source déjà couverte (§30) :** MOESM13 (`41467_2025_57520_MOESM13_ESM.xlsx`,
+35 732 o, SHA-256 `0e009cd56d2f6c25b0b355590becc4abfee3e1080633173bc33606d1bf325340`) —
+rappelée, pas re-ajoutée. Article : Yin, X., Shen, H., Wang, H. *et al.*,
+*Nature Communications* **16**, 2214 (2025), DOI 10.1038/s41467-025-57520-3
+(https://doi.org/10.1038/s41467-025-57520-3, CC BY-NC-ND 4.0).
+
+**Nouveaux téléchargements du chantier (§8.84 §3, après le gel)** — suppléments
+Springer de l'article, URLs relevées du fichier `chen884_scratch/article.html`
+(liens ESM de la page article), SHA-256 complets recalculés depuis les fichiers
+détenus (`chen884_scratch/`, tailles mesurées localement) :
+
+- **MOESM17 — Source Data, Fig. 6** :
+  `https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM17_ESM.xlsx`,
+  **5 454 570 o**, SHA-256 `917a1011426c5ee749343ccabf8126e35923a65c4719ec929f84aa29a511f7b1`.
+  Feuille « Figure 6 », 121 lignes × 151 colonnes : Fig. 6a disponibilité WGS/RNA/ATAC/Drug
+  Screen/CFTR_drug par organoïde ; Fig. 6b Z-scores des AUC (63 drogues × 46 PDO) ; Fig. 6c
+  Z-scores CFTR (15 × 15) ; Fig. 6d courbes dose-réponse ; Fig. 6e statut CFTR par PDO pour
+  les 15 du volet CFTR (MT : DAC13, DAC24, DAC72, DAC84 ; WT : 11 PDO) avec les AUC des
+  5 correcteurs. **Aucune ligne KRAS, aucune ligne MTAP dans toute la feuille.**
+  Recoupement : AUC Fig. 6e vs MOESM13 feuille CFTR, 75/75 paires, écart max 4,96e-08.
+- **MOESM3 — description des suppléments** :
+  `https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM3_ESM.pdf`,
+  **140 637 o**, SHA-256 `3a84243b7b4c3bbab172a4ead61725663fd076cd00664091ea0fad3c5313c569`.
+  Aucune des Data 1–12 n'est une table somatique par organoïde (Data 10 = écran de drogues, MOESM13).
+- **MOESM4–MOESM15** (même préfixe d'URL, `.../41467_2025_57520_MOESM<N>_ESM.xlsx`) :
+  MOESM4 (Data 1) 107 126 o, SHA `09968fbc39659f2ddf79bc40b7269e4cb5899e719bfb9d4b869ae1d55c171dfd` ;
+  MOESM5 (Data 2) 74 274 o, SHA `c759ab51256b69605fcaba96e30d0f90a95c3737db4cb16eb46ce4b4d8ef25eb` ;
+  MOESM6 (Data 3) 2 061 427 o, SHA `af69c390a301f390a7c0d5b2e949057af813300f75669b62321c7ec55cb01392` ;
+  MOESM7 (Data 4) 23 295 o, SHA `bf5cab3f8f874451bcbc5aedbf4820481575d73fa079292797de5c63aca194fe` ;
+  MOESM8 (Data 5) 672 420 o, SHA `9b440dd95795d33585f3ae712dc1aa457bf5bc079dea704125a7c98a99d5e389` ;
+  MOESM9 (Data 6) 22 079 o, SHA `017632df49433135102830813ca7dfaaee56684264c1540b2614a79b802a1957` ;
+  MOESM10 (Data 7) 17 119 o, SHA `2e65713b3c575be73f81d4cf21b704a235315f6220472f64db0972465a48ccaa` ;
+  MOESM11 (Data 8) 10 779 o, SHA `da2c45834835df838c5d7555c5ed45a4642bca1be2d7e788520e066ed12ff25c` ;
+  MOESM12 (Data 9) 11 449 o, SHA `70a0ff03362fe595f8b93662a2eec30b5978631a2077deb0d46dadecd8ff904b` ;
+  MOESM14 (Data 11) 10 231 o, SHA `55c35f4a2b49e5622b3d297fdffe1d7b7c7a66d8347edfc54f06e34b72de3864` ;
+  MOESM15 (Data 12) 315 187 o, SHA `10ce1ef81e6c75841419bafbbee1c52d86550a63474d76a634509bbccb8d7a44`.
+  Recherche `DAC` / `KRAS` / `MTAP` exacts, cellule par cellule : 0 statut KRAS somatique
+  par PDO, 0 statut MTAP par PDO (seule occurrence MTAP : une variante germinale VUS_D
+  p.P41L chez un patient EN233, MOESM6 — pas un PDO, pas une délétion).
+  Figure 1 de la Source Data (oncoprint) : une ligne KRAS somatique existe, mais
+  **aucun identifiant DAC dans toute la feuille** — aucun mappage vers les organoïdes.
+  **Conclusion mesurée (§8.84 §4) : drogue × KRAS et drogue × MTAP IMPOSSIBLES dans les
+  données publiées.**
+- **Écart nommé dans PROVENANCE_884 :** les suffixes tronqués consignés pour MOESM5
+  (`c759ab51…1eb46c`), MOESM7 (`bf5cab3f…2a1957`) et MOESM8 (`9b440dd9…4f06e`) ne
+  correspondent pas aux SHA complets recalculés ci-dessus (préfixes 8 caractères conformes
+  sur les 11 fichiers) — le suffixe noté pour MOESM7 est la terminaison du SHA de MOESM9
+  (`...2a1957`), celui noté pour MOESM8 est une sous-chaîne du SHA de MOESM14
+  (`...4f06e...`), celui noté pour MOESM5 ne figure dans aucun des 11 SHA (probable coquille
+  de transcription de `16eb46c`). Les SHA complets cités ici sont ceux des fichiers détenus.
+
+**CSV de flux du chantier** (transpositions des AUC publiées, ordonnées par AUC Gemcitabine
+croissante ; aucune transformation, aucune imputation ; nul = permutation, échantillon
+hypothétique) : réel `pdac_884_chen_fluxes.csv` SHA `73fefc1044d9a92865b5a3a26aa493d0c62d2c9188fcd88e656d62fce7624554` ;
+nul graine 42 SHA `43866a016393c34681517d04752ec18597f14deab56bbc900a49b51231c6200a` ;
+nuls frais s8841 SHA `09e8e31efdfcf5dc89d942a9c2f50a37a4e0e6b2f9a50a168114e78129206da7`,
+s8842 SHA `adc95aa8b411cc9598802ff0a81e76bbb12227bfdea11ecf85c7f54fd164dd3a`.
+Scripts : `build_fluxes_884_chen.py` (SHA `d37973c8…9cd`) ; `direct_tests_884_chen.py` ;
+`extract_884.py` (SHA `1d5a25c93c1d92b5dc8121517772d7447423096692d1b5f1cd382cdd5394d363`) ;
+`verify_884.py` (SHA `19d778ed796cac911542525572692086628c9ec5b4568ef2b7fdfa60f3298c5a`) ;
+manifestes `manifest_v62_884.txt` (SHA `608d0a5f6226f5db35993b4ef582d2b1f674ac0185f8dd8bc85d8b25e5f18b7f`)
+et `manifest_v62_884_fresh.txt` (SHA `40ff4cb6c35ce7e68ff7521174726a1c02c1a0541bb6da384a8bb265f5e4f4d7`) ;
+`extract_884.json` (SHA `d5380813224462a372f5dfd7ecee630fafd0636a333c5819a6ab691474139b9e`) /
+`extract_884.csv` (SHA `622278cd5519734d9a71e2e1fd665931399ceceee2441eb774c6e700cff08d71`) ;
+`maxsep_884_verify.json` (SHA `7a6bc2022ec06f801e48426cf693a061647b239213499b8db4457c2d129aaf96`).
+Protocole `PROTOCOL_chen2025_drogue_884.md` (SHA `62ee265e…`) ; provenance `PROVENANCE_884.md`
+(SHA `1eb03395…`). Verdict §8.84 : CONFIRME (exploratoire, consolidée), d_maxsep +0,0982,
+3/3 nuls au-dessus du plancher ; hors compte A2 (n = 46 < 50).
+
+---
+
+## 36. Remappage DPCR1 → MUCL3, GDC ORGANOID-PANCREATIC (§8.85, 21 nov. 2026)
+
+**Aucun nouveau téléchargement de données d'expression dans ce chantier** : les 55 TSV GDC
+sont déjà couverts (§31 — manifeste SHA `f713edebf0f8afb20305b1472d480564e45ac31ce79e28350d7dde6ae496220b`,
+55/55 MD5 conformes, total 232 648 892 o, re-vérifiés dans ce chantier ; reçu
+`download_gdc_879_receipt.json` SHA `56ba7363b2e48ed910259138a281916c8de0b2a671911b9b02f3564274e987f0`).
+**Nouvelles sources : quatre réponses de nomenclature, lues le 21 nov. 2026 (~13h57 UTC),
+fichiers conservés, SHA-256 complets recalculés depuis les fichiers détenus :**
+
+- **HGNC, MUCL3** (source primaire de nomenclature) :
+  `https://rest.genenames.org/fetch/symbol/MUCL3`
+  (fichier `hgnc_mucl3_885.json`, **2 051 o**, SHA-256 `c6dfe86065fc96e1e8dcfc932d08491f078f7967aa38c1fa0ca9985377c96049`,
+  HTTP 200, XML) : symbol MUCL3, hgnc_id HGNC:21666, name « mucin like 3 », status Approved,
+  prev_symbol ['DPCR1'], prev_name ['diffuse panbronchiolitis critical region 1'],
+  ensembl_gene_id ENSG00000168631, entrez_id 135656, location 6p21.33,
+  date_symbol_changed 2018-03-19, date_name_changed 2018-03-19, refseq NM_080870.
+- **HGNC, prev_symbol DPCR1** :
+  `https://rest.genenames.org/fetch/prev_symbol/DPCR1`
+  (fichier `hgnc_prev_dpcr1_885.json`, **2 051 o**, SHA-256 `8b6d99f7463bf57256b773c6d9fbcf4d094287bb52439e2d63982a464a62b183`,
+  HTTP 200, XML) : numFound = 1, un seul résultat — le même enregistrement (HGNC:21666, MUCL3).
+  DPCR1 n'est donc le symbole approuvé actuel d'aucun autre gène.
+- **Ensembl REST, MUCL3** :
+  `https://rest.ensembl.org/lookup/symbol/homo_sapiens/MUCL3?content-type=application/json`
+  (fichier `ensembl_mucl3_885.json`, **422 o**, SHA-256 `21191898bb0a291bb78e17db7ccc706855bcea0b5f6f0d1b6307f10a5f1ebc56`,
+  HTTP 200, JSON) : id ENSG00000168631, display_name MUCL3, biotype protein_coding,
+  assembly GRCh38, chr 6:30940973-30954221, strand 1, canonical_transcript ENST00000462446.6.
+- **Ensembl REST, DPCR1** :
+  `https://rest.ensembl.org/lookup/symbol/homo_sapiens/DPCR1?content-type=application/json`
+  (fichier `ensembl_dpcr1_885.json`, **50 o**, SHA-256 `3cb0e234af5c59db12642bcd763608cdf223ab6710fa0d9be8c239688f72bfc0`,
+  HTTP 400, JSON) : `{"error": "No valid lookup found for symbol DPCR1"}` — identique au §8.79.
+- **Corroboration NCBI RefSeq** (miroir UCSC, NM_080870.4, lue ~13h57 UTC) : RefSeq Gene MUCL3,
+  Synonyms: C6orf37,DPCR1,PBLT, OMIM 613928, HGNC 21666, Entrez 135656, chr6:30940973-30954221
+  — coordonnées identiques à Ensembl. GTEx V8 utilise encore DPCR1 comme symbole pour
+  ENSG00000168631.
+- **Croisement données détenues :** la ligne `gene_name = MUCL3` porte `gene_id`
+  ENSG00000168631.13 dans **55/55 fichiers** ; DPCR1 : **0 occurrence** dans 55/55.
+  **Bilan : 5/5 portes PASSÉES — le remappage tient.**
+
+**CSV de flux du chantier** (TPM `tpm_unstranded` GDC, 44 fichiers tumoraux, 12 flux,
+en-tête `step,PGC,REG4,CLDN18,MUC17,MUCL3,CR2,KRT20,MUC2,GSTM1,CEACAM5,CLCA1,MUC16` ;
+aucune renormalisation, aucune imputation) : réel `pdac_885_gdc_organoid_fluxes.csv`
+SHA `a83b98175bdbc33525ba8a175aa898504d2cc44125b891d0902c6c6c26345eaf` ;
+nul graine 42 SHA `c3f8399cb423d7691136ed25860567186fb5e94e383283ddc081f83916bed12e` ;
+nuls frais s8851 SHA `a6fd59ed651ab3bd3bb58e4f9587322f239ae622abbdb7b19e666aec8d114ccd`,
+s8852 SHA `3801a71972c5e21c97c294b21352cc653a77e929aeea065acbec86a041185032`.
+Scripts : `build_fluxes_885.py` (SHA `9dc2f6678862af0065a2e3f139c2a6f5c05df8ceb2d51d6696641cfe28d30799`) ;
+`extract_885.py` (SHA `1742a3142f898ada85e537fb54e4f468f418d3f348aa4dba1ff6dc6b3d75dee0`) ;
+`verify_885.py` (SHA `c7b0977db30d951c68b75d2357a7cc3e7698157687f8d23521cbe31ce57e1f65`) ;
+`direct_tests_885.py` (SHA `67878fa004428ca219b4e8e2b28afec96b361c0e113ef7dd3a4ad989f102288d`) ;
+`extract_885.json` (SHA `bc1147b08547bba1d075af81f40a317d783712f02bf72bad9fe10e94adda2394`) /
+`extract_885.csv` (SHA `f3a411b92eb26548435e5247ed0dfbc75853010a3ae5ccb1193e2548b55edd14`) ;
+`maxsep_885_verify.json` (SHA `7487e5019bae13b01e817ccad4d93a3f4a06577cd9082edc01a1cb4f58829768`) ;
+`direct_tests_885.json` (SHA `ab2323b3ffbfdc81cc3bbbe864b14c7027aa5d1e6a6366b3bc5c6a5b8e5b4300`).
+Protocole `PROTOCOL_gdc_mucl3_885.md` (SHA `2dfeeade…`) ; provenance `PROVENANCE_885.md`
+(SHA `fe26f4e0…`). Verdict §8.85 : CONFIRME, FRAGILE ET NON CONSOLIDÉ, d_maxsep +0,0884 ;
+14e paire, A2 10/14 ; C3 reste levée.
+
+---
+
+## 37. GSE194249, ré-audit (§8.86, 21 nov. 2026)
+
+**Nouveau téléchargement (21 nov. 2026, 1re tentative, miroir HTTPS du FTP GEO).**
+Série GSE194249, NCBI GEO. Article : Shi X, Li Y, Yuan Q, Tang S, Guo S, et al.,
+« Integrated profiling of human pancreatic cancer organoids reveals chromatin
+accessibility features associated with drug sensitivity », *Nature Communications*
+2022, 13:2169, DOI 10.1038/s41467-022-29857-6 (CC BY 4.0),
+https://www.nature.com/articles/s41467-022-29857-6.
+Page GEO : https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194249
+(accès direct bloqué par reCAPTCHA le 21 nov. 2026 — les métadonnées viennent de
+l'API E-utilities, voir ci-dessous).
+
+- **Fichier d'expression (unique source) :** `GSE194249_PDPCOs_FPKM.txt.gz`,
+  URL `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE194nnn/GSE194249/suppl/GSE194249_PDPCOs_FPKM.txt.gz`,
+  fichier local `data/GSE194249_PDPCOs_FPKM.txt.gz`, **4 927 876 o**,
+  SHA-256 `479517fbed1d8f5bb9d141b6b932b6ab56ba2ba72d4394d13aea2a3da0a50f27`,
+  gzip intègre. Reçu `download_gse194249_886_receipt.json` (SHA `fd9bd625a3869086d06b11bb4896b5e5de7f05da91bf5867bca8d1bf83a016ea`).
+  Script `download_gse194249_886.py` (SHA `d0e1be23c34ea85a4661ffe6a7ecddf551372d2d0def08caf821a955254c4cc1`).
+  **Aucun SHA attendu pré-connu** : GEO ne publie pas de SHA pour ce fichier ;
+  la vérification est l'intégrité gzip + les comptages.
+- **Métadonnées E-utilities** (esummary GDS, `db=gds&id=200194249`, 21 nov. 2026),
+  réponse conservée `gse194249_esummary_886.json` (SHA `73934e46a717a5db1ed8cd8e1c4349435683a0eed1dda85fe7b097ec448f460e`) :
+  titre, accession GSE194249, plateforme GPL31265, dépôt 2022/02/23, *Homo sapiens*,
+  « Expression profiling by high throughput sequencing », fichier supplémentaire de type TXT,
+  **87 échantillons** : 75 `CAS-DAC-*`, 4 `CAS-NEN-*`, 4 `CAS-IPMN-*`, 1 `CAS-ACC-1`, 3 `NPC-*`.
+- **Contenu vérifié (deux chemins indépendants) :** 15 610 lignes (en-tête + **15 609 lignes
+  de gènes**), 88 colonnes (`GeneSymbol` + 87 échantillons) ; les 87 titres correspondent
+  EXACTEMENT aux 87 échantillons de l'esummary ; 0 symbole dupliqué ; 15 609 gènes uniques.
+  **Présence des 13 gènes utiles :** PGC 1, REG4 1, CLDN18 1, MUC17 1, **DPCR1 0**, CR2 1,
+  KRT20 1, MUC2 1, GSTM1 1, CEACAM5 1, CLCA1 1, MUC16 1, KRAS 1. **MUCL3 (descriptif) : 0.**
+  Second calcul (grep sur le fichier brut) : `DPCR1` exact 0 occurrence dans tout le fichier,
+  insensible à la casse 0 ; `MUCL3` 0 ; aucun symbole contenant `DPCR`.
+  Méthodes de l'article (p. 12) : TopHat sur hg19, FPKM par Cufflinks, filtre FPKM < 1 dans
+  les 87 échantillons, **15 819 gènes protéiques annoncés — contre 15 609 déposés (écart 210,
+  non élucidé)**.
+- **Arrêt :** script `build_fluxes_886.py` (SHA `04965dd4367b6e0709d679629b681e4a7e8808b21426d99dccee360731b79c52`),
+  audit `build_fluxes_886_audit.json` (SHA `60eeb3c73860f92bd180f7a9fbd4e25522de1fe8d798c8543f0272e6320b440a`) :
+  arrêt à la porte « 12 gènes v4 présents » (§3 du protocole) — **aucun CSV de flux, aucun run,
+  aucun manifeste, aucun journal de lot, aucun extracteur, aucun test direct**.
+  Les suppléments de réponse aux médicaments (Suppl. Data 8, MOESM11) et de suivi clinique
+  (Suppl. Data 10, MOESM13) n'ont PAS été téléchargés (hors périmètre de la paire) ; le n de
+  réponse exact reste non vérifié, comme au §8.78.
+- Protocole `PROTOCOL_gse194249_886.md` (SHA `b620238b…`) ; provenance `PROVENANCE_886.md`
+  (SHA `fa3f622c…`). Verdict §8.86 : **INUTILISABLE** comme 14e paire (DPCR1 absent) ;
+  A2 reste 10/14 ; piste fermée comme paire à 12 flux.
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash
@@ -988,7 +1167,7 @@ sha256sum ~/workspace/runs/pdac-v6/data_clinical_patient.txt
 
 ## Annexe B — Provenances lues pour rédiger ce document
 
-`PROVENANCE_depmap.md`, `PROVENANCE_tcga.md`, `PROVENANCE_tcga_v2.md`, `PROVENANCE_tcga_v3.md`, `PROVENANCE_tcga_v4.md`, `PROVENANCE_cptac.md`, `PROVENANCE_geo71729.md`, `PROVENANCE_geo62452.md`, `PROVENANCE_geo71729_survival.md`, `PROVENANCE_icgc.md`, `PROVENANCE_gdsc.md`, `PROVENANCE_prism_secondary.md`, `PROVENANCE_kras_g12d.md`, `PROVENANCE_kras_combinations.md`, `PROVENANCE_crispr_scan.md`, `PROVENANCE_mtap.md`, `PROVENANCE_mtap_pancancer.md`, `PROVENANCE_mtap_series.md`, `PROVENANCE_prmt5_mtap.md`, `PROVENANCE_mtap_prmt5_flux.md`, `PROVENANCE_mtap_arbitration_840.md`, `PROVENANCE_pancancer.md`, `PROVENANCE_parp_v6.md`, `PROVENANCE_immune_v6.md`, `PROVENANCE_immune_parp_v6.md`, `PROVENANCE_atr_chek1.md`, `PROVENANCE_muc16_cldn182.md`, `PROVENANCE_rotations.md`, `PROVENANCE_rotations_v61.md`, `PROVENANCE_rotations_dedup_844.md`, `PROVENANCE_testA_proliferation.md`, `PROVENANCE_testC_stage.md`, `PROVENANCE_v6.1.md`, `PROVENANCE_v6.2.md`, `PROVENANCE_878.md`, `PROVENANCE_879.md`, `PROVENANCE_880.md`, `PROVENANCE_881.md`, `PROVENANCE_882.md`, `PROVENANCE_883.md`, `PROVENANCE_priv_881.json`, `source_registry.md` (registre de synthèse du 16 nov. 2026), `~/workspace/staging-pdac/download_data.sh`, `~/workspace/runs/pdac-v6/download_gpl6244_mapping.py`, journaux `data/download_depmap.log`, `data/download_firehose.log`, `data/download_omicscn.log`, réponses JSON `data/panc1_api.json`, `data/panc1_9191.json`, `data/panc1_9197.json`, `data/panc1_ncats.json`.
+`PROVENANCE_depmap.md`, `PROVENANCE_tcga.md`, `PROVENANCE_tcga_v2.md`, `PROVENANCE_tcga_v3.md`, `PROVENANCE_tcga_v4.md`, `PROVENANCE_cptac.md`, `PROVENANCE_geo71729.md`, `PROVENANCE_geo62452.md`, `PROVENANCE_geo71729_survival.md`, `PROVENANCE_icgc.md`, `PROVENANCE_gdsc.md`, `PROVENANCE_prism_secondary.md`, `PROVENANCE_kras_g12d.md`, `PROVENANCE_kras_combinations.md`, `PROVENANCE_crispr_scan.md`, `PROVENANCE_mtap.md`, `PROVENANCE_mtap_pancancer.md`, `PROVENANCE_mtap_series.md`, `PROVENANCE_prmt5_mtap.md`, `PROVENANCE_mtap_prmt5_flux.md`, `PROVENANCE_mtap_arbitration_840.md`, `PROVENANCE_pancancer.md`, `PROVENANCE_parp_v6.md`, `PROVENANCE_immune_v6.md`, `PROVENANCE_immune_parp_v6.md`, `PROVENANCE_atr_chek1.md`, `PROVENANCE_muc16_cldn182.md`, `PROVENANCE_rotations.md`, `PROVENANCE_rotations_v61.md`, `PROVENANCE_rotations_dedup_844.md`, `PROVENANCE_testA_proliferation.md`, `PROVENANCE_testC_stage.md`, `PROVENANCE_v6.1.md`, `PROVENANCE_v6.2.md`, `PROVENANCE_878.md`, `PROVENANCE_879.md`, `PROVENANCE_880.md`, `PROVENANCE_881.md`, `PROVENANCE_882.md`, `PROVENANCE_883.md`, `PROVENANCE_884.md`, `PROVENANCE_885.md`, `PROVENANCE_886.md`, `PROVENANCE_priv_881.json`, `source_registry.md` (registre de synthèse du 16 nov. 2026), `~/workspace/staging-pdac/download_data.sh`, `~/workspace/runs/pdac-v6/download_gpl6244_mapping.py`, journaux `data/download_depmap.log`, `data/download_firehose.log`, `data/download_omicscn.log`, réponses JSON `data/panc1_api.json`, `data/panc1_9191.json`, `data/panc1_9197.json`, `data/panc1_ncats.json`.
 
 **Écarts relevés pendant la rédaction (signalés dans le texte) :**
 1. `PROVENANCE_geo62452.md` indique 819 249 octets pour `GPL6244_probe2symbol.tsv` — c'est la taille de `GPL570_probe2symbol.tsv` ; le fichier GPL6244 fait 382 034 octets (25 293 sondes, contenu conforme).
