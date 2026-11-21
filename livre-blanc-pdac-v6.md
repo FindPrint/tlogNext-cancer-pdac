@@ -232,6 +232,8 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 79 | 20 nov. 2026 | **Le déclencheur du pic étroit (§8.73)** (go de Zackary « Fait les3 », 20 nov. 2026 15h35, 3e des 3 chantiers ; protocole gelé avant tout nouveau script et tout nouveau run `PROTOCOL_pic_etroit_873.md`, SHA `28d2326c…1a4c` ; calibration de la réplique du scan **22/22 à 0,00e+00** ; corpus 82 runs, 11 courbes rob-on, 6 contrôles, lot frais **20/20 runs v6.2 exit 0** (nuls ICGC s41–s60) ; **NON ÉLUCIDÉ** : aucun déclencheur identifiable du pic étroit — bloc extrême 1/11, transplantation 0/3 et 0/6, ligne unique 4/11, queues globales AUC 0,31–0,47, bord seul insuffisant ; l'étroitesse est une propriété fragile de l'arrangement exact des lignes ; artefact winsorisation documenté (le maxsep monte par déflation de variance) ; P1 non testable (0 courbe rob-on fraîche), P2 en échec (23 faux positifs, 0 vrai positif)). Détail au §8.73. |
 | 80 | 20 nov. 2026 | **Confirmation indépendante pour `maxsep` (C3) (§8.74)** (go de Zackary « Les 3 allez s'y », 20 nov. 2026 18h04, 2e des 3 pistes du lot du 20 nov. ; protocole gelé avant tout téléchargement officiel `PROTOCOL_maxsep_gse131050_874.md`, SHA `3f34f4ff…1d5f` ; GSE131050 (Rashid et coll. 2020, *Clin Cancer Res* 26(1):82–92, PMID 31754050, UNC Lineberger ; lot Yeh_seq FF, plateforme GPL18573 Illumina NextSeq 500, BioProject PRJNA542388, SRA SRP197641), matrice Yeh_seq 9 468 179 o, SHA `2fc0a66e…be5b1`, n = 42 tumeurs PDAC ; **4/4 runs v6.2 exit 0** ; **CONFIRME** : la douzième paire principale donne **d_maxsep +0,0739** (réel 0,3220 contre nul 0,2481), au-dessus du plancher 0,07 de 0,0039 seulement — la plus petite marge passante du dossier ; A2 étendu **8/12** (10/12 positifs), LOO 7/11 ; passage CONSOLIDÉ par les nuls frais (graines 8741/8742 : +0,0976 et +0,1113, 3/3 écarts au-dessus du plancher) ; CSV réel SHA `db258c99…58fe44` ; **C3 RESTE LEVÉE** (confirmation supplémentaire, ne rouvre rien) ; piste suivante nommée : lot Yeh_seq FNA (n = 42 codes), non vérifiée. Détail au §8.74. |
 | 81 | 20–21 nov. 2026 | **Clôture du résidu M2 du §8.63 (§8.75)** (go de Zackary « Les 3 allez s'y », 20 nov. 2026 18h04, 3e des 3 pistes du lot du 20 nov. ; protocole gelé avant tout nouveau script et tout nouveau run `PROTOCOL_m2_cloture_875.md`, SHA `f829fd77…89c` ; **40/40 runs v6.2 exit 0** (30 nuls ICGC frais s61–s90 + 10 nuls GSE62452 frais s31–s40) ; **TRANCHÉ–CONFIRMÉ** : la réplication hors échantillon de M2 tient — 24/30 nuls ICGC frais (80,0 %) et 9/10 nuls GSE62452 frais choisissent la config réelle ; taux stabilisé **80 %**, pas 85 % (poolé ICGC 64/80, GSE 26/30) ; M2 passe de PARTIELLEMENT EXPLIQUÉ à **EXPLIQUÉ** ; erreur de transcription documentée et corrigée (copie de `fwhm_rob_from_curve`, rob reproduite à 0,00e+00 sur 1 320 configs) ; le résidu « pourquoi la robustesse bascule sur telle permutation » reste renvoyé au §8.73 (NON ÉLUCIDÉ). Détail au §8.75. |
+| 82 | 20–21 nov. 2026 | **Robustesse appariée du signal `maxsep` sur le lot FNA (§8.76)** (piste suivante nommée au §8.74.9, sous le go de Zackary « Les 3 allez s'y », 20 nov. 2026 18h04 ; protocole gelé avant toute construction et tout run `PROTOCOL_maxsep_gse131050_fna_876.md`, SHA `dd7937ee…3bc5f` ; GSE131050, lot Yeh_seq FNA, n = 42 tumeurs, 41/42 mêmes tumeurs que le lot FF du §8.74 — test de robustesse APPARIÉ, pas une paire indépendante ; **2/2 runs v6.2 exit 0** ; **CONFIRME** : **d_maxsep +0,1642** (réel 0,4083 contre nul 0,2441), marge de 0,0942 au-dessus du plancher 0,07, plus de deux fois l'écart FF (+0,0739) ; A2 INCHANGÉ **8/12** (10/12 positifs), LOO 7/11 — le lot FNA n'est pas compté comme treizième paire ; extraction 2/2 à 0,0 exact ; **C3 RESTE LEVÉE** (consolidation supplémentaire, ne rouvre rien) ; CSV réel SHA `70697b3a…10324`, nul `2474ceaf…4d35`. Détail au §8.76. |
+| 83 | 21 nov. 2026 | **Réparation de la reproductibilité des dépôts (§8.77)** (ordre de Zackary, 20 nov. 2026 19h40 : réparation à part, sans toucher à l'état actuel ; protocole gelé avant tout travail `PROTOCOL_reproductibilite_877.md`, SHA `dbe1746f…4030` ; **REPRODUCTIBILITÉ RÉPARÉE** : les 19 fichiers bruts sans URL consignée du §17 ont TOUS retrouvé une URL vérifiée par SHA-256 (19/19 gaps fermés, dont le SOFT GPL20769, le fichier clinique du test C et les 4 fichiers CPTAC) ; script de re-téléchargement corrigé (`download_data_877.sh`, SHA `55811136…`, `bash -n` OK, 12 corrections), exécuté en entier jusqu'à **EXIT:0** (52 fichiers, 2,4 Go, tous vérifiés) ; test à froid TCGA v4 : flux reconstruits SHA-IDENTIQUES et runs v6.2 identiques aux chiffres tenus à **0,0 exact** des deux côtés ; DATA_SOURCES.md révisé (900 lignes, SHA `17b8428b…`, nouvelles §28 sources §8.76 et §29 chantier §8.77, §17 révisé 19/19 fermés) ; deux fautes de frappe de SHA latentes corrigées (Birnbaum MOESM3 §13, LUAD §2.3) ; **0 section modifiée, 0 verdict rouvert** — le test C reste NON (§8.45). Détail au §8.77. |
 
 ---
 
@@ -16758,6 +16760,1206 @@ contrôle. Sorties : `m2_cloture_875_extract.json` (SHA
 
 ---
 
+### 8.76 GSE131050 (PurIST), lot Yeh_seq FNA : le signal survit au changement d'échantillon — CONFIRME, sur les mêmes tumeurs (20–21 novembre 2026)
+Go de Zackary « Les 3 allez s'y » (20 nov. 2026 18h04) — piste suivante nommée au §8.74.9 (lot Yeh_seq FNA, n = 42 codes) ; protocole gelé 20 nov. 2026 ~21h30 EST avant toute construction et tout run, fichier source officiel celui du §8.74, SHA re-vérifié identique.
+
+## Verdict d'abord
+
+**CONFIRME — le lot Yeh_seq FNA de GSE131050 (n = 42 tumeurs
+indépendantes), test de robustesse APPARIÉ au lot FF du §8.74,
+donne `d_maxsep = +0,1642` (réel 0,4083 contre nul 0,2441),
+au-dessus du plancher 0,07 — avec une marge de 0,0942, plus de
+deux fois l'écart mesuré en FF (+0,0739). Le signal `maxsep`
+mesuré sur les mêmes tumeurs en flash-frozen SURVIT au
+changement de type d'échantillon : en FNA ex-vivo, faible
+volume, kit TruSeq RNA Exome, il est même PLUS FORT qu'en FF.
+La condition C3 du §8.59.8, levée au §8.71, RESTE LEVÉE (ce
+chantier est une consolidation supplémentaire, pas une
+condition ; il ne rouvre rien). Le compte A2 des paires
+indépendantes NE CHANGE PAS — 8/12 au-dessus du plancher,
+10/12 positifs, LOO 7/11 — parce que le lot FNA n'est PAS une
+paire indépendante : 41 codes sur 42 sont les mêmes tumeurs
+que le lot FF du §8.74. Le compter comme treizième paire
+serait un double comptage, et le protocole gelé l'interdit
+explicitement.**
+
+| Porte (PROTOCOL_maxsep_gse131050_fna_876.md §7, gelé) | Exigé | Mesuré 20–21 nov. 2026 | Sort |
+|---|---|---|---|
+| Robustesse appariée : `d_maxsep > 0,07` et positif | > 0,07 | **+0,1642** (réel 0,4083, nul 0,2441) | **CONFIRME** |
+| A2 des paires indépendantes | Inchangé : 8/12, 10/12 positifs | **8/12, 10/12 positifs** (FNA non compté) | **INCHANGÉ** |
+| LOO sur 12 paires (descriptif) | 7/11 | **7/11** (inchangé, non recalculé) | **INCHANGÉ** |
+| Exactitude de l'extraction | 2/2 à 0,0 exact | **2/2, écart max 0,0** | **PASSE** |
+| Nuls frais (§7, `d` dans [−0,07 ; +0,14[) | 2 nuls frais si proche du plancher | **Non courus : +0,1642 hors de l'intervalle** | **RÈGLE APPLIQUÉE** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que le
+signal `maxsep` n'est pas un artefact du type d'échantillon
+FF : lu sur les mêmes 41 tumeurs par aspiration à l'aiguille
+fine ex-vivo — autre prélèvement, autre kit, autre échelle
+d'expression (KRAS FNA médiane 1,569 contre 6,955 en FF) — il
+sépare le réel du nul dans le bon sens et au-delà du plancher
+gelé, avec une marge confortable (+0,0942, soit 135 % du
+plancher). Il dit aussi que l'écart FNA est plus de deux fois
+celui du FF (+0,1642 contre +0,0739) et que cette différence
+vient du côté réel (0,4083 contre 0,3220, +0,0863) et non du
+nul (0,2441 contre 0,2481, −0,0040) : les mêmes tumeurs, lues
+en FNA, portent un `maxsep` réel plus haut. Il dit enfin que
+le signal d'ordre est plus fort en FNA qu'en FF (Δρ médian
++0,524, 12/12 positifs, contre +0,386 et 10/12 au §8.74) — les
+deux gènes qui ne montaient pas en FF (PGC, REG4) montent en
+FNA. Il ne dit pas que `maxsep` est validé en général : c'est
+une confirmation sur les mêmes tumeurs, pas une treizième
+cohorte, et les scores compagnons ne suivent pas tous (MC à
+peine positif +0,0252, `sep` sous sa barre descriptive — voir
+§8.76.5). Il ne dit pas non plus que l'adoption pleine est
+« prouvée » par ce chantier seul : elle a été décidée par
+Zackary après lecture des §8.56/§8.59/§8.64, et cette section
+est la vérification a posteriori que le protocole prévoyait —
+elle consolide la décision, elle ne la fonde pas
+rétroactivement. Il ne dit rien de clinique : l'étude porte
+sur l'instrument, pas sur un remède — aucune affirmation sur
+le cancer du pancréas n'est tirée de ce lot.
+
+**Fragilité, dite en tête.** Le verdict tient à une seule paire
+mesurée aujourd'hui — comme tous les verdicts de ce dossier.
+Ici la fragilité a deux noms précis. D'abord, la paire n'est
+pas indépendante du §8.74 : si le §8.74 portait un biais de
+cohorte (les 43 tumeurs Yeh), le lot FNA le partage — il ne
+peut pas l'exclure. Ce qu'il exclut, c'est le biais de type
+d'échantillon FF : le signal n'est pas propre au
+flash-frozen. Ensuite, la cascade réelle FNA est BASSE
+([8,2 / 11,2 / 14,2 / 21,3 / 37,9]) alors que le nul a une
+cascade HAUTE ([2,4 / 66,3 / 73,6 / 78,4 / 97,6]) — l'inverse
+exact du §8.74, où la cascade réelle était haute et le nul
+graine 42 bas. La cascade ne sépare pas le réel du nul ici,
+et elle ne l'a jamais été comme critère — mais son renversement
+entre FF et FNA sur les mêmes tumeurs dit plainement que la
+cascade est une lecture instable entre types d'échantillons,
+tandis que `maxsep` reste dans le bon sens des deux côtés.
+C'est consigné tel quel, sans sauver ni condamner le verdict,
+dont le critère gelé est `maxsep` et lui seul.
+
+Protocole gelé : `PROTOCOL_maxsep_gse131050_fna_876.md` (20 nov.
+2026, SHA `dd7937ee…35023bc5f` au gel, inchangé). Critère de
+passage écrit AVANT toute construction et tout run (§7 du
+protocole) ; aucune repondération, aucun nouveau terme, aucune
+redéfinition du plancher après avoir vu les chiffres. Les
+nombres des §8.56/§8.59/§8.64/§8.69/§8.70/§8.71/§8.74 étaient
+la motivation, pas le verdict : le verdict repose sur les 2
+runs mesurés ci-dessous.
+
+## 8.76.1 — La paire mesurée : GSE131050, lot Yeh_seq FNA, et pourquoi elle n'est PAS indépendante
+
+**Cohorte : GSE131050, NCBI GEO** — Rashid et coll., 42 tumeurs
+PDAC primaires, plateforme Illumina NextSeq 500 GPL18573,
+article Rashid et coll. 2020 (*Clin Cancer Res*, 26(1):82–92,
+PMID 31754050, doi 10.1158/1078-0432.CCR-19-1467). Provenance
+complète : `PROVENANCE_876.md`.
+
+**Appariement, en cinq points (protocole §2.2, vérifié avant le
+gel).**
+1. **Jamais utilisé dans ce projet.** Aucun CSV de flux, aucun
+   run, aucun JSON, aucune valeur `maxsep` n'existait pour le
+   lot FNA avant ce chantier. Vérifié par grep avant le gel :
+   la chaîne « FNA » ne figurait que comme « piste restante
+   non vérifiée » dans les fichiers du §8.71 et du §8.74 et
+   dans le livre blanc aux mêmes endroits.
+2. **Mêmes patients, même centre, même plateforme, autre
+   échantillon.** Données nouvelles générées pour l'étude
+   PurIST : lot Yeh collecté de novo à l'UNC (Lineberger
+   Comprehensive Cancer Center, Tissue Procurement Core
+   Facility) — tumeurs réséquées ; plateforme Illumina NextSeq
+   500 (GPL18573), la même que le lot FF du §8.74. Ce qui
+   change : le type d'échantillon. FNA ex-vivo au moment de la
+   résection (3 passages, aiguille 22G), kit TruSeq RNA Exome
+   contre TruSeq pour les FF, échantillons faible volume.
+3. **Le recouvrement est mesuré, pas supposé.** Enquête pré-gel
+   (`enquete_876/check_fna_876.py`, portes uniquement, aucun
+   maxsep) : **41 codes-tumeurs sur 42 sont communs aux lots
+   FF et FNA (97,6 %)**. Code FNA seul (sans FF) : 0921T1.
+   Code FF seul (sans FNA) : PancT6. Total : 43 tumeurs
+   distinctes. Les 45 colonnes FNA primaires proviennent de
+   42 codes ; les 47 colonnes FF primaires, de 42 codes. Le
+   lot Yeh est apparié par construction (§8.74.7) : 97
+   échantillons primaires pour 43 tumeurs, chaque tumeur
+   échantillonnée jusqu'à trois fois (FF, FNA, FFPE).
+4. **Même construction que les autres paires principales GEO.**
+   Variante (a) : les 12 mêmes gènes que la v4 TCGA (PGC, REG4,
+   CLDN18, MUC17, DPCR1, CR2, KRT20, MUC2, GSTM1, CEACAM5,
+   CLCA1, MUC16), ordre = KRAS croissant, sans correction, cas
+   complets, nul = lignes permutées graine 42. La paire est
+   donc comparable au §8.74 par construction — mais appariée,
+   pas indépendante. Une seule adaptation, gelée au protocole
+   §4.4 et justifiée au §8.76.7 : l'unité d'analyse est la
+   TUMEUR INDÉPENDANTE, pas la colonne — les réplicats FNA
+   d'une même tumeur sont agrégés par médiane (0417T1 ×3,
+   1119T1 ×2 ; précédent du projet : agrégation par médiane
+   des sondes multiples vers un même symbole, et des réplicats
+   FF au §8.74).
+5. **Pas un re-test déguisé.** Ce n'est ni une relecture d'un JSON
+   existant (§8.64.7 : « pas une relecture »), ni une rotation
+   déjà comptée, ni un sous-ensemble d'une paire V1, ni un
+   nouvel ordre sur des CSV existants (nouveaux CSV, nouveaux
+   runs, 2 runs v6.2 frais, données FNA jamais courues). La
+   sous-série NanoString GSE131051 n'est pas utilisée : ce
+   n'est pas de l'expression RNA-seq codante en comptages
+   géniques. Le lot Linehan_seq reste écarté (§8.74,
+   protocole §2.3 : 37 patients, pré/post mélangées).
+
+**Ce que GSE131050 FNA n'est pas.** Ce n'est pas une cohorte
+choisie pour ses résultats : aucun `maxsep` FNA n'existait
+quand le protocole a été gelé. Ce n'est pas non plus une
+treizième paire indépendante : c'est le même matériel tumoral
+que le §8.74, lu par un autre prélèvement. Toute lecture
+future qui compterait 13 paires avec le FNA serait un double
+comptage — le protocole gelé l'interdit explicitement
+(§10), et cette section le répète : **A2 reste 8/12**.
+
+**Différence d'échelle KRAS, consignée d'avance (protocole
+§2.2).** KRAS FNA (médiane par code) : min 0,0482, médiane
+1,569, max 5,803 — contre KRAS FF min 1,152, médiane 6,955,
+max 19,7 (§8.74). L'échelle FNA est ~4 fois plus basse :
+échantillons faible volume, kit TruSeq RNA Exome. L'ordre
+reste KRAS croissant (même règle que toutes les paires), sans
+renormalisation ni transformation log. Si le verdict diffère
+de celui du §8.74, cette différence d'échelle est une piste
+d'explication nommée, pas une excuse — et de fait le verdict
+diffère par sa taille, pas par son sens (§8.76.7).
+
+## 8.76.2 — Les runs et l'extraction
+
+**Runs v6.2 mode fast : 2/2, exits 0/0.** Manifeste
+`manifest_v62_876.txt` (réel + nul graine 42), lanceur
+reprenable `run_v62_lot.sh`, journal `runs_v62_876.log`
+(FIN 2026-11-21T01:32:02Z, deja_faits=1, termines=1,
+echecs=0). Unités systemd `v62-876` et `v62-876b` (jamais
+nohup). **Incident consigné : la machine a redémarré entre
+les deux runs** (uptime 0 min constaté à 01h30 UTC) — le run
+réel était déjà terminé (EXIT 0 consigné, `master_results.json`
+complet, 8 099 157 o) ; le run nul, interrompu en cours
+(dossier partiel : un seul fichier, `landscape_complexity.png`),
+a été relancé par le lanceur reprenable qui a sauté le réel
+déjà complet (SKIP consigné) — aucune reprise à l'aveugle,
+aucun dossier de run touché. SHA du pipeline revérifié avant
+ET après le lot : `f07567c4…c3abf`, inchangé.
+
+**Extraction : 2/2 à 0,0 exact.** `extract_876.py` (réutilise
+`extract()` de `extract_858.py`, original intact) lit les 2
+`master_results.json` ; `verify_876.py` (chemin distinct,
+relecture directe par `json.load`) recoupe `maxsep`, ancien MC
+et stabilité à 0,0 exact sur les 2 runs
+(`maxsep_876_verify.json`, verdict OK). Version lue :
+`v6.2.0-L7aL7b-CohenD-short` sur les 2 runs.
+
+| Run | n | maxsep | ancien MC | S_sep | Delta | L7a | Cascade (Q1–Q5, %) |
+|---|---|---|---|---|---|---|---|
+| Réel Yeh FNA | 42 | **0,4083** | 0,4120 | 0,4062 | 1,476 | up 0,338 | 8,2 / 11,2 / 14,2 / 21,3 / 37,9 |
+| Nul graine 42 | 42 | 0,2441 | 0,3869 | 0,2409 | 1,343 | up 0,336 | 2,4 / 66,3 / 73,6 / 78,4 / 97,6 |
+
+Valeurs complètes : `maxsep` réel 0,4083181001358463 ; nul s42
+0,24407093788906223. Stabilité : réel 0,9949 ; nul 0,9871.
+Seuils MC : réel 40,91 ; nul 40,91. F1/F2 après seuil : réel
+1,1040 / 0,8387 ; nul s42 0,2366 / 0,2832 (descriptif, voir
+§8.76.5). Falsification : INDISPONIBLE sous n = 75 (n = 42) —
+les valeurs brutes du pipeline (1,288 / 1,514) figurent dans
+`extract_876.json` sans être interprétées, comme au §8.74.
+L7b : FRAGILE sur les 2 runs — l'audit L7b est clos comme
+non-informatif (il dit FRAGILE sur le réel comme sur les nuls) ;
+il n'est pas rapporté comme une mesure de fragilité.
+
+## 8.76.3 — Le verdict étendu : A2 inchangé, par construction
+
+Table des 12 paires principales indépendantes comptées (valeurs
+des §8.56 / §8.69 / §8.70 / §8.71 / §8.74 reprises telles
+quelles, jamais recalculées). Écart = maxsep réel − maxsep
+nul. Plancher 0,07. Le lot FNA n'y figure PAS — il est
+apparié au §8.74, pas indépendant.
+
+| Paire | maxsep R / N | Écart | > 0,07 ? | Positif ? |
+|---|---|---|---|---|
+| HP35 | 1,7718 / 0,1206 | **+1,6512** | oui | oui |
+| TCGA v4 | 0,4623 / 0,1696 | **+0,2928** | oui | oui |
+| GSE71729 | 0,2593 / 0,2191 | +0,0402 | non | oui |
+| GSE62452 | 0,3100 / 0,3136 | −0,0036 | non | NON |
+| ICGC | 0,4080 / 0,3110 | **+0,0970** | oui | oui |
+| Immunitaire TCGA | 0,5309 / 0,1634 | **+0,3675** | oui | oui |
+| PARP TCGA | 0,3680 / 0,1992 | **+0,1688** | oui | oui |
+| DepMap | 0,4436 / 0,2532 | **+0,1904** | oui | oui |
+| GSE21501 (§8.69) | 0,2121 / 0,2221 | −0,0100 | non | NON |
+| GSE79668 (§8.70) | 0,4104 / 0,3538 | +0,0567 | non | oui |
+| GSE60979 (§8.71) | 0,4418 / 0,2373 | **+0,2045** | oui | oui |
+| GSE131050 Yeh FF (§8.74) | 0,3220 / 0,2481 | **+0,0739** | oui | oui |
+
+**Bilan : 8/12 au-dessus du plancher, 10/12 positifs —
+INCHANGÉ.** Les seules paires négatives restent GSE62452
+(−0,0036) et GSE21501 (−0,0100). **LOO (descriptif) :**
+7/11 après retrait de chaque paire passante — inchangé, non
+recalculé ici, puisque le lot FNA n'entre pas dans le compte.
+**C3 reste LEVÉE** : elle l'était depuis le §8.71 (7 paires
+passantes) ; le §8.74 a ajouté une huitième paire passante,
+et ce chantier ajoute une confirmation appariée — il ne
+rouvre rien.
+
+Lecture honnête du rang : +0,1642 est le quatrième plus grand
+écart du dossier (derrière HP35 +1,6512, Immunitaire TCGA
++0,3675 et TCGA v4 +0,2928, devant GSE60979 +0,2045 et PARP
++0,1688) — mais ce rang ne se compare pas aux paires
+indépendantes : c'est le même matériel que le §8.74, et son
+écart FF n'était que +0,0739, le plus petit écart passant du
+dossier. La paire FNA ne renforce pas l'adoption par son
+nombre — elle la renforce par sa nature : le signal tient
+quand on change le prélèvement sur les mêmes tumeurs, et il
+tient plus fort (+0,1642 contre +0,0739). C'est une robustesse
+de mesure, pas une confirmation de cohorte.
+
+## 8.76.4 — Les nuls frais : aucun, par la règle gelée
+
+Règle gelée (§7 du protocole) : les 2 nuls frais (graines 8761
+et 8762, gelées avant tout run) ne sont courus que si
+`d_maxsep` est dans [−0,07 ; +0,14[. Ici `d_maxsep = +0,1642`
+est HORS de l'intervalle — au-dessus de sa borne haute de
+0,0242. **Aucun nul frais n'est donc couru, et les graines
+8761/8762 restent inutilisées.** Ce n'est pas un oubli : c'est
+l'application de la règle écrite avant tout run, la même
+règle qui avait fait courir les nuls frais au §8.74
+(+0,0739, dans l'intervalle) et ne pas en courir au §8.71
+(+0,2045, hors intervalle). Le verdict de la paire graine 42
+est CONFIRME, sans consolidation par nuls frais — la marge
+(+0,0942 au-dessus du plancher) est la consolidation : elle
+est plus de deux fois l'étendue des nuls mesurée au §8.74
+(0,0374 sur 3 nuls) et plus grande que l'étendue mesurée au
+§8.70 à n comparable (0,0972 entre 3 nuls à n = 51) — un
+autre tirage de nul devrait monter de plus de 0,09 pour
+inverser le passage, soit plus que toute l'étendue observée
+entre nuls dans ce dossier à n comparable. C'est une lecture,
+pas une preuve : 1 nul ne fait pas un plancher stable
+(§8.53 : ~200 nuls pour un plancher stable à petit n), et
+c'est consigné comme tel.
+
+## 8.76.5 — Les scores compagnons : `maxsep` passe seul, les autres ne suivent pas
+
+Convention d'affichage §8.64.6 : `maxsep` score principal,
+ancien MC secondaire, `sep` compagnon, mention de fragilité en
+tête de table (voir le verdict). Les scores compagnons sont
+descriptifs : aucun ne décide.
+
+- **Ancien MC (secondaire) :** réel 0,4120 contre nul 0,3869 —
+  écart +0,0252 contre le nul graine 42. À peine positif, et
+  très loin du plancher 0,07 : MC ne sépare presque pas ici.
+  C'est le même motif qu'aux §8.70 (+0,05), §8.71 (+0,026) et
+  §8.74 (+0,0114) : `maxsep` voit quelque chose que l'ancien
+  MC ne voit presque pas. MC est pourtant plus haut en absolu
+  ici qu'en FF (0,4120 contre 0,3985) — le réel FNA score
+  plus haut sur les deux mesures, mais l'écart MC reste petit
+  parce que le nul FNA score haut aussi (0,3869 contre 0,3871
+  en FF).
+- **Delta :** réel 1,476 contre nul 1,343 — écart +0,133 contre
+  le nul graine 42. Plus fort qu'au §8.74 (+0,041) et au §8.70
+  (+0,05), dans le même sens que `maxsep`, beaucoup plus
+  faible. La divergence Delta/`maxsep` du §8.69 (Delta +2,01
+  contre maxsep −0,01) ne se reproduit pas ici non plus :
+  Delta et `maxsep` vont dans le même sens. Delta n'est
+  toujours pas élucidé (§8.57, §8.63) ; rien n'est élucidé ici
+  sans preuve.
+- **S_sep :** réel 0,4062 contre nul 0,2409 — écart +0,1653
+  contre le nul graine 42. S_sep suit `maxsep` (il en est
+  proche par construction, §8.38) et passe le même plancher
+  en descriptif.
+- **`sep` compagnon :** réel 0,2899 contre nul 0,1962 — écart
+  0,0937, contre un plancher équivalent-sep de 0,1226
+  (= 0,07·(1+0,4083)(1+0,2441)). **Le lot ÉCHOUE à la barre
+  descriptive du plancher équivalent-sep**, comme aux §8.71
+  (0,1146 contre 0,1249 exigé) et §8.74 (0,0448 contre 0,1155
+  exigé). `sep` ne suit pas `maxsep` jusqu'à sa propre barre
+  — cohérent avec le rejet de `sep` seul aux §8.59/§8.64.
+  Rapporté, non décisif : D4 n'est pas rejoué ici.
+- **Cascade :** réelle [8,2 / 11,2 / 14,2 / 21,3 / 37,9] contre
+  nul graine 42 [2,4 / 66,3 / 73,6 / 78,4 / 97,6] — la cascade
+  réelle est BASSE à tous les quantiles, le nul est HAUT dès
+  Q2. C'est l'inverse exact du §8.74 (réelle [45,7 / 68,7 /
+  76,0 / 80,8 / 90,4] contre nul [0,0 / 21,3 / 28,4 / 33,2 /
+  43,1]). Sur les mêmes tumeurs, la cascade change de sens
+  entre FF et FNA : elle ne porte pas le verdict, et ce
+  renversement le confirme — la cascade n'est pas un critère
+  de passage et ne l'a jamais été. C'est consigné tel quel.
+- **L7a :** up partout (réel 0,338 ; nul 0,336) — L7a ne sépare
+  pas ici, comme dans la plupart des paires principales.
+  **L7b :** FRAGILE sur les 2 runs — non informatif (audit
+  clos, §8.56/§8.64 : il dit FRAGILE sur le réel comme sur
+  les nuls).
+- **F1/F2 après seuil :** réel 1,1040 / 0,8387 ; nul s42
+  0,2366 / 0,2832. Descriptif, sans lecture imposée : le réel
+  FNA a un F1/F2 proche de 1 (peu de changement après seuil),
+  le nul un F1/F2 bas — l'inverse du §8.74 (réel 0,4775 /
+  0,5248 ; nul 1,7075 / 1,0350). Les ratios F1/F2 ne portent
+  pas le verdict.
+
+## 8.76.6 — Tests directs en appui (ne décident pas)
+
+Script `direct_tests_876.py` (SHA `bf0a8b8b…0660`), sur les
+CSV de flux du chantier (réel + nul graine 42). Sortie :
+`direct_tests_876.json` (SHA `55b386dc…0b823`).
+
+**1. d de Cohen marginal (correction §8.70, appliquée ici).**
+d = 0,0000 pour les 12 gènes (CR2 : +0,0000 ; REG4, GSTM1,
+CLCA1 : −0,0000, arrondi) — vacueux par construction, comme
+attendu : le nul est une permutation des lignes, chaque flux
+garde exactement ses 42 valeurs. Le test valide la
+construction du nul (marginales préservées exactement) ; il
+ne mesure pas la séparation et ne décide rien.
+
+**2. Test informatif : Spearman de chaque flux contre le pas
+(ordre KRAS), réel vs nul.** |ρ| moyen : réel 0,449 contre nul
+0,142. Δρ médian **+0,524**. Δρ positifs **12/12**. Table
+complète, sans sélection :
+
+| Gène | ρ réel | ρ nul | Δρ |
+|---|---|---|---|
+| PGC | +0,208 | −0,238 | **+0,446** |
+| REG4 | +0,443 | −0,188 | **+0,630** |
+| CLDN18 | +0,695 | −0,282 | **+0,977** |
+| MUC17 | +0,579 | −0,056 | **+0,634** |
+| DPCR1 | +0,600 | −0,262 | **+0,862** |
+| CR2 | +0,291 | +0,227 | +0,064 |
+| KRT20 | +0,361 | +0,123 | +0,238 |
+| MUC2 | +0,538 | −0,063 | **+0,601** |
+| GSTM1 | +0,241 | +0,129 | +0,112 |
+| CEACAM5 | +0,671 | −0,102 | **+0,774** |
+| CLCA1 | +0,411 | +0,013 | **+0,397** |
+| MUC16 | +0,351 | +0,027 | +0,324 |
+
+Lecture : l'ordre par KRAS porte une information réelle et
+forte — les 12 flux montent avec KRAS (CLDN18, DPCR1, CEACAM5
+en tête, Δρ de +0,77 à +0,98), aucun ne descend. C'est le test
+qui porte l'information d'ordre, et il est cohérent avec le
+`maxsep` qui passe : le réel est ordonné, le nul ne l'est pas.
+Aucun de ces tests ne change le verdict du §7 — ils
+l'éclairent. Comparaison descriptive avec le §8.74 (valeurs
+relues dans `direct_tests_874.json`, jamais recalculées) : au
+§8.74, Δρ médian +0,386, 10/12 positifs, |ρ| moyen réel 0,336
+contre nul 0,146. Ici le signal d'ordre est PLUS FORT sur les
+trois mesures (Δρ médian +0,524, 12/12 positifs, |ρ| 0,449
+contre 0,142) — et les deux gènes qui ne montaient pas en FF
+(PGC −0,001, REG4 −0,099) montent en FNA (+0,446 et +0,630).
+Cohérent avec un `maxsep` qui passe plus largement ici
+(+0,1642) qu'en FF (+0,0739) ; au §8.71 il passait encore plus
+largement (+0,2045) avec un Δρ médian pourtant plus faible
+(+0,180) — les deux mesures ne sont pas proportionnelles, et
+aucune loi n'est inférée de trois points.
+
+## 8.76.7 — Comparaison appariée FF vs FNA : mêmes 41 codes, autre prélèvement
+
+C'est la comparaison que ce chantier existe pour faire — les
+valeurs FF sont reprises du §8.74 telles quelles, jamais
+recalculées ; les valeurs FNA sont mesurées ici. Les 41 codes
+communs portent les deux lectures ; les codes uniques (0921T1
+en FNA seul, PancT6 en FF seul) sont 1 sur 42 de chaque côté
+et ne peuvent pas porter la différence.
+
+| Mesure | FF (§8.74) | FNA (§8.76) | Différence FNA − FF |
+|---|---|---|---|
+| maxsep réel | 0,3220 | **0,4083** | **+0,0863** |
+| maxsep nul s42 | 0,2481 | 0,2441 | −0,0040 |
+| d_maxsep | +0,0739 | **+0,1642** | **+0,0903** |
+| MC réel / nul | 0,3985 / 0,3871 | 0,4120 / 0,3869 | +0,0135 / −0,0002 |
+| Delta réel / nul | 1,470 / 1,429 | 1,476 / 1,343 | +0,006 / −0,086 |
+| S_sep réel / nul | 0,3187 / 0,2445 | 0,4062 / 0,2409 | +0,0875 / −0,0036 |
+| Cascade réelle Q1–Q5 | 45,7 / 68,7 / 76,0 / 80,8 / 90,4 | 8,2 / 11,2 / 14,2 / 21,3 / 37,9 | renversée |
+| Cascade nul Q1–Q5 | 0,0 / 21,3 / 28,4 / 33,2 / 43,1 | 2,4 / 66,3 / 73,6 / 78,4 / 97,6 | renversée |
+| Δρ médian / positifs | +0,386 / 10/12 | **+0,524 / 12/12** | +0,138 / +2 |
+| \|ρ\| moyen réel / nul | 0,336 / 0,146 | 0,449 / 0,142 | +0,113 / −0,004 |
+
+**Lecture.** L'écart FNA est plus de deux fois l'écart FF, et
+la décomposition dit d'où il vient : le nul ne bouge presque
+pas (0,2441 contre 0,2481, −0,0040), le réel monte de +0,0863.
+Le même matériel tumoral, lu en FNA, donne un `maxsep` réel
+plus haut — et un signal d'ordre plus fort sur les trois
+mesures de Spearman. Deux lectures s'opposent et toutes deux
+sont consignées : (a) la lecture « robustesse » — le signal
+n'est pas un artefact du flash-frozen ni du kit TruSeq : il
+survit au changement de prélèvement et de kit, et il est même
+plus net en FNA, ce qui est exactement ce qu'on attend d'un
+signal porté par les tumeurs elles-mêmes plutôt que par la
+préparation ; (b) la lecture « prudence » — l'échelle KRAS
+FNA est ~4 fois plus basse (médiane 1,569 contre 6,955) et
+la cascade se renverse entre FF et FNA : la lecture FNA n'est
+pas la même mesure que la lecture FF, et un `maxsep` plus haut
+en FNA pourrait tenir en partie à cette autre échelle plutôt
+qu'à un signal plus fort — aucune décomposition ne permet de
+trancher ici, et aucune n'est inventée. Ce qui est établi :
+le passage tient des deux côtés, sur les mêmes tumeurs, avec
+le même protocole et le même plancher. Ce qui ne l'est pas :
+pourquoi il tient plus fort en FNA.
+
+**Ce que cela change pour la suite.** La série GSE131050 ne
+contient plus de lot non testé qui puisse faire une paire
+principale ou un test apparié : le lot FF (§8.74) et le lot
+FNA (§8.76) sont courus, le lot Linehan est écarté (37
+patients, pré/post mélangées), le lot FFPE compte 5
+échantillons (< 40). Toute autre paire GSE131050 serait un
+re-test déguisé (mêmes 43 tumeurs). La piste suivante doit
+être une autre série, pas un autre découpage de celle-ci.
+
+## 8.76.8 — Ce que le verdict dit, et ce qu'il ne dit pas
+
+Il dit que le signal `maxsep` mesuré au §8.74 sur 42 tumeurs
+FF survit au changement de type d'échantillon : en FNA, sur
+les mêmes tumeurs, il passe le plancher gelé avec une marge
+de +0,0942, et l'écart (+0,1642) est plus de deux fois celui
+du FF (+0,0739). Il dit que l'ordre KRAS porte une
+information réelle plus forte en FNA (Δρ médian +0,524,
+12/12 positifs) qu'en FF (+0,386, 10/12) — c'est le signal
+que `maxsep` lit. Il dit que le dossier compte toujours 8
+paires indépendantes passantes sur 12, et que ce chantier
+n'en ajoute aucune — par construction, pas par échec.
+
+Il ne dit pas que `maxsep` sépare toujours le réel du nul :
+4 paires indépendantes sur 12 restent non passantes, et les
+scores compagnons (MC +0,0252, `sep` sous sa barre
+descriptive) ne suivent presque pas. Il ne dit pas que la
+marge est à l'abri d'un tirage de nul : 1 nul couru ici, pas
+3 — la règle gelée ne prévoyait pas de nuls frais hors de
+l'intervalle, et ~200 nuls seraient nécessaires pour un
+plancher stable à petit n (§8.53). Il ne dit pas pourquoi le
+signal est plus fort en FNA : l'échelle KRAS différente et
+la cascade renversée interdisent d'attribuer la différence à
+une seule cause. Il ne dit pas que l'adoption pleine est
+prouvée : elle a été décidée par Zackary le 20 nov. 2026 à
+13h04, et ce chantier est la vérification a posteriori que le
+protocole prévoyait. Il ne dit rien de clinique : l'étude
+porte sur l'instrument, pas sur un remède — aucune
+affirmation sur le cancer du pancréas n'est tirée de ce lot.
+
+**Biais et limites nommés.** (a) n = 42 : petit effectif,
+proche du plancher n ≥ 40 ; la fragilité du nul à petit n
+(§8.70 : étendue 0,0972 à n = 51 ; §8.53 : ~200 nuls pour un
+plancher stable à petit n) reste un chantier ouvert — ici
+1 seul nul, aucune étendue mesurée. (b) Médiane des
+réplicats FNA : pour 2 tumeurs sur 42, la valeur retenue est
+une médiane de 2–3 mesures, pas une mesure unique — règle
+gelée avant tout run, précédent du projet, mais c'est une
+agrégation, pas une mesure brute. (c) Nature FPKM vs TPM
+indéterminée (PROVENANCE_876 §3) — valeurs prises telles que
+fournies, sans transformation ; le pipeline ne voit que
+l'ordre relatif, mais la nature exacte reste inconnue.
+(d) Recouvrement avec TCGA_PAAD non excluable formellement
+par identifiants (titres anonymisés) — voir PROVENANCE_876 §5.5.
+(e) Une seule plateforme (NextSeq 500), un seul centre (UNC),
+un seul type d'échantillon (FNA) : le lot ne teste pas la
+robustesse inter-plateformes — c'est le rôle des autres
+paires, pas de celui-ci. (f) Appariement au §8.74 : un biais
+de cohorte des 43 tumeurs Yeh serait partagé par les deux
+lots — le FNA exclut le biais de type d'échantillon, pas le
+biais de cohorte.
+
+## 8.76.9 — Pistes ouvertes
+
+| Pistes ouvertes | Oui, une de moins | (a) La confirmation indépendante C3 est close depuis le §8.71 — aucune autre paire indépendante n'est requise par ce critère ; GSE131050 ajoute une huitième paire passante (§8.74) et une confirmation appariée (§8.76), et ne rouvre rien ; (b) la fragilité du nul à petit n (§8.70, §8.53) reste un chantier propre ouvert — ici 1 seul nul, aucune étendue mesurée ; (c) la divergence Delta/`maxsep` du §8.69 ne se reproduit pas sur cette cohorte non plus, ni en FF (Delta +0,041) ni en FNA (Delta +0,133, même sens, beaucoup plus faible) ; (d) la série GSE131050 est épuisée comme source de paires : FF et FNA courus, Linehan écarté, FFPE à n = 5 — la piste suivante doit être une autre série ; (e) la question ouverte nouvelle : pourquoi le signal est-il plus fort en FNA qu'en FF sur les mêmes tumeurs — échelle KRAS, kit, ou signal tumoral plus net — aucune décomposition ne tranche ici. |
+
+## 8.76.10 — Annexe : provenance condensée et SHAs
+
+- **Source :** GSE131050, NCBI GEO ; Rashid et coll., *Clin
+  Cancer Res* 2020, 26(1):82–92, PMID 31754050,
+  doi 10.1158/1078-0432.CCR-19-1467 ; UNC Lineberger, Chapel
+  Hill, USA. Série soumise 10 mai 2019, publique 10 déc. 2019.
+  Plateformes : GPL16791 Illumina HiSeq 2500 (Linehan),
+  GPL18573 Illumina NextSeq 500 (Yeh). BioProject PRJNA542388,
+  SRA SRP197641. Provenance complète : `PROVENANCE_876.md`.
+- **Fichiers source (téléchargement officiel §8.74, réutilisé,
+  SHA re-vérifiés) :** Yeh_seq `2fc0a66e…be5b1`
+  (9 468 179 o) ; matrice GPL18573 `9b333eb6…7843e`
+  (6 864 o). Aucun nouveau téléchargement.
+- **Protocole :** `PROTOCOL_maxsep_gse131050_fna_876.md`, SHA
+  `dd7937ee…35023bc5f` (gelé avant toute construction et tout
+  run).
+- **Pipeline :** v6.2 SHA `f07567c4…c3abf`, vérifié avant et
+  après le lot, inchangé. (Note : 8 occurrences de
+  `temperature|Onsager|2.269` dans le fichier, toutes dans
+  l'annexe génératrice d'exemple Ising, hors cœur — état connu
+  du fichier adopté.)
+- **CSV de flux :** réel `70697b3a…10324` (42 lignes) ; nul s42
+  `2474ceaf…4d35`.
+- **Extraction / vérification :** `extract_876.json`
+  `ae14101e…02e43` ; `extract_876.csv` `a3cb4f9b…f996e` ;
+  `direct_tests_876.json` `55b386dc…0b823` ;
+  `maxsep_876_verify.json` `0dc536a4…20ce` (2/2 à 0,0 exact).
+- **Scripts :** `build_fluxes_876.py` `c1b66ac4…13698` ;
+  `build_nul_876.py` `673f1fc2…477a38` ;
+  `extract_876.py` `041e0f89…604f7f` ;
+  `verify_876.py` `533cd03a…c400` ;
+  `direct_tests_876.py` `bf0a8b8b…0660`.
+- **Enquête pré-gel :** `enquete_876/check_fna_876.py`
+  `46c58648…40d93`.
+- **Manifestes / journaux :** `manifest_v62_876.txt`
+  `0e63d732…539f7` ; `runs_v62_876.log` `cd6e55fd…75e22`.
+- **Recoupements (reprises telles quelles, jamais
+  recalculées) :** `sep_maxsep_856_table.json`
+  `ec5ee638…34f8b` ; `extract_869.json` `644339e4…882b` ;
+  `extract_870.json` `4ffa851a…444f` ; `extract_871.json`
+  `85e9089a…55e3b` ; `extract_874.json` `82ade747…fcb47`.
+- **KRAS FNA (ordre, valeurs fournies) :** min 0,0482,
+  médiane 1,569, max 5,803 (après médiane des réplicats FNA) —
+  contre min 1,152, médiane 6,955, max 19,7 en FF (§8.74).
+- **Livre blanc NON édité. PDF NON régénéré. Rien poussé sur
+  GitHub** (convention des chantiers ; fusion par le
+  coordinateur).
+
+— Fin de la §8.76. —
+
+---
+
+### 8.77 Réparation de la reproductibilité : 19/19 gaps fermés, test à froid réussi — REPRODUCTIBILITÉ RÉPARÉE (21 novembre 2026)
+Ordre de Zackary (20 nov. 2026 19h40) : réparation de la reproductibilité à part, sans toucher à l'état actuel ; protocole gelé 21 nov. 2026 01h37 UTC (20 nov. 2026 20h37 EST) avant tout travail de récupération.
+
+## Verdict d'abord
+
+**REPRODUCTIBILITÉ RÉPARÉE — les 19 fichiers bruts sans URL de
+téléchargement consignée (DATA_SOURCES.md §17) ont TOUS retrouvé une URL
+vérifiée par SHA-256, ainsi que le SOFT GPL20769 non conservé, le fichier
+clinique du test C sans aucune provenance d'acquisition, l'URL reconstruite
+de `mit_test.csv` et les URL directes des 4 fichiers CPTAC. Aucun gap
+irrécupérable. Le script de re-téléchargement est corrigé (toutes les voies
+cassées documentées remplacées, reprise après interruption, et il a été
+exécuté en entier jusqu'à EXIT:0 — 52 fichiers, 2,4 Go, tous vérifiés).
+Le test à froid le prouve de
+bout en bout sur la paire principale TCGA v4 : tarball re-téléchargé par
+le script corrigé, flux reconstruits SHA-IDENTIQUES aux flux tenus, et
+runs v6.2 donnent les chiffres tenus à 0,0 exact sur les deux côtés
+(cascade, MC, maxsep, S_sep, Delta, L7a, fals — voir §8.77.6).**
+
+| Porte (PROTOCOL_reproductibilite_877.md, gelé) | Exigé | Mesuré 21 nov. 2026 | Sort |
+|---|---|---|---|
+| Gaps du §17 fermés (URL + SHA vérifié) | 19/19 | **19/19** (5 ng3398 + 5 Birnbaum + 2 ICGC + 1 PRISM 24Q2 meta + 4 PRISM 19Q4 + 2 QCMG) | **FERMÉ** |
+| SOFT GPL20769 (taille + contenu) | 37 588 662 o, 19 749 lignes | **37 588 662 o, 19 749 lignes** (chemin corrigé `GPL20nnn/`) | **FERMÉ** |
+| Clinique test C (provenance) | SHA vérifié ou IRRÉCUPÉRABLE déclaré | **SHA `0c274268…` vérifié** — provenance retrouvée (cBioPortal datahub) | **FERMÉ** |
+| `mit_test.csv` (URL reconstruite) | SHA vérifié | **SHA `9f3ae189…` vérifié** | **FERMÉ** |
+| CPTAC (URL directes) | 4/4 consignées | **4/4 lues dans l'API Zenodo, MD5 conformes** | **FERMÉ** |
+| Script corrigé | voies cassées remplacées, `bash -n` OK | **`download_data_877.sh`, syntaxe OK, 323 lignes de diff** | **FAIT** |
+| Script complet (~2,4 Go, 52 fichiers) | EXIT:0, tous fichiers vérifiés | **EXIT:0** (36 déjà présents et vérifiés + 16 OK frais, 0 erreur) | **PASSE** |
+| Test à froid, flux reconstruits | SHA identiques aux flux tenus | **`e7a2adab…` et `895a4562…` identiques à l'octet** | **PASSE** |
+| Test à froid, runs v6.2 | chiffres identiques aux chiffres tenus | **Identiques à 0,0 exact, réel et nul** (cascade, MC, maxsep, S_sep, Delta, L7a, fals) | **PASSE** |
+| Aucune URL inventée | toute URL lue ou vérifiée par SHA | **0 URL sans vérification SHA** | **PASSE** |
+| Aucun verdict rouvert | aucune section existante modifiée | **0 section modifiée, 0 verdict rouvert** | **PASSE** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que les dépôts
+du projet sont désormais reconstructibles depuis zéro par un autre AI
+sans rien deviner : chaque fichier brut a une URL de téléchargement
+copiée depuis une source lue ou reconstruite puis vérifiée par son
+SHA-256, et le script maître corrigé les re-télécharge tous avec
+vérification. Il dit que la lacune de provenance la plus grave du projet
+— le fichier clinique du test C, sans aucune provenance d'acquisition —
+est close : le fichier est celui de l'étude cBioPortal
+`paad_tcga_pan_can_atlas_2018`, et le pointeur Git LFS lui-même porte
+son SHA. Il dit que le test à froid reconstruit la paire TCGA v4 à
+l'octet près depuis un re-téléchargement propre, et que les runs v6.2
+redonnent les chiffres tenus à 0,0 exact des deux côtés
+(d_maxsep froid +0,29276219, égal au tenu). Il ne dit pas que les verdicts du livre blanc sont
+« prouvés » par ce chantier : ce chantier ne mesure rien sur le cancer,
+il répare la traçabilité — les verdicts restent exactement ce qu'ils
+étaient, avec les mêmes chiffres et les mêmes réserves. Il ne dit pas
+que tout le projet tient dans le dépôt GitHub : les matrices brutes
+(~2,4 Go) et les résultats `results_fast_*` (~7 Go) restent hors dépôt
+par limite snapshot — ils se re-téléchargent et se reconstruisent, ce qui
+est précisément ce que ce chantier vérifie. Il ne dit rien de clinique.
+
+**Fragilité, dite en tête.** Le verdict tient à des vérifications SHA,
+c'est-à-dire à des comparaisons d'octets — la forme de preuve la plus
+forte de ce dossier, et la plus étroite. Trois fragilités précises. (1)
+Une URL vérifiée aujourd'hui peut mourir demain : figshare, Zenodo,
+Springer, le FTP GEO, le hub Xena et le dépôt datahub sont des services
+tiers, et ce chantier ne contrôle aucun d'eux. Ce qui est garanti, c'est
+l'état du 21 nov. 2026 et les SHA qui permettent de détecter tout
+changement — pas la pérennité des liens. (2) Le test à froid ne couvre
+qu'une paire (TCGA v4, réel + nul) : il prouve la chaîne complète sur
+cette paire, pas sur les 12 paires ni sur les 140 runs. Les autres
+sources sont vérifiées fichier par fichier (SHA), pas par re-run — c'est
+la limite honnête du test, écrite dans le protocole gelé avant les runs.
+(3) Le script complet a échoué une fois pendant ce chantier sur un HTTP
+403 transitoire de figshare (§8.77.5) : le correctif appliqué
+(`--retry-all-errors`) durcit les réessais, il ne supprime pas la
+possibilité qu'un fournisseur bloque un téléchargement un jour donné.
+Ces trois fragilités ne rouvrent aucun gap : elles disent ce que la
+réparation garantit, et jusqu'où.
+
+Protocole gelé : `PROTOCOL_reproductibilite_877.md` (21 nov. 2026,
+01h37 UTC, SHA `dbe1746f7233e69a3052407576ebf6043080016c97a12d41f76244fc569a4030`,
+inchangé). Critère de succès écrit AVANT tout travail de récupération
+(§0.5 du protocole) ; aucune URL ajoutée après coup sans vérification
+SHA ; aucun gap déclaré fermé sur une promesse. Pipeline v6.2 SHA
+`f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+(vérifié avant le gel et après chaque lot de runs, inchangé ; le code
+n'a jamais été modifié). Dossier de travail :
+`~/workspace/runs/pdac-v6/repro_877/` (re-téléchargements dans
+`repro_877/downloads/`, test à froid dans `repro_877/cold/`, journal
+`repro_877/JOURNAL_877.md`).
+
+## 8.77.1 — L'état des lieux : ce qui manquait, et pourquoi c'était grave
+
+**Le constat (20 nov. 2026, 19h38, DATA_SOURCES.md §17).** Les dépôts
+étaient « partiellement reproductibles depuis zéro » : le livre blanc,
+le pipeline v6.2, les flux et les protocoles sont dans les dépôts et les
+runs sont déterministes — mais 19 fichiers bruts n'avaient pas d'URL de
+téléchargement consignée, le fichier clinique du test C n'avait AUCUNE
+provenance d'acquisition, et le script de re-téléchargement avait des
+voies cassées. Autrement dit : un autre AI pouvait relire ce qui avait
+été fait, mais pas tout reconstruire depuis zéro sans deviner — et
+deviner une URL, c'est exactement ce que la règle de provenance (27 oct.
+2026) interdit.
+
+**Les 19 fichiers, par groupe (DATA_SOURCES.md §17).**
+
+| Groupe | Fichiers | Ce qui manquait |
+|---|---|---|
+| Suppléments Nature Moffitt ng3398 (MOESM59–63) | 5 | URL de téléchargement (noms, tailles, SHA tronqués seulement) |
+| Suppléments Springer Birnbaum (MOESM1–5) | 5 | URL de téléchargement (« via static-content Springer », sans URL) |
+| ICGC probe map + NMF (Xena) | 2 | URL exacte (jeux nommés, URL non consignée littéralement) |
+| PRISM 24Q2 métadonnées lignées | 1 | URL (n° de fichier figshare non consigné ; absent du script) |
+| PRISM 19Q4 (4 fichiers) | 4 | URL directe par fichier (accès via API seulement) |
+| QCMG clinique patient + échantillon | 2 | URL exacte (« fichier clinique datahub », sans URL) |
+
+**Hors des 19, quatre gaps nommés en plus.** Le SOFT GPL20769
+(37 588 662 o, téléchargé le 15 nov. 2026, non conservé, URL non
+consignée) ; le fichier clinique du test C
+(`data_clinical_patient.txt`, 58 621 o, hors de `data/`, sans aucune
+provenance — la lacune la plus grave, §11 et §15.6) ; l'URL reconstruite
+de `mit_test.csv` (PANC-1, « à vérifier avant usage », §10). Et les 4
+fichiers CPTAC, accessibles uniquement via l'API Zenodo (page du record
+consignée, pas d'URL par fichier, §6).
+
+**Les voies cassées du script (DATA_SOURCES.md §0.1).** Le tarball
+PANC-1 tronqué (569 815 185 o, gzip « unexpected end of file ») ; PRISM
+19Q4 2/4 fichiers ; suppléments non téléchargés ; SOFT GPL20769 non
+conservé ; PRISM 24Q2 primaire sans vérification de hachage
+(`check … - -`). La réparation a été reportée à la demande de Zackary
+(20 nov. 2026, 19h40) jusqu'à la fin du lot §8.74/§8.75, et menée comme
+une section à part, sans toucher à l'état actuel — c'est ce chantier.
+
+## 8.77.2 — Méthode : retrouver sans inventer
+
+**La règle, appliquée gap par gap.** Pour chaque gap : retrouver l'URL
+depuis une source lue (page DOI, FTP GEO, API figshare, hub Xena,
+dépôt datahub) — jamais inventée. Une URL reconstruite (patron
+d'URL déduit d'un cas attesté) n'est acceptée que si le fichier
+re-téléchargé vérifie le SHA-256 consigné : le SHA est le juge, pas le
+patron. Un gap dont l'URL ne vérifie pas reste ouvert, ou est déclaré
+IRRÉCUPÉRABLE avec sa raison. Les fichiers locaux originaux de `data/`
+n'ont jamais été écrasés ni déplacés : la comparaison se fait par SHA,
+pas par remplacement.
+
+**Les sources lues.** Page PMC de Birnbaum et al. 2017 (PMC5674743, DOI
+10.1186/s12943-017-0739-z) ; page Nature de Moffitt et al. 2015
+(ng.3398) ; API figshare des articles 25917643 (PRISM 24Q2) et 9393293
+(PRISM 19Q4) ; API Zenodo du record 8394329 (CPTAC) ; API GitHub du
+dépôt `cBioPortal/datahub` (dossiers `public/paad_qcmg_uq_2016` et
+`public/paad_tcga_pan_can_atlas_2018`) ; hub Xena ICGC
+(`icgc.xenahubs.net`) ; FTP GEO (`ftp.ncbi.nlm.nih.gov/geo/platforms/`) ;
+réponses JSON de l'API GitHub ncats/PANC1 (déjà détenues).
+
+**Les voies infructueuses, consignées (aucune n'a été passée sous
+silence, aucune ne cache un gap restant).**
+
+1. **Listing du bucket S3 Xena : HTTP 403.** Le bucket
+   `icgc-xena-hub` n'autorise pas le listage. Les URL S3 directes des
+   fichiers ICGC renvoient 403 aussi — c'est l'URL du hub
+   (`icgc.xenahubs.net/download/…`) qui fonctionne (le hub redirige
+   vers le bucket).
+2. **Europe PMC `supplementaryFiles` pour PMC5674743 : HTTP 500**
+   (page HTML d'erreur, 19 606 o). Les suppléments Birnbaum ont été
+   récupérés par le patron Springer direct, vérifié par SHA.
+3. **Page Nature ng.3398 via curl : HTTP 303**, section suppléments non
+   lisible par ce moyen. La page lue par le navigateur confirme le titre
+   et l'article ; les URL ont été vérifiées par SHA.
+4. **Chemin FTP GEO `GPL2nnn/GPL20769/` : 404.** Le bon chemin est
+   `GPL20nnn/` — le regroupement GEO masque les 3 derniers chiffres
+   (20769 → `GPL20nnn`, comme 6244 → `GPL6nnn` au §4.1 de
+   DATA_SOURCES.md). Le chemin deviné au §15.4 était faux ; le chemin
+   vérifié le remplace.
+5. **`raw.githubusercontent.com` pour les fichiers datahub : renvoie le
+   pointeur Git LFS (130 o), pas le contenu.** Le contenu réel est servi
+   par `media.githubusercontent.com`. Détail décisif au §8.77.4.
+
+## 8.77.3 — Résultats gap par gap : 19/19 fermés
+
+**Toutes les vérifications ci-dessous sont des comparaisons taille +
+SHA-256 (ou MD5) entre le fichier re-téléchargé le 21 nov. 2026 dans
+`repro_877/downloads/` et le SHA consigné dans DATA_SOURCES.md ou dans
+la provenance. « FERME » veut dire : URL retrouvée depuis une source
+lue + fichier re-téléchargé + SHA identique.**
+
+### ng3398 MOESM59–63 — 5/5 FERMÉS
+
+Patron Springer, code revue 41588 (*Nature Genetics*), attesté par le
+fichier Bailey MOESM270 déjà consigné au §5.5 :
+`static-content.springer.com/esm/art%3A10.1038%2Fng.3398/MediaObjects/41588_2015_BFng3398_MOESM{n}_ESM.{ext}`.
+
+| Fichier | Taille (o) | SHA-256 re-téléchargé | Conforme §3.2 |
+|---|---|---|---|
+| `ng3398_MOESM59_ESM.pdf` | 5 339 711 | `c18dbc59…320c0` | Oui |
+| `ng3398_MOESM60_ESM.txt` | 19 393 438 | `516cf2eb…4c7db` | Oui |
+| `ng3398_MOESM61_ESM.xlsx` | 460 785 | `ec26858b…1c01ad` | Oui |
+| `ng3398_MOESM62_ESM.xlsx` | 2 612 836 | `25c35346…08b5c` | Oui |
+| `ng3398_MOESM63_ESM.xlsx` | 14 141 | `3d508a54…20905` | Oui |
+
+### Birnbaum MOESM1–5 — 5/5 FERMÉS
+
+Article : Birnbaum et al. 2017, « Validation and comparison of the
+molecular classifications of pancreatic carcinomas », *Mol Cancer*
+16:174, DOI `10.1186/s12943-017-0739-z`, PMID 29110659 (page PMC5674743
+lue ; le DOI n'était pas relevé dans les fichiers — il l'est désormais).
+Patron Springer :
+`static-content.springer.com/esm/art%3A10.1186%2Fs12943-017-0739-z/MediaObjects/12943_2017_739_MOESM{n}_ESM.xlsx`.
+
+| Fichier | Taille (o) | SHA-256 re-téléchargé | Conforme §13 |
+|---|---|---|---|
+| `birnbaum_springer_MOESM1.xlsx` | 11 209 | `3d9df7b9…f4945b` | Oui |
+| `birnbaum_springer_MOESM2.xlsx` | 15 240 | `721e19d9…77c3` | Oui |
+| `birnbaum_springer_MOESM3.xlsx` | 9 119 | `8bfbdcd6…6b1a13` | Oui |
+| `birnbaum_springer_MOESM4.xlsx` | 15 040 | `49fff4c8…df361` | Oui |
+| `birnbaum_springer_MOESM5.xlsx` | 8 767 | `94af1f73…db6ccb` | Oui |
+
+(La taille de MOESM5, 8 767 o, correspond aux « 8.6KB » affichés sur la
+page PMC pour « Additional file 5: Table S5 » — recoupement indépendant
+du patron.)
+
+### ICGC probe map + NMF — 2/2 FERMÉS
+
+| Fichier | URL (hub Xena) | Taille (o) | SHA-256 | Conforme |
+|---|---|---|---|---|
+| `icgc_pacaau_probemap.gz` | `https://icgc.xenahubs.net/download/PACA-AU/ensembleGene_hg19_nature16965-s2_normalised_exp.gz` | 353 314 | `b09a746f…75537` | §5.3 Oui |
+| `icgc_pacaau_nmf.txt.gz` | `https://icgc.xenahubs.net/download/PACA-AU/nature16965-s2_NMF_class_assignment.txt.gz` | 447 | `f1e84b99…21e2f` | §5.4 Oui |
+
+Note : le fichier distant est bien `.txt.gz` — le `.txt` nu renvoie 404
+sur le hub. Le fichier local est donc nommé correctement.
+
+### PRISM 24Q2 métadonnées — 1/1 FERMÉ
+
+API figshare lue (`https://api.figshare.com/v2/articles/25917643`) :
+fichier 46630978, `Repurposing_Public_24Q2_Cell_Line_Meta_Data.csv`,
+URL `https://ndownloader.figshare.com/files/46630978`. Re-téléchargé :
+157 294 o, SHA-256 `13a85da9e45656c455d3911a4491f3636d7d0975a9d2333dc3d0a3e2cd3b0526`
+= §7. Ajouté au script corrigé avec vérification.
+
+### PRISM 19Q4 — 4/4 FERMÉS (URL directes désormais consignées)
+
+API figshare lue (`https://api.figshare.com/v2/articles/9393293`) :
+les 4 `download_url` directs ont été relevés et les 4 fichiers
+re-téléchargés et vérifiés.
+
+| Fichier | URL directe (fichier figshare) | Taille (o) | MD5 | SHA-256 | Conforme §8 |
+|---|---|---|---|---|---|
+| `secondary-screen-dose-response-curve-parameters.csv` | `…/files/20237739` | 264 340 589 | `e629b9d5…` | `88d10135…fec8` | Oui |
+| `secondary-screen-replicate-collapsed-treatment-info.csv` | `…/files/20237763` | 3 788 355 | `54765b36…` | `9d0d1fb4…84f7` | Oui |
+| `secondary-screen-cell-line-info.csv` | `…/files/20237769` | 40 979 | `6737b4aa…` | `b93436b5…8d27` | Oui |
+| `secondary-screen-readme.txt` | `…/files/20238123` | 7 647 | `421d0bba…` | `ed453e2b…9c99` | Oui |
+
+(Le fichier dose-response, 264 Mo, a été téléchargé en unité systemd
+dédiée `repro877-dose-response`, Result=success, exit 0 — il ne
+transitait pas par un appel d'outil interactif.)
+
+### QCMG clinique — 2/2 FERMÉS
+
+Dépôt GitHub `cBioPortal/datahub`, étude `paad_qcmg_uq_2016`, dossier
+listé par l'API GitHub. Contenu réel via `media.githubusercontent.com`
+(remarque LFS au §8.77.4).
+
+| Fichier | Taille (o) | SHA-256 | Conforme §12 |
+|---|---|---|---|
+| `qcmg_clinical_patient.txt` | 49 042 | `ae7fc6d7…6a95` | Oui |
+| `qcmg_clinical_sample.txt` | 57 215 | `c70daf3e…ceca` | Oui |
+
+Rappel : ces fichiers restent ÉCARTÉS pour les verdicts (non utilisés,
+§12) — la récupération ne change rien à leur statut, elle ne fait que
+fermer le gap de provenance.
+
+### SOFT GPL20769 — FERMÉ (taille + contenu)
+
+URL : `https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPL20nnn/GPL20769/soft/GPL20769_family.soft.gz`.
+Re-téléchargé le 21 nov. 2026 : **37 588 662 o exactement** (= §3.1 à
+l'octet), table **19 750 lignes = en-tête + 19 749 lignes** (= §3.1),
+titre de plateforme confirmé (« Agilent-014850 Whole Human Genome
+Microarray 4x44K G4112F (Gene Symbol Version; updated July 2014) »).
+MD5 `4c39e802ec78170d7ed5c8c2cc2b0bec`, SHA-256
+`ecb1b79a6b89e521a1116a3113fcb9a5af1c181329eec8257e044e0683822d3e`
+(nouveaux, à consigner — aucun hachage n'était consigné pour ce fichier).
+
+### `mit_test.csv` (PANC-1) — FERMÉ (URL reconstruite, vérifiée)
+
+URL reconstruite `https://raw.githubusercontent.com/ncats/PANC1/main/MIT/test.csv`
+(§10). Re-téléchargée : 3 249 228 o, SHA-256
+`9f3ae18976136412802831487b6187fcf062db8f4ca753990689d3ac62006e27` = §10.
+La mention « à vérifier avant usage » est levée.
+
+### CPTAC — 4/4 URL directes consignées
+
+API Zenodo lue (`https://zenodo.org/api/records/8394329`) : les 4
+fichiers sont présents, tailles et MD5 conformes au §6. URL directes
+(champ `links.self`) désormais consignées au §6 et en commentaire dans
+le script corrigé :
+
+| Fichier | MD5 (conforme §6) |
+|---|---|
+| `umich-pdac-proteomics-Report_abundance_groupby=protein_protNorm=MD_gu=2.tsv.gz` | `a8c89b79…ac676` |
+| `bcm-pdac-proteomics-PDAC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt.gz` | `988150c2…0c06d2` |
+| `umich-pdac-mapping-aliquot_to_patient_ID.tsv.gz` | `b013fad4…36754` |
+| `cptac_genes.csv` | `afc25079…72f62a` |
+
+Le script conserve le téléchargement via l'API (qui fonctionne) ; les
+URL directes sont consignées pour la traçabilité.
+
+## 8.77.4 — La fermeture la plus grave : le fichier clinique du test C
+
+**Le gap.** `data_clinical_patient.txt` (58 621 o, hors de `data/`, à la
+racine de `pdac-v6/`) était le fichier du test C (§8.45, ordre des 178
+tumeurs TCGA par stade AJCC) — et il n'avait AUCUNE provenance
+d'acquisition : déjà sur le disque au début du chantier (15 nov. 2026,
+15h13 UTC), aucune entrée dans aucun journal de téléchargement, premier
+hachage consigné dans `PROVENANCE_testC_stage.md`. Le test C était donc
+le seul verdict du livre blanc dont la source brute n'était pas
+re-téléchargeable depuis une source connue. Son verdict n'a jamais été
+contesté sur ses chiffres — mais sa reproductibilité était limitée, et
+c'était la lacune la plus grave du projet pour la reconstruction.
+
+**L'hypothèse testée, pas affirmée.** Le format `data_clinical_patient.txt`
+est le format cBioPortal, et l'étude PanCanAtlas PAAD existe sur
+cBioPortal (`paad_tcga_pan_can_atlas_2018`). Le dossier correspondant a
+été listé dans le dépôt `cBioPortal/datahub` par l'API GitHub (contenu
+du dossier lu, pas deviné), et le fichier candidat téléchargé.
+
+**La vérification, en deux temps.**
+
+1. Le contenu réel, servi par `media.githubusercontent.com`
+   (`https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/paad_tcga_pan_can_atlas_2018/data_clinical_patient.txt`),
+   fait 58 621 o et son SHA-256 est
+   `0c2742688e59bb918d446d35f755d7a849c3e647ab184dc54d4f7e807be2efe5` —
+   **identique au SHA consigné au §11**.
+2. **Double confirmation par le pointeur LFS lui-même.** Les fichiers de
+   ce dépôt sont en Git LFS : le `download_url` de l'API GitHub
+   (`raw.githubusercontent.com/…`) renvoie un pointeur de 130 o, pas le
+   contenu — et ce pointeur porte lui-même :
+   `oid sha256:0c2742688e59bb918d446d35f755d7a849c3e647ab184dc54d4f7e807be2efe5`
+   et `size 58621`. Le dépôt déclare donc lui-même, dans son pointeur,
+   que le fichier qu'il sert a exactement ce SHA et cette taille.
+
+**Ce que cela change, et ce que cela ne change pas.** La provenance
+d'acquisition du fichier clinique du test C est désormais : dépôt GitHub
+`cBioPortal/datahub`, étude `paad_tcga_pan_can_atlas_2018`, URL exacte
+ci-dessus. Le test C devient re-téléchargeable et vérifiable depuis une
+source connue. **Le verdict du test C est inchangé** (il reste ce qu'il
+est au §8.45 : NON — le bloc estomac/mucus monte avec le stade au lieu
+de s'effondrer, MUC16 est plat) : seule sa reproductibilité est réparée.
+C'est exactement la règle de la section à part — réparer la traçabilité
+sans réécrire l'histoire.
+
+## 8.77.5 — Le script corrigé
+
+**Fichier livré :** `repro_877/download_data_877.sh` (SHA-256
+`558111360ceda48bece577d7176a5ad5e46630f0a39fc85c03e8c3635564c78f`,
+diff `repro_877/download_data_877.diff`, 323 lignes changées).
+L'original `~/workspace/staging-pdac/download_data.sh` (SHA
+`4e151d59…`) n'a pas été modifié par ce chantier ; la copie corrigée est
+livrée au coordinateur avec son diff. `bash -n` : syntaxe OK.
+
+**Les corrections, une par une (chaque ancienne voie est nommée avec la
+raison de son échec — l'historique n'est pas effacé, il est documenté).**
+
+| # | Correction | Ancienne voie et pourquoi elle était cassée |
+|---|---|---|
+| 1 | PANC-1 fichier par fichier (8 fichiers + `mit_test.csv`), vérification taille + SHA-256 par fichier | Tarball `codeload.github.com/ncats/PANC1/tar.gz/refs/heads/main` : tronqué en pratique (569 815 185 o, gzip « unexpected end of file ») |
+| 2 | PRISM 19Q4 : 2 fichiers ajoutés au dictionnaire `want` + 4 URL directes en commentaire | Le script ne téléchargeait que 2 des 4 fichiers |
+| 3 | PRISM 24Q2 primaire : vérification SHA-256/MD5 ajoutée + métadonnées des lignées ajoutées | Le script passait `check … - -` (aucun hachage vérifié) |
+| 4 | Suppléments ng3398 (MOESM59–63) et Birnbaum (MOESM1–5) : sections ajoutées, vérification taille + SHA-256 | Non téléchargés par le script d'origine (URL non consignées) |
+| 5 | SOFT GPL20769 : section ajoutée, vérification taille exacte + SHA-256 | Non conservé, URL non consignée ; de plus l'ancien chemin deviné `GPL2nnn/` donne 404 (le bon est `GPL20nnn/`) |
+| 6 | ICGC probe map + NMF, QCMG clinique, clinique PanCanAtlas : sections ajoutées, vérification taille + SHA-256 | URL non consignées (jeux nommés / « fichier clinique datahub » / provenance manquante) |
+| 7 | CPTAC : URL directes consignées en commentaire | Voie API conservée (elle fonctionne) ; URL directes ajoutées pour la traçabilité |
+| 8 | Durcissement : `--retry-all-errors --retry-delay 5` sur tous les appels curl (`get()` et les deux blocs python) | Voir l'incident (1) ci-dessous : curl ne réessaie pas les 403 par défaut |
+| 9 | OmicsCNGene.csv : endpoint API figshare remplacé par ndownloader (même fichier, ID 51065324) | L'endpoint API est resté bloqué à 0 octet pendant 9+ min (voir incident (2)) ; ndownloader servait le fichier immédiatement (test range : HTTP 206, 672 Ko/s) |
+| 10 | Anti-blocage : `--speed-limit 1000 --speed-time 300` sur `get()` | Deux connexions sont restées bloquées à 0 o/s sans jamais échouer (voir incident (2)) — sans limite de vitesse, curl attend indéfiniment et `--retry` ne se déclenche jamais |
+| 11 | ICGC expression : URL S3 directe remplacée par l'URL du hub (même fichier, SHA identique) | La S3 directe renvoie HTTP 403 (4 tentatives, exécution full5 — voir incident (3)) |
+| 12 | Reprise : `get_checked()` remplace les 44 paires `get` + `check` (fichier déjà présent et vérifié sauté, fichier partiel/corrompu re-téléchargé) | Le script complet a été interrompu 3 fois (incidents (2)–(4)) ; sans reprise chaque incident coûtait ~30 min de re-téléchargement intégral |
+
+**Les incidents du script complet (consignés, pas maquillés).** Le script
+complet a demandé 9 exécutions avant EXIT:0 — chacune a fait avancer le
+diagnostic, aucune n'a été effacée.
+
+1. **Le 403 transitoire.** La première exécution s'est arrêtée au TOUT
+   PREMIER fichier (CRISPRGeneEffect.csv, `ndownloader.figshare.com`)
+   sur un HTTP 403, après ~90 s à 0 octet ; le script s'arrête
+   (`set -e`) et le journal `cold/full_script_877.log` se termine par
+   `curl: (22) … 403` / `EXIT:22`. Quelques minutes plus tard, la même
+   URL répondait 302 (redirection normale vers S3). Cause probable :
+   limitation de débit figshare après ~10 téléchargements rapprochés
+   dans ce chantier. Ce n'est pas une voie cassée du script : c'est un
+   refus transitoire du fournisseur. Correctif : item 8.
+2. **Les blocages à 0 octet (API figshare, GDAC) — le diagnostic
+   principal.** La relance (full2) s'est bloquée 9+ min à 0 octet sur
+   OmicsCN via l'endpoint API figshare ; la suivante (full3) 13+ min à
+   0 octet sur le tarball GDAC PAAD RSEM ; la suivante (full4) 3
+   tentatives de 5 min chacune sur le même tarball. Les tests directs
+   prouvaient pourtant que les hôtes fonctionnaient (GDAC : HTTP 206 à
+   768 Ko/s en range, puis 15 Mo en 7 s à 2,17 Mo/s en GET complet ;
+   ndownloader : HTTP 206 à 672 Ko/s). Le test décisif : un curl GDAC
+   lancé DANS une unité systemd donne HTTP 000, timeout 30 s, et un
+   curl API figshare pareil — alors que le même curl depuis l'outil
+   exec télécharge en quelques secondes. **Cause : les unités systemd
+   lancées par `systemd-run` n'héritent PAS des variables proxy de
+   l'environnement d'exécution.** En accès direct (sans proxy),
+   `ndownloader.figshare.com` fonctionne, mais `api.figshare.com` et
+   `gdac.broadinstitute.org` restent bloqués à 0 octet. Ce n'est donc
+   pas un défaut des hôtes ni du script : c'est un artefact de la
+   méthode de lancement. Les lots longs doivent être lancés AVEC le
+   proxy (`systemd-run --setenv=https_proxy=http://hatch-egress-proxy:3128
+   --setenv=http_proxy=http://hatch-egress-proxy:3128` — sans
+   identifiants : le proxy fonctionne sans). Le script lui-même ne code
+   pas le proxy en dur (c'est propre à l'environnement d'exécution).
+   Correctifs : items 9 et 10.
+3. **Le 403 S3 ICGC — un défaut du script corrigé, trouvé par le
+   test.** L'exécution full5 (avec proxy) : 12 fichiers OK, puis arrêt
+   sur l'URL S3 directe de l'expression ICGC
+   (`icgc-xena-hub.s3.amazonaws.com/…/nature16965-s2_normalised_exp.txt.gz`,
+   HTTP 403, 4 tentatives, EXIT:22). Cause : le script corrigé gardait
+   la section ICGC d'origine avec l'URL S3 directe, alors que la
+   section ajoutée (probe map + NMF) utilisait déjà le hub. L'URL du
+   hub pour le même fichier
+   (`icgc.xenahubs.net/download/PACA-AU/nature16965-s2_normalised_exp.txt.gz`)
+   fonctionne (302 vers le bucket) : 9 841 881 o, SHA-256 identique au
+   consigné. Correctif : item 11. DATA_SOURCES §5.2 mis à jour
+   (ancienne URL S3 marquée 403, ne plus utiliser).
+4. **Le redémarrage machine.** L'exécution full6 (avec proxy) : 27
+   fichiers OK, puis la machine a redémarré (~03:18–03:22 UTC) pendant
+   le téléchargement PANC-1 `calc.csv` (curl 52, en retry) ; l'unité
+   transiente n'a pas survécu, aucune ligne EXIT dans le journal
+   `cold/full_script_877f.log` (coupé net). Correctif : item 12
+   (reprise).
+5. **Le blocage PANC-1 `calc.csv` — cause exacte non élucidée.**
+   L'exécution full7 (avec proxy) : 27 fichiers OK, puis `calc.csv`
+   (24 780 o) bloqué à 0 octet, 4 tentatives toutes tuées par le
+   speed-limit. Le même fichier se télécharge en 0,3–1,3 s depuis
+   l'outil exec — avec proxy authentifié, sans identifiants, en IPv4
+   comme en IPv6 — et le curl bloqué de l'unité avait pourtant les
+   bonnes variables proxy (vérifié dans `/proc/PID/environ`) et une
+   connexion ESTABLISHED vers le proxy. Consigné comme tel : les tests
+   directs prouvent que l'URL et l'hôte fonctionnent. La reprise depuis
+   l'outil exec a passé sans difficulté.
+
+**Deux fautes de frappe dans des SHA consignés, trouvées par le test.**
+La reprise 877h s'est arrêtée sur `birnbaum_springer_MOESM3.xlsx` :
+SHA-256 INCORRECT. Enquête : le fichier re-téléchargé (9 119 o) porte
+`8bfbdcd618ea2a9d9b8ae480c763b857c3e23e2022462ab61cff0aaa8c6b1a13`
+(64 car.), IDENTIQUE au fichier local d'origine (16 nov. 2026) et au
+fichier vérifié à 01:40 — trois téléchargements indépendants d'accord.
+La valeur consignée au §13 et recopiée dans le script ne faisait que
+62 caractères (`…a9b8ae…` au lieu de `…a9d9b8ae…`) : faute de frappe dans
+la consignation, que la comparaison par SHA tronqués
+(`8bfbdcd6…6b1a13`) n'avait pas vue. Le fichier est bon ; c'est la
+consignation qui était fausse. Corrigé dans DATA_SOURCES §13 et dans le
+script. Balayage systématique ensuite : une deuxième faute, préexistante
+(19 nov. 2026) — SHA-256 LUAD §2.3 consigné sur 65 caractères
+(`…cf73f1daf2`, un `d` en trop) ; vrai SHA `…cf73f1af2`, vérifié sur le
+fichier local et le re-téléchargement à froid, identiques. Corrigé dans
+DATA_SOURCES §2.3. Aucune autre chaîne hex suspecte dans le script
+(balayage : 0) ni dans DATA_SOURCES (après correction). **Le test du
+script complet a donc déjà servi : il a attrapé une erreur latente que
+les comparaisons tronquées avaient manquée.**
+
+**Ce qui a été testé, et ce qui ne l'a pas été.** Chaque NOUVELLE section
+du script a été testée individuellement pendant ce chantier (chaque
+fichier re-téléchargé et vérifié par SHA — c'est le §8.77.3). La section
+TCGA a été testée par l'extrait littéral `cold/cold_tcga.sh` (§8.77.6).
+Le script complet (~2,4 Go, 52 fichiers) a été exécuté en entier jusqu'à
+EXIT:0 — voir §8.77.6 étape 4 pour le résultat.
+
+## 8.77.6 — Test à froid : la paire TCGA v4, du re-téléchargement au run
+
+**Chiffres tenus (v6.2, validation §8.37, rep1 = rep2 à l'octet), extraits
+le 21 nov. 2026 par `extract_858.extract` sur `results_fast_v62_tcga_v4`
+et `results_fast_v62_tcga_v4_nul`.**
+
+| | Réel (TCGA v4) | Nul (graine 42) |
+|---|---|---|
+| Flux CSV (SHA) | `pdac_tcga_fluxes_v4.csv`, `e7a2adab…0b0` | `pdac_tcga_fluxes_v4_nul.csv`, `895a4562…da4` |
+| n | 178 | 178 |
+| Cascade (%) | [0,0 ; 74,0617 ; 93,2217 ; 98,4358 ; 98,9572] | [0,0 ; 10,6496 ; 15,9571 ; 67,119 ; 67,119] |
+| MC | 0,3720465146241378 | 0,326773250583873 |
+| maxsep | 0,46234232096887146 | 0,1695801283296793 |
+| S_sep | 0,4548206606358036 | 0,1687743461786773 |
+| Delta | 4,181387 | 3,765664 |
+| L7a | down 0,4051910172618019 | up 0,16715778704330952 |
+| fals | 0,849386 | 0,642205 |
+| `master_results.json` (SHA) | `1506f23d…df76` | `0d939a40…c5a` |
+
+d_maxsep tenu : **+0,29276219**.
+
+**Étape 1 — re-téléchargement par le script corrigé.** Extrait littéral
+de la section TCGA du script corrigé (`cold/cold_tcga.sh`, mêmes
+commandes `get`/`check`) : les 4 tarballs téléchargés et vérifiés (MD5
+conformes) ; PAAD RSEM SHA-256 `c3dd138b3257ad5bae5a58160f5607d2ad9c2871c83f6cdb5959cc9116d262c9`
+= §2.1. Dossier propre `repro_877/cold/data`, rien dans `pdac-v6/` n'a
+été touché.
+
+**Étape 2 — reconstruction des flux.** Copie de `build_fluxes_tcga_v4.py`
+dans `repro_877/cold/` avec pour SEULES différences les deux constantes
+de chemins (`DATA`, `OUT` — diff consigné) ; original intact. Exécutée
+sur le tarball froid : flux reconstruits **SHA-IDENTIQUES** aux flux
+tenus — `pdac_tcga_fluxes_v4.csv` `e7a2adaba5a0ef6858b665251d56d40a26eb9edd116370bf2c686c752213a0b0`
+et `pdac_tcga_fluxes_v4_nul.csv`
+`895a456295d2b0553a2a62910461aedecb1aeccca59f57751c87b75ce0b97da4`.
+La chaîne téléchargement → reconstruction est bit-à-bit fidèle.
+
+**Étape 3 — runs v6.2 (21 nov. 2026, 01h44–01h51 UTC).** Commandes :
+`python3 /home/hatch/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py --input <flux_froid>.csv --mode fast --output results_fast_cold_tcga_v4[_nul]`,
+depuis `repro_877/cold/`, unité systemd `repro877-cold-runs` (lanceur
+reprenable `cold/run_cold_877.sh`, journal `cold/runs_cold_877.log` :
+réel EXIT 0, nul EXIT 0, FIN 01h51:36Z, SHA v6.2 avant = après =
+`f07567c4…`). Extraction par `extract_858.extract` (original intact,
+via `cold/extract_cold_877.py` ; `extract_cold_877.json` /
+`extract_cold_877.csv`). Comparaison au champ près des deux
+`master_results.json` (tenu vs froid, NaN traités comme égaux) :
+
+| | Réel froid | Réel tenu | Écart | Nul froid | Nul tenu | Écart |
+|---|---|---|---|---|---|---|
+| Cascade (%) | [0,0 ; 74,0617 ; 93,2217 ; 98,4358 ; 98,9572] | [0,0 ; 74,0617 ; 93,2217 ; 98,4358 ; 98,9572] | **0,0** | [0,0 ; 10,6496 ; 15,9571 ; 67,119 ; 67,119] | [0,0 ; 10,6496 ; 15,9571 ; 67,119 ; 67,119] | **0,0** |
+| MC | 0,3720465146241378 | 0,3720465146241378 | **0,0** | 0,326773250583873 | 0,326773250583873 | **0,0** |
+| maxsep | 0,46234232096887146 | 0,46234232096887146 | **0,0** | 0,1695801283296793 | 0,1695801283296793 | **0,0** |
+| S_sep | 0,4548206606358036 | 0,4548206606358036 | **0,0** | 0,1687743461786773 | 0,1687743461786773 | **0,0** |
+| Delta | 4,181387 | 4,181387 | **0,0** | 3,765664 | 3,765664 | **0,0** |
+| L7a | down 0,4051910172618019 | down 0,4051910172618019 | **0,0** | up 0,16715778704330952 | up 0,16715778704330952 | **0,0** |
+| fals | 0,849386 | 0,849386 | **0,0** | 0,642205 | 0,642205 | **0,0** |
+
+d_maxsep froid : **+0,2927621926391921** (tenu +0,29276219 — identique).
+Critère gelé (tolérance 0,0 exact) : **PASSE**.
+
+**Lecture honnête des écarts qui existent.** Les deux
+`master_results.json` froids n'ont pas le même SHA-256 que les tenus
+(réel froid `59dec82b…47ab2`, tenu `1506f23d…df76` ; nul froid `26e79888…40e68`,
+tenu `0d939a40…`). La comparaison au champ près montre que les seuls
+champs divergents sont des diagnostics d'environnement et des chemins,
+jamais des résultats : 18 champs pour le réel, 8 pour le nul — tous des
+`worker_budget` / `n_workers` / `chunksize` / `available_memory_bytes`
+(la mémoire disponible au moment du run différait : 3 workers tenus
+contre 2 froids pour le réel, et inversement 1,6 Go tenus contre 6,9 Go
+froids pour le nul, le téléchargement complet tournant en parallèle) et
+les chemins `runtime.dashboard_status.path` / `runtime.telemetry_path`
+(nom du dossier de sortie, différent par construction). Deux champs
+`Q6 … MUC2_SingularityFmax_mean` valent NaN des deux côtés (comparaison
+NaN ≠ NaN, artefact — valeurs identiques). **Aucun champ scientifique
+ne diverge.** C'est le comportement attendu d'un re-run dans un autre
+dossier, sur une machine dont la charge a changé — et c'est pourquoi le
+critère gelé portait sur les chiffres, pas sur l'octet du JSON.
+
+**Étape 4 — script complet : EXIT:0.** Le script corrigé entier (~2,4 Go,
+52 fichiers) a été exécuté en entier jusqu'à succès, journal final
+`cold/full_script_877i.log` (21 nov. 2026, 04:15–04:17 UTC) : **36
+fichiers « DÉJÀ PRÉSENT ET VÉRIFIÉ » + 16 OK frais, 0 erreur, ligne
+finale « TERMINE : tous les jeux de données téléchargés et vérifiés »,
+EXIT:0.** Dossier `cold/data_full/` : 52 fichiers, 2,4 Go — 6 DepMap,
+4 TCGA, 2 GEO (GSE71729, GSE62452), ICGC expression + Bailey MOESM270,
+3 PRISM 24Q2, 4 PRISM 19Q4, GDSC2, screened compounds, 4 CPTAC,
+9 PANC-1, 5 ng3398, 5 Birnbaum, SOFT GPL20769, ICGC probe map + NMF,
+2 QCMG, clinique PanCanAtlas. Chaque fichier a été vérifié par taille +
+SHA/MD5 dans l'invocation finale (36 vérifiés sur place + 16
+re-téléchargés). Les 8 exécutions précédentes (journaux
+`cold/full_script_877.log`, `877b.log`, `877c.log`, `877d.log`,
+`877e.log`, `877f.log`, `877g.log`, `877h.log`) sont consignées au
+§8.77.5 avec leurs incidents — elles ont fait avancer le diagnostic,
+aucune n'a été effacée. Le script livré est la version avec reprise
+(`get_checked()`, SHA `55811136…`) : une interruption (incident
+transitoire, redémarrage) ne coûte plus un re-téléchargement intégral.
+
+## 8.77.7 — DATA_SOURCES.md révisé : ce qui change, section par section
+
+**Fichier livré :** `~/workspace/runs/pdac-v6/DATA_SOURCES_877.md`
+(900 lignes ; référence : `~/workspace/push_v62_875_build/snap/DATA_SOURCES.md`,
+SHA `2b58ec35…`, 702 lignes). Diff résumé section par section :
+`repro_877/DATA_SOURCES_877_diff.md`. Ne pas pousser par ce chantier —
+poussée par le coordinateur.
+
+**Les changements.** En-tête : ligne « Révision §8.77 ». §0.1 : limites
+du script réécrites comme corrigées. §0.3 : inventaire — sources avec
+URL complète 8/16 → **16/16**, sources partielles 4/16 → **0/16**,
+sources sans URL 4/16 → **0/16**. §3.1 : URL + MD5 + SHA-256 du SOFT
+GPL20769 (chemin corrigé `GPL20nnn/`). §3.2 : patron d'URL ng3398.
+§5.3/§5.4 : URL du hub Xena (probe map, NMF). §6 : 4 URL directes
+CPTAC. §7 : URL du fichier de métadonnées PRISM 24Q2. §8 : 4 URL
+directes PRISM 19Q4. §10 : URL de `mit_test.csv` marquée vérifiée.
+§11 : titre changé (provenance retrouvée), bloc de la lacune remplacé
+par l'URL datahub et la double confirmation LFS. §12 : URL QCMG.
+§13 : DOI Birnbaum + patron d'URL Springer. §15.4 : SOFT
+re-téléchargeable (chemin corrigé). §15.6 : lacune PanCanAtlas marquée
+CLOSE, historique conservé (la lacune a existé du 15 au 21 nov. 2026).
+§17 : bilan révisé — **19/19 fermés**, aucune URL manquante restante,
+chaque ligne du tableau mise à jour (« FERMÉ §8.77 » + URL, historique
+conservé). §2.3 : SHA-256 LUAD corrigé (faute de frappe de 65
+caractères). §5.2 : URL ICGC expression corrigée (hub au lieu de S3
+directe = 403). §13 : SHA-256 Birnbaum MOESM3 corrigé (faute de frappe
+de 62 caractères). Annexe A §2 : la plupart des fichiers sont désormais
+dans le script corrigé (il ne reste hors script que la table GPL6244,
+dérivée du SOFT).
+
+**Nouvelle §28 — sources du §8.76.** Aucun nouveau téléchargement :
+réutilisation du téléchargement §8.74 (Yeh_seq TSV SHA `2fc0a66e…`,
+matrice GPL18573 SHA `9b333eb6…`, SHA re-vérifiés) ; lot FNA 42 codes,
+test apparié (41/42 mêmes tumeurs que FF), verdict CONFIRME d_maxsep
++0,1642 ; flux SHA `70697b3a…`, nul `2474ceaf…`.
+
+**Nouvelle §29 — ce chantier.** Tableau gap par gap (§29.1), voies
+infructueuses (§29.2), script corrigé (§29.3), test à froid (§29.4),
+ce qui reste ouvert (§29.5 : rien sur les fichiers bruts).
+
+## 8.77.8 — Ce qui reste ouvert
+
+**Sur les fichiers bruts : rien.** Chaque fichier brut du projet a
+désormais une URL de téléchargement vérifiée par SHA-256. Il n'y a
+aucun gap irrécupérable dans ce chantier — y compris le fichier clinique
+du test C, dont la provenance a été retrouvée au lieu d'être déclarée
+irrécupérable.
+
+**Hors périmètre (déjà documentés, non rouverts).** Les fichiers dérivés
+se reconstruisent par scripts (§14 de DATA_SOURCES.md). Les résultats
+`results_fast_*` (~7 Go) ne sont pas dans le dépôt par limite snapshot
+mais se reconstruisent par les runs — le test à froid le démontre pour
+la paire TCGA v4. Les matrices brutes (~2,4 Go) ne sont pas dans le
+dépôt par limite snapshot mais se re-téléchargent vérifiées par le
+script corrigé. Les URL vérifiées aujourd'hui peuvent mourir demain
+(services tiers) : les SHA consignés permettent de détecter tout
+changement — c'est la garantie, pas la pérennité des liens.
+
+## 8.77.9 — Ce que cette section ne change pas
+
+**Rien, dans le livre blanc, n'est modifié par ce chantier.** Aucune
+section existante n'est touchée, aucun verdict n'est rouvert, aucun
+chiffre n'est corrigé. Le test C reste NON (§8.45) — sa reproductibilité
+est réparée, son verdict est le même. Les fichiers QCMG restent écartés
+(§12). Le lot FNA reste un test apparié, pas une treizième paire (§8.76).
+Les scores ESTIMATE, xCell et les autres sources des §8.54–§8.76 ne sont
+pas concernés par ce chantier (leurs URL étaient déjà consignées et
+vérifiées dans leurs sections). Cette section est une réparation de
+traçabilité, à part, comme Zackary l'a ordonné le 20 nov. 2026 à 19h40 :
+elle ne se confond pas avec l'état actuel, elle le rend reconstructible.
+
+## 8.77.10 — Fichiers produits (SHA-256)
+
+| Fichier | SHA-256 |
+|---|---|
+| `PROTOCOL_reproductibilite_877.md` (gelé 21 nov. 2026, 01h37 UTC) | `dbe1746f7233e69a3052407576ebf6043080016c97a12d41f76244fc569a4030` |
+| `repro_877/download_data_877.sh` (script corrigé) | `558111360ceda48bece577d7176a5ad5e46630f0a39fc85c03e8c3635564c78f` |
+| `repro_877/download_data_877.diff` (323 lignes) | `e333ae041c5918bccc59cdbe262ea318546f7cf0e0e8fafc2ed311a35fc58f26` |
+| `DATA_SOURCES_877.md` (révisé, 900 lignes) | `17b8428b2f066d45f74eca2373a0d53c4dfd31f8850178308b117f8496a408fc` |
+| `repro_877/DATA_SOURCES_877_diff.md` (diff résumé, 179 lignes) | `de00f940704a07a2b9645d8fb1881fe64d6d168fcc39cfc6b7437953ecec60b2` |
+| `repro_877/JOURNAL_877.md` (journal du chantier, 297 lignes) | `c3bdda5d708a96db8cc300373881e11e31d05eefb4a045e9fc25e327dcd50c34` |
+| `section_8.77_reproductibilite.md` (cette section, 649 lignes) | SHA calculé après gel du texte — consigné dans `JOURNAL_877.md` (entrée de livraison) et dans le rapport de livraison au coordinateur (l'auto-référence est impossible dans le fichier lui-même) |
+
+Pipeline v6.2 SHA `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+(vérifié avant le gel et après chaque lot de runs, inchangé).
+Original du script : `~/workspace/staging-pdac/download_data.sh`, SHA
+`4e151d59391164e49d24c4bd590f927f67dfb1bc09a2f3e041202f580006c448`
+(intact). Référence DATA_SOURCES.md :
+`~/workspace/push_v62_875_build/snap/DATA_SOURCES.md`, SHA
+`2b58ec3533ee7c7837dbeeaf9cd2aaed2ec3560b5240082a358256b3fb1caea2`
+(intacte).
+
+— Fin de la §8.77. —
+
+---
+
 ### 8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas
 
 | | v1 (brute) | v2 (hors pureté) | v3 (+ correction) | v4 (+ hors sexe) |
@@ -16902,5 +18104,11 @@ contrôle. Sorties : `m2_cloture_875_extract.json` (SHA
 - **20 nov. 2026, 17h05 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `fcffb897`, §8.71–§8.73, RELEASE v6.2-8.73.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `fc8b152c` → nouvelle tête `fcffb897` (4 commits, vérifiés en lecture directe : `d85d4373`, `028b28fb`, `337bf1a2`, `fcffb897`). Contenu : livre blanc §8.1–§8.73 (15 928 lignes, SHA `bf999cdd…`), PDF 1061 pages (13 184 128 octets, SHA `d5f0ed07…`). Release `v6.2-8.73` : PDF 1061 p. + tarball TCGA vérifié, créée 17h05, marquée Latest. Cette entrée clôt la mention « Poussée GitHub à venir » de l'entrée de fusion §8.71–§8.73 ci-dessus.
 
 - **20–21 nov. 2026 : FUSION §8.74–§8.75 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1090 PAGES.** Go de Zackary « Les 3 allez s'y » (20 nov. 2026 18h04, 3 pistes). Sections rédigées dans `section_8.74_gse131050.md` (531 lignes, SHA `f4ca8ec3…0513`) et `section_8.75_m2_cloture.md` (434 lignes, SHA `bb2be60c…59997`), fusionnées par le coordinateur : titre §8.74 normalisé « ### 8.74 ... (20 novembre 2026) » (la section source commençait par « # §8.74 — ... »), ligne de go ajoutée au §8.74 (2e des 3 pistes), marqueur de fin normalisé au §8.74 (« — Fin de la section §8.74. — » → « — Fin de la §8.74. — ») ; §8.75 déjà au bon format, insérée telle quelle ; lignes 80–81 au §7 ; entrée de journal ajoutée pour la poussée `fcffb897` ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 16 904 lignes, SHA-256 `873a4d3d…3a4330` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-875`, FIN 21 nov. 2026 01:03 UTC, soit 20 nov. 2026 20h03 heure de Montréal) : **1090 pages A4, 13 346 927 octets, SHA-256 `5db6b001…f03c9cd9`** (ancien 1061 pages, SHA `d5f0ed07…`) ; couverture §8.1–§8.75 (kicker 19–21 novembre 2026, nouveau paragraphe §8.74–§8.75) ; §8.74 et §8.75 et entrée fcffb897 vérifiés présents par lecture du PDF, chiffres clés présents (+0,0739 ; 8/12 ; TRANCHÉ–CONFIRMÉ ; 80 %). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
+
+- **20 nov. 2026, 20h08 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `76068f8e`, §8.74–§8.75, RELEASE v6.2-8.75.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `fcffb897` → nouvelle tête `76068f8e` (4 commits, vérifiés en lecture directe : `a920f3cc`, `5a6b0c2e`, `f888b7b6`, `76068f8e`). Contenu : livre blanc §8.1–§8.75 (16 906 lignes, SHA `9bad9837…`), PDF 1090 pages (13 346 927 octets, SHA `5db6b001…`). Release `v6.2-8.75` : PDF 1090 p. + tarball TCGA vérifié, créée 20 nov. 20h14, marquée Latest. Cette entrée clôt la mention « Poussée GitHub à venir » de l'entrée de fusion §8.74–§8.75 ci-dessus.
+
+- **20 nov. 2026, 20h10 et 20h26 (heure de Montréal) : POUSSÉES GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — têtes `06311d12` puis `cab60218`, §8.74–§8.75.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé. `06311d12` (21 nov. 2026 01:10:52Z) : livre blanc §8.1–§8.75 (SHA `9bad9837…`, 16 906 lignes) + README tenu à jour avec le principal. `cab60218` (21 nov. 2026 01:26:48Z) : DATA_SOURCES.md synchronisée (§26 GSE131050, §27 clôture M2). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
+
+- **20–21 nov. 2026 : FUSION §8.76–§8.77 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1121 PAGES.** Sections rédigées dans `section_8.76_gse131050_fna.md` (544 lignes, SHA `d3b07ad2…8cec8`) et `section_8.77_reproductibilite.md` (649 lignes, SHA `5e78a329…ba303`), fusionnées par le coordinateur : titres normalisés « ### 8.76 ... (20–21 novembre 2026) » et « ### 8.77 ... (21 novembre 2026) » (les sections sources commençaient par « # §8.76 — ... » et « # §8.77 — ... »), lignes de go/dates ajoutées aux deux (§8.76 : piste nommée au §8.74.9 sous le go « Les 3 allez s'y » du 20 nov. 2026 18h04, protocole gelé 20 nov. ~21h30 EST ; §8.77 : ordre de Zackary du 20 nov. 2026 19h40, protocole gelé 21 nov. 01h37 UTC), marqueurs de fin normalisés (« — Fin de la section §8.XX. — » → « — Fin de la §8.XX. — ») ; lignes 82–83 au §7 ; entrées de journal ajoutées pour les poussées `76068f8e` (principal, §8.74–§8.75, Release v6.2-8.75) et `06311d12` + `cab60218` (suite, privée) ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 18 112 lignes, SHA-256 `bc0abb31…ad6eb65` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-877`, FIN 21 nov. 2026 04:10 UTC, soit 20 nov. 2026 23h10 heure de Montréal) : **1121 pages A4, 13 516 200 octets, SHA-256 `4db25406…11f72`** (ancien 1090 pages, SHA `5db6b001…`) ; couverture §8.1–§8.77 (kicker 19–21 novembre 2026, nouveau paragraphe §8.76–§8.77) ; §8.76 et §8.77 et entrées 76068f8e/cab60218 vérifiés présents par lecture du PDF, chiffres clés présents (+0,1642 ; 19/19 ; REPRODUCTIBILITÉ RÉPARÉE ; 0,0 exact). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
 
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*

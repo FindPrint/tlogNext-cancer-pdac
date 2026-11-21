@@ -3,6 +3,7 @@
 **Objet :** permettre à un autre AI de reconstruire **toutes** les matrices brutes du projet PDAC (pipeline v6, livre blanc) depuis zéro, sans rien deviner.
 **Projet :** `~/workspace/runs/pdac-v6/` — recherche non clinique sur le cancer du pancréas (mandat : trouver un remède, livre blanc public).
 **Date de rédaction :** 19 novembre 2026.
+**Révision §8.77 :** 21 novembre 2026 — toutes les URL manquantes du §17 ont été retrouvées et vérifiées par SHA-256 (voir §29, chantier §8.77) ; nouvelle §28 (sources du §8.76) et §29 (bilan du chantier). Aucun verdict du livre blanc n'est modifié par cette révision.
 **Périmètre :** tous les fichiers de `~/workspace/runs/pdac-v6/data/` (87 fichiers, ~2,44 Go) + un fichier brut hors `data/` (`data_clinical_patient.txt`, racine de `pdac-v6/`).
 **Règle appliquée (Zackary, 27 oct. 2026 — provenance toujours nommée) :** chaque URL est copiée telle quelle depuis une provenance lue ; **aucune URL n'a été inventée**. Quand une URL n'est pas dans une provenance, c'est écrit noir sur blanc : « URL non consignée dans les provenances ».
 
@@ -12,11 +13,31 @@
 
 **`~/workspace/staging-pdac/download_data.sh`** — re-télécharge TOUS les jeux de données depuis leurs sources publiques et vérifie taille + MD5/SHA-256. Usage : `bash download_data.sh [dossier-destination, défaut : ./data]`.
 
-**Limites connues du script (vérifiées, voir §15) :**
-- Il ne télécharge que **2 des 4** fichiers PRISM 19Q4 (`secondary-screen-cell-line-info.csv` et `secondary-screen-readme.txt` manquent dans son dictionnaire `want`).
-- Sa section PANC-1 télécharge le tarball `codeload.github.com/ncats/PANC1/tar.gz/refs/heads/main`, qui s'est révélé **tronqué** en pratique (569 815 185 o, erreur gzip « unexpected end of file ») : la voie qui a fonctionné est le téléchargement fichier par fichier via `raw.githubusercontent.com` (voir §10).
-- Il ne télécharge pas : les suppléments Nature/Springer (ng3398 MOESM59–63, Birnbaum MOESM1–5), le SOFT GPL20769, les fichiers ICGC probe map / NMF, les fichiers cliniques QCMG, `Repurposing_Public_24Q2_Cell_Line_Meta_Data.csv`, ni `data_clinical_patient.txt` (provenance d'acquisition manquante, voir §11).
-- Pour PRISM 24Q2 primaire, le script ne vérifie **aucun hachage** (`check ... - -`) : les SHA-256/MD5 consignés au §7 proviennent de `PROVENANCE_mtap_arbitration_840.md` et ont été re-vérifiés localement le 19 nov. 2026.
+**Limites connues du script — CORRIGÉES au §8.77** (voir §29 ; le script
+corrigé est `repro_877/download_data_877.sh`, diff `repro_877/download_data_877.diff`) :
+- PRISM 19Q4 : le script d'origine ne téléchargeait que **2 des 4** fichiers
+  (`secondary-screen-cell-line-info.csv` et `secondary-screen-readme.txt`
+  manquaient dans son dictionnaire `want`) — **corrigé** : les 4 fichiers
+  sont téléchargés, avec leurs URL directes figshare en commentaire (§8).
+- PANC-1 : la section d'origine téléchargeait le tarball
+  `codeload.github.com/ncats/PANC1/tar.gz/refs/heads/main`, qui s'est révélé
+  **tronqué** en pratique (569 815 185 o, erreur gzip « unexpected end of
+  file ») — **corrigé** : téléchargement fichier par fichier via
+  `raw.githubusercontent.com`, avec vérification taille + SHA-256 (§10).
+- Le script d'origine ne téléchargeait pas : les suppléments Nature/Springer
+  (ng3398 MOESM59–63, Birnbaum MOESM1–5), le SOFT GPL20769, les fichiers
+  ICGC probe map / NMF, les fichiers cliniques QCMG,
+  `Repurposing_Public_24Q2_Cell_Line_Meta_Data.csv`, ni
+  `data_clinical_patient.txt` — **corrigé** : toutes ces sections sont
+  ajoutées, URL vérifiées par SHA-256 (§8.77).
+- PRISM 24Q2 primaire : le script d'origine ne vérifiait **aucun hachage**
+  (`check ... - -`) — **corrigé** : SHA-256/MD5 vérifiés (§7) et fichier de
+  métadonnées des lignées ajouté.
+- Le script corrigé complet (~2,4 Go) a été exécuté le 21 nov. 2026 dans
+  le chantier §8.77 (unités `repro877-cold-full` puis
+  `repro877-cold-full2` après un 403 transitoire, journaux
+  `repro_877/cold/full_script_877.log` et `full_script_877b.log`) —
+  résultat consigné au §29.
 
 ### 0.2 Conventions de ce document
 
@@ -33,9 +54,9 @@
 | Sources brutes distinctes couvertes | 16 |
 | Fichiers `data/` de plus de 5 Mo | 19 — **19/19 couverts (§16)** |
 | Fichiers `data/` au total | 87 (~2,44 Go) |
-| Sources brutes avec URL complète pour leur(s) fichier(s) principal(aux) | 8 sur 16 |
-| Sources brutes partielles (accès via API : figshare/Zenodo, pas d'URL directe par fichier) | 4 sur 16 (CPTAC, PRISM 24Q2, PRISM 19Q4, QCMG) |
-| Sources brutes sans URL | 4 sur 16 (PanCanAtlas clinique, Birnbaum, ng3398, SOFT GPL20769) |
+| Sources brutes avec URL complète pour leur(s) fichier(s) principal(aux) | **16 sur 16 (depuis §8.77, voir §17 révisé et §29)** |
+| Sources brutes partielles (accès via API : figshare/Zenodo, pas d'URL directe par fichier) | 0 sur 16 — CPTAC, PRISM 24Q2, PRISM 19Q4 et QCMG ont désormais aussi leurs URL directes consignées (§6, §7, §8, §12) ; l'accès par API reste la voie du script quand elle fonctionne |
+| Sources brutes sans URL | **0 sur 16 (depuis §8.77)** |
 
 ---
 
@@ -50,7 +71,7 @@
 |---|---|---|---|---|
 | `data/CRISPRGeneEffect.csv` | 428 678 699 | `https://ndownloader.figshare.com/files/51064667` | `3d8f3ec6dbf2db7ff834b79b508622ec0b226f3518003fe96ecf5a4fcf167e3b` | `6edf7ade09b9b34199210b559d4745d3` |
 | `data/Model.csv` | 645 696 | `https://ndownloader.figshare.com/files/51065297` | `b7a0c1385e6cef30132b56aff61f1261d11e3f490490b355c430d32ee0dbdcfa` | `675210d17675f3517b0ce39a3c274f16` |
-| `data/OmicsCNGene.csv` | 1 394 554 236 | `https://api.figshare.com/v2/file/download/51065324` | `4851d3e939d48837a39a0f01294deb90fa507a85703586a927b77474f999134c` | `4696565fa74dc805983bc278b4a41802` (exact, MD5 figshare annoncé) |
+| `data/OmicsCNGene.csv` | 1 394 554 236 | `https://api.figshare.com/v2/file/download/51065324` (URL d'origine) — **voie utilisée dans le script corrigé §8.77 : `https://ndownloader.figshare.com/files/51065324`** (même fichier, ID 51065324 ; l'endpoint API est resté bloqué à 0 octet pendant 9+ min le 21 nov. 2026 alors que ndownloader servait le fichier immédiatement — test range HTTP 206, 672 Ko/s) | `4851d3e939d48837a39a0f01294deb90fa507a85703586a927b77474f999134c` | `4696565fa74dc805983bc278b4a41802` (exact, MD5 figshare annoncé) |
 | `data/OmicsSomaticMutationsMAFProfile.maf` | 98 439 503 | `https://ndownloader.figshare.com/files/51065741` | `86b8530b31125305391dcffb7dffc5426535df63705a2bf76565368f3955e96f` | — (non consigné) |
 | `data/OmicsSomaticMutationsMatrixHotspot.csv` | 4 210 723 | `https://ndownloader.figshare.com/files/51065750` | `6444ce819a28d4228ff7b748e309611c5830c551620d8d2c7f86052e2675e3d8` | — (non consigné) |
 | `data/OmicsProfiles.csv` | 254 733 | `https://ndownloader.figshare.com/files/51065723` | `0bb19ee57935d4b213d378a4db9caacaa1db7318a63ae81485d84f91c20a3bf2` | — (non consigné) |
@@ -93,7 +114,7 @@
 - **URL du répertoire (consignée) :** `https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/LUAD/20160128/`
 - **URL exacte du tarball (dans `download_data.sh`) :** `https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/LUAD/20160128/gdac.broadinstitute.org_LUAD.Merge_rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.Level_3.2016012800.0.0.tar.gz`
 - **MD5 observé (consigné ; aucun MD5 de référence publié par Firehose pour LUAD) :** `4c36eec3f6df75630292c5a569cfc8f4` (aussi dans `data/tcga_luad_rsem.tar.gz.md5`)
-- **SHA-256 (calculé localement le 19 nov. 2026) :** `472c88d09aa5d3efa05da3cd0645f411191f6518e01f493f1d960abcf73f1daf2`
+- **SHA-256 (calculé localement le 19 nov. 2026 ; corrigé §8.77, 21 nov. 2026 — la consignation d'origine portait 65 caractères, un `d` en trop : `…cf73f1daf2` au lieu de `…cf73f1af2`) :** `472c88d09aa5d3efa05da3cd0645f411191f6518e01f493f1d960abcf73f1af2` (vérifié sur le fichier local et sur le re-téléchargement à froid, identiques)
 - **Contenu :** 20 503 gènes × 576 échantillons ; 515 tumeurs primaires retenues (61 écartées), log2(RSEM+1).
 (Source : `PROVENANCE_pancancer.md`, `~/workspace/staging-pdac/download_data.sh`)
 
@@ -125,13 +146,14 @@
 
 ### 3.1 Annotation GPL20769 (fichier SOFT — NON conservé ; fichier .annot.gz = page 404)
 
-- **Fichier SOFT de la famille GPL20769 : 37 588 662 octets, téléchargé le 15 nov. 2026** (table de 19 749 lignes) — **fichier absent de `data/`** (non conservé après extraction) et **URL non consignée dans les provenances**.
+- **Fichier SOFT de la famille GPL20769 : 37 588 662 octets, téléchargé le 15 nov. 2026** (table de 19 749 lignes) — **fichier absent de `data/`** (non conservé après extraction).
+- **URL exacte (retrouvée et vérifiée §8.77, 21 nov. 2026) :** `https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPL20nnn/GPL20769/soft/GPL20769_family.soft.gz` — re-téléchargé le 21 nov. 2026 : taille 37 588 662 o exactement, table 19 750 lignes (en-tête + 19 749 lignes), titre confirmé (« Agilent-014850 Whole Human Genome Microarray 4x44K G4112F (Gene Symbol Version; updated July 2014) »). **MD5 :** `4c39e802ec78170d7ed5c8c2cc2b0bec` ; **SHA-256 :** `ecb1b79a6b89e521a1116a3113fcb9a5af1c181329eec8257e044e0683822d3e` (calculés le 21 nov. 2026 sur le fichier re-téléchargé). **Note :** le chemin deviné au §15.4 (`GPL2nnn/`) donne 404 — le regroupement GEO masque les 3 derniers chiffres (20769 → `GPL20nnn`, comme 6244 → `GPL6nnn` au §4.1).
 - **Fichier local :** `data/GPL20769.annot.gz` — **990 octets** — ce n'est PAS une annotation : vérifié le 19 nov. 2026, c'est une page HTML d'erreur « Object not found! » (le `.annot.gz` n'existe pas sur le FTP GEO, HTTP 404 — consigné dans `PROVENANCE_geo71729.md`). À ne pas utiliser ; le SOFT a servi à la place.
 (Source : `PROVENANCE_geo71729.md`)
 
 ### 3.2 Suppléments Nature de Moffitt et al. 2015 (ng3398, MOESM59–63)
 
-Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non consignée dans les provenances** pour ces 5 fichiers (seuls les noms, tailles et SHA tronqués sont consignés dans `PROVENANCE_geo71729_survival.md`). Les SHA-256 complets ci-dessous ont été calculés localement le 19 nov. 2026 ; leurs préfixes correspondent aux valeurs tronquées consignées.
+Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL retrouvées et vérifiées §8.77 (21 nov. 2026)** — patron Springer `static-content.springer.com/esm/art%3A10.1038%2Fng.3398/MediaObjects/41588_2015_BFng3398_MOESM{n}_ESM.{ext}` (code revue 41588 = *Nature Genetics* ; même patron que le fichier Bailey MOESM270 du §5.5) ; les 5 fichiers ont été re-téléchargés le 21 nov. 2026 et leurs tailles + SHA-256 vérifiés identiques à ceux ci-dessous. (Avant §8.77 : URL non consignée dans `PROVENANCE_geo71729_survival.md` — seuls noms, tailles et SHA tronqués.) Les SHA-256 complets ci-dessous ont été calculés localement le 19 nov. 2026 ; leurs préfixes correspondent aux valeurs tronquées consignées.
 
 | Fichier local | Taille (octets) | SHA-256 (calculé localement, préfixe conforme au consigné) | Contenu (selon la provenance) |
 |---|---|---|---|
@@ -186,7 +208,7 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 ### 5.2 Expression — UCSC Xena, hub ICGC (miroir vérifié)
 
 - **Fichier local :** `data/icgc_pacaau_exp.txt.gz` — **9 841 881 octets**
-- **URL exacte (consignée) :** `https://icgc-xena-hub.s3.amazonaws.com/download/PACA-AU/nature16965-s2_normalised_exp.txt.gz`
+- **URL exacte (corrigée §8.77, 21 nov. 2026) :** `https://icgc.xenahubs.net/download/PACA-AU/nature16965-s2_normalised_exp.txt.gz` (hub Xena, redirige 302 vers le bucket) — re-téléchargée le 21 nov. 2026 : 9 841 881 o, SHA-256 `c2cb57af3ba4c3d7fdac292e66c81067d36e16aae9efdd8005147e20820f49fa` (identique au consigné). **Ancienne URL S3 directe `https://icgc-xena-hub.s3.amazonaws.com/download/PACA-AU/nature16965-s2_normalised_exp.txt.gz` : HTTP 403 (4 tentatives, exécution full5 du script complet, 21 nov. 2026) — ne plus utiliser.**
 - **SHA-256 vérifié (consigné) :** `c2cb57af3ba4c3d7fdac292e66c81067d36e16aae9efdd8005147e20820f49fa`
 - **Jeu Xena :** `PACA-AU/nature16965-s2_normalised_exp.txt`, cohorte PACA-AU, 96 échantillons, gene expression, log2(cpm), version 2016-09-09 ; citation : Bailey et al., *Nature* 531, 47–52 (2016), doi `10.1038/nature16965`. Table de référence `XenaData` du paquet UCSCXenaTools (`https://raw.githubusercontent.com/ShixiangWang/UCSCXenaTools/master/data/XenaData.rda`, 2 314 jeux). Le hub `https://icgc.xenahubs.net/download/...` redirige (302) vers le bucket S3 `icgc-xena-hub` ; l'objet non-gzippé renvoie 403, l'objet `.gz` existe.
 - **Contenu vérifié :** 18 278 gènes (Ensembl) × 96 échantillons (ICGC_0006…), valeurs log2(cpm), 0 valeur manquante ; 70 tumeurs primaires PDAC retenues après filtre (`Sample type == 'Primary tumour'` ET `HistoSubtype == 'Pancreatic Ductal Adenocarcinoma'`).
@@ -199,7 +221,7 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 - **Fichier local :** `data/icgc_pacaau_probemap.gz` — **353 314 octets**
 - **SHA-256 vérifié (consigné) :** `b09a746f6084215beea3632b72e87834ea577d18fcb52add3641de5d0d975537`
 - **Jeu Xena (consigné) :** `PACA-AU/ensembleGene_hg19_nature16965-s2_normalised_exp`
-- **URL exacte : URL non consignée dans les provenances** (le jeu Xena est nommé, l'URL de téléchargement du fichier probe map n'est pas consignée littéralement ; hub : `https://icgc.xenahubs.net/download/...`, bucket S3 `icgc-xena-hub` — voir §5.2).
+- **URL exacte (retrouvée et vérifiée §8.77, 21 nov. 2026) :** `https://icgc.xenahubs.net/download/PACA-AU/ensembleGene_hg19_nature16965-s2_normalised_exp.gz` — re-téléchargée le 21 nov. 2026 : taille 353 314 o, SHA-256 `b09a746f6084215beea3632b72e87834ea577d18fcb52add3641de5d0d975537` (identique au consigné). **Note :** le listing du bucket S3 renvoie 403 et l'URL S3 directe (`icgc-xena-hub.s3.amazonaws.com/download/PACA-AU/…`) renvoie 403 aussi — c'est l'URL du hub qui fonctionne (le hub redirige vers le bucket).
 - **Contenu :** 18 108 ENSG → 18 077 symboles ; médiane par symbole en cas de duplicata ; les 13 gènes (12 flux + KRAS) mappent chacun à un seul ENSG.
 - **Date d'acquisition :** 16 nov. 2026 (date de fichier 16 nov. 12:13).
 (Source : `PROVENANCE_icgc.md`)
@@ -209,7 +231,7 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 - **Fichier local :** `data/icgc_pacaau_nmf.txt.gz` — **447 octets**
 - **SHA-256 vérifié (consigné) :** `f1e84b997c24903c216fbe9806c1b048cd9f552894e018ca54d02b5413921e2f`
 - **Jeu Xena (consigné) :** `PACA-AU/nature16965-s2_NMF_class_assignment.txt`
-- **URL exacte : URL non consignée dans les provenances** (même remarque qu'au §5.3).
+- **URL exacte (retrouvée et vérifiée §8.77, 21 nov. 2026) :** `https://icgc.xenahubs.net/download/PACA-AU/nature16965-s2_NMF_class_assignment.txt.gz` — re-téléchargée le 21 nov. 2026 : taille 447 o, SHA-256 `f1e84b997c24903c216fbe9806c1b048cd9f552894e018ca54d02b5413921e2f` (identique au consigné). **Note :** le fichier distant est bien `.txt.gz` (le `.txt` nu renvoie 404 sur le hub) ; même remarque que §5.3 pour l'URL S3 directe (403).
 - **Contenu :** 96 échantillons : Pancreatic Progenitor 30, Squamous 25, Immunogenic 25, ADEX 16.
 - **Date d'acquisition :** 16 nov. 2026 (date de fichier 16 nov. 12:13).
 (Source : `PROVENANCE_icgc.md`)
@@ -231,7 +253,12 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 
 **Étude :** CPTAC PDAC — Cao et al., 2021, *Cell*, « Proteogenomic characterization of pancreatic ductal adenocarcinoma ». Étude PDC **PDC000393** (Proteomic Data Commons, NCI).
 **Voie d'accès réelle :** miroir Zenodo du paquet Python `cptac` (PayneLab), record **8394329** (« CPTAC - first test », DOI `10.5281/zenodo.8394329`), lui-même issu du PDC PDC000393. L'API GraphQL du PDC (`https://pdc.cancer.gov/graphql`, accès ouvert, sans authentification) a été testée et répond, mais l'exploration de son schéma était lente et l'introspection désactivée ; le miroir Zenodo contient les mêmes fichiers sources (mêmes sommes MD5 que celles du PDC). **L'accès PDC n'était pas contrôlé ni bloqué** — le miroir a été choisi pour sa simplicité, pas par nécessité.
-**Page du record :** `https://zenodo.org/records/8394329` — **API Zenodo (utilisée par `download_data.sh`) :** `https://zenodo.org/api/records/8394329` (les URL de fichiers individuels ne sont pas consignées littéralement : elles sont lues dans la réponse de l'API — champ `links.self` de chaque fichier — par le script).
+**Page du record :** `https://zenodo.org/records/8394329` — **API Zenodo (utilisée par `download_data.sh`) :** `https://zenodo.org/api/records/8394329` (les URL de fichiers individuels sont lues dans la réponse de l'API — champ `links.self` de chaque fichier — par le script).
+**URL directes par fichier (lues dans la réponse de l'API le 21 nov. 2026, §8.77 ; tailles et MD5 conformes au tableau ci-dessous) :**
+- Report UMich : `https://zenodo.org/api/records/8394329/files/umich-pdac-proteomics-Report_abundance_groupby=protein_protNorm=MD_gu=2.tsv.gz/content`
+- BCM Tumor : `https://zenodo.org/api/records/8394329/files/bcm-pdac-proteomics-PDAC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt.gz/content`
+- Mapping UMich : `https://zenodo.org/api/records/8394329/files/umich-pdac-mapping-aliquot_to_patient_ID.tsv.gz/content`
+- `cptac_genes.csv` : `https://zenodo.org/api/records/8394329/files/cptac_genes.csv/content`
 **Date d'acquisition :** 15 nov. 2026, 13h48–13h49 UTC.
 **Re-téléchargement :** `~/workspace/staging-pdac/download_data.sh` (section CPTAC, via API Zenodo).
 
@@ -259,7 +286,7 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 |---|---|---|---|---|
 | `data/Repurposing_Public_24Q2_Extended_Primary_Data_Matrix.csv` | 72 456 953 | `https://ndownloader.figshare.com/files/46630984` | `3b6554cfc6c765af53088a676edc7bce00ee7d84fe808b93bbfa892de607bc3d` | `042b15d3ebcc138a80a571b9286451ae` |
 | `data/Repurposing_Public_24Q2_Extended_Primary_Compound_List.csv` | 719 567 | `https://ndownloader.figshare.com/files/46630981` | `7e78f5901c1a97d2baab0789ab89832e716388da4eacaa9f094e7d2f2f5a3463` | — (non consigné) |
-| `data/Repurposing_Public_24Q2_Cell_Line_Meta_Data.csv` | 157 294 | **URL non consignée dans les provenances** (n° de fichier figshare non consigné ; le fichier n'est pas téléchargé par `download_data.sh`) | `13a85da9e45656c455d3911a4491f3636d7d0975a9d2333dc3d0a3e2cd3b0526` | — (non consigné) |
+| `data/Repurposing_Public_24Q2_Cell_Line_Meta_Data.csv` | 157 294 | `https://ndownloader.figshare.com/files/46630978` (**retrouvée §8.77** via l'API figshare `https://api.figshare.com/v2/articles/25917643`, fichier 46630978 ; re-téléchargée le 21 nov. 2026, taille et SHA-256 identiques ; ajoutée au script corrigé) | `13a85da9e45656c455d3911a4491f3636d7d0975a9d2333dc3d0a3e2cd3b0526` | — (non consigné) |
 
 **Contenu :** matrice primaire étendue = log-fold-change de viabilité, une seule dose (2,5 µM) ; 6 790 composés (6 789 uniques après déduplication d'un ID BRD en double, AZ-628) ; liste des composés (6 790 lignes) ; métadonnées des lignées.
 (Source : `PROVENANCE_kras_g12d.md`, `PROVENANCE_mtap_arbitration_840.md`, `source_registry.md`, `~/workspace/staging-pdac/download_data.sh`)
@@ -281,7 +308,12 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 | `data/secondary-screen-cell-line-info.csv` | 40 979 | `6737b4aa9fd85404fd2f0cf825b037e4` | `b93436b5f4bcf5fd14589697be4ca8f99ffd99d639223080380bc514c3718d27` (calculé localement le 19 nov. 2026) |
 | `data/secondary-screen-readme.txt` | 7 647 | `421d0bbadec381adc0d7981ee7e16bd7` | `ed453e2bbaecff26cf923d8a69290f2c18fd7488d5a7d6903821980e6d49c99d` (calculé localement le 19 nov. 2026) |
 
-**URL exacte des fichiers individuels : URL non consignée dans les provenances** (pas d'URL `ndownloader` par fichier : accès via l'API `https://api.figshare.com/v2/articles/9393293` ; le script `download_data.sh` récupère les `download_url` depuis cette API).
+**URL exactes des fichiers individuels (lues dans la réponse de l'API figshare `https://api.figshare.com/v2/articles/9393293` le 21 nov. 2026, §8.77 ; les 4 fichiers ont été re-téléchargés et vérifiés — tailles, MD5 et SHA-256 conformes au tableau ci-dessous) :**
+- `secondary-screen-dose-response-curve-parameters.csv` : `https://ndownloader.figshare.com/files/20237739`
+- `secondary-screen-replicate-collapsed-treatment-info.csv` : `https://ndownloader.figshare.com/files/20237763`
+- `secondary-screen-cell-line-info.csv` : `https://ndownloader.figshare.com/files/20237769`
+- `secondary-screen-readme.txt` : `https://ndownloader.figshare.com/files/20238123`
+(Avant §8.77 : pas d'URL `ndownloader` par fichier dans les provenances ; accès via l'API ci-dessus, champ `download_url`.)
 **Contenu :** 701 004 lignes (dose-réponse) ; écrans HTS002 (602 495), MTS010 (64 203), MTS006 (33 472), MTS005 (834) ; 1 502 broad_id, 1 448 noms de composés, 480 lignées ; AUC jamais manquante, IC50 manquante sur 48 % des lignes.
 (Source : `PROVENANCE_prism_secondary.md`, `PROVENANCE_mtap_arbitration_840.md`, `~/workspace/staging-pdac/download_data.sh`)
 
@@ -322,7 +354,7 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 | `data/panc1_ncata/9197_metadata.csv` | 71 459 | `https://raw.githubusercontent.com/ncats/PANC1/main/NCATS/9197/metadata.csv` | `1240777419d25e985f9cf6ae998cd4393b2d2f53be404c9b595cb66178bba0f0` |
 | `data/panc1_ncata/9197_metadata_smiles.csv` | 108 941 | `https://raw.githubusercontent.com/ncats/PANC1/main/NCATS/9197/metadata_smiles.csv` | `d45b7d730c002e96340778396e222a76910c98d54060e2e221d4e1151b822cfa` |
 | `data/panc1_ncata/9197_responses.csv` | 750 256 | `https://raw.githubusercontent.com/ncats/PANC1/main/NCATS/9197/responses.csv` | `cdece93912122bc6599942ee050c87501455d433d94ebf1d7e43960237ea1173` |
-| `data/panc1_ncata/mit_test.csv` | 3 249 228 | Chemin consigné `MIT/test.csv` (`PROVENANCE_kras_combinations.md`) ; base `https://raw.githubusercontent.com/ncats/PANC1/main/` confirmée par les JSON — URL reconstruite `https://raw.githubusercontent.com/ncats/PANC1/main/MIT/test.csv` (**non consignée littéralement**, à vérifier avant usage) | `9f3ae18976136412802831487b6187fcf062db8f4ca753990689d3ac62006e27` (calculé localement) |
+| `data/panc1_ncata/mit_test.csv` | 3 249 228 | Chemin consigné `MIT/test.csv` (`PROVENANCE_kras_combinations.md`) ; base `https://raw.githubusercontent.com/ncats/PANC1/main/` confirmée par les JSON — URL reconstruite `https://raw.githubusercontent.com/ncats/PANC1/main/MIT/test.csv` (**VÉRIFIÉE §8.77, 21 nov. 2026** : re-téléchargée, taille 3 249 228 o, SHA-256 identique) | `9f3ae18976136412802831487b6187fcf062db8f4ca753990689d3ac62006e27` (calculé localement) |
 
 **Contenu :** 496 combinaisons (C(32,2)), matrices 10×10, lignée PANC-1 seule (KRAS G12D) ; `calc.csv` : scores Gamma, Beta, ExcessHSA par bloc (un réplicat par bloc dans les fichiers déposés) ; Gamma < 0,95 = synergique (définition de l'article). `mit_test.csv` : **exclu de l'analyse** — scores Gamma_Score de moyenne −0,34 (échelle différente des gamma mesurés ~0,9), 3 lignes seulement en recouvrement avec les 496 paires mesurées : ce sont des **scores prédits par modèle** sur une bibliothèque virtuelle, pas des mesures. Gardé pour traçabilité.
 **Fichiers annexes (métadonnées API, pas des données) :** `data/panc1_api.json` (7 436 o), `data/panc1_9191.json` (3 513 o), `data/panc1_9197.json` (3 513 o), `data/panc1_ncats.json` (5 003 o), `data/panc1_README.md` (959 o, README du dépôt), `data/panc1_ncata/panc1_sha256.txt` (680 o, SHA-256 complets des 8 fichiers sources).
@@ -331,14 +363,14 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 
 ---
 
-## 11. TCGA PanCanAtlas — clinique patient PAAD (stades, test C) — ⚠️ PROVENANCE D'ACQUISITION MANQUANTE
+## 11. TCGA PanCanAtlas — clinique patient PAAD (stades, test C) — provenance d'acquisition RETROUVÉE au §8.77
 
 - **Fichier local :** `~/workspace/runs/pdac-v6/data_clinical_patient.txt` — **58 621 octets** (⚠️ **hors de `data/`**, à la racine de `pdac-v6/`)
 - **SHA-256 (consigné dans `PROVENANCE_testC_stage.md`, re-vérifié localement le 19 nov. 2026) :** `0c2742688e59bb918d446d35f755d7a849c3e647ab184dc54d4f7e807be2efe5`
 - **Contenu :** TCGA PanCanAtlas, 184 patients PAAD, 0 doublon PATIENT_ID ; colonne `AJCC_PATHOLOGIC_TUMOR_STAGE` (7e colonne), édition AJCC 7e ; stades bruts : STAGE IIB 121, IIA 30, IB 15, III 5, IV 5, IA 5, (vide) 2, STAGE I 1. Utilisé par le test C (§8.45) : 175 tumeurs appariées à l'expression RSEM avec stade connu.
 - **Date d'acquisition :** fichier déjà sur le disque au début du chantier, **15 nov. 2026, 15h13 UTC** (date de modification du fichier).
-- **URL : URL non consignée dans les provenances — provenance d'acquisition MANQUANTE** (cité mot pour mot dans `PROVENANCE_testC_stage.md` : « MANQUANTE — fichier déjà sur le disque au début du chantier (15 nov. 2026, 15h13 UTC) ; aucune entrée dans fetch_tcga.log, download_firehose.log ni PROVENANCE_tcga*.md ; premier hachage consigné ici ; rien re-téléchargé »).
-- **Conséquence :** ce fichier **ne peut pas être re-téléchargé depuis une source connue** à partir de ce document. Le SHA-256 ci-dessus permet au moins de vérifier un fichier retrouvé ailleurs (le contenu — PanCanAtlas PAAD, 184 patients — pointe vers les données cliniques TCGA PanCanAtlas, mais **aucune URL n'est devinée ici**). C'est la lacune de provenance la plus grave du projet pour la reconstruction.
+- **URL exacte (retrouvée et vérifiée §8.77, 21 nov. 2026) :** `https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/paad_tcga_pan_can_atlas_2018/data_clinical_patient.txt` — dépôt GitHub `cBioPortal/datahub`, étude cBioPortal `paad_tcga_pan_can_atlas_2018` (TCGA PanCanAtlas PAAD). Re-téléchargé le 21 nov. 2026 : taille 58 621 o, SHA-256 `0c2742688e59bb918d446d35f755d7a849c3e647ab184dc54d4f7e807be2efe5` (identique au consigné). **Double confirmation :** les fichiers de ce dépôt sont en Git LFS — le `download_url` de l'API GitHub (`raw.githubusercontent.com/…`) renvoie le pointeur LFS (130 o), et ce pointeur porte lui-même `oid sha256:0c2742688e59bb918d446d35f755d7a849c3e647ab184dc54d4f7e807be2efe5` et `size 58621`. C'est le contenu réel, servi par `media.githubusercontent.com`, qui a été vérifié.
+- **Conséquence (mise à jour §8.77) :** la lacune de provenance la plus grave du projet est **close** : le fichier est désormais re-téléchargeable depuis une source connue et vérifiable. (Avant §8.77 : provenance d'acquisition MANQUANTE, cité dans `PROVENANCE_testC_stage.md` : « MANQUANTE — fichier déjà sur le disque au début du chantier (15 nov. 2026, 15h13 UTC) ; aucune entrée dans fetch_tcga.log, download_firehose.log ni PROVENANCE_tcga*.md ; premier hachage consigné ici ; rien re-téléchargé ».) Le verdict du test C (§8.45) est inchangé — seule sa reproductibilité est réparée.
 (Source : `PROVENANCE_testC_stage.md`)
 
 ---
@@ -347,7 +379,7 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 
 - **Fichiers locaux :** `data/qcmg_clinical_patient.txt` — **49 042 octets** (SHA-256 calculé localement le 19 nov. 2026 : `ae7fc6d7a8c887bb890090f1fc1c3770b94fb31dde38e209c684bc0ffbfd6a95`) ; `data/qcmg_clinical_sample.txt` — **57 215 octets** (SHA-256 calculé localement : `c70daf3e772cdcf99b62ca20f8a85f748df80631fd915b7da465e670a1fcceca`)
 - **Étude :** cBioPortal `paad_qcmg_uq_2016` (QCMG, *Nature* 2016, 456 patients). Pages d'étude : `https://www.cbioportal.org/study/summary?id=paad_qcmg_uq_2016` et `https://www.cbioportal.org/study/summary?id=paad_icgc` (consignées dans `source_registry.md`).
-- **URL exacte des fichiers cliniques : URL non consignée dans les provenances** (la provenance parle du « fichier clinique datahub » sans URL).
+- **URL exactes des fichiers cliniques (retrouvées et vérifiées §8.77, 21 nov. 2026) :** dépôt GitHub `cBioPortal/datahub`, étude `paad_qcmg_uq_2016` — `https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/paad_qcmg_uq_2016/data_clinical_patient.txt` et `https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/paad_qcmg_uq_2016/data_clinical_sample.txt` — re-téléchargés le 21 nov. 2026 : tailles 49 042 o / 57 215 o, SHA-256 identiques aux valeurs ci-dessus. **Note LFS :** comme au §11, le `download_url` de l'API GitHub (`raw.githubusercontent.com/…`) renvoie le pointeur LFS (130 o) ; le contenu réel est servi par `media.githubusercontent.com`. (Avant §8.77 : « fichier clinique datahub » sans URL, `PROVENANCE_icgc.md`.)
 - **Statut : ÉCARTÉS après vérification** (`PROVENANCE_icgc.md`) : le fichier clinique datahub n'a pas de OS_MONTHS/OS_STATUS ; `STATUS` + `DAYS_TO_LAST_FOLLOWUP` ne sont renseignés que pour 134/456 patients, et les identifiants patients (3.014, A10.7…) ne correspondent pas aux identifiants ICGC (ICGC_0006…) — pas de jointure possible, **non utilisés** pour les verdicts. Conservés dans `data/` pour traçabilité.
 - **Date d'acquisition :** 16 nov. 2026 (dates de fichiers 16 nov. 12:14).
 (Source : `PROVENANCE_icgc.md`, `source_registry.md`)
@@ -356,18 +388,19 @@ Téléchargés le 16 nov. 2026 (dates de fichiers 16 nov. 12:09). **URL non cons
 
 ## 13. Birnbaum et al. 2017 — suppléments Springer (validation des classifications)
 
-- **Article :** Birnbaum et al., 2017 (validation des classifications ; PMC5674743 — `https://pmc.ncbi.nlm.nih.gov/articles/PMC5674743/`, DOI non relevé dans les fichiers).
+- **Article :** Birnbaum et al., 2017, « Validation and comparison of the molecular classifications of pancreatic carcinomas », *Mol Cancer* 16:174, DOI `10.1186/s12943-017-0739-z` (PMC5674743 — `https://pmc.ncbi.nlm.nih.gov/articles/PMC5674743/`, PMID 29110659).
+- **URL exactes (retrouvées et vérifiées §8.77, 21 nov. 2026) :** patron Springer `static-content.springer.com/esm/art%3A10.1186%2Fs12943-017-0739-z/MediaObjects/12943_2017_739_MOESM{n}_ESM.xlsx` (n = 1–5) — les 5 fichiers ont été re-téléchargés le 21 nov. 2026 et leurs tailles + SHA-256 vérifiés identiques à ceux ci-dessous. (Avant §8.77 : « via static-content Springer, MOESM1–5 », sans URL.)
 - **Fichiers locaux (téléchargés le 16 nov. 2026, dates de fichiers 16 nov. 12:10) :**
 
 | Fichier local | Taille (octets) | SHA-256 (calculé localement le 19 nov. 2026 ; la provenance disait « SHA à vérifier dans les fichiers » — c'est fait ici) |
 |---|---|---|
 | `data/birnbaum_springer_MOESM1.xlsx` | 11 209 | `3d9df7b9bdbb2cf8c0ee20a62c1b798f5faed4eec053b4e785f9f8e0dff4945b` |
 | `data/birnbaum_springer_MOESM2.xlsx` | 15 240 | `721e19d95710413762ea92ba6ae216b18bdf25f0d736ffd78bcfafd34a8b77c3` |
-| `data/birnbaum_springer_MOESM3.xlsx` | 9 119 | `8bfbdcd618ea2a9b8ae480c763b857c3e23e2022462ab61cff0aaa8c6b1a13` |
+| `data/birnbaum_springer_MOESM3.xlsx` | 9 119 | `8bfbdcd618ea2a9d9b8ae480c763b857c3e23e2022462ab61cff0aaa8c6b1a13` |
 | `data/birnbaum_springer_MOESM4.xlsx` | 15 040 | `49fff4c84c8859ee12072282f4e69f02cf10cce90a638506c6888ea9fa7df361` |
 | `data/birnbaum_springer_MOESM5.xlsx` | 8 767 | `94af1f7351a9028cab962c160c51ceea47f882705496db5e00f266a06fdb6ccb` |
 
-- **URL : URL non consignée dans les provenances** (source : « via static-content Springer, MOESM1–5 » — sans URL ; article PMC5674743).
+- **URL : voir ci-dessus (§8.77).**
 - **Contenu :** tableaux récapitulatifs seulement, pas de survie par patient.
 (Source : `PROVENANCE_geo71729_survival.md`, `source_registry.md`)
 
@@ -426,7 +459,7 @@ Ces fichiers sont des **sorties de scripts du projet** appliqués aux bruts ci-d
 
 ### 15.4 Fichiers téléchargés mais non conservés sur disque
 
-- **SOFT GPL20769 (37 588 662 o)** : téléchargé le 15 nov. 2026, **absent de `data/`** ; URL non consignée (§3.1). Re-téléchargeable en principe depuis le FTP GEO (`geo/platforms/GPL2nnn/GPL20769/soft/GPL20769_family.soft.gz` — chemin non consigné littéralement, à vérifier).
+- **SOFT GPL20769 (37 588 662 o)** : téléchargé le 15 nov. 2026, **absent de `data/`** ; URL retrouvée et vérifiée §8.77 (§3.1) : `https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPL20nnn/GPL20769/soft/GPL20769_family.soft.gz` (le chemin `GPL2nnn/` donne 404 — voir §3.1). Re-téléchargeable et vérifié par taille + SHA-256.
 - **SOFT GPL6244 (plusieurs centaines de Mo)** : non conservé, mais re-téléchargeable par l'URL exacte du §4.1.
 - **Tarball PANC-1** (`codeload.github.com/ncats/PANC1/tar.gz/refs/heads/main`) : téléchargé tronqué puis **supprimé** ; voie de remplacement : fichiers un par un (§10).
 - **HTML vides des tentatives DrugComb** (0 octet) : supprimés ; l'échec est consigné dans `PROVENANCE_kras_combinations.md`, pas par des fichiers vides.
@@ -439,10 +472,10 @@ Ces fichiers sont des **sorties de scripts du projet** appliqués aux bruts ci-d
 - Données individuelles des essais cités (Tango, Revolution Medicines) — chiffres repris des communiqués/publications, non re-calculés.
 - ChEMBL (MRTX1133 `CHEMBL4858364`, daraxonrasib `CHEMBL6168538`) et DGIdb : requêtes API uniquement, aucun fichier conservé (DGIdb : API REST inexploitable — renvoie la page JS ; GraphQL sans réponse — « à vérifier », rien inventé).
 
-### 15.6 Lacune de provenance — clinique TCGA PanCanAtlas
+### 15.6 Lacune de provenance — clinique TCGA PanCanAtlas — CLOSE au §8.77
 
-- `data_clinical_patient.txt` (§11) : provenance d'acquisition **manquante**, aucune URL — **non re-téléchargeable depuis une source connue** à partir de ce document. Seul le SHA-256 permet de vérifier un fichier retrouvé ailleurs.
-(Source : `PROVENANCE_testC_stage.md`)
+- `data_clinical_patient.txt` (§11) : provenance d'acquisition **retrouvée le 21 nov. 2026** (cBioPortal datahub, étude `paad_tcga_pan_can_atlas_2018`, URL exacte au §11, SHA-256 vérifié identique). Avant §8.77, la provenance était manquante (voir `PROVENANCE_testC_stage.md`) et le fichier non re-téléchargeable depuis une source connue. Cette sous-section est conservée pour l'historique : la lacune a existé du 15 au 21 nov. 2026, elle est désormais close.
+(Source : `PROVENANCE_testC_stage.md`, chantier §8.77)
 
 ---
 
@@ -463,14 +496,14 @@ Liste exhaustive mesurée le 19 nov. 2026 (`find data/ -type f -size +5M`, tri d
 | 9 | `data/GDSC2_fitted_dose_response_27Oct23.xlsx` | 22 112 537 | §9 | Brut GDSC2 ✓ |
 | 10 | `data/bailey2016_suppl_tables1-13.xlsx` | 22 104 569 | §5.5 | Brut Bailey 2016 ✓ |
 | 11 | `data/cptac/umich-pdac-proteomics-Report_abundance_groupby=protein_protNorm=MD_gu=2.tsv.gz` | 20 504 572 | §6 | Brut CPTAC/Zenodo ✓ |
-| 12 | `data/ng3398_MOESM60_ESM.txt` | 19 393 438 | §3.2 | Brut suppl. Moffitt ✓ (URL manquante, §17) |
+| 12 | `data/ng3398_MOESM60_ESM.txt` | 19 393 438 | §3.2 | Brut suppl. Moffitt ✓ (URL retrouvée §8.77) |
 | 13 | `data/GSE71729_series_matrix.txt.gz` | 15 622 315 | §3 | Brut GEO ✓ |
 | 14 | `data/tcga_paad_rsem.tar.gz` | 15 296 232 | §2.1 | Brut Firehose ✓ |
 | 15 | `data/GSE62452_series_matrix.txt.gz` | 14 447 291 | §4 | Brut GEO ✓ |
 | 16 | `data/cptac/pdac_umich_protein_gene_matrix.csv` | 12 365 808 | §6 / §14 | **Dérivé** (reconstruit depuis le Report UMich) ✓ |
 | 17 | `data/icgc_pacaau_exp.txt.gz` | 9 841 881 | §5.2 | Brut Xena ✓ |
 | 18 | `data/cptac/bcm-pdac-proteomics-PDAC_proteomics_gene_abundance_log2_reference_intensity_normalized_Tumor.txt.gz` | 7 382 441 | §6 | Brut CPTAC/Zenodo ✓ |
-| 19 | `data/ng3398_MOESM59_ESM.pdf` | 5 339 711 | §3.2 | Brut suppl. Moffitt ✓ (URL manquante, §17) |
+| 19 | `data/ng3398_MOESM59_ESM.pdf` | 5 339 711 | §3.2 | Brut suppl. Moffitt ✓ (URL retrouvée §8.77) |
 
 **Total `data/` : 87 fichiers, ~2,44 Go.** Les 68 autres fichiers (≤ 5 Mo) sont couverts aux §1–§14 (bruts : Model.csv, OmicsProfiles.csv, Hotspot, listes PRISM, fichiers PRISM 19Q4, screened_compounds, probemap/NMF ICGC, mapping CPTAC, fichiers PANC-1, MOESM61–63, Birnbaum MOESM1–5, QCMG, GPL ; dérivés : §14).
 
@@ -478,24 +511,24 @@ Liste exhaustive mesurée le 19 nov. 2026 (`find data/ -type f -size +5M`, tri d
 
 ## 17. Bilan des URL manquantes
 
-Aucune URL n'a été devinée. Voici, fichier par fichier, ce qui manque et pourquoi.
+Aucune URL n'a été devinée. Voici, fichier par fichier, ce qui manquait et comment chaque gap a été fermé au §8.77 (l'historique est conservé dans la 3e colonne).
 
 | Fichier(s) | Ce qui manque | Raison (consignée) |
 |---|---|---|
-| `data/ng3398_MOESM59_ESM.pdf`, `MOESM60_ESM.txt`, `MOESM61_ESM.xlsx`, `MOESM62_ESM.xlsx`, `MOESM63_ESM.xlsx` | URL de téléchargement (5 fichiers) | Non consignée dans `PROVENANCE_geo71729_survival.md` (noms, tailles, SHA tronqués seulement). Suppléments Nature de Moffitt et al. 2015 (doi `10.1038/ng.3398`). SHA-256 complets re-calculés ici (§3.2). |
-| `data/birnbaum_springer_MOESM1.xlsx` à `MOESM5.xlsx` | URL de téléchargement (5 fichiers) | Non consignée (« via static-content Springer, MOESM1–5 », sans URL). Article PMC5674743. SHA-256 complets re-calculés ici (§13). |
-| SOFT GPL20769 (37 588 662 o, **non conservé**) | URL de téléchargement | Non consignée dans `PROVENANCE_geo71729.md`. |
-| `data/icgc_pacaau_probemap.gz`, `data/icgc_pacaau_nmf.txt.gz` | URL exacte de téléchargement | Jeux Xena nommés (§5.3, §5.4) mais URL non consignée littéralement ; hub `icgc.xenahubs.net`, bucket S3 `icgc-xena-hub` (confirmés par §5.2). |
-| `data/Repurposing_Public_24Q2_Cell_Line_Meta_Data.csv` | URL de téléchargement (n° de fichier figshare) | Non consignée ; fichier absent de `download_data.sh`. SHA-256 consigné (§7). |
-| `data/secondary-screen-*.csv` (4 fichiers, §8) | URL directe par fichier | Pas d'URL `ndownloader` par fichier dans les provenances : accès via l'API figshare `https://api.figshare.com/v2/articles/9393293` (champ `download_url`). |
-| Fichiers CPTAC (§6) | URL directe par fichier | Accès via l'API Zenodo `https://zenodo.org/api/records/8394329` (champ `links.self`) ; page du record `https://zenodo.org/records/8394329` consignée. |
-| `data/qcmg_clinical_patient.txt`, `data/qcmg_clinical_sample.txt` | URL exacte des fichiers | « Fichier clinique datahub » sans URL (`PROVENANCE_icgc.md`) ; pages d'étude cBioPortal consignées (§12). Fichiers **écartés** (non utilisés). |
-| `~/workspace/runs/pdac-v6/data_clinical_patient.txt` | URL + provenance d'acquisition entière | **MANQUANTE** (déclaré dans `PROVENANCE_testC_stage.md`). Fichier hors `data/`, non re-téléchargeable depuis une source connue. |
-| `data/panc1_ncata/mit_test.csv` | URL littérale | Chemin `MIT/test.csv` consigné ; URL reconstruite à partir de la base confirmée (§10) — **à vérifier avant usage**. |
+| `data/ng3398_MOESM59_ESM.pdf`, `MOESM60_ESM.txt`, `MOESM61_ESM.xlsx`, `MOESM62_ESM.xlsx`, `MOESM63_ESM.xlsx` | **FERMÉ §8.77** — URL `static-content.springer.com/esm/art%3A10.1038%2Fng.3398/MediaObjects/41588_2015_BFng3398_MOESM{n}_ESM.{ext}` (5/5 SHA vérifiés) | Avant §8.77 : non consignée dans `PROVENANCE_geo71729_survival.md` (noms, tailles, SHA tronqués seulement). Suppléments Nature de Moffitt et al. 2015 (doi `10.1038/ng.3398`). SHA-256 complets re-calculés ici (§3.2). |
+| `data/birnbaum_springer_MOESM1.xlsx` à `MOESM5.xlsx` | **FERMÉ §8.77** — URL `static-content.springer.com/esm/art%3A10.1186%2Fs12943-017-0739-z/MediaObjects/12943_2017_739_MOESM{n}_ESM.xlsx` (5/5 SHA vérifiés) | Avant §8.77 : non consignée (« via static-content Springer, MOESM1–5 », sans URL). Article PMC5674743, DOI 10.1186/s12943-017-0739-z. SHA-256 complets re-calculés ici (§13). |
+| SOFT GPL20769 (37 588 662 o, **non conservé**) | **FERMÉ §8.77** — URL `https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPL20nnn/GPL20769/soft/GPL20769_family.soft.gz` (taille exacte + SHA `ecb1b79a…` vérifiés) | Avant §8.77 : non consignée dans `PROVENANCE_geo71729.md`. |
+| `data/icgc_pacaau_probemap.gz`, `data/icgc_pacaau_nmf.txt.gz` | **FERMÉ §8.77** — URL `https://icgc.xenahubs.net/download/PACA-AU/ensembleGene_hg19_nature16965-s2_normalised_exp.gz` et `…/nature16965-s2_NMF_class_assignment.txt.gz` (2/2 SHA vérifiés) | Avant §8.77 : jeux Xena nommés (§5.3, §5.4) mais URL non consignée littéralement ; hub `icgc.xenahubs.net`, bucket S3 `icgc-xena-hub` (confirmés par §5.2). |
+| `data/Repurposing_Public_24Q2_Cell_Line_Meta_Data.csv` | **FERMÉ §8.77** — URL `https://ndownloader.figshare.com/files/46630978` (fichier 46630978, API 25917643 ; SHA vérifié) | Avant §8.77 : non consignée ; fichier absent de `download_data.sh`. SHA-256 consigné (§7). |
+| `data/secondary-screen-*.csv` (4 fichiers, §8) | **FERMÉ §8.77** — URL directes `https://ndownloader.figshare.com/files/20237739` (dose-response), `…/20237763`, `…/20237769`, `…/20238123` (4/4 SHA vérifiés) | Avant §8.77 : pas d'URL `ndownloader` par fichier dans les provenances : accès via l'API figshare `https://api.figshare.com/v2/articles/9393293` (champ `download_url`). |
+| Fichiers CPTAC (§6) | **FERMÉ §8.77** — URL directes `https://zenodo.org/api/records/8394329/files/<nom>/content` (champ `links.self` lu ; MD5 conformes) | Avant §8.77 : accès via l'API Zenodo `https://zenodo.org/api/records/8394329` (champ `links.self`) ; page du record `https://zenodo.org/records/8394329` consignée. |
+| `data/qcmg_clinical_patient.txt`, `data/qcmg_clinical_sample.txt` | **FERMÉ §8.77** — URL `https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/paad_qcmg_uq_2016/data_clinical_patient.txt` (+ `…_sample.txt`) (2/2 SHA vérifiés) | Avant §8.77 : « Fichier clinique datahub » sans URL (`PROVENANCE_icgc.md`) ; pages d'étude cBioPortal consignées (§12). Fichiers **écartés** (non utilisés). |
+| `~/workspace/runs/pdac-v6/data_clinical_patient.txt` | **FERMÉ §8.77** — provenance retrouvée : `https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/paad_tcga_pan_can_atlas_2018/data_clinical_patient.txt` (SHA `0c274268…` vérifié ; pointeur LFS porte le même SHA) | Avant §8.77 : provenance **MANQUANTE** (déclaré dans `PROVENANCE_testC_stage.md`). Fichier hors `data/`, non re-téléchargeable depuis une source connue. |
+| `data/panc1_ncata/mit_test.csv` | **FERMÉ §8.77** — URL `https://raw.githubusercontent.com/ncats/PANC1/main/MIT/test.csv` **vérifiée** (SHA `9f3ae189…`) | Avant §8.77 : chemin `MIT/test.csv` consigné ; URL reconstruite à partir de la base confirmée (§10) — **à vérifier avant usage**. |
 | `data/GPL20769.annot.gz` (990 o) | — | Pas une URL manquante : c'est une **page 404** conservée par erreur (§3.1). Ne pas utiliser. |
 | `data/GPL570_probe2symbol.tsv` | URL valides | Les URL tentées renvoient 404 (chemins consignés, §4.2). Fichier dérivé **non utilisé**. |
 
-**Fichiers bruts dont l'URL est manquante ou partielle : 19 fichiers** (5 ng3398 + 5 Birnbaum + 2 ICGC + 1 PRISM meta + 4 PRISM 19Q4 via API + 2 QCMG) **+ 4 fichiers CPTAC accessibles uniquement via l'API Zenodo** (page du record consignée) **+ 1 fichier hors `data/` sans aucune provenance** (`data_clinical_patient.txt`) **+ 1 fichier non conservé** (SOFT GPL20769). Tous les autres bruts ont une URL exacte consignée et vérifiable.
+**Bilan révisé §8.77 (21 nov. 2026) : 19/19 fichiers FERMÉS, plus les 4 fichiers CPTAC (URL directes désormais consignées, §6), le fichier clinique du test C (provenance retrouvée, §11) et le SOFT GPL20769 (URL retrouvée et vérifiée, §3.1).** Le détail gap par gap est au §29. Il ne reste **aucun fichier brut sans URL de téléchargement** dans ce document : chaque URL a été retrouvée depuis une source lue (page DOI, FTP GEO, API figshare/Zenodo/GitHub, hub Xena) ou reconstruite puis **vérifiée par le SHA-256 du fichier re-téléchargé**. Les deux voies restées infructueuses en cours de route sont consignées au §29 (listing S3 403, Europe PMC supplementaryFiles HTTP 500, chemin `GPL2nnn/` 404) — elles ne cachent aucun gap restant.
 
 ---
 
@@ -664,17 +697,182 @@ ce sont des actifs de Release uniquement. Détail et réassemblage :
 
 ---
 
+## 28. Lot Yeh_seq FNA — GSE131050, robustesse appariée (§8.76, 20–21 nov. 2026)
+
+**Aucun nouveau téléchargement dans ce chantier** : le fichier source est
+celui téléchargé officiellement au §8.74 (20 nov. 2026), SHA re-vérifié
+identique avant le gel et avant la construction (voir `PROVENANCE_876.md`,
+SHA `82672091…`). Protocole gelé `PROTOCOL_maxsep_gse131050_fna_876.md`
+(SHA `dd7937ee…`).
+
+- **Série : GSE131050**, NCBI GEO — Rashid et coll., *Clin Cancer Res*
+  2020, 26(1):82–92, PMID 31754050, doi 10.1158/1078-0432.CCR-19-1467
+  (UNC Lineberger, Chapel Hill, USA). BioProject PRJNA542388, SRA
+  SRP197641. Sous-série [RNA-Seq] de la SuperSeries GSE131049.
+- **Fichiers source (déjà dans `data/`, §26) :**
+  - `data/GSE131050_PurIST_Yeh_seq.tsv.gz` — 9 468 179 o, SHA-256
+    `2fc0a66ef0ac62aab17e9bda1c78561786f887a9122591a9346a868f852be5b1`
+    — URL : `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE131nnn/GSE131050/suppl/GSE131050_PurIST_Yeh_seq.tsv.gz`
+  - `data/GSE131050-GPL18573_series_matrix.txt.gz` — 6 864 o, SHA-256
+    `9b333eb6b9181fedfc793b9a61f5970af459a5b37b8aa8f7808a3b6c34c7843e`
+    — URL : `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE131nnn/GSE131050/matrix/GSE131050-GPL18573_series_matrix.txt.gz`
+- **Lot FNA :** 42 codes-tumeurs (45 colonnes FNA primaires regroupées
+  par code `MMDDT#`, médiane pour les 2 codes à réplicats) ; 41 codes sur
+  42 sont les MÊMES tumeurs que le lot FF du §8.74 — le lot FNA n'est PAS
+  une treizième paire principale indépendante et n'entre pas dans le compte
+  A2 (12 paires) : c'est un test de robustesse apparié (mêmes tumeurs,
+  autre type d'échantillon : FNA ex-vivo, kit TruSeq RNA Exome, échelle
+  KRAS ~4 fois plus basse que FF). Verdict §8.76 : CONFIRME, d_maxsep
+  +0,1642 (réel 0,4104+… — voir §8.76 ; test apparié, mêmes patients
+  que FF).
+- **Flux produits :** `data_flux/pdac_876_yeh_fna_fluxes.csv` (42 lignes,
+  SHA `70697b3a…210324`), nul graine 42 SHA `2474ceaf…4d35`. Manifeste
+  `manifest_v62_876.txt` (SHA `0e63d732…9f7`). Détail au §8.76 et dans
+  `PROVENANCE_876.md`.
+
+---
+
+## 29. Chantier §8.77 — réparation de la reproductibilité (21 nov. 2026)
+
+**Objet :** fermer les gaps du §17 (19 fichiers bruts sans URL + SOFT
+GPL20769 + clinique du test C sans provenance + URL reconstruite de
+`mit_test.csv` + URL directes CPTAC) **sans toucher aux verdicts déjà
+écrits** (règle de Zackary, 20 nov. 2026, 19h40 : section à part, sans
+réécrire l'histoire). Protocole gelé avant les travaux :
+`PROTOCOL_reproductibilite_877.md` (SHA-256
+`dbe1746f7233e69a3052407576ebf6043080016c97a12d41f76244fc569a4030`,
+21 nov. 2026, 01h37 UTC). Pipeline v6.2 SHA
+`f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+(vérifié avant et après les runs, inchangé). Dossier de travail :
+`~/workspace/runs/pdac-v6/repro_877/` (re-téléchargements dans
+`repro_877/downloads/`, test à froid dans `repro_877/cold/` ; journal
+`repro_877/JOURNAL_877.md`).
+
+### 29.1 Résultat gap par gap (toutes les URL vérifiées par SHA-256)
+
+| Gap | Fichiers | URL retrouvée (source lue) | Vérification |
+|---|---|---|---|
+| ng3398 MOESM59–63 | 5 | `static-content.springer.com/esm/art%3A10.1038%2Fng.3398/MediaObjects/41588_2015_BFng3398_MOESM{n}_ESM.{ext}` (patron Springer attesté par Bailey MOESM270, §5.5 ; page Nature ng.3398 lue) | 5/5 tailles + SHA-256 identiques (§3.2) |
+| Birnbaum MOESM1–5 | 5 | `static-content.springer.com/esm/art%3A10.1186%2Fs12943-017-0739-z/MediaObjects/12943_2017_739_MOESM{n}_ESM.xlsx` (page PMC5674743 lue, DOI 10.1186/s12943-017-0739-z) | 5/5 tailles + SHA-256 identiques (§13) |
+| ICGC probe map | 1 | `https://icgc.xenahubs.net/download/PACA-AU/ensembleGene_hg19_nature16965-s2_normalised_exp.gz` (hub Xena) | taille 353 314 o, SHA `b09a746f…75537` (§5.3) |
+| ICGC NMF | 1 | `https://icgc.xenahubs.net/download/PACA-AU/nature16965-s2_NMF_class_assignment.txt.gz` (hub Xena ; le `.txt` nu = 404) | taille 447 o, SHA `f1e84b99…21e2f` (§5.4) |
+| PRISM 24Q2 meta | 1 | `https://ndownloader.figshare.com/files/46630978` (API figshare 25917643, fichier 46630978) | taille 157 294 o, SHA `13a85da9…3b0526` (§7) |
+| PRISM 19Q4 (4 fichiers) | 4 | `https://ndownloader.figshare.com/files/20237739` (dose-response), `…/20237763` (replicate-collapsed), `…/20237769` (cell-line-info), `…/20238123` (readme) — API figshare 9393293 | 4/4 tailles + MD5 + SHA-256 identiques (§8) |
+| QCMG clinique | 2 | `https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/paad_qcmg_uq_2016/data_clinical_patient.txt` (+ `…_sample.txt`) | SHA `ae7fc6d7…6a95` / `c70daf3e…ceca` (§12) |
+| Clinique test C | 1 | `https://media.githubusercontent.com/media/cBioPortal/datahub/master/public/paad_tcga_pan_can_atlas_2018/data_clinical_patient.txt` (étude `paad_tcga_pan_can_atlas_2018`) | taille 58 621 o, SHA `0c274268…2efe5` (§11) |
+| SOFT GPL20769 | 1 | `https://ftp.ncbi.nlm.nih.gov/geo/platforms/GPL20nnn/GPL20769/soft/GPL20769_family.soft.gz` | taille 37 588 662 o exactement, table 19 749 lignes, MD5 `4c39e802…`, SHA `ecb1b79a…22d3e` (§3.1) |
+| `mit_test.csv` | 1 | `https://raw.githubusercontent.com/ncats/PANC1/main/MIT/test.csv` (URL reconstruite, vérifiée) | taille 3 249 228 o, SHA `9f3ae189…6e27` (§10) |
+| CPTAC (4 fichiers) | 4 | `https://zenodo.org/api/records/8394329/files/<nom>/content` (champ `links.self` lu dans l'API Zenodo) | tailles + MD5 conformes (§6) |
+
+**Bilan : 19/19 fichiers du §17 fermés + SOFT GPL20769 + clinique du test
+C + `mit_test.csv` + URL directes CPTAC. Aucun gap irrécupérable. Aucune
+URL inventée sans vérification SHA.**
+
+### 29.2 Voies infructueuses consignées (échecs honnêtes, aucun gap caché)
+
+- Listing du bucket S3 Xena : HTTP 403 ; URL S3 directes des fichiers
+  ICGC : 403 — c'est l'URL du hub `icgc.xenahubs.net` qui fonctionne.
+- Europe PMC `supplementaryFiles` pour PMC5674743 : HTTP 500 (page HTML
+  d'erreur, 19 606 o) — les suppléments Birnbaum ont été récupérés par
+  le patron Springer direct, vérifié par SHA.
+- Page Nature ng.3398 via curl : HTTP 303, section suppléments non
+  lisible par ce moyen ; la page lue par le navigateur confirme le titre
+  et l'article, les URL ont été vérifiées par SHA.
+- Chemin FTP GEO `GPL2nnn/GPL20769/` : 404 — le bon chemin est
+  `GPL20nnn/` (règle des 3 derniers chiffres masqués).
+- `raw.githubusercontent.com` pour les fichiers datahub : renvoie le
+  pointeur Git LFS (130 o), pas le contenu — le contenu réel est servi
+  par `media.githubusercontent.com`. Le pointeur LFS du fichier test C
+  porte lui-même `oid sha256:0c274268…` (double confirmation).
+
+### 29.3 Script corrigé
+
+`repro_877/download_data_877.sh` (SHA-256
+`558111360ceda48bece577d7176a5ad5e46630f0a39fc85c03e8c3635564c78f`,
+diff `repro_877/download_data_877.diff`, 323 lignes changées) — corrections
+§4 du protocole : PANC-1 fichier par fichier (tarball tronqué), PRISM
+19Q4 4/4, PRISM 24Q2 avec hachages + métadonnées, suppléments ng3398 et
+Birnbaum, SOFT GPL20769 (chemin corrigé), ICGC probe map/NMF, QCMG,
+clinique PanCanAtlas ; CPTAC : URL directes en commentaire (voie API
+conservée) ; durcissement `--retry-all-errors --retry-delay 5` partout ;
+OmicsCN via ndownloader (endpoint API figshare bloqué) ; anti-blocage
+`--speed-limit 1000 --speed-time 300` ; ICGC expression via l'URL du hub
+(S3 directe = 403) ; reprise `get_checked()` (fichier déjà présent et
+vérifié sauté, fichier partiel re-téléchargé). L'original
+`~/workspace/staging-pdac/download_data.sh` (SHA `4e151d59…`) n'a pas été
+modifié par ce chantier. Deux fautes de frappe dans des SHA consignés ont
+été trouvées et corrigées par le test du script complet : Birnbaum MOESM3
+§13 (62 caractères au lieu de 64) et LUAD §2.3 (65 caractères au lieu de
+64) — voir §29.4.
+
+### 29.4 Test à froid (TCGA v4, réel + nul)
+
+Voir §8.77 §5 pour les chiffres comparés. Chaîne complète, dossier
+propre `repro_877/cold/` : re-téléchargement TCGA via l'extrait littéral
+du script corrigé (`cold/cold_tcga.sh`, 4 tarballs OK, MD5 vérifiés ;
+PAAD RSEM SHA-256 `c3dd138b…62c9` = §2.1) → reconstruction des flux par
+copie de `build_fluxes_tcga_v4.py` (seules les 2 constantes de chemins
+changées, diff consigné) → flux reconstruits **SHA-identiques** aux flux
+tenus (`e7a2adab…0b0`, `895a4562…da4`) → runs v6.2 mode `fast`
+(unités `repro877-cold-runs`, journal `cold/runs_cold_877.log`) →
+extraction par `extract_858.extract`, comparaison aux chiffres tenus
+(§8.37). Le script corrigé complet (~2,4 Go, 52 fichiers) a aussi été exécuté en
+entier — **résultat final : EXIT:0** (journal `cold/full_script_877i.log`,
+21 nov. 2026, 04:15–04:17 UTC : 36 fichiers « DÉJÀ PRÉSENT ET VÉRIFIÉ »
++ 16 OK frais, 0 erreur, « TERMINE : tous les jeux de données
+téléchargés et vérifiés »). **Incidents consignés (tous surmontés, aucun
+maquillé) :** (1) première exécution arrêtée au tout premier fichier
+(CRISPRGeneEffect.csv, `ndownloader.figshare.com`) sur un HTTP 403
+transitoire, après ~90 s à 0 octet ; la même URL répondait 302 quelques
+minutes plus tard (limitation de débit figshare probable) — correctif
+`--retry-all-errors --retry-delay 5` ; (2) blocages à 0 octet de
+l'endpoint API figshare (OmicsCN, 9+ min) et de GDAC (13+ min) —
+diagnostic : les unités systemd n'héritent pas des variables proxy de
+l'environnement d'exécution ; en accès direct, api.figshare.com et
+gdac.broadinstitute.org restent bloqués alors que ndownloader fonctionne
+— les lots longs doivent être lancés AVEC le proxy
+(`--setenv=https_proxy=http://hatch-egress-proxy:3128`, sans
+identifiants) ; correctifs `--speed-limit 1000 --speed-time 300` et
+OmicsCN via ndownloader ; (3) URL S3 directe ICGC = HTTP 403
+(4 tentatives) — correctif : URL du hub (même fichier, SHA identique) ;
+(4) redémarrage machine pendant l'exécution (27 fichiers OK, unité
+transiente perdue) — correctif : reprise `get_checked()` ; (5) PANC-1
+calc.csv bloqué à 0 octet (4 tentatives) dans l'unité alors que le même
+fichier se télécharge en < 2 s depuis l'outil exec — cause exacte non
+élucidée, consignée comme telle ; la reprise depuis l'outil exec a
+passé. **Deux fautes de frappe dans des SHA consignés, trouvées par le
+test :** Birnbaum MOESM3 §13 (valeur de 62 caractères,
+`…a9b8ae…` au lieu de `…a9d9b8ae…` — la comparaison par SHA tronqués ne
+l'avait pas vue ; trois téléchargements indépendants d'accord sur la
+vraie valeur) et LUAD §2.3 (65 caractères, un `d` en trop) — corrigées
+ici et dans le script. Détail complet au §8.77 (§8.77.5–§8.77.6) et dans
+`repro_877/JOURNAL_877.md`.
+
+### 29.5 Ce qui reste ouvert
+
+**Rien** sur les fichiers bruts : chaque fichier brut du projet a
+désormais une URL de téléchargement vérifiée par SHA-256. Restent hors
+périmètre (déjà documentés, non rouverts) : les fichiers dérivés se
+reconstruisent par scripts (§14) ; les résultats `results_fast_*` (~7 Go)
+ne sont pas dans le dépôt par limite snapshot mais se reconstruisent par
+les runs (le test à froid le démontre pour la paire TCGA v4) ; les
+matrices brutes (~2,4 Go) ne sont pas dans le dépôt par limite snapshot
+mais se re-téléchargent vérifiées par le script corrigé.
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash
 # 1. Tout re-télécharger + vérifier (script maître ; voir ses limites au §0.1)
 bash ~/workspace/staging-pdac/download_data.sh ./data
 
-# 2. Vérifications manuelles complémentaires (fichiers hors script)
+# 2. Vérifications manuelles complémentaires (depuis §8.77, la plupart des
+# fichiers sont désormais DANS le script corrigé ; il ne reste hors script
+# que la table GPL6244, dérivée du SOFT)
 python3 ~/workspace/runs/pdac-v6/download_gpl6244_mapping.py   # GPL6244_probe2symbol.tsv
-# PRISM 19Q4 (les 2 fichiers manquants du script) : via API figshare
+# PRISM 19Q4 : les 4 fichiers sont dans le script corrigé (§8.77) ; rappel
+# des URL directes (API figshare) :
 curl -s https://api.figshare.com/v2/articles/9393293 | python3 -c "import json,sys; [print(f['name'], f['download_url']) for f in json.load(sys.stdin)['files']]"
-# CPTAC : via API Zenodo
+# CPTAC : dans le script corrigé via l'API Zenodo (§8.77) ; rappel :
 curl -s https://zenodo.org/api/records/8394329 | python3 -c "import json,sys; [print(f['key'], f['links']['self']) for f in json.load(sys.stdin)['files']]"
 
 # 3. Vérifier les hachages contre ce document (exemples)

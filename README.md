@@ -4,13 +4,13 @@ Dépôt public de travail du projet PDAC : recherche d'un remède pour le
 cancer du pancréas avec le pipeline universel de détection de ruptures
 (v6.2), données ouvertes, protocoles gelés, résultats vérifiés.
 
-## État au 20 novembre 2026
+## État au 21 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 1090 pages (PDF partagé séparément),
-  SHA-256 `5db6b001ed0d89feac5cba8fafc8c231a9075deb90cc5bbbb874b773f03c9cd9`
-  (13346927 octets), sections §8.1–§8.75. Le fichier Markdown ici a pour SHA-256
-  `9bad983794023ef6a4f2911b87cd55adca413309016fa6be7f74c1a8c793274c`
-  (16907 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 1121 pages (PDF partagé séparément),
+  SHA-256 `4db254061447046c6c2392552e3bfda2bbe529feeec2ee1c5ddda17b42511f72`
+  (13516200 octets), sections §8.1–§8.77. Le fichier Markdown ici a pour SHA-256
+  `e4804934fa8321318b2f6b54b6f94b5bb623e8d92dfad4906ffd3f8464ffc67e`
+  (18114 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -19,6 +19,27 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   `universal_v6.4.0_cohen.py` (recomposition du MC par la
   récurrence-concentration) est joint pour vérification : proposition
   REJETÉE (§8.52), v6.2 reste la version de travail.
+- Les 2 verdicts §8.76–§8.77 : (§8.76) lot Yeh_seq FNA de GSE131050
+  (n = 42, 41/42 mêmes tumeurs que le lot FF du §8.74) — **CONFIRME** :
+  le signal `maxsep` survit au changement de type d'échantillon et il
+  est même plus fort en FNA : d_maxsep +0,1642 (réel 0,4083 contre nul
+  0,2441), marge de 0,0942 au-dessus du plancher 0,07, plus de deux fois
+  l'écart FF (+0,0739) ; A2 INCHANGÉ 8/12 (10/12 positifs), LOO 7/11 —
+  le lot FNA n'est pas une treizième paire indépendante ; extraction
+  2/2 à 0,0 exact ; **C3 RESTE LEVÉE** (consolidation supplémentaire,
+  ne rouvre rien). (§8.77) réparation de la reproductibilité —
+  **REPRODUCTIBILITÉ RÉPARÉE** : 19/19 gaps fermés (URL retrouvée +
+  fichier re-téléchargé + SHA vérifié, dont le SOFT GPL20769, le
+  fichier clinique du test C et les 4 fichiers CPTAC) ; script de
+  re-téléchargement corrigé (`download_data.sh`, SHA `55811136…`,
+  12 corrections, `bash -n` OK), exécuté en entier jusqu'à EXIT:0
+  (52 fichiers, 2,4 Go, tous vérifiés) ; test à froid TCGA v4 :
+  flux reconstruits SHA-IDENTIQUES et runs v6.2 identiques aux
+  chiffres tenus à 0,0 exact des deux côtés ; DATA_SOURCES.md révisé
+  (900 lignes, SHA `17b8428b…`, nouvelles §28 sources §8.76 et §29
+  chantier §8.77, §17 révisé 19/19 fermés) ; deux fautes de frappe de
+  SHA latentes corrigées (Birnbaum MOESM3 §13, LUAD §2.3) ; **0
+  section modifiée, 0 verdict rouvert** — le test C reste NON (§8.45).
 - Les 2 verdicts §8.74–§8.75 : (§8.74) douzième paire principale
   GSE131050 lot Yeh_seq FF (n = 42, Rashid et coll. 2020, PMID 31754050,
   GPL18573, UNC) — **CONFIRME**, de justesse : d_maxsep +0,0739 (réel
@@ -161,22 +182,26 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.75).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.77).
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
 - `README.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier,
   les sources des données, les SHA-256 de chaque fichier du dépôt.
-- `provenance/` — 84 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `download_data.sh` — script de re-téléchargement des matrices brutes,
+  version corrigée §8.77 (SHA `55811136…`, 52 fichiers, EXIT:0, test à froid
+  à 0,0 exact ; original `~/workspace/staging-pdac/download_data.sh`,
+  SHA `4e151d59…`).
+- `provenance/` — 88 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 114 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2).
-- `sections/` — sections §8.38–§8.75 du livre blanc, fichiers sources.
-- `scripts/` — 195 scripts de construction des flux, d'extraction et
+- `results/` — 120 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité).
+- `sections/` — sections §8.38–§8.77 du livre blanc, fichiers sources.
+- `scripts/` — 201 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 771 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.75.
+- `data_flux/` — 774 CSV/JSON : flux d'entrée des runs, tests directs,
+  extraits ssep / v62_delta / §8.46–§8.77.
 
 ## Données brutes
 
@@ -187,7 +212,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (1090 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (1121 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 
@@ -195,7 +220,7 @@ au total. Son SHA-256 est rappelé ci-dessus.
 
 La suite du travail (phase 2) se poursuit dans le dépôt
 `tlogNext-pdac-phase2`, travail d'un autre agent — ce dépôt-ci reste
-l'état vérifié du travail v6.2 au 20 novembre 2026.
+l'état vérifié du travail v6.2 au 21 novembre 2026.
 
 Projet : FindPrint / TagPrint. Données ouvertes, code reproductible,
 résultats négatifs rapportés comme les positifs.
