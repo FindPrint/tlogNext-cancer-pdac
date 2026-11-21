@@ -1315,6 +1315,134 @@ Protocole `PROTOCOL_chen_supplements_889.md` (SHA `d4296ddd…`) ; provenance `P
 KRAS/MTAP dans les 17 suppléments ni dans les dépôts consultables ; D3/D4
 restent IMPOSSIBLES ; la question des hits du §8.84 reste sans réponse.
 
+## 41. GSE194249 : accès aux lectures brutes (SRA) — piste fermée (§8.91, 21 nov. 2026)
+
+**Série et article :** GSE194249, Shi et al., *Nature Communications* 2022,
+13:2169, DOI 10.1038/s41467-022-29857-6 (CC BY 4.0), plateforme GPL31265,
+87 échantillons (84 PDPCOs + 3 normaux). Matrice FPKM déposée déjà couverte
+au §37 : `GSE194249_PDPCOs_FPKM.txt.gz`, 4 927 876 o, SHA-256
+`479517fbed1d8f5bb9d141b6b932b6ab56ba2ba72d4394d13aea2a3da0a50f27`,
+15 609 lignes de gènes, DPCR1 0 occurrence, MUCL3 0 occurrence.
+
+**Cinq contrôles d'accès, tous négatifs** (reçus horodatés conservés, voir
+`PROVENANCE_891.md`) :
+
+- BioProject (E-utilities esummary, id 799993 et 801501) :
+  `gse194249_bioproject_891.json`, SHA-256
+  `e5a85000f939c6a88d59f546624dc851ecdbb12e4afbe6759435d0ce76b0e455`.
+  PRJNA799993 (transcriptome) : « Raw data are not available for this
+  Series due to human genetic resources policy in China. » PRJNA801501
+  (second volet, ATAC/WGS) : « Please note that the raw data has been
+  uploaded to a domestic repository National Omics Data Encyclopedia
+  (NODE; https://www.biosino.org/node/index) with controlled access
+  mechanisms under accession number OEP001744. »
+- SRA, PRJNA799993 (esearch) : count **0** —
+  `sra_esearch_PRJNA799993_891.json`, SHA-256
+  `a6df6133df098ed299a26cdc05ba79c745f440dd83063a796d63602403b18155`.
+- SRA, PRJNA801501 (esearch) : count **0** —
+  `sra_esearch_PRJNA801501_891.json`, SHA-256
+  `014a217cd4fb85bab77d0d46d4546903d7c5d344700da3de72d5b3a8e9abb7c2`.
+- Lien GEO→SRA (elink dbfrom=gds db=sra id=200194249) : **aucun lien** —
+  `elink_gds_sra_891.json`, SHA-256
+  `e7498743d2ce11d1356af7ee0d4d4faacc55f322823d150ab2d74bd62d2f87c5`.
+- SRA, par accession GEO (esearch term=GSE194249) : count **0** (réponse en
+  ligne, non conservée en fichier — même résultat que le contrôle SRA
+  PRJNA799993).
+- ENA, portail de recherche (result=read_run,
+  study_accession=PRJNA799993) : liste vide `[]`, **0 run** —
+  `ena_readrun_PRJNA799993_891.json`, SHA-256
+  `2ba33ca0557f1bb5b7ba88d67f9d0093c7185a36ec51fe2b7bd9372d3e001d6d`.
+- NODE (biosino.org), projet OEP001744 : page consultée le 21 nov. 2026,
+  HTTP 200 mais 906 o (coquille d'application JavaScript, fiche non
+  lisible sans session) ; recherche web exacte `"OEP001744" NODE biosino`
+  sans résultat utilisable — le dépôt NODE n'est pas indexé par les
+  moteurs généralistes. L'accès contrôlé est établi par la fiche
+  PRJNA801501 elle-même, pas par cette page.
+
+**Bilan : 0 téléchargement de lectures brutes, 0 CSV de flux, 0 run v6.2.**
+La question « DPCR1/MUCL3 sont-ils quantifiables depuis les lectures
+brutes ? » reste sans réponse. Déblocage nommé, non entrepris : demande
+d'accès contrôlé auprès de NODE (projet OEP001744) — geste administratif
+et juridique, sans go ; ou republication ouverte des lectures (aucune
+connue au 21 nov. 2026). Protocole `PROTOCOL_gse194249_sra_891.md`
+(SHA `6a743f9c…`) ; provenance `PROVENANCE_891.md` (SHA `a61a8b71…`).
+Verdict §8.91 : **PISTE FERMÉE** ; A2 inchangé 10/15 (12/15 positifs),
+LOO 9/14 ; C3 reste levée.
+## 42. Vérification vopimetostat + daraxonrasib, phase 3 (§8.92, 21 nov. 2026)
+
+**Interrogation directe de ClinicalTrials.gov (API v2, 21 nov. 2026,
+~12h00 EST)** — reçus conservés, voir `PROVENANCE_892.md` :
+
+- Requête `vopimetostat` : **exactement 2 études** — NCT07897734
+  (TNG462-C103, déjà au §8.80) et NCT07938463 (TAP-ALK, § ci-dessous) —
+  `ctg_vopimetostat_892.json`, SHA-256
+  `354da6c2664dc0b95ca4988d8a17f171f0105c2020891dff6c0b9af9fcb1e599`.
+- Requête `daraxonrasib` : **16 études** (dont RASolute 302 NCT06625320,
+  RASolute 303 NCT07491445, RASolute 304 NCT07252232, MountainTAP-5
+  NCT07492680, accès élargi NCT07573215) — **aucune n'est la phase 3
+  vopimetostat + daraxonrasib** — `ctg_daraxonrasib_892.json`, SHA-256
+  `96e16a4dc6b690397b74276e127800e8fad8b3bf7b015650ac1b59fa9332833b`.
+- TNG462-C102 (NCT06922591) : RECRUITING, première publication
+  10 avril 2025, **dernière mise à jour 23 octobre 2026**, début
+  31 mai 2025, fin primaire estimée juin 2027, effectif estimé 183,
+  **aucun résultat publié sur le registre** —
+  `ctg_NCT06922591_892.json`, SHA-256
+  `d53ad88b45d4c7b97f9e108a63968a9277c1bc7e247ef7af74f34edf1293b7e7`.
+  **Aucune nouvelle coupe de données** : chiffres inchangés depuis la
+  coupure du 20 août 2026 (ORR 82 %, 18/22 ; PFS médiane non atteinte ;
+  suivi médian 7,1 mois).
+
+**Fait nouveau (1) — nouvel essai vopimetostat, TAP-ALK, NCT07938463 :**
+« Lorlatinib Plus TNG462 in ALK+ MTAP Del NSCLC », phase 1/2, promue
+par le Dana-Farber Cancer Institute (Alice Shaw, MD), en collaboration
+avec Tango Therapeutics ; vopimetostat (TNG462) + lorlatinib, CBNPC
+MTAP-délété et ALK-réarrangé, après progression sous inhibiteur de
+tyrosine kinase, 30 participants prévus ; statut NOT_YET_RECRUITING ;
+première publication **16 novembre 2026** ; début estimé 30 avril 2027 ;
+fin primaire estimée novembre 2027 — `ctg_NCT07938463_892.json`,
+SHA-256 `13d56de2be76a872002f24bfb96162fea9fb92f3b77da0c274579283cc860bf1` ;
+https://clinicaltrials.gov/study/NCT07938463. Portée : autre
+combinaison, poumon, pas la phase 3 pancréatique ; enregistrement, pas
+un résultat ; aucune donnée d'efficacité.
+
+**Fait nouveau (2) — 10-Q de Tango Therapeutics, 9 novembre 2026
+(source primaire SEC) :** formulaire 10-Q, trimestre clos le
+30 septembre 2026, déposé le 9 novembre 2026, accession SEC
+**0001193125-26-452634**, document `tngx-20260930.htm`
+(https://www.sec.gov/Archives/edgar/data/1819133/000119312526452634/tngx-20260930.htm).
+Extrait verbatim (Risk Factors), conservé dans
+`tango_10q_supply_excerpt_892.txt`, SHA-256
+`e229daafe0d45d4b420e4537a3ae689c272e6a9bd4eb65718111d14782ed7466` :
+« While we are pursuing multiple pathways to obtain clinical supply of
+daraxonrasib for the planned trial, there is no assurance that we will
+be able to secure clinical supply of daraxonrasib on our anticipated
+timeline, on commercially reasonable terms, or at all. » Le même 10-Q
+confirme le plan de phase 3 (randomisation 1:1, vopimetostat 200 mg +
+daraxonrasib 100 mg 1×/jour contre chimiothérapie standard, doubles
+critères ORR/PFS, OS secondaire clé, démarrage 1er semestre 2027) et le
+projet d'essai MTAP wild-type (~25 patients, 1er semestre 2027) — faits
+déjà au §8.80 via le communiqué, confirmés ici à la source primaire.
+Formulaire 8-K du 9 novembre 2026 (accession 0001193125-26-452635,
+résultats T3) repéré via les dépôts SEC, contenu repris du communiqué
+(déjà au §8.80).
+
+**Autres vérifications (21 nov. 2026) :** recherche web générale — aucune
+annonce postérieure au 9 nov. 2026 sur la combinaison (reprises du 9–13
+nov. : Morningstar, Readthrough, VigiEye, WhyMyStockMoved,
+FrontierPicks — relais du communiqué T3 et du 10-Q) ; SITC 2026
+(7–9 nov. 2026) : aucune présentation sur la combinaison (confirme
+le §8.80).
+
+**Verdict §8.92 : NON CHANGÉ pour la combinaison** — toujours pas de
+numéro NCT pour la phase 3, toujours pas de date de premier patient,
+aucune nouvelle coupe TNG462-C102 ; le chiffre clinique central est
+inchangé (ORR 82 %, n=22, non randomisé, sans OS) ; le rationnel
+MTAP/PRMT5 mesuré ici (§8.28/§8.29/§8.40) n'est ni confirmé ni infirmé.
+Le calendrier « 1er semestre 2027 » est explicitement conditionné à
+l'approvisionnement en daraxonrasib (risque déclaré par Tango
+elle-même). Protocole `PROTOCOL_vopimetostat_verification_892.md`
+(SHA `3a1c2824…`) ; provenance `PROVENANCE_892.md` (SHA `3983873b…`).
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash
@@ -1346,7 +1474,7 @@ sha256sum ~/workspace/runs/pdac-v6/data_clinical_patient.txt
 
 ## Annexe B — Provenances lues pour rédiger ce document
 
-`PROVENANCE_depmap.md`, `PROVENANCE_tcga.md`, `PROVENANCE_tcga_v2.md`, `PROVENANCE_tcga_v3.md`, `PROVENANCE_tcga_v4.md`, `PROVENANCE_cptac.md`, `PROVENANCE_geo71729.md`, `PROVENANCE_geo62452.md`, `PROVENANCE_geo71729_survival.md`, `PROVENANCE_icgc.md`, `PROVENANCE_gdsc.md`, `PROVENANCE_prism_secondary.md`, `PROVENANCE_kras_g12d.md`, `PROVENANCE_kras_combinations.md`, `PROVENANCE_crispr_scan.md`, `PROVENANCE_mtap.md`, `PROVENANCE_mtap_pancancer.md`, `PROVENANCE_mtap_series.md`, `PROVENANCE_prmt5_mtap.md`, `PROVENANCE_mtap_prmt5_flux.md`, `PROVENANCE_mtap_arbitration_840.md`, `PROVENANCE_pancancer.md`, `PROVENANCE_parp_v6.md`, `PROVENANCE_immune_v6.md`, `PROVENANCE_immune_parp_v6.md`, `PROVENANCE_atr_chek1.md`, `PROVENANCE_muc16_cldn182.md`, `PROVENANCE_rotations.md`, `PROVENANCE_rotations_v61.md`, `PROVENANCE_rotations_dedup_844.md`, `PROVENANCE_testA_proliferation.md`, `PROVENANCE_testC_stage.md`, `PROVENANCE_v6.1.md`, `PROVENANCE_v6.2.md`, `PROVENANCE_878.md`, `PROVENANCE_879.md`, `PROVENANCE_880.md`, `PROVENANCE_881.md`, `PROVENANCE_882.md`, `PROVENANCE_883.md`, `PROVENANCE_884.md`, `PROVENANCE_885.md`, `PROVENANCE_886.md`, `PROVENANCE_887.md`, `PROVENANCE_888.md`, `PROVENANCE_889.md`, `PROVENANCE_priv_881.json`, `source_registry.md` (registre de synthèse du 16 nov. 2026), `~/workspace/staging-pdac/download_data.sh`, `~/workspace/runs/pdac-v6/download_gpl6244_mapping.py`, journaux `data/download_depmap.log`, `data/download_firehose.log`, `data/download_omicscn.log`, réponses JSON `data/panc1_api.json`, `data/panc1_9191.json`, `data/panc1_9197.json`, `data/panc1_ncats.json`.
+`PROVENANCE_depmap.md`, `PROVENANCE_tcga.md`, `PROVENANCE_tcga_v2.md`, `PROVENANCE_tcga_v3.md`, `PROVENANCE_tcga_v4.md`, `PROVENANCE_cptac.md`, `PROVENANCE_geo71729.md`, `PROVENANCE_geo62452.md`, `PROVENANCE_geo71729_survival.md`, `PROVENANCE_icgc.md`, `PROVENANCE_gdsc.md`, `PROVENANCE_prism_secondary.md`, `PROVENANCE_kras_g12d.md`, `PROVENANCE_kras_combinations.md`, `PROVENANCE_crispr_scan.md`, `PROVENANCE_mtap.md`, `PROVENANCE_mtap_pancancer.md`, `PROVENANCE_mtap_series.md`, `PROVENANCE_prmt5_mtap.md`, `PROVENANCE_mtap_prmt5_flux.md`, `PROVENANCE_mtap_arbitration_840.md`, `PROVENANCE_pancancer.md`, `PROVENANCE_parp_v6.md`, `PROVENANCE_immune_v6.md`, `PROVENANCE_immune_parp_v6.md`, `PROVENANCE_atr_chek1.md`, `PROVENANCE_muc16_cldn182.md`, `PROVENANCE_rotations.md`, `PROVENANCE_rotations_v61.md`, `PROVENANCE_rotations_dedup_844.md`, `PROVENANCE_testA_proliferation.md`, `PROVENANCE_testC_stage.md`, `PROVENANCE_v6.1.md`, `PROVENANCE_v6.2.md`, `PROVENANCE_878.md`, `PROVENANCE_879.md`, `PROVENANCE_880.md`, `PROVENANCE_881.md`, `PROVENANCE_882.md`, `PROVENANCE_883.md`, `PROVENANCE_884.md`, `PROVENANCE_885.md`, `PROVENANCE_886.md`, `PROVENANCE_887.md`, `PROVENANCE_888.md`, `PROVENANCE_889.md`, `PROVENANCE_890.md`, `PROVENANCE_891.md`, `PROVENANCE_892.md`, `PROVENANCE_priv_881.json`, `source_registry.md` (registre de synthèse du 16 nov. 2026), `~/workspace/staging-pdac/download_data.sh`, `~/workspace/runs/pdac-v6/download_gpl6244_mapping.py`, journaux `data/download_depmap.log`, `data/download_firehose.log`, `data/download_omicscn.log`, réponses JSON `data/panc1_api.json`, `data/panc1_9191.json`, `data/panc1_9197.json`, `data/panc1_ncats.json`.
 
 **Écarts relevés pendant la rédaction (signalés dans le texte) :**
 1. `PROVENANCE_geo62452.md` indique 819 249 octets pour `GPL6244_probe2symbol.tsv` — c'est la taille de `GPL570_probe2symbol.tsv` ; le fichier GPL6244 fait 382 034 octets (25 293 sondes, contenu conforme).

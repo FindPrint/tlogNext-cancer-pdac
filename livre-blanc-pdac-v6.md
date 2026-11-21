@@ -250,6 +250,8 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 94 | 21 nov. 2026 | **GSE194249 à 11 flux : quinzième paire NON (§8.88)** (piste 2 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 10h07 ; protocole gelé 21 nov. 2026 ~10h10 EST avant toute construction et tout run `PROTOCOL_gse194249_11flux_888.md`, SHA `f5eb1f95…63e02` ; provenance `PROVENANCE_888.md`, SHA `f90b8658…fb85` ; matrice FPKM déposée déjà couverte §37, SHA `479517fb…0f27`, re-vérifiée ; 84 PDPCOs, 11 flux, DPCR1 absent ; **NON** : **d_maxsep −0,0239** (réel 0,2306 contre nul 0,2545), le nul graine 42 sépare plus que le réel ; **A2 devient 10/15** (12/15 positifs), LOO 9/14 ; nuls frais +0,0517 / +0,0354 ; 4/4 runs exit 0, vérification 4/4 à 0,0 exact ; C3 reste levée ; caveat « 11 flux, DPCR1 absent » écrit. Détail au §8.88. |
 | 95 | 21 nov. 2026 | **Suppléments Chen non téléchargés (MOESM1, MOESM2, MOESM16) et dépôts : aucune table par-PDO KRAS / MTAP nulle part — PISTE FERMÉE (§8.89)** (piste 3 du lot du 21 nov. 2026 ; feu vert de Zackary 21 nov. 2026 10h07 ; protocole gelé 21 nov. 2026 ~10h15 EST avant tout téléchargement nouveau, toute copie et tout calcul `PROTOCOL_chen_supplements_889.md`, SHA `d4296ddd…07de792b` ; provenance `PROVENANCE_889.md`, SHA `bd33f8da…e4f1` ; MOESM1 24 268 877 o SHA `4b70d25b…60aa61f`, MOESM2 4 586 550 o SHA `ce939f22…65d67`, MOESM16 3 947 814 o SHA `69a959c3…95c499`, tous HTTP 200 ; MOESM18 : HTTP 403, aucun fichier servi ; **PISTE FERMÉE** : **aucune table par-PDO KRAS/MTAP dans les 17 suppléments ni dans les dépôts consultables** (HRA005195 et HRA010277 : accès contrôlé, lectures brutes, pas une table ; ST003734 : lipidomique PANC-1, pas des organoïdes ; Code Ocean 1432248 : code seulement) ; les tests directs drogue × KRAS (D3) et drogue × MTAP (D4) restent IMPOSSIBLES ; la question « les hits du §8.84 survivent-ils quand on fixe KRAS / MTAP ? » reste sans réponse, pas tranchée négativement ; seule variable par-organoïde nouvelle, le statut CFTR MT/WT de la Fig. 14c (MOESM1), non recevable (38/46 couverts, MT n = 4, en conflit avec la Fig. 6e). Détail au §8.89. |
 | 96 | 21 nov. 2026 | **Audit complet du livre blanc (§8.1–§8.89) (§8.90)** (audit en lecture seule, 21 nov. 2026, 4 volets, aucun run de pipeline, aucun fichier de résultats modifié ; rapports `audit_890/volet1_podcast_mc.md` SHA `c5d90180…c22100`, `volet2_verdicts.md` SHA `a5025999…5913013e`, `volet3_securite.md` SHA `37c72a69…5be`, `volet4_universalite.md` SHA `e7911335…a32` ; **volet 1** : le podcast a dit juste sur un point précis (`maxsep` 6/8 contre MC 1/8, chiffres exacts re-vérifiés ; GSE79668 renverse +0,1447 contre 13 nuls ; MTAP 10/10) mais a exagéré en généralisant (6/8 tient à une paire, ICGC charnière ; rotations sans doublon 37/48, pas 48/48 ; paires récentes contraires : GDC fragile confirmé +0,0314, GSE194249 NON −0,0239) — verdict : un seul chiffre voit une différence là où l'ancien MC ne voyait rien, pas une preuve générale, pas un remède, pas un remplacement de la batterie ; **corrections de Zackary, 21 nov. 2026** : (a) 11h00 MC n'est JAMAIS seul — la batterie entière (29 estimateurs, Q1–Q6, tests de bruit, F1/F2, L7a/L7b, falsification, Delta, `maxsep`) fait le verdict, règle NOUVELLE (« batterie » : 0 occurrence dans le livre blanc) ; survente confirmée à 3 endroits (« `maxsep` seul SUFFIT » §8.56, « adoption de `maxsep` seul » §8.59, journal §7 lignes 215/218 ; « le critère gelé est `maxsep`, et lui seul », 5 occurrences) — addendum daté : `maxsep` = score principal AFFICHÉ, pas le verdict ; (b) 11h01 « MC = pur bruit » tranché en deux parties — comme discriminateur réel/nul sur le cancer, vrai (MC 1/8 §8.35, §8.31, rotations 17/48 puis 12/48, Test A nul 0,4587 au-dessus du réel 0,3638) ; comme nombre sans structure, faux (composite connu, inversion MTAP expliquée par la robustesse seule, M1 expliqué §8.63, pic étroit non élucidé §8.73) ; correction d'un chiffre de la consigne : 1,772 contre 0,121 sur HP35, ce sont les valeurs `maxsep`, pas MC (MC HP35 : 0,6035 contre 0,4086, +0,1950) ; (c) 11h03 code vérifié : v6.2 ligne 3333 (`max_separation`, retourne aussi s_norm, stability, robustness, sharpness) et ligne 10095 (`compare_monte_carlo_regimes`, appelée L10486, résultat retourné L10536 « mc ») — les deux calculés dans le même run ; l'adoption n'a changé que l'ordre d'affichage, pas de v6.5 ; toute formulation « `maxsep` au lieu de MC » est fausse ; **volet 2** : 0 écart numérique sur 9 chiffres clés re-vérifiés ; 1 seule erreur de valeur (coquille SHA PROVENANCE_889 §7, `0f828245…bef946` au lieu de `…aadadb0`) ; plus grave incohérence : titre §8.51 et §7 ligne 210 affirment que la corrélation immunitaire n'est pas un artefact de composition, alors que §8.54.8(f) révise cette lecture sans renvoi — addendum daté avec renvoi ; 8 incohérences au total, toutes corrigées par addendum daté ; classement 6 SOLIDE, 9 FRAGILE, 6 NON PROUVÉ / FERMÉ ; A2 final 10/15, 12/15 positifs, LOO 9/14 ; **volet 3** : AUCUN avertissement médical visible (0 occurrence de « conseil médical » ou « oncologue », aucune section éthique ; couverture affiche « trouver un remède » sans mise en garde) ; aucune recommandation clinique directe, aucune dose comme consigne ; faits cliniques tous conformes (FDA daraxonrasib 26 août 2026, RASolute 302 OS 13,2 vs 6,7 mois HR 0,40, vopimetostat + daraxonrasib ORR 82 % 18/22 non randomisé n=22 sans OS, approbation européenne 16 nov. 2026, IBI343 phase III NCT07066098) ; écarts mineurs seulement (ventilation 2e/3e ligne incomplète, indication FDA simplifiée au §8.20, affirmation NCCN catégorie 1 sans référence vérifiable jointe) — addendum daté ; texte d'avertissement renforcé au §8.90.3.4, sa mise en tête du document est une DETTE pour la prochaine révision du gabarit ; **volet 4** : le mot « universel » est exagéré tel quel ; l'Ising n'a jamais tourné en v6/v6.1/v6.2 dans ce livre blanc ; 32 systèmes inventoriés ; ce qui sépare vraiment : `maxsep` seul, 6/8, 37/48 sans doublon, A2 10/15, HP35 +1,6512, avec ses fragilités ; redéfinition en une phrase au §8.90.4.5). Détail au §8.90. |
+| 97 | 21 nov. 2026 | **GSE194249 : re-dérivation depuis les lectures brutes (SRA) — PISTE FERMÉE (§8.91)** (piste 1 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 11h09 ; protocole gelé avant toute tentative de téléchargement et tout run `PROTOCOL_gse194249_sra_891.md`, SHA `6a743f9c…fba56b` ; provenance `PROVENANCE_891.md`, SHA `a61a8b71…8155f9` ; 5 contrôles d'accès, tous négatifs : SRA 0 expérience pour PRJNA799993 et pour PRJNA801501, lien GEO→SRA aucun, SRA GSE194249 count 0, ENA 0 run ; fiche BioProject PRJNA799993 : « Raw data are not available for this Series due to human genetic resources policy in China. » ; PRJNA801501 : lectures brutes chez NODE, accès contrôlé, OEP001744 — **aucune demande d'accès faite** (geste administratif et juridique, sans go) ; **0 téléchargement, 0 CSV de flux, 0 run v6.2** ; la question « DPCR1/MUCL3 sont-ils quantifiables depuis les lectures brutes ? » reste sans réponse ; **A2 inchangé 10/15** (12/15 positifs), LOO 9/14 ; C3 reste levée. Détail au §8.91. |
+| 98 | 21 nov. 2026 | **Vérification vopimetostat + daraxonrasib, phase 3 : NON CHANGÉ pour la combinaison (§8.92)** (piste 2 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 11h09 ; protocole gelé avant toute recherche `PROTOCOL_vopimetostat_verification_892.md`, SHA `3a1c2824…1e6dba` ; provenance `PROVENANCE_892.md`, SHA `3983873b…6149ca` ; interrogation directe de l'API v2 de ClinicalTrials.gov, 21 nov. 2026 ~12h00 EST : **vopimetostat 2 études, daraxonrasib 16 études, aucune phase 3 de la combinaison** ; TNG462-C102 (NCT06922591) RECRUITING, dernière mise à jour 23 oct. 2026, **aucune nouvelle coupe de données** (ORR 82 %, 18/22, coupure 20 août 2026, PFS médiane non atteinte, sans OS) ; **NON CHANGÉ** : toujours pas de numéro NCT pour la phase 3, démarrage 1er semestre 2027 inchangé ; fait nouveau (1) **NCT07938463 (TAP-ALK : vopimetostat + lorlatinib, CBNPC ALK+ MTAP-délété, Dana-Farber, première publication 16 nov. 2026)** — autre combinaison, pas la phase 3 pancréatique ; fait nouveau (2) **10-Q de Tango du 9 nov. 2026 (SEC, accession 0001193125-26-452634) : « aucune assurance » d'obtenir l'approvisionnement clinique en daraxonrasib** pour la phase 3 — le démarrage 1H 2027 est explicitement conditionné à l'approvisionnement ; rationnel MTAP/PRMT5 mesuré ici ni confirmé ni infirmé ; aucune recommandation clinique. Détail au §8.92. |
 
 ---
 
@@ -23094,6 +23096,463 @@ Texte d'origine intact partout ; chaque addendum est une insertion datée, jamai
 
 ---
 
+### 8.91 GSE194249 : re-dérivation depuis les lectures brutes (SRA) — PISTE FERMÉE, lectures non accessibles en libre accès (21 novembre 2026)
+
+**Projet :** PDAC — livre blanc v6.2
+**Section :** §8.91 (la §8.86 est le ré-audit à 12 flux, la §8.88 la
+paire à 11 flux)
+**Date :** 21 novembre 2026, ~11h10–11h30 EST
+**Go de Zackary :** 21 novembre 2026, 11h09
+**Protocole gelé :** `PROTOCOL_gse194249_sra_891.md` (gelé AVANT
+toute tentative de téléchargement et tout run)
+**Provenance :** `PROVENANCE_891.md`
+**Statut :** vérification d'accès — aucune donnée nouvelle mesurée
+ici ; tous les faits ci-dessous sont des métadonnées publiques
+d'accès aux données.
+
+---
+
+## Verdict
+
+**PISTE FERMÉE : la re-dérivation de GSE194249 depuis les lectures
+brutes est impossible — il n'existe aucune lecture brute en libre
+accès.** SRA : 0 expérience pour les deux BioProjects de l'étude
+(PRJNA799993 et PRJNA801501). ENA : 0 run. La fiche BioProject
+PRJNA799993 le dit elle-même : « Raw data are not available for
+this Series due to human genetic resources policy in China. » Les
+lectures existent, mais seulement sous accès contrôlé, dans le dépôt
+national chinois NODE (accession OEP001744), et aucune demande
+d'accès n'a été faite — ce serait un geste administratif et
+juridique, pas un calcul, et il n'a pas de go. **0 téléchargement,
+0 CSV de flux, 0 run v6.2.** La question « DPCR1 et MUCL3
+sont-ils quantifiables depuis les lectures brutes ? » reste sans
+réponse. **A2 inchangé : 10/15 au-dessus du plancher, 12/15
+positifs, LOO 9/14. C3 reste levée.**
+
+---
+
+## 0. Rappel — pourquoi cette piste existait
+
+- §8.86 : GSE194249 **INUTILISABLE comme paire à 12 flux** —
+  DPCR1 absent de la matrice FPKM déposée (0/15 609 lignes),
+  MUCL3 également absent, 0 run, 0 CSV. La porte gelée « 12 gènes
+  v4 présents » avait dit ARRÊT.
+- §8.88 : la suite (d1), paire à 11 flux sans DPCR1, est faite —
+  **NON** (`d_maxsep −0,0239`, le nul graine 42 sépare plus que le
+  réel) ; A2 10/15, 12/15 positifs, LOO 9/14.
+- §8.86.4 (d2) nommait la seconde suite : « une re-dérivation de
+  l'expression depuis les lectures brutes (SRA) avec une annotation
+  actuelle, qui serait un autre produit de données, pas la matrice
+  déposée ». **Le présent chantier EST cette suite (d2).** Son seul
+  objet : dire si une matrice à 12 flux peut être re-dérivée, et si
+  oui la construire et la courir.
+
+## 1. Ce qui a été vérifié — cinq contrôles d'accès, tous négatifs
+
+| # | Contrôle | Source | Résultat |
+|---|---|---|---|
+| 1 | SRA, BioProject transcriptome | E-utilities `esearch db=sra term=PRJNA799993` | **count 0** — aucune expérience |
+| 2 | SRA, BioProject second volet | E-utilities `esearch db=sra term=PRJNA801501` | **count 0** — aucune expérience |
+| 3 | Lien GEO → SRA | E-utilities `elink dbfrom=gds db=sra id=200194249` | **aucun lien** |
+| 4 | SRA, par accession GEO | E-utilities `esearch db=sra term=GSE194249` | **count 0** |
+| 5 | ENA (miroir européen) | Portail ENA `result=read_run`, `study_accession=PRJNA799993` | **liste vide `[]`** — 0 run |
+
+Chaque contrôle est conservé en reçu horodaté avec son SHA-256
+(voir `PROVENANCE_891.md`) : `sra_esearch_PRJNA799993_891.json`
+(SHA `a6df6133…18155`), `sra_esearch_PRJNA801501_891.json` (SHA
+`014a217c…b7c2`), `elink_gds_sra_891.json` (SHA `e7498743…2f87c5`),
+`ena_readrun_PRJNA799993_891.json` (SHA `2ba33ca0…01d6d`).
+
+## 2. Pourquoi il n'y a rien à télécharger — les fiches BioProject le disent
+
+### 2.1 PRJNA799993 (transcriptome) : données brutes indisponibles
+
+Fiche BioProject PRJNA799993 (E-utilities esummary, reçue
+`gse194249_bioproject_891.json`, SHA `e5a85000…0e455`), citée
+verbatim :
+
+> « Raw data are not available for this Series due to human
+> genetic resources policy in China. »
+
+La même fiche confirme le protocole RNA-seq de l'article (ARN
+total de 84 PDPCOs + 3 NPOs, kit NEBNext Ultra, paires
+d'extrémités, Illumina HiSeq X Ten, TopHat sur hg19, FPKM par
+Cufflinks) — les lectures ont bien été produites, elles ne sont
+simplement pas versées en libre accès.
+
+### 2.2 PRJNA801501 (second volet, ATAC/WGS) : accès contrôlé chez NODE
+
+Fiche BioProject PRJNA801501 (même reçu, même SHA), citée verbatim :
+
+> « Please note that the raw data has been uploaded to a domestic
+> repository National Omics Data Encyclopedia (NODE;
+> https://www.biosino.org/node/index) with controlled access
+> mechanisms under accession number OEP001744. »
+
+Les données brutes de l'étude (RNA-seq, ATAC-seq, WGS) sont donc
+centralisées chez NODE, dépôt national chinois, sous le numéro
+**OEP001744**, avec des « mécanismes d'accès contrôlé ». La page
+projet NODE (`https://www.biosino.org/node/project/detail/OEP001744`)
+a été consultée le 21 nov. 2026 : HTTP 200 mais 906 octets
+(coquille d'application JavaScript, fiche non lisible sans
+session) ; une recherche web exacte `"OEP001744" NODE biosino` ne
+retourne aucun résultat utilisable — le dépôt NODE n'est pas
+indexé par les moteurs généralistes. Ce qui est établi ne dépend
+pas de cette page : la fiche BioProject dit elle-même « controlled
+access mechanisms ».
+
+## 3. Ce que la fermeture ne dit pas
+
+- Elle ne dit **pas** que DPCR1/MUCL3 seraient absents des lectures
+  brutes : sans les lectures, la question est sans réponse. La
+  matrice FPKM déposée (15 609 lignes) ne contient ni DPCR1 ni
+  MUCL3, mais une re-dérivation avec une annotation actuelle aurait
+  pu les compter autrement — c'était précisément l'intérêt de la
+  piste, et c'est précisément ce qui est inaccessible.
+- Elle ne dit **pas** que les lectures n'existent pas : elles
+  existent chez NODE (OEP001744). Elle dit qu'elles ne sont pas
+  accessibles en libre accès depuis cette machine, sans demande
+  formelle.
+- Elle ne change **rien** aux §8.86 et §8.88 : la matrice déposée
+  reste inutilisable à 12 flux et NON à 11 flux ; la paire à 11 flux
+  reste comptée comme 15e paire, avec son caveat.
+- Elle ne rouvre **pas** C3 : levée depuis le §8.71, l'adoption
+  pleine de `maxsep` (décision de Zackary, 20 nov. 13h04) ne
+  dépendait pas de cette piste.
+
+## 4. Ce qui débloquerait la piste (nommé, non entrepris)
+
+Une demande d'accès contrôlé auprès de NODE
+(https://www.biosino.org/node/index, projet OEP001744), dans le
+cadre de la politique chinoise sur les ressources génétiques
+humaines : demande formelle, identité institutionnelle,
+justification, délai inconnu, issue incertaine. **Aucune demande
+faite dans ce chantier ; aucune ne sera faite sans go explicite de
+Zackary.** C'est un geste administratif et juridique, pas un
+calcul — et il sort du périmètre de ce lot.
+
+Une republication ouverte des lectures par les auteurs ou par un
+tiers autorisé débloquerait aussi la piste ; aucune n'est connue
+au 21 novembre 2026.
+
+## 5. Bilan du chantier
+
+- Accès vérifiés : 5 contrôles (SRA ×3, lien GEO→SRA ×1, ENA ×1),
+  tous négatifs, tous conservés avec SHA.
+- Téléchargements de lectures brutes : **0**.
+- CSV de flux construits : **0**.
+- Runs v6.2 lancés : **0**.
+- Pipeline v6.2 vérifié inchangé, SHA
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
+- A2 : **10/15 au-dessus du plancher, 12/15 positifs, LOO 9/14 —
+  INCHANGÉ.** C3 reste levée.
+- Contexte consigné (non décisif) : aucun outil de quantification
+  installé sur la machine (`salmon`, `kallisto`, `samtools`,
+  `STAR`, `hisat2`, `fasterq-dump`, `prefetch`, `pysradb`
+  absents) ; 121 Go libres sous `/home/hatch`. La piste se ferme
+  sur l'accès, pas sur l'outillage.
+
+## 6. Sécurité — rappel
+
+Cette section porte sur l'accès à des données d'expression et sur
+un instrument d'analyse. Elle ne contient aucune recommandation
+clinique. Le livre blanc n'est pas un conseil médical : toute
+question de traitement se discute avec un oncologue.
+
+---
+
+*Piste (d2) du §8.86.4 fermée. La suite (d1) est faite au §8.88 ; il ne reste aucune suite nommée pour GSE194249, sauf une demande d'accès contrôlé à NODE (sans go) ou une republication ouverte des lectures.*
+
+— Fin de la §8.91. —
+
+---
+
+### 8.92 Vérification vopimetostat + daraxonrasib, phase 3 : NON CHANGÉ pour la combinaison — toujours pas de numéro NCT, toujours pas de nouvelle coupe de données ; deux faits nouveaux par ailleurs (21 novembre 2026)
+
+**Projet :** PDAC — livre blanc v6.2
+**Section :** §8.92 (suite du §8.80, vérifié le 21 nov. 2026,
+07h00–07h15 EST)
+**Période couverte :** depuis la vérification du §8.80 (21 nov.
+2026, 07h15 EST) — soit, en pratique, une re-vérification le même
+jour, ~11h15–12h00 EST, avec une interrogation directe et
+exhaustive de ClinicalTrials.gov que le §8.80 n'avait pas pu faire
+(§8.80 §7)
+**Protocole gelé :** `PROTOCOL_vopimetostat_verification_892.md`
+**Provenance :** `PROVENANCE_892.md`
+**Statut :** veille documentaire — aucune donnée nouvelle mesurée
+ici ; tous les faits cliniques ci-dessous sont externes, rapportés
+avec leur source.
+
+---
+
+## Verdict
+
+**NON CHANGÉ pour la combinaison vopimetostat + daraxonrasib : la
+phase 3 n'a toujours pas de numéro NCT, toujours pas de date de
+premier patient, et il n'existe toujours aucune nouvelle coupe de
+données TNG462-C102 depuis ESMO 2026 (coupure du 20 août 2026,
+ORR 82 %, n=22).** Le chiffre clinique central est inchangé, le
+rationnel MTAP/PRMT5 mesuré ici (§8.28/§8.29/§8.40) n'est ni
+confirmé ni infirmé par quoi que ce soit de nouveau. **Deux faits
+sont en revanche nouveaux pour le livre blanc : (1) un nouvel
+essai vopimetostat a été enregistré, NCT07938463 (TAP-ALK :
+vopimetostat + lorlatinib dans le cancer du poumon ALK+ MTAP-délété,
+première publication le 16 novembre 2026) — une autre combinaison,
+pas la phase 3 pancréatique ; (2) le 10-Q de Tango du 9 novembre
+2026, lu ici à la source primaire (SEC), avertit qu'il n'y a
+« aucune assurance » que Tango obtienne l'approvisionnement
+clinique en daraxonrasib pour la phase 3 prévue, dans les délais
+prévus, à des conditions raisonnables, ou du tout — le démarrage
+« 1er semestre 2027 » est donc explicitement conditionné à
+l'approvisionnement, pas seulement au calendrier.**
+
+Une annonce d'essai n'est pas une preuve d'efficacité : le chiffre
+de 82 % reste celui d'une étude de phase 1/2 non randomisée, n=22,
+sans survie globale, et seule la phase 3 randomisée pourra le
+confirmer ou l'infirmer.
+
+---
+
+## 0. Rappel — la référence (§8.80, vérifié le matin même)
+
+- TNG462-C102 (NCT06922591), phase 1/2, patients MTAP-délétés /
+  RAS-mutés, 2e et 3e ligne, PDAC métastatique : **ORR 82 %
+  (18/22)**, DCR 100 %, PFS médiane non atteinte, suivi médian
+  7,1 mois, coupure des données 20 août 2026 (ESMO 2026, poster
+  3149P, Spira et al.).
+- Phase 3 : mondiale, randomisée 1:1, première ligne, PDAC
+  MTAP-délété, vopimetostat 200 mg + daraxonrasib 100 mg 1×/jour
+  contre chimiothérapie standard, doubles critères principaux ORR
+  et PFS, survie globale en critère secondaire clé, démarrage
+  prévu 1er semestre 2027, **sans numéro NCT** (Tango, 9 nov.
+  2026).
+- Rationnel DepMap mesuré ici : effet PRMT5 suit MTAP, pas
+  CDKN2A (§8.28/§8.29/§8.40 ; PRMT5 Chronos −1,385 MTAP-délété
+  vs −1,010 intact, p=0,0036, 4 confirmations).
+
+## 1. La phase 3 vopimetostat + daraxonrasib : toujours pas enregistrée
+
+### 1.1 Interrogation directe de ClinicalTrials.gov (nouveauté méthodologique)
+
+Le §8.80 §7 déclarait ne pas avoir eu d'accès direct exhaustif
+au registre. Ce chantier l'a fait, par l'API v2, le 21 nov. 2026
+(reçus conservés, voir `PROVENANCE_892.md`) :
+
+- Requête `vopimetostat` : **exactement 2 études** —
+  NCT07897734 (TNG462-C103, déjà au §8.80) et NCT07938463
+  (TAP-ALK, §2 ci-dessous). **Aucune phase 3 de la combinaison.**
+- Requête `daraxonrasib` : **16 études**, dont RASolute 302
+  (NCT06625320), RASolute 303 (NCT07491445), RASolute 304
+  (NCT07252232), MountainTAP-5 (NCT07492680) et l'accès élargi
+  (NCT07573215). **Aucune n'est la phase 3 vopimetostat +
+  daraxonrasib.**
+- Requête `TNG462-C102` : **1 étude**, NCT06922591, la phase 1/2
+  de la combinaison elle-même (voir §1.2).
+
+**Conclusion : au 21 novembre 2026, ~12h00 EST, la phase 3
+vopimetostat + daraxonrasib n'est enregistrée nulle part sur
+ClinicalTrials.gov.** La lacune méthodologique du §8.80 est
+ainsi comblée pour cette question : ce n'est plus une absence
+constatée dans les communiqués, c'est une absence constatée dans
+le registre lui-même.
+
+### 1.2 TNG462-C102 (NCT06922591) : aucune nouvelle coupe de données
+
+Fiche ClinicalTrials.gov lue en direct (reçu
+`ctg_NCT06922591_892.json`, SHA `d53ad88b…3b7e7`) :
+
+- Statut : **RECRUITING**. Première publication : 10 avril 2025.
+  **Dernière mise à jour : 23 octobre 2026** (jour du communiqué
+  ESMO). Début : 31 mai 2025. Fin primaire estimée : juin 2027.
+  Effectif estimé : 183. **Aucun résultat publié sur le registre.**
+- Aucune mise à jour du registre depuis le 23 octobre 2026, donc
+  **aucune nouvelle coupe de données** : les chiffres restent ceux
+  de la coupure du 20 août 2026 (ORR 82 %, 18/22 ; PFS médiane
+  non atteinte ; suivi médian 7,1 mois). Aucune PFS médiane
+  atteinte, aucune donnée de survie globale, aucun nouveau signal
+  de tolérance.
+- **SITC 2026 (7–9 nov. 2026) : aucune présentation sur la
+  combinaison trouvée** (re-vérifié dans ce chantier ; confirme
+  le §8.80).
+
+## 2. Fait nouveau (1) — nouvel essai vopimetostat enregistré : TAP-ALK, NCT07938463
+
+**Nouveau pour le livre blanc, daté du 16 novembre 2026** (donc
+antérieur à la vérification du §8.80, mais absent du §8.80 — le
+registre n'avait pas été interrogé directement ce matin-là).
+
+- **NCT07938463**, « Lorlatinib Plus TNG462 in ALK+ MTAP Del
+  NSCLC » (TAP-ALK) : étude de phase 1/2, promue par le
+  **Dana-Farber Cancer Institute** (investigatrice principale :
+  Alice Shaw, MD), en collaboration avec Tango Therapeutics.
+- **Vopimetostat (TNG462) + lorlatinib** chez des patients
+  atteints de cancer du poumon non à petites cellules (CBNPC)
+  **MTAP-délété et ALK-réarrangé**, après progression sous
+  inhibiteur de tyrosine kinase. 30 participants prévus.
+- Statut : **NOT_YET_RECRUITING**. Première publication sur le
+  registre : **16 novembre 2026**. Début estimé : 30 avril 2027.
+  Fin primaire estimée : novembre 2027.
+- Source : fiche ClinicalTrials.gov, lue en direct, reçu
+  `ctg_NCT07938463_892.json`, SHA `13d56de2…60bf1` ;
+  https://clinicaltrials.gov/study/NCT07938463
+- **Portée :** c'est une nouvelle combinaison PRMT5 + inhibiteur
+  ciblé, dans le poumon, pas dans le pancréas, et pas avec
+  daraxonrasib. Elle ne concerne pas la phase 3 pancréatique,
+  ne change pas le rationnel MTAP/PRMT5, et ne fournit aucune
+  donnée d'efficacité — c'est un enregistrement, pas un résultat.
+  Elle montre en revanche que le champ d'emploi de vopimetostat
+  continue de s'élargir au-delà du pancréas.
+
+## 3. Fait nouveau (2) — le 10-Q de Tango : l'approvisionnement en daraxonrasib pour la phase 3 n'est pas assuré
+
+**Nouveau pour le livre blanc, daté du 9 novembre 2026** (le
+communiqué T3 du même jour était au §8.80 ; le contenu du 10-Q,
+lui, n'y était pas).
+
+Formulaire 10-Q de Tango Therapeutics, trimestre clos le 30
+septembre 2026, déposé le 9 novembre 2026, lu ici à la source
+primaire (SEC, accession 0001193125-26-452634, document
+`tngx-20260930.htm`), extrait conservé
+(`tango_10q_supply_excerpt_892.txt`, SHA `e229daaf…82ed7466`),
+cité verbatim (section Risk Factors) :
+
+> « While we are pursuing multiple pathways to obtain clinical
+> supply of daraxonrasib for the planned trial, there is no
+> assurance that we will be able to secure clinical supply of
+> daraxonrasib on our anticipated timeline, on commercially
+> reasonable terms, or at all. »
+
+Traduction : « Bien que nous poursuivions plusieurs voies pour
+obtenir l'approvisionnement clinique en daraxonrasib pour l'essai
+prévu, rien ne garantit que nous puissions obtenir cet
+approvisionnement dans les délais prévus, à des conditions
+commercialement raisonnables, ou du tout. »
+
+Le même 10-Q confirme le plan de phase 3 (randomisation 1:1,
+vopimetostat 200 mg + daraxonrasib 100 mg 1×/jour contre
+chimiothérapie standard, doubles critères ORR/PFS, OS secondaire
+clé, démarrage 1er semestre 2027) et le projet d'essai MTAP
+wild-type (~25 patients, 1er semestre 2027) — faits déjà au §8.80
+via le communiqué, confirmés ici à la source primaire.
+
+**Portée :**
+
+- Ce n'est pas une donnée d'efficacité et cela ne change rien au
+  rationnel MTAP/PRMT5 mesuré ici. C'est un **risque de
+  calendrier** : le démarrage « 1er semestre 2027 » dépend
+  explicitement de l'obtention de l'approvisionnement clinique
+  en daraxonrasib — un médicament dont Tango n'est pas le
+  promoteur (Revolution Medicines en détient l'approvisionnement
+  et les essais d'enregistrement propres ; l'accord de
+  collaboration et de fourniture de novembre 2024 couvre les
+  essais de combinaison en cours, la fourniture pour la phase 3
+  restant à sécuriser).
+- La prochaine vérification utile reste la même : l'apparition
+  d'un numéro NCT pour la phase 3 et/ou l'annonce du premier
+  patient randomisé — avec désormais un jalon intermédiaire à
+  surveiller : toute annonce de sécurisation (ou non) de
+  l'approvisionnement.
+
+## 4. Le reste du champ : rien de nouveau depuis le §8.80
+
+- **Vopimetostat + ERAS-0015 (TNG462-C103, NCT07897734)** :
+  première publication 27 octobre 2026, NOT_YET_RECRUITING,
+  début estimé novembre 2026 — déjà au §8.80, aucune donnée.
+- **MountainTAP-5 (NCT07492680, navlimetostat + daraxonrasib)** :
+  en recrutement, aucune donnée — déjà au §8.80.
+- **Daraxonrasib seul** : aucune nouvelle donnée RASolute 303 /
+  304 depuis le §8.80 (le point du 4 nov. 2026 et les données ENA
+  du 19 nov. 2026 y sont déjà).
+- **Recherche web générale** (21 nov. 2026) : aucune annonce
+  postérieure au 9 novembre 2026 sur la combinaison ; les
+  reprises du 9–13 novembre (Morningstar, Readthrough, VigiEye,
+  WhyMyStockMoved, FrontierPicks) ne font que relayer le
+  communiqué T3 et le 10-Q.
+
+## 5. Ce que cela change — et ne change pas — pour le rationnel MTAP/PRMT5
+
+### 5.1 Ce qui ne change pas
+
+- **Le rationnel DepMap mesuré ici est intact** : l'effet PRMT5
+  suit MTAP, pas CDKN2A (§8.28/§8.29/§8.40 ; 4 confirmations ;
+  PRMT5 Chronos −1,385 MTAP-délété vs −1,010 intact, p=0,0036).
+  **Aucun fait nouveau de cette vérification ne le contredit.**
+- **Le chiffre clinique central est inchangé** : ORR 82 % (18/22),
+  DCR 100 %, PFS médiane non atteinte, n=22, non randomisé, sans
+  OS. Il n'a été ni confirmé sur un plus grand effectif, ni
+  infirmé.
+- **La phase 3 reste le test décisif**, et son design (1:1 contre
+  chimiothérapie, doubles critères ORR/PFS, OS secondaire clé)
+  reste celui qu'une confirmation exigerait.
+
+### 5.2 Ce qui change — ou se précise
+
+1. **L'absence de numéro NCT est désormais établie par le
+   registre lui-même**, pas seulement par les communiqués : la
+   limite méthodologique du §8.80 §7 est levée pour cette
+   question (interrogation directe de l'API v2, 2 études
+   vopimetostat, 16 études daraxonrasib, aucune phase 3 de la
+   combinaison).
+2. **Le calendrier « 1er semestre 2027 » est explicitement
+   conditionné à l'approvisionnement** (10-Q, 9 nov. 2026) : ce
+   n'est plus seulement une intention d'entreprise, c'est une
+   intention assortie d'un risque déclaré par l'entreprise
+   elle-même. Un glissement de ce calendrier ne serait pas une
+   surprise — il est annoncé comme possible.
+3. **Le champ vopimetostat s'élargit encore** (TAP-ALK, poumon
+   ALK+ MTAP-délété) : troisième famille de combinaisons
+   vopimetostat en développement clinique (après RAS(ON) et
+   ERAS-0015), toujours sans donnée d'efficacité.
+
+## 6. Ce qui reste ouvert — jalons à vérifier (mise à jour du §8.80 §6)
+
+| Jalon | Échéance annoncée | Source | Statut au 21 nov. 2026, ~12h00 EST |
+|---|---|---|---|
+| Phase 3 vopimetostat + daraxonrasib : numéro NCT, premier patient | 1er semestre 2027 | Tango, 9 nov. 2026 ; 10-Q, 9 nov. 2026 | Non démarrée, pas de NCT ; approvisionnement non sécurisé (risque déclaré) |
+| Phase 3 : discussion d'une voie d'approbation accélérée en 2e ligne | Non datée | Tango, 9 nov. 2026 | Discussion prévue, rien de déposé |
+| Phase 1/2 vopimetostat + pan-RAS, PDAC MTAP wild-type (~25 pts, 2e ligne) | 1er semestre 2027 | Tango, 9 nov. 2026 | Prévue, pas de NCT publié |
+| Vopimetostat + ERAS-0015 (NCT07897734) : premières données | Non datée | Tango/Erasca, 4 nov. 2026 | Recrutement non encore démarré, aucune donnée |
+| MountainTAP-5, cohortes navlimetostat + daraxonrasib (NCT07492680) : premières données | Non datée | BMS / registre | En recrutement, aucune donnée |
+| TAP-ALK, vopimetostat + lorlatinib (NCT07938463) : premières données | Non datée | Dana-Farber / registre, 16 nov. 2026 | Non encore en recrutement, aucune donnée |
+| Vopimetostat monothérapie poumon + TNG456 : données | Janvier 2027 | Tango, 9 nov. 2026 | En attente |
+| RASolute 303 : fin du recrutement mondial | 1er semestre 2027 | Revolution Medicines, 4 nov. 2026 | Recrutement US terminé |
+| RASolute 304 (adjuvant) : données | Non datée | Revolution Medicines, 4 nov. 2026 | En cours, aucune donnée |
+| Nouvelle coupe de données TNG462-C102 (vopimetostat + daraxonrasib) : PFS médiane ? OS ? | Non datée | — | Aucune annoncée ; dernière màj du registre : 23 oct. 2026 |
+
+## 7. Limites de cette vérification
+
+- **Fenêtre très courte** : quelques heures séparent cette
+  vérification de celle du §8.80 (même jour, 21 nov. 2026).
+  L'absence de nouveauté sur la combinaison dans cette fenêtre
+  est un fait de calendrier autant qu'un fait de fond — la valeur
+  ajoutée de ce chantier est l'interrogation directe du registre
+  et la lecture du 10-Q à la source primaire, pas une fenêtre plus
+  longue.
+- **Aucune donnée mesurée ici** : cette section est une veille
+  documentaire. Les seuls chiffres mesurés dans ce projet
+  restent ceux des §8.28/§8.29/§8.40 (DepMap).
+- **Sources secondaires** : pour les reprises du communiqué T3
+  (Morningstar, Readthrough, VigiEye, WhyMyStockMoved,
+  FrontierPicks), les faits retenus comme nouveaux (TAP-ALK,
+  avertissement d'approvisionnement) ont été vérifiés à la source
+  primaire (fiche ClinicalTrials.gov ; 10-Q SEC) avant d'être
+  rapportés.
+
+## 8. Sécurité — rappel
+
+Cette section rapporte des données d'essais cliniques publiées.
+Elle ne contient **aucune recommandation clinique**. Le livre
+blanc n'est pas un conseil médical : toute question de traitement
+se discute avec un oncologue.
+
+---
+
+*Prochaine vérification proposée : à l'apparition d'un numéro NCT pour la phase 3 vopimetostat + daraxonrasib, ou à la prochaine donnée TNG462-C102, ou au plus tard à la fin du 1er semestre 2027.*
+
+— Fin de la §8.92. —
+
+---
+
 ### 8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas
 
 | | v1 (brute) | v2 (hors pureté) | v3 (+ correction) | v4 (+ hors sexe) |
@@ -23270,5 +23729,11 @@ Texte d'origine intact partout ; chaque addendum est une insertion datée, jamai
 - **21 nov. 2026, 10h57 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — tête `6e7d1506`, §8.87–§8.89.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé, ancienne tête `4052c0f3` → nouvelle tête `6e7d1506` (1 commit, vérifié en lecture directe : `6e7d1506`, 21 nov. 2026 15:57:48 UTC — livre blanc §8.1–§8.89, README, DATA_SOURCES révisée §38–§40). Même blob livre blanc des deux côtés (vérifié par SHA git `0bc3afe7…`). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
 
 - **21 nov. 2026 : FUSION §8.90 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1348 PAGES.** Audit complet du livre blanc (§8.1–§8.89) en quatre volets, lecture seule, aucun run, rédigé dans `section_8.90_audit_complet.md` (443 lignes, SHA `40de98b9…bc9b9`), fusionné par le finisseur avant « ### 8.5 Synthèse des 4 versions » ; ligne 96 au §7 ; entrées de journal ajoutées pour les poussées `b82c3a19` (principal, §8.87–§8.89, Release v6.2-8.89) et `6e7d1506` (suite, privée) ; DATA_SOURCES.md INCHANGÉE (1 356 lignes, SHA `2c8df23c…` — aucune source nouvelle dans un audit en lecture seule) ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 23 272 lignes, SHA-256 `943b66cc…687ae` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-890`, FIN 16:19:16 UTC, soit 11h19:16 heure de Montréal) : **1348 pages A4, 14747138 octets, SHA-256 `9331f107a1d8aac858eb1108ab522deb0c1b038b48abdaf872329ea3d796096d`** (ancien 1310 pages, SHA `9a04e93b…`) ; couverture §8.1–§8.90 (kicker 19–21 novembre 2026, nouveau paragraphe §8.90) ; §8.90 et entrées b82c3a19/6e7d1506 vérifiés présents par lecture du PDF, chiffres clés présents (6/8 contre 1/8 ; +0,1447 ; 10/10 ; +0,0314 ; −0,0239 ; 10/15) et texte d'avertissement renforcé (§8.90.3.4) présent. Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`, SHA complet v6.2 `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`). Verdicts : (volet 1) le podcast a dit juste sur un point précis (`maxsep` 6/8 contre MC 1/8, chiffres exacts re-vérifiés ; GSE79668 renverse +0,1447 contre 13 nuls ; MTAP 10/10) mais a exagéré en généralisant (6/8 tient à une paire, ICGC charnière ; rotations sans doublon 37/48, pas 48/48 ; paires récentes contraires : GDC fragile confirmé +0,0314, GSE194249 NON −0,0239) ; (volet 2) 0 écart numérique sur 9 chiffres clés re-vérifiés, 1 coquille de SHA corrigée par addendum daté (PROVENANCE_889 §7 : `0f828245…bef946` → `0f828245…aadadb0`) et 7 autres incohérences corrigées par addenda datés (dont le titre §8.51, révisé par le §8.54.8(f)) ; (volet 3) aucun avertissement médical visible (0 occurrence de « conseil médical » ou « oncologue »), aucune recommandation clinique directe, faits cliniques tous conformes — texte d'avertissement renforcé au §8.90.3.4, sa mise en tête du document est une DETTE de gabarit (priorité haute, avant la prochaine publication) ; (volet 4) le mot « universel » est exagéré tel quel (l'Ising n'a jamais tourné en v6/v6.1/v6.2 ici) — redéfinition en une phrase au §8.90.4.5. Corrections de Zackary (21 nov. 2026) : MC n'est jamais seul — la batterie entière fait le verdict (règle NOUVELLE, « batterie » : 0 occurrence avant) ; `maxsep` est le score principal AFFICHÉ, pas le verdict ; « MC = pur bruit » tranché en deux parties (vrai comme discriminateur réel/nul sur le cancer, faux comme nombre sans structure) ; code vérifié (lignes 3333 et 10095 de `universal_v6.2.0_cohen.py`) — les deux scores sont calculés dans le même run, l'adoption n'a changé que l'ordre d'affichage, pas de v6.5. Reformulations R1–R5 et R7 appliquées comme addenda datés ; R6 et R8 appliquées par la formulation de la présente entrée : le « 82 % » (vopimetostat + daraxonrasib, MTAP-délétés, phase 1/2 non randomisée, n=22, sans survie globale — piste, pas un traitement prouvé) et « double la survie » (essai RASolute 302, patients prétraités, 13,2 vs 6,7 mois, HR 0,40). I-7 : reformulation de l'entrée de journal de fusion §8.87–§8.89 — les suffixes SHA MOESM5/7/8 corrigés (ef25eb / a194fe / d5e389) sont présents dans PROVENANCE_884.md (fichier, lignes 138–140) et repris dans l'annexe des provenances du PDF ; le corps du §8.84 ne les reproduit pas. Anciens suffixes (1eb46c / 2a1957 / 4f06e) : 0 occurrence dans le PDF ; 1 occurrence dans le fichier `.md` (l'entrée de journal qui les nomme comme anciennes valeurs). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
+
+- **21 nov. 2026, 11h22 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `4901432b`, §8.90, RELEASE v6.2-8.90 À CRÉER PAR LE PARENT.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `b82c3a19` → nouvelle tête `4901432b` (2 commits, vérifiés en lecture directe : `8ebdcc8d` (1/2, livre blanc, README, provenance, sections), `4901432b` (2/2, MANIFEST_SHA256.txt) ; commits 21 nov. 2026 16:22:27–16:23:40 UTC). Contenu : livre blanc §8.1–§8.90 (23 274 lignes, SHA `5fbaba28…`, blob git `e531b687…`), PDF 1348 pages (14 747 138 octets, SHA `9331f107…`). Release `v6.2-8.90` : PDF 1348 p. à créer par le parent (pas par le finisseur). Cette entrée clôt la mention « Poussée GitHub à venir » de l'entrée de fusion §8.90 ci-dessus.
+
+- **21 nov. 2026, 11h24 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — tête `08fcc9a4`, §8.90.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé, ancienne tête `6e7d1506` → nouvelle tête `08fcc9a4` (1 commit, vérifié en lecture directe : `08fcc9a4`, 21 nov. 2026 16:24:11 UTC — livre blanc §8.1–§8.90, README, DATA_SOURCES inchangée, SHA `2c8df23c…`). Même blob livre blanc des deux côtés (vérifié par SHA git `e531b687…`). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
+
+- **21 nov. 2026 : FUSION §8.91–§8.92 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1357 PAGES.** Sections rédigées dans `section_8.91_gse194249_sra.md` (169 lignes, SHA `96a32946…98601`) et `section_8.92_vopimetostat_verification.md` (284 lignes, SHA `009914c5…658aaf`), fusionnées par le finisseur avant « ### 8.5 Synthèse des 4 versions » ; titres normalisés « ### 8.91 GSE194249 : re-dérivation depuis les lectures brutes (SRA) — PISTE FERMÉE, lectures non accessibles en libre accès (21 novembre 2026) » et « ### 8.92 Vérification vopimetostat + daraxonrasib, phase 3 : NON CHANGÉ pour la combinaison — toujours pas de numéro NCT, toujours pas de nouvelle coupe de données ; deux faits nouveaux par ailleurs (21 novembre 2026) » (les sections sources commençaient par « # §8.XX — ... ») ; lignes de go/dates : les deux sections portent déjà leur paragraphe go/protocole juste après le titre (§8.91 : go 11h09, protocole gelé avant toute tentative de téléchargement ; §8.92 : go 11h09, protocole gelé avant toute recherche) — aucune ligne ajoutée, pas de doublon ; marqueurs de fin normalisés (« *Fin de la section §8.XX. ...* » → phrase de clôture conservée en italique + « — Fin de la §8.XX. — ») ; lignes 97–98 au §7 ; entrées de journal ajoutées pour les poussées `4901432b` (principal, §8.90, Release v6.2-8.90 à créer par le parent) et `08fcc9a4` (suite, privée) ; DATA_SOURCES.md révisée (1 484 lignes, SHA `dec70e17…`, nouvelles §41 GSE194249 accès SRA et §42 vérification vopimetostat ; Annexe B complétée : PROVENANCE_890.md, PROVENANCE_891.md, PROVENANCE_892.md) ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 23 737 lignes, SHA-256 `2fb5e76c…f5d14d` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-892`, FIN 16:35:29 UTC, soit 11h35:29 heure de Montréal) : **1357 pages A4, 14794967 octets, SHA-256 `91989ddb6b6df30f062ecfe8f30b833cb04481549720dc219fb3cba77b487476`** (ancien 1348 pages, SHA `9331f107…`) ; couverture §8.1–§8.92 (kicker 19–21 novembre 2026, nouveau paragraphe §8.91–§8.92) ; §8.91 et §8.92 et entrées 4901432b/08fcc9a4 vérifiés présents par lecture du PDF, chiffres clés présents (SRA 0 expérience ; OEP001744 ; NCT07938463 ; 10-Q 9 nov. 2026 ; « aucune assurance ») et texte d'avertissement renforcé (§8.90.3.4) présent. Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`, SHA complet v6.2 `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`). Verdicts : (§8.91) **PISTE FERMÉE** — re-dérivation SRA impossible en libre accès (SRA 0 expérience pour PRJNA799993 et PRJNA801501, ENA 0 run ; données brutes chez NODE, accès contrôlé OEP001744, aucune demande faite) ; 0 téléchargement, 0 CSV, 0 run ; A2 inchangé 10/15, 12/15 positifs, LOO 9/14 ; C3 reste levée. (§8.92) **NON CHANGÉ pour la combinaison** — toujours pas de numéro NCT pour la phase 3, toujours pas de nouvelle coupe TNG462-C102 (dernière mise à jour du registre 23 oct. 2026, coupure 20 août 2026, ORR 82 %, n=22), démarrage 1er semestre 2027 inchangé ; deux faits nouveaux : NCT07938463 (TAP-ALK : vopimetostat + lorlatinib, CBNPC ALK+ MTAP-délété, Dana-Farber, première publication 16 nov. 2026) et 10-Q de Tango du 9 nov. 2026 (source primaire SEC : « aucune assurance » d'obtenir l'approvisionnement clinique en daraxonrasib — démarrage 1H 2027 explicitement conditionné à l'approvisionnement) ; aucune recommandation clinique. Incident de lot : la machine a redémarré à 16h31 UTC pendant le premier lancement du build PDF (unité pdf-build-892 tuée, log vide, PDF ancien intact) — build relancé après vérification de l'état (livre blanc SHA 2fb5e76c… et DATA_SOURCES SHA dec70e17… intacts, couverture §8.1–§8.92 en place), terminé EXIT 0, index.html régénéré (17 700 691 caractères). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore ; Release `v6.2-8.92` à créer par le parent. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
 
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*
