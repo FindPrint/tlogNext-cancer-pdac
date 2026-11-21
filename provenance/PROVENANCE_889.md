@@ -240,3 +240,13 @@ les 4 pages ont été rendues en images et lues visuellement).
   `fig14c_bar3.png`, `rs16-1.png` à `rs16-4.png`
 - Aucun script de test direct produit (condition non remplie) ;
   aucun run pipeline ; livre blanc non édité ; rien poussé.
+
+## Addendum — 21 novembre 2026 (audit §8.90, I-1)
+
+Coquille de transcription au §7 ci-dessus : lire `examine_889.json`
+(SHA `0f828245…aadadb0`) au lieu de `0f828245…bef946`. SHA complet
+vérifié par `sha256sum` :
+`0f828245cfad1a2b996c61886aef2f54557e1576035f684668890e9e3aadadb0` —
+conforme au §4 de la même provenance et au §40 de DATA_SOURCES.md.
+Le texte d'origine ci-dessus est intact ; aucun verdict n'est touché
+(le fichier `examine_889.json` lui-même est intact et conforme).
