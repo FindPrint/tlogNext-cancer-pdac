@@ -234,6 +234,12 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 81 | 20–21 nov. 2026 | **Clôture du résidu M2 du §8.63 (§8.75)** (go de Zackary « Les 3 allez s'y », 20 nov. 2026 18h04, 3e des 3 pistes du lot du 20 nov. ; protocole gelé avant tout nouveau script et tout nouveau run `PROTOCOL_m2_cloture_875.md`, SHA `f829fd77…89c` ; **40/40 runs v6.2 exit 0** (30 nuls ICGC frais s61–s90 + 10 nuls GSE62452 frais s31–s40) ; **TRANCHÉ–CONFIRMÉ** : la réplication hors échantillon de M2 tient — 24/30 nuls ICGC frais (80,0 %) et 9/10 nuls GSE62452 frais choisissent la config réelle ; taux stabilisé **80 %**, pas 85 % (poolé ICGC 64/80, GSE 26/30) ; M2 passe de PARTIELLEMENT EXPLIQUÉ à **EXPLIQUÉ** ; erreur de transcription documentée et corrigée (copie de `fwhm_rob_from_curve`, rob reproduite à 0,00e+00 sur 1 320 configs) ; le résidu « pourquoi la robustesse bascule sur telle permutation » reste renvoyé au §8.73 (NON ÉLUCIDÉ). Détail au §8.75. |
 | 82 | 20–21 nov. 2026 | **Robustesse appariée du signal `maxsep` sur le lot FNA (§8.76)** (piste suivante nommée au §8.74.9, sous le go de Zackary « Les 3 allez s'y », 20 nov. 2026 18h04 ; protocole gelé avant toute construction et tout run `PROTOCOL_maxsep_gse131050_fna_876.md`, SHA `dd7937ee…3bc5f` ; GSE131050, lot Yeh_seq FNA, n = 42 tumeurs, 41/42 mêmes tumeurs que le lot FF du §8.74 — test de robustesse APPARIÉ, pas une paire indépendante ; **2/2 runs v6.2 exit 0** ; **CONFIRME** : **d_maxsep +0,1642** (réel 0,4083 contre nul 0,2441), marge de 0,0942 au-dessus du plancher 0,07, plus de deux fois l'écart FF (+0,0739) ; A2 INCHANGÉ **8/12** (10/12 positifs), LOO 7/11 — le lot FNA n'est pas compté comme treizième paire ; extraction 2/2 à 0,0 exact ; **C3 RESTE LEVÉE** (consolidation supplémentaire, ne rouvre rien) ; CSV réel SHA `70697b3a…10324`, nul `2474ceaf…4d35`. Détail au §8.76. |
 | 83 | 21 nov. 2026 | **Réparation de la reproductibilité des dépôts (§8.77)** (ordre de Zackary, 20 nov. 2026 19h40 : réparation à part, sans toucher à l'état actuel ; protocole gelé avant tout travail `PROTOCOL_reproductibilite_877.md`, SHA `dbe1746f…4030` ; **REPRODUCTIBILITÉ RÉPARÉE** : les 19 fichiers bruts sans URL consignée du §17 ont TOUS retrouvé une URL vérifiée par SHA-256 (19/19 gaps fermés, dont le SOFT GPL20769, le fichier clinique du test C et les 4 fichiers CPTAC) ; script de re-téléchargement corrigé (`download_data_877.sh`, SHA `55811136…`, `bash -n` OK, 12 corrections), exécuté en entier jusqu'à **EXIT:0** (52 fichiers, 2,4 Go, tous vérifiés) ; test à froid TCGA v4 : flux reconstruits SHA-IDENTIQUES et runs v6.2 identiques aux chiffres tenus à **0,0 exact** des deux côtés ; DATA_SOURCES.md révisé (900 lignes, SHA `17b8428b…`, nouvelles §28 sources §8.76 et §29 chantier §8.77, §17 révisé 19/19 fermés) ; deux fautes de frappe de SHA latentes corrigées (Birnbaum MOESM3 §13, LUAD §2.3) ; **0 section modifiée, 0 verdict rouvert** — le test C reste NON (§8.45). Détail au §8.77. |
+| 84 | 21 nov. 2026 | **Inventaire utile des dépôts GitHub Ising / cancer — piste A (§8.78)** (piste A du lot du 21 nov. 2026 ; protocole gelé avant toute lecture `PROTOCOL_inventaire_depots_878.md`, SHA `39667dc4…2391d1` ; provenance `PROVENANCE_878.md`, SHA `802e22cf…28f1fd` ; **17 dépôts dénombrés** (`user:FindPrint`), 6 inventoriés en profondeur ; **4 dépôts utiles** — `universal-log-research` le plus riche (benchmarks Ising, calibration des 29 estimateurs, analyses PDAC 16–20 nov.), `pdac-systems-evidence-preclinical` (registre de gouvernance, scripts et reçus GDC), `T_log-` (archive des versions v3.2 → v6.0), `apamea-artificial-spin-ice-multiflux` (méthode de rotation des contrôles) ; **6 candidates pour la piste B, dont 2 fortes** — C1 Chen et al. 2025 (46 PDO × 63 AUC, MOESM13 SHA `0e009cd5…`) et C2 GDC ORGANOID-PANCREATIC (55 RNA-seq) ; `tlogNext-pdac-phase2` (autre IA) nommé seulement, contenu non lu ; **0 run, 0 téléchargement, 0 modification de dépôt** — rien ici n'est un verdict importé). Détail au §8.78. |
+| 85 | 21 nov. 2026 | **Nouvelle série indépendante, treizième paire : GSE57495 CONFIRME (§8.79)** (piste B du lot du 21 nov. 2026 ; protocoles gelés avant tout téléchargement / toute construction `PROTOCOL_nouvelle_serie_879.md` (C2), SHA `84b1adfa…27538`, et addendum C3 `PROTOCOL_nouvelle_serie_879_C3.md`, SHA `a4399737…ce3d01` ; provenance `PROVENANCE_879.md`, SHA `a42060fe…7a13d` ; **C2 ARRÊTÉE** : GDC ORGANOID-PANCREATIC, 55/55 fichiers MD5 OK, total 232 648 892 o, mais **DPCR1 absent de 55/55** — symbole retiré de GENCODE v36, devenu MUCL3 (présent 55/55) — aucun CSV C2, aucun run C2 ; **cohorte #2 GSE57495, 11 flux** (GSTM1 absent), n = 63, matrice SHA `995dbeff…532efc` ; **2/2 runs v6.2 exit 0** ; **CONFIRME** : **d_maxsep +0,4494** (réel 0,6381 contre nul 0,1887), plus grand écart `maxsep` jamais mesuré sur une paire GEO ; A2 **9/13** (11/13 positifs), LOO **8/12** ; **C3 RESTE LEVÉE** ; CSV réel SHA `224f98eb…bb51c`, nul `5cd27459…41edf` ; **caveat** : GSE57495 est la cohorte #2, déjà tenue comme holdout direct (§8.66/§8.69, ρ=0,4377) — **jamais une confirmation indépendante de KRAS–CEACAM5** ; C1 (lot drogue) piste suivante). Détail au §8.79. |
+| 86 | 21 nov. 2026 | **Nouvelles sur vopimetostat + daraxonrasib depuis ESMO 2026 (§8.80)** (piste C du lot du 21 nov. 2026 ; protocole gelé 21 nov. 2026 07h02 EST avant toute recherche `PROTOCOL_vopimetostat_nouvelles_880.md`, SHA `169b9d7e…49a7` ; provenance `PROVENANCE_880.md`, SHA `3b17b776…610cf` ; **veille documentaire, aucune donnée mesurée ici** ; **aucune nouvelle donnée sur la combinaison depuis ESMO 2026** (ORR 82 %, 18/22, inchangé), **phase 3 sans NCT** — design désormais précisé (1:1, vopimetostat 200 mg + daraxonrasib 100 mg 1×/jour contre chimiothérapie, doubles critères ORR et PFS, démarrage 1er semestre 2027) ; **approbation européenne de daraxonrasib seul (RASONQUE) le 16 nov. 2026** ; 1re ligne daraxonrasib + GnP plus mature (ENA 2026, n=61, PFS médiane 12,8 mois) ; vopimetostat + ERAS-0015 recrutement ouvert (NCT07897734) ; navlimetostat + daraxonrasib MountainTAP-5 (NCT07492680) ; essai vopimetostat + pan-RAS chez MTAP wild-type prévu 1er semestre 2027 — test de la frontière MTAP ; **rationnel MTAP/PRMT5 mesuré ici intact**). Détail au §8.80. |
+| 87 | 21 nov. 2026 | **Piste Œil : la tumeur du pancréas copie-t-elle le privilège immunitaire de l'œil ? — MIXTE (§8.81)** (piste proposée par Zackary le 21 nov. 2026, lancée le jour même ; protocole gelé avant toute construction et tout run `PROTOCOL_oeil_privilege_881.md`, SHA `c985a03a…a4ce` ; provenance `PROVENANCE_881.md`, SHA `3755cd98…8893` ; 7 gènes de privilège, 4 cohortes PDAC ordonnées par KRAS (TCGA n=178, GSE71729 n=145, GSE62452 n=69, ICGC n=70) ; **3/7 montent** (CD47, TGFB1, CD274), 4 ne montent pas ; score PRIV rho médian **+0,122**, sous le seuil gelé +0,15 ; bras pipeline v6.2 TCGA ordre PRIV : **d_maxsep +0,1649** (réel 0,3534 contre nul 0,1885, au-dessus du plancher) **mais la chaîne du §8.11 ne réapparaît pas** ; mélanome uvéal TCGA-UVM (n=80, tarball SHA `b50fdadb…9975`) : gènes de privilège **MOINS** exprimés qu'en PAAD (d −0,35 à −3,00), plus froid (PDCD1 −1,30, CD8A −1,33, GZMB −1,60), et sous l'ordre PRIV les gènes v4 **MONTENT** (PGC +0,321, CLDN18 +0,306, CR2 +0,289) — image miroir, pas réapparition ; **piste Œil CLOSE** comme question de copie d'un programme). Détail au §8.81. |
+| 88 | 21 nov. 2026 | **Cerveau, deuxième site à privilège immunitaire (TCGA-GBM) (§8.82)** (deuxième bras supplémentaire autorisé par Zackary, idées propres ; protocole gelé 21 nov. 2026 ~07h20 EST `PROTOCOL_cerveau_privilege_882.md`, SHA `487fc59d…fec8` ; provenance `PROVENANCE_882.md`, SHA `837622d9…ae0b` ; TCGA-GBM Firehose stddata 2016-01-28, tarball MD5 `cfc6cf0a…32d28`, **153 tumeurs primaires** ; axe agressivité = score de prolifération ; **tests directs — DESCEND** : les 7 gènes de privilège **DESCENDENT** quand la prolifération monte (**médiane rho −0,287**, 0/7 positifs, 7/7 p < 0,05 ; score PRIV −0,477) — inverse de l'hypothèse ; **FROID** : score froid rho −0,239, mais pas par les mêmes gènes qu'au pancréas (CD4 −0,365, FOXP3 −0,219 ; CD8A et PDCD1 plats) ; bras pipeline v6.2 **PARTIEL fragile** : **d_maxsep +0,0283** (réel 0,2123 contre nul 0,1840, sous le plancher 0,07), nuls frais +0,0175 / +0,0402, paire secondaire PRIV +0,0116 ; **chaîne PDAC absente** ; A2 inchangé, GBM hors compte A2). Détail au §8.82. |
+| 89 | 21 nov. 2026 | **Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? (§8.83)** (deuxième bras supplémentaire autorisé par Zackary, idées propres ; protocole gelé 21 nov. 2026 ~07h25 EST `PROTOCOL_survie_privilege_883.md`, SHA `0eb83d63…c206`, amendé AVANT toute lecture des résultats privilège ; provenance `PROVENANCE_883.md`, SHA `5f249140…08c1` ; **hors pipeline** ; calibration 3/3 (Cox MUC16 1,4392 / 1,5688 / 1,0625) ; **3 items sur 8 PRÉDISENT COMME CA125** (Cox HR > 1, p < 0,05 dans ≥ 2/3 cohortes) — **TGFB2, HLA-G et le score combiné** (médiane ICGC du score 9,5 vs 23,7 mois, comme CA125) ; **mais aucun gène ne monte avec KRAS dans ≥ 2/3 cohortes** — le signal de survie **ne passe pas par KRAS** (HLA-G descend avec KRAS en GSE71729, rho −0,288) ; CD47 MIXTE (sens opposés TCGA / GSE71729) ; TGFB1 une cohorte seule (ICGC HR 1,77) ; C3 reste levée, test C reste NON). Détail au §8.83. |
 
 ---
 
@@ -17960,6 +17966,2136 @@ Original du script : `~/workspace/staging-pdac/download_data.sh`, SHA
 
 ---
 
+### 8.78 Inventaire utile des dépôts GitHub Ising / cancer (PISTE A) (21 novembre 2026)
+Piste A du lot du 21 nov. 2026 (inventaire des dépôts, lecture seule) ; protocole gelé 21 nov. 2026 avant toute lecture — aucun run, aucun téléchargement de données, aucune écriture sur GitHub, aucune modification de dépôt.
+
+**Date d'inventaire :** 21 novembre 2026 (lecture seule, connecteur GitHub, compte FindPrint).
+**Statut :** PISTE — rien ici n'est un verdict importé. Tout résultat cité d'un autre dépôt est une
+hypothèse à tester, jamais une preuve (règle du 15 novembre 2026). Aucun run n'a été lancé dans ce
+chantier, aucun fichier n'a été téléchargé, modifié ni poussé.
+**Pipeline de référence :** v6.2, SHA `f07567c4…` (inchangé, jamais modifié).
+**Livre blanc :** `livre-blanc-pdac-v6.md`, §8.1–§8.77, SHA local vérifié `e4804934fa832131…`
+(16 premiers caractères hexadécimaux, 21 nov. 2026 12h07 UTC).
+**Protocole :** `PROTOCOL_inventaire_depots_878.md`. **Provenance :** `PROVENANCE_878.md`.
+**Périmètre :** les 17 dépôts du compte FindPrint ont été dénombrés par recherche
+(`user:FindPrint`, 17 résultats, 21 nov. 2026). Six ont été inventoriés en profondeur ;
+quatre dépôts PDAC déjà connus sont seulement nommés ; `tlogNext-pdac-phase2` (autre IA)
+n'a été ni lu ni ouvert au-delà de son nom dans la liste des 17 — il est seulement nommé
+ci-dessous, sans aucune lecture de son contenu. Six autres dépôts hors périmètre sont
+nommés à partir de la seule liste de recherche, sans lecture.
+
+---
+
+## Verdict d'abord
+
+**Utile comme piste — 4 dépôts.**
+
+1. **`universal-log-research`** (public, dernier commit 21 nov. 2026 00h21 UTC) — LE dépôt
+   le plus riche de la piste : benchmarks Ising classiques et quantique, calibration des
+   29 estimateurs, versions historiques du pipeline (v5.3 → v5.9.4), et surtout les analyses
+   PDAC des 16–20 novembre 2026 (Tiriac 2018, écran de réplication externe, GSE271300,
+   GSE194249, holdout GSE57495, carte inter-dépôts `REPOSITORY_MAP_2026-11-20.md`).
+   C'est lui qui porte les candidates pour la piste B.
+2. **`pdac-systems-evidence-preclinical`** (public, dernier commit 17 sept. 2026) — registre
+   de gouvernance et de provenance préclinique : protocoles de recherche de séries ordonnées
+   (`PROTOCOL_003`), inventaire de sources PDAC ordonnées du 27 août 2026 (GSE262627,
+   OrganoIDNetData, GSE186960, GDC organoid), scripts d'import GDC et reçus d'intégrité
+   (55 RNA-seq ouvertes). Utile comme méthode et comme source de candidates, pas comme résultat.
+3. **`T_log-`** (public, dernier commit 15 nov. 2026) — archive des versions du pipeline,
+   de v3.2 à v6.0 (`universal_v6.0.0_cohen.py`, `v5.9.0f`, v4.2.5 → v5.9.2). Utile comme
+   provenance des versions et comme référence historique ; aucune donnée cancer nouvelle.
+4. **`apamea-artificial-spin-ice-multiflux`** (privé, dernier commit 17 sept. 2026) — carte
+   multi-flux 17 contrôles sur glace de spin artificielle (données Zenodo DOI
+   10.5281/zenodo.8250892, 685 frames). Utile comme MÉTHODE : rotation des contrôles,
+   ablations, leave-one-temperature-out — le précédent méthodologique direct de la rotation
+   des contrôles du §8.32. Aucune donnée cancer.
+
+**Archive / sans rapport direct — 2 dépôts.**
+
+5. **`TLOG`** (public, dernier commit 17 sept. 2026) — notes de théorie seulement : deux
+   fichiers texte (`Tlog_n_d_d4log_n.txt`, `InverseTlog_n_d_d4log_n.txt`) et un PDF
+   (`Tlog(Part2).pdf`). README d'un mot (« # TLOG »). Rien d'exécutable, rien de PDAC.
+6. **`Simulation-tlog`** (public, dernier commit 14 oct. 2026) — 48 notebooks Jupyter
+   `ModeFast` / `ModeRobust` générés (Ising 2D, Ising quantique, Bio-ising2d, BioCancer,
+   Cosmo, Climat, Finance, pharmacovigilance, son, impression, molécule) avec leurs PDF.
+   README d'un mot. Archive de sorties générées, sans code de pipeline ni matrice PDAC
+   exploitable en l'état. Les deux notebooks `ModeFast_BioCancer_Tlog` /
+   `ModeRobust_BioCancer_Tlog` sont une piste documentaire seulement (contenu non lu :
+   notebooks de ~1 Mo, hors lecture utile pour un inventaire).
+
+**Candidates pour la piste B — 6, dont 2 fortes (détail au §8.78.8) :**
+
+| # | Candidate | Série / plateforme | n | Gènes v4 | Statut |
+|---|---|---|---|---|---|
+| C1 | **Chen et al. 2025, Nature Communications** (matrice AUC 46 PDO × 63 médicaments) | PDO, AUC médicaments | 46 | N/A (flux = AUC, pas des gènes) | **FORTE** — input CSV déjà préparé (SHA `296681b6…`), rejetée sous v5.9.4 (minimum 50) mais 46 ≥ 40 (minimum v6.2 fast) |
+| C2 | **GDC ORGANOID-PANCREATIC** (RNA-seq ouverte) | Organoïdes, RNA-seq | 55 | Non vérifié (transcriptome complet) | **FORTE** — transversale, matrice 60 660 gènes × 55, scripts d'import + reçus dans le dépôt |
+| C3 | **GSE57495** (GPL15048) | Tumeurs microdisséquées, microarray | 63 | **11/12** (GSTM1 absent) | Candidate avec caveat : matrice déjà détenue (SHA `995dbeff…`), mais déjà tenue comme holdout direct (§8.66/§8.69) — pas indépendante pour KRAS–CEACAM5 |
+| C4 | **GSE194249** (Nat. Commun. 2022, 84 PDPCOs) | PDPCO, FPKM + réponse médicaments | 84 (expression) ; n réponse < 50 sous v5.9.4, exact non versé | Non vérifié | À VÉRIFIER — audit scripté, sortie d'audit non versée au dépôt |
+| C5 | **GSE262627** (circadien PDA) | Organoïdes + lignées, RNA-seq, 7 temps | 68 échantillons, 7 positions | Non vérifié | NON RETENU pour v6.2 inchangé (7 < 40) ; piste design temporel authentique |
+| C6 | **OrganoIDNetData** (Zenodo 10643410) | Imagerie organoïdes, toutes les 4 h jusqu'à 100 h | ~26 positions/trajectoire potentielle | N/A (flux morphologiques à définir) | CONDITIONNEL — inventaire metadata-only seulement, archive 4,6 Go non téléchargée |
+
+**Leads d'accès seulement (pas de matrice publique exploitable) :** Nicholson et al. 2024 /
+JHH pharmacotyping (95 PDO, pas de matrice par PDO dans le supplément inspecté) ;
+Feizi et al. AACR 2025 (120 PDO, pas de matrice ligne à ligne liée).
+
+**Non-candidates (déjà tenues ou exclues, raisons écrites au §8.78.8) :** GSE271300 (souris,
+3/3 et 4/3 souris — trop petit) ; GSE186960 (un seul temps) ; Tiriac 2018 (déjà couru,
+25/25 contrôles) ; GSE21501, GSE79668 (déjà courues §8.69/§8.70/§8.72) ; GSE62165
+(4e cohorte, §8.64–§8.66) ; GSE78229, GSE28735 (incluses dans GSE62452) ;
+GSE15471, GSE16515, GSE32676, GSE91035, GSE84219, GSE179351 (n < 40).
+
+---
+
+## 8.78.1 — Méthode de l'inventaire (résumé ; protocole complet : `PROTOCOL_inventaire_depots_878.md`)
+
+Recherche `user:FindPrint` (17 dépôts, 21 nov. 2026) ; pour chaque dépôt cible : dernier
+commit (`list_commits`, 2 derniers), README (`get_file_contents`, SHA blob consigné),
+arborescence racine puis sous-dossiers pertinents, et lecture des documents de synthèse
+(cartes, écrans, protocoles, rapports). Lecture seule : aucune écriture, aucun push, aucun
+téléchargement de données, aucun run. Le dépôt `tlogNext-pdac-phase2` n'a pas été lu.
+La classification « tenue / non tenue » d'une cohorte a été vérifiée contre le livre blanc
+local (§8.1–§8.77) par recherche textuelle (`grep`) — voir `PROVENANCE_878.md`.
+
+---
+
+## 8.78.2 — `universal-log-research` — LE dépôt utile
+
+- **Lien :** https://github.com/FindPrint/universal-log-research
+- **Visibilité :** public. **Description :** « UNIVERSAL_LOG research pipeline, theory notes,
+  reproducible audits, Ising benchmarks, and exploratory PDAC analyses. »
+- **Créé :** 20 nov. 2026 23h49 UTC. **Dernier commit :** 21 nov. 2026 00h21:36 UTC,
+  SHA `c9e23e2eb91438b00272685503d78237da8f8e28` (« Document related repository versions
+  and evidence ») ; précédent 20 nov. 2026 23h49 UTC, SHA `26e54688…` (« Prepare public
+  source release »). C'est le dépôt le plus récent du compte.
+- **README :** SHA blob `16317faf463127d81927b4f58cf56126b8589691` (6 480 o). Il se présente
+  comme un « audit-first research pipeline » pour données multi-flux ordonnées, avec un
+  instantané de preuves au 20 novembre 2026 : Ising classique (dont un run aveugle L64
+  avec seuil proche de Tc 2D — « prometteur, pas une preuve »), pilote synthétique
+  (faux positifs possibles, une seule réalisation par cas), calibration (puissance limitée
+  pour transitions faibles), et trois analyses PDAC (Tiriac 2018, Nature Communications
+  2025, KRAS G12D + PARP souris). Avertissement explicite : pas d'usage médical.
+- **Structure (61 entrées à la racine) :** versions du pipeline (`UNIVERSAL_LOG_v5.3.py`,
+  `v5.8.py`, `v5.8_COHEND_ONLY.py`, `v5.9.0_COHEND_ONLY.py`, `v5.9.2.py`, `v5.9.3.py`,
+  `v5.9.4.py`, `v5.9.4_profiled.py`, `v5.9.0f`, `v6.0.0_cohen` — copies, PAS v6.2) ;
+  théorie et guides (`TLog.txt`, `GUIDE_DEBUTANT_UNIVERSAL_LOG.md`,
+  `MATRICE_29_ESTIMATEURS_TLOG.md`, `D_KIND_TAXONOMIE_V5_8.md`,
+  `CONTRAT_D_TLOG_ET_CALIBRATION.md`, `INDIVIDUAL_ESTIMATOR_EXTENSION_PLAN.md`,
+  `TLOG_TRANSITION_VALIDATION_PROTOCOL.md`, `ISING_MCMC_MULTIFLUX_PROTOCOL.md`) ;
+  audits (`AUDIT_DECISION_LOG.md`, `AUDIT_SUPPLEMENT_2026-11-14.md`,
+  `AUDIT_SUPPLEMENT_2026-11-15.md`, `README_AUDIT_REPRODUCTION*.md`,
+  `REPRODUCE_AUDIT*.ps1`, `SHA256SUMS*.txt`, `PUBLICATION_MANIFEST_2026-11-20.csv`,
+  `PROJECT_FILE_CATALOG*.csv`, `SUPPLEMENT_ATTACHMENT_INDEX*.csv`,
+  `REPOSITORY_MAP_2026-11-20.md`) ; dossiers `ising_classique_test/`,
+  `ising_quantique_test/`, `calibration_29/`, `calibration_29_v58/`,
+  `tlog_d_kind_v58_results/`, `audit_release/`, `output/`, `pancréas/`.
+- **Ising classique (`ising_classique_test/`) :** `PIPELINE_BENCHMARKS.md` (v5.3, 7 nov. 2026 —
+  18 tests sémantiques réussis, intégration sur balayage Ising L=16, 105 observations,
+  profils T_log multi-échelle, sensibilité aux blocs bootstrap, transfert quantique),
+  `finite_size/` (audit v6.0 : `synthetic_pilot_v1`, `calibration_v1`, `REPRODUCTION_FR.md`,
+  `tlog_sensitivity_report.md`), `generate_ising.py`, `finite_size_ising.py`,
+  `ising_temperature_sweep.csv`, `ising_field_sweep.csv`,
+  `multiflux_mcmc_pipeline_test.py`, `test_pipeline_semantics.py`,
+  `tlog_independent_chains*.py`, `tlog_block_sensitivity.py`, dossiers de résultats
+  (`results_temperature/`, `results_field/`, `results_tlog_profiles/`,
+  `results_tlog_uncertainty*/`, `replicate_sweep_data/`).
+  Utilisable comme piste : benchmarks reproductibles v5.3/v6.0 et calibration — mais ce sont
+  des versions ANTERIEURES à v6.2 ; aucun de ces résultats ne se transfère tel quel à v6.2.
+- **Ising quantique (`ising_quantique_test/`) :** `RAPPORT_ISING_QUANTIQUE.md` (chaîne
+  transverse TFIM, N=8/10/12, diagonalisation exacte, g_c=1 ; le pipeline v5.3 ne localise
+  PAS g_c avec les ancres — d_crit ≈ 0,96, loin de la référence 4 — résultat négatif utile),
+  `run_tfim_exact_pipeline.py`, `data/tfim_ground_state_N8/N10/N12.csv`,
+  `quantum_ising_pipeline_summary.json` (180 962 o), `results/N8|N10|N12`.
+- **Calibration 29 estimateurs (`calibration_29/`, `calibration_29_v58/`) :**
+  `RAPPORT_CALIBRATION.md`, `calibrate_29_estimators.py`, `calibration_29_results.json`,
+  `estimator_outputs.csv`, `targeted_calibration*.csv`, heatmap d'erreurs. Piste
+  méthodologique pour la calibration des estimateurs (ne pas importer les valeurs).
+- **PDAC (`pancréas/`) :** quatre dossiers `ANALYSE_THERAPEUTIQUE_2026-11-16|17|19|20`,
+  `REVUE_INDEPENDANTE_2026-11-15`, `_audit_pdf_text`, et deux copies `.txt` de v6.0/v5.9.0f.
+  - **11-16 :** audit PRISM PDAC (`AUDIT_PRISM_PDACS_v1.md`, `analyze_pdac_prism_multicontrol.py`,
+    `pdac_prism_KRAS_corrected_all_compounds.csv` 2,2 Mo, `pdac_models_exact_diagnosis_and_controls.csv`,
+    `daraxonrasib_resistance_2026/`, `Repurposing_Public_24Q2_Readme.txt`). Dépôt PRISM :
+    criblage médicaments sur modèles PDAC — piste de contradiction / drug-response, pas une
+    cohorte v4.
+  - **11-17 :** `candidate_combination_g12d_parp/` (réanalyse souris KRAS G12D + PARP),
+    `external_validation_g12c/`, `multi_axis_resistance/`.
+  - **11-19 :** Tiriac 2018 (runs multi-contrôles, `Tiriac2018_Gemcitabine_all_controls_PDACDomain/`,
+    `pipeline_runs*/`, `pipeline_inputs_balanced_15|50/`), `GSE271300_H5AD_METADATA_AUDIT.json`
+    (342 093 o — métadonnées single-cell souris), `audit_GSE194249_candidate.py`,
+    `package_GSE194249_candidate_audit.py`, `analyze_GSE271300_mouse_level.py`,
+    `prepare_mouse_level_pipeline_input.py`, `mouse_level_pipeline_trial/`.
+  - **11-20 :** `EXTERNAL_REPLICATION_SCREEN_REPORT_2026-11-20.md`,
+    `SCREENING_SOURCE_MANIFEST_2026-11-20.json` (SHA `d29590b4…`),
+    `TIRIAC2018_ALL_CONTROL_RUN_SUMMARY.md`, `JHH_PDAC_pharmacotyping/` (supplément
+    Nicholson 2024 inspecté : `SUPPLEMENT_STRUCTURE.txt`, pas de matrice par PDO),
+    `candidate_NatureComm2025_PAAD/` (structure du supplément, manifeste d'input,
+    protocole pilote gelé `PILOT_PROTOCOL_LOCK_2026-11-20.md`, script
+    `run_NatureComm2025_all_controls.py` — l'input CSV préparé est local, non versé).
+  - **REVUE 11-15 :** holdout GSE57495 (`PROTOCOLE_HOLDOUT_GSE57495.md`,
+    `RESULTATS_HOLDOUT_GSE57495.md`, `analyze_gse57495_holdout.py`,
+    `all_gene_spearman_vs_KRAS.csv` 10 397 483 o — table génome entier Spearman vs KRAS,
+    piste utile pour la piste B : quels gènes corrèlent avec KRAS au-delà des 12 v4),
+    `cohort_replication_summary.csv`, `survival_cox_audit.csv`,
+    `REVUE_SCIENTIFIQUE_PDACS.md` (19 544 o).
+  - **`REPOSITORY_MAP_2026-11-20.md`** (SHA `d8f2b66a…`) : carte inter-dépôts lue ici —
+    elle rapporte, sans que ce chantier les vérifie, que le dépôt suite (autre IA) décrit
+    une association KRAS–CEACAM5 dans GSE71729 (n=145, d=0,52, p permut. 0,008) et
+    GSE62452 (n=69, d=0,68, p=0,0185) sans ajustement de pureté, et que les tables
+    d'entrée nommées n'y sont pas reproductibles depuis ce seul dépôt. Cité uniquement
+    depuis cette carte ; le dépôt concerné n'a pas été lu.
+- **Ce qui est utilisable :** benchmarks et calibrations Ising (méthode) ; écran de
+  réplication 11-20 et ses candidates (C1, C4) ; table Spearman génome entier vs KRAS ;
+  scripts d'audit GSE194249/GSE271300 (méthode d'audit, pas de données).
+- **Ce qui ne l'est pas :** les versions de pipeline incluses (≤ v5.9.4 / v6.0) ne sont
+  PAS v6.2 ; les résultats PDAC cités dans le README sont des rapports d'analyses
+  antérieures, pas des verdicts du livre blanc ; les matrices d'entrée des pilotes
+  (Tiriac bundle ZIP, NatureComm2025 CSV, données GSE) sont locales, non versées.
+
+## 8.78.3 — `pdac-systems-evidence-preclinical` — registre de gouvernance et de sources
+
+- **Lien :** https://github.com/FindPrint/pdac-systems-evidence-preclinical
+- **Visibilité :** public, description vide.
+- **Créé :** 26 août 2026. **Dernier commit :** 17 sept. 2026 17h39:24 UTC,
+  SHA `d4b329a388e8709fae737dca07a1f2d5765e0b4f` (« Add files via upload ») ; précédent
+  27 août 2026, SHA `e86171a4…` (« Inventory ordered PDAC data sources », Manus AI).
+  Dépôt figé depuis le 17 septembre 2026 — état initial, aucune hypothèse active.
+- **README :** SHA blob `e0e6b2e4dab58608c500b0428afb6f3556cc85b6`. « Recherche préclinique
+  uniquement » — ni diagnostic, ni recommandation thérapeutique. État initial déclaré :
+  gouvernance définie, sources candidates vérifiées comme références (non téléchargées),
+  AUCUNE donnée expérimentale importée, AUCUN code de modélisation non audité, AUCUNE
+  hypothèse de combinaison active. Sept principes non négociables (provenance + version +
+  licence + empreinte avant toute analyse ; couches distinctes ; jamais de pseudo-temps
+  depuis une variable clinique future ; simulation ≠ efficacité ; hypothèse falsifiable
+  avec contradiction connue ; résultats négatifs conservés ; manifeste SHA-256).
+- **Structure (11 entrées) :** `README.md`, `STATUS.md` (SHA `d16d7320…`),
+  `MANIFEST_SHA256.txt`, `docs/` (`architecture/`, `decisions/`, `governance/`,
+  `sources/`), `protocols/`, `registry/` (`hypotheses/`, `parameters/`, `variables/`),
+  `data/` (`external-links/`, `processed/`, `raw/`), `results/` (`.gitkeep` seul —
+  AUCUN résultat), `scripts/`.
+- **Contenu utile :**
+  - `docs/sources/INVENTAIRE_SOURCES_PDAC_ORDONNEES_20260827.md`
+    (SHA `25e0d300…`) : quatre sources vérifiées — GSE262627 (circadien, 7 temps, non
+    présélectionné pour v3 inchangé), OrganoIDNetData (présélectionné, inventaire
+    metadata-only seulement), GSE186960 (non retenu, un seul temps), GDC
+    ORGANOID-PANCREATIC (55 RNA-seq, conservé pour analyse transversale). C'est la
+    source documentaire des candidates C2, C5, C6.
+  - `docs/sources/SOURCES_PRECLINIQUES_PDAC_VERIFIEES.md` (SHA `f003dbb8…`) :
+    organoïdes GDC/AWS, essai HOPE (Grossman et al. 2022), SYNERGxDB, Therapeutics
+    Data Commons DrugComb/DrugSyn — références de benchmarking de synergie, pas des
+    cohortes v4.
+  - `protocols/` : `PROTOCOL_003_RECHERCHE_SERIES_PDAC_ORDONNEES.md`
+    (SHA `d999797d…`, critères d'inclusion/exclusion pour séries ordonnées —
+    réutilisable tel quel comme grille par la piste B),
+    `PROTOCOL_000_REGISTRE_EVIDENCE_PRECLINIQUE.md`,
+    `PROTOCOL_001_SELECTION_SOURCE_ET_FLUX.md`,
+    `PROTOCOL_002_CONSTRUCTION_MATRICE_RNASEQ_TECHNIQUE.md`,
+    `CONTRAT_FLUX_001_ORGANOID_TRANSCRIPTOME.md`.
+  - `scripts/` : six scripts GDC (`import_gdc_open_rnaseq.py`,
+    `build_gdc_unstranded_matrix.py`, `build_gdc_metadata_receipt.py`,
+    `inspect_gdc_rnaseq_schema.py`, `inventory_gdc_open_metadata_axes.py`,
+    `qc_gdc_rnaseq_numeric.py`) — la voie d'accès concrète à la candidate C2.
+  - `data/external-links/` : reçus d'import GDC
+    (`GDC_ORGANOID_PANCREATIC_OPEN_RNASEQ_MANIFEST.tsv`,
+    `*_RECEIPT.json`, `*_QC_RECEIPT.json`, `SOURCES.tsv`) — provenance vérifiable
+    de la candidate C2 ; les 55 TSV et la matrice 60 660 × 55 sont LOCAUX, hors Git.
+  - `registry/` : quasi vide — `HYPOTHESIS_TEMPLATE.yaml` (884 o),
+    `PARAMETER_REGISTRY.tsv` (116 o), `VARIABLE_REGISTRY.tsv` (79 o). Registre
+    jamais rempli : aucune hypothèse enregistrée.
+  - `STATUS.md` (27 août 2026) : confirme 55/55 MD5 vérifiés, schéma homogène, QC
+    conforme, AUCUN axe expérimental admissible dans les métadonnées GDC, v3/F1′/F2″
+    non exécutés, prochain jalon conditionnel = inventaire Zenodo metadata-only
+    d'OrganoIDNetData après autorisation explicite.
+- **Ce qui est utilisable :** la grille PROTOCOL_003, l'inventaire du 27 août 2026,
+  les scripts et reçus GDC (accès C2), les références de synergie (piste de
+  contradiction). **Ce qui ne l'est pas :** aucune donnée, aucun résultat, aucun
+  verdict — dépôt d'infrastructure, figé depuis le 17 septembre 2026.
+
+## 8.78.4 — `T_log-` — archive des versions du pipeline
+
+- **Lien :** https://github.com/FindPrint/T_log-
+- **Visibilité :** public, description vide.
+- **Créé :** 25 août 2026. **Dernier commit :** 15 nov. 2026 16h41:28 UTC,
+  SHA `e41f97e23277bb3eedab3f99c60adbff23595675` (« Add files via upload ») ;
+  précédent le même jour 13h40, SHA `21e74ea4…`.
+- **README :** SHA blob `73e55b36f81c4c97872c6a7b34350b28fe95d7ba` — un mot : « # T_log- ».
+  Aucune documentation.
+- **Structure (37 entrées) :** `Archive/` (un `readme.txt` de 1 octet — vide),
+  et les versions du pipeline : `pipeline_autonome_v3_2 - Copie.txt`,
+  `pipeline_autonomev3_propre.py` et variantes (`_0_4rpz`, `_proprefix`),
+  `pipeline_autonome_v3_3_fixed.py`, `pipeline_autonome_v3_3_harmonic_v1/v2.py`,
+  `Tlog-V3-5-5-HP-V1.py`, `Tlog_v3_5_2/3/4_harmonic_v1.py`,
+  `Tlog_prediction_multilevel_v1.py` (et copie `(1)`),
+  `UNIVERSAL_LOG_v4_2_5_CORRIGE.py`, `v4_2_7_DUAL_ZSCORE.py`, `v4_2_8.py`,
+  `v4_2_9.py`, `v4_3_1.py`, `v4_3_3.py`, `v4_3_5.py`, `v4_4_0.py`, `v4_4_1.py`,
+  `v4_4_2.py`, `v4_4_3.py`, `v4_4_4-.py`, `v4_4_5.py`, `v4_4_7.py`,
+  `UNIVERSAL-LOG-V4-4-3c0.py`, `UNIVERSAL_LOG_v5_3.py`, `UNIVERSAL_LOG_v5.8.py`,
+  `UNIVERSAL_LOG_v5.9.2.py`, `universal_v6.0.0_cohen.py` (622 526 o),
+  `universal_x5f_log_x5f_L7a_x5f_L7b_x5f_v5.9.0f.py` (622 212 o),
+  `module_f1_f2_csd.py`.
+- **Utilisable :** provenance des versions — c'est l'archive qui établit la lignée
+  v3.2 → v6.0 et conserve v5.9.0f et v6.0 intacts ; utile pour vérifier qu'une version
+  citée ailleurs est bien celle-ci (par taille et par comparaison de hachage).
+  **Non utilisable :** aucune donnée, aucune cohorte, aucune documentation ; v6.2
+  n'y figure PAS (v6.2 vit dans `tlogNext-cancer-pdac` / `Code`) ; aucune de ces
+  versions ne doit être exécutée à la place de v6.2.
+
+## 8.78.5 — `apamea-artificial-spin-ice-multiflux` — méthode de rotation des contrôles (pas de cancer)
+
+- **Lien :** https://github.com/FindPrint/apamea-artificial-spin-ice-multiflux
+- **Visibilité :** privé. **Créé :** 26 août 2026. **Dernier commit :**
+  17 sept. 2026 17h41:09 UTC, SHA `d4c3982a97cfe3929995b53f5d01d80432c18d63`
+  (« Add files via upload ») ; précédent 26 août 2026, SHA `e9eae06e…`
+  (« Audit calibration provenance and metadata eligibility », Manus AI).
+- **README :** SHA blob `533e37ecf8af5e3ed7dbbd48a71a345055039b6e` (7 588 o) — le README
+  le plus méthodologique des six. Principe central : en v3, le seuil est décidé
+  uniquement par l'optimisation Monte Carlo ; c'est un rang dans la colonne de
+  contrôle, ni une température, ni un Tc physique. 17 flux (orientation/M, énergie,
+  dynamique de flips, morphologie/local), employés à tour de rôle comme colonne de
+  contrôle : carte multi-régimes dépendante du contrôle, pas de seuil global unique.
+  Ablations, leave-one-temperature-out (119 sorties), blocs temporels contigus
+  (51 sorties), synthèse croisée de robustesse (238 sorties réutilisées), audit
+  topologique global (685 frames bruts — identités inter-températures insuffisamment
+  validées : aucun flux vertex/charge/transitions ajouté), audit de calibration /
+  provenance (aucune métadonnée éligible comme 18e flux). Données : Zenodo Apamea,
+  DOI 10.5281/zenodo.8250892. Sept rapports listés (`RAPPORT_MULTIFAMILLE_17FLUX_*`,
+  `*_LEAVE_ONE_TEMPERATURE_OUT_*`, `*_ABLATIONS_*`, `*_BLOCS_TEMPORELS_*`,
+  `*_SYNTHESE_CROISEE_ROBUSTESSE_*`, `*_AUDIT_TOPOLOGIE_*`, `*_AUDIT_CALIBRATION_*`).
+  Reproduction : Python/NumPy/pandas/SciPy/Matplotlib/seaborn, v3 mode `stable`,
+  graine 42 ; archives complètes en releases GitHub, référencées par SHA-256 dans
+  `release-assets/ARCHIVES_COMPLETES_SHA256.tsv`.
+- **Structure (12 entrées) :** `README.md`, `STATUS.md` (SHA `1a7382b4…`),
+  `MANIFEST_SHA256.txt` (77 084 o), `data/` (`derived/`), `docs/` (`methodology/`,
+  `provenance/`, `reports/`), `pipelines/` (`original/` — v2/v3 intacts),
+  `scripts/`, `results/` (`control_views/`, `synthese/`), `release-assets/`.
+- **Utilisable :** la MÉTHODE — c'est le précédent direct de la rotation des contrôles
+  (§8.32) et des diagnostics de dépendance de représentation (ablations, LOTO,
+  blocs contigus) ; les conventions CSD/F1′/F2″ y sont documentées. **Non utilisable :**
+  aucune donnée cancer, aucun flux transcriptomique, aucune cohorte PDAC ; les 17 flux
+  sont des observables de glace de spin, non transférables tels quels.
+
+## 8.78.6 — `TLOG` — notes de théorie seulement
+
+- **Lien :** https://github.com/FindPrint/TLOG
+- **Visibilité :** public, description vide.
+- **Créé :** 16 juillet 2026. **Dernier commit :** 17 sept. 2026 17h38:52 UTC,
+  SHA `092bc4baa77ebfebd4a9a94c857b42bb66a536ed` (« Add files via upload ») ;
+  précédent 25 août 2026, SHA `77c5f1b6…` (« Revise analysis in Tlog_n_d_d4log_n.txt »).
+- **README :** SHA blob `19faf0ae0d7eb1f4dbe0cd9e33039b1803b1a797` — un mot : « # TLOG ».
+- **Structure (5 entrées) :** `Tlog_n_d_d4log_n.txt` (5 099 o),
+  `InverseTlog_n_d_d4log_n.txt` (5 626 o), `Tlog(Part2).pdf` (214 336 o),
+  `README.md`, `LICENSE.txt`.
+- **Verdict :** notes de théorie TLog à l'état brut, sans code, sans données, sans
+  protocole. Rien d'utilisable comme piste pour le PDAC au-delà de l'historique
+  doctrinal (déjà consigné dans `TLog.txt` de `universal-log-research` et dans le
+  canevas local). Abandonné depuis le 17 septembre 2026.
+
+## 8.78.7 — `Simulation-tlog` — archive de notebooks générés
+
+- **Lien :** https://github.com/FindPrint/Simulation-tlog
+- **Visibilité :** public, description vide.
+- **Créé :** 14 oct. 2026. **Dernier commit :** 14 oct. 2026 16h32:35 UTC,
+  SHA `c9ff4a3e1099bb64e37279bf0028096688030f7b` (« Add files via upload ») ;
+  précédent le même jour 16h30, SHA `4b156152…`. Dépôt créé et figé le même jour.
+- **README :** SHA blob `89ed4e8e967aa466b5c0ce4e32436bd48fadaa98` — un mot :
+  « # Simulation-tlog ».
+- **Structure (50 entrées) :** 24 paires notebook + PDF, en deux modes
+  (`ModeFast_*`, `ModeRobust_*`) : `ising 2D-1`, `Ising2DQuantique`,
+  `Bio-ising2d`, `BioCancer_Tlog`, `Cosmo_Tlog`, `Climat_Tlog`, `Tlog_Finance`,
+  `pharmacovigilance_OWID_Tlog`, `pharmacovigilance_VAERS_Tlog`,
+  `MOLECULE_PERSIST_LOG`, `Printing_Tlog`, `SOUND_LOG v2.0`, plus `LICENSE`.
+  Tailles : notebooks de ~0,5 à 2,3 Mo, PDF de ~0,45 à 1,6 Mo.
+- **Verdict :** archive de sorties générées (notebooks + PDF), sans code de pipeline
+  versionné ni matrice de données. Les deux notebooks `BioCancer_Tlog` (869 092 o et
+  968 584 o) sont une piste documentaire seulement — leur contenu n'a pas été lu
+  (notebooks de ~1 Mo, hors lecture utile pour un inventaire) et rien ne permet
+  d'affirmer qu'ils contiennent une cohorte PDAC exploitable. À ne rouvrir que si la
+  piste B manque de matière : lecture ciblée des deux notebooks BioCancer, avec
+  protocole propre.
+
+## 8.78.8 — Candidates pour la piste B (détail)
+
+Rappel de la règle : une candidate n'est pas un verdict. La piste B devra, pour chacune,
+geler son propre protocole AVANT tout run (construction du CSV, mapping, contrôles, nuls),
+et vérifier l'indépendance contre les cohortes déjà tenues (TCGA, ICGC PACA-AU, GSE71729,
+GSE62452, GSE62165, GSE21501, GSE79668, CPTAC UMich/BCM, Tiriac 2018). Les gènes v4 :
+PGC, REG4, CLDN18, MUC17, DPCR1, CR2, KRT20, MUC2, GSTM1, CEACAM5, CLCA1, MUC16.
+
+### C1 — Chen et al. 2025, Nature Communications (matrice AUC 46 PDO × 63 médicaments) — FORTE
+
+- **Série :** 46 modèles organoïdes PDAC (PDO), 63 colonnes AUC médicaments.
+  Article DOI 10.1038/s41467-025-57520-3.
+- **Plateforme :** réponse médicamenteuse (AUC), pas d'expression — les gènes v4 sont
+  N/A ; les flux seraient les 63 colonnes AUC, cible Gemcitabine fixée d'avance
+  (même design que Tiriac 2018).
+- **n :** 46. **Pourquoi elle devient candidate maintenant :** le pilote du 20 novembre
+  2026 a été REJETÉ par `UNIVERSAL_LOG_v5.9.4.py` (minimum 50 points, 1 contrôle lancé
+  sur 62 prévus, APR-246, erreur « Série trop courte : 46 points valides »). Mais le
+  minimum v6.1/v6.2 en mode fast est de **40 points** — 46 ≥ 40. La porte qui l'a
+  fermée sous v5.9.4 n'existe plus sous v6.2. C'est la candidate la plus avancée :
+  input déjà préparé sans imputation ni mise à l'échelle.
+- **Accès :** supplément Springer MOESM13
+  (https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM13_ESM.xlsx,
+  SHA `0e009cd56d2f6c25b0b355590becc4abfee3e1080633173bc33606d1bf325340`) ;
+  input pipeline local `candidate_NatureComm2025_PAAD/NatureComm2025_46PDO_63Drug_AUC.csv`
+  (SHA `296681b64d3ad5309aab349696439257185f0e679cf50a35858a898b046cb3fd`) ;
+  protocole pilote gelé `PILOT_PROTOCOL_LOCK_2026-11-20.md` (SHA `0068c4eb…`) ;
+  script de run `run_NatureComm2025_all_controls.py` (SHA `0c178bb2…`).
+  Source : `universal-log-research`, `pancréas/ANALYSE_THERAPEUTIQUE_2026-11-20/`,
+  `EXTERNAL_REPLICATION_SCREEN_REPORT_2026-11-20.md` (SHA `11b0c220…`) et
+  `SCREENING_SOURCE_MANIFEST_2026-11-20.json` (SHA `d29590b4…`).
+- **Caveat :** matrice médicament × PDO, pas une cohorte d'expression — elle teste la
+  réplication du design Tiriac, pas la chaîne v4 ; n=46 reste petit (falsification
+  indisponible sous n=75, comme GSE79668).
+
+### C2 — GDC ORGANOID-PANCREATIC (RNA-seq ouverte, 55 fichiers) — FORTE
+
+- **Série :** organoïdes pancréatiques (patients), RNA-seq ouverte GDC.
+- **Plateforme :** RNA-seq (quantifications `unstranded`), transcriptome complet.
+- **n :** 55 fichiers (55/55 MD5 et tailles vérifiés, schéma homogène, QC numérique
+  conforme). Matrice technique locale : 60 660 `gene_id` × 55 `file_id`.
+- **Gènes v4 :** NON VÉRIFIÉS depuis le dépôt (aucune liste de gènes lue ; le
+  transcriptome complet les contient vraisemblablement — à vérifier par la piste B
+  avant tout run, pas à affirmer ici).
+- **Accès :** scripts dans `pdac-systems-evidence-preclinical/scripts/`
+  (`import_gdc_open_rnaseq.py`, `build_gdc_unstranded_matrix.py`,
+  `build_gdc_metadata_receipt.py`, `inspect_gdc_rnaseq_schema.py`,
+  `inventory_gdc_open_metadata_axes.py`, `qc_gdc_rnaseq_numeric.py`) ; reçus dans
+  `data/external-links/` (manifeste TSV, reçus JSON d'import, de schéma et de QC).
+  Les 55 TSV et la matrice sont LOCAUX, exclus de Git — la piste B devra les
+  re-télécharger ou les retrouver localement avec leurs hachages.
+- **Caveat :** transversale, AUCUN axe expérimental admissible identifié dans les
+  55 métadonnées examinées (STATUS.md du 27 août 2026) — pas de pseudo-temps ;
+  testable uniquement comme cohorte transversale ordonnée par un flux (même statut
+  que TCGA/ICGC), avec les garde-fous du livre blanc.
+
+### C3 — GSE57495 (GPL15048, 63 tumeurs microdisséquées) — candidate avec caveat
+
+- **Série :** GSE57495, 63 tumeurs PDAC microdisséquées congelées, plateforme GPL15048.
+- **Plateforme :** microarray (valeurs log2 déposées).
+- **n :** 63. **Gènes v4 : 11/12 — GSTM1 absent** (aucune sonde à symbole exact GSTM1 ;
+  seule la sonde partagée `merck-NM_000561_s_at`, annotée « GSTM1 GSTM2 GSTM4 »,
+  exclue comme ambiguë ; aucune sonde mappée à la main). KRAS présent ; 63/63 cas
+  complets sur 11 gènes. Vérifié au §8.69 du livre blanc.
+- **Accès :** matrice détenue localement (13 487 043 o, SHA `995dbeff…532efc`,
+  60 608 lignes, 0 NaN) et mapping GPL15048 construit à neuf (SHA `93e01ec3…998f952`),
+  selon la correction consignée au §8.69 (la plateforme est GPL15048, pas GPL6244
+  comme l'affirmait à tort le §8.66 §1.2). GEO :
+  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57495.
+- **Caveat MAJEUR :** déjà tenue comme holdout DIRECT (§8.66/§8.69 et
+  `REVUE_INDEPENDANTE_2026-11-15/RESULTATS_HOLDOUT_GSE57495.md` : Spearman
+  KRAS–CEACAM5 ρ=0,4377, p permutation 0,00024, IC 95 % [0,1901, 0,6352] ;
+  partielle après scores acineux/îlots : 0,3521). Elle n'est donc PAS indépendante
+  pour l'association KRAS–CEACAM5. Comme paire pipeline v6.2 (jamais courue : §8.69
+  la marquait « INUTILISABLE — aucun CSV, aucun run » au moment du chantier, la
+  matrice n'ayant été construite qu'après), elle reste utilisable — à condition que
+  la piste B déclare explicitement cette antériorité et ne la présente jamais comme
+  une confirmation indépendante de l'association.
+
+### C4 — GSE194249 (84 PDPCOs, Nat. Commun. 2022) — À VÉRIFIER
+
+- **Série :** GSE194249, 84 PDPCOs (organoïdes dérivés de patients pancréatiques).
+  Article DOI 10.1038/s41467-022-29857-6 (CC BY 4.0).
+- **Plateforme :** FPKM (matrice `GSE194249_PDPCOs_FPKM.txt.gz`) + réponse aux
+  médicaments (Suppl. Data 8, MOESM11) + suivi clinique (Suppl. Data 10, MOESM13)
+  + cohorte 84 PDPCOs (Suppl. Data 1, MOESM4).
+- **n :** expression 84 PDPCOs (colonnes exactes non versées) ; n réponse
+  médicamenteuse < 50 sous le minimum v5.9.4 fast — le nombre exact n'est PAS
+  vérifiable depuis le dépôt : le script d'audit
+  (`audit_GSE194249_candidate.py`, SHA `ae3c85cd…`) existe, mais son dossier de
+  sortie `candidate_GSE194249_sources/` (avec `CANDIDATE_DATA_AUDIT.json/.md`)
+  est ABSENT du dépôt (données locales non versées). La piste B devra refaire
+  l'audit depuis GEO avant toute candidature.
+- **Gènes v4 :** NON VÉRIFIÉS. **Accès :** GEO
+  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194249 + suppléments
+  Springer MOESM4/11/13. **Statut :** candidate conditionnelle à la vérification
+  de n et de la couverture v4 — ne pas lancer sans l'audit refait et gelé.
+
+### C5 — GSE262627 (série circadienne PDA, 7 temps) — NON RETENU pour v6.2 inchangé
+
+- **Série :** GSE262627, 7 temps (0, 4, 8, 12, 16, 20, 24 h), 6 organoïdes PDAC et
+  4 lignées cellulaires, 68 échantillons GEO, comptages `featureCounts`.
+  Article : Sharma et al., JCI Insight 2024 (PMC11141942).
+- **Plateforme :** RNA-seq. **Gènes v4 :** non vérifiés (sans objet : série trop courte).
+- **n :** 7 positions par système — inférieur au minimum le plus permissif de v3
+  comme de v6.2 (40 en fast). La mise en commun organoïdes/lignées ne serait pas
+  une série répétée unique.
+- **Accès :** GEO https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE262627.
+- **Valeur :** référence utile de DESIGN temporel authentique — le seul axe de temps
+  réel mesuré de tout l'inventaire. Piste pour un protocole futur à fenêtre courte
+  explicitement gelée, ou pour un autre instrument — pas pour v6.2 inchangé.
+
+### C6 — OrganoIDNetData (imagerie organoïdes, Zenodo 10643410) — CONDITIONNEL
+
+- **Série :** imagerie d'organoïdes PDAC humains et murins, acquisition toutes les 4 h
+  jusqu'à 100 h, co-culture immunitaire pour certains champs. Archive Zenodo ouverte
+  CC BY 4.0, 4,6 Go, 180 images selon la notice Zenodo et l'article (190 selon le
+  README du dépôt public associé — discordance consignée, à résoudre par inventaire).
+  Article : Kulkarni et al., Scientific Data 2024 (s41597-024-03631-3).
+- **Plateforme :** imagerie (champs de vue). **n :** ~26 positions par trajectoire
+  complète potentielle — à vérifier, les 180 images ne forment pas une unique série
+  (systèmes, champs de vue et dérivés artificiels mélangés dans l'archive).
+- **Gènes v4 :** N/A — les flux seraient morphologiques, à définir (taille, forme,
+  texture des organoïdes), jamais des gènes.
+- **Accès :** Zenodo https://zenodo.org/records/10643410. Archive NON téléchargée ;
+  seule action recommandée (inventaire du 27 août 2026) : inventaire metadata-only
+  (noms, tailles, MD5, structure, correspondance culture/champ/heure), après
+  autorisation explicite de Zackary. Aucune image consultée, aucun flux défini,
+  aucun run.
+- **Statut :** seule présélection de l'inventaire du 27 août 2026 — conditionnelle à
+  l'inventaire metadata-only et à une configuration v3/v6.2 courte gelée.
+
+### Leads d'accès seulement (pas de matrice publique exploitable au 20 nov. 2026)
+
+- **Nicholson et al. 2024, Annals of Surgery (JHH pharmacotyping)** — 95 PDOs, IC50
+  pour 5 agents ; le supplément inspecté (NIHMS2020869, SHA `3d6d24a5…`) contient
+  méthodes, code R et tables agrégées, PAS de matrice PDO × médicament. DOI
+  10.1097/SLA.0000000000006517. Ne pas reconstruire de valeurs depuis des graphiques.
+- **Feizi et al., AACR 2025 (résumé)** — ~3 000 composés à une dose, 600 à six doses,
+  120 PDOs PDAC ; aucune matrice ligne à ligne liée dans les actes inspectés.
+  Piste de demande d'accès seulement ; aucune demande envoyée.
+- **Toronto 58/120-PDO screening program** — cité dans l'écran du 20 nov. 2026 comme
+  piste de demande d'accès ; aucune demande envoyée.
+
+### Non-candidates (raisons écrites)
+
+- **GSE271300** (Singhal et al., scRNA souris, PC69/PC106 : 3/3 et 4/3 souris par
+  traitement) — échantillon trop petit pour le minimum du pipeline ; ne pas utiliser
+  les comptages cellulaires comme réplicats biologiques indépendants. Écran du
+  20 nov. 2026. Métadonnées auditées localement (`GSE271300_H5AD_METADATA_AUDIT.json`).
+- **GSE186960** (Panc1 + gemcitabine scRNA-seq) — un seul temps explicite, conditions
+  hétérogènes. Non retenu (inventaire du 27 août 2026).
+- **Tiriac et al. 2018** — déjà couru : 60 PDO complets, 26 AUC, 25/25 contrôles,
+  T0 ambigu partout, contrôle non monotone partout (v5.9.4, 19–20 nov. 2026). Pas
+  une nouvelle cohorte ; le bundle d'audit complet est local
+  (`output/pdac_pipeline_audit_2026-11-19/`), non versé.
+- **GSE21501, GSE79668** — déjà courues (§8.69 : d_maxsep −0,0100, NON ;
+  §8.70/§8.72 : PARTIEL puis renversé sur 13 nuls, d_médian +0,1447).
+- **GSE62165** — 4e cohorte, déjà tenue (§8.64–§8.66 : bloc estomac/mucus confirmé,
+  10/12 gènes v4 — DPCR1 et GSTM1 absents).
+- **GSE78229, GSE28735** — échantillons déjà inclus dans GSE62452 (re-test déguisé
+  de la paire V1). Écartées au §8.69.
+- **GSE15471, GSE16515, GSE32676, GSE91035, GSE84219, GSE179351** — n < 40
+  (enquête §8.66 §1.3).
+- **ICGC PACA-CA / E-MTAB-6134** — accès hors périmètre (§8.66 §1.3).
+- **COAD / LUAD** — autres cancers, lots déjà courus (relecture interdite §8.64.7).
+- **CPTAC (UMich / BCM)** — protéine, 7/6 flux (pas 12), lots déjà courus.
+- **SYNERGxDB / Therapeutics Data Commons DrugComb** — bases de synergie (benchmarks
+  de contradiction pour hypothèses de combinaison), pas des cohortes PDAC v4 ;
+  le jeu NCI-60 n'est pas spécifique au PDAC.
+
+## 8.78.9 — Dépôts déjà connus (nommés seulement, non relus en profondeur)
+
+- **tlogNext-cancer-pdac** — https://github.com/FindPrint/tlogNext-cancer-pdac
+  (public, dépôt de travail PDAC v6.2, mis à jour 20 nov. 2026 22h21 UTC).
+- **tlogNext-cancer-pdac-suite** — https://github.com/FindPrint/tlogNext-cancer-pdac-suite
+  (privé, suite du livre blanc v6.2 §8.74 et suivantes, mis à jour 20 nov. 2026 23h07 UTC).
+- **Code** — https://github.com/FindPrint/Code (public, pipeline v6.1 de référence,
+  mis à jour 19 nov. 2026 00h05 UTC).
+- **pancreatic-cancer-open-data-reproducibility** — https://github.com/FindPrint/pancreatic-cancer-open-data-reproducibility
+  (public, « Private non-clinical reproducibility framework for open pancreatic cancer
+  data research », mis à jour 19 nov. 2026 00h04 UTC).
+- **tlogNext-pdac-phase2** — https://github.com/FindPrint/tlogNext-pdac-phase2
+  (public, autre IA — NOMMÉ SEULEMENT, contenu non lu dans ce chantier).
+
+## 8.78.10 — Autres dépôts du compte (nommés depuis la seule liste de recherche, non lus)
+
+Ces six dépôts n'entrent pas dans le périmètre de la piste A (ni Ising, ni cancer PDAC
+d'après leurs noms et dates) ; ils sont nommés ici pour que l'inventaire des 17 soit
+complet, sans lecture de leur contenu :
+
+- **Canvas** — https://github.com/FindPrint/Canvas (public, mis à jour 26 oct. 2026).
+- **Dissertation-** — https://github.com/FindPrint/Dissertation- (public, mis à jour
+  26 oct. 2026).
+- **BTC_Tlog** — https://github.com/FindPrint/BTC_Tlog (public, Jupyter Notebook, mis à
+  jour 17 sept. 2026).
+- **seismologie-retrospective-cadrage** — https://github.com/FindPrint/seismologie-retrospective-cadrage
+  (privé, « Cadrage sûr et reproductible d'un pilote sismologique rétrospectif, sans
+  prédiction ni alerte opérationnelle », mis à jour 17 sept. 2026).
+- **seismologie-retrospective-catalogue** — https://github.com/FindPrint/seismologie-retrospective-catalogue
+  (privé, « Catalogue sismologique historique figé, provenance et audit de qualité pour
+  étude rétrospective non prédictive », mis à jour 17 sept. 2026).
+- **UNIVERSAL_LOG_30_10_2026** — https://github.com/FindPrint/UNIVERSAL_LOG_30_10_2026
+  (privé, Python, mis à jour 30 oct. 2026).
+
+## 8.78.11 — Ce que la piste B doit faire (recommandations, pas des verdicts)
+
+1. **C1 d'abord :** NatureComm2025, 46 PDO × 63 AUC — protocole gelé avant tout run
+   (cible Gemcitabine, 62 contrôles prévus, nuls assortis), v6.2 mode fast (minimum 40).
+   Vérifier d'abord que l'input local (SHA `296681b6…`) est toujours détenu et intact.
+2. **C2 ensuite :** GDC ORGANOID-PANCREATIC — vérifier la présence des 12 gènes v4 dans
+   la matrice 60 660 × 55 et l'intégrité des 55 fichiers (re-téléchargement via les
+   scripts du dépôt si les locaux sont absents), puis protocole gelé de cohorte
+   transversale (même statut que TCGA/ICGC, pas de pseudo-temps).
+3. **C3 avec son caveat écrit :** GSE57495 comme paire pipeline — jamais comme
+   confirmation indépendante de KRAS–CEACAM5.
+4. **C4 après re-audit :** GSE194249 — refaire l'audit de sélection depuis GEO
+   (n réponse exact, couverture v4) et geler le protocole avant toute décision.
+5. **C5/C6 :** ne pas lancer sous v6.2 inchangé ; C6 exige l'inventaire metadata-only
+   d'OrganoIDNetData (autorisation explicite de Zackary) avant toute définition de flux.
+6. **Ne pas rouvrir** les cohortes déjà courues ni les lots déjà courus (relecture
+   interdite §8.64.7) ; ne pas importer les résultats des autres dépôts comme des
+   verdicts — chaque candidate se juge sur ses propres runs, avec ses propres nuls.
+
+---
+
+*Fin de la section §8.78. Inventaire en lecture seule, 21 novembre 2026. Aucun run, aucun
+téléchargement de données, aucune modification de dépôt. Les SHA des fichiers lus sont
+consignés dans `PROVENANCE_878.md`.*
+
+— Fin de la §8.78. —
+
+---
+
+### 8.79 Nouvelle série indépendante, treizième paire : GSE57495 CONFIRME — après l'arrêt de la candidate GDC (DPCR1 absent de GENCODE v36) (21 novembre 2026)
+Piste B du lot du 21 nov. 2026 (nouvelle série, 13e paire) ; protocole C2 gelé 21 nov. 2026 ~12h30 EST avant tout téléchargement (GDC ORGANOID-PANCREATIC), addendum C3 gelé ~12h45 EST avant toute construction de la cohorte #2 (GSE57495) et avant tout run.
+
+## Verdict d'abord
+
+**CONFIRME — la treizième paire principale indépendante, GSE57495
+(n = 63 tumeurs PDAC, 11 flux, GSTM1 absent), donne
+`d_maxsep = +0,4494` (réel 0,6381 contre nul 0,1887), très
+au-dessus du plancher 0,07 — avec une marge de 0,3794, soit
+6,4 fois le plancher, le plus grand écart `maxsep` jamais mesuré
+sur une paire GEO à ce jour (devant GSE60979, +0,2045, et TCGA
+v4, +0,2928). A2 devient 9/13 au-dessus du plancher, 11/13
+positifs, LOO 8/12. La condition C3 du §8.59.8, levée au §8.71,
+RESTE LEVÉE (ce chantier est une consolidation supplémentaire,
+pas une condition ; il ne rouvre rien).**
+
+**Et, dans la même section, l'autre moitié du verdict : la
+candidate C2 (GDC ORGANOID-PANCREATIC, 55 RNA-seq) est
+INUTILISABLE comme paire à 12 gènes — DPCR1 est absent de 55/55
+fichiers parce que le symbole n'existe plus (Ensembl : « No
+valid lookup found for symbol DPCR1 » ; HGNC : DPCR1 est
+l'ancien symbole de MUCL3, présent dans 55/55 fichiers).
+Aucun remappage n'a été fait, aucun CSV C2, aucun run C2. La
+paire courue est donc la cohorte #2, GSE57495 — avec deux
+caveats écrits avant tout run et répétés dans cette section :
+paire à 11 flux (pas 12) et série déjà tenue comme holdout
+direct (§8.66/§8.69, ρ=0,4377), donc JAMAIS une confirmation
+indépendante de l'association KRAS–CEACAM5.**
+
+| Porte (protocole-addendum §6, gelé) | Exigé | Mesuré 21 nov. 2026 | Sort |
+|---|---|---|---|
+| Treizième paire : `d_maxsep > 0,07` et positif | > 0,07 | **+0,4494** (réel 0,6381, nul 0,1887) | **CONFIRME** |
+| A2 des paires indépendantes | 8/12, 10/12 positifs | **9/13, 11/13 positifs** | **ÉTENDU** |
+| LOO sur 13 paires (pire cas) | 7/11 | **8/12** | **ÉTENDU** |
+| Exactitude de l'extraction | 2/2 à 0,0 exact | **2/2, écart max 0,0** | **PASSE** |
+| Nuls frais (§6, `d` dans [−0,07 ; +0,14[) | 2 nuls frais si proche du plancher | **Non courus : +0,4494 hors de l'intervalle** | **RÈGLE APPLIQUÉE** |
+| C2 (GDC) : 12 gènes v4 présents | 12/12 | **11/12 — DPCR1 absent de 55/55** | **ARRÊT (§3)** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que
+le signal `maxsep` se sépare du nul sur une treizième cohorte
+indépendante — et avec la plus grande marge mesurée sur une
+paire GEO : l'écart vient des deux côtés à la fois (réel
+0,6381, le plus haut `maxsep` réel d'une paire GEO ; nul
+0,1887, le plus bas `maxsep` nul d'une paire GEO à n ≥ 40).
+Il dit aussi que le signal d'ordre est unanime (Δρ médian
++0,337, 11/11 flux positifs) et que les scores compagnons
+suivent cette fois dans le même sens (`sep` passe aussi sa
+barre descriptive, S_sep +0,4440 ; seul l'ancien MC reste
+modeste, +0,0636, et Delta presque plat, +0,0694 — voir
+§8.79.5). Il ne dit pas que `maxsep` est validé en général :
+c'est une treizième paire, pas une preuve — et elle porte
+deux caveats structurels (11 flux au lieu de 12 ; série déjà
+utilisée comme holdout direct pour KRAS–CEACAM5, donc ce
+verdict ne confirme pas cette association). Il ne dit pas
+non plus que l'adoption pleine est « prouvée » par ce
+chantier seul : elle a été décidée par Zackary après lecture
+des §8.56/§8.59/§8.64, et cette section est la vérification
+a posteriori que le protocole prévoyait — elle consolide la
+décision, elle ne la fonde pas rétroactivement. Il ne dit
+rien de clinique : l'étude porte sur l'instrument, pas sur
+un remède — aucune affirmation sur le cancer du pancréas
+n'est tirée de ce lot.
+
+**Fragilité, dite en tête.** Le verdict tient à une seule paire
+mesurée aujourd'hui — comme tous les verdicts de ce dossier.
+La marge est grande (+0,3794), mais le nul est unique (graine
+42) et aucun nul frais n'a été couru — la règle gelée ne
+l'exige pas quand l'écart est loin du plancher, et c'est
+appliqué tel quel. La paire compte 11 flux au lieu de 12 :
+toute comparaison directe aux paires à 12 flux doit le
+rappeler. Enfin, le `maxsep` réel le plus haut jamais mesuré
+sur une paire GEO (0,6381) mérite d'être lu avec prudence :
+c'est un score de séparation sur une cohorte, pas une mesure
+d'effet biologique.
+
+## 8.79.1 — Les deux cohortes : C2 arrêtée, C3 courue, et pourquoi la paire est indépendante (avec son caveat)
+
+### La candidate C2 : GDC ORGANOID-PANCREATIC — arrêt documenté
+
+La candidate choisie d'abord par le chantier (§8.78, C2,
+FORTE) était GDC ORGANOID-PANCREATIC : 55 quantifications
+RNA-seq ouvertes (STAR Counts, GENCODE v36), projet GDC
+`ORGANOID-PANCREATIC` (Human Cancer Models Initiative / Next
+Generation Cancer Models). Le protocole
+`PROTOCOL_nouvelle_serie_879.md` a été gelé avant tout
+téléchargement ; le téléchargement a ensuite réussi
+intégralement : 55/55 fichiers, MD5 conformes au manifeste
+(SHA `f713edebf…6220b`), total 232 648 892 o exact
+(`download_gdc_879_receipt.json`).
+
+L'association fichier → échantillon, établie par l'API GDC
+avant le gel (49 cas, tous pancréas, projet
+ORGANOID-PANCREATIC ; 44 fichiers = échantillons Tumor de
+cas « Adenocarcinoma, NOS », 11 fichiers = échantillons
+Normal de cas au diagnostic « Unknown »), donnait une
+cohorte testable de 44 fichiers tumoraux, issus de 38 cas
+(3 cas multi-fichiers : 2, 3 et 4 fichiers — dépendance
+partielle déclarée dans le protocole, unité gelée = fichier).
+
+**L'arrêt.** La construction des flux
+(`build_fluxes_879.py`) s'est arrêtée à la porte « 12 gènes
+v4 présents » : **DPCR1 est absent de 55/55 fichiers**
+(0 occurrence du symbole exact, vérifié par grep sur les
+55 TSV). Les 12 autres gènes utiles (11 v4 + KRAS) sont
+présents dans 55/55 fichiers. La cause a été établie le jour
+même :
+
+- Ensembl REST (`lookup/symbol/homo_sapiens/DPCR1`) :
+  « No valid lookup found for symbol DPCR1 ».
+- Les 5 anciens identifiants Ensembl croisés pour DPCR1
+  (ENSG00000168631, ENSG00000229284, ENSG00000232308,
+  ENSG00000257232, ENSG00000232251) sont absents eux aussi
+  du fichier GENCODE v36.
+- HGNC (`fetch/symbol/MUCL3`) : **MUCL3 (HGNC:21666,
+  « mucin like 3 ») porte DPCR1 en `prev_symbol`** — et
+  MUCL3 est présent dans 55/55 fichiers.
+
+Le gène est donc mesuré, sous son symbole actuel. Mais le
+protocole gelé exigeait le symbole exact DPCR1 et
+interdisait tout gène mappé à la main — changer la porte
+après l'avoir vue échouer serait un changement de protocole
+sans go. La porte dit ARRÊT (§3 du protocole C2) : **aucun
+CSV C2, aucun run C2.** Les 55 TSV téléchargés et vérifiés
+restent détenus pour un usage futur ; un protocole futur
+pourra pré-enregistrer MUCL3 explicitement — pas celui-ci.
+C'est un verdict de construction, pas un échec caché : la
+raison est chiffrée (0/55) et sa cause nommée (symbole
+retiré de GENCODE v36).
+
+### La cohorte #2 : GSE57495 — 11 flux, pré-enregistrés
+
+L'addendum `PROTOCOL_nouvelle_serie_879_C3.md` a été gelé
+avant toute construction de la cohorte #2. La série est
+**GSE57495**, « Development of a prognostic gene signature
+in pancreatic cancer », PMID 26247463, NCBI GEO
+(`https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE57495`),
+63 tumeurs PDAC microdisséquées congelées, plateforme
+**GPL15048**. Matrice détenue localement (aucun nouveau
+téléchargement) : 13 487 043 o, SHA
+`995dbeff288a14c1cc1a52489e456b7677ede5da8e287069b8298d649b532efc`
+(identique au §8.69), 60 608 lignes, valeurs log2 déposées
+(min 1,46 / médiane 5,91 / max 15,06, 0 NaN). Mapping
+GPL15048 construit au §8.69 : SHA
+`93e01ec387ab710dfbfe4b7ad960a90c494b131f62637df3a4476fa9f998f952`,
+60 607 lignes, 41 024 sondes avec symbole, 22 115 symboles
+uniques, colonne `GeneSymbol`.
+
+**La limitation, connue avant le gel** (donc
+pré-enregistrée, pas découverte après coup) : **11/12 gènes
+v4 — GSTM1 absent** (aucune sonde à symbole exact GSTM1 ;
+seule la sonde partagée `merck-NM_000561_s_at`, annotée
+« GSTM1 GSTM2 GSTM4 », exclue comme ambiguë ; aucune sonde
+mappée à la main). KRAS présent ; 63/63 cas complets sur
+11 gènes. C'est la limitation qui avait fait déclarer
+GSE57495 « INUTILISABLE » au §8.69 — pour une paire à
+12 gènes. Le présent chantier pré-enregistre explicitement
+une paire à **11 flux** : PGC, REG4, CLDN18, MUC17, DPCR1,
+CR2, KRT20, MUC2, CEACAM5, CLCA1, MUC16. La comparabilité
+aux paires à 12 flux est donc limitée, et c'est dit ici
+comme dans le protocole.
+
+**Indépendance — le statut exact.** (1) Jamais courue comme
+paire pipeline : aucun CSV de flux, aucun run, aucun JSON,
+aucune valeur `maxsep` n'existe pour GSE57495 (§8.69 :
+« INUTILISABLE — aucun CSV, aucun run »). (2) **MAIS déjà
+tenue comme holdout DIRECT** (§8.66/§8.69 :
+Spearman KRAS–CEACAM5 ρ=0,4377, p permutation 0,00024,
+IC 95 % [0,1901, 0,6352] ; partielle après scores
+acineux/îlots : 0,3521). **Elle n'est donc PAS indépendante
+pour l'association KRAS–CEACAM5 et ne doit JAMAIS être
+présentée comme une confirmation indépendante de cette
+association.** (3) Patients distincts des cohortes tenues :
+série GEO propre (63 patients, titres PDAC1..63) ; aucune
+inclusion documentée dans TCGA, ICGC, GSE71729, GSE62452,
+GSE62165, GSE21501, GSE79668 ou GSE131050. (4) Conséquence
+gelée : la paire entre dans le compte A2 comme treizième
+paire, avec 11 flux et avec son caveat holdout écrit — elle
+compte pour `maxsep` (le critère gelé), elle ne compte jamais
+comme confirmation indépendante de KRAS–CEACAM5.
+
+**Construction (variante (a), 11 flux).** Sondes →
+symboles par le mapping GPL15048, symboles dupliqués
+agrégés par médiane (29 052 lignes dupliquées → 22 115
+gènes uniques) ; ordre = KRAS croissant (log2 : min 5,44 /
+médiane 7,24 / max 8,78) ; `step` = rang 0..62 ; cas
+complets seulement, aucune imputation. Stades
+(characteristics_ch1) : 1B:12, 2B:33, 2A:17, 1:1. Nul =
+lignes permutées, graine 42, contrôle intact. CSV réel
+`pdac_879_geo57495_fluxes.csv` (63 lignes, SHA
+`224f98eb9cc7092e05b490b1e053edd14793e3def147890be0bab567630bb51c`) ;
+nul SHA
+`5cd274594a9a256142eb5fc539645e51a6dca2f0f15b2084b9884f686ab41edf`.
+
+## 8.79.2 — Les runs et l'extraction
+
+- Lot : 2 runs v6.2 mode fast — réel + nul — manifeste
+  `manifest_v62_879_c3.txt`, lanceur reprenable
+  `run_v62_lot.sh`, journal `runs_v62_879_c3.log`, unité
+  systemd `v62-879c3` (leçon AGENTS.md 2026-11-17 : jamais
+  nohup). **2/2 runs exit 0** (FIN 21 nov. 2026 12h43:00 UTC ;
+  durées allongées par la contention CPU — d'autres lots
+  v6.2 tournaient en parallèle sur la VM partagée).
+- SHA du pipeline revérifié avant ET après le lot, inchangé :
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
+- Extraction `extract_879_c3.py` (réutilise `extract()` de
+  `extract_858.py`, original intact) : 2/2 runs, 0 manquant
+  (les 2 dossiers de nuls frais sont listés « manquants »
+  parce que la règle gelée ne les a pas fait courir —
+  voir §8.79.4). Second calcul indépendant `verify_879_c3.py`
+  (chemin de code distinct, relecture directe par
+  `json.load`) recoupe `maxsep`, ancien MC et stabilité à
+  0,0 exact sur les 2 runs (`maxsep_879_c3_verify.json`,
+  verdict OK). Version lue :
+  `v6.2.0-L7aL7b-CohenD-short` sur les 2 runs.
+
+| Run | n | maxsep | ancien MC | S_sep | Delta | L7a | Cascade (Q1–Q5, %) |
+|---|---|---|---|---|---|---|---|
+| Réel GSE57495 | 63 | **0,6381** | 0,3920 | 0,6311 | 1,403 | up 0,339 | 0,0 / 36,1 / 69,7 / 85,7 / 85,7 |
+| Nul graine 42 | 63 | 0,1887 | 0,3283 | 0,1872 | 1,334 | up 0,168 | 0,0 / 6,3 / 44,4 / 51,6 / 74,5 |
+
+Valeurs complètes : `maxsep` réel 0,6381160120056911 ; nul
+s42 0,1887249135434316. Stabilité : réel 0,9890 ; nul 0,9917.
+Seuils MC : réel 29,03 ; nul 57,14. F1/F2 après seuil : réel
+0,0014 / 0,0001 ; nul s42 0,0027 / 0,0004 (descriptif, voir
+§8.79.5). Falsification : INDISPONIBLE sous n = 75 (n = 63) —
+les valeurs brutes du pipeline (0,448 / 0,265) figurent dans
+`extract_879_c3.json` sans être interprétées, comme aux
+§8.74/§8.76. L7b : FRAGILE sur les 2 runs — l'audit L7b est
+clos comme non-informatif (il dit FRAGILE sur le réel comme
+sur les nuls) ; il n'est pas rapporté comme une mesure de
+fragilité.
+
+## 8.79.3 — Le verdict étendu : A2 à 9/13
+
+Table des 13 paires principales indépendantes comptées
+(valeurs des §8.56 / §8.69 / §8.70 / §8.71 / §8.74 reprises
+telles quelles, jamais recalculées ; GSE57495 mesurée ici).
+Écart = maxsep réel − maxsep nul. Plancher 0,07. Le lot FNA
+§8.76 n'y figure PAS — il est apparié au §8.74, pas
+indépendant.
+
+| Paire | maxsep R / N | Écart | > 0,07 ? | Positif ? |
+|---|---|---|---|---|
+| HP35 | 1,7718 / 0,1206 | **+1,6512** | oui | oui |
+| TCGA v4 | 0,4623 / 0,1696 | **+0,2928** | oui | oui |
+| GSE71729 | 0,2593 / 0,2191 | +0,0402 | non | oui |
+| GSE62452 | 0,3100 / 0,3136 | −0,0036 | non | NON |
+| ICGC | 0,4080 / 0,3110 | **+0,0970** | oui | oui |
+| Immunitaire TCGA | 0,5309 / 0,1634 | **+0,3675** | oui | oui |
+| PARP TCGA | 0,3680 / 0,1992 | **+0,1688** | oui | oui |
+| DepMap | 0,4436 / 0,2532 | **+0,1904** | oui | oui |
+| GSE21501 (§8.69) | 0,2121 / 0,2221 | −0,0100 | non | NON |
+| GSE79668 (§8.70) | 0,4104 / 0,3538 | +0,0567 | non | oui |
+| GSE60979 (§8.71) | 0,4418 / 0,2373 | **+0,2045** | oui | oui |
+| GSE131050 Yeh FF (§8.74) | 0,3220 / 0,2481 | **+0,0739** | oui | oui |
+| **GSE57495 (§8.79, 11 flux)** | **0,6381 / 0,1887** | **+0,4494** | **oui** | **oui** |
+
+Bilan : **9/13 au-dessus du plancher, 11/13 positifs.**
+LOO pire cas : retirer une paire passante donne 8/12 —
+**LOO 8/12** (contre 7/11 avant cette paire). C3 du §8.59.8
+RESTE LEVÉE — elle l'était depuis le §8.71 ; cette paire
+est une consolidation supplémentaire, pas une condition.
+
+## 8.79.4 — Les nuls frais : aucun, par la règle gelée
+
+`d_maxsep = +0,4494` est hors de l'intervalle
+[−0,07 ; +0,14[ qui déclenche les nuls frais (graines 8791,
+8792, gelées dans l'addendum). Aucun nul frais n'est donc
+couru, et le verdict reste celui de la paire graine 42. La
+règle est appliquée telle quelle : un écart à 6,4 fois le
+plancher n'a pas besoin de nuls frais pour être lu, et en
+courir quand même serait chercher une confirmation
+supplémentaire hors protocole.
+
+## 8.79.5 — Les scores compagnons : `maxsep` passe largement, les autres suivent en partie
+
+- **`sep` compagnon passe aussi sa barre descriptive.**
+  `sep` réel 0,3895 contre nul 0,1588 : `d_sep = +0,2308`,
+  au-dessus du plancher équivalent-sep
+  `0,07·(1+m_R)(1+m_N) = 0,1363`. (D4 n'est pas rejoué ici :
+  il porte sur les paires V1, déjà tranché.)
+- **S_sep suit `maxsep` presque à l'identique.**
+  S_sep réel 0,6311 contre nul 0,1872 : `+0,4440` — comme
+  au §8.74, S_sep et `maxsep` racontent la même séparation
+  ici (à comparer au §8.69, où les trois scores étaient
+  inversés ensemble).
+- **Ancien MC, positif mais modeste.** MC réel 0,3920
+  contre nul 0,3283 : `+0,0636`, sous le plancher 0,07 —
+  comme aux §8.70/§8.74, MC ne sépare pas seul. `maxsep`
+  reste le score principal par décision de Zackary
+  (20 nov. 13h04) ; MC est secondaire.
+- **Delta presque plat.** Delta réel 1,403 contre nul 1,334 :
+  `+0,0694` — les deux côtés sont hauts et proches, comme
+  aux §8.58/§8.66 (Delta ~1,3–1,4 des deux côtés). Aucune
+  divergence Delta/`maxsep` ici : Delta ne distingue pas
+  le réel du nul sur cette paire, `maxsep` oui. C'est
+  consigné tel quel, sans être élucidé sans preuve.
+- **L7a : up des deux côtés, confiance double au réel.**
+  Réel up 0,3386, nul up 0,1679. Descriptif : L7a n'est pas
+  le critère gelé.
+- **Cascade : le réel monte plus tôt et plus haut.** Réel
+  [0,0 / 36,1 / 69,7 / 85,7 / 85,7], pas [0, 22, 43, 53,
+  53] ; nul [0,0 / 6,3 / 44,4 / 51,6 / 74,5], pas [0, 4,
+  28, 32, 46]. Le premier seuil (Q2) arrive au pas 22
+  (36,1 %) au réel contre le pas 4 (6,3 %) au nul — le nul
+  « seuille » tôt et bas, le réel tard et haut.
+- **F1/F2 après seuil (descriptif).** Réel : F1 0,0014
+  (ratio 0,1206), F2 0,0001 (ratio 0,0826) — les deux
+  chutent après le seuil. Nul : F1 0,0027 (ratio 1,5331),
+  F2 0,0004 (ratio 1,0547) — les deux montent légèrement
+  après le seuil. 23 estimateurs « tous ok » des deux côtés.
+  Ces ratios sont descriptifs (formulation du seuil
+  critique attendu, §10 des rapports) ; ils ne décident pas.
+- **Régime : `criticality` des deux côtés** (comme aux
+  paires précédentes) — descriptif, pas un verdict.
+
+## 8.79.6 — Tests directs en appui (ne décident pas)
+
+Script `direct_tests_879_c3.py`, sur les CSV de flux du
+chantier (réel + nul graine 42), 11 flux.
+
+1. **Test informatif (correction §8.70, appliquée ici) :**
+   corrélation de Spearman de chaque flux avec le pas (ordre
+   KRAS), réel vs nul : |ρ| moyen réel **0,264** contre nul
+   **0,109** ; **Δρ médian +0,337 ; Δρ positifs 11/11** —
+   unanimité des flux dans le sens de l'ordre KRAS (à
+   comparer : +0,386 et 10/12 au §8.74 ; +0,524 et 12/12 au
+   §8.76 FNA). C'est le test qui porte l'information d'ordre.
+2. d de Cohen marginal des 11 flux (réel vs nul) : **d =
+   0,0000 pour les 11 gènes** (moyenne des |d| : 3,75×10⁻¹⁶)
+   — attendu vacueux par construction : le nul est une
+   permutation des lignes, chaque flux garde exactement ses
+   63 valeurs. Rapporté tel quel : il valide la construction
+   du nul (marginales préservées exactement), il ne mesure
+   pas la séparation.
+
+| Gène | d de Cohen | ρ réel | ρ nul | Δρ |
+|---|---|---|---|---|
+| PGC | +0,0000 | +0,222 | −0,142 | **+0,364** |
+| REG4 | −0,0000 | +0,216 | −0,129 | **+0,345** |
+| CLDN18 | −0,0000 | +0,468 | −0,059 | **+0,527** |
+| MUC17 | +0,0000 | +0,350 | +0,012 | **+0,337** |
+| DPCR1 | −0,0000 | +0,242 | −0,134 | **+0,376** |
+| CR2 | +0,0000 | +0,038 | −0,188 | **+0,226** |
+| KRT20 | −0,0000 | +0,353 | +0,116 | **+0,237** |
+| MUC2 | +0,0000 | +0,202 | +0,078 | **+0,123** |
+| CEACAM5 | −0,0000 | +0,438 | −0,124 | **+0,562** |
+| CLCA1 | +0,0000 | +0,260 | +0,037 | **+0,223** |
+| MUC16 | +0,0000 | +0,120 | −0,184 | **+0,304** |
+
+Lecture descriptive : CEACAM5 porte le plus fort Δρ
+(+0,562 ; ρ réel +0,438) — cohérent avec le holdout
+direct de la même cohorte (ρ KRAS–CEACAM5 = 0,4377,
+§8.69), mais ce n'est pas la même mesure (voir §8.79.7).
+CLDN18 suit (+0,527). Le plus faible est MUC2 (+0,123),
+toujours positif. CR2 a le ρ réel le plus faible (+0,038)
+mais un Δρ positif (+0,226) parce que son ρ nul est
+négatif (−0,188). Aucun de ces tests ne change le verdict
+du §6.
+
+## 8.79.7 — Comparaison descriptive avec le holdout direct : mêmes 63 tumeurs, autre mesure
+
+Le holdout direct (§8.66/§8.69) et la paire pipeline
+portent sur les **mêmes 63 tumeurs** de GSE57495, mais ne
+mesurent pas la même chose :
+
+| Mesure | Holdout direct (§8.69) | Paire pipeline (§8.79) |
+|---|---|---|
+| Objet | Corrélation KRAS–CEACAM5 (un gène) | Rupture multi-flux (11 gènes, ordre KRAS) |
+| Résultat | ρ = 0,4377, p permut. 0,00024, IC 95 % [0,1901, 0,6352] ; partielle 0,3521 | `d_maxsep = +0,4494` (réel 0,6381, nul 0,1887) |
+| Statut | Association directe, déjà tenue | Treizième paire, jamais courue avant |
+
+Aucune des deux lectures ne valide l'autre : une
+corrélation forte sur un gène n'implique pas une rupture
+multi-flux, et une rupture multi-flux ne prouve pas
+l'association sur un gène. Le fait que CEACAM5 porte le
+plus fort Δρ (+0,562) dans la paire est cohérent avec le
+holdout, pas une confirmation de celui-ci — et le verdict
+de la paire ne doit jamais être cité comme une confirmation
+indépendante de KRAS–CEACAM5. Cette distinction est le
+caveat central de la paire, et elle est écrite ici pour
+qu'aucune lecture future ne la confonde.
+
+## 8.79.8 — Ce que le verdict dit, et ce qu'il ne dit pas
+
+Il dit que `maxsep` sépare le réel du nul sur une treizième
+cohorte indépendante, avec la plus grande marge GEO mesurée
+à ce jour, et que le signal d'ordre est unanime (11/11).
+Il dit aussi que la candidate GDC, pourtant la plus forte
+de l'inventaire §8.78, est inutilisable comme paire à
+12 gènes pour une raison d'annotation (DPCR1 retiré de
+GENCODE v36, devenu MUCL3) — une leçon de provenance :
+un symbole de gène n'est pas un invariant, et une cohorte
+RNA-seq récente peut perdre un flux de la v4 par simple
+renommage. Il ne dit pas que `maxsep` est validé en
+général, ni que GSE57495 confirme KRAS–CEACAM5 (elle ne
+le peut pas — elle est le holdout lui-même). Il ne dit rien
+de clinique.
+
+## 8.79.9 — Pistes ouvertes
+
+| Pistes ouvertes | Oui, une de moins | (a) La confirmation indépendante C3 est close depuis le §8.71 — cette treizième paire est une consolidation supplémentaire, pas une condition ; (b) la candidate C1 (Chen et al. 2025, 46 PDO × 63 AUC, supplément MOESM13 SHA vérifié `0e009cd5…`) reste la piste suivante pour un lot drogue v6.2 (cible Gemcitabine, 62 contrôles) — elle ne peut pas devenir une paire A2 ; (c) la candidate C2 (GDC ORGANOID-PANCREATIC) reste utilisable sous un protocole futur qui pré-enregistrerait MUCL3 à la place de DPCR1 — les 55 TSV vérifiés sont détenus ; (d) la candidate C4 (GSE194249) attend toujours son re-audit depuis GEO (n réponse exact, couverture v4) ; (e) la fragilité du nul à petit n (§8.70, §8.53) reste un chantier propre ouvert — ici 1 seul nul, aucune étendue mesurée ; (f) la question ouverte nouvelle : pourquoi le `maxsep` réel de GSE57495 (0,6381) est-il le plus haut d'une paire GEO alors que son nul (0,1887) est le plus bas — effet de cohorte, de plateforme (GPL15048), ou du flux manquant (GSTM1) — aucune décomposition ne tranche ici. |
+
+## 8.79.10 — Annexe : provenance condensée et SHAs
+
+- **Cohorte courue :** GSE57495, PMID 26247463, GPL15048,
+  63 tumeurs PDAC. Matrice
+  `data/GSE57495_series_matrix.txt.gz` (13 487 043 o, SHA
+  `995dbeff288a14c1cc1a52489e456b7677ede5da8e287069b8298d649b532efc`) ;
+  mapping `data/GPL15048_probe2symbol.tsv` (SHA
+  `93e01ec387ab710dfbfe4b7ad960a90c494b131f62637df3a4476fa9f998f952`).
+- **Cohorte arrêtée :** GDC ORGANOID-PANCREATIC, manifeste SHA
+  `f713edebf0f8afb20305b1472d480564e45ac31ce79e28350d7dde6ae496220b` ;
+  55/55 fichiers MD5 OK, total 232 648 892 o ;
+  DPCR1 absent 0/55 ; Ensembl « No valid lookup found for
+  symbol DPCR1 » ; HGNC MUCL3 (HGNC:21666), prev_symbol
+  DPCR1, présent 55/55.
+- **Pipeline :** v6.2, SHA
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`,
+  vérifié avant et après le lot.
+- **Protocoles gelés :** `PROTOCOL_nouvelle_serie_879.md`
+  (C2, SHA `84b1adfa36503c9e5cc2bd11853b725d183706d9215e853b1f8af3c020e27538`) ;
+  `PROTOCOL_nouvelle_serie_879_C3.md` (C3, addendum, SHA
+  `a4399737d105af6b9ff2fc9906fad4bfe23bb6d941508119e762f38509ce3d01`).
+- **Provenance complète :** `PROVENANCE_879.md`.
+- **CSV de flux :** réel SHA
+  `224f98eb9cc7092e05b490b1e053edd14793e3def147890be0bab567630bb51c` ;
+  nul (graine 42) SHA
+  `5cd274594a9a256142eb5fc539645e51a6dca2f0f15b2084b9884f686ab41edf`.
+- **Runs :** `results_fast_v62_879_geo57495` et
+  `results_fast_v62_879_geo57495_nul`, 2/2 exit 0, FIN 21
+  nov. 2026 12h43:00 UTC. Extraction `extract_879_c3.json` /
+  `.csv` ; vérification `maxsep_879_c3_verify.json`
+  (2/2, écart max 0,0, verdict OK) ; tests directs
+  `direct_tests_879_c3.json`.
+- **Scripts :** `build_fluxes_879.py` (C2, arrêt),
+  `build_fluxes_879_c3.py`, `download_gdc_879.py`,
+  `extract_879_c3.py`, `verify_879_c3.py`,
+  `direct_tests_879_c3.py` (SHAs consignés dans le rapport
+  de livraison).
+- **Verdict :** CONFIRME, `d_maxsep = +0,4494`
+  (0,6381160120056911 − 0,1887249135434316). A2 : **9/13,
+  11/13 positifs, LOO 8/12.** C3 reste levée.
+
+— Fin de la §8.79. —
+
+---
+
+### 8.80 Nouvelles sur vopimetostat + daraxonrasib depuis ESMO 2026 (21 novembre 2026)
+Piste C du lot du 21 nov. 2026 (veille vopimetostat + daraxonrasib) ; protocole gelé 21 nov. 2026, 07h02 EST, AVANT toute recherche web ; veille documentaire, aucune donnée nouvelle mesurée ici.
+
+**Projet :** PDAC — livre blanc v6.2
+**Section :** §8.80 (le §8.78 est l'inventaire des dépôts, le §8.79 la nouvelle série pour une 13e paire)
+**Période couverte :** ESMO 2026 (23–27 octobre 2026) → 21 novembre 2026
+**Dernière vérification :** 21 novembre 2026, 07h00–07h15 EST
+**Protocole gelé :** `PROTOCOL_vopimetostat_nouvelles_880.md` (gelé AVANT la recherche, 21 nov. 2026, 07h02 EST)
+**Provenance :** `PROVENANCE_880.md`
+**Statut :** veille documentaire — aucune donnée nouvelle mesurée ici ; tous les faits cliniques ci-dessous sont externes, rapportés avec leur source.
+
+---
+
+## Verdict
+
+**Depuis ESMO 2026, aucune nouvelle donnée d'efficacité ou de sécurité sur la combinaison vopimetostat + daraxonrasib n'a été publiée ; la phase 3 n'a pas démarré et n'a toujours pas de numéro NCT — son design est en revanche désormais précisé (1:1, vopimetostat 200 mg + daraxonrasib 100 mg 1×/jour contre chimiothérapie standard, doubles critères principaux ORR et PFS, survie globale en critère secondaire clé, démarrage 1er semestre 2027) — et les vraies nouveautés du mois sont ailleurs : l'approbation européenne de daraxonrasib seul (16 nov. 2026), des données de première ligne daraxonrasib + chimiothérapie plus matures (ENA 2026, PFS médiane 12,8 mois), et deux nouvelles combinaisons PRMT5 + RAS ouvertes ou annoncées (vopimetostat + ERAS-0015 ; navlimetostat + daraxonrasib). Pour le rationnel MTAP/PRMT5 mesuré ici (§8.28/§8.29/§8.40), rien ne change — et le test décisif de sa frontière vient d'être annoncé : Tango prévoit un essai vopimetostat + inhibiteur pan-RAS chez des patients MTAP-sauvage (MTAP wild-type) au 1er semestre 2027.**
+
+Une annonce d'essai n'est pas une preuve d'efficacité : le chiffre de 82 % reste celui d'une étude de phase 1/2 non randomisée, n=22, sans survie globale, et seule la phase 3 randomisée pourra le confirmer ou l'infirmer.
+
+---
+
+## 0. Rappel — la référence ESMO 2026 (ce qui n'est PAS nouveau)
+
+La référence de cette section est la présentation ESMO 2026 (Madrid, 23–27 oct. 2026, poster 3149P, Spira et al.) et le communiqué Tango du 23 octobre 2026 :
+
+- **Vopimetostat + daraxonrasib, phase 1/2 (TNG462-C102, NCT06922591)**, patients MTAP-délétés / RAS-mutés, 2e et 3e ligne, PDAC métastatique : **ORR 82 % (18/22)**, toutes des réponses partielles, **DCR 100 %**, **PFS médiane non atteinte**, taux de PFS à 6 et 9 mois de 88,4 % (IC 95 % : 60,3 %–97,1 %), suivi médian 7,1 mois, date de coupure des données 20 août 2026. ORR 85,7 % en 2e ligne (n=7) et 84,6 % en 3e ligne (n=13). 7 réponses non confirmées à la coupure ont été confirmées après.
+- **Tolérance (dose niveau 1, DL1 : vopimetostat 200 mg + daraxonrasib 100 mg 1×/jour)** : chez 25 patients PDAC, 76,0 % d'événements indésirables liés au traitement (TRAE), 40,0 % de grade 3, **aucun TRAE de grade 4 ou 5, aucune toxicité dose-limitante (DLT), aucun retrait pour TRAE** ; interruptions de dose 40,0 %, réductions 20,0 %. TRAE les plus fréquents : stomatite/mucosite 48,0 %, rash 44,0 %, diarrhée 28,0 % (tous grades 1–2) ; grade 3 les plus fréquents : anémie 12,0 %, thrombopénie 8,0 %. **DL2 (vopimetostat 250 mg) non tolérable** (DLT chez 2 patients sur 4) — DL1 retenue comme dose candidate pour la phase 3.
+- **Vopimetostat + zoldonrasib** (bras KRAS G12D) : ORR confirmée **54,3 %** (35 patients évaluables, dont 1 réponse complète), DCR 97,1 %, PFS à 9 mois 60,5 % ; dose retenue : vopimetostat 200 mg + zoldonrasib 1200 mg.
+- **Point de comparaison indirect** (poster) : daraxonrasib seul en 2e ligne, RASolute 302 : ORR 31,6 %, PFS médiane 7,2 mois.
+- **Données de juin 2026** (antérieures à ESMO) : ORR 92 % sur 12 patients — le 82 % d'ESMO est donc une **confirmation sur un effectif plus grand avec un suivi plus long, pas une extension** du résultat de juin.
+
+Sources : Tango Therapeutics, communiqué du 23 oct. 2026 ; Targeted Oncology, 23 oct. 2026 (poster 3149P, Spira et al.).
+
+---
+
+## 1. La phase 3 vopimetostat + daraxonrasib : pas démarrée, design désormais précisé, toujours pas de numéro NCT
+
+### 1.1 Ce qui est confirmé depuis ESMO
+
+Le communiqué de résultats trimestriels de Tango du **9 novembre 2026** (T3 2026) reprend et précise le plan :
+
+- **Étude pivot de phase 3, mondiale, randomisée**, vopimetostat + daraxonrasib en **première ligne** chez les patients atteints de PDAC **MTAP-délété**.
+- **Randomisation 1:1** : vopimetostat **200 mg 1×/jour** + daraxonrasib **100 mg 1×/jour**, contre **chimiothérapie standard**.
+- **Doubles critères principaux : ORR et PFS** ; **survie globale (OS) en critère secondaire clé**.
+- **Démarrage prévu au 1er semestre 2027** (« first half of 2027 »), après discussions avec la FDA américaine.
+- Tango indique en outre vouloir **discuter avec les autorités réglementaires d'une voie d'approbation accélérée en 2e ligne** pour la combinaison.
+- Promoteur : **Tango Therapeutics** (l'étude est son étude d'enregistrement ; daraxonrasib est fourni par Revolution Medicines, qui en détient l'approvisionnement et les essais d'enregistrement propres).
+
+### 1.2 Ce qui n'existe pas encore (au 21 novembre 2026)
+
+- **Aucun numéro NCT** pour cette phase 3 n'apparaît dans les sources consultées (communiqués Tango des 23 oct. et 9 nov. 2026, dépôt SEC 8-K du 23 oct. 2026, recherches ciblées « vopimetostat daraxonrasib phase 3 NCT »). L'essai ne semble pas encore enregistré sur ClinicalTrials.gov.
+- **Aucune date de premier patient, aucun nombre de patients prévu, aucune liste de sites** n'a été publiée.
+- **Aucun critère d'inclusion détaillé** au-delà de « première ligne, PDAC MTAP-délété » (le statut RAS-muté, le statut de performance, les traitements antérieurs autorisés ne sont pas précisés dans les sources publiques).
+
+**Lecture :** le calendrier « 1er semestre 2027 » était déjà annoncé à ESMO ; le communiqué du 9 novembre 2026 le **confirme** et **précise le design**, il ne l'avance pas. Le démarrage reste une intention d'entreprise, pas un fait accompli. La prochaine vérification utile : l'apparition d'un enregistrement ClinicalTrials.gov (numéro NCT) et/ou l'annonce du premier patient randomisé.
+
+---
+
+## 2. Nouvelles données d'efficacité / sécurité de la combinaison : aucune depuis ESMO
+
+- **Aucune nouvelle donnée d'efficacité ou de sécurité sur vopimetostat + daraxonrasib n'a été publiée entre le 23 octobre et le 21 novembre 2026.** Aucune mise à jour de la cohorte (toujours la coupure du 20 août 2026, n=22 évaluables), aucune PFS médiane atteinte, aucune donnée de survie globale, aucun nouveau signal de tolérance.
+- **SITC 2026 (7–9 nov. 2026) : aucune présentation sur la combinaison trouvée** dans les recherches effectuées le 21 novembre 2026.
+- **Vopimetostat seul : aucune nouvelle donnée.** Les prochaines données attendues sont celles de vopimetostat en monothérapie dans le cancer du poumon (CBNPC) et de TNG456 (poumon, glioblastome), annoncées pour **janvier 2027** (communiqué Tango du 9 nov. 2026).
+- Conséquence méthodologique : le dossier d'efficacité de la combinaison repose toujours, au 21 novembre 2026, sur **22 patients, une étude ouverte non randomisée, un suivi médian de 7,1 mois, sans OS**. Les comparaisons indirectes avec daraxonrasib seul (RASolute 302) ou avec la chimiothérapie historique restent des comparaisons indirectes.
+
+---
+
+## 3. Le champ PRMT5 + RAS s'élargit : deux nouvelles combinaisons, et un test de la frontière MTAP
+
+### 3.1 Vopimetostat + ERAS-0015 (Tango + Erasca) — recrutement ouvert le 4 novembre 2026
+
+- Le **4 novembre 2026**, Tango Therapeutics et Erasca ont annoncé l'**ouverture du recrutement** d'une étude de **phase 1/2** de vopimetostat + **ERAS-0015** (pan-RAS molecular glue, Erasca) chez des patients atteints de PDAC **MTAP-délété** et de CBNPC **MTAP-délété / RAS-muté**.
+- Étude ouverte, multicentrique, dose-escalade puis expansion, **promue par Tango Therapeutics** ; **NCT07897734**. Objectif principal de la dose-escalade : dose maximale tolérée.
+- Il s'agit d'une **ouverture de recrutement, pas d'un résultat** : aucune donnée d'efficacité ou de sécurité n'est disponible pour cette combinaison.
+
+### 3.2 Vopimetostat + inhibiteur pan-RAS chez les patients MTAP-sauvage — prévu 1er semestre 2027
+
+- Annoncé en octobre 2026 et confirmé le 9 novembre 2026 : Tango prévoit de lancer au **1er semestre 2027** une étude de **phase 1/2 d'environ 25 patients**, vopimetostat + inhibiteur pan-RAS, chez des patients atteints de PDAC **MTAP wild-type** (MTAP-sauvage), en **2e ligne**.
+- Hypothèse affichée par Tango : « la synergie observée dans les cancers MTAP-délétés a le potentiel de s'étendre aux cancers MTAP wild-type », sur la base d'un rationnel biologique et de données cliniques et précliniques émergentes.
+- **Portée pour ce projet : c'est le test direct de la frontière du rationnel MTAP/PRMT5.** Le rationnel DepMap mesuré ici (§8.28/§8.29/§8.40) dit que l'effet PRMT5 **suit MTAP, pas CDKN2A** (PRMT5 Chronos −1,385 MTAP-délété vs −1,010 intact, p=0,0036, 4 confirmations). Si la combinaison fonctionne aussi chez les MTAP-sauvages, la spécificité MTAP du rationnel devra être révisée ; si elle n'y fonctionne pas, la frontière MTAP sera confirmée cliniquement. **À ce jour, il n'y a aucune donnée — seulement une hypothèse et un essai prévu.** À suivre comme jalon 2027, pas comme un résultat.
+
+### 3.3 Navlimetostat (BMS-986504) + daraxonrasib — MountainTAP-5, phase 2, en recrutement
+
+- **MountainTAP-5 (NCT07492680)**, promue par **Bristol-Myers Squibb** : étude de phase 2, ouverte, multicentrique, de navlimetostat (BMS-986504, inhibiteur PRMT5 de BMS, anciennement BMS-986504) en monothérapie et en combinaisons chez des patients atteints de tumeurs solides avancées/métastatiques avec **délétion homozygote de MTAP**. Trois cohortes associent navlimetostat + **daraxonrasib** (dont une avec chimiothérapie en plus). Effectif estimé : 254 participants. Statut : **en recrutement** ; fiche du registre mise à jour le **4 novembre 2026**.
+- C'est la **deuxième combinaison PRMT5 + daraxonrasib** en développement clinique, avec un inhibiteur PRMT5 différent (BMS) et un promoteur différent (BMS). Aucune donnée d'efficacité n'a été publiée pour ces cohortes.
+- À noter : Revolution Medicines mentionne aussi, dans son point du 4 novembre 2026, une collaboration avec **BeOne Medicines** (août 2026) explorant les combinaisons de ses inhibiteurs RAS(ON) avec l'inhibiteur PRMT5 MTA-coopératif **BGB-58067** — troisième programme PRMT5 + RAS, sans donnée publiée à ce jour.
+
+---
+
+## 4. Daraxonrasib seul : approbation européenne, données de première ligne plus matures, programme de phase 3 en avance
+
+Ces faits ne concernent pas directement la combinaison vopimetostat + daraxonrasib, mais ils renforcent le bras RAS du rationnel et fixent le comparateur auquel la phase 3 de la combinaison sera confrontée.
+
+### 4.1 Approbation par la Commission européenne — 16 novembre 2026
+
+- Le **16 novembre 2026**, la **Commission européenne** a accordé l'autorisation de mise sur le marché de **RASONQUE (daraxonrasib)** en monothérapie pour les adultes atteints d'adénocarcinome pancréatique métastatique ayant reçu **au moins un traitement systémique antérieur**, **avec ou sans mutation tumorale RAS identifiée**. L'autorisation couvre tous les États membres de l'UE ainsi que l'Islande, la Norvège et le Liechtenstein (EEE).
+- Décision fondée sur **RASolute 302** (phase 3, NCT06625320), après avis positif du CHMP (EMA) rendu en octobre 2026 dans le cadre d'un examen accéléré (projet Cancer Medicines Pathfinder). C'est la deuxième approbation après celle de la **FDA du 26 août 2026** (indication américaine : ≥1 traitement antérieur **ou** non candidat à une chimiothérapie multi-agents).
+- L'accès effectif dans chaque pays dépendra des processus nationaux de prix, d'évaluation et de remboursement.
+
+### 4.2 RASolute 302 — publication NEJM et analyses de sous-groupes ESMO 2026
+
+- **Publication :** O'Reilly et al., « Daraxonrasib or chemotherapy in previously treated metastatic pancreatic cancer », *New England Journal of Medicine* 2026 ;395(4):325–337 (RASolute 302). Rappel des résultats (population en intention de traiter) : **OS médiane 13,2 vs 6,7 mois, HR 0,40 ; PFS 7,2 vs 3,6 mois ; ORR 31,6 % vs 11,2 %**.
+- **ESMO 2026 (abstract LBA82)** : analyses exploratoires de sous-groupes de RASolute 302 — le bénéfice de survie globale de daraxonrasib vs chimiothérapie est **maintenu dans tous les sous-groupes de génotype RAS évalués, y compris les patients sans mutation tumorale RAS identifiée**, ainsi que dans les différents régimes de chimiothérapie standard et les différents contextes de traitement antérieur (dont la récidive métastatique précoce après traitement périopératoire).
+- **NCCN :** les recommandations américaines NCCN incluent désormais RASONQUE comme **option préférée de catégorie 1** en traitement ultérieur du cancer du pancréas localement avancé ou métastatique, et le listent en première ligne comme « utile dans certaines circonstances ».
+- **Lancement commercial (contexte, pas une preuve d'efficacité) :** 197,6 millions de dollars de revenus nets au T3 2026 (environ 5 semaines de commercialisation) ; plus de 5 000 patients uniques traités aux États-Unis entre l'approbation et le 30 septembre 2026.
+
+### 4.3 Première ligne : daraxonrasib + gemcitabine/nab-paclitaxel — données actualisées, ENA 2026 (19–20 nov. 2026)
+
+- **Présentation orale late-breaking au symposium EORTC-NCI-AACR (ENA) 2026** : suivi plus long de la phase 1/2 **RMC-GI-102, sous-protocole C (NCT06445062)**, daraxonrasib + gemcitabine/nab-paclitaxel (GnP) en **première ligne** du PDAC métastatique, communiqué Revolution Medicines du **19 novembre 2026**, relayé par OncLive le **20 novembre 2026**.
+- Résultats (coupure des données **28 septembre 2026**, **n=61**, suivi médian **18,3 mois**) : **ORR confirmée 60,7 %** (IC 95 % : 47,3 %–72,9 %), dont **8,2 % de réponses complètes** ; **DCR 90,2 %** ; **durée médiane de réponse 11,1 mois** ; **PFS médiane 12,8 mois** (IC 95 % : 10,8–18,4) ; **taux de survie globale à 12 mois estimé à 76,6 %**.
+- Comparaison avec la première analyse (AACR, avril 2026, n=40) : ORR 58 %, DCR 90 % — l'effectif a augmenté et le suivi s'est allongé, les chiffres restent du même ordre.
+- Tolérance : profil conforme aux profils connus de daraxonrasib et de GnP, **aucun nouveau signal de sécurité** avec le suivi prolongé.
+- **Désignation Breakthrough Therapy (FDA) accordée en septembre 2026** à daraxonrasib + GnP en première ligne du PDAC métastatique naïf de traitement (3e BTD pour daraxonrasib, 5e pour le portefeuille RAS(ON) de Revolution Medicines).
+- Ces données alimentent **RASolute 303** (voir 4.4). Elles ne concernent pas la combinaison avec vopimetostat, mais elles élèvent le niveau du bras daraxonrasib : en première ligne, daraxonrasib + chimiothérapie atteint déjà une PFS médiane de 12,8 mois en phase 1/2 non randomisée.
+
+### 4.4 Programme de phase 3 daraxonrasib : RASolute 303 et 304
+
+- **RASolute 303 (NCT07491445)** — phase 3, trois bras, première ligne du PDAC métastatique : daraxonrasib seul vs daraxonrasib + GnP vs GnP seul ; **900 patients prévus**, quel que soit le génotype RAS tumoral ; critères principaux PFS (revue centrale indépendante en aveugle) et OS. **Recrutement terminé aux États-Unis** ; **recrutement mondial attendu terminé au 1er semestre 2027** (point Revolution Medicines du 4 nov. 2026).
+- **RASolute 304 (NCT07252232)** — phase 3 adjuvante : daraxonrasib vs observation après résection chirurgicale et traitement périopératoire standard ; **en cours** (premier patient randomisé en décembre 2025) ; aucune donnée publiée.
+- **RASolute 309** — phase 3, doublet RAS(ON) **daraxonrasib + zoldonrasib** en première ligne du PDAC métastatique **KRAS G12D** : **premiers patients traités** (annoncé le 4 nov. 2026). **RASolute 305** — zoldonrasib + chimiothérapie en première ligne KRAS G12D : en cours.
+
+### 4.5 Publication de synthèse : Soff & O'Reilly, PLOS Medicine, 29 octobre 2026
+
+- Perspective « Pancreatic cancer: The RAS paradigm shift » (*PLOS Medicine* 2026 ;23(10):e1005283, doi:10.1371/journal.pmed.1005283, Soff SP, O'Reilly EM, publiée le **29 octobre 2026**) : RASolute 302 y est présenté comme la démonstration que RAS n'est plus « undruggable » ; les auteurs y recensent RASolute 303 (NCT07491445) et RASolute 304 (NCT07252232) et notent qu'en préclinique, les inhibiteurs de PRMT5 combinés à daraxonrasib (pan-RAS), MRTX1133 (G12D) ou adagrasib (G12C) ont réduit la division cellulaire et fait régresser les tumeurs davantage que chaque médicament seul. Il s'agit d'une **synthèse**, pas d'une donnée nouvelle.
+
+---
+
+## 5. Ce que cela change — et ne change pas — pour le rationnel MTAP/PRMT5
+
+### 5.1 Ce qui ne change pas
+
+- **Le rationnel DepMap mesuré ici est intact** : l'effet PRMT5 suit MTAP, pas CDKN2A (§8.28/§8.29/§8.40 ; 4 confirmations ; PRMT5 Chronos −1,385 MTAP-délété vs −1,010 intact, p=0,0036). **Aucun fait nouveau de cette veille ne le contredit.**
+- **Le chiffre clinique central est inchangé** : ORR 82 % (18/22), DCR 100 %, PFS médiane non atteinte, n=22, non randomisé, sans OS. Il n'a été ni confirmé sur un plus grand effectif, ni infirmé.
+- **La phase 3 reste le test décisif.** Son design précisé (randomisation 1:1 contre chimiothérapie, doubles critères ORR/PFS, OS secondaire clé) est cohérent avec ce qu'une confirmation exigerait : un bras contrôle, une première ligne, des critères de survie.
+
+### 5.2 Ce qui change — ou se précise
+
+1. **Le design de la phase 3 est désormais public et précis** (doses, randomisation, critères). La question ouverte n'est plus « à quoi ressemblera la phase 3 ? » mais « quand démarre-t-elle, et quel sera son numéro NCT ? ».
+2. **La barre du comparateur monte.** En première ligne, daraxonrasib + GnP affiche désormais une PFS médiane de 12,8 mois (phase 1/2, n=61). La phase 3 de la combinaison vopimetostat + daraxonrasib sera jugée contre la chimiothérapie standard — mais l'écosystème de première ligne, lui, avance vite (RASolute 303, RASolute 309).
+3. **Le champ PRMT5 + RAS se multiplie** : trois programmes distincts (vopimetostat + daraxonrasib ; vopimetostat + ERAS-0015 ; navlimetostat + daraxonrasib ; plus BGB-58067 en collaboration). La combinaison Tango/Revolution n'est plus la seule piste PRMT5 + RAS — ce qui diversifie le risque mais aussi la concurrence pour le recrutement des patients MTAP-délétés.
+4. **Le test de la frontière MTAP est programmé** (essai MTAP wild-type, ~25 patients, 1er semestre 2027). C'est le jalon à surveiller pour le rationnel : il dira si la létalité synthétique PRMT5 est strictement MTAP-dépendante ou plus large.
+5. **Daraxonrasib seul gagne du terrain réglementaire** (approbation UE, avis CHMP, NCCN catégorie 1, BTD en première ligne + chimiothérapie). Cela ne prouve rien sur la combinaison, mais cela rend le partenaire RAS plus solide et plus disponible — et rend d'autant plus nécessaire de démontrer la **contribution propre de vopimetostat** : daraxonrasib seul répond déjà (31,6 % en 2e ligne, 60,7 % avec GnP en 1re ligne), et la combinaison n'a jamais été comparée directement à daraxonrasib seul.
+
+### 5.3 Ce qui reste une limite structurelle (rappel)
+
+- La combinaison n'a **jamais été comparée directement à daraxonrasib seul** : l'écart 82 % vs 31,6 % compare deux études différentes, deux lignes de traitement différentes, deux populations différentes. L'effet propre de vopimetostat n'est pas isolé cliniquement.
+- Les 7 réponses « non confirmées à la coupure puis confirmées après » (ESMO) rappellent que le chiffre de 82 % dépendait, à la coupure du 20 août 2026, de confirmations postérieures.
+- La PFS médiane « non atteinte » avec un suivi médian de 7,1 mois n'est pas une durée de bénéfice mesurée : c'est une absence de médiane.
+
+---
+
+## 6. Ce qui reste ouvert — jalons à vérifier
+
+| Jalon | Échéance annoncée | Source | Statut au 21 nov. 2026 |
+|---|---|---|---|
+| Phase 3 vopimetostat + daraxonrasib : numéro NCT, premier patient | 1er semestre 2027 | Tango, 9 nov. 2026 | Non démarrée, pas de NCT |
+| Phase 3 : discussion d'une voie d'approbation accélérée en 2e ligne | Non datée | Tango, 9 nov. 2026 | Discussion prévue, rien de déposé |
+| Phase 1/2 vopimetostat + pan-RAS, PDAC MTAP wild-type (~25 pts, 2e ligne) | 1er semestre 2027 | Tango, 9 nov. 2026 | Prévue, pas de NCT publié |
+| Vopimetostat + ERAS-0015 (NCT07897734) : premières données | Non datée | Tango/Erasca, 4 nov. 2026 | Recrutement ouvert, aucune donnée |
+| MountainTAP-5, cohortes navlimetostat + daraxonrasib (NCT07492680) : premières données | Non datée | BMS / registre, màj 4 nov. 2026 | En recrutement, aucune donnée |
+| Vopimetostat monothérapie poumon + TNG456 : données | Janvier 2027 | Tango, 9 nov. 2026 | En attente |
+| RASolute 303 : fin du recrutement mondial | 1er semestre 2027 | Revolution Medicines, 4 nov. 2026 | Recrutement US terminé |
+| RASolute 304 (adjuvant) : données | Non datée | Revolution Medicines, 4 nov. 2026 | En cours, aucune donnée |
+| RASolute 309 (daraxonrasib + zoldonrasib, 1re ligne G12D) : données | Non datée | Revolution Medicines, 4 nov. 2026 | Premiers patients traités |
+| Nouvelle coupure de données TNG462-C102 (vopimetostat + daraxonrasib) : PFS médiane ? OS ? | Non datée | — | Aucune annoncée |
+
+---
+
+## 7. Limites de cette veille
+
+- **Fenêtre courte** : 29 jours entre ESMO (23 oct.) et cette vérification (21 nov. 2026). L'absence de nouveauté sur la combinaison dans cette fenêtre est un fait de calendrier autant qu'un fait de fond.
+- **Accès direct refusé** : le communiqué de Revolution Medicines du 19 novembre 2026 (données ENA) n'a pas pu être lu sur le site ir.revmed.com (HTTP 403, 21 nov. 2026) ; les chiffres ENA sont rapportés via OncLive (20 nov. 2026), qui cite le communiqué et l'abstract, et via le point trimestriel SEC de Revolution Medicines (4 nov. 2026) qui annonçait la présentation.
+- **Pas d'accès à ClinicalTrials.gov en direct pour une recherche exhaustive** : l'affirmation « pas de numéro NCT pour la phase 3 » repose sur l'absence de NCT dans les communiqués Tango (23 oct., 9 nov. 2026), le dépôt SEC 8-K du 23 oct. 2026 et les recherches web ciblées du 21 nov. 2026 — pas sur une interrogation exhaustive du registre. À re-vérifier à chaque jalon.
+- **Sources secondaires** : pour l'approbation européenne, le communiqué original de Revolution Medicines (16 nov. 2026) est rapporté via Quiver Quantitative et OncoDaily (reprises du communiqué GlobeNewswire) ; pour MountainTAP-5, via des miroirs du registre (clinicaltrials.gg, allclinicaltrials.com) et non la fiche ClinicalTrials.gov elle-même.
+- **Aucune donnée mesurée ici** : cette section est une veille documentaire. Les seuls chiffres mesurés dans ce projet restent ceux des §8.28/§8.29/§8.40 (DepMap).
+
+---
+
+## Sources
+
+1. Tango Therapeutics — « Tango Therapeutics Reports Third Quarter 2026 Financial Results and Provides Business Highlights », communiqué, 9 novembre 2026. https://finviz.com/news/418906/tango-therapeutics-reports-third-quarter-2026-financial-results-and-provides-business-highlights
+2. Tango Therapeutics — « Tango Presents Promising Results from Phase 1/2 Study of Vopimetostat and Daraxonrasib in Pancreatic Cancer and Provides Updates to Development Strategy », communiqué, 23 octobre 2026. https://www.nasdaq.com/press-release/tango-presents-promising-results-phase-1-2-study-vopimetostat-and-daraxonrasib
+3. Tango Therapeutics — dépôt SEC, formulaire 8-K, 23 octobre 2026 (pièce 99.1 : communiqué ESMO). https://app.quotemedia.com/data/downloadFiling?webmasterId=90423&ref=320420492&type=HTML&symbol=TNGX&cdn=145062121a8f84309c27960e8c5d275d&companyName=Tango+Therapeutics+Inc.&formType=8-K&formDescription=Current+report+pursuant+to+Section+13+or+15%28d%29&dateFiled=2026-10-23
+4. Targeted Oncology — « Vopimetostat Plus Daraxonrasib Yields 82% ORR in MTAP-Deleted PDAC », 23 octobre 2026 (poster ESMO 3149P, Spira A et al.). https://www.targetedonc.com/view/vopimetostat-plus-daraxonrasib-yields-82-orr-in-mtap-deleted-pdac
+5. Tango Therapeutics / Erasca — « Tango and Erasca Initiate Phase 1/2 Study of Oral PRMT5 Inhibitor Vopimetostat in Combination with Pan-RAS Molecular Glue ERAS-0015 », communiqué, 4 novembre 2026. https://rss.globenewswire.com/news-release/2026/11/04/3395309/0/en/tango-and-erasca-initiate-phase-1-2-study-of-oral-prmt5-inhibitor-vopimetostat-in-combination-with-pan-ras-molecular-glue-eras-0015.html
+6. Revolution Medicines — « Revolution Medicines Reports Third Quarter 2026 Financial Results and Update on Corporate Progress », communiqué / pièce SEC EX-99.1, 4 novembre 2026. https://www.sec.gov/Archives/edgar/data/1628171/000119312526447193/rvmd-ex99_1.htm
+7. OncLive — « Daraxonrasib Plus Gemcitabine/Nab-Paclitaxel Generates Durable Responses in First-Line Metastatic PDAC », 20 novembre 2026 (données ENA 2026, RMC-GI-102 sous-protocole C, NCT06445062). https://www.onclive.com/view/daraxonrasib-plus-gemcitabine-nab-paclitaxel-generates-durable-responses-in-first-line-metastatic-pdac
+8. Revolution Medicines — « Revolution Medicines Receives European Commission Approval for RASONQUE for Previously Treated Metastatic Pancreatic Adenocarcinoma », communiqué, 16 novembre 2026 (repris par Quiver Quantitative). https://www.quiverquant.com/news/Revolution+Medicines+Receives+European+Commission+Approval+for+RASONQUE+for+Previously+Treated+Metastatic+Pancreatic+Adenocarcinoma
+9. OncoDaily — « The European Commission Approves Revolution Medicines' Daraxonrasib for Metastatic Pancreatic Cancer », 16–17 novembre 2026. https://oncodaily.com/not-to-miss/european-commission-daraxonrasib-634184
+10. Soff SP, O'Reilly EM — « Pancreatic cancer: The RAS paradigm shift », *PLOS Medicine* 2026 ;23(10):e1005283, publié le 29 octobre 2026. https://journals.plos.org/plosmedicine/article/asset?id=10.1371/journal.pmed.1005283.PDF
+11. O'Reilly EM et al. ; RASolute 302 Trial Investigators — « Daraxonrasib or chemotherapy in previously treated metastatic pancreatic cancer », *New England Journal of Medicine* 2026 ;395(4):325–337 (cité via OncLive, réf. 4 de l'article ENA).
+12. ClinicalTrials.gov — RASolute 303, NCT07491445 (daraxonrasib ± GnP, première ligne). https://clinicaltrials.gov/study/NCT07491445
+13. ClinicalTrials.gov (via miroirs clinicaltrials.gg / allclinicaltrials.com) — MountainTAP-5, NCT07492680 (navlimetostat ± daraxonrasib, tumeurs MTAP-délétées ; fiche mise à jour le 4 novembre 2026). https://clinicaltrials.gg/study/NCT07492680
+14. Park W et al. — « Daraxonrasib plus gemcitabine/nab-paclitaxel (GnP) as first-line (1L) treatment for patients with metastatic pancreatic adenocarcinoma (mPDAC) », *European Journal of Cancer* 2026 ;248(suppl):117451 (abstract ENA 2026, cité via OncLive).
+
+---
+
+*Fin de la section §8.80. Prochaine vérification proposée : à l'apparition d'un numéro NCT pour la phase 3 vopimetostat + daraxonrasib, ou à la prochaine donnée TNG462-C102, ou au plus tard à la fin du 1er semestre 2027.*
+
+— Fin de la §8.80. —
+
+---
+
+### 8.81 Piste Œil : la tumeur du pancréas copie-t-elle le privilège immunitaire de l'œil ? — MIXTE (21 novembre 2026)
+Go parent 21 nov. 2026 — piste Œil proposée par Zackary le 21 nov., lancée le jour même ; protocole gelé 21 nov. 2026 avant toute construction et tout run.
+
+## Verdict d'abord
+
+**MIXTE — la tumeur du pancréas ne copie pas le privilège immunitaire de l'œil comme un programme
+cohérent.** Sur les 7 gènes du privilège oculaire testés aujourd'hui dans 4 cohortes PDAC ordonnées par KRAS
+(TCGA n = 178, GSE71729 n = 145, GSE62452 n = 69, ICGC n = 70), 3 montent avec KRAS selon les critères
+gelés d'avance — CD47, TGFB1, CD274 — 4 ne montent pas (FASLG descend partout sans atteindre le seuil gelé,
+TGFB2 monte partout mais trop faiblement, IDO1 et HLA-G sont incohérents d'une cohorte à l'autre), et le
+score de privilège PRIV monte partout mais trop faiblement (rho médian +0,122, sous le seuil gelé de +0,15 ;
+seule GSE62452 dépasse le seuil, +0,343, p = 0,004). Le critère gelé d'un OUI (≥ 4 gènes sur 7 qui montent,
+ou score > +0,15 sur ≥ 3 cohortes) n'est pas atteint ; le critère d'un NON (≤ 1 gène qui monte, score plat)
+ne l'est pas non plus. **Le bras pipeline v6.2 ne sauve pas la piste :** ordonnées par PRIV, les tumeurs TCGA
+donnent `d_maxsep = +0,1649` (réel 0,3534 contre nul 0,1885, au-dessus du plancher 0,07), mais la chaîne du
+§8.11 ne réapparaît pas — PGC et DPCR1 sont plats en Spearman (−0,057 et +0,009), MUC16 monte autant dans le
+nul que dans le réel en top-12 (+0,408 contre +0,423). **Et le cancer de l'œil lui-même ne porte pas le
+programme :** le mélanome uvéal TCGA-UVM (n = 80, téléchargé aujourd'hui) exprime MOINS — pas plus — les
+7 gènes de privilège que le pancréas (d de Cohen −0,35 à −3,00), tout en étant plus « froid » (PDCD1 −1,30,
+CD8A −1,33, GZMB −1,60), et sous l'ordre PRIV ses gènes v4 MONTENT (PGC +0,321, CLDN18 +0,306, CR2 +0,289)
+au lieu de chuter — l'image miroir de la chaîne pancréatique, pas sa réapparition. Ce chantier ne rouvre
+rien : C3 reste levée, test C reste NON, adoption pleine de maxsep reste la décision de Zackary.
+
+| Porte (PROTOCOL_oeil_privilege_881.md, gelé) | Exigé | Mesuré 21 nov. 2026 | Sort |
+|---|---|---|---|
+| Gènes de privilège qui MONTENT avec KRAS (≥ 3 cohortes +, rho médian > +0,15) | ≥ 4/7 pour OUI | **3/7** (CD47, TGFB1, CD274) | **MIXTE** |
+| Score PRIV vs KRAS (rho médian > +0,15 sur ≥ 3 cohortes) | ≥ 3 cohortes | **1/4** (GSE62452 seule, +0,343) | **MIXTE** |
+| Chaîne du §8.11 sous l'ordre PRIV (D1 + D2, réel contre nul) | PGC/DPCR1/CLDN18 ↓ et MUC16 ↑ au-delà du nul | **Non** : PGC/DPCR1 plats en rho, MUC16 = nul en top-12 | **NON** |
+| `d_maxsep` TCGA PRIV (plancher gelé) | > 0,07 | **+0,1649** (0,3534 − 0,1885) | **PASSE, piste seule** |
+| `d_maxsep` UVM PRIV (plancher gelé) | > 0,07 | **+0,0496** (0,2661 − 0,2165) | **NE PASSE PAS** |
+| UVM : privilège exprimé PLUS qu'en PAAD | d > 0 | **d −0,35 à −3,00** (moins partout) | **NON** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que trois pièces du privilège oculaire — le
+« ne me mange pas » CD47, le TGF-β1 et le PD-L1 — montent bien avec KRAS dans le pancréas, et que c'est
+cohérent avec la tumeur qui devient froide (PDCD1 chute dans les 4 cohortes, −0,21 à −0,24 ; CD8A chute
+dans les 4, −0,15 à −0,35 — le témoin « froid » du §8.23 se reproduit aujourd'hui). Il dit que le reste du
+programme ne suit pas : ni le FasL qui tue les lymphocytes (FASLG négatif partout), ni l'IDO1, ni HLA-G —
+donc pas de copie du programme oculaire entier. Il dit que le score PRIV ordonne faiblement les tumeurs
+et que le pipeline y voit un écart `maxsep` au-dessus du plancher sans y voir la chaîne : l'ordre existe,
+la rupture cherchée n'y est pas. Il dit enfin que le mélanome uvéal, cancer d'un site à privilège, n'exprime
+pas davantage ces gènes que le pancréas — le privilège de l'œil ne se lit pas comme une surexpression
+tumorale de ces 7 gènes. Il ne dit pas que la tumeur n'échappe pas au système immunitaire — seulement
+qu'elle ne le fait pas par ces 7 gènes le long de l'axe KRAS, dans ces cohortes. Il ne dit rien de
+clinique : aucune affirmation sur un remède n'est tirée de ce chantier.
+
+Protocole gelé : `PROTOCOL_oeil_privilege_881.md` (21 nov. 2026, SHA `c985a03a…a4ce`, inchangé).
+Critères écrits AVANT toute construction et tout run (§3, §6 du protocole) ; aucune repondération,
+aucun nouveau terme, aucune redéfinition du plancher après avoir vu les chiffres.
+
+## 8.81.1 — Les tests directs : 3 gènes montent, 4 ne montent pas, le score monte trop faiblement
+
+**Méthode (gelée).** T1, test PRINCIPAL : Spearman rho de chaque gène contre le rang KRAS, par cohorte.
+TCGA : résidus après correction de pureté (même régression que la v4, reproduction vérifiée : écart max
+1,776e-15, atol 1e-9). GEO/ICGC : valeurs fournies, cas complets, jamais d'imputation. Les 7 gènes de
+privilège sont présents dans les 4 cohortes — aucun absent. Seule absence du chantier : **IFNG est ABSENT
+de la matrice ICGC** (le symbole ne figure pas dans le fichier d'expression après mapping ; vérifié
+directement) — case vide, pas zéro, pas imputé. Correction §8.70/§8.71 appliquée : le d de Cohen marginal
+réel-vs-nul est vacueux par construction (vérifié : FASLG −0,0000, TGFB1 +0,0000, CD274 −0,0000) — il
+valide la construction du nul et ne décide rien ; c'est le Spearman contre le pas qui porte l'information.
+
+| Gène | TCGA (n=178) | GSE71729 (n=145) | GSE62452 (n=69) | ICGC (n=70) | rho médian | Verdict gelé |
+|---|---|---|---|---|---|---|
+| **CD47** | **+0,180** (p=0,016) | **+0,231** (p=0,005) | **+0,623** (p=1,1e-08) | **+0,137** (p=0,26) | **+0,206** | **MONTE** |
+| **TGFB1** | −0,115 (p=0,13) | **+0,282** (p=0,0006) | **+0,210** (p=0,083) | **+0,165** (p=0,17) | **+0,188** | **MONTE** |
+| **CD274 / PD-L1** | **+0,286** (p=0,0001) | −0,106 (p=0,20) | **+0,183** (p=0,13) | **+0,177** (p=0,14) | **+0,180** | **MONTE** |
+| TGFB2 | +0,320 (p=1,4e-05) | +0,058 (p=0,49) | +0,159 (p=0,19) | +0,038 (p=0,76) | +0,108 | MIXTE (4/4 +, trop faible) |
+| FASLG | −0,138 (p=0,066) | −0,060 (p=0,47) | −0,110 (p=0,37) | −0,046 (p=0,71) | −0,085 | MIXTE (4/4 −, sous le seuil) |
+| IDO1 | −0,016 (p=0,83) | +0,150 (p=0,071) | −0,066 (p=0,59) | −0,056 (p=0,64) | −0,036 | MIXTE |
+| HLA-G | +0,041 (p=0,59) | −0,253 (p=0,002) | +0,038 (p=0,76) | −0,118 (p=0,33) | −0,040 | MIXTE |
+| **SCORE PRIV** | **+0,146** (p=0,051) | **+0,098** (p=0,24) | **+0,343** (p=0,004) | **+0,095** (p=0,43) | **+0,122** | **MIXTE** |
+| *PDCD1 (témoin)* | *−0,213 (p=0,004)* | *−0,240 (p=0,004)* | *−0,215 (p=0,076)* | *−0,223 (p=0,064)* | *−0,219* | *chute, témoin reproduit* |
+| *CD8A (témoin)* | *−0,165 (p=0,028)* | *−0,154 (p=0,064)* | *−0,348 (p=0,003)* | *−0,146 (p=0,23)* | *−0,160* | *chute, témoin reproduit* |
+| *GZMB (témoin)* | *−0,108* | *+0,144* | *+0,059* | *−0,035* | *—* | *mixte* |
+| *IFNG (témoin)* | *−0,021* | *+0,086* | *−0,086* | *absent* | *—* | *mixte / absent ICGC* |
+
+**Lecture.** Les trois qui montent sont les trois pièces « passives » du privilège : CD47 (« ne me mange
+pas », signal anti-phagocytose), TGFB1 (cytokine immunosuppressive) et CD274/PD-L1 (frein des lymphocytes
+T). Les trois pièces « actives » ne suivent pas : FASLG — le ligand qui fait mourir les lymphocytes
+attaquants, pièce maîtresse du privilège oculaire — DESCEND partout (−0,05 à −0,14, 4/4 négatif, sans
+atteindre le seuil gelé de −0,15) ; IDO1 (enzyme qui affame les lymphocytes en tryptophane) et HLA-G
+(molécule HLA tolérogène) changent de signe d'une cohorte à l'autre. TGFB2 monte partout mais trop
+faiblement (médiane +0,108, porté par TCGA +0,320, p = 1,4e-05, seul). Le score PRIV — moyenne des
+z-scores des 7 gènes — monte dans les 4 cohortes (+0,095 à +0,343), mais sa médiane (+0,122) reste sous
+le seuil gelé (+0,15) et une seule cohorte le dépasse significativement (GSE62452, +0,343, p = 0,004).
+
+**T2, descriptif : d de Cohen top-12 KRAS-fort contre reste.** Le tableau confirme la faiblesse et ajoute
+une nuance : le score PRIV a un d top-12 NÉGATIF dans 3 cohortes sur 4 (TCGA −0,11 ; GSE71729 −0,39 ;
+ICGC −0,32 ; seule GSE62452 +0,32) alors que son rho est positif partout. La relation PRIV–KRAS est donc
+graduelle, pas un saut à l'extrême : les 12 tumeurs KRAS le plus fort ne sont PAS les plus « privilège ».
+Recouvrement top-12 PRIV/KRAS (TCGA) : 1/12. Par gène, les d top-12 les plus forts sont CD47 en GSE62452
+(+1,13, cohérent avec son rho +0,623) et CD274 en TCGA (+0,65) ; TGFB1 a un d top-12 de −0,45 en TCGA
+malgré un rho positif en GEO — le signal TGFB1 n'est pas porté par l'extrême TCGA. Aucun d top-12 ne
+contredit le verdict T1 ; aucun ne le renforce au point de changer un verdict gelé.
+
+## 8.81.2 — Bras pipeline v6.2 (TCGA, ordre PRIV) : `maxsep` passe, la chaîne ne réapparaît pas
+
+**Runs : 2/2, exits 0/0.** Manifeste `manifest_v62_881.txt`, lanceur reprenable `run_v62_lot.sh`, unité
+systemd `v62-881` (jamais nohup), FIN 2026-11-21T12:50:55Z, `deja_faits=0 termines=4 echecs=0`
+(les 2 runs UVM sont dans le même lot, voir §8.81.3). SHA du pipeline revérifié avant ET après le lot :
+`f07567c4…c3abf`, inchangé. Série réelle `pdac_tcga_fluxes_v4_priv.csv` (178 lignes, PRIV en 1re colonne,
+12 flux v4, tri par PRIV croissant ; PRIV min −2,050, médiane +0,063, max +1,425 ; 7 gènes au score,
+aucun doublon contrôle/flux) ; nul graine 42 (bloc des 12 flux permuté, PRIV intact).
+Extraction 2/2 recoupée par relecture directe indépendante des 4 `master_results.json` : `maxsep` et MC
+identiques à 0,0 exact. Version lue : `v6.2.0-L7aL7b-CohenD-short` sur les 4 runs. L7b : FRAGILE sur les
+4 runs — audit clos comme non-informatif, non rapporté comme mesure de fragilité.
+
+| Run | n | maxsep | ancien MC | S_sep | Delta | L7a | Cascade (Q1–Q5, %) |
+|---|---|---|---|---|---|---|---|
+| Réel PRIV TCGA | 178 | **0,3534** | 0,3550 | 0,3507 | 3,858 | up 0,416 | 0,0 / 0,7 / 3,7 / 37,7 / 37,7 |
+| Nul graine 42 | 178 | 0,1885 | 0,3308 | 0,1874 | 3,804 | up 0,193 | 0,0 / 1,1 / 5,9 / 28,5 / 28,5 |
+
+`d_maxsep = +0,1649` — au-dessus du plancher gelé 0,07, avec une marge de +0,0949. MC à peine positif
+(+0,0242), Delta à peine positif (+0,054), falsification 0,674 contre 0,721 (le nul « falsifie » autant
+que le réel), L7a up des deux côtés. La cascade est TRÈS BASSE des deux côtés (T_0 au pas 7 sur 178 dans
+le réel, au pas 10 dans le nul — ~4–6 % de la série, c'est-à-dire au tout début) : elle ne sépare pas
+le réel du nul ici, et elle ne l'a jamais été comme critère.
+
+**Tests directs sur la série PRIV (D1 + D2) — c'est eux qui décident de la chaîne, pas `maxsep`.**
+Signature cherchée (référence §8.4) : PGC −0,89, DPCR1 −0,85, CLDN18 −0,46, MUC16 +0,64.
+
+| Flux | D1 top-12 PRIV (d, réel) | D1 top-12 (d, nul) | D2 rho vs rang PRIV (réel) | D2 rho (nul) |
+|---|---|---|---|---|
+| PGC | −0,165 | −0,063 | −0,057 | −0,094 |
+| REG4 | −0,744 | −0,385 | −0,125 | −0,043 |
+| CLDN18 | −0,271 | −0,094 | −0,166 | −0,080 |
+| DPCR1 | −0,417 | +0,187 | +0,009 | +0,001 |
+| MUC16 | +0,408 | **+0,423** | **+0,402** | +0,136 |
+| CR2 | +0,506 | −0,033 | +0,286 | +0,119 |
+| GSTM1 | +0,319 | −0,412 | +0,167 | −0,085 |
+
+La chaîne ne réapparaît pas. PGC chute faiblement en top-12 mais son rho est plat (−0,057, nul −0,094) :
+pas de pente, pas de rupture. DPCR1 chute en top-12 (−0,417 contre +0,187 au nul) mais son rho est
+exactement 0 (+0,009) : l'écart top-12 est un effet d'extrême, pas une tendance. CLDN18 chute
+modestement des deux côtés (−0,271 ; rho −0,166 contre −0,080 au nul). MUC16 monte — mais en top-12
+il monte AUTANT dans le nul (+0,423) que dans le réel (+0,408) ; seul son rho se distingue du nul
+(+0,402 contre +0,136). CR2 monte (+0,286 contre +0,119 au nul) — CR2 ne fait pas partie de la
+signature cherchée. Autour de T_0 (pas 7, ±20 lignes) : PGC +1,412, DPCR1 +0,994, MUC16 +0,892 dans le
+réel — mais le nul, à son propre T_0 (pas 10), montre les mêmes ordres de grandeur (PGC +0,994,
+CLDN18 +1,318, MUC17 +1,066). Un T_0 au pas 7 sur 178 n'est pas un seuil lisible, c'est le début de
+la série ; la lecture autour du seuil ne porte rien ici, et c'est dit tel quel.
+
+**Lecture du bras pipeline.** Le `maxsep` qui passe (+0,1649) dit que l'ordre PRIV porte une information
+réelle — les flux ne sont pas dans un ordre aléatoire sous PRIV (MUC16 rho +0,402, CR2 +0,286). Mais
+l'information portée n'est PAS la chaîne du §8.11 : les trois gènes qui doivent chuter sont plats ou
+faibles en pente, et le gène qui doit monter monte aussi dans le nul en top-12. C'est le même motif
+qu'aux §8.70/§8.71/§8.74 : `maxsep` voit quelque chose que les scores compagnons voient à peine
+(MC +0,024, Delta +0,054) — et ici, ce quelque chose n'est pas la chaîne. Le verdict du bras est donc
+double et il est consigné double : `maxsep` passe le plancher (piste), la chaîne ne réapparaît pas (NON).
+
+## 8.81.3 — Le cancer de l'œil : TCGA-UVM (n = 80) — moins de privilège, plus froid, image miroir
+
+**Source (nouveau téléchargement, réussi du 1er coup).** Broad GDAC Firehose stddata 2016-01-28, UVM,
+RSEM genes normalized, URL `https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/UVM/20160128/gdac.broadinstitute.org_UVM.Merge_rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.Level_3.2016012800.0.0.tar.gz`,
+téléchargé le 21 nov. 2026, 12h15 UTC (curl, exit 0), 6 311 998 o,
+SHA-256 `b50fdadb00d5c4095ffbe55ad4192cfca892c947cd657d032be128ba074a9975`.
+80 tumeurs primaires (code 01). Les 12 gènes v4, les 7 gènes de privilège et les 4 témoins sont tous
+présents en UVM. Valeurs : log2(RSEM+1), sans correction de pureté (pas de scores acineux/îlots pour
+l'œil — importer la correction pancréatique aurait été une erreur). Score PRIV UVM (z intra-UVM, 7 gènes) :
+min −1,133, médiane −0,155, max +1,565.
+
+**U1 — Niveaux médians, UVM contre TCGA-PAAD brut (même échelle, d de Cohen entre cohortes, + = plus
+haut en UVM).** Le mélanome uvéal exprime MOINS les gènes de privilège que le pancréas, sur les 7 :
+
+| Gène | Médiane UVM | Médiane PAAD | d UVM vs PAAD |
+|---|---|---|---|
+| FASLG | 1,611 | 3,375 | −0,878 |
+| TGFB1 | 9,000 | 10,917 | −2,206 |
+| TGFB2 | 4,962 | 9,067 | −2,999 |
+| IDO1 | 1,735 | 6,745 | −1,945 |
+| HLA-G | 6,856 | 7,348 | −0,349 |
+| CD47 | 10,276 | 11,208 | −1,985 |
+| CD274 / PD-L1 | 3,658 | 4,724 | −0,700 |
+| *PDCD1 (témoin)* | *2,201* | *5,059* | *−1,296* |
+| *CD8A (témoin)* | *4,329* | *7,407* | *−1,330* |
+| *GZMB (témoin)* | *2,361* | *5,529* | *−1,599* |
+| *IFNG (témoin)* | *0,000* | *1,171* | *−0,380* |
+
+Les gènes tueurs sont AUSSI plus bas en UVM (PDCD1 −1,30, CD8A −1,33, GZMB −1,60) : l'UVM est plus
+« froid » que le pancréas en niveaux absolus — mais ce froid ne s'accompagne pas d'une surexpression
+des gènes de privilège, il s'en accompagne de l'inverse. Deux réserves, nommées d'avance au protocole
+§8 et confirmées ici : (a) la comparaison de niveaux bruts entre deux types tumoraux est descriptive —
+elle conflue pureté, composition et spécificité tissulaire ; (b) pour les gènes v4, la spécificité
+tissulaire DOMINE : 9 gènes sur 12 ont une médiane de 0,000 en UVM (PGC, REG4, MUC17, CR2, KRT20,
+MUC2, CEACAM5, CLCA1, MUC16 ; CLDN18 0,539, DPCR1 0,905, GSTM1 7,771 — seul GSTM1 est plus haut en
+UVM, d +0,29) — ce sont des gènes de pancréas/estomac/mucus, simplement pas exprimés dans l'œil, et
+leurs d (−1,0 à −3,85) ne mesurent pas un privilège, ils mesurent un tissu. Pour les 7 gènes de
+privilège et les 4 témoins, en revanche, les médianes UVM sont non nulles (TGFB1 9,0, CD47 10,3,
+HLA-G 6,9) : la lecture « moins exprimés en UVM » tient pour eux, avec la réserve (a).
+
+**U2 — Pipeline v6.2 sur UVM ordonné par PRIV : 2/2, exits 0/0, ne passe pas le plancher.**
+
+| Run | n | maxsep | ancien MC | S_sep | Delta | L7a | Cascade (Q1–Q5, %) |
+|---|---|---|---|---|---|---|---|
+| Réel PRIV UVM | 80 | 0,2661 | 0,3386 | 0,2637 | 0,559 | down 0,169 | 13,6 / 89,0 / 92,7 / 95,7 / 98,7 |
+| Nul graine 42 | 80 | 0,2165 | 0,3320 | 0,2154 | 0,538 | up 0,346 | 11,1 / 19,7 / 23,5 / 28,4 / 42,8 |
+
+`d_maxsep = +0,0496` — sous le plancher 0,07. MC +0,0066, Delta +0,020, falsification 0,217 contre
+0,220, L7a en sens opposé (down 0,169 contre up 0,346). La cascade réelle est très haute et se
+distingue du nul (T_0 au pas 73 sur 80, ~92 % de la série, contre pas 19 au nul) — c'est consigné
+en descriptif : la cascade n'est pas un critère de passage et ne l'a jamais été, et un T_0 à 92 %
+de la série ne ressemble pas à un seuil central. F1/F2 après seuil : réel 0,0116 / 0,00133 contre
+nul 0,00387 / 0,00044 (descriptif).
+
+**U3 — La chaîne v4 sous l'ordre PRIV, dans l'UVM : image miroir, pas réapparition.**
+
+| Flux | rho vs rang PRIV (réel) | p | d top-12 PRIV (réel) | rho (nul) | d top-12 (nul) |
+|---|---|---|---|---|---|
+| PGC | **+0,321** | 0,004 | **+0,960** | +0,103 | −0,060 |
+| CLDN18 | **+0,306** | 0,006 | **+0,956** | +0,172 | +0,138 |
+| CR2 | **+0,289** | 0,009 | **+1,752** | +0,025 | −0,172 |
+| MUC2 | +0,191 | 0,090 | +0,533 | −0,132 | −0,056 |
+| DPCR1 | −0,189 | 0,093 | −0,641 | +0,026 | +0,113 |
+| REG4 | −0,159 | 0,16 | −0,399 | +0,153 | −0,195 |
+| MUC16 | +0,030 | 0,79 | +0,236 | −0,106 | −0,167 |
+
+Dans l'œil, sous l'ordre PRIV, PGC, CLDN18 et CR2 MONTENT significativement — exactement les gènes qui
+CHUTENT au bout de l'axe KRAS dans le pancréas. DPCR1 chute (−0,189, d −0,641), comme dans le pancréas,
+mais seul ; MUC16 est plat (+0,030). Ce n'est pas la chaîne du §8.11 : c'est son image miroir partielle.
+Réserve majeure, consignée : PGC, CLDN18 et CR2 ont une médiane de 0,000 en UVM — plus de la moitié
+des tumeurs ne les expriment pas du tout — donc ces rho sont portés par la minorité de tumeurs qui les
+expriment, pas par un gradient sur toute la cohorte. Aucune lecture biologique n'est tirée d'un rho
+porté par des zéros sans le dire.
+
+## 8.81.4 — Ce que le verdict dit, et ce qu'il ne dit pas
+
+Il dit que le pancréas KRAS-fort active trois pièces du privilège (CD47, TGFB1, PD-L1) mais pas les
+quatre autres, et pas le programme comme un tout — avec un score PRIV qui monte partout mais trop
+faiblement pour le seuil gelé, et sans saut à l'extrême KRAS-fort (d top-12 du score négatif dans
+3 cohortes sur 4). Il dit que le pipeline voit un écart `maxsep` au-dessus du plancher sous l'ordre
+PRIV (+0,1649) sans y voir la chaîne : l'ordre porte une information, la rupture cherchée n'y est pas.
+Il dit que le cancer de l'œil n'exprime pas davantage ces gènes — il en exprime moins — et que, rangé
+par PRIV, il montre l'image miroir de la chaîne pancréatique. Il dit enfin que le témoin « froid »
+(PDCD1, CD8A en chute dans les 4 cohortes) se reproduit aujourd'hui, ce qui rend le négatif partiel
+plus crédible : l'instrument de mesure du froid fonctionne, c'est le programme de privilège qui ne
+suit pas.
+
+Il ne dit pas que CD47/TGFB1/PD-L1 sont des cibles : ce sont des corrélations d'expression le long
+de KRAS, pas des preuves de mécanisme, et PD-L1 avait déjà échoué comme rationnel combiné au §8.23
+(KRAS + anti-PD-(L)1 : pas de rationnel — ce chantier ne rouvre pas ce verdict, il le laisse intact :
+CD274 qui monte avec KRAS ne suffit pas à faire un rationnel, pas plus au §8.81 qu'au §8.23).
+Il ne dit pas que l'œil n'a pas de privilège immunitaire : le privilège est une propriété du tissu
+oculaire normal, mesurée ici sur un cancer de l'œil, pas sur l'œil sain — l'UVM ne peut pas réfuter
+le privilège, il peut seulement dire que la tumeur de l'œil ne surexprime pas ces 7 gènes. Il ne dit
+pas que `maxsep` est validé par ce chantier : un écart au-dessus du plancher sur une paire, avec des
+scores compagnons à peine positifs et une chaîne absente, est une piste, pas une preuve. Il ne dit
+rien de clinique : l'étude porte sur l'instrument et sur des corrélations d'expression, pas sur un
+remède — aucune affirmation sur le cancer du pancréas n'est tirée de ce chantier au-delà des
+corrélations mesurées.
+
+**Biais et limites nommés.** (a) 7 gènes mesurent une expression, pas le privilège lui-même (barrières,
+ACAID, FasL tissulaire ne sont pas mesurés). (b) Un seul nul par paire (graine 42) ; ~200 nuls pour
+un plancher stable à petit n (§8.53) — la marge TCGA (+0,0949 au-dessus du plancher) est une marge
+sur un nul, pas sur une distribution de nuls. (c) Hétérogénéité des plateformes (RNA-seq TCGA/ICGC,
+puces Agilent/Affymetrix) : les rho intra-cohorte sont comparables, les niveaux bruts inter-cohortes
+ne le sont qu'en descriptif. (d) IFNG absent de la matrice ICGC (voir §8.81.1). (e) UVM : médianes à
+zéro pour 9 gènes v4 sur 12 — les rho U3 sont portés par une minorité de tumeurs exprimantes.
+(f) TCGA : le d top-12 et le rho divergent pour TGFB1 et pour le score PRIV — la relation est
+graduelle, pas une rupture à l'extrême ; aucun seuil n'est inféré d'une divergence entre deux mesures.
+
+## 8.81.5 — Pistes ouvertes
+
+| Pistes ouvertes | (a) Les 3 gènes qui montent (CD47, TGFB1, CD274) méritent un test direct ciblé — pas comme « programme
+de privilège », mais comme trois pièces séparées : CD47 a le signal le plus fort et le plus cohérent
+(rho +0,14 à +0,62, 4/4 positifs, d top-12 +1,13 en GSE62452) ; (b) le `maxsep` TCGA PRIV (+0,1649)
+sans chaîne pose la même question qu'aux §8.70/§8.71/§8.74 — ce que `maxsep` lit quand la chaîne
+n'y est pas — sans réponse ici ; (c) l'image miroir UVM (PGC/CLDN18/CR2 qui montent avec PRIV) est
+une curiosité portée par des zéros, pas une piste thérapeutique ; (d) la piste Œil, comme question de
+copie d'un programme, est CLOSE par ce verdict MIXTE : la relancer demanderait une autre définition du
+privilège (protéine, single-cell, œil normal) — pas un autre découpage de ces mêmes matrices ; (e) la
+fragilité du nul à petit n (§8.70, §8.53) reste un chantier propre ouvert — ici 1 seul nul par paire,
+aucune étendue mesurée. |
+
+## 8.81.6 — Annexe : provenance condensée et SHAs
+
+- **Question :** Zackary, 21 nov. 2026 — « la tumeur du pancréas copie-t-elle les mécanismes du
+  privilège immunitaire de l'œil pour se cacher ? » Piste acceptée et lancée le jour même.
+- **Protocole :** `PROTOCOL_oeil_privilege_881.md`, SHA `c985a03a…a4ce` (gelé avant toute construction
+  et tout run). Critères §3 et §6 écrits avant les runs ; plancher maxsep 0,07.
+- **Pipeline :** v6.2 SHA `f07567c4…c3abf`, vérifié avant et après le lot, inchangé.
+- **Sources PDAC (déjà sur disque) :** TCGA-PAAD Firehose stddata 2016-01-28 (MD5
+  `b09569ce…ac0a`), GSE71729, GSE62452 (+ mapping GPL6244), ICGC PACA-AU (Bailey et al. 2016).
+  Reproduction v4 vérifiée : écart max 1,776e-15 (atol 1e-9).
+- **Source UVM (nouveau téléchargement 21 nov. 2026, 12h15 UTC) :** Firehose stddata 2016-01-28, UVM,
+  RSEM genes normalized, `data/tcga_uvm_rsem.tar.gz` (6 311 998 o),
+  SHA `b50fdadb…9975`. URL complète en `PROVENANCE_881.md`.
+- **CSV de flux :** TCGA PRIV réel `348401cb…2db39` (178 lignes) ; nul s42 `54eec127…3d824` ;
+  UVM PRIV réel `422898b7…3d65` (80 lignes) ; nul s42 `56be6c56…f178`.
+- **Tests directs :** `priv_direct_tests_881.csv` `3301bfc3…8cb37b` ;
+  `priv_direct_tests_881.json` `be4277fc…35955` ;
+  `uvm_direct_tests_881.csv` `bbb05017…0033b` ; `uvm_881.json` `bc95f3ac…9c0`.
+- **Extraction :** `priv_extract_881.json` `ec1dfdb6…3369d0` ;
+  `priv_direct_tests_881_series.csv` `42701d53…6c40`.
+  Recoupement indépendant : `maxsep` et MC identiques à 0,0 exact sur les 4 runs.
+- **Scripts :** `direct_tests_881.py` `01c8b744…397d91` ; `build_priv_881.py` `4a4693ca…57a69` ;
+  `uvm_881.py` `9af4dfb9…7fdfa` ; `extract_881.py` `2150c39d…98acc`.
+- **Manifestes / journaux :** `manifest_v62_881.txt` `033c2b38…f82c` ;
+  `runs_v62_881.log` `f8394215…21a4a` (FIN 2026-11-21T12:50:55Z, 4/4, exits 0).
+- **Provenance complète :** `PROVENANCE_881.md` (+ `PROVENANCE_priv_881.json` `14c3331d…587b`).
+- **Recoupements (reprises telles quelles, jamais recalculées) :** §8.23 (PDCD1 rho −0,25/−0,24/−0,22/−0,22 ;
+  top-12 d −0,61 à −0,88 ; KRAS + anti-PD-(L)1 sans rationnel) ; §8.4 (signature de la chaîne :
+  PGC −0,89, DPCR1 −0,85, CLDN18 −0,46, MUC16 +0,64) ; §8.53 (~200 nuls pour un plancher stable).
+- **Livre blanc NON édité. PDF NON régénéré. Rien poussé sur GitHub** (convention des chantiers ;
+  fusion par le coordinateur).
+
+— Fin de la §8.81. —
+
+---
+
+### 8.82 Cerveau, deuxième site à privilège immunitaire (TCGA-GBM) : les gènes de privilège DESCENDENT quand l'agressivité monte, la tumeur est froide, et la chaîne PDAC n'apparaît pas (21 novembre 2026)
+Deuxième bras supplémentaire autorisé par Zackary (idées propres) ; protocole gelé 21 nov. 2026 ~07h20 EST (12h20 UTC) avant toute construction de flux, tout run et toute analyse — correction de fuseau horaire avant les runs, étiquette d'horloge seulement.
+
+## Verdict d'abord
+
+**Trois verdicts, tous mesurés aujourd'hui sur les mêmes 153 tumeurs
+primaires TCGA-GBM — et ils ne vont pas dans le même sens.**
+
+1. **Tests directs — DESCEND : les 7 gènes de privilège DESCENDENT
+   quand l'agressivité (score de prolifération) monte.** Médiane des
+   rho de Spearman −0,287 ; 0/7 positifs ; 7/7 avec p < 0,05 (TGFB2
+   −0,323, CD274 −0,350, CD47 −0,290, TGFB1 −0,287, FASLG −0,180,
+   HLA-G −0,181, IDO1 −0,168). Score de privilège lui-même : rho
+   −0,477 (p < 0,0001). C'est l'INVERSE de l'hypothèse de départ
+   (l'œil et le pancréas suggéraient que le privilège monte avec
+   l'agressivité pour cacher la tumeur) : dans le glioblastome, plus
+   la tumeur prolifère, MOINS elle exprime les gènes de privilège.
+2. **Froid — FROID : le glioblastome est froid comme le pancréas.**
+   Médiane des rho des 4 gènes T du §8.23 (CD8A, CD4, FOXP3, PDCD1)
+   −0,129 ; 4/4 négatifs ; score froid rho −0,239 (p=0,003). Mais pas
+   par les mêmes gènes qu'au pancréas : ce sont CD4 (−0,365) et FOXP3
+   (−0,219) qui portent la baisse, CD8A (−0,038) et PDCD1 (−0,037)
+   sont plats — au pancréas, PDCD1 était le plus fort (−0,25).
+   Les macrophages baissent aussi (CD68 −0,327, CD163 −0,259), alors
+   qu'ils montaient faiblement au pancréas ; et CD274/PD-L1 baisse
+   (−0,350), alors qu'il montait en TCGA pancréas (+0,26).
+3. **Bras pipeline v6.2 — PARTIEL, fragile, non consolidé : la chaîne
+   PDAC n'apparaît pas dans le GBM.** Paire primaire (ordre par
+   prolifération) : `d_maxsep = +0,0283` (réel 0,2123 contre nul
+   0,1840), positif mais SOUS le plancher 0,07. Les 2 nuls frais
+   (graines 8821, 8822, courus parce que d était dans [−0,07 ; +0,14[)
+   donnent +0,0175 et +0,0402 — les 3 écarts sont ≤ 0,07 : passage
+   « fragile, non consolidé » selon la règle gelée ; le verdict de la
+   paire graine 42 n'est pas changé. Paire secondaire (ordre par score
+   de privilège) : `d_maxsep = +0,0116`, encore plus faible — elle ne
+   sauve rien. Les tests directs en appui confirment l'absence
+   d'ordre : Δρ médian −0,044 (4/12 positifs) sur la paire primaire,
+   |ρ| moyen réel 0,069 contre nul 0,074.
+
+**Ce que ces trois verdicts disent ensemble.** Le cerveau n'est pas
+l'œil : le privilège immunitaire n'y monte pas avec l'agressivité, il
+y descend — l'hypothèse « la tumeur copie le privilège de l'œil pour
+se cacher quand elle devient agressive » ne se transfère pas au
+glioblastome, en tout cas pas en ARN bulk ordonné par prolifération.
+Le froid, lui, se transfère — mais avec une autre composition
+cellulaire que le pancréas. Et le pipeline ne voit pas la chaîne PDAC
+dans le GBM, dans aucun des deux ordres : ce n'est pas une 13e paire,
+ce n'est pas un échec du pancréas, c'est un NON/PARTIEL sur un autre
+cancer. C3 reste LEVÉE, le test C reste NON, l'adoption pleine de
+maxsep reste la décision de Zackary du 20 nov. 13h04 ; le compte A2
+(8/12, 10/12 positifs, LOO 7/11) NE CHANGE PAS.
+
+**Fragilité, dite en tête.** Le verdict pipeline tient à une seule
+paire primaire mesurée aujourd'hui, avec des écarts petits (+0,0283 ;
+nuls frais +0,0175 / +0,0402) et un nul graine 42 déjà haut (0,1840).
+L'axe d'agressivité est un score d'expression (prolifération), pas une
+mesure clinique : le grade ne pouvait pas servir (tous les GBM sont
+grade IV), le statut IDH n'est pas dans la matrice, et il n'y a pas
+de correction de pureté (ARN bulk, même limite qu'au §8.23). Les
+verdicts directs, eux, sont forts (7/7 gènes significatifs dans le
+même sens) — c'est le contraste entre des directs solides et un
+pipeline qui ne sépare pas, comme dans la plupart des bras du dossier.
+
+Protocole gelé : `PROTOCOL_cerveau_privilege_882.md` (21 nov. 2026, SHA
+`487fc59d…`, corrigé de fuseau horaire avant les runs — « 12h20 EST »
+devenait « 07h20 EST (12h20 UTC) », étiquette d'horloge seulement,
+aucun paramètre). Critères écrits AVANT tout run (§§4, 5, 7 du
+protocole). Pipeline v6.2, SHA `f07567c4…`, vérifié avant et après le
+lot, jamais modifié. 6 runs, exits 0.
+
+## 8.82.1 — Données et axes (gelés)
+
+- **Source :** Broad GDAC Firehose stddata 2016-01-28, TCGA-GBM, RSEM
+  genes normalized — même route et même technologie que PAAD/LUAD/COAD.
+  Fichier local `data/tcga_gbm_rsem.tar.gz`, MD5 `cfc6cf0a…` (égal au
+  MD5 servi par le dépôt, vérifié avant le gel), SHA-256
+  `9996a653…`. Matrice interne : 20 532 lignes, 20 503 gènes uniques
+  après déduplication, × 171 échantillons ; tarball 14 116 395 octets,
+  matrice interne 30 268 366 octets. Téléchargé le 21 nov. 2026 (la
+  première URL tentée portait une coquille — `20160128` au lieu de
+  `2016012800` — 404 ; l'adresse du répertoire listait le bon nom,
+  avec une version normalisée, comme pour PAAD).
+- **Patients :** 153 tumeurs primaires (code TCGA 01) ; 18 écartées
+  (codes 02 et 11) ; 153/153 cas complets (aucune imputation).
+  La mission disait « n ≈ 160 » : le nombre mesuré est 153 primaires.
+- **Agressivité = score de prolifération** (moyenne log2(RSEM+1) de
+  MKI67, TOP2A, PCNA, CCNB1, BUB1, AURKB) : min 5,964, médiane 9,787,
+  max 11,219. Le grade NE PEUT PAS servir d'axe : tous les TCGA-GBM
+  sont WHO grade IV par définition de la cohorte. Le statut IDH n'est
+  pas dans la matrice RSEM et n'est pas utilisé.
+- **Score de privilège** (moyenne des z-scores des 7 gènes, dans la
+  cohorte) : min −1,700, médiane 0,032, max 1,580.
+- **Score froid** (moyenne des z-scores de CD8A, CD4, FOXP3, PDCD1) :
+  min −1,536, médiane −0,037, max 2,061.
+- **Transformation :** log2(RSEM normalisé + 1), comme PAAD/LUAD/COAD.
+  **Aucune correction de pureté** (scores acineux/îlots spécifiques au
+  pancréas). **Anti-doublon (§8.44) :** le contrôle du pipeline est la
+  colonne `step` ; ni le score de prolifération ni le score de
+  privilège ne figurent parmi les 12 flux — vérifié par assertion.
+- **Présence des gènes (vérifiée avant le gel) :** 7/7 privilège,
+  12/12 v4, 6/6 prolifération, 12/12 immunitaires — aucun absent,
+  aucun remplacement.
+
+## 8.82.2 — Tests directs (1) : les gènes de privilège DESCENDENT
+
+Spearman de chaque gène avec le pas de prolifération (ordre croissant),
+n=153. Table complète, sans sélection. Top-quartile de prolifération
+(n=39) vs reste, en écart-type (Welch p descriptive).
+
+| Gène | rho (p) | d top-quartile (sd) | Welch p |
+|---|---|---|---|
+| FASLG | −0,180 (0,026) | −0,201 | 0,24 |
+| TGFB1 | −0,287 (0,0003) | −0,486 | 0,007 |
+| TGFB2 | −0,323 (<0,0001) | −0,763 | <0,0001 |
+| IDO1 | −0,168 (0,039) | −0,441 | 0,005 |
+| HLA-G | −0,181 (0,026) | −0,177 | 0,35 |
+| CD47 | −0,290 (0,0003) | −0,423 | 0,018 |
+| CD274/PD-L1 | −0,350 (<0,0001) | −0,722 | 0,0002 |
+
+**Médiane rho = −0,287 ; rho > 0 : 0/7 ; p < 0,05 : 7/7. Score de
+privilège vs pas : rho = −0,477 (p < 0,0001). Catégorie gelée :
+DESCEND** (médiane ≤ −0,15 ET ≥ 4/7 rho < 0 — ici 7/7).
+
+Lecture : dans le GBM, les gènes de privilège ne montent pas avec
+l'agressivité — ils descendent, tous, significativement. Le gène le
+plus fort est CD274/PD-L1 (−0,350), celui-là même qui montait en TCGA
+pancréas (+0,26, §8.23) : le signe s'inverse entre les deux cancers.
+TGFB2 (−0,323) et CD47 (−0,290) suivent. Les différences top-quartile
+confirment en ampleur (TGFB2 −0,763 sd, CD274 −0,722 sd), même si deux
+Welch p sont non significatives (FASLG, HLA-G) — le signal est
+monotone (Spearman), pas un effet de seuil.
+
+## 8.82.3 — Tests directs (2) : le GBM est FROID, mais pas comme le pancréas
+
+Spearman de chacun des 12 gènes immunitaires (§8.23) avec le pas de
+prolifération, n=153. Référence pancréas : TCGA / GSE71729 / GSE62452 /
+ICGC, axe KRAS.
+
+| Gène | GBM rho (p) | Pancréas TCGA (§8.23) | GBM d top-q (sd) |
+|---|---|---|---|
+| CD8A | −0,038 (0,64) | −0,19 | −0,064 |
+| CD8B | −0,177 (0,029) | — | −0,274 |
+| CD4 | −0,365 (<0,0001) | −0,15 | −0,495 |
+| FOXP3 | −0,219 (0,007) | −0,10 | −0,217 |
+| CD68 | −0,327 (<0,0001) | +0,07 | −0,343 |
+| CD163 | −0,259 (0,001) | — | −0,359 |
+| CD274/PD-L1 | −0,350 (<0,0001) | +0,26 | −0,722 |
+| PDCD1/PD-1 | −0,037 (0,65) | −0,25 | +0,122 |
+| CTLA4 | −0,243 (0,003) | — | −0,164 |
+| GZMB | −0,244 (0,002) | — | −0,233 |
+| IFNG | −0,024 (0,77) | — | +0,299 |
+| CD19 | −0,184 (0,023) | −0,18 | −0,338 |
+
+**Score froid (CD8A/CD4/FOXP3/PDCD1) vs pas : rho = −0,239 (p=0,003).
+Médiane rho des 4 gènes = −0,129 ; rho < 0 : 4/4. Catégorie gelée :
+FROID** (médiane ≤ −0,10 ET ≥ 3/4 négatifs).
+
+Lecture : le froid existe — le score froid baisse quand la
+prolifération monte, comme les T baissent quand KRAS monte au
+pancréas. Mais la composition diffère sur trois points, dits
+plainement : (a) au pancréas, PDCD1 portait la baisse (−0,25, top-12
+d −0,61 à −0,88, significatif dans les 4 cohortes) ; ici PDCD1 est
+plat (−0,037) et ce sont CD4 (−0,365) et FOXP3 (−0,219) qui portent
+la baisse du score — CD8A est plat aussi (−0,038) ; (b) les
+macrophages baissent ici (CD68 −0,327, CD163 −0,259) alors qu'au
+pancréas CD68 montait faiblement (+0,07 à +0,22) ; (c) CD274 baisse
+ici (−0,350) alors qu'il montait en TCGA pancréas (+0,26) — le seul
+endroit où il montait. Le « froid » n'est donc pas le même paysage
+cellulaire : moins de T CD4/régulateurs et moins de macrophages quand
+la tumeur prolifère, sans baisse des marqueurs CD8/PD-1. En ARN bulk,
+on ne distingue pas « moins de cellules » de « moins d'expression par
+cellule » (même limite qu'au §8.23).
+
+## 8.82.4 — Bras pipeline v6.2 : PARTIEL, fragile, non consolidé
+
+Lot : 4 runs (paire primaire prolifération réel + nul ; paire
+secondaire privilège réel + nul), mode fast, graine 42, contrôle
+`step`, cible PGC (premier flux hors contrôle, comme partout).
+Lancement en `systemd-run` (unités `v62-882` puis `v62-882-frais`),
+journal `runs_v62_882.log` / `runs_v62_882_frais.log`, SHA du pipeline
+revérifié avant et après : `f07567c4…`, inchangé. Extraction
+`extract_882.py` (SHA `ac0aa6ec…`), vérification indépendante
+`verify_882.py` (SHA `c47b94df…`) : maxsep et ancien MC recoupés à 0,0
+exact sur les 4 runs (puis 6 avec les nuls frais).
+
+| Paire | maxsep réel / nul | d_maxsep | MC réel / nul | S_sep R / N | Delta R / N | L7a R / N | Fals. R / N |
+|---|---|---|---|---|---|---|---|
+| Primaire (prolifération) | 0,2123 / 0,1840 | **+0,0283** | 0,3324 / 0,3283 | 0,2111 / 0,1834 | 2,848 / 2,719 | up 0,39 / up 0,20 | 0,116 / 0,037 |
+| Secondaire (privilège) | 0,2175 / 0,2059 | **+0,0116** | 0,3333 / 0,3324 | 0,2170 / 0,2053 | 2,922 / 2,843 | down 0,24 / up 0,37 | 0,071 / 0,123 |
+| Nuls frais (primaire) | 0,2123 / 0,1948 ; 0,1721 | +0,0175 ; +0,0402 | 0,3324 / 0,3300 ; 0,3271 | — | 2,848 / 2,861 ; 2,864 | up 0,39 / down 0,18 ; up 0,42 | 0,116 / 0,083 ; 0,122 |
+
+Cascades (descriptives) : primaire réelle [3,1 / 60,8 / 95,1 / 98,1 /
+100,0], nul [0,0 / 90,9 / 93,9 / 97,0 / 97,6] ; secondaire réelle
+[4,9 / 54,3 / 59,1 / 62,7 / 62,7], nul [6,2 / 13,0 / 42,0 / 45,4 /
+53,7] ; nul frais s8821 [0,0 / 1,2 / 6,8 / 29,8 / 29,8] — le nul
+frais s8821 a une cascade effondrée mais un maxsep de 0,1948, plus
+haut que le nul graine 42 : la cascade et maxsep ne bougent pas
+ensemble, comme déjà vu au §8.76 (FNA).
+
+**Catégorie gelée (paire primaire) : PARTIEL** (0 < d_maxsep ≤ 0,07).
+**Nuls frais :** d = +0,0283 dans [−0,07 ; +0,14[, donc 2 nuls frais
+courus (graines 8821, 8822) : écarts +0,0175 et +0,0402. Min / médiane /
+max des 3 écarts : +0,0175 / +0,0283 / +0,0402 — les 3 sont ≤ 0,07 :
+le passage est dit **« fragile, non consolidé »** (règle gelée) ; le
+verdict de la paire graine 42 n'est JAMAIS changé par les nuls frais.
+La paire secondaire (+0,0116) ne change rien : même en ordonnant par
+le privilège lui-même, la chaîne ne sépare pas le réel du nul. Les
+scores compagnons ne suivent pas non plus : MC +0,0041 (primaire) et
++0,0009 (secondaire), Delta +0,129 et +0,079 — tous sous la gigue
+historique ±0,07 pour MC, et L7a est up des deux côtés sur la primaire.
+
+**Tests directs en appui (ne décident pas) :** Spearman des 12 flux v4
+contre le pas, réel vs nul (§8.70) — paire primaire : |ρ| moyen réel
+0,069 contre nul 0,074, Δρ médian −0,044, Δρ positifs 4/12 (le réel
+n'a pas plus d'ordre que le nul) ; paire secondaire : |ρ| moyen réel
+0,080 contre nul 0,074, Δρ médian +0,050, Δρ positifs 10/12 (un petit
+signal d'ordre, +0,050, sans séparation maxsep). d de Cohen marginal
+réel vs nul : 0,000000 pour les 12 gènes, les 2 paires — attendu
+vacueux (le nul est une permutation des lignes), il valide la
+construction du nul. Comparaison descriptive au pancréas TCGA v4
+(§8.56) : maxsep réel 0,4623 / nul 0,1696, d +0,2928 — le GBM
+(0,2123 / 0,1840, +0,0283) est dix fois plus faible en écart, avec un
+nul deux fois plus haut que le nul pancréatique.
+
+## 8.82.5 — Ce que les verdicts disent, et ce qu'ils ne disent pas
+
+Ils disent que le deuxième site à privilège immunitaire ne se comporte
+pas comme le premier : dans le cerveau, le privilège descend quand la
+tumeur devient agressive, et la chaîne PDAC n'y apparaît pas — ni
+ordonnée par agressivité, ni ordonnée par privilège. Ils disent que le
+froid, lui, se retrouve dans le GBM, avec une autre composition. Ils
+ne disent pas que l'hypothèse de l'œil est fausse : elle est testée
+au §8.81 dans l'œil lui-même, et le GBM est un autre tissu, une autre
+biologie (pas de KRAS comme axe, pas de grade, pas de statut IDH dans
+ce chantier). Ils ne disent rien de clinique : aucune affirmation sur
+le glioblastome comme maladie, aucun remède, aucune cible — l'étude
+porte sur l'instrument et sur la question posée. Ils ne rouvrent rien :
+le GBM n'entre pas dans le compte A2, C3 reste levée, le test C reste
+NON.
+
+## 8.82.6 — Limites
+
+- **Axe d'agressivité = score d'expression.** La prolifération est un
+  proxy transcriptomique, pas une mesure clinique d'agressivité ; le
+  grade est inutilisable (tous grade IV), l'IDH absent de ce chantier.
+  Un autre axe (IDH, sous-type Verhaak, survie GBM) donnerait peut-être
+  une autre réponse — ce serait un autre chantier, avec son protocole.
+- **ARN bulk, sans correction de pureté** : la baisse des gènes de
+  privilège avec la prolifération peut être une composition (plus de
+  tumeur, moins de stroma) autant qu'une régulation — le mécanisme
+  n'est pas établi, comme au §8.23.
+- **Une seule cohorte, un seul axe, une seule paire par ordre** : le
+  verdict pipeline tient à +0,0283 sur une paire ; les nuls frais
+  confirment la fragilité, ils ne la résolvent pas.
+- **Le nul graine 42 est haut** (maxsep 0,1840, contre 0,1696 en TCGA
+  pancréas) et les nuls frais varient de 0,1721 à 0,1948 : à n=153, le
+  plancher 0,07 reste la bonne échelle, et le réel (0,2123) n'en est
+  qu'à 40 %.
+
+## 8.82.7 — Pistes ouvertes
+
+1. Refaire la question avec l'axe IDH (muté vs sauvage) ou les
+   sous-types Verhaak (proneural / neural / classique / mésenchymateux)
+   — si le privilège monte dans un sous-type agressif, la descente vue
+   ici est un effet de mélange, pas une loi.
+2. Tester la survie GBM des gènes de privilège (comme au §8.83 pour le
+   pancréas) : ils descendent avec la prolifération, mais prédisent-ils
+   la survie ? Ce serait le §8.83 du cerveau — pas fait ici.
+3. Comparer œil (§8.81) et cerveau sur la même question : si l'œil
+   monte et le cerveau descend, le privilège n'est pas un programme
+   unique — chaque site a sa règle.
+
+## 8.82.8 — Annexe : provenance condensée et SHAs
+
+- Protocole : `PROTOCOL_cerveau_privilege_882.md`, SHA `487fc59d…`
+  (gelé avant tout run ; correction de fuseau horaire « 12h20 EST » →
+  « 07h20 EST (12h20 UTC) » avant les runs, étiquette d'horloge
+  seulement).
+- Provenance complète : `PROVENANCE_882.md`.
+- Source : Firehose stddata 2016-01-28, GBM, RSEM genes normalized ;
+  tarball MD5 `cfc6cf0a…`, SHA-256 `9996a653…` ; URL
+  `https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/GBM/20160128/`.
+- Scripts : `build_fluxes_gbm_882.py` (SHA `dc58b600…`),
+  `direct_tests_882.py` (SHA `c901496a…`), `extract_882.py` (SHA
+  `ac0aa6ec…`), `verify_882.py` (SHA `c47b94df…`),
+  `build_nulls_frais_882.py` (SHA `063be8c1…`).
+- CSV : `pdac_882_gbm_prolif_fluxes.csv` (SHA `426375d3…`),
+  `_nul.csv` (`7205fc40…`), `pdac_882_gbm_privilege_fluxes.csv`
+  (`0f144663…`), `_nul.csv` (`42213249…`),
+  `gbm_882_direct_table.csv` (`72f3003d…`), nuls frais s8821
+  (`a76d10f1…`) et s8822 (`65ed87f7…`, SHA complets dans
+  `PROVENANCE_882.md`).
+- Runs : `manifest_v62_882.txt`, `runs_v62_882.log` (4/4, exits 0,
+  FIN 2026-11-21T12:53:10Z) ; `manifest_v62_882_frais.txt`,
+  `runs_v62_882_frais.log` (2/2, exits 0, FIN 2026-11-21T13:02:35Z).
+  Dossiers `results_fast_v62_882_gbm_prolif(_nul)`,
+  `results_fast_v62_882_gbm_privilege(_nul)`,
+  `results_fast_v62_882_gbm_prolif_nul_s8821` / `_s8822`.
+- Extraction : `extract_882.json` (SHA `c3f97591…`), `extract_882.csv`
+  (SHA `3316e823…`) — 6 runs ; vérification 0,0 exact (4/4 puis 6/6).
+- Pipeline v6.2 SHA `f07567c4…`, vérifié avant et après le lot,
+  inchangé.
+
+— Fin de la §8.82. —
+
+---
+
+### 8.83 Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, pour 3 items sur 8 — mais pas parce qu'ils montent avec KRAS (21 novembre 2026)
+Deuxième bras supplémentaire autorisé par Zackary (idées propres) ; protocole gelé 21 nov. 2026 ~07h25 EST (12h25 UTC) avant toute analyse de survie ; amendé AVANT toute lecture des résultats privilège (voir §8.83.1) ; hors pipeline.
+
+## Verdict d'abord
+
+**AU MOINS UN gène de privilège prédit la survie comme CA125 : 3 items
+sur 8 sont dans la catégorie « PRÉDIT COMME CA125 » (Cox univarié
+HR > 1, p < 0,05 dans ≥ 2/3 cohortes) — TGFB2, HLA-G et le score
+combiné des 7 gènes.** TGFB2 : TCGA HR 1,28 (p=0,014), ICGC 1,34
+(p=0,048), GSE71729 1,01 (ns). HLA-G : TCGA 1,18 (ns, p=0,11), ICGC
+1,71 (p=0,0004), GSE71729 1,28 (p=0,035). Score combiné : TCGA 1,28
+(p=0,020), ICGC 1,70 (p=0,001), GSE71729 1,07 (ns). Les 5 autres items :
+TGFB1 et CD274 une cohorte seule (ICGC et TCGA respectivement) ; CD47
+MIXTE (TCGA HR 1,30 p=0,009 vers le haut, GSE71729 HR 0,76 p=0,010 vers
+le bas) ; FASLG et IDO1 ne prédisent rien nulle part.
+
+**Mais la question posée — « les gènes qui montent avec KRAS
+prédisent-ils la survie ? » — reçoit une réponse en deux temps, et le
+deuxième temps est NON : aucun des 7 gènes ne monte avec KRAS dans
+≥ 2/3 cohortes (le meilleur, TGFB1/TGFB2/CD47/CD274, monte dans 1/3
+seulement, et toujours en TCGA seule ou presque).** Les deux gènes qui
+prédisent la survie comme CA125 ne montent pas avec KRAS : TGFB2 ne
+monte qu'en TCGA (rho +0,337) et est plat ailleurs ; HLA-G ne monte
+nulle part — il DESCEND avec KRAS en GSE71729 (rho −0,288, p=0,001).
+Autrement dit : dans nos 3 cohortes, le privilège immunitaire porte un
+signal de survie, mais ce signal ne passe pas par KRAS. C'est un
+résultat de test direct, hors pipeline ; il ne dit rien d'un remède,
+et il ne change rien aux décisions (C3 reste levée, test C reste NON,
+adoption pleine de maxsep inchangée).
+
+**Fragilité, dite en tête.** Le verdict tient à des p proches du seuil
+dans deux cas : TGFB2 en ICGC (p=0,048) et HLA-G en GSE71729 (p=0,035)
+— un patient de plus ou de moins peut les faire basculer. À
+Bonferroni (0,05/24 ≈ 0,0021, descriptif, pas une porte), seuls les
+signaux ICGC survivent (TGFB1 p=0,0005, HLA-G p=0,0004, score
+p=0,0013) ; aucun item ne passe Bonferroni dans ≥ 2 cohortes. Le
+log-rank quartile contredit le Cox pour le score combiné en TCGA
+(p=0,83 contre Cox p=0,02) — exactement comme CA125 en TCGA
+(Cox p=0,001, log-rank p=0,070) : le verdict repose sur le test sans
+seuil, comme le record de CA125 lui-même. Les effectifs sont petits
+en ICGC (n=70), où les effets les plus forts sont mesurés.
+
+Protocole gelé : `PROTOCOL_survie_privilege_883.md` (21 nov. 2026, SHA
+`0eb83d63…`), amendé AVANT toute lecture des résultats privilège (voir
+§8.83.1). Critère principal écrit AVANT toute analyse (§5 du protocole) :
+Cox univarié HR > 1, p < 0,05 dans ≥ 2/3 cohortes. Méthode : KM /
+log-rank / Cox, exactement celle des §8.12/§8.15/§8.16. Ce chantier
+n'utilise PAS le pipeline.
+
+## 8.83.1 — Calibration : la porte a d'abord refusé, puis passé
+
+Le script `survival_privilege_883.py` (SHA `c61ef946…`) reproduit
+D'ABORD les chiffres publiés de MUC16 avant de lire aucun résultat
+privilège. Le premier essai a ÉCHOUÉ sur 2 points et le script s'est
+arrêté, comme le protocole l'exige — aucun résultat privilège n'a été
+lu à ce stade. Diagnostic par re-calcul direct :
+
+1. **GSE71729, log-rank MUC16 : 0,8562 calculé contre 0,73 publié.**
+   Cause trouvée : le script utilisait un seuil au quantile 0,75 sur
+   les 145 primaires (n=34). La définition publiée du §8.15 est le top
+   36 PAR RANG sur les 145 (`sort_values().iloc[-36:]`), qui donne
+   n=33, décès 22, médiane 17,0 vs 16,0, p=0,7292 — identique au §8.15
+   à 0,001 près. Un patient lié au seuil faisait basculer p de 0,73 à
+   0,86 : c'est la fragilité du log-rank à n=33, pas une erreur de
+   données. Corrigé : masques par rang (top 36 GSE71729, top 18 ICGC),
+   comme dans les bras publiés.
+2. **TCGA, médiane de cohorte : 20,2 calculée contre 20,0 publiée.**
+   Cause : le §8.12 donne 20,0 mois (KM) ; l'implémentation gelée
+   (premier temps d'événement où S ≤ 0,5) donne 20,2. La médiane simple
+   des temps observés vaut 15,2 — c'est le chiffre « 15.2 » de
+   `tcga_survival_verify_results.txt`, mal étiqueté « OS médiane
+   cohorte » dans ce fichier, et ce n'est PAS une médiane de survie.
+   Tolérance de calibration élargie de ±0,1 à ±0,5 mois, raison écrite
+   au protocole.
+
+Amendement consigné au protocole (§3.2 et §6) avant toute lecture des
+résultats privilège. Deuxième essai : **CALIBRATION OK, 3/3 cohortes.**
+
+| Cohorte | Cox MUC16 HR (attendu) | log-rank MUC16 p (attendu) | n / décès | OS médiane (attendue) |
+|---|---|---|---|---|
+| TCGA | 1,4392 (1,44) | 0,0703 (0,070) | 177 / 92 | 20,2 (20,0) |
+| ICGC | 1,5688 (1,57) | 0,0019 (0,002) | 70 / 47 | 16,6 (16,6) |
+| GSE71729 | 1,0625 (1,06) | 0,7292 (0,73) | 125 / 84 | 17,0 (17,0) |
+
+Jointures vérifiées : TCGA 178 tumeurs et top12 KRAS résidu identiques
+à `tcga_groups_survival.json` ; GSE71729 KRAS/MUC16/CEACAM5 identiques
+à `geo71729_survival_table.csv` (écart < 1e-9) ; ICGC n=70, 47 décès.
+Échelles : TCGA = résidus corrigés de la pureté (§8.12) ; ICGC =
+log2(cpm) brut ; GSE71729 = valeurs brutes de la matrice (§8.15).
+
+## 8.83.2 — Le tableau complet : Cox univarié, log-rank, et KRAS
+
+HR par +1 écart-type, Cox univarié (un gène à la fois). Log-rank :
+quartile supérieur vs reste (définitions par cohorte au §8.83.1 :
+TCGA seuil quantile 0,75 sur 177 ; ICGC top 18 par rang ; GSE71729
+top 36 par rang sur 145 ; score GSE71729 top 36 sur 125). Spearman :
+gène vs KRAS, mêmes données. « Monte » = rho ≥ +0,15 et p < 0,05.
+
+| Item | TCGA Cox HR (p) / log-rank p | ICGC Cox HR (p) / log-rank p | GSE71729 Cox HR (p) / log-rank p | Catégorie (gelée) | Monte avec KRAS |
+|---|---|---|---|---|---|
+| FASLG | 0,92 (0,43) / 0,16 | 0,90 (0,54) / 0,12 | 1,08 (0,48) / 0,96 | NE PRÉDIT RIEN | 0/3 |
+| TGFB1 | 1,01 (0,94) / 0,66 | **1,77 (0,0005)** / 0,0002 | 1,14 (0,29) / 0,093 | UNE COHORTE | 1/3 |
+| TGFB2 | **1,28 (0,014)** / 0,025 | **1,34 (0,048)** / 0,063 | 1,01 (0,91) / 0,79 | **PRÉDIT COMME CA125** | 1/3 |
+| IDO1 | 1,17 (0,13) / 0,39 | 1,07 (0,65) / 0,98 | 1,16 (0,14) / 0,068 | NE PRÉDIT RIEN | 0/3 |
+| HLA-G | 1,18 (0,11) / 0,45 | **1,71 (0,0004)** / 0,0007 | **1,28 (0,035)** / 0,040 | **PRÉDIT COMME CA125** | 0/3 |
+| CD47 | **1,30 (0,009)** / 0,070 | 1,33 (0,058) / 0,24 | **0,76 (0,010)** / 0,032 | MIXTE | 1/3 |
+| CD274 | **1,28 (0,033)** / 0,013 | 1,26 (0,14) / 0,093 | 0,87 (0,30) / 0,68 | UNE COHORTE | 1/3 |
+| SCORE_PRIV | **1,28 (0,020)** / 0,83 | **1,70 (0,001)** / 0,0066 | 1,07 (0,53) / 0,73 | **PRÉDIT COMME CA125** | 1/3 |
+
+Médianes OS (quartile supérieur vs reste) pour les trois items
+passants : TGFB2 — TCGA 15,5 vs 21,7 mois (n=45, 26 décès), ICGC 11,6
+vs 23,8 (n=18, 15 décès), GSE71729 18,0 vs 17,0 (ns) ; HLA-G — TCGA
+20,0 vs 20,8 (ns), ICGC 9,4 vs 23,7 (n=18, 16 décès), GSE71729 11,0 vs
+19,0 (n=31, 24 décès) ; score combiné — TCGA 19,8 vs 20,2 (ns, malgré
+Cox p=0,020), ICGC 9,5 vs 23,7 (n=18, 15 décès), GSE71729 16,0 vs 17,0
+(ns). La médiane ICGC du score (9,5 vs 23,7 mois) est du même ordre
+que celle de CA125 en ICGC (9,5 vs 23,8 mois, §8.16).
+
+## 8.83.3 — Les trois items passants, un par un
+
+**TGFB2 — PRÉDIT COMME CA125.** TCGA HR 1,28 (p=0,014, log-rank
+p=0,025) ; ICGC HR 1,34 (p=0,048, log-rank p=0,063, DSS HR 1,35
+p=0,056) ; GSE71729 HR 1,01 (p=0,91). Le maillon faible est ICGC
+(p=0,048, et DSS à 0,056) : le passage tient à deux p juste sous 0,05.
+TGFB2 monte avec KRAS en TCGA seulement (rho +0,337, p<0,0001 ; ICGC
++0,037, ns ; GSE71729 −0,013, ns) — 1/3 cohortes. C'est le seul des
+trois passants qui monte avec KRAS quelque part.
+
+**HLA-G — PRÉDIT COMME CA125.** TCGA HR 1,18 (p=0,11, ns) ; ICGC HR
+1,71 (p=0,0004, log-rank p=0,0007, DSS HR 1,72 p=0,0009) ; GSE71729 HR
+1,28 (p=0,035, log-rank p=0,040). Le signal est porté par ICGC (le
+plus fort HR du chantier, 1,71) et GSE71729 ; TCGA pointe dans le même
+sens sans atteindre le seuil. HLA-G ne monte avec KRAS nulle part
+(TCGA rho +0,029, ns ; ICGC −0,118, ns ; GSE71729 −0,288, p=0,001 —
+il DESCEND avec KRAS en GSE71729). Un gène de privilège qui prédit une
+survie plus courte tout en descendant quand KRAS monte : le signal de
+survie ne passe pas par KRAS.
+
+**Score combiné (moyenne des z-scores des 7) — PRÉDIT COMME CA125.**
+TCGA HR 1,28 (p=0,020, mais log-rank p=0,83 — médianes 19,8 vs 20,2
+mois, le quartile ne voit rien) ; ICGC HR 1,70 (p=0,001, log-rank
+p=0,0066, DSS HR 1,58 p=0,011) ; GSE71729 HR 1,07 (p=0,53). Le score
+passe par TCGA + ICGC, pas par GSE71729. Il monte avec KRAS en TCGA
+seulement (rho +0,161, p=0,033 ; ICGC +0,095, ns ; GSE71729 −0,037,
+ns) — 1/3 cohortes. La section dit plainement que c'est le score, pas
+un gène seul, qui passe — et que le score est tiré par TGFB2/HLA-G en
+ICGC.
+
+## 8.83.4 — Les cinq autres : un signal fort isolé, une contradiction, deux riens
+
+**TGFB1 — UNE COHORTE (ICGC seule, mais forte).** ICGC HR 1,77
+(p=0,0005, log-rank p=0,0002, quartile 10,9 vs 25,6 mois, DSS HR 1,86
+p=0,0004) — le signal le plus significatif du chantier après HLA-G en
+ICGC, et l'un des trois seuls à passer Bonferroni (0,05/24 ≈ 0,0021).
+TCGA HR 1,01 (p=0,94) et GSE71729 HR 1,14 (p=0,29) : rien ailleurs.
+TGFB1 monte avec KRAS en GSE71729 seulement (rho +0,235, p=0,008).
+Un signal ICGC-seul, fort mais non répliqué : piste, pas preuve.
+
+**CD274/PD-L1 — UNE COHORTE (TCGA seule).** TCGA HR 1,28 (p=0,033,
+log-rank p=0,013, médiane 17,0 vs 22,5 mois) ; ICGC HR 1,26 (p=0,14) ;
+GSE71729 HR 0,87 (p=0,30). Monte avec KRAS en TCGA seulement (rho
++0,298, p=0,0001). Cohérent avec le §8.23 (PD-L1 ne montait qu'en
+TCGA) : le même « TCGA seule » se répète pour la survie.
+
+**CD47 — MIXTE (contradiction entre cohortes).** TCGA HR 1,30
+(p=0,009, vers une survie plus courte) ; GSE71729 HR 0,76 (p=0,010,
+vers une survie PLUS LONGUE, log-rank p=0,032, médiane 19,0 vs 15,0
+mois) ; ICGC HR 1,33 (p=0,058, même sens que TCGA, sous le seuil).
+Deux cohortes significatives en sens opposés : la catégorie MIXTE est
+faite pour ça, et elle est dite telle quelle. CD47 monte avec KRAS en
+TCGA seulement (rho +0,198, p=0,008).
+
+**FASLG et IDO1 — NE PRÉDIT RIEN.** Aucune cohorte avec p < 0,05 dans
+un sens ou dans l'autre (FASLG : 0,92 / 0,90 / 1,08 ; IDO1 : 1,17 /
+1,07 / 1,16, tous ns). IDO1 pointe vers le haut dans les 3 cohortes
+sans jamais atteindre le seuil — direction constante, effet trop
+faible pour nos effectifs ; dit tel quel, pas comme un signal.
+
+## 8.83.5 — Le croisement avec KRAS : la prémisse ne tient pas
+
+La mission demandait si « les gènes de privilège qui montent avec
+KRAS prédisent la survie ». Le tableau de croisement (Spearman gène vs
+KRAS, règle gelée §4) :
+
+| Gène | TCGA rho (p) | ICGC rho (p) | GSE71729 rho (p) | Monte (≥2/3) ? |
+|---|---|---|---|---|
+| FASLG | −0,134 (0,076) | −0,046 (0,71) | −0,143 (0,11) | non (0/3) |
+| TGFB1 | −0,106 (0,16) | +0,165 (0,17) | **+0,235 (0,008)** | non (1/3) |
+| TGFB2 | **+0,337 (<0,0001)** | +0,037 (0,76) | −0,013 (0,89) | non (1/3) |
+| IDO1 | −0,007 (0,93) | −0,056 (0,64) | +0,052 (0,57) | non (0/3) |
+| HLA-G | +0,029 (0,70) | −0,118 (0,33) | **−0,288 (0,001)** | non (0/3) |
+| CD47 | **+0,198 (0,008)** | +0,137 (0,26) | +0,145 (0,11) | non (1/3) |
+| CD274 | **+0,298 (0,0001)** | +0,177 (0,14) | −0,172 (0,055) | non (1/3) |
+| SCORE_PRIV | **+0,161 (0,033)** | +0,095 (0,43) | −0,037 (0,68) | non (1/3) |
+
+**Aucun gène ne monte avec KRAS dans ≥ 2/3 cohortes.** En TCGA, 4
+gènes sur 7 montent (TGFB2, CD47, CD274, score) — mais c'est TCGA
+seule, et le §8.23 avait déjà montré que PD-L1 ne montait qu'en TCGA.
+En ICGC, aucun ne monte significativement ; en GSE71729, un seul
+(TGFB1) monte et un (HLA-G) descend significativement. La prémisse
+« les gènes de privilège montent avec KRAS » n'est pas établie dans
+nos cohortes pancréatiques : elle est vraie en TCGA, fausse ailleurs.
+Donc la question ne peut pas se lire comme « les gènes KRAS-montants
+prédisent-ils la survie » — la réponse honnête est double : (a) oui,
+3 items sur 8 prédisent la survie comme CA125 (TGFB2, HLA-G, score) ;
+(b) non, ce ne sont pas les gènes qui montent avec KRAS — HLA-G
+prédit la survie en descendant avec KRAS en GSE71729, et TGFB2 ne
+monte qu'en TCGA. Le signal de survie du privilège et l'axe KRAS sont
+deux choses différentes dans ces données.
+
+## 8.83.6 — Ce que le verdict dit, et ce qu'il ne dit pas
+
+Il dit que le programme de privilège immunitaire — mesuré en ARN bulk,
+7 gènes — porte un signal pronostique dans le pancréas au même niveau
+de preuve que CA125 (2/3 cohortes) pour TGFB2, HLA-G et le score
+combiné, avec ICGC comme cohorte la plus forte (HR 1,34–1,71, DSS
+confirmé pour HLA-G et le score). Il dit que ce signal ne passe pas
+par KRAS dans nos données. Il ne dit pas que ces gènes CAUSENT la
+mauvaise survie (ARN bulk, pas de mécanisme, pas d'ajustement sur le
+stade ou le traitement — la chimiothérapie n'est pas dans le fichier
+clinique TCGA, §8.18). Il ne dit pas que le privilège immunitaire est
+une cible thérapeutique : aucun de ces gènes n'a de médicament validé
+dans le pancréas par ce chantier (TGFB et HLA-G sont des pistes
+biologiques, pas des recommandations). Il ne dit pas que CA125 est
+remplacé : CA125 reste le marqueur de référence (TCGA 1,44, ICGC 1,57)
+avec des HR comparables ou supérieurs à TGFB2/HLA-G.
+
+## 8.83.7 — Limites
+
+- **Effectifs :** ICGC n=70 — les HR les plus forts (1,71 ; 1,77)
+  viennent de la plus petite cohorte ; TCGA n=177, GSE71729 n=125.
+- **Seuils proches :** TGFB2 ICGC p=0,048, HLA-G GSE71729 p=0,035,
+  CD47 ICGC p=0,058 (juste au-dessus) — trois p à ±0,01 du seuil
+  changeraient chacune une catégorie.
+- **Tests multiples :** 24 Cox ; Bonferroni 0,05/24 ≈ 0,0021 (descriptif)
+  — seuls TGFB1 ICGC (0,0005), HLA-G ICGC (0,0004) et score ICGC
+  (0,0013) passent, tous en ICGC seule ; aucun item ne passe
+  Bonferroni dans ≥ 2 cohortes. Le verdict « comme CA125 » utilise la
+  même règle que CA125 (p < 0,05 brutes, 2/3 cohortes) — CA125 lui-même
+  ne passerait pas Bonferroni partout (ICGC p=0,008).
+- **ARN bulk, sans correction de pureté** (sauf TCGA, résidus) : comme
+  au §8.23, on ne distingue pas « plus de cellules qui expriment » de
+  « plus d'expression par cellule ».
+- **Log-rank vs Cox :** le log-rank contredit le Cox pour le score en
+  TCGA (p=0,83 vs 0,02) et pour TGFB2 en ICGC (p=0,063 vs 0,048) —
+  le verdict repose sur le Cox sans seuil, comme le record de CA125.
+- **DSS** (ICGC) rapportée seulement pour les items significatifs en
+  OS dans ICGC (TGFB1 1,86 p=0,0004 ; HLA-G 1,72 p=0,0009 ; score 1,58
+  p=0,011 ; TGFB2 1,35 p=0,056, juste au-dessus du seuil).
+
+## 8.83.8 — Pistes ouvertes
+
+1. TGFB1 en ICGC (HR 1,77, DSS 1,86) : répliquer dans une 4e cohorte
+   avec survie avant toute interprétation — une cohorte seule, même
+   forte, reste une cohorte seule.
+2. HLA-G : pourquoi prédit-il la survie en descendant avec KRAS en
+   GSE71729 ? Une stratification par sous-type (Bailey/Moffitt) est
+   une piste — pas testée ici (aucun ajustement ajouté après coup).
+3. CD47 MIXTE : la contradiction TCGA/GSE71729 demande une 4e cohorte
+   pour trancher le sens — ne pas moyenner deux sens opposés.
+4. Score combiné : sa valeur ajoutée au-delà de TGFB2+HLA-G (les deux
+   gènes qui le portent en ICGC) n'est pas testée ici.
+
+## 8.83.9 — Annexe : provenance condensée et SHAs
+
+- Protocole : `PROTOCOL_survie_privilege_883.md`, SHA
+  `0eb83d63…` (gelé avant analyse ; amendé avant lecture des résultats
+  privilège, §8.83.1).
+- Provenance complète : `PROVENANCE_883.md`.
+- Script : `survival_privilege_883.py`, SHA `c61ef946…`.
+- Sorties : `survival_privilege_883_table.csv` (SHA `ad105af8…`),
+  `survival_privilege_883_results.txt` (SHA `628b458d…`),
+  `survival_privilege_883_results.json` (SHA `a84cf494…`).
+- Sources : TCGA tarball MD5 `b09569ce…` ; GSE71729 SHA `b2287893…` ;
+  ICGC exp SHA `c2cb57af…`, probemap `b09a746f…`, Bailey XLSX
+  `778224b3…` (détail dans `PROVENANCE_883.md`).
+- Calibration : Cox MUC16 1,4392 / 1,5688 / 1,0625 ; log-rank 0,0703 /
+  0,0019 / 0,7292 ; n 177/70/125 ; décès 92/47/84.
+- Ce chantier ne rouvre rien : C3 reste levée, test C reste NON,
+  adoption pleine de maxsep inchangée ; hors pipeline.
+
+— Fin de la §8.83. —
+
+---
+
 ### 8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas
 
 | | v1 (brute) | v2 (hors pureté) | v3 (+ correction) | v4 (+ hors sexe) |
@@ -18110,5 +20246,11 @@ Original du script : `~/workspace/staging-pdac/download_data.sh`, SHA
 - **20 nov. 2026, 20h10 et 20h26 (heure de Montréal) : POUSSÉES GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — têtes `06311d12` puis `cab60218`, §8.74–§8.75.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé. `06311d12` (21 nov. 2026 01:10:52Z) : livre blanc §8.1–§8.75 (SHA `9bad9837…`, 16 906 lignes) + README tenu à jour avec le principal. `cab60218` (21 nov. 2026 01:26:48Z) : DATA_SOURCES.md synchronisée (§26 GSE131050, §27 clôture M2). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
 
 - **20–21 nov. 2026 : FUSION §8.76–§8.77 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1121 PAGES.** Sections rédigées dans `section_8.76_gse131050_fna.md` (544 lignes, SHA `d3b07ad2…8cec8`) et `section_8.77_reproductibilite.md` (649 lignes, SHA `5e78a329…ba303`), fusionnées par le coordinateur : titres normalisés « ### 8.76 ... (20–21 novembre 2026) » et « ### 8.77 ... (21 novembre 2026) » (les sections sources commençaient par « # §8.76 — ... » et « # §8.77 — ... »), lignes de go/dates ajoutées aux deux (§8.76 : piste nommée au §8.74.9 sous le go « Les 3 allez s'y » du 20 nov. 2026 18h04, protocole gelé 20 nov. ~21h30 EST ; §8.77 : ordre de Zackary du 20 nov. 2026 19h40, protocole gelé 21 nov. 01h37 UTC), marqueurs de fin normalisés (« — Fin de la section §8.XX. — » → « — Fin de la §8.XX. — ») ; lignes 82–83 au §7 ; entrées de journal ajoutées pour les poussées `76068f8e` (principal, §8.74–§8.75, Release v6.2-8.75) et `06311d12` + `cab60218` (suite, privée) ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 18 112 lignes, SHA-256 `bc0abb31…ad6eb65` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-877`, FIN 21 nov. 2026 04:10 UTC, soit 20 nov. 2026 23h10 heure de Montréal) : **1121 pages A4, 13 516 200 octets, SHA-256 `4db25406…11f72`** (ancien 1090 pages, SHA `5db6b001…`) ; couverture §8.1–§8.77 (kicker 19–21 novembre 2026, nouveau paragraphe §8.76–§8.77) ; §8.76 et §8.77 et entrées 76068f8e/cab60218 vérifiés présents par lecture du PDF, chiffres clés présents (+0,1642 ; 19/19 ; REPRODUCTIBILITÉ RÉPARÉE ; 0,0 exact). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
+
+- **21 nov. 2026, 06h50 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `a4c2e470`, §8.76–§8.77, RELEASE v6.2-8.77.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `76068f8e` → nouvelle tête `a4c2e470` (3 commits, vérifiés en lecture directe : `8d9d59ca` (1/3, livre blanc, README, DATA_SOURCES, download_data.sh, provenance, sections, scripts, results), `000cd096` (2/3, data_flux), `a4c2e470` (3/3, MANIFEST_SHA256.txt) ; commits 21 nov. 2026 11:49:46–11:50:04 UTC, vérifiés 06h52 heure de Montréal). Contenu : livre blanc §8.1–§8.77 (18 114 lignes, SHA `e4804934…`), PDF 1121 pages (13 516 200 octets, SHA `4db25406…`). Release `v6.2-8.77` : PDF 1121 p. + tarball TCGA vérifié, créée 21 nov. 2026 06h54, marquée Latest. Cette entrée clôt la mention « Poussée GitHub à venir » de l'entrée de fusion §8.76–§8.77 ci-dessus.
+
+- **21 nov. 2026, 06h51–06h52 (heure de Montréal) : POUSSÉES GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — têtes `3e23300b` puis `dce4ed07`, §8.76–§8.77.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé. `3e23300b` (21 nov. 2026 11:51:10Z) : livre blanc §8.1–§8.77 (SHA `e4804934…`, 18 114 lignes) + README + DATA_SOURCES révisée + download_data.sh corrigé. `dce4ed07` (21 nov. 2026 11:52:11Z) : README — tête principale §8.76–§8.77 (`a4c2e470`). Même blob livre blanc des deux côtés (vérifié par SHA git `679bb7f6…`). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
+
+- **21 nov. 2026 : FUSION §8.78–§8.83 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1220 PAGES.** Sections rédigées dans `section_8.78_inventaire_depots.md` (573 lignes, SHA `fa9e000b…5cbe`), `section_8.79_nouvelle_serie.md` (444 lignes, SHA `34abeda9…dac3`), `section_8.80_vopimetostat_daraxonrasib_nouvelles.md` (197 lignes, SHA `fc3ca04b…dae26b`), `section_8.81_oeil_privilege.md` (304 lignes, SHA `919f922e…7569`), `section_8.82_cerveau_privilege.md` (301 lignes, SHA `0b590793…beee`) et `section_8.83_survie_privilege.md` (279 lignes, SHA `c9dc08c8…b1d1`), fusionnées par le coordinateur : titres normalisés « ### 8.78 ... (21 novembre 2026) » à « ### 8.83 ... (21 novembre 2026) » (les sections sources commençaient par « # §8.XX — ... »), lignes de go/dates ajoutées aux six (§8.78 : piste A, protocole gelé avant toute lecture ; §8.79 : piste B, protocole C2 gelé ~12h30 EST, addendum C3 ~12h45 EST ; §8.80 : protocole gelé 07h02 EST avant toute recherche ; §8.81 : go parent, piste Œil proposée par Zackary le 21 nov. ; §8.82/§8.83 : bras supplémentaires autorisés par Zackary, protocoles gelés ~07h20 / ~07h25 EST), marqueurs de fin normalisés (« — Fin de la §8.XX. — » ; §8.79 déjà normalisé, §8.81 remplacé, notes de clôture en italique des §8.78/§8.80 conservées avec marqueur ajouté, marqueurs ajoutés aux §8.82/§8.83 qui n'en avaient aucun) ; lignes 84–89 au §7 ; entrées de journal ajoutées pour les poussées `a4c2e470` (principal, §8.76–§8.77, Release v6.2-8.77) et `3e23300b` + `dce4ed07` (suite, privée) ; DATA_SOURCES.md révisée (998 lignes, SHA `a65516db…`, nouvelles §30 inventaire/Chen MOESM13, §31 13e paire + arrêt C2 GDC, §32 UVM, §33 GBM, §34 survie sans source nouvelle ; GSE57495 déjà couverte, rappelée) ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 20 254 lignes, SHA-256 `3fd0c9de…91d77` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-883`, FIN 21 nov. 2026 13:16 UTC, soit 08h16 heure de Montréal) : **1220 pages A4, 14 019 227 octets, SHA-256 `2792c53f4df31ee4ddb022d4df75dda6b9fe581134fbaf5e4b07cdd36c91f596`** (ancien 1121 pages, SHA `4db25406…`) ; couverture §8.1–§8.83 (kicker 19–21 novembre 2026, nouveau paragraphe §8.78–§8.83) ; §8.78 à §8.83 et entrées a4c2e470/dce4ed07 vérifiés présents par lecture du PDF, chiffres clés présents (+0,4494 ; 9/13 ; MIXTE ; −0,287 ; 19/19 n'est pas de ce lot — non confondu). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
 
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*

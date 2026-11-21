@@ -4,6 +4,7 @@
 **Projet :** `~/workspace/runs/pdac-v6/` — recherche non clinique sur le cancer du pancréas (mandat : trouver un remède, livre blanc public).
 **Date de rédaction :** 19 novembre 2026.
 **Révision §8.77 :** 21 novembre 2026 — toutes les URL manquantes du §17 ont été retrouvées et vérifiées par SHA-256 (voir §29, chantier §8.77) ; nouvelle §28 (sources du §8.76) et §29 (bilan du chantier). Aucun verdict du livre blanc n'est modifié par cette révision.
+**Révision §8.83 :** 21 novembre 2026 — nouvelles §30 (inventaire §8.78, supplément Chen MOESM13), §31 (13e paire GSE57495 + arrêt C2 GDC, §8.79), §32 (TCGA-UVM, §8.81), §33 (TCGA-GBM, §8.82) et §34 (survie §8.83, aucune source nouvelle) ; §8.80 (veille clinique) sans donnée nouvelle. GSE57495 déjà couverte (ligne §21 / §8.69) — rappelée, pas re-ajoutée. Aucun verdict du livre blanc n'est modifié par cette révision.
 **Périmètre :** tous les fichiers de `~/workspace/runs/pdac-v6/data/` (87 fichiers, ~2,44 Go) + un fichier brut hors `data/` (`data_clinical_patient.txt`, racine de `pdac-v6/`).
 **Règle appliquée (Zackary, 27 oct. 2026 — provenance toujours nommée) :** chaque URL est copiée telle quelle depuis une provenance lue ; **aucune URL n'a été inventée**. Quand une URL n'est pas dans une provenance, c'est écrit noir sur blanc : « URL non consignée dans les provenances ».
 
@@ -859,6 +860,103 @@ les runs (le test à froid le démontre pour la paire TCGA v4) ; les
 matrices brutes (~2,4 Go) ne sont pas dans le dépôt par limite snapshot
 mais se re-téléchargent vérifiées par le script corrigé.
 
+## 30. Inventaire des dépôts §8.78 — supplément Chen et al. 2025 (21 nov. 2026)
+
+**Aucun nouveau téléchargement de données dans ce chantier** (inventaire en lecture seule,
+`PROTOCOL_inventaire_depots_878.md`, SHA `39667dc4…` ; provenance `PROVENANCE_878.md`, SHA
+`802e22cf…`). Une seule source de données NOUVELLE est citée avec son hachage vérifié — la
+candidate C1 pour la piste B :
+
+- **Chen et al. 2025, *Nature Communications* (matrice AUC 46 PDO × 63 médicaments)**,
+  DOI 10.1038/s41467-025-57520-3. Supplément Springer MOESM13 :
+  `https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM13_ESM.xlsx`,
+  SHA-256 `0e009cd56d2f6c25b0b355590becc4abfee3e1080633173bc33606d1bf325340` (vérifié §8.78 §8.78.8 C1) ;
+  input pipeline local `candidate_NatureComm2025_PAAD/NatureComm2025_46PDO_63Drug_AUC.csv`
+  (SHA `296681b64d3ad5309aab349696439257185f0e679cf50a35858a898b046cb3fd`, non versé).
+  n = 46 PDO — rejetée sous v5.9.4 (minimum 50), candidate sous v6.2 fast (minimum 40).
+  Piste suivante nommée au §8.79.9 (lot drogue, cible Gemcitabine) — pas encore courue.
+
+---
+
+## 31. Treizième paire GSE57495 et arrêt C2 GDC (§8.79, 21 nov. 2026)
+
+**GSE57495 — déjà couverte** (voir §21 / §8.69 : matrice `GSE57495_series_matrix.txt.gz`,
+13 487 043 o, SHA `995dbeff288a14c1cc1a52489e456b7677ede5da8e287069b8298d649b532efc`, 63 tumeurs,
+plateforme **GPL15048**, mapping `GPL15048_probe2symbol.tsv` SHA `93e01ec3…998f952`). Rappetée ici
+parce que la paire pipeline §8.79 la court pour la première fois (11 flux, GSTM1 absent) —
+**avec son caveat** : déjà tenue comme holdout direct (§8.66/§8.69, ρ KRAS–CEACAM5 = 0,4377),
+donc JAMAIS une confirmation indépendante de KRAS–CEACAM5. CSV de flux réel
+`pdac_879_geo57495_fluxes.csv` SHA `224f98eb9cc7092e05b490b1e053edd14793e3def147890be0bab567630bb51c`,
+nul SHA `5cd274594a9a256142eb5fc539645e51a6dca2f0f15b2084b9884f686ab41edf`.
+
+- **GDC ORGANOID-PANCREATIC — candidate C2 ARRÊTÉE (§8.79 §3).** Projet GDC
+  `ORGANOID-PANCREATIC` (Human Cancer Models Initiative / Next Generation Cancer Models),
+  55 quantifications RNA-seq ouvertes (STAR Counts, GENCODE v36). Manifeste :
+  `https://raw.githubusercontent.com/FindPrint/pdac-systems-evidence-preclinical/main/data/external-links/GDC_ORGANOID_PANCREATIC_OPEN_RNASEQ_MANIFEST.tsv`,
+  SHA-256 `f713edebf0f8afb20305b1472d480564e45ac31ce79e28350d7dde6ae496220b` ;
+  copie locale `data/GDC_ORGANOID_PANCREATIC_OPEN_RNASEQ_MANIFEST_879.tsv`.
+  Téléchargement réussi 55/55 fichiers, MD5 conformes au manifeste, **total 232 648 892 o exact**
+  (`download_gdc_879_receipt.json`) ; accès par `https://api.gdc.cancer.gov/data/<file_id>`
+  (cas interrogés par `POST https://api.gdc.cancer.gov/cases`, 49/49 ; fichiers par
+  `POST https://api.gdc.cancer.gov/files`, 55/55). **Arrêt : DPCR1 absent de 55/55 fichiers**
+  (symbole retiré de GENCODE v36 ; HGNC : DPCR1 = ancien symbole de MUCL3, présent 55/55) —
+  aucun CSV C2, aucun run C2. Les 55 TSV restent détenus pour un protocole futur qui
+  pré-enregistrerait MUCL3. Protocoles `PROTOCOL_nouvelle_serie_879.md` (C2, SHA `84b1adfa…`)
+  et `PROTOCOL_nouvelle_serie_879_C3.md` (addendum C3, SHA `a4399737…`) ;
+  provenance `PROVENANCE_879.md` (SHA `a42060fe…`).
+
+---
+
+## 32. Piste Œil — TCGA-UVM (§8.81, 21 nov. 2026)
+
+**Nouveau téléchargement (réussi du 1er coup, 21 nov. 2026, 12h15 UTC).**
+Broad GDAC Firehose stddata 2016-01-28, UVM, RSEM genes normalized :
+`https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/UVM/20160128/gdac.broadinstitute.org_UVM.Merge_rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.Level_3.2016012800.0.0.tar.gz`,
+fichier local `data/tcga_uvm_rsem.tar.gz`, **6 311 998 o**,
+SHA-256 `b50fdadb00d5c4095ffbe55ad4192cfca892c947cd657d032be128ba074a9975`.
+**80 tumeurs primaires** (code 01) ; les 12 gènes v4, les 7 gènes de privilège et les 4 témoins
+sont tous présents en UVM. Valeurs log2(RSEM+1), sans correction de pureté (pas de scores
+acineux/îlots pour l'œil). Sources PDAC du chantier déjà sur disque (TCGA-PAAD MD5 `b09569ce…`,
+GSE71729, GSE62452, ICGC) — aucun nouveau téléchargement pour elles. Protocole
+`PROTOCOL_oeil_privilege_881.md` (SHA `c985a03a…`) ; provenance `PROVENANCE_881.md`
+(SHA `3755cd98…`). Verdict §8.81 : MIXTE (voir §8.81).
+
+---
+
+## 33. Cerveau — TCGA-GBM (§8.82, 21 nov. 2026)
+
+**Nouveau téléchargement (21 nov. 2026 ; première URL tentée portait une coquille — `20160128`
+au lieu de `2016012800` — 404 ; l'adresse du répertoire listait le bon nom).**
+Broad GDAC Firehose stddata 2016-01-28, GBM, RSEM genes normalized, répertoire :
+`https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/GBM/20160128/`,
+fichier local `data/tcga_gbm_rsem.tar.gz`, **14 116 395 o**,
+MD5 `cfc6cf0a2c3c2e9f0ea7a11f2ba32d28` (égal au MD5 servi par le dépôt, vérifié avant le gel),
+SHA-256 `9996a653f26c8cf8f0a5c56db49e2c847b49c0d1c9823daa5bb050d13749eb83`.
+Matrice interne : 20 532 lignes, 20 503 gènes uniques après déduplication, × 171 échantillons ;
+matrice interne 30 268 366 o. **153 tumeurs primaires** (code TCGA 01) ; 18 écartées (codes 02 et 11) ;
+153/153 cas complets, aucune imputation. Transformation log2(RSEM+1), aucune correction de pureté.
+Protocole `PROTOCOL_cerveau_privilege_882.md` (SHA `487fc59d…`) ; provenance `PROVENANCE_882.md`
+(SHA `837622d9…`). Verdict §8.82 : privilège DESCEND, GBM FROID, pipeline PARTIEL fragile.
+
+---
+
+## 34. Survie des gènes de privilège (§8.83, 21 nov. 2026)
+
+**Aucune source nouvelle dans ce chantier** (hors pipeline) : TCGA (tarball MD5 `b09569ce…`,
+fichier clinique SHA `0c274268…`), GSE71729 (SHA `b2287893…`), ICGC (exp SHA `c2cb57af…`,
+probemap `b09a746f…`, Bailey XLSX `778224b3…`) — toutes déjà couvertes (voir §§1, 5, 11).
+Calibration reproduite 3/3 (Cox MUC16 1,4392 / 1,5688 / 1,0625 ; log-rank 0,0703 / 0,0019 / 0,7292 ;
+n 177/70/125 ; décès 92/47/84). Protocole `PROTOCOL_survie_privilege_883.md` (SHA `0eb83d63…`,
+amendé avant lecture des résultats privilège) ; provenance `PROVENANCE_883.md` (SHA `5f249140…`).
+Verdict §8.83 : 3 items sur 8 prédisent la survie comme CA125, mais le signal ne passe pas par KRAS.
+
+**§8.80 (veille clinique vopimetostat + daraxonrasib) : aucune donnée nouvelle mesurée ni
+téléchargée** — veille documentaire (protocole `PROTOCOL_vopimetostat_nouvelles_880.md`,
+SHA `169b9d7e…` ; provenance `PROVENANCE_880.md`, SHA `3b17b776…`) ; sources citées dans la
+section §8.80 (communiqués Tango / Revolution Medicines, ESMO 2026, ENA 2026), pas des matrices.
+
+---
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash
@@ -890,7 +988,7 @@ sha256sum ~/workspace/runs/pdac-v6/data_clinical_patient.txt
 
 ## Annexe B — Provenances lues pour rédiger ce document
 
-`PROVENANCE_depmap.md`, `PROVENANCE_tcga.md`, `PROVENANCE_tcga_v2.md`, `PROVENANCE_tcga_v3.md`, `PROVENANCE_tcga_v4.md`, `PROVENANCE_cptac.md`, `PROVENANCE_geo71729.md`, `PROVENANCE_geo62452.md`, `PROVENANCE_geo71729_survival.md`, `PROVENANCE_icgc.md`, `PROVENANCE_gdsc.md`, `PROVENANCE_prism_secondary.md`, `PROVENANCE_kras_g12d.md`, `PROVENANCE_kras_combinations.md`, `PROVENANCE_crispr_scan.md`, `PROVENANCE_mtap.md`, `PROVENANCE_mtap_pancancer.md`, `PROVENANCE_mtap_series.md`, `PROVENANCE_prmt5_mtap.md`, `PROVENANCE_mtap_prmt5_flux.md`, `PROVENANCE_mtap_arbitration_840.md`, `PROVENANCE_pancancer.md`, `PROVENANCE_parp_v6.md`, `PROVENANCE_immune_v6.md`, `PROVENANCE_immune_parp_v6.md`, `PROVENANCE_atr_chek1.md`, `PROVENANCE_muc16_cldn182.md`, `PROVENANCE_rotations.md`, `PROVENANCE_rotations_v61.md`, `PROVENANCE_rotations_dedup_844.md`, `PROVENANCE_testA_proliferation.md`, `PROVENANCE_testC_stage.md`, `PROVENANCE_v6.1.md`, `PROVENANCE_v6.2.md`, `source_registry.md` (registre de synthèse du 16 nov. 2026), `~/workspace/staging-pdac/download_data.sh`, `~/workspace/runs/pdac-v6/download_gpl6244_mapping.py`, journaux `data/download_depmap.log`, `data/download_firehose.log`, `data/download_omicscn.log`, réponses JSON `data/panc1_api.json`, `data/panc1_9191.json`, `data/panc1_9197.json`, `data/panc1_ncats.json`.
+`PROVENANCE_depmap.md`, `PROVENANCE_tcga.md`, `PROVENANCE_tcga_v2.md`, `PROVENANCE_tcga_v3.md`, `PROVENANCE_tcga_v4.md`, `PROVENANCE_cptac.md`, `PROVENANCE_geo71729.md`, `PROVENANCE_geo62452.md`, `PROVENANCE_geo71729_survival.md`, `PROVENANCE_icgc.md`, `PROVENANCE_gdsc.md`, `PROVENANCE_prism_secondary.md`, `PROVENANCE_kras_g12d.md`, `PROVENANCE_kras_combinations.md`, `PROVENANCE_crispr_scan.md`, `PROVENANCE_mtap.md`, `PROVENANCE_mtap_pancancer.md`, `PROVENANCE_mtap_series.md`, `PROVENANCE_prmt5_mtap.md`, `PROVENANCE_mtap_prmt5_flux.md`, `PROVENANCE_mtap_arbitration_840.md`, `PROVENANCE_pancancer.md`, `PROVENANCE_parp_v6.md`, `PROVENANCE_immune_v6.md`, `PROVENANCE_immune_parp_v6.md`, `PROVENANCE_atr_chek1.md`, `PROVENANCE_muc16_cldn182.md`, `PROVENANCE_rotations.md`, `PROVENANCE_rotations_v61.md`, `PROVENANCE_rotations_dedup_844.md`, `PROVENANCE_testA_proliferation.md`, `PROVENANCE_testC_stage.md`, `PROVENANCE_v6.1.md`, `PROVENANCE_v6.2.md`, `PROVENANCE_878.md`, `PROVENANCE_879.md`, `PROVENANCE_880.md`, `PROVENANCE_881.md`, `PROVENANCE_882.md`, `PROVENANCE_883.md`, `PROVENANCE_priv_881.json`, `source_registry.md` (registre de synthèse du 16 nov. 2026), `~/workspace/staging-pdac/download_data.sh`, `~/workspace/runs/pdac-v6/download_gpl6244_mapping.py`, journaux `data/download_depmap.log`, `data/download_firehose.log`, `data/download_omicscn.log`, réponses JSON `data/panc1_api.json`, `data/panc1_9191.json`, `data/panc1_9197.json`, `data/panc1_ncats.json`.
 
 **Écarts relevés pendant la rédaction (signalés dans le texte) :**
 1. `PROVENANCE_geo62452.md` indique 819 249 octets pour `GPL6244_probe2symbol.tsv` — c'est la taille de `GPL570_probe2symbol.tsv` ; le fichier GPL6244 fait 382 034 octets (25 293 sondes, contenu conforme).

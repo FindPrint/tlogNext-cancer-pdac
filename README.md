@@ -6,11 +6,11 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## État au 21 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 1121 pages (PDF partagé séparément),
-  SHA-256 `4db254061447046c6c2392552e3bfda2bbe529feeec2ee1c5ddda17b42511f72`
-  (13516200 octets), sections §8.1–§8.77. Le fichier Markdown ici a pour SHA-256
-  `e4804934fa8321318b2f6b54b6f94b5bb623e8d92dfad4906ffd3f8464ffc67e`
-  (18114 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 1220 pages (PDF partagé séparément),
+  SHA-256 `2792c53f4df31ee4ddb022d4df75dda6b9fe581134fbaf5e4b07cdd36c91f596`
+  (14019227 octets), sections §8.1–§8.83. Le fichier Markdown ici a pour SHA-256
+  `ef511c1049018c6bb5971ead20a5c8887212e8c356b7cc4e6785a2395d059ba6`
+  (20256 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -19,6 +19,34 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   `universal_v6.4.0_cohen.py` (recomposition du MC par la
   récurrence-concentration) est joint pour vérification : proposition
   REJETÉE (§8.52), v6.2 reste la version de travail.
+- Les 6 verdicts §8.78–§8.83 : (§8.78) inventaire des dépôts GitHub Ising / cancer
+  (piste A, lecture seule) — **4 dépôts utiles** (universal-log-research le plus riche :
+  benchmarks Ising, calibration des 29 estimateurs, analyses PDAC 16–20 nov. ;
+  pdac-systems-evidence-preclinical, T_log-, apamea-artificial-spin-ice-multiflux) et
+  **6 candidates pour la piste B, dont 2 fortes** (C1 Chen et al. 2025, 46 PDO × 63 AUC,
+  MOESM13 SHA `0e009cd5…` ; C2 GDC ORGANOID-PANCREATIC, 55 RNA-seq) ; tlogNext-pdac-phase2
+  nommé seulement, contenu non lu ; 0 run, 0 téléchargement — rien ici n'est un verdict
+  importé. (§8.79) treizième paire principale GSE57495 — **CONFIRME** : d_maxsep +0,4494
+  (réel 0,6381 contre nul 0,1887), plus grand écart maxsep jamais mesuré sur une paire GEO ;
+  A2 9/13 (11/13 positifs), LOO 8/12 ; **C3 RESTE LEVÉE** ; candidate C2 ARRÊTÉE (DPCR1
+  absent de 55/55 fichiers GDC, devenu MUCL3) ; **caveat** : GSE57495 est la cohorte #2,
+  déjà tenue comme holdout direct — jamais une confirmation indépendante de KRAS–CEACAM5 ;
+  C1 (lot drogue) piste suivante. (§8.80) veille vopimetostat + daraxonrasib — **aucune
+  nouvelle donnée sur la combinaison depuis ESMO 2026**, phase 3 sans NCT (design précisé,
+  démarrage 1er semestre 2027) ; **approbation européenne de daraxonrasib seul le 16 nov.
+  2026** ; 1re ligne daraxonrasib + GnP plus mature (ENA 2026, PFS médiane 12,8 mois) ;
+  rationnel MTAP/PRMT5 mesuré ici intact. (§8.81) piste Œil — **MIXTE** : la tumeur ne
+  copie pas le privilège oculaire comme un programme cohérent (3/7 gènes montent avec KRAS :
+  CD47, TGFB1, CD274 ; score PRIV rho médian +0,122, sous le seuil +0,15 ; bras pipeline
+  TCGA ordre PRIV d_maxsep +0,1649 mais chaîne absente ; UVM n = 80 : gènes de privilège
+  MOINS exprimés, d −0,35 à −3,00, image miroir) ; piste CLOSE comme question de copie.
+  (§8.82) cerveau GBM — les gènes de privilège **DESCENDENT** avec la prolifération
+  (médiane rho −0,287, 0/7 positifs, 7/7 p < 0,05 ; score PRIV −0,477) ; GBM **FROID**
+  mais pas par les mêmes gènes (CD4, FOXP3) ; pipeline **PARTIEL fragile** (+0,0283, sous
+  le plancher) ; chaîne PDAC absente ; A2 inchangé. (§8.83) survie — **3 items sur 8
+  PRÉDISENT COMME CA125** (TGFB2, HLA-G, score combiné), **mais aucun ne monte avec KRAS
+  dans ≥ 2/3 cohortes** — le signal de survie ne passe pas par KRAS ; CD47 MIXTE ;
+  hors pipeline.
 - Les 2 verdicts §8.76–§8.77 : (§8.76) lot Yeh_seq FNA de GSE131050
   (n = 42, 41/42 mêmes tumeurs que le lot FF du §8.74) — **CONFIRME** :
   le signal `maxsep` survit au changement de type d'échantillon et il
@@ -182,7 +210,7 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.77).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.83).
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
@@ -192,16 +220,16 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   version corrigée §8.77 (SHA `55811136…`, 52 fichiers, EXIT:0, test à froid
   à 0,0 exact ; original `~/workspace/staging-pdac/download_data.sh`,
   SHA `4e151d59…`).
-- `provenance/` — 88 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 102 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 120 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité).
-- `sections/` — sections §8.38–§8.77 du livre blanc, fichiers sources.
-- `scripts/` — 201 scripts de construction des flux, d'extraction et
+- `results/` — 136 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège).
+- `sections/` — sections §8.38–§8.83 du livre blanc, fichiers sources.
+- `scripts/` — 217 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 774 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.77.
+- `data_flux/` — 791 CSV/JSON : flux d'entrée des runs, tests directs,
+  extraits ssep / v62_delta / §8.46–§8.83.
 
 ## Données brutes
 
@@ -212,7 +240,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (1121 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (1220 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 

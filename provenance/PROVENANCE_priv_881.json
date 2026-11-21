@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-21",
+  "chantier": "Piste Œil §8.81 — série TCGA v4 ordonnée par score de privilège PRIV",
+  "protocole": "PROTOCOL_oeil_privilege_881.md (gelé avant les runs)",
+  "tarball": {
+    "fichier": "/home/hatch/workspace/runs/pdac-v6/data/tcga_paad_rsem.tar.gz",
+    "md5": "b09569ce3f4721f514bc137bd109ac0a"
+  },
+  "base_v4": {
+    "fichier": "/home/hatch/workspace/runs/pdac-v6/pdac_tcga_fluxes_v4.csv",
+    "sha256": "e7a2adaba5a0ef6858b665251d56d40a26eb9edd116370bf2c686c752213a0b0"
+  },
+  "verification_reproduction": {
+    "écart_max_12_flux": 1.7763568394002505e-15,
+    "atol": 1e-09,
+    "résultat": "reproduction exacte"
+  },
+  "score_priv": {
+    "définition": "moyenne des z-scores intra-cohorte des gènes de privilège présents, sur résidus",
+    "gènes_présents": [
+      "FASLG",
+      "TGFB1",
+      "TGFB2",
+      "IDO1",
+      "HLA-G",
+      "CD47",
+      "CD274"
+    ],
+    "gènes_absents": [],
+    "min": -2.0501,
+    "médiane": 0.063,
+    "max": 1.4251
+  },
+  "cohérence": {
+    "spearman_priv_vs_rang_KRAS": {
+      "rho": 0.1462,
+      "p": 0.05149131660501664
+    },
+    "recouvrement_top12_priv_vs_kras": 1
+  },
+  "série": {
+    "fichier": "/home/hatch/workspace/runs/pdac-v6/pdac_tcga_fluxes_v4_priv.csv",
+    "sha256": "348401cb3d0db12eb92a86fc15d164461c0be2ea3296a6d74719d3368c92db39",
+    "lignes": 178,
+    "colonnes": [
+      "PRIV",
+      "PGC",
+      "REG4",
+      "CLDN18",
+      "MUC17",
+      "DPCR1",
+      "CR2",
+      "KRT20",
+      "MUC2",
+      "GSTM1",
+      "CEACAM5",
+      "CLCA1",
+      "MUC16"
+    ],
+    "ordre": "PRIV croissant",
+    "contrôle": "PRIV (1re colonne, pas un flux — pas de doublon)"
+  },
+  "nul": {
+    "fichier": "/home/hatch/workspace/runs/pdac-v6/pdac_tcga_fluxes_v4_priv_nul.csv",
+    "sha256": "54eec127823c1509486df6d7331990f68b9b6ab3f52393fa26be4612ba83d824",
+    "méthode": "bloc des 12 flux permuté par lignes, graine 42, contrôle intact"
+  },
+  "script": "build_priv_881.py"
+}

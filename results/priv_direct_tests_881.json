@@ -1,0 +1,613 @@
+{
+  "infos": {
+    "TCGA": {
+      "cohorte": "TCGA",
+      "n": 178,
+      "genes_privilege_presents": [
+        "FASLG",
+        "TGFB1",
+        "TGFB2",
+        "IDO1",
+        "HLA-G",
+        "CD47",
+        "CD274"
+      ],
+      "genes_privilege_absents": [],
+      "temoins_absents": [],
+      "kras_min": -1.7626511058021546,
+      "kras_mediane": 0.027952230425155378,
+      "kras_max": 1.4675382041438727
+    },
+    "GSE71729": {
+      "cohorte": "GSE71729",
+      "n": 145,
+      "genes_privilege_presents": [
+        "FASLG",
+        "TGFB1",
+        "TGFB2",
+        "IDO1",
+        "HLA-G",
+        "CD47",
+        "CD274"
+      ],
+      "genes_privilege_absents": [],
+      "temoins_absents": [],
+      "kras_min": 1.55,
+      "kras_mediane": 3.278,
+      "kras_max": 4.151
+    },
+    "GSE62452": {
+      "cohorte": "GSE62452",
+      "n": 69,
+      "genes_privilege_presents": [
+        "FASLG",
+        "TGFB1",
+        "TGFB2",
+        "IDO1",
+        "HLA-G",
+        "CD47",
+        "CD274"
+      ],
+      "genes_privilege_absents": [],
+      "temoins_absents": [],
+      "kras_min": 5.27696,
+      "kras_mediane": 6.39648,
+      "kras_max": 7.36089
+    },
+    "ICGC": {
+      "cohorte": "ICGC",
+      "n": 70,
+      "genes_privilege_presents": [
+        "FASLG",
+        "TGFB1",
+        "TGFB2",
+        "IDO1",
+        "HLA-G",
+        "CD47",
+        "CD274"
+      ],
+      "genes_privilege_absents": [],
+      "temoins_absents": [
+        "IFNG"
+      ],
+      "kras_min": 5.161571255,
+      "kras_mediane": 6.358706151,
+      "kras_max": 7.352344028
+    },
+    "controle_nul_marginal": {
+      "FASLG": -0.0,
+      "TGFB1": 0.0,
+      "CD274": -0.0
+    }
+  },
+  "lignes": [
+    {
+      "cohorte": "TCGA",
+      "gene": "SCORE_PRIV",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": 0.1462,
+      "p_kras": 0.05149131660501664,
+      "d_top12": -0.1099,
+      "median": 0.063
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "FASLG",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": -0.138,
+      "p_kras": 0.06627913985137172,
+      "d_top12": -0.2539,
+      "median": -0.0103
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "TGFB1",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": -0.1148,
+      "p_kras": 0.12717007342701725,
+      "d_top12": -0.4546,
+      "median": 0.0923
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "TGFB2",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": 0.3197,
+      "p_kras": 1.3584143450087818e-05,
+      "d_top12": 0.1858,
+      "median": 0.0407
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "IDO1",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": -0.0159,
+      "p_kras": 0.833047995517441,
+      "d_top12": 0.0924,
+      "median": -0.1394
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "HLA-G",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": 0.0408,
+      "p_kras": 0.5886557141723194,
+      "d_top12": -0.6356,
+      "median": -0.0275
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "CD47",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": 0.1799,
+      "p_kras": 0.016242955272912106,
+      "d_top12": -0.0282,
+      "median": -0.0147
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "CD274",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": 0.2861,
+      "p_kras": 0.00010819134452113071,
+      "d_top12": 0.6531,
+      "median": 0.0514
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "PDCD1",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": -0.2125,
+      "p_kras": 0.004409713773164886,
+      "d_top12": -0.5472,
+      "median": -0.0278
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "CD8A",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": -0.1645,
+      "p_kras": 0.028254683851097993,
+      "d_top12": -0.3491,
+      "median": -0.0209
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "GZMB",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": -0.1075,
+      "p_kras": 0.15319617611124442,
+      "d_top12": -0.1698,
+      "median": -0.0121
+    },
+    {
+      "cohorte": "TCGA",
+      "gene": "IFNG",
+      "present": true,
+      "n": 178,
+      "n_genes_score": 7,
+      "rho_kras": -0.0205,
+      "p_kras": 0.7861587688223882,
+      "d_top12": 0.528,
+      "median": -0.1728
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "SCORE_PRIV",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": 0.0983,
+      "p_kras": 0.23946056237823768,
+      "d_top12": -0.3854,
+      "median": 0.0463
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "FASLG",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": -0.0601,
+      "p_kras": 0.4729568029786032,
+      "d_top12": -0.5855,
+      "median": 1.536
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "TGFB1",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": 0.2821,
+      "p_kras": 0.0005856467327259566,
+      "d_top12": 0.0828,
+      "median": 2.795
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "TGFB2",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": 0.0575,
+      "p_kras": 0.4924233455176611,
+      "d_top12": -0.0834,
+      "median": 3.72
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "IDO1",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": 0.1502,
+      "p_kras": 0.07132988843118392,
+      "d_top12": -0.2794,
+      "median": 3.578
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "HLA-G",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": -0.2528,
+      "p_kras": 0.0021522690803911014,
+      "d_top12": -0.5586,
+      "median": 4.671
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "CD47",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": 0.2312,
+      "p_kras": 0.005140299275774699,
+      "d_top12": 0.2831,
+      "median": 5.099
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "CD274",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": -0.1063,
+      "p_kras": 0.20313297114886683,
+      "d_top12": -0.1333,
+      "median": 2.497
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "PDCD1",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": -0.2396,
+      "p_kras": 0.003697157116952212,
+      "d_top12": -0.881,
+      "median": 3.557
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "CD8A",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": -0.1544,
+      "p_kras": 0.06376725695685723,
+      "d_top12": -0.816,
+      "median": 4.088
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "GZMB",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": 0.1442,
+      "p_kras": 0.08346424858424624,
+      "d_top12": -0.4058,
+      "median": 4.044
+    },
+    {
+      "cohorte": "GSE71729",
+      "gene": "IFNG",
+      "present": true,
+      "n": 145,
+      "n_genes_score": 7,
+      "rho_kras": 0.0859,
+      "p_kras": 0.30422499442435097,
+      "d_top12": -0.3525,
+      "median": 0.549
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "SCORE_PRIV",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": 0.343,
+      "p_kras": 0.003907209652213282,
+      "d_top12": 0.3212,
+      "median": -0.0888
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "FASLG",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": -0.1102,
+      "p_kras": 0.367554615289143,
+      "d_top12": -0.4366,
+      "median": 3.1823
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "TGFB1",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": 0.2101,
+      "p_kras": 0.08316657875403645,
+      "d_top12": 0.5334,
+      "median": 5.3681
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "TGFB2",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": 0.1585,
+      "p_kras": 0.1933463455714507,
+      "d_top12": 0.3082,
+      "median": 6.4406
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "IDO1",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": -0.0658,
+      "p_kras": 0.5913432730953356,
+      "d_top12": -0.3858,
+      "median": 3.7216
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "HLA-G",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": 0.0381,
+      "p_kras": 0.7561231665635225,
+      "d_top12": -0.1368,
+      "median": 7.056
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "CD47",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": 0.6227,
+      "p_kras": 1.1142635394026622e-08,
+      "d_top12": 1.1259,
+      "median": 7.6969
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "CD274",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": 0.1827,
+      "p_kras": 0.13290959856157047,
+      "d_top12": 0.3386,
+      "median": 4.0613
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "PDCD1",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": -0.215,
+      "p_kras": 0.07607333810681563,
+      "d_top12": -0.7039,
+      "median": 5.1799
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "CD8A",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": -0.348,
+      "p_kras": 0.0033843710395458433,
+      "d_top12": -0.9344,
+      "median": 4.3798
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "GZMB",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": 0.0592,
+      "p_kras": 0.6292356345983088,
+      "d_top12": -0.1568,
+      "median": 4.4824
+    },
+    {
+      "cohorte": "GSE62452",
+      "gene": "IFNG",
+      "present": true,
+      "n": 69,
+      "n_genes_score": 7,
+      "rho_kras": -0.0862,
+      "p_kras": 0.48151081882252234,
+      "d_top12": -0.6421,
+      "median": 2.5602
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "SCORE_PRIV",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": 0.0951,
+      "p_kras": 0.43376733677643964,
+      "d_top12": -0.3151,
+      "median": 0.0024
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "FASLG",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": -0.046,
+      "p_kras": 0.7055587580032789,
+      "d_top12": -0.5951,
+      "median": -1.6611
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "TGFB1",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": 0.165,
+      "p_kras": 0.1721384122529384,
+      "d_top12": 0.264,
+      "median": 4.8609
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "TGFB2",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": 0.0375,
+      "p_kras": 0.7581782662011674,
+      "d_top12": 0.0475,
+      "median": 4.7003
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "IDO1",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": -0.0561,
+      "p_kras": 0.6445362750687256,
+      "d_top12": -0.8091,
+      "median": 1.4488
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "HLA-G",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": -0.1184,
+      "p_kras": 0.3288283008478583,
+      "d_top12": -0.4222,
+      "median": 1.3364
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "CD47",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": 0.1373,
+      "p_kras": 0.2571803430387156,
+      "d_top12": 0.187,
+      "median": 7.0831
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "CD274",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": 0.1773,
+      "p_kras": 0.14203253181373113,
+      "d_top12": -0.0293,
+      "median": 1.6843
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "PDCD1",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": -0.2226,
+      "p_kras": 0.06395012350436399,
+      "d_top12": -0.8537,
+      "median": -0.913
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "CD8A",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": -0.1455,
+      "p_kras": 0.22937605650013168,
+      "d_top12": -0.4519,
+      "median": 1.8568
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "GZMB",
+      "present": true,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": -0.0354,
+      "p_kras": 0.7711318812178669,
+      "d_top12": -0.5172,
+      "median": -0.5429
+    },
+    {
+      "cohorte": "ICGC",
+      "gene": "IFNG",
+      "present": false,
+      "n": 70,
+      "n_genes_score": 7,
+      "rho_kras": null,
+      "p_kras": null,
+      "d_top12": null,
+      "median": null
+    }
+  ]
+}

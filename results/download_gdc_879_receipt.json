@@ -1,0 +1,451 @@
+{
+  "manifeste_sha256": "f713edebf0f8afb20305b1472d480564e45ac31ce79e28350d7dde6ae496220b",
+  "n_attendu": 55,
+  "n_ok": 55,
+  "n_skip": 0,
+  "n_fail": 0,
+  "total_bytes": 232648892,
+  "date_utc": "2026-11-21T12:23:24.766841+00:00",
+  "fichiers": [
+    {
+      "file_id": "0ef9da0b-1b99-40a7-a159-94d3c1cb4606",
+      "file_name": "e3fcb9aa-e800-429b-b316-fe5ed32417ee.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "72c8ad1d5b56a2db378a3ec1e152f29f",
+      "sha256": "001c00501b82bf077a761c51b239b7e112ed212c3f246520458d330f2c3d481b",
+      "size_bytes": 4235614
+    },
+    {
+      "file_id": "15e84d11-d9d3-4e2a-9487-9f1129d40255",
+      "file_name": "a8c791e8-d098-4e5f-8f19-90ae0c5d4366.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "58d38636afa578da96fdea96eae42d25",
+      "sha256": "4ca29abfa2a2a5aab9c713b26b8dfe466229f61e59464cb0285c52ed5cd481f5",
+      "size_bytes": 4230604
+    },
+    {
+      "file_id": "18aa360d-1ca5-4860-8419-3cd930bc8694",
+      "file_name": "08e67b38-2294-47a6-95d7-373e4fca7e31.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "9cb52c9ff08f5a8c23d0fc8268635a3c",
+      "sha256": "4f921c10900812c3d7baa3f8b3e4d42afc642b0dd3ed602a0e294c59f1235985",
+      "size_bytes": 4228621
+    },
+    {
+      "file_id": "2026d18b-b78d-4947-a2ac-6e567b4dea19",
+      "file_name": "7d31e50e-8900-441a-b280-c80ff9ece480.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "7fa64881e0c94aecba00679adbf940c6",
+      "sha256": "5b39be3199b2a1a5dc037d74f98efeef00caf32f29f232ea597cebb00f3c992f",
+      "size_bytes": 4232917
+    },
+    {
+      "file_id": "214cc8b0-ff1a-407f-9f5d-78e33d07eb09",
+      "file_name": "85bde5f2-5dd8-4c47-8947-6390edb52351.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "18f774ba17bfbd7e18ad0ff69efd3187",
+      "sha256": "4fd851570b187e8f1da0785c7d4d320951be762e28f8b2e76c62c2f4783f4f05",
+      "size_bytes": 4223936
+    },
+    {
+      "file_id": "258a4b99-378f-4f13-a75d-5e24e063d389",
+      "file_name": "7457e64f-50e4-4f5d-9dd6-3645263da651.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "1f201cbc093dc98192480001ddf9a530",
+      "sha256": "8b9c1f74014c0753dfc0242b59d27a3cdde3f16c5edd40b9c2988f9083d55eb6",
+      "size_bytes": 4229676
+    },
+    {
+      "file_id": "26f4e4f0-001e-4ee2-a6f7-63dc04789ef2",
+      "file_name": "f362388e-508b-4f6a-896f-0b8e891ffad6.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "ea1d917cbd8c901b3cba19946a1591f5",
+      "sha256": "35bfa11991617f936b4a478674777ec6cb93190d5853247c088e3cc868f1bc8c",
+      "size_bytes": 4230087
+    },
+    {
+      "file_id": "294aa274-22f6-4d90-ad03-9cd2c3c456ee",
+      "file_name": "7ff645e5-1c66-4f09-bb3d-35faf30bfe22.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "15ef60790c21f74e6fad84357f831420",
+      "sha256": "f7634d4d551574a9a92d63b0addb96e64869532609476af82ebb3e50d9b67bf1",
+      "size_bytes": 4238060
+    },
+    {
+      "file_id": "383dea06-d4f0-429d-8f34-bd0269a813e3",
+      "file_name": "07f269be-62ef-4a73-91fa-d83f1da0147b.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "ff0674291b51ac59f616b335a22b7923",
+      "sha256": "c5d42249bb9239ebf9cddd7eb87ba0dbd90b817d53f588b97a169848ae8bccbd",
+      "size_bytes": 4227978
+    },
+    {
+      "file_id": "3d9b5474-0fd5-4aae-9d94-2be54f85be8e",
+      "file_name": "940e42e0-f604-48eb-a0ac-be404eb7f512.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "2e04aee4aa54847416620219aac664cc",
+      "sha256": "e9ee3db21c7c4c8c978404142a98f237097efc2bdff06abf1d2fbc1b77897975",
+      "size_bytes": 4224611
+    },
+    {
+      "file_id": "409aab37-805c-44a2-ab0e-c0613b04be6c",
+      "file_name": "ed2247a0-c812-4483-a033-96a98241e095.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "761acd69ce25579d5782b05a644c9a0b",
+      "sha256": "0e02a59d741df8dce6b3c41196aa1ec806863a9295f2d0d8b99809a295bf01eb",
+      "size_bytes": 4227231
+    },
+    {
+      "file_id": "4433948a-c13e-4100-aa83-2835271e08f0",
+      "file_name": "20018411-e0b4-4df9-b624-9f2a66025545.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "efb4eaa712975b33bf0b9afaacea63c8",
+      "sha256": "2c4bebc6b36ccd9ec5de3cbfe66ae80aa65a440e70340dc852ffcdba2e4992a8",
+      "size_bytes": 4221756
+    },
+    {
+      "file_id": "52a2aad8-73c0-409f-b9cc-ea9d15e1fbc4",
+      "file_name": "dacc5736-51e5-477b-9c2a-7b550805a1fd.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "4e21a6aaeab933afb0cd357d402dfdd3",
+      "sha256": "6c4d2c77794384fd46ff3cd22102a3123ffb7bf69f6a6ca6ce5938b73579abde",
+      "size_bytes": 4224066
+    },
+    {
+      "file_id": "56bf4595-ce62-4d1a-adb7-51f4b1e1fdcf",
+      "file_name": "6ea5717c-c2c9-4215-a576-ddf1a4dacff6.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "b436694d214ff3078cae77901112993e",
+      "sha256": "1b0e282282178c11c064e6571c991d2257f231b9cfd359c20c85ee536829120b",
+      "size_bytes": 4233191
+    },
+    {
+      "file_id": "58d39e64-36d6-4584-ab8a-058d017a72ff",
+      "file_name": "00d56586-7c04-4ce3-a3ca-fe144cb65f01.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "93deac06402d93760312886f7a03de17",
+      "sha256": "f19e55cae662543f3b209bcfd49cf5b17e21d8883b6ac91c667860c730c37a07",
+      "size_bytes": 4225420
+    },
+    {
+      "file_id": "666175d5-9844-4925-a761-a57624fd2b7a",
+      "file_name": "71cf8dd7-b75a-40c9-bc51-4b877bb95955.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "5a3607f5df8336ce875cd323cb943b3e",
+      "sha256": "d8564ab5a9629b94db6e9b9705105776d724d4f2d5e112ba4248eaf928361b9a",
+      "size_bytes": 4224531
+    },
+    {
+      "file_id": "6c214ef0-eb21-4056-8e0f-77abbe9f1f58",
+      "file_name": "1e823575-d2f5-4bed-9c05-f680dafebe8e.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "457cb62d0b079c5010036f3117314e55",
+      "sha256": "601b5f3b16a9d5c598176f2bd2a55afa24ef3d2756f9ea30fa9cd21f22d63511",
+      "size_bytes": 4221930
+    },
+    {
+      "file_id": "7176a77e-0aec-4ac2-bab3-347b3ae1168c",
+      "file_name": "c1c7f872-80e5-452f-917a-b93e232f6901.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "d6e6f44fc15bb49b8b10b7e12e54618c",
+      "sha256": "7cfe22d2b171e46a52d31ead6c5688a5142c4a3c5827600c76ca92a0fd6b917a",
+      "size_bytes": 4237645
+    },
+    {
+      "file_id": "74e2f489-fa55-4c2f-bac4-f4cdbb5fa220",
+      "file_name": "7cd2b053-2b5e-4742-853a-adb5d1242eb9.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "7db71f7fa43e80c784bcb8c5c897d7ef",
+      "sha256": "ae7dde9026928f8b0925cbe1df9acb7a06a2b81ded71f0bf82f57b16f18f9402",
+      "size_bytes": 4235017
+    },
+    {
+      "file_id": "75c5ee97-8fe5-4a7a-887f-7a3d64829eb6",
+      "file_name": "c13475af-1850-4a1a-921e-f2859a247904.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "7725be9b9f120f39e28ee7e7006904ca",
+      "sha256": "1c5b068608b9f4e6ef805d16b4dd7fc642beb230b9904b33bca62d0f24a86ade",
+      "size_bytes": 4228977
+    },
+    {
+      "file_id": "7721861d-e5ed-4cd5-81b7-5fc3bece5640",
+      "file_name": "3e8f8215-08d9-4dbd-b319-f4a64ea64793.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "1cbd5488bb60b27458e74a3736cd3a67",
+      "sha256": "74ccde3acb311d7180efd9a2ad35eb1d9ad8479aaf850676eeab12d22c30e5d8",
+      "size_bytes": 4232665
+    },
+    {
+      "file_id": "7de56cdb-0125-48a5-8cb4-f170cf733428",
+      "file_name": "cef94655-3ff3-4863-b747-eea2e2bcb3bc.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "017e0be814199156788e1d75f6364b31",
+      "sha256": "c5ae613ec2987d0c80248a39bbf4c58c72d195a11d41082579bb7670bbaeee4b",
+      "size_bytes": 4226459
+    },
+    {
+      "file_id": "826ced33-7ec7-46a0-8673-845fe35e3b6b",
+      "file_name": "093b5452-65db-486a-a566-89bc92697d35.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "2aedfeeb48d4a535a430898266c648d7",
+      "sha256": "101d93576e252e2d3e262b38c83c807c4d14629af6035aa228bb8740a8f276ef",
+      "size_bytes": 4237873
+    },
+    {
+      "file_id": "8271631d-892c-47ba-b472-d3e5ab6205c7",
+      "file_name": "e3561d9b-4294-4981-a583-205c926e47dc.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "b457e1926717ee3a4cb2e37cba8f2928",
+      "sha256": "68da88f7a4c1cebd23b505ace4017b2f0005a63d727098f69154d563c862e254",
+      "size_bytes": 4232759
+    },
+    {
+      "file_id": "874a2ff6-2ec6-4905-aaf0-0dd8d892ac52",
+      "file_name": "797016b2-dd89-4a98-87a2-fada7fe1cec5.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "8026e39fd71d69b0536c1fc19005ca77",
+      "sha256": "255a548b2e60dbddf2fcf6f229b023c08a167cbede69def998314f93b847cfc3",
+      "size_bytes": 4223538
+    },
+    {
+      "file_id": "8a5f1393-4102-4203-9a1a-77c49a4a154f",
+      "file_name": "a58c9a7a-bda6-4ca8-9b3c-d92f5d88ba46.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "37213de11e66ad96ef3bdc8c499e5de9",
+      "sha256": "0f35113303a3579db99584269ce4e1b77e5fe77ba063d99b8ce32ac792fa88f5",
+      "size_bytes": 4232047
+    },
+    {
+      "file_id": "9393b391-00cf-4204-aecd-5ee3dcac59cf",
+      "file_name": "04dfbfd9-2c8f-496e-a615-f8995e5154ae.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "a0df5bf6932fdf486379df9f628bf4ec",
+      "sha256": "866580e6e14ac7243aad70c964c5fbcdfae23f24bda015d6de12b23656ab65fb",
+      "size_bytes": 4237937
+    },
+    {
+      "file_id": "958f96aa-1de7-4a1e-8007-5b16bdcf4bbe",
+      "file_name": "e140679f-8e3c-4abe-b935-58649053799d.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "5ddae5195a9f6ccdb983cc77114db6ad",
+      "sha256": "8300ecee5933070523e6324069e8c55835eb310b4f78457319d5f1400c1ee09c",
+      "size_bytes": 4229480
+    },
+    {
+      "file_id": "9949df06-7e3b-4ad4-8d5b-4d84c89e8230",
+      "file_name": "6ec913ff-c3f4-48f5-9a90-d26f9c646687.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "4c539368822246a2e9befc831e91d6ba",
+      "sha256": "e46242755d0a8f09e1c100e7961bc895a43310f2f0e4131db144f2870c484c64",
+      "size_bytes": 4230616
+    },
+    {
+      "file_id": "a3e497c7-7716-4c65-b1a2-2ef5ecfe26f0",
+      "file_name": "461c6b55-1708-40b4-bda5-5535a2020e68.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "d9faa11b35101dd78ba1f84ad2e2dd69",
+      "sha256": "ca0a1170295cb5dae2f58c4cdb71299da2b1ff1e74fbc29d9de71383396ed27b",
+      "size_bytes": 4223400
+    },
+    {
+      "file_id": "aa861fcd-4c3f-4b7f-92fe-f9af09d58de0",
+      "file_name": "a1b6f851-af1f-4a82-8d83-f80d57a334ba.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "d5a93ee4a3eb9188c2c2a4a7a4d00d52",
+      "sha256": "9304b0c771c0c32df0bdf17c928c7d9e223a688b200e431aec8d74c2a00f7f59",
+      "size_bytes": 4228557
+    },
+    {
+      "file_id": "aa91fd18-9d7c-4ce1-8911-6ab5d54e8fc4",
+      "file_name": "97ed603e-7f9c-41f2-a395-aade920accd6.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "30d4e62d08ec65f4c59ef31f92d9d600",
+      "sha256": "73a97fafa04c62539e872056d0b1cb6698d0ed854cdd45293117424f42378d4a",
+      "size_bytes": 4234329
+    },
+    {
+      "file_id": "adee5c84-a648-4bb2-afc4-9520280e4848",
+      "file_name": "cfb22850-e76d-4b4d-8089-a1fc99d04f20.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "4d8424f7c1294119c8dc9803928852d1",
+      "sha256": "16070a3d465647aa5a409a39081b9c0899216632a5e9a82591af0a1f1a755ecc",
+      "size_bytes": 4230300
+    },
+    {
+      "file_id": "aeb9d82a-c9dd-491e-8f7c-330c3d80d312",
+      "file_name": "f1a5c800-b63c-4f06-a2cb-4ded9da05b4b.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "47cba3d8e6611026c68dea12d747d754",
+      "sha256": "71009105557c7e4b6df3c22e628c7b0284c0f20b4d5618f5f252f2ead4224cea",
+      "size_bytes": 4225319
+    },
+    {
+      "file_id": "aed924e1-e608-4376-a693-5f4faaed3dcf",
+      "file_name": "5597c2cb-b42b-4f09-ad1c-2756994b3c8f.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "149218fdb816ae85927b796fbef8e2d2",
+      "sha256": "c7598b1c67a36c75bfe9dc016dd387e02d2822552472be0acc9d0f396127646b",
+      "size_bytes": 4236787
+    },
+    {
+      "file_id": "c312271b-a950-4a52-bba3-eabc4adc252a",
+      "file_name": "06330b66-7243-4408-bbf5-2e5c1117641c.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "af907f406cf8ddb6d3a69e6b01596f5d",
+      "sha256": "d9d004ba825a9e88490c478aa31a37ca3087586049077afb48edd8c981403f05",
+      "size_bytes": 4235246
+    },
+    {
+      "file_id": "c53ea286-0707-40c7-a7ad-2759bf5c7f74",
+      "file_name": "c1aba62f-f95a-4507-b77c-e91a699780e6.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "dc921a3b623cbd87f4caf4931f623e94",
+      "sha256": "e33edcbc03778f7050baf2031247138bc781a4ed8c8ea0a0e32982915c7224be",
+      "size_bytes": 4228855
+    },
+    {
+      "file_id": "c5cce1d0-e4bb-4a5e-8a85-0ac7d166b4aa",
+      "file_name": "512ab503-82d3-46fe-810c-d46652178c88.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "1250989daf50d7d1d319f1ee4e2d06e7",
+      "sha256": "8b241e588b4121b05df026481b460592f9cb91ba05bff2fd91dde9bc946744db",
+      "size_bytes": 4220673
+    },
+    {
+      "file_id": "ca3d5c57-027b-48b5-b83d-25a796d100a0",
+      "file_name": "35ccf044-8577-4ca1-9259-2a917cdbaf1c.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "36befe6af13a345b4dad829fe3a8b21c",
+      "sha256": "78ce5c6bb7c7c2c8aa1e76029332b3c7b6dc949495ac413c5e864d9a9b80fc14",
+      "size_bytes": 4232353
+    },
+    {
+      "file_id": "cb7ada46-d4bd-4d46-b78f-923b202afa1f",
+      "file_name": "af38af00-266f-4c4b-a22d-dfeda07427de.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "0515ef3792feb5feb4fc465eea188777",
+      "sha256": "91bb6c29b6b4a4125fe6eadcdace1b7425b40e394ae6fe56765877e5d7318ea5",
+      "size_bytes": 4222999
+    },
+    {
+      "file_id": "cbd314b7-55be-4f61-a371-aa6d36c3eaaa",
+      "file_name": "8c262bb8-e2f3-4f77-b849-45536e0b4360.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "187b840a2e681fbe296eaad1ed264d12",
+      "sha256": "1137a3dce6cb71c1c909b01845530d29bca6ee8d9bc7bf4cea16720d4e89afc5",
+      "size_bytes": 4238831
+    },
+    {
+      "file_id": "d0a6f70f-eb87-4a36-8de8-22a4489544e7",
+      "file_name": "75f63a7e-2577-471d-a4e9-81d624689025.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "1ab9f3837e49de3bc3283100bf4d2970",
+      "sha256": "0c684e5910d43957d7458e48f9df59d6f7319940c6ba3d6d62ce84fe8745a853",
+      "size_bytes": 4226481
+    },
+    {
+      "file_id": "d9bb36ee-51c7-4a3e-a72a-3337453d41cb",
+      "file_name": "4a0b212d-e944-4b19-9a88-bebe7dac0218.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "c6f468f74790fdb8e0e5918808156411",
+      "sha256": "3d9182f28259650de66248206de8175e957e9fc24ebb50129ff04f3feace90bb",
+      "size_bytes": 4223833
+    },
+    {
+      "file_id": "da0e54fe-bc2b-46c6-ba31-cafdc809f442",
+      "file_name": "5bda48df-adee-40bb-9d46-789f8030c75d.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "47bf545b8b1b0a08dffac007b95e8298",
+      "sha256": "b1aca89ca1d2e31ee4223b7350c0e8fb63edcfec7b418ac1cabf96def15122c6",
+      "size_bytes": 4235699
+    },
+    {
+      "file_id": "da5deea8-7ccb-44bf-ae4f-512c9f7ba727",
+      "file_name": "a352d697-46af-4e17-a235-afeccd290f29.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "b764cc91eb7cff113f5eee576cc0cdab",
+      "sha256": "44dba76a8c7b2401cab6347f61547e0f7d75a120f3000a4d06b93d25c1d0ebe2",
+      "size_bytes": 4236109
+    },
+    {
+      "file_id": "dc86e9ef-bf64-40a7-b1f2-60cc14f21a1b",
+      "file_name": "77941b19-bb67-47a4-8bf9-5c97bcbe3241.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "adb497302bc220f0f48935a4c860ceca",
+      "sha256": "7bdb2e61e1ea509b6191ad799f16f86f743baee81abc5f188cd8e0a53dcb0e92",
+      "size_bytes": 4230206
+    },
+    {
+      "file_id": "dd22f9b9-5051-4de5-a70f-15024eb16397",
+      "file_name": "91b2e0c0-36e0-45b1-8971-a181c51098c5.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "0d0a780cd6ee52c954ba616712b2d05a",
+      "sha256": "1ff6f85914a8833158ed09439c16460e31ea527738f3dcd09815890538ff5c21",
+      "size_bytes": 4228377
+    },
+    {
+      "file_id": "dfcecf44-3cc7-4144-b8fa-1e293d4b846d",
+      "file_name": "833c68af-c289-42a6-9a50-6533d44be72b.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "3584736defc707687d35f14bc1534a84",
+      "sha256": "93c5e13bea18c2f822a28af6eb1a201bc00fbd5a7c4c0afd7f70b9bb6dd43390",
+      "size_bytes": 4239133
+    },
+    {
+      "file_id": "e47c9b45-d94f-4c56-8b34-19ca86c40708",
+      "file_name": "79df119e-cd99-453c-b18b-81ca868d40c0.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "5a306847b5dbac7a5b7d442cf223a96d",
+      "sha256": "6d61d7056124c81b0d4f07332f787d50c615919a6762d30bbc8d893339f4ed01",
+      "size_bytes": 4228352
+    },
+    {
+      "file_id": "e61d9c62-73fa-4f0d-b5bf-cd8c6582b27c",
+      "file_name": "55d07bfb-ecd3-4991-bb14-a2337adf55b5.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "224621bd03ad0f65aa98d437e8b34ed2",
+      "sha256": "d7babe23658488be6f33c602a93d90a3b98393333a052d6256e8f95dd89cbe06",
+      "size_bytes": 4231193
+    },
+    {
+      "file_id": "f200946d-4d60-48be-af86-c4fdef917d20",
+      "file_name": "9f6a27d4-18a6-45d1-9ba5-f4a917ee4773.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "dbc86bf5683fec92ad9bc5debb02784f",
+      "sha256": "900d2efe834973d5d30ad9bc621a9337ea98b07fd2080eac336bd23133e66ecf",
+      "size_bytes": 4230466
+    },
+    {
+      "file_id": "f2514dc0-473f-476a-a8df-1937ce9bfaae",
+      "file_name": "607e252c-188e-4b08-9f12-51aa9e791df0.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "7489601e8a9ad62bbf56d37a47c4100a",
+      "sha256": "0dac84db57ff564a4754935dbc719741dae65a638d4647c76c3ae0855cee97c3",
+      "size_bytes": 4229305
+    },
+    {
+      "file_id": "f439be5f-4781-4fe3-b9ca-702059aa1798",
+      "file_name": "de599739-2948-4f75-b471-b1affe1ac965.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "2739f7d07ac656aa6575fecb1cd016c6",
+      "sha256": "d6cd32846b6dadd93c8dd007f5f8895ad04779cb7be68411c273a8ec6289c397",
+      "size_bytes": 4235437
+    },
+    {
+      "file_id": "fabcc728-e614-45f6-8f4d-9ff464cc5fa5",
+      "file_name": "5de1d7a2-13cc-4467-82f2-5f2b551586c8.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "f70c5947f8e451652878b75af1110ea1",
+      "sha256": "871f532888dab3a55a16fa10e416d9a33e957e2061e1d2802463e90f1117e64a",
+      "size_bytes": 4231068
+    },
+    {
+      "file_id": "fd06b06b-b355-4e2d-9d57-b4d9d25e6202",
+      "file_name": "f804cf50-3dcf-4cc8-9afa-6fb4811d75b9.rna_seq.augmented_star_gene_counts.tsv",
+      "status": "ok",
+      "md5": "2b93da8ee0971565eb82f1887776ba28",
+      "sha256": "66f41b736425db6e34b17765dc89bf67134ec191d21e790999e85f731479be34",
+      "size_bytes": 4220342
+    }
+  ]
+}

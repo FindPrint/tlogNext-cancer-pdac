@@ -1,0 +1,341 @@
+{
+  "n_uvm": 80,
+  "tarball_uvm_sha256": "b50fdadb00d5c4095ffbe55ad4192cfca892c947cd657d032be128ba074a9975",
+  "genes_privilege_presents": [
+    "FASLG",
+    "TGFB1",
+    "TGFB2",
+    "IDO1",
+    "HLA-G",
+    "CD47",
+    "CD274"
+  ],
+  "genes_privilege_absents": [],
+  "genes_v4_presents": [
+    "PGC",
+    "REG4",
+    "CLDN18",
+    "MUC17",
+    "DPCR1",
+    "CR2",
+    "KRT20",
+    "MUC2",
+    "GSTM1",
+    "CEACAM5",
+    "CLCA1",
+    "MUC16"
+  ],
+  "genes_v4_absents": [],
+  "temoins_absents": [],
+  "priv_min": -1.133,
+  "priv_mediane": -0.1546,
+  "priv_max": 1.5652,
+  "u1_niveaux": [
+    {
+      "gene": "FASLG",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 1.611,
+      "mediane_paad": 3.375,
+      "d_uvm_vs_paad": -0.878
+    },
+    {
+      "gene": "TGFB1",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 9.0,
+      "mediane_paad": 10.917,
+      "d_uvm_vs_paad": -2.206
+    },
+    {
+      "gene": "TGFB2",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 4.962,
+      "mediane_paad": 9.067,
+      "d_uvm_vs_paad": -2.999
+    },
+    {
+      "gene": "IDO1",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 1.735,
+      "mediane_paad": 6.745,
+      "d_uvm_vs_paad": -1.945
+    },
+    {
+      "gene": "HLA-G",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 6.856,
+      "mediane_paad": 7.348,
+      "d_uvm_vs_paad": -0.349
+    },
+    {
+      "gene": "CD47",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 10.276,
+      "mediane_paad": 11.208,
+      "d_uvm_vs_paad": -1.985
+    },
+    {
+      "gene": "CD274",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 3.658,
+      "mediane_paad": 4.724,
+      "d_uvm_vs_paad": -0.7
+    },
+    {
+      "gene": "PDCD1",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 2.201,
+      "mediane_paad": 5.059,
+      "d_uvm_vs_paad": -1.296
+    },
+    {
+      "gene": "CD8A",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 4.329,
+      "mediane_paad": 7.407,
+      "d_uvm_vs_paad": -1.33
+    },
+    {
+      "gene": "GZMB",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 2.361,
+      "mediane_paad": 5.529,
+      "d_uvm_vs_paad": -1.599
+    },
+    {
+      "gene": "IFNG",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 1.171,
+      "d_uvm_vs_paad": -0.38
+    },
+    {
+      "gene": "PGC",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 8.136,
+      "d_uvm_vs_paad": -2.1
+    },
+    {
+      "gene": "REG4",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 10.446,
+      "d_uvm_vs_paad": -2.904
+    },
+    {
+      "gene": "CLDN18",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.539,
+      "mediane_paad": 11.912,
+      "d_uvm_vs_paad": -2.973
+    },
+    {
+      "gene": "MUC17",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 9.151,
+      "d_uvm_vs_paad": -2.41
+    },
+    {
+      "gene": "DPCR1",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.905,
+      "mediane_paad": 11.24,
+      "d_uvm_vs_paad": -2.7
+    },
+    {
+      "gene": "CR2",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 4.923,
+      "d_uvm_vs_paad": -1.562
+    },
+    {
+      "gene": "KRT20",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 3.058,
+      "d_uvm_vs_paad": -1.325
+    },
+    {
+      "gene": "MUC2",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 2.904,
+      "d_uvm_vs_paad": -1.214
+    },
+    {
+      "gene": "GSTM1",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 7.771,
+      "mediane_paad": 6.894,
+      "d_uvm_vs_paad": 0.291
+    },
+    {
+      "gene": "CEACAM5",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 13.32,
+      "d_uvm_vs_paad": -3.845
+    },
+    {
+      "gene": "CLCA1",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 1.724,
+      "d_uvm_vs_paad": -0.995
+    },
+    {
+      "gene": "MUC16",
+      "present_uvm": true,
+      "present_paad": true,
+      "mediane_uvm": 0.0,
+      "mediane_paad": 9.193,
+      "d_uvm_vs_paad": -2.535
+    }
+  ],
+  "u3_chaine": [
+    {
+      "gene": "PGC",
+      "rho_priv_reel": 0.321,
+      "p_priv_reel": 0.003662724167351593,
+      "d_top12_reel": 0.96,
+      "rho_priv_nul": 0.103,
+      "d_top12_nul": -0.06
+    },
+    {
+      "gene": "REG4",
+      "rho_priv_reel": -0.159,
+      "p_priv_reel": 0.15894270805824964,
+      "d_top12_reel": -0.399,
+      "rho_priv_nul": 0.153,
+      "d_top12_nul": -0.195
+    },
+    {
+      "gene": "CLDN18",
+      "rho_priv_reel": 0.306,
+      "p_priv_reel": 0.00577997745761001,
+      "d_top12_reel": 0.956,
+      "rho_priv_nul": 0.172,
+      "d_top12_nul": 0.138
+    },
+    {
+      "gene": "MUC17",
+      "rho_priv_reel": 0.03,
+      "p_priv_reel": 0.7946748819246425,
+      "d_top12_reel": -0.186,
+      "rho_priv_nul": -0.147,
+      "d_top12_nul": -0.186
+    },
+    {
+      "gene": "DPCR1",
+      "rho_priv_reel": -0.189,
+      "p_priv_reel": 0.09317483422962504,
+      "d_top12_reel": -0.641,
+      "rho_priv_nul": 0.026,
+      "d_top12_nul": 0.113
+    },
+    {
+      "gene": "CR2",
+      "rho_priv_reel": 0.289,
+      "p_priv_reel": 0.009220006942533974,
+      "d_top12_reel": 1.752,
+      "rho_priv_nul": 0.025,
+      "d_top12_nul": -0.172
+    },
+    {
+      "gene": "KRT20",
+      "rho_priv_reel": -0.049,
+      "p_priv_reel": 0.666490112680833,
+      "d_top12_reel": -0.218,
+      "rho_priv_nul": -0.046,
+      "d_top12_nul": -0.218
+    },
+    {
+      "gene": "MUC2",
+      "rho_priv_reel": 0.191,
+      "p_priv_reel": 0.08971711641366427,
+      "d_top12_reel": 0.533,
+      "rho_priv_nul": -0.132,
+      "d_top12_nul": -0.056
+    },
+    {
+      "gene": "GSTM1",
+      "rho_priv_reel": -0.126,
+      "p_priv_reel": 0.26578669245474046,
+      "d_top12_reel": 0.131,
+      "rho_priv_nul": 0.012,
+      "d_top12_nul": 0.482
+    },
+    {
+      "gene": "CEACAM5",
+      "rho_priv_reel": -0.082,
+      "p_priv_reel": 0.4700137035015932,
+      "d_top12_reel": -0.22,
+      "rho_priv_nul": -0.028,
+      "d_top12_nul": 0.089
+    },
+    {
+      "gene": "CLCA1",
+      "rho_priv_reel": 0.076,
+      "p_priv_reel": 0.504825146512798,
+      "d_top12_reel": -0.279,
+      "rho_priv_nul": -0.06,
+      "d_top12_nul": -0.06
+    },
+    {
+      "gene": "MUC16",
+      "rho_priv_reel": 0.03,
+      "p_priv_reel": 0.7934557251464935,
+      "d_top12_reel": 0.236,
+      "rho_priv_nul": -0.106,
+      "d_top12_nul": -0.167
+    }
+  ],
+  "serie": {
+    "fichier": "/home/hatch/workspace/runs/pdac-v6/pdac_uvm_fluxes_priv.csv",
+    "sha256": "422898b77047043cefe8c88f6a69ad59bf44bc2717c6df56969d434fccd63d65",
+    "lignes": 80,
+    "colonnes": [
+      "PRIV",
+      "PGC",
+      "REG4",
+      "CLDN18",
+      "MUC17",
+      "DPCR1",
+      "CR2",
+      "KRT20",
+      "MUC2",
+      "GSTM1",
+      "CEACAM5",
+      "CLCA1",
+      "MUC16"
+    ]
+  },
+  "nul": {
+    "fichier": "/home/hatch/workspace/runs/pdac-v6/pdac_uvm_fluxes_priv_nul.csv",
+    "sha256": "56be6c56276d4e1e59fe7842a01f371ed5d0a72f4b0a5fc2ed945c1e4598f178"
+  }
+}
