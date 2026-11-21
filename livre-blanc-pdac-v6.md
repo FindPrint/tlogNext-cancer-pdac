@@ -243,6 +243,9 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 90 | 21 nov. 2026 | **Lot drogue Chen 2025 : la paire exploratoire CONFIRME (consolidée) (§8.84)** (piste 1 du lot du 21 nov. 2026 ; protocole gelé 21 nov. 2026 ~14h10 EST avant tout téléchargement nouveau, toute copie et tout calcul `PROTOCOL_chen2025_drogue_884.md`, SHA `62ee265e…fd13c00` ; provenance `PROVENANCE_884.md`, SHA `1eb03395…ca43` ; 46 PDO × 63 AUC, ordonnés par sensibilité à la gemcitabine ; **CONFIRME (exploratoire, consolidée)** : **d_maxsep +0,0982** (réel 0,3478 contre nul 0,2496), au-dessus du plancher 0,07, et **3/3 nuls au-dessus du plancher** (nuls frais +0,1528 / +0,1607) ; **2 hits FDR < 0,05** (paclitaxel rho +0,5085, FDR 0,0191 ; mitomycine C rho +0,4759, FDR 0,0257) ; **Olaparib/BRCA2 répliqué** (p = 0,00015) ; **5/5 correcteurs CFTR répliqués** ; **drogue × KRAS et drogue × MTAP IMPOSSIBLES** (aucune table par-PDO dans les suppléments : MOESM17 examinée, 0 ligne KRAS/MTAP) ; **hors compte A2** (n = 46 < 50, exploratoire). Détail au §8.84. |
 | 91 | 21 nov. 2026 | **Quatorzième paire GDC ORGANOID-PANCREATIC avec remappage DPCR1 → MUCL3 : CONFIRME, fragile et non consolidée (§8.85)** (piste 2 du lot du 21 nov. 2026 ; protocole gelé 21 nov. 2026 ~08h55 EST avant toute vérification de remappage, toute construction et tout run `PROTOCOL_gdc_mucl3_885.md`, SHA `2dfeeade…79cdf` ; provenance `PROVENANCE_885.md`, SHA `fe26f4e0…69f2b` ; remappage **vérifié 5/5 portes** — HGNC MUCL3 HGNC:21666, prev_symbol DPCR1, changement de symbole 2018-03-19, Ensembl ENSG00000168631 ; n = 44 organoïdes, 12 flux ; **CONFIRME, FRAGILE ET NON CONSOLIDÉ** : **d_maxsep +0,0884** (réel 0,2542 contre nul 0,1658), marge de 0,0184 au-dessus du plancher ; nul frais s8851 **+0,0376 sous le plancher** (s8852 +0,0936) ; **A2 10/14** (12/14 positifs), LOO 9/13 ; C3 reste levée. Détail au §8.85. |
 | 92 | 21 nov. 2026 | **GSE194249, ré-audit : INUTILISABLE comme 14e paire (§8.86)** (piste B du lot du 21 nov. 2026, suite du §8.79 ; protocole gelé 21 nov. 2026 ~14h00 EST avant tout téléchargement de données d'expression `PROTOCOL_gse194249_886.md`, SHA `b620238b…b1cf` ; provenance `PROVENANCE_886.md`, SHA `fa3f622c…ea55b` ; matrice FPKM déposée `GSE194249_PDPCOs_FPKM.txt.gz`, 4 927 876 o, SHA `479517fb…0f27`, 15 609 lignes de gènes ; **DPCR1 absent : 0 occurrence dans tout le fichier, 0/15 609** (MUCL3 : 0 aussi), vérifié par deux chemins indépendants — la porte gelée « 12 gènes v4 présents » dit **ARRÊT** ; **0 run, 0 CSV de flux** ; **A2 reste 10/14** ; piste **fermée** comme paire à 12 flux (suites possibles : paire à 11 flux, ou re-dérivation depuis les lectures brutes, chacune sous son propre protocole). Détail au §8.86. |
+| 93 | 21 nov. 2026 | **Consolidation de §8.85 : 10 nuls frais sur GDC ORGANOID-PANCREATIC — FRAGILE CONFIRMÉ (§8.87)** (piste 1 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 10h07 ; protocole gelé 21 nov. 2026 ~10h09 EST avant toute construction et tout run `PROTOCOL_consolidation_gdc_887.md`, SHA `956d5e44…aa30ed2` ; provenance `PROVENANCE_887.md`, SHA `53c4e516…f1882b` ; 10 nuls frais, graines 8871–8880, + 3 anciens = distribution primaire de 13 nuls ; **FRAGILE CONFIRMÉ** : **d_médian +0,0314** (réel 0,2542 contre nul médian 0,2229), sous le seuil de consolidation 0,09 et sous le plancher 0,07 lui-même ; réel battu par 1 nul sur 13 (s8880, 0,2689 — rang 13/14), sous le p95 des nuls (d contre p95 = −0,0042) ; **2/13 écarts au-dessus du plancher** ; **A2 inchangé 10/14** ; 10/10 runs exit 0, vérification 14/14 à 0,0 exact ; C3 reste levée. Détail au §8.87. |
+| 94 | 21 nov. 2026 | **GSE194249 à 11 flux : quinzième paire NON (§8.88)** (piste 2 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 10h07 ; protocole gelé 21 nov. 2026 ~10h10 EST avant toute construction et tout run `PROTOCOL_gse194249_11flux_888.md`, SHA `f5eb1f95…63e02` ; provenance `PROVENANCE_888.md`, SHA `f90b8658…fb85` ; matrice FPKM déposée déjà couverte §37, SHA `479517fb…0f27`, re-vérifiée ; 84 PDPCOs, 11 flux, DPCR1 absent ; **NON** : **d_maxsep −0,0239** (réel 0,2306 contre nul 0,2545), le nul graine 42 sépare plus que le réel ; **A2 devient 10/15** (12/15 positifs), LOO 9/14 ; nuls frais +0,0517 / +0,0354 ; 4/4 runs exit 0, vérification 4/4 à 0,0 exact ; C3 reste levée ; caveat « 11 flux, DPCR1 absent » écrit. Détail au §8.88. |
+| 95 | 21 nov. 2026 | **Suppléments Chen non téléchargés (MOESM1, MOESM2, MOESM16) et dépôts : aucune table par-PDO KRAS / MTAP nulle part — PISTE FERMÉE (§8.89)** (piste 3 du lot du 21 nov. 2026 ; feu vert de Zackary 21 nov. 2026 10h07 ; protocole gelé 21 nov. 2026 ~10h15 EST avant tout téléchargement nouveau, toute copie et tout calcul `PROTOCOL_chen_supplements_889.md`, SHA `d4296ddd…07de792b` ; provenance `PROVENANCE_889.md`, SHA `bd33f8da…e4f1` ; MOESM1 24 268 877 o SHA `4b70d25b…60aa61f`, MOESM2 4 586 550 o SHA `ce939f22…65d67`, MOESM16 3 947 814 o SHA `69a959c3…95c499`, tous HTTP 200 ; MOESM18 : HTTP 403, aucun fichier servi ; **PISTE FERMÉE** : **aucune table par-PDO KRAS/MTAP dans les 17 suppléments ni dans les dépôts consultables** (HRA005195 et HRA010277 : accès contrôlé, lectures brutes, pas une table ; ST003734 : lipidomique PANC-1, pas des organoïdes ; Code Ocean 1432248 : code seulement) ; les tests directs drogue × KRAS (D3) et drogue × MTAP (D4) restent IMPOSSIBLES ; la question « les hits du §8.84 survivent-ils quand on fixe KRAS / MTAP ? » reste sans réponse, pas tranchée négativement ; seule variable par-organoïde nouvelle, le statut CFTR MT/WT de la Fig. 14c (MOESM1), non recevable (38/46 couverts, MT n = 4, en conflit avec la Fig. 6e). Détail au §8.89. |
 
 ---
 
@@ -20592,6 +20595,8 @@ séparation.
   Tous les SHA de cette section sont relevés des fichiers et
   re-vérifiés ; aucun nombre n'est un placeholder.
 
+### Correction datée (21 novembre 2026, après fusion) — Les mentions « A2 9/13, 11/13 positifs, LOO 8/12 » dans cette section décrivent l'état du compte A2 avant le §8.85, rédigé en parallèle. Le §8.85 (14e paire GDC, CONFIRME fragile) porte le compte final à A2 10/14, 12/14 positifs, LOO 9/13. Le texte d'origine est conservé intact ; aucun verdict de cette section n'est modifié (la paire Chen reste hors compte A2, exploratoire).
+
 — Fin de la §8.84. —
 
 ---
@@ -21381,7 +21386,1228 @@ d'expression, sans qu'aucun renommage soit en cause.
   A2 : **9/13, 11/13 positifs, LOO 8/12 — INCHANGÉ.** C3 reste levée.
   Piste fermée comme paire à 12 flux.
 
+### Correction datée (21 novembre 2026, après fusion) — Les mentions « A2 9/13, 11/13 positifs, LOO 8/12 » dans cette section (verdict, §8.86.3, bilan) décrivent l'état du compte A2 avant le §8.85, rédigé en parallèle ; de même, la phrase « la quatorzième paire n'a pas eu lieu » est périmée : la 14e paire a eu lieu au §8.85 (GDC, CONFIRME fragile). Le compte final est A2 10/14, 12/14 positifs, LOO 9/13. Le texte d'origine est conservé intact ; le verdict de cette section (INUTILISABLE, piste fermée comme paire à 12 flux) est inchangé.
+
 — Fin de la §8.86. —
+
+---
+
+### 8.87 Consolidation de §8.85 : 10 nuls frais sur GDC ORGANOID-PANCREATIC — FRAGILE CONFIRMÉ (21 novembre 2026)
+
+Piste 1 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 10h07 ;
+protocole gelé 21 nov. 2026 ~10h09 EST avant toute construction et
+tout run (`PROTOCOL_consolidation_gdc_887.md`, SHA
+`956d5e44…aa30ed2`) ; provenance `PROVENANCE_887.md`. Cette section
+exécute la piste ouverte du §8.85.9 (d) : combien de nuls frais
+faut-il pour stabiliser le verdict d'une paire à n = 44 — et la
+méthode est celle du §8.72, miroir exact, avec les catégories
+renommées pour le sens de la consolidation (protocole §4.3).
+
+## Verdict d'abord
+
+**FRAGILE CONFIRMÉ — contre la distribution des 13 nuls, la
+paire GDC ORGANOID-PANCREATIC ne passe PAS le plancher :
+`d_médian = +0,0314` (réel 0,2542 contre nul médian 0,2229),
+sous le seuil de consolidation 0,09 et sous le plancher 0,07
+lui-même. Le réel est battu par 1 nul sur 13 (s8880, 0,2689 —
+rang 13/14) et se situe SOUS le p95 des nuls (`d` contre p95 =
+−0,0042). Seuls 2 écarts sur 13 dépassent le plancher — les
+deux déjà connus du §8.85 (graine 42 et s8852) ; aucun des 10
+nuls frais ne donne un écart au-dessus du plancher. La lecture
+« fragile, non consolidé » du §8.85 n'était PAS un artefact du
+tirage s8851 : elle tient contre le nul typique. Le verdict de
+la paire graine 42 reste CONFIRME — règle gelée §8.85 §7,
+l'histoire n'est pas réécrite — mais sa lecture est confirmée
+fragile, et aucune note de correction n'est ajoutée au §8.85.**
+
+| Porte (PROTOCOL_consolidation_gdc_887.md §4.3, gelé) | Exigé | Mesuré 21 nov. 2026 | Sort |
+|---|---|---|---|
+| `d_médian` (réel − médiane des 13 nuls) | > 0,09 CONSOLIDÉ ; 0,05–0,09 INCONCLUSIF ; < 0,05 FRAGILE CONFIRMÉ | **+0,0314** | **FRAGILE CONFIRMÉ** |
+| Médiane 10 frais vs médiane 13 nuls | écart ≤ 0,03 | **+0,0047** | **cohérent** |
+| Exactitude de l'extraction | 14/14 à 0,0 exact | **14/14, écart max 0,0** | **PASSE** |
+| Relecture des valeurs §8.85 | 4/4 à 0,0 exact | **4/4, écart 0,0** | **PASSE** |
+| Exits des 10 runs | 10 × 0 | **10 × 0, 0 échec** | **PASSE** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que
+la paire GDC ORGANOID-PANCREATIC, jugée non contre un tirage
+unique mais contre la distribution de son nul, ne sépare pas
+le réel du nul en `maxsep` au-dessus du plancher gelé — et
+largement en dessous : +0,0314 contre 0,07 exigé, soit 0,45
+fois le plancher. Il dit aussi que le §8.85 avait raison de
+se dire fragile, et pour la raison inverse de celle qu'il
+craignait : ce n'est pas le nul frais s8851 qui était un
+tirage défavorable — c'est le nul graine 42 qui était un
+tirage favorable, le deuxième plus bas des 13 nuls (0,1658 ;
+seul s8852 est plus bas, 0,1606). Le passage du §8.85 tenait
+au tirage le plus favorable possible, pas au pire. Il ne dit
+pas que le verdict §8.85 est effacé : la paire graine 42
+reste CONFIRME par règle gelée, et l'A2 étendu gelé (10/14,
+paires graine 42) n'est PAS recompté ici — la confirmation
+de fragilité est une correction de lecture, pas un
+recomptage. Il ne dit pas non plus que `maxsep` échoue « en
+général » : c'est une paire, à n = 44, sur une distribution
+de 13 nuls — pas un plancher stable (le §8.53 estime ~200
+nuls pour un plancher stable à petit n). Il dit, en substance,
+que la quatorzième paire indépendante ne passe pas contre son
+nul typique — et que c'est le miroir exact du §8.72, où la
+dixième paire avait été renversée dans l'autre sens. L'adoption
+pleine de `maxsep`, décidée par Zackary le 20 nov. 13h04,
+n'est ni rouverte ni conditionnée ici : ce chantier est une
+vérification a posteriori, comme le §8.85.
+
+**Le fait nouveau, dit en tête.** Sur 3 nuls, le §8.85 voyait
+une étendue de 0,0560 — plus grande que la marge de la paire
+(+0,0184) — et concluait « fragile, non consolidé » sans
+pouvoir trancher le sens de la fragilité. Sur 13 nuls, la
+distribution est désormais décrite : médiane 0,2229, p95
+0,2584, étendue 0,1083. Le réel (0,2542) est SOUS le p95 des
+nuls — et même sous le p95 de 0,0042. Le plus grand écart parmi
+les 10 frais est s8874 à +0,0693 — juste sous le plancher, à
+0,0007 près. Les 10 écarts frais vont de −0,0147 à +0,0693 :
+aucun ne passe. Ce n'est plus un
+quasi-passage : c'est un non-passage contre le nul typique,
+confirmé par 10 tirages sur 10.
+
+Protocole gelé : `PROTOCOL_consolidation_gdc_887.md` (21 nov.
+2026, SHA `956d5e44…aa30ed2` au gel, inchangé). Critère de
+verdict écrit AVANT toute construction et tout run (§4.3 du
+protocole) ; aucune repondération, aucun nouveau terme, aucune
+redéfinition du plancher après avoir vu les chiffres. Les
+nombres du §8.85 étaient la motivation, pas le verdict : le
+verdict repose sur les 10 runs neufs mesurés ci-dessous, joints
+aux 3 nuls anciens relus à 0,0 exact.
+
+## 8.87.1 — La distribution des 13 nuls : le réel ne bat pas tout le monde
+
+**Les 13 nuls, triés par `maxsep` croissant** (réel 0,2542 en
+tête de liste, hors distribution) :
+
+| Rang | Nul | `maxsep` nul | `d_maxsep` (réel − nul) | > 0,07 ? |
+|---|---|---|---|---|
+| 1 (min) | s8852 | 0,1606 | **+0,0936** | oui |
+| 2 | **graine 42** | **0,1658** | **+0,0884** | **oui** |
+| 3 | s8874 | 0,1849 | +0,0693 | non |
+| 4 | s8873 | 0,1922 | +0,0620 | non |
+| 5 | s8879 | 0,2082 | +0,0460 | non |
+| 6 | s8851 | 0,2166 | +0,0376 | non |
+| 7 (médiane) | **s8872** | **0,2229** | **+0,0314** | **non** |
+| 8 | s8877 | 0,2234 | +0,0308 | non |
+| 9 | s8876 | 0,2317 | +0,0225 | non |
+| 10 | s8878 | 0,2363 | +0,0179 | non |
+| 11 | s8875 | 0,2407 | +0,0135 | non |
+| 12 | s8871 | 0,2514 | +0,0028 | non |
+| 13 (max) | **s8880** | **0,2689** | **−0,0147** | **non** |
+
+Valeurs exactes : réel `maxsep` 0,2542142849980612 ; médiane
+des 13 nuls 0,22285393215883886 (le nul s8872) ; `d_médian` =
++0,03136035283922234. Écarts triés : −0,0147 / +0,0028 /
++0,0135 / +0,0179 / +0,0225 / +0,0308 / +0,0314 / +0,0376 /
++0,0460 / +0,0620 / +0,0693 / +0,0884 / +0,0936.
+
+**Statistiques des distributions** (`numpy.percentile`,
+interpolation linéaire — méthode gelée §4.1) :
+
+| Statistique | 13 nuls (primaire) | 10 frais seuls (contrôle) |
+|---|---|---|
+| Médiane | **0,2229** | 0,2276 |
+| p95 | **0,2584** | 0,2610 |
+| Min / max | 0,1606 / 0,2689 | 0,1849 / 0,2689 |
+| Étendue | **0,1083** | 0,0839 |
+| Q1 / Q3 | 0,1922 / 0,2363 | 0,2119 / 0,2396 |
+| IQR | 0,0441 | 0,0277 |
+| Écart-type | 0,0324 | 0,0258 |
+
+Valeurs exactes (13 nuls) : p95 0,2584172850921196 ; étendue
+0,10828437033043026 ; IQR 0,044082176997452205 ; écart-type
+0,03240960117213505. (10 frais) : médiane
+0,2275605730536211 ; p95 0,2610337067888172 ; étendue
+0,08394173327873244 ; IQR 0,02770760168339917 ; écart-type
+0,02581882975755259.
+
+**Lecture.** La médiane des 10 frais (0,2276) diffère de la
+médiane totale (0,2229) de +0,0047 — très loin du seuil
+d'alerte gelé (0,03) : les 3 anciens nuls ne tirent pas la
+distribution. L'écart contre la médiane des 10 frais seuls
+est +0,0267 — identique à `d_médian` (+0,0314) à 0,0047 près :
+le verdict ne dépend pas de l'inclusion des 3 anciens nuls.
+Le nul graine 42 (0,1658) est le deuxième plus bas des 13 —
+il ne dépasse que s8852 (0,1606) de 0,0052 et se situe sous le
+Q1 (0,1922) : c'est un tirage de queue basse, pas un nul
+typique. Le nul médian (s8872, 0,2229) donne un écart de
++0,0314 — le verdict ne tient donc plus à un tirage : 11
+tirages sur 13 sont sous le plancher, et le réel est sous le
+p95 des nuls de 0,0042. À l'inverse du §8.72, où l'écart
+médian (+0,1447) dépassait l'étendue des nuls (0,1110),
+l'écart médian (+0,0314) est ici trois fois plus petit que
+l'étendue des 13 nuls (0,1083) et que celle des 10 frais
+(0,0839) : le signal est plus petit que la dispersion du nul.
+Le rang du réel est 13/14 : un nul le bat (s8880, 0,2689, soit
++0,0147 au-dessus du réel).
+
+**Lot.** Pipeline `universal_v6.2.0_cohen.py`, SHA
+`f07567c4…c3abf`, revérifié inchangé avant ET après le lot ;
+mode fast ; 10 runs, exits 0 × 10, 0 échec, 0 déjà fait.
+Lancement en `systemd-run` (unité `v62-887`), surveillance
+`watch_v62_887.sh` (arrêtée d'elle-même à 10/10,
+`WATCH 887 TERMINE 10/10`, tour 2) ; journal
+`runs_v62_887.log` (SHA du pipeline en tête, FIN
+15h41:40Z, déjà faits 0, terminés 10, échecs 0). Durée du lot :
+15h09:50Z → 15h41:40Z (~32 min, durées allongées par la
+contention CPU — d'autres lots v6.2 tournaient en parallèle
+sur la VM partagée). Aucun redémarrage de machine pendant le
+lot, aucune relance, aucun dossier supprimé. Le livre blanc
+n'est PAS édité, le PDF N'EST PAS régénéré, rien n'est poussé
+sur GitHub dans ce chantier.
+
+## 8.87.2 — Ce que la confirmation de fragilité dit, et ce qu'elle ne dit pas
+
+**Ce qui est confirmé.** La lecture du §8.85, pas son verdict.
+Le §8.85 disait, sur la paire graine 42 : CONFIRME, +0,0884,
+au-dessus du plancher — et il disait aussi que ce verdict
+était fragile, parce qu'un nul frais sur deux passait sous le
+plancher. La présente section confirme la fragilité dans le
+sens exact où le §8.85 la craignait, et plus fort encore : le
+verdict tenait au tirage, et le tirage gelé était le deuxième
+plus favorable des 13. Contre le nul typique, la paire ne
+passe pas — et elle ne passe pas nettement (+0,0314, soit
+0,45 fois le plancher). Aucune note de correction n'est
+ajoutée au §8.85 : la lecture y était déjà la bonne, et le
+protocole §4.3 ne prévoit d'addendum qu'en cas de
+CONSOLIDÉ — ce qui n'est pas le cas ici.
+
+**Ce qui n'est pas confirmé.** Le verdict de la paire graine
+42 reste CONFIRME : la règle gelée §8.85 §7 l'interdit de
+changer, et ce chantier la respecte — l'histoire n'est pas
+réécrite, elle est complétée. L'A2 étendu gelé reste 10/14
+(12/14 positifs, LOO 9/13) : les 14 paires comptées gardent
+leurs valeurs, et la quatorzième garde sa valeur de paire
+graine 42 (+0,0884). Le protocole §4.3 l'a gelé ainsi : la
+confirmation de fragilité est une correction de lecture, pas
+un recomptage.
+
+**C3, dite plainement.** C3 RESTE LEVÉE — elle l'était déjà
+depuis le §8.71, et ce chantier est une consolidation
+supplémentaire, pas une condition ; il ne rouvre rien, dans
+aucun sens. En substance, en revanche, la quatorzième paire
+indépendante ne passe pas contre son nul typique (+0,0314) :
+c'est ce que le §8.85 craignait sans pouvoir le mesurer sur
+3 tirages, mesuré ici sur 13. Les deux faits coexistent et
+sont dits tels quels : C3 levée au sens gelé, confirmation de
+fragilité de substance mesurée. Trancher entre les deux
+lectures — retirer la paire du compte A2 sur la base de la
+distribution, ou la garder comme paire graine 42 — est une
+décision de Zackary et du coordinateur, pas de ce chantier.
+Ce chantier mesure ; il ne recompte pas et ne lève ni ne
+rétablit aucune condition.
+
+**Le miroir du §8.72, dit en une phrase.** Au §8.72, le nul
+graine 42 était le PLUS HAUT des 13 nuls et le verdict
+PARTIEL avait été renversé ; ici, le nul graine 42 est le
+deuxième PLUS BAS des 13 nuls et le verdict CONFIRME fragile
+est confirmé fragile. Les deux chantiers disent la même chose
+sur l'instrument à petit n : à n = 44–51, un seul tirage de
+nul décide presque à lui seul si une paire passe ou non — et
+c'est mesuré dans les deux sens, pas supposé.
+
+**Ce que la confirmation ne prouve pas.** Elle ne prouve pas
+que `maxsep` échoue « en général » : c'est une paire, à
+n = 44, sur une distribution de 13 nuls — pas un plancher
+stable (le §8.53 estime ~200 nuls pour un plancher stable à
+petit n). Elle ne prouve pas que le nul graine 42 était un
+« mauvais » tirage au sens d'une erreur : c'est un tirage
+légitime de la même distribution, simplement un tirage de
+queue basse (sous le Q1). Elle ne change rien à l'adoption
+pleine : elle a été décidée par Zackary le 20 nov. 13h04, et
+ce chantier la consolide par son honnêteté, comme le §8.85
+l'avait fait par la sienne.
+
+## 8.87.3 — Contrôles descriptifs (à publier, ne décident pas)
+
+**Ancien MC : positif contre le nul médian, pas contre tous
+les nuls.** Réel 0,3880 ; nuls médiane 0,3843, min 0,3731,
+max 0,3911 ; `d_MC` contre le nul médian +0,0037. Un nul
+frais (s8880, MC 0,3911) bat le réel en MC — comme au §8.85,
+où le MC était déjà minuscule (+0,0113) contre graine 42. Le
+MC ne porte pas la séparation ici : c'est `maxsep` qui la
+porte, et le critère gelé est `maxsep` seul.
+
+**S_sep : même histoire que `maxsep`.** Réel 0,2496 ; nuls
+médiane 0,2207 ; `d_Ssep` contre le nul médian +0,0289 —
+du même ordre que `d_médian` (+0,0314), comme au §8.85 où
+S_sep (+0,0847) suivait `maxsep` (+0,0884). Le même nul
+frais s8880 bat le réel en S_sep (0,2667 contre 0,2496).
+
+**Delta : écart positif contre le nul médian, mais un nul
+bat le réel.** Réel 1,468 ; nuls médiane 1,149, min 0,706,
+max 1,433 — un nul frais (s8872, 1,433) est à 0,035 du réel
+sans le dépasser ; aucun nul ne dépasse le réel en Delta,
+mais l'étendue des nuls (0,727) est plus de deux fois
+l'écart réel–médiane (+0,318). Delta ne distingue pas le
+réel du nul sur cette paire de façon stable, comme au §8.85.
+
+**L7a : UP presque partout.** Réel UP 0,3372. Sur les 13
+nuls : 12 UP, 1 DOWN (s8874 0,1731 — confiance faible,
+~0,17, contre ~0,33–0,38 pour les UP). Descriptif : L7a
+n'est pas le critère gelé, et il ne distingue pas les séries
+ici — 12 nuls sont UP comme le réel.
+
+**L7b : FRAGILE sur les 14 runs** — même non-informativité
+que partout (réel + 13 nuls). **Falsification :
+indisponible** (n = 44 < 75, règle du projet) — valeurs
+brutes rapportées à titre descriptif seulement, sans statut
+de test : réel 1,51771, nuls 1,40983–1,80160, tous au-dessus
+du seuil 0,5 du JSON.
+
+**Cascades : formes instables, comme au §8.85.** Réel
+[41,0 / 72,5 / 79,4 / 84,0 / 95,4] (pas 18/31/34/36/41).
+Nuls frais à Q5 : de 22,5 % (s8871) à 99,1 % (s8876) — la
+forme de la cascade nulle n'est pas une caractéristique
+stable à n = 44 : elle mesure le tirage, elle ne distingue
+pas les séries. Aucune rupture visible qui distinguerait le
+réel des 13 nuls à la fois — la séparation est dans le score
+`maxsep`, pas dans la forme de la cascade. Le nul s8876
+atteint 86,3 % dès Q2 (pas 37) et 99,1 % en Q5 : à n = 44,
+un nul peut monter plus haut que le réel.
+
+**Régimes.** Réel `criticality` ; nuls : `criticality` pour
+graine 42, s8872 et s8880, `saturation` pour les 10 autres —
+descriptif, pas un verdict.
+
+## 8.87.4 — Ce que ça change, et ce que ça ne change pas
+
+| Poste | Change ? | Détail |
+|---|---|---|
+| Lecture du §8.85 (« fragile, non consolidé ») | **Oui — CONFIRMÉE** | Contre le nul médian, la paire ne passe pas (+0,0314). Aucune note de correction au §8.85 : la lecture y était déjà la bonne. |
+| Verdict de la paire graine 42 (§8.85) | **Non — reste CONFIRME** | Règle gelée §8.85 §7. L'histoire n'est pas réécrite. |
+| A2 étendu gelé (paires graine 42) | **Non — reste 10/14, 12/14 positifs, LOO 9/13** | Pas de recomptage (protocole §4.3). |
+| Condition C3 (§8.59.8, sens gelé) | **Non — RESTE LEVÉE** | Levée depuis le §8.71 ; ce chantier est une consolidation supplémentaire, pas une condition. |
+| Adoption pleine de `maxsep` | **Non — décidée par Zackary le 20 nov. 13h04** | Ce chantier est une vérification a posteriori, pas une condition. |
+| Score MC affiché (convention §8.64.6) | Non | `maxsep` principal, ancien MC secondaire, `sep` compagnon, mention de fragilité — inchangée. |
+| Sélection du best_config, seuil MC, cascade, S_sep, Delta, L7a | Non | Inchangés par construction. |
+| Code v6.2 / v6.1 / v6 | Non | Aucune modification, aucune v6.5. |
+| Verdicts des §8.56, §8.59, §8.64, §8.69, §8.70, §8.72, §8.85 | Non | Confirmés, pas rouverts ; les 14 paires comptées gardent leurs valeurs. |
+| Pistes ouvertes | Oui, une de plus | (a) La question « combien de nuls faut-il pour un plancher stable à n ≈ 44 ? » (§8.85.9 (d), §8.53) reste ouverte : 13 nuls décrivent la distribution, ils ne stabilisent pas un plancher — ~200 nuls seraient nécessaires ; (b) la paire GDC est désormais la seule paire passante en graine 42 dont la distribution dit « fragile confirmé » — à comparer aux autres paires passantes si elles sont consolidées de la même façon : le compte A2 en paires graine 42 surestime-t-il la robustesse des paires à petit n ? (c) si Zackary veut trancher le statut de la paire dans A2, la voie est soit une décision sur la base de la distribution mesurée ici, soit une quinzième paire indépendante avec son propre protocole gelé. |
+
+**Suite du dossier.** Si Zackary veut une nouvelle paire
+indépendante : un chantier ultérieur, avec son propre
+protocole gelé, sur une autre cohorte vérifiée indépendante —
+pas une relecture, pas un re-test déguisé, et pas GDC
+ORGANOID-PANCREATIC (mesurée, consolidée par distribution).
+Si Zackary décide de retirer la paire du compte A2 sur la
+base de la distribution : la présente section fournit les
+chiffres, et le retrait est consigné par le coordinateur avec
+sa date et sa décision — pas par ce chantier. Dans les deux
+cas, le PDF et GitHub sont régénérés et poussés par le
+coordinateur (règle permanente « Toujours github et pdf !!! »),
+avec la présente section fusionnée.
+
+## 8.87.5 — Limites et ce qui reste
+
+- 13 nuls ne font pas un plancher stable : §8.53 estime ~200
+  nuls pour un plancher stable à petit n. La médiane de 13
+  nuls porte ~±0,02 — d'où la bande d'inconclusivité gelée
+  (±0,02 autour du plancher). Ici `d_médian` (+0,0314) est
+  sous la bande (0,05) : le verdict FRAGILE CONFIRMÉ ne tient
+  pas à la bande. Mais la queue de la distribution (p95) reste
+  estimée sur 13 tirages seulement.
+- Le nul est une permutation par lignes (corrélations
+  inter-flux préservées) : la distribution mesurée est celle
+  du nul du projet, pas d'un nul à corrélations brisées
+  (même réserve qu'au §8.53 §8).
+- Le nul graine 42 est un tirage légitime, pas une erreur :
+  il est sous le Q1, mais il appartient à la distribution. La
+  confirmation de fragilité dit que le verdict §8.85 tenait à
+  ce tirage — elle ne dit pas que ce tirage était invalide.
+- Une seule paire a été consolidée : le verdict porte sur
+  elle, pas sur « `maxsep` en général ».
+- La paire est construite sur des TPM GDC (`tpm_unstranded`,
+  §8.85.1) : la nature des valeurs est nommée comme limite,
+  pas corrigée après coup — comme au §8.85.
+- Delta ne diverge pas ici (+0,32 contre le nul médian) :
+  la divergence du §8.69 (+2,01 contre −0,01) n'est ni
+  confirmée ni infirmée comme phénomène — une seule paire
+  de plus, dans l'autre sens. L7b est FRAGILE sur les 14 runs
+  — non-informatif, comme partout.
+- Rien de clinique : l'étude porte sur l'instrument.
+
+## 8.87.6 — Provenance
+
+- Protocole gelé : `PROTOCOL_consolidation_gdc_887.md`, SHA-256
+  `956d5e447f0aad67a937f6bbd75c711960d94e75696b004b580f0cd69aa30ed2`
+  (au gel, avant construction et runs ; fichier inchangé
+  depuis).
+- Provenance complète : `PROVENANCE_887.md` (ce chantier).
+- Provenance de la cohorte et des données : `PROVENANCE_885.md`,
+  SHA-256
+  `fe26f4e0d2b5de30f9f666ccfedda07e1cfa5386905abba71823e53f66869f2b`
+  (GDC ORGANOID-PANCREATIC, 55 TSV, manifeste SHA
+  `f713edebf…6220b`, 44 fichiers Tumor, MUCL3 ex-DPCR1 —
+  relus, rien re-téléchargé).
+- Construction : `build_nulls_887.py`, SHA-256
+  `4da79e8a912b62634e96ed3a2f2a4ef681c0ef5e4b2587b2c4bfa4ec2be61e05`
+  (graines gelées 8871–8880 ; CSV réel relu sans être réécrit,
+  SHA vérifié inchangé après chaque graine).
+- Flux : `pdac_885_gdc_organoid_fluxes.csv` (44 lignes), SHA-256
+  `a83b98175bdbc33525ba8a175aa898504d2cc44125b891d0902c6c6c26345eaf`
+  (inchangé) ; nuls frais
+  `pdac_885_gdc_organoid_fluxes_nul_s8871.csv` …
+  `pdac_885_gdc_organoid_fluxes_nul_s8880.csv`, SHA consignés dans
+  `nulls_887_files.json`, SHA-256
+  `7703708b79018d833479fa4528bc4f3c85e01876baff8cdb085c387d40bbe360`
+  (s8871 `4ad645ca…`, s8872 `7888cdfd…`, s8873 `804571d7…`,
+  s8874 `605ae022…`, s8875 `2e74c5a0…`, s8876 `ec2ca1a7…`,
+  s8877 `64e1eb43…`, s8878 `7f46f581…`, s8879 `5460483f…`,
+  s8880 `449eff62…`).
+- Runs : manifeste `manifest_v62_887.txt`, SHA-256
+  `d013077a1d01686c7730adcb6f027e872babb5a81237c6f8a93df38582c70913` ;
+  journal `runs_v62_887.log`, SHA-256
+  `b9a0e84a1af568297c8e917c6bee90de339195ddbd404949e5c736e64247a698` ;
+  surveillance `watch_v62_887.sh`, SHA-256
+  `b3cdffb1eb32b6e539041567a2b790692946293e2fc04a0b1a87f7a2ef5f44e0` ;
+  dossiers `results_fast_v62_887_gdc_organoid_nul_s8871` … `s8880`
+  (10 runs, exits 0 × 10, 35 fichiers chacun — sans
+  `csd_consensus.png`, comme au §8.85).
+- Extraction : `extract_887.py`, SHA-256
+  `1f608c82ee58400b59f039ac2d0207237daf1f0abaa54875009116281c98f57c`
+  → `extract_887.json`, SHA-256
+  `ca66461a50df41ec38e8cd3001e2fb6377b461c687d7902a98baa404a4cb5e74` /
+  `extract_887.csv`, SHA-256
+  `5dfad9318d743cdf1d32083b5f2bb0465fdf420f38d009ff6f97e9471e7a7b5b` /
+  `dist_887.json`, SHA-256
+  `aacd01c3e99554c3e6b8861a88c590602892ef9ea01d19256d818b5880cc28fd`.
+- Vérification indépendante : `verify_887.py`, SHA-256
+  `b173c3733d4a5141d7ade7daeb6dec3992874054b328c7e2222ec3695f3298af`
+  → `maxsep_887_verify.json`, SHA-256
+  `9926c87de071ce4fddbdd14648e76c5d6bb727e28393737b841d12a6186cb381`
+  (14/14 comparaisons, écart max 0,0 exact, verdict OK).
+- Valeurs §8.85 relues : `extract_885.json` (réel
+  0,2542142849980612 ; nuls 0,1657676706638558 /
+  0,2165939226122164 / 0,1605986015484797 — relecture à 0,0
+  exact dans `extract_887.py`).
+- Codes jamais modifiés : v6.2 (`f07567c4…c3abf`, revérifié
+  avant ET après le lot), v6.1 (`2af5e5ce…c1c9`), v6
+  (`bb8bbdba…c0773`). Aucune nouvelle version construite dans
+  ce chantier — pas de v6.5. Dix runs du pipeline lancés dans
+  ce chantier (10 nuls frais, exits 0 × 10) ; aucun run réel
+  relancé ; aucun push GitHub, aucune Release dans ce chantier.
+- Section : `section_8.87_consolidation_gdc.md` (ce fichier ;
+  SHA noté au rapport).
+- Données : série réelle = TPM GDC (`tpm_unstranded`, mesures
+  instrumentales du fournisseur, symboles extraits
+  mécaniquement, ordre par KRAS). Nuls = lignes permutées,
+  graines 42 / 8851 / 8852 / 8871–8880 — échantillons
+  hypothétiques, pas des mesures. Aucune valeur inventée ;
+  aucune valeur recopiée à la main (tables générées depuis
+  `extract_887.json` et `dist_887.json`, vérifiées à 0,0 exact
+  par `verify_887.py`).
+
+— Fin de la §8.87. —
+
+---
+
+### 8.88 GSE194249 à 11 flux : quinzième paire NON — `maxsep` ne sépare pas, le réel est dans la distribution des nuls (21 novembre 2026)
+
+Piste 2 du lot du 21 nov. 2026 ; protocole gelé 21 nov. 2026
+~10h10 EST avant toute construction et tout run
+(`PROTOCOL_gse194249_11flux_888.md`, SHA
+`f5eb1f952f562499e6ff31036b684cb75d094a2843a17a067acf27ca7c763e02`) ;
+provenance `PROVENANCE_888.md`. Go de Zackary : 21 nov. 2026,
+10h07. Cette section exécute la suite (d1) nommée au §8.86.4 :
+la paire à **11 flux** (sans DPCR1), « comme la C3 du §8.79,
+avec son caveat écrit ».
+
+## Verdict d'abord
+
+**NON — la quinzième paire principale indépendante, GSE194249
+(84 PDPCOs, 11 flux, DPCR1 absent), donne
+`d_maxsep = −0,0239` (réel 0,2306 contre nul 0,2545) : le nul
+graine 42 sépare PLUS que le réel, et l'écart est négatif.
+A2 devient 10/15 au-dessus du plancher, 12/15 positifs,
+LOO 9/14. La condition C3 du §8.59.8, levée au §8.71,
+RESTE LEVÉE (ce chantier est une consolidation
+supplémentaire, pas une condition ; il ne rouvre rien).**
+
+**Et, dans la même phrase, la lecture des nuls frais : les 2
+nuls frais courus selon la règle gelée (`d` dans
+[−0,07 ; +0,14[) donnent des écarts positifs mais sous le
+plancher — +0,0517 (s8881) et +0,0354 (s8882). Les 3 écarts
+sont −0,0239 / +0,0354 / +0,0517 (min / médiane / max) :
+aucun des 3 n'est au-dessus du plancher 0,07. Le `maxsep`
+réel (0,2306) est DANS la distribution des trois nuls
+mesurés (0,1789 à 0,2545, étendue 0,0756) : il ne s'en
+distingue pas. Le verdict de la paire graine 42 (NON) n'est
+JAMAIS changé par les nuls frais (règle gelée) — et il ne
+l'est pas ici : les nuls frais confirment l'échec, ils ne
+l'atténuent pas.**
+
+| Porte (protocole §5/§8, gelé) | Exigé | Mesuré 21 nov. 2026 | Sort |
+|---|---|---|---|
+| Matrice détenue, SHA identique au §8.86 | `479517fb…0f27` | **identique, 4 927 876 o** | **PASSE** |
+| 11 gènes v4 retenus présents, un par un | 11/11 | **11/11, une ligne chacun** | **PASSE** |
+| DPCR1 absent (paire pré-enregistrée à 11 flux) | absent | **0 occurrence, MUCL3 0 aussi** | **PASSE** |
+| KRAS présent, cas complets ≥ 40 | ≥ 40 | **84/84 complets, 0 NaN** | **PASSE** |
+| Quinzième paire : `d_maxsep > 0,07` et positif | > 0,07 | **−0,0239** (réel 0,2306, nul 0,2545) | **NON** |
+| Nuls frais (§8, `d` dans [−0,07 ; +0,14[) | 2 nuls frais | **+0,0517 / +0,0354** (0/3 > 0,07) | **ÉCHEC CONFIRMÉ** |
+| A2 des paires indépendantes | 10/14, 12/14 positifs | **10/15, 12/15 positifs** | **ÉTENDU** |
+| LOO sur 15 paires (pire cas) | 9/13 | **9/14** | **ÉTENDU** |
+| Exactitude de l'extraction | 4/4 à 0,0 exact | **4/4, écart max 0,0** | **PASSE** |
+| 11 flux présents, DPCR1 absent | 11/11, 0 DPCR1 | **11/11, DPCR1 0/15 609, MUCL3 0** | **PASSE** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que
+`maxsep` ne sépare pas le réel du nul sur une quinzième
+cohorte indépendante — la deuxième cohorte d'organoïdes du
+projet, et la première où le nul graine 42 dépasse le réel
+en `maxsep` (0,2545 contre 0,2306) et en cascade (58–83 %
+contre 26–46 %). Il dit aussi que le signal d'ordre direct
+est pourtant présent (Δρ médian +0,191, 9/11 flux positifs —
+voir §8.88.6) : `maxsep` échoue ici ALORS QUE les flux
+individuels montrent une tendance monotone — la rupture
+multi-flux n'est pas plus forte que ce qu'une permutation
+produit par hasard sur cette cohorte. Il ne dit pas que
+`maxsep` est invalidé en général : c'est une quinzième
+paire, négative, pas une preuve. Il ne dit pas que
+l'adoption pleine est remise en cause par ce chantier seul :
+elle a été décidée par Zackary après lecture des
+§8.56/§8.59/§8.64, et cette section est la vérification
+a posteriori que le protocole prévoyait — elle ne consolide
+pas la décision, elle la met en tension, et c'est dit tel
+quel. Il ne dit rien de clinique : l'étude porte sur
+l'instrument, pas sur un remède — aucune affirmation sur le
+cancer du pancréas n'est tirée de ce lot.
+
+**Fragilité, dite en tête.** Le verdict tient à une seule
+paire mesurée aujourd'hui, mais il n'est pas fragile au sens
+du §8.85 : les trois tirages de nul donnent des `maxsep`
+de 0,1789 à 0,2545, et le réel (0,2306) est au milieu
+d'eux — aucun des trois écarts ne passe le plancher, et
+l'écart de la paire graine 42 est négatif. Ce n'est pas un
+échec de justesse : c'est un échec sur trois tirages. La
+paire compte 11 flux, pas 12 — toute comparaison aux paires
+à 12 flux doit le rappeler, et toute lecture future qui
+présenterait cette paire comme une paire à 12 flux serait
+fausse. Enfin, le test direct d'ordre est positif alors que
+`maxsep` échoue — cette divergence, miroir exact de celle
+du §8.85 (`maxsep` passe / ordre faible), est consignée
+telle quelle au §8.88.6, sans être élucidée sans preuve.
+
+## 8.88.1 — La dérogation à 11 flux, et pourquoi la paire est indépendante
+
+### La dérogation, gelée avant tout run
+
+La porte « 12 gènes v4 présents » avait dit ARRÊT au §8.86
+pour GSE194249 comme paire à 12 flux. La dérogation à 11 flux
+est celle du §8.79 (addendum C3, GSE57495 à 11 flux, GSTM1
+absent) : écrite AVANT toute construction et tout run, dans
+le protocole gelé `PROTOCOL_gse194249_11flux_888.md`
+(SHA `f5eb1f95…763e02`), avec le go de Zackary du 21 nov.
+10h07 ; limitée à un seul gène nommé, DPCR1 ; l'absence est
+un fait du fichier déposé, vérifié deux fois au §8.86 et
+re-vérifié deux fois ici avant le gel (§8.88.1, tableau
+ci-dessous) ; aucun remappage — le gène n'est mesuré sous
+aucun nom dans la matrice déposée ; la comparabilité est
+limitée et le caveat « 11 flux, DPCR1 absent » est écrit
+dans le verdict, dans la table A2 et dans la provenance ;
+la suite était pré-nommée au §8.86.4 (d1).
+
+### Présence des gènes, vérifiée dans la matrice détenue
+
+Matrice détenue : `data/GSE194249_PDPCOs_FPKM.txt.gz`,
+4 927 876 o, SHA-256
+`479517fbed1d8f5bb9d141b6b932b6ab56ba2ba72d4394d13aea2a3da0a50f27`
+— identique au §8.86. Premier chemin (lecture pandas,
+21 nov. 2026 ~10h05 EST) ; second chemin (zgrep sur le
+fichier brut gzip, même jour) — mêmes comptages :
+
+| Gène | Lignes exactes | Gène | Lignes exactes |
+|---|---|---|---|
+| PGC | 1 | CR2 | 1 |
+| REG4 | 1 | KRT20 | 1 |
+| CLDN18 | 1 | MUC2 | 1 |
+| MUC17 | 1 | GSTM1 | 1 |
+| **DPCR1** | **0** | CEACAM5 | 1 |
+| CLCA1 | 1 | MUC16 | 1 |
+| KRAS (contrôle) | 1 | MUCL3 (descriptif) | 0 |
+
+**11/11 gènes v4 retenus présents, une ligne chacun,
+0 doublon ; KRAS présent, une ligne. DPCR1 : 0 occurrence
+dans tout le fichier (exact, insensible à la casse) ;
+MUCL3 : 0 ; aucun symbole contenant `DPCR`.** Aucun autre
+gène ne manque : la condition d'arrêt du protocole (§3 —
+« si un autre gène manque aussi, fermer la piste ») ne
+s'est pas déclenchée.
+
+### La cohorte : GSE194249, 84 PDPCOs
+
+Série GSE194249, Shi et al., Nat. Commun. 2022, 13:2169,
+DOI 10.1038/s41467-022-29857-6. **Aucun nouveau
+téléchargement dans ce chantier** : la matrice et les
+métadonnées sont celles du §8.86, re-vérifiées par SHA
+avant construction. 87 colonnes = 84 PDPCOs + 3 `NPC-*`
+(normaux, exclus) ; composition des retenus : 75 PDAC,
+4 IPMN, 4 NEN, 1 ACC.
+
+**Construction (variante (a), 11 flux).** Valeurs FPKM
+telles que déposées, sans renormalisation, sans
+transformation log, sans imputation. Flux : PGC, REG4,
+CLDN18, MUC17, CR2, KRT20, MUC2, GSTM1, CEACAM5, CLCA1,
+MUC16. Contrôle : KRAS (FPKM : min 3,1647 / médiane
+13,2894 / max 24,9045) ; `step` = rang 0..83. Cas
+complets : 84/84, 0 NaN. Portes §5 : 6/6 OK — dont DPCR1
+absent (confirmé par le script de construction, qui
+s'arrêterait si DPCR1 apparaissait) et MUCL3 absent.
+CSV réel `pdac_888_gse194249_fluxes.csv` (SHA
+`7799a62a…aeda`) ; nul graine 42 (SHA `2f633871…4569`).
+La reconstruction du CSV réel lors de la construction des
+nuls frais donne le même SHA exact — reproductibilité
+vérifiée.
+
+**Indépendance — le statut exact.** (1) Jamais courue comme
+paire pipeline : aucun CSV, aucun run, aucun JSON, aucune
+valeur `maxsep` n'existait pour GSE194249 avant ce
+chantier (confirmé par l'absence des fichiers `886`).
+(2) Patients distincts par construction de programme
+(biobanque PDPCO de Shanghai, identifiants `CAS-*` /
+`NPC-*` vs barres TCGA, GSM GEO des autres séries, ICGC)
+— limite déclarée : aucun identifiant commun n'existe
+entre les systèmes, donc pas de preuve par jointure.
+(3) Grep du livre blanc : « GSE194249 » 34 occurrences,
+toutes au §8.78 (inventaire C4), au §8.79.9 (piste ouverte
+(d)) et au §8.86 — jamais comme cohorte courue, jamais
+comme holdout, jamais comme valeur `maxsep` ; « Shi et
+al » 4 occurrences, toutes dans le §8.86 ; « CAS-DAC »
+2 occurrences, toutes dans le §8.86. (4) Statut :
+transversale, ordonnée par KRAS — même statut que
+TCGA/ICGC, pas de pseudo-temps ; des organoïdes dérivés
+de patients, pas des tumeurs primaires directes — le
+verdict porte sur l'instrument.
+
+## 8.88.2 — Les runs et l'extraction
+
+- Lot : 4 runs v6.2 mode fast — réel + nul graine 42, puis
+  2 nuls frais (graines 8881, 8882) selon la règle gelée
+  (`d_maxsep = −0,0239` dans [−0,07 ; +0,14[) —
+  manifestes `manifest_v62_888.txt` +
+  `manifest_v62_888_frais.txt`, lanceur reprenable
+  `run_v62_lot.sh`, unités systemd `v62-888` et
+  `v62-888frais` (leçon AGENTS.md 2026-11-17 : jamais
+  nohup). **4/4 runs exit 0** (FIN 21 nov. 2026 15h23:29Z
+  pour la paire, 15h36:25Z pour les nuls frais ; durées
+  allongées par la contention CPU — d'autres lots v6.2
+  tournaient en parallèle sur la VM partagée).
+- SHA du pipeline revérifié avant ET après les lots, inchangé :
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
+- Extraction `extract_888.py` (réutilise `extract()` de
+  `extract_858.py`, original intact) : 4/4 runs, 0 manquant.
+  Second calcul indépendant `verify_888.py` (chemin de code
+  distinct, relecture directe par `json.load`) recoupe
+  `maxsep`, ancien MC et stabilité à **0,0 exact sur les
+  4 runs** (`maxsep_888_verify.json`, verdict OK). Version
+  lue : `v6.2.0-L7aL7b-CohenD-short` sur les 4 runs. Second
+  calcul indépendant des écarts `d_maxsep` depuis les
+  `master_results.json` : −0,0239 / +0,0517 / +0,0354,
+  identiques à l'extraction (écart 0,0 exact).
+
+| Run | n | maxsep | ancien MC | S_sep | Delta | L7a | Cascade (Q1–Q5, %) |
+|---|---|---|---|---|---|---|---|
+| Réel GSE194249 | 84 | **0,2306** | 0,3350 | 0,2293 | 0,991 | up 0,352 | 26,0 / 34,1 / 39,5 / 43,1 / 45,5 |
+| Nul graine 42 | 84 | 0,2545 | 0,3380 | 0,2533 | 0,935 | up 0,350 | 58,1 / 71,0 / 74,4 / 77,9 / 82,6 |
+| Nul frais s8881 | 84 | 0,1789 | 0,3265 | 0,1778 | 0,947 | up 0,348 | 24,6 / 55,5 / 59,5 / 63,2 / 74,4 |
+| Nul frais s8882 | 84 | 0,1952 | 0,3289 | 0,1945 | 0,998 | up 0,357 | 0,0 / 46,7 / 50,2 / 54,3 / 54,3 |
+
+Valeurs complètes : `maxsep` réel 0,23059240234506262 ; nul
+s42 0,2545160157551329 ; s8881 0,1788799298592756 ; s8882
+0,19522875362904593. Stabilité : réel 0,9944 ; nul 0,9952 ;
+s8881 0,9937 ; s8882 0,9964. Seuils MC : réel 70,73 ; nul
+53,66 ; s8881 17,07 ; s8882 82,93. Pas de cascade : réel
+[22, 28, 33, 36, 38] ; nul [48, 59, 62, 65, 69] ; s8881
+[20, 46, 49, 52, 62] ; s8882 [0, 39, 42, 45, 45]. F1/F2 après
+seuil : réel 3,7724 / 8,7736 ; nul 1,1943 / 0,8747 ; s8881
+0,0527 / 0,0190 ; s8882 21,9736 / 43,6063 (descriptif, voir
+§8.88.5). Falsification : disponible (n = 84 ≥ 75), statut
+`ok` — réel 1,090427 contre nul 1,053223 (écart +0,0372,
+descriptif) ; s8881 1,116066 ; s8882 0,98497. L7b :
+FRAGILE sur les 4 runs — l'audit L7b est clos comme
+non-informatif (il dit FRAGILE sur le réel comme sur les
+nuls) ; il n'est pas rapporté comme une mesure de fragilité.
+Régime : `saturation` pour les 4 runs. Estimateurs « tous ok » :
+27 sur les 4 runs.
+
+## 8.88.3 — Le verdict étendu : A2 à 10/15
+
+Table des 15 paires principales indépendantes comptées
+(valeurs des §8.56 / §8.69 / §8.70 / §8.71 / §8.74 / §8.79 /
+§8.85 reprises telles quelles, jamais recalculées ; GSE194249
+mesurée ici). Écart = maxsep réel − maxsep nul. Plancher 0,07.
+Le lot FNA §8.76 n'y figure PAS — il est apparié au §8.74,
+pas indépendant. Le lot drogue §8.84 n'y figure PAS — il est
+hors compte (objet drogue, pas paire d'expression).
+
+| Paire | maxsep R / N | Écart | > 0,07 ? | Positif ? |
+|---|---|---|---|---|
+| HP35 | 1,7718 / 0,1206 | **+1,6512** | oui | oui |
+| TCGA v4 | 0,4623 / 0,1696 | **+0,2928** | oui | oui |
+| GSE71729 | 0,2593 / 0,2191 | +0,0402 | non | oui |
+| GSE62452 | 0,3100 / 0,3136 | −0,0036 | non | NON |
+| ICGC | 0,4080 / 0,3110 | **+0,0970** | oui | oui |
+| Immunitaire TCGA | 0,5309 / 0,1634 | **+0,3675** | oui | oui |
+| PARP TCGA | 0,3680 / 0,1992 | **+0,1688** | oui | oui |
+| DepMap | 0,4436 / 0,2532 | **+0,1904** | oui | oui |
+| GSE21501 (§8.69) | 0,2121 / 0,2221 | −0,0100 | non | NON |
+| GSE79668 (§8.70) | 0,4104 / 0,3538 | +0,0567 | non | oui |
+| GSE60979 (§8.71) | 0,4418 / 0,2373 | **+0,2045** | oui | oui |
+| GSE131050 Yeh FF (§8.74) | 0,3220 / 0,2481 | **+0,0739** | oui | oui |
+| GSE57495 (§8.79, 11 flux) | 0,6381 / 0,1887 | **+0,4494** | oui | oui |
+| GDC ORGANOID-PANCREATIC (§8.85, 12 flux, MUCL3 ex-DPCR1) | 0,2542 / 0,1658 | **+0,0884** | oui | oui |
+| **GSE194249 (§8.88, 11 flux, DPCR1 absent)** | **0,2306 / 0,2545** | **−0,0239** | **non** | **NON** |
+
+Bilan : **10/15 au-dessus du plancher, 12/15 positifs.**
+LOO pire cas : retirer une paire passante donne 9/14 —
+**LOO 9/14** (contre 9/13 avant cette paire). C3 du §8.59.8
+RESTE LEVÉE — elle l'était depuis le §8.71 ; cette paire
+est une consolidation supplémentaire manquée, pas une
+condition.
+
+**La décision de compter cette paire dans A2 avait été
+prise AVANT les runs** (protocole §2.3, avec le précédent
+§8.79 et la différence avec le §8.84 hors compte écrites
+d'avance) : elle n'est pas révisée parce que la paire
+échoue. Un compte qui n'inclurait que les paires passantes
+serait un compte biaisé.
+
+## 8.88.4 — Les nuls frais : échec confirmé sur trois tirages
+
+`d_maxsep = −0,0239` est dans l'intervalle [−0,07 ; +0,14[
+qui déclenche les nuls frais (graines 8881, 8882, gelées
+dans le protocole, jamais utilisées dans ce projet). Les
+2 nuls frais ont donc été construits par la même méthode et
+courus en runs frais, comme la règle gelée l'exige :
+
+| Écart contre | maxsep nul | `d_maxsep` | > 0,07 ? |
+|---|---|---|---|
+| Nul graine 42 (verdict) | 0,2545 | **−0,0239** | NON |
+| Nul frais s8881 | 0,1789 | **+0,0517** | NON |
+| Nul frais s8882 | 0,1952 | **+0,0354** | NON |
+
+Écarts min / médiane / max : **−0,0239 / +0,0354 / +0,0517**.
+0 sur 3 au-dessus du plancher. Lecture gelée : aucun des 3
+écarts n'est > 0,07 — le passage n'a pas lieu, et l'échec
+est dit **« confirmé, non fragile »** au sens où il ne tient
+pas à un seul tirage de nul défavorable : le `maxsep` réel
+(0,2306) est encadré par les nuls (0,1789 et 0,1952 en
+dessous, 0,2545 au-dessus). Le verdict de la paire graine 42
+(NON) n'est JAMAIS changé par les nuls frais, et il ne l'est
+pas ici. C'est le miroir du §8.85, où un nul frais passait
+sous le plancher alors que la paire passait : ici, c'est la
+paire elle-même qui est négative, et les deux nuls frais
+restent sous le plancher. La fragilité du nul à petit n
+(§8.53, §8.70) ne joue pas ici en faveur du réel : à
+n = 84, trois tirages de nul donnent des `maxsep` de 0,1789
+à 0,2545 (étendue 0,0756), et le réel est dedans.
+
+## 8.88.5 — Les scores compagnons : rien ne sépare, sauf Delta (faible)
+
+- **`sep` compagnon ne passe PAS sa barre descriptive, et
+  il est négatif comme `maxsep`.** `sep` réel 0,1874 contre
+  nul 0,2029 : `d_sep = −0,0155`, sous le plancher
+  équivalent-sep `0,07·(1+m_R)(1+m_N) = 0,1081`. (D4 n'est
+  pas rejoué ici : il porte sur les paires V1, déjà tranché.)
+  Au §8.85, `sep` ne passait pas non plus sa barre alors que
+  `maxsep` passait ; ici les deux sont négatifs ensemble.
+- **S_sep suit `maxsep` presque à l'identique, et partage
+  son échec.** S_sep réel 0,2293 contre nul 0,2533 :
+  `−0,0240` ; contre les nuls frais : +0,0516 (s8881) et
+  +0,0348 (s8882) — même lecture que `maxsep` : 0/3
+  au-dessus du plancher.
+- **Ancien MC, négatif et minuscule.** MC réel 0,3350
+  contre nul 0,3380 : `−0,0029` — comme aux §8.70/§8.74/
+  §8.79/§8.85, MC ne sépare pas seul ; ici il ne sépare pas
+  du tout. Les nuls frais sont à 0,3265 et 0,3289 : le réel
+  ne les dépasse que de 0,0085 et 0,0061. `maxsep` reste le
+  score principal par décision de Zackary (20 nov. 13h04) ;
+  MC est secondaire.
+- **Delta : écart réel–nul positif, mais dans l'étendue
+  nulle.** Delta réel 0,991 contre nul 0,935 : `+0,0563` —
+  mais les nuls frais sont à 0,947 et 0,998 : Delta varie de
+  0,935 à 0,998 entre les trois nuls (étendue 0,063), soit
+  plus que l'écart réel–nul. Aucune divergence
+  Delta/`maxsep` à élucider ici : Delta ne distingue pas le
+  réel du nul sur cette paire de façon stable, `maxsep` non
+  plus — et cette instabilité de Delta entre nuls est
+  consignée telle quelle.
+- **L7a : up des quatre côtés, sans écart.** Réel up 0,3521,
+  nul up 0,3503, s8881 up 0,3479, s8882 up 0,3567 — le nul
+  frais s8882 est au-dessus du réel. Descriptif : L7a n'est
+  pas le critère gelé.
+- **Cascade : le nul monte plus tôt et plus haut que le
+  réel.** Réel [26,0 / 34,1 / 39,5 / 43,1 / 45,5], pas
+  [22, 28, 33, 36, 38] ; nul s42 [58,1 / 71,0 / 74,4 /
+  77,9 / 82,6], pas [48, 59, 62, 65, 69]. Le nul graine 42
+  atteint 58,1 % dès Q1, là où le réel n'atteint que 45,5 %
+  en Q5. Les nuls frais montent aussi : s8881
+  [24,6 / 55,5 / 59,5 / 63,2 / 74,4], s8882
+  [0,0 / 46,7 / 50,2 / 54,3 / 54,3]. À n = 84, un nul peut
+  monter plus haut que le réel — la cascade ne sépare pas
+  seule ici, et elle sépare à l'envers.
+- **F1/F2 après seuil (descriptif).** Réel : F1 3,7724,
+  F2 8,7736 — les deux montent fortement après le seuil.
+  Nul s42 : F1 1,1943, F2 0,8747. Nuls frais : s8881
+  0,0527 / 0,0190 (chutent fortement), s8882
+  21,9736 / 43,6063 (montent très fortement). Ces ratios
+  sont descriptifs ; ils ne décident pas — et leur
+  dispersion entre les trois nuls (0,05 à 21,97 pour F1)
+  dit qu'ils ne portent pas d'information stable ici.
+- **Falsification (disponible, n = 84 ≥ 75) :** réel
+  1,090427 contre nul 1,053223 (écart +0,0372) ; s8881
+  1,116066 ; s8882 0,98497. Le réel est dans l'étendue des
+  nuls (0,9850 à 1,1161) — descriptif, ne décide pas.
+- **Régime : `saturation` pour les 4 runs** — descriptif,
+  pas un verdict.
+
+## 8.88.6 — Tests directs en appui (ne décident pas)
+
+Script `direct_tests_888.py`, sur les CSV de flux du
+chantier (réel + nul graine 42), 11 flux.
+
+1. **Test informatif (correction §8.70, appliquée ici) :**
+   corrélation de Spearman de chaque flux avec le pas (ordre
+   KRAS), réel vs nul : |ρ| moyen réel **0,179** contre nul
+   **0,076** ; **Δρ médian +0,191 ; Δρ positifs 9/11** —
+   entre le §8.85 (+0,088, 8/12) et le §8.79 (+0,337, 11/11).
+   C'est le test qui porte l'information d'ordre — et ici il
+   est positif.
+2. d de Cohen marginal des 11 flux (réel vs nul) : **d =
+   0,0000 pour les 11 gènes** (moyenne des |d| : 3,24×10⁻¹⁷,
+   maximum 9,81×10⁻¹⁷) — attendu vacueux par construction :
+   le nul est une permutation des lignes, chaque flux garde
+   exactement ses 84 valeurs. Rapporté tel quel : il valide
+   la construction du nul (marginales préservées exactement),
+   il ne mesure pas la séparation.
+
+| Gène | d de Cohen | ρ réel | ρ nul | Δρ |
+|---|---|---|---|---|
+| PGC | −0,0000 | +0,006 | +0,015 | −0,009 |
+| REG4 | +0,0000 | +0,404 | +0,093 | **+0,311** |
+| CLDN18 | +0,0000 | +0,158 | +0,093 | **+0,066** |
+| MUC17 | +0,0000 | +0,291 | +0,006 | **+0,285** |
+| CR2 | +0,0000 | +0,121 | −0,173 | **+0,293** |
+| KRT20 | +0,0000 | +0,224 | −0,051 | **+0,275** |
+| MUC2 | +0,0000 | +0,176 | +0,027 | **+0,149** |
+| GSTM1 | −0,0000 | −0,113 | −0,071 | −0,042 |
+| CEACAM5 | +0,0000 | +0,166 | −0,128 | **+0,295** |
+| CLCA1 | +0,0000 | +0,306 | +0,115 | **+0,191** |
+| MUC16 | +0,0000 | +0,003 | −0,068 | **+0,072** |
+
+Lecture descriptive : le plus fort ρ réel est REG4
+(+0,404), suivi de CLCA1 (+0,306) et MUC17 (+0,291) ;
+les seuls flux descendants avec KRAS sont GSTM1 (−0,113)
+et, marginalement, PGC et MUC16 plats (+0,006, +0,003).
+**Divergence à consigner : `maxsep` échoue (−0,0239)
+alors que le signal d'ordre direct est positif (Δρ médian
++0,191, |ρ| réel 0,179 contre |ρ| nul 0,076).** C'est le
+miroir exact du §8.85, où `maxsep` passait (+0,0884)
+alors que le signal d'ordre direct était faible (Δρ médian
++0,088, |ρ| réel 0,124 ≈ |ρ| nul 0,131). Sur ces deux
+paires d'organoïdes, `maxsep` et l'ordre par flux se
+découplent dans les deux sens — et c'est dit tel quel,
+sans être élucidé sans preuve. Aucun de ces tests ne change
+le verdict du §8.
+
+### 8.88.6b — Annexe descriptive pré-enregistrée : PDAC seul (ne décide rien, aucun run)
+
+Protocole §10.3 : Spearman de chaque flux contre le rang
+KRAS au sein des seules lignées `CAS-DAC-*` (n = 75), réel
+seulement, sur les FPKM de la matrice détenue
+(`annexe_pdac_seul_888.json`).
+
+| Gène | ρ PDAC-seul | Gène | ρ PDAC-seul |
+|---|---|---|---|
+| PGC | −0,130 | CR2 | +0,129 |
+| REG4 | +0,397 | KRT20 | +0,238 |
+| CLDN18 | +0,082 | MUC2 | +0,057 |
+| MUC17 | +0,236 | GSTM1 | −0,111 |
+| CEACAM5 | +0,071 | CLCA1 | +0,297 |
+| MUC16 | −0,023 | | |
+
+**Médiane +0,082 ; 8/11 positifs ; |ρ| moyen 0,161.**
+Le signal d'ordre survit sans les 9 lignées non-PDAC
+(médiane ρ réel sur les 84 : +0,166 ; 9/11 Δρ positifs),
+mais affaibli : PGC passe de +0,006 à −0,130, MUC16 de
++0,003 à −0,023, et la médiane est divisée par deux. La
+mixité histologique (9/84 non-PDAC) ne porte donc pas le
+signal d'ordre — elle l'accompagne — et elle ne porte pas
+non plus l'échec `maxsep` : l'échec est celui de la paire
+sur les 84 PDPCOs, et l'annexe ne le change pas. Aucune
+autre découpe histologique n'a été calculée.
+
+## 8.88.7 — Comparaison descriptive avec le §8.86 : même matrice, un arrêt levé, un verdict nouveau
+
+Le §8.86 et la présente section portent sur la **même
+matrice** de GSE194249, mais ne mesurent pas la même chose
+— et le §8.86 n'a rien mesuré du tout sur cette cohorte :
+
+| | §8.86 | §8.88 (cette section) |
+|---|---|---|
+| Objet | Porte de construction « 12 gènes v4 présents » | Rupture multi-flux (11 flux, ordre KRAS) |
+| Résultat | ARRÊT — DPCR1 absent, aucun CSV, aucun run | `d_maxsep = −0,0239` (réel 0,2306, nul 0,2545), NON |
+| Flux | DPCR1 exigé au symbole exact | 11 flux, DPCR1 absent (dérogation gelée) |
+
+Aucune des deux lectures ne valide l'autre : un arrêt de
+construction ne prédit pas le verdict d'une paire, et un
+verdict de paire ne rouvre pas l'arrêt — le §8.86 reste vrai
+sous son protocole (symbole exact, aucun mappage), et le
+§8.88 est vrai sous le sien (dérogation à 11 flux
+pré-enregistrée, go du 21 nov. 10h07). Le fait que le signal
+d'ordre direct soit positif (Δρ médian +0,191) ne diminue
+ni n'augmente le verdict : le critère gelé est `d_maxsep`,
+et il est négatif. Cette distinction est écrite ici pour
+qu'aucune lecture future ne confonde l'arrêt §8.86 avec un
+échec de la cohorte, ni le verdict §8.88 avec une révision
+du §8.86.
+
+## 8.88.8 — Ce que le verdict dit, et ce qu'il ne dit pas
+
+Il dit que `maxsep` ne sépare pas le réel du nul sur une
+quinzième cohorte indépendante — la deuxième cohorte
+d'organoïdes, et la première où le nul graine 42 dépasse le
+réel — avec un `maxsep` réel au milieu de trois tirages de
+nul, donc un échec confirmé sur trois tirages, pas un échec
+de justesse. Il dit aussi que le découplage entre `maxsep`
+et l'ordre par flux, déjà vu au §8.85 dans un sens, se
+produit ici dans l'autre sens : ordre positif, `maxsep`
+négatif — une question ouverte nouvelle sur ce que `maxsep`
+mesure au juste quand les deux divergent. Il dit enfin que
+la dérogation à 11 flux fonctionne comme construction (les
+11 gènes sont là, 84/84 cas complets, 4/4 runs exit 0) :
+l'échec est un verdict de mesure, pas un arrêt de
+construction. Il ne dit pas que `maxsep` est invalidé en
+général, ni que l'adoption pleine est remise en cause par
+ce chantier seul (elle a été décidée par Zackary, et cette
+section est la vérification a posteriori qu'elle prévoyait
+— elle la met en tension, elle ne la tranche pas), ni que
+la rupture multi-flux n'existe pas dans les organoïdes
+(GDC, §8.85, passe avec 12 flux). Il ne dit rien de
+clinique.
+
+## 8.88.9 — Pistes ouvertes
+
+| Pistes ouvertes | Oui, une de plus | (a) La confirmation indépendante C3 est close depuis le §8.71 — cette quinzième paire est une consolidation supplémentaire manquée, pas une condition ; (b) la candidate C1 (Chen et al. 2025, 46 PDO × 63 AUC, supplément MOESM13 SHA vérifié `0e009cd5…`) reste la piste suivante pour un lot drogue v6.2 (cible Gemcitabine, 62 contrôles) — elle ne peut pas devenir une paire A2 ; (c) la suite (d2) du §8.86.4 — re-dérivation de l'expression de GSE194249 depuis les lectures brutes (SRA) avec une annotation actuelle — reste possible, sous son propre protocole : elle dirait si DPCR1/MUCL3 est mesurable dans les lectures brutes et si une paire à 12 flux y séparerait ; (d) la fragilité du nul à petit n est désormais mesurée sur 3 tirages ici aussi (0,1789 / 0,1952 / 0,2545, étendue 0,0756) — mais à n = 84, pas à petit n : la question ouverte devient celle de l'étendue nulle à n = 84, et du plancher 0,07 face à une étendue nulle de 0,0756 ; (e) la divergence `maxsep` échoue / ordre direct positif (Δρ médian +0,191, 9/11), miroir du §8.85, est une question ouverte nouvelle : sur quelles paires la rupture multi-flux existe-t-elle sans gradient monotone par flux, et sur quelles paires le gradient existe-t-il sans rupture — aucune décomposition ne tranche ici ; (f) la cascade du nul qui dépasse celle du réel (58–83 % contre 26–46 %) est un fait nouveau dans le compte A2 : à suivre sur les prochaines paires, si un nul peut monter plus haut que le réel, la cascade seule ne peut plus être lue comme un signal. |
+
+## 8.88.10 — Annexe : provenance condensée et SHAs
+
+- **Série :** GSE194249, Shi et al., Nat. Commun. 2022,
+  13:2169, DOI 10.1038/s41467-022-29857-6. GEO
+  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE194249
+  (page directe bloquée par reCAPTCHA le 21 nov. 2026 ;
+  métadonnées via E-utilities, réponse conservée
+  `gse194249_esummary_886.json`, SHA
+  `73934e46a717a5db1ed8cd8e1c4349435683a0eed1dda85fe7b097ec448f460e`).
+  Plateforme GPL31265, dépôt 2022/02/23, *Homo sapiens*.
+- **Fichier :** `data/GSE194249_PDPCOs_FPKM.txt.gz`, 4 927 876 o,
+  SHA `479517fbed1d8f5bb9d141b6b932b6ab56ba2ba72d4394d13aea2a3da0a50f27`,
+  gzip intègre ; 15 610 lignes, 88 colonnes ; mise en page (A).
+  URL : `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE194nnn/GSE194249/suppl/GSE194249_PDPCOs_FPKM.txt.gz`.
+  Reçu `download_gse194249_886_receipt.json`, SHA
+  `fd9bd625a3869086d06b11bb4896b5e5de7f05da91bf5867bca8d1bf83a016ea`.
+- **Comptages vérifiés deux fois, avant le gel :** 87 colonnes
+  = 84 PDPCOs + 3 `NPC-*` ; 15 609 lignes de gènes ; 0 symbole
+  dupliqué ; 11/11 gènes v4 retenus présents une fois chacun ;
+  KRAS 1 ; **DPCR1 : 0 occurrence (exact, insensible à la
+  casse, fichier entier) ; MUCL3 : 0.** KRAS FPKM min 3,1647 /
+  médiane 13,2894 / max 24,9045.
+- **Pipeline :** v6.2, SHA
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`,
+  vérifié avant et après les lots.
+- **Protocole gelé :** `PROTOCOL_gse194249_11flux_888.md`, SHA
+  `f5eb1f952f562499e6ff31036b684cb75d094a2843a17a067acf27ca7c763e02`.
+- **Provenance complète :** `PROVENANCE_888.md`.
+- **CSV de flux :** réel SHA
+  `7799a62a6c1145b728e60a2d1126a93b86c28123744c0dc904e454c35ae9aeda` ;
+  nul (graine 42) SHA
+  `2f633871d068ceaa7152f10d1190ecb7ca4a58eef0d3e4cfb3a9ad322db44569` ;
+  nul frais s8881 SHA
+  `f95b7cc4add9f23963d476a939ee9b66317f720eaa12f92e331c184a44388f49` ;
+  nul frais s8882 SHA
+  `78b1f280d8409b04fe92f7509c8291c718c3acb634c73a61f6b5da2fa4829950`.
+- **Runs :** `results_fast_v62_888_gse194249`,
+  `results_fast_v62_888_gse194249_nul`,
+  `results_fast_v62_888_gse194249_nul_s8881`,
+  `results_fast_v62_888_gse194249_nul_s8882`, 4/4 exit 0,
+  FIN 21 nov. 2026 15h23:29Z (paire) et 15h36:25Z (frais).
+  Extraction `extract_888.json` / `.csv` ; vérification
+  `maxsep_888_verify.json` (4/4, écart max 0,0, verdict OK) ;
+  tests directs `direct_tests_888.json` ; annexe PDAC-seul
+  `annexe_pdac_seul_888.json`.
+- **Scripts :** `build_fluxes_888.py` (SHA
+  `f598c4b4…5e70`), `extract_888.py` (SHA `3dc9ff8b…6681d`),
+  `verify_888.py` (SHA `689f0463…6f7`), `direct_tests_888.py`
+  (SHA `ec93dcfd…6a39`) — originaux §8.86 intacts.
+- **Verdict :** NON, `d_maxsep = −0,0239`
+  (0,23059240234506262 − 0,2545160157551329) ; nuls frais
+  +0,0517 / +0,0354 (min / max, médiane +0,0354). A2 :
+  **10/15, 12/15 positifs, LOO 9/14.** C3 reste levée.
+
+— Fin de la §8.88. —
+
+---
+
+### 8.89 Suppléments Chen non téléchargés (MOESM1, MOESM2, MOESM16) et dépôts : aucune table par-PDO KRAS / MTAP nulle part — piste fermée (21 novembre 2026)
+
+Piste 3 du lot du 21 nov. 2026 ; protocole gelé 21 nov. 2026 ~10h15
+EST avant tout téléchargement nouveau, toute copie et tout calcul
+(`PROTOCOL_chen_supplements_889.md`, SHA `d4296ddd…07de792b`,
+feu vert de Zackary 21 nov. 2026 10h07) ; provenance
+`PROVENANCE_889.md`.
+
+## Verdict d'abord
+
+**PISTE FERMÉE — aucune table par-PDO (KRAS, MTAP, ou autre
+variable recevable) n'existe dans les trois derniers suppléments
+Chen (MOESM1, MOESM2, MOESM16, tous téléchargés et vérifiés
+ici) ni dans les dépôts consultables : les tests directs
+drogue × KRAS (D3) et drogue × MTAP (D4) restent IMPOSSIBLES,
+et la question de savoir si les deux hits du §8.84 (paclitaxel,
+mitomycine C) survivent quand on fixe KRAS / MTAP reste sans
+réponse — pas tranchée, pas négative. La seule variable
+par-organoïde nouvelle, le statut CFTR MT/WT de la Fig. 14c
+(MOESM1), est non recevable comme base de test (38/46 PDO
+criblés couverts, seuil gelé 40 ; MT n = 4 ; définition en
+conflit avec la Fig. 6e pour DAC_24 et DAC_84) : aucun test
+analogue n'a été couru dessus. Le §8.84 est inchangé (paire
+exploratoire CONFIRME consolidée, hors A2) ; A2 inchangé.**
+
+| Porte (protocole §3/§4/§6, gelé) | Exigé | Mesuré 21 nov. 2026 | Sort |
+|---|---|---|---|
+| Inventaire exhaustif des suppléments | MOESM1–17, aucun autre | **17 fichiers, MOESM18 absent (HTTP 403, aucun fichier servi)** | **COMPLET** |
+| Fichiers déjà détenus re-vérifiés | SHA PROVENANCE_884 | **13/13 + MOESM13 identiques** | **PASSE** |
+| MOESM1 / 2 / 16 téléchargés + hachés | HTTP 200, SHA consignés | **200 / 200 / 200 ; 24 268 877 / 4 586 550 / 3 947 814 o** | **PASSE** |
+| Table KRAS par PDO recevable (≥ 40/46) | table ≥ 40/46 | **aucune — 0 statut KRAS par PDO dans les 17 suppléments** | **ABSENTE** |
+| Table MTAP par PDO recevable (≥ 40/46) | table ≥ 40/46 | **aucune — « MTAP » 0 occurrence dans tout l'article** | **ABSENTE** |
+| Autre table par-PDO recevable | table ≥ 40/46 | **aucune table ; Fig. 14c : figure, pas table, 38/46 < 40** | **ABSENTE** |
+| T1/T2/T3 (condition : table recevable) | courus si table | **non courus — condition non remplie** | **NON APPLICABLE** |
+| Dépôts consultés | GSA-Human, MW, Code Ocean | **MW : lignées PANC-1, pas d'organoïdes ; GSA-Human : accès contrôlé, bloqué ; Code Ocean : code seulement** | **DOCUMENTÉS** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que
+l'inventaire des données publiées de Chen et al. 2025 est
+désormais exhaustif et vérifié fichier par fichier : 17
+suppléments sur 17, plus les 4 dépôts cités — et qu'aucun ne
+porte le statut KRAS ou MTAP par organoïde. Il dit aussi, en
+passant, deux faits mesurés : l'organoïde KRAS p.G12C est bien
+unique (les auteurs l'ont corrigé de « deux » à « un » dans
+leur réponse aux rapporteurs, MOESM2), mais il reste sans
+identifiant DAC ; et l'article porte deux définitions
+incompatibles du « CFTR mutation MT » (Fig. 6e contre Fig. 14c).
+Il ne dit pas que KRAS ou MTAP sont sans effet sur ces PDO :
+sans table, la question est intestable ici, pas tranchée. Il ne
+dit pas que les hits D1 sont faux : leur survie sous KRAS/MTAP
+n'a pas pu être testée, elle n'a pas échoué.
+
+## 8.89.1 — Ce qui a été fait (après le gel, dans l'ordre du protocole)
+
+1. **Re-vérification des détenus (§3.1).** SHA-256 + taille
+   recalculés pour MOESM3–MOESM15 et MOESM17
+   (`chen884_scratch/`) et MOESM13 (`data/`) : **13/13 +
+   MOESM13 identiques** aux empreintes PROVENANCE_884.
+   Rien n'a été re-téléchargé.
+2. **Téléchargements nouveaux (§3.2).** Exécution directe
+   (curl), jamais systemd-run sans proxy : MOESM1
+   (Supplementary Information, 24 268 877 o, SHA
+   `4b70d25b…60aa61f`), MOESM2 (Peer Review File,
+   4 586 550 o, SHA `ce939f22…65d67`), MOESM16 (Reporting
+   Summary, 3 947 814 o, SHA `69a959c3…95c499`) — HTTP 200
+   pour les trois. Sondes MOESM18 `.pdf` et `.xlsx` :
+   HTTP 403, aucun fichier servi — l'inventaire MOESM1–17
+   est complet.
+3. **Examen (§3.3).** Script `examine_889.py` (SHA
+   `ef282880…e3645`), sortie `examine_889.json` (SHA
+   `0f828245…bef946`) : extraction de texte (`pdftotext
+   -layout`), comptages exacts, lecture des 4 Supplementary
+   Tables de MOESM1, des 17 Supplementary Figures, mesure
+   de la barre d'annotation de la Fig. 14c sur le rendu
+   200 dpi de la p. 21 (positions `pdftotext -bbox`),
+   relecture de la Fig. 6e dans MOESM17, recoupement avec
+   les 46 colonnes MOESM13.
+4. **Dépôts (§3.4).** Pages publiques consultées :
+   Metabolomics Workbench ST003734 (lue en direct),
+   GSA-Human HRA005195 (tentée : échec réseau, sans statut
+   HTTP — page live non confirmée, non répétée),
+   Code Ocean 1432248 (tentée : HTTP 403, non répétée).
+   Aucune demande d'accès, aucun compte créé, aucun
+   téléchargement de données brutes contrôlées.
+
+## 8.89.2 — MOESM1 : Supplementary Information (39 pages) — pas de table par-PDO
+
+- **4 Supplementary Tables.** Table 1 : statistiques agrégées
+  seulement (N = 458 découverte, N = 842 ; sexe, âge, IMC,
+  diabète, pancréatite, tabac, alcool, antécédents, pathologie,
+  grade, TNM) — aucune ligne par patient, aucun identifiant.
+  Tables 2 et 3 : significativité statistique des comparaisons
+  PANC-1 (Fig. 5) et AsPC-1 (Supp. Fig. 7) — des lignées, pas
+  des organoïdes. Table 4 (« Small molecule screening data ») :
+  métadonnées d'essai seulement (63+15 composés, 7
+  concentrations, CellTiter-Glo, AUC GraphPad Prism 9,
+  normalisation par le maximum ; taux de hits : correcteurs
+  CFTR 26,7 %, inhibiteurs KRAS p.G12C 2,2 % = 1/46,
+  HRD 13,0 %) — aucune valeur par PDO, aucun génotype.
+- **17 Supplementary Figures (Fig. 1–17), 1 Supplementary
+  Note.** Comptages exacts : `DAC` 59, `KRAS` 6, `MTAP` 0,
+  `9p21` 0, `G12C` 2, `CDKN2A` 0. Les 6 `KRAS` : 4 libellés de
+  voies `HALLMARK_KRAS_SIGNALING` (Supp. Fig. 15,
+  enrichissement, pas un génotype) et 2 dans la Table 4.
+  Les seuls `DAC` du fichier sont dans la Fig. 14c (57) et
+  le mot `PDAC` de la Table 1.
+- **Supp. Fig. 14c — la seule variable par-organoïde nouvelle.**
+  Heatmap de 18 DEGs, 57 organoïdes en colonnes, barre
+  d'annotation `CFTR mutation` MT/WT. Ordre visuel vérifié
+  par `pdftotext -bbox` (x croissant) ; mesure de la barre
+  (rendu 200 dpi) : segment teal x_pts 51,9–74,8, orange dès
+  74,9, pas des colonnes 5,719 pts → (74,9−51,9)/5,719 =
+  **4,02 colonnes** : MT = **DAC_13, DAC_30, DAC_72,
+  DAC_73** ; WT = les 53 autres. Recoupement avec les 46
+  PDO criblés : **38/46** — non couverts : DAC_99, DAC_102,
+  DAC_103, DAC_104, DAC_109, DAC_110, DAC_114, DAC_115.
+  Les 4 MT sont tous parmi les 46 criblés.
+- **Conflit interne mesuré.** La Fig. 6e de la Source Data
+  (MOESM17, relue ici : 15 PDO, MT = DAC13, DAC24, DAC72,
+  DAC84 ; WT = 11 autres — identique au §8.84) définit
+  `CFTR mutation MT` différemment : **DAC_24 et DAC_84 sont
+  MT en Fig. 6e mais WT en Fig. 14c** ; DAC_30 et DAC_73
+  sont MT en Fig. 14c mais absents des 15 de la Fig. 6e.
+  Seuls DAC_13 et DAC_72 sont MT dans les deux figures.
+  Les deux groupements ne peuvent pas être vrais sous la
+  même définition — les définitions de variants sous-jacentes
+  ne sont pas publiées par PDO.
+- **Supp. Fig. 15.** Cohortes découverte (tumeurs) et TCGA,
+  annotations `CFTR expression` et `CFTR aaChange`
+  (p.C1355Y, p.E681V, p.L69F, p.R1097C) — des tumeurs de
+  patients, pas des organoïdes, aucun identifiant DAC.
+- **Non-recevabilité de la Fig. 14c (application du §4).**
+  (a) Ce n'est pas une table, c'est une barre d'annotation
+  de figure. (b) Couverture 38/46 < 40 (seuil gelé) — 8 PDO
+  criblés non classés, dont DAC_110, porteur CFTR VUS_D
+  nommé au §8.84 (D2b). (c) Effectif MT n = 4. (d) Définition
+  en conflit avec la Fig. 6e pour DAC_24 et DAC_84.
+  **Aucun test analogue n'a donc été couru dessus** (§5 :
+  le test analogue est conditionné à une table trouvée ;
+  §4 : couverture < 40/46 = non recevable). Courir un
+  Mann-Whitney 4 contre 34 sur un groupement lu dans une
+  figure, contre un groupement contradictoire du même
+  article, serait inventer un résultat, pas en mesurer un.
+
+## 8.89.3 — MOESM2 : Peer Review File — un seul organoïde G12C, toujours sans DAC
+
+- Comptages exacts : `DAC` 2, `KRAS` 15, `MTAP` 0, `9p21` 0,
+  `G12C` 7, `CDKN2A` 1, `Supplementary Table` 0. Les 2 `DAC`
+  sont dans une formule de politesse du rapporteur n° 3 ;
+  les 15 `KRAS` / 7 `G12C` sont de la discussion
+  d'évaluation, aucune table.
+- Point décisif (rapporteur n° 2, point 13) : « In Fig.6b,
+  there seems to be only one sample with a KRAS G12C
+  mutation. However, according to line 363-364, two organoids
+  bore the mutation. Please clarify this inconsistency. »
+  Réponse des auteurs (2.13) : « We corrected this mistake
+  in Lines 363-364: “One organoid bearing the KRAS p.G12C
+  mutation exhibited sensitivity to AMG510 and MRTX849.” »
+  **L'organoïde KRAS p.G12C est unique — et toujours sans
+  identifiant DAC nommé.** Le test ciblé T4 (rangs d'AUC
+  AMG510 / MRTX849 de ce PDO) reste impossible.
+
+## 8.89.4 — MOESM16 : Reporting Summary (4 pages) — formulaire, aucune donnée
+
+- Formulaire Nature Portfolio, PDF image (sans texte
+  extractible ; les 4 pages ont été rendues en images et
+  lues une par une). Sections : Statistics, Software and
+  code, Data (reprend la déclaration de disponibilité :
+  HRA005195, HRA010277, ST003734, Code Ocean 1432248),
+  Research involving human participants, Life sciences study
+  design, Antibodies, Eukaryotic cell lines, Animals,
+  Plants, Flow Cytometry. **Aucune table de données, aucun
+  génotype, aucun identifiant DAC.**
+
+## 8.89.5 — Dépôts : un dépôt ouvert sans organoïde, deux accès contrôlés, du code seulement
+
+| Dépôt | Statut mesuré 21 nov. 2026 | Table par-PDO ? |
+|---|---|---|
+| GSA-Human HRA005195 (WGS/WES/RNA-seq découverte + WGS 69 organoïdes) | Accès contrôlé (données humaines ; MTA pour partager, selon l'article). Page publique tentée : échec réseau, sans statut HTTP — page live non confirmée. Aucune demande d'accès, aucun compte, aucun téléchargement de lectures brutes. Des lectures brutes, pas une table : KRAS/MTAP n'y seraient lisibles qu'après ré-analyse des WGS. | Non — et non téléchargeable ici |
+| GSA-Human HRA010277 (RNA/ATAC organoïdes + RNA lignées) | Même statut, mêmes limites. Page non consultée (même échec, non répété). | Non |
+| Metabolomics Workbench ST003734 (PR002320, DOI 10.21228/M8R83M) | Page lue en direct : **lipidomique de la lignée PANC-1**, 52 échantillons (CFTR OE / EV / p.L88X / p.E681V / p.C1355Y + QC) — pas des organoïdes, aucun DAC, aucun KRAS/MTAP. | Non |
+| Code Ocean 1432248 (DOI 10.24433/CO.1432248.v1) | **Code seulement** (article § Code availability ; MOESM16 p. 1). Page DOI tentée : HTTP 403, non répétée ; la qualification repose sur l'article et MOESM16. | Non |
+
+## 8.89.6 — Ce que ce lot change, et ce qu'il ne change pas
+
+- **D3/D4 restent IMPOSSIBLES** — désormais sur la base de
+  l'inventaire complet : 17/17 suppléments vérifiés
+  (MOESM1–17) + 4 dépôts consultés ou qualifiés. Le §8.84
+  disait « aucune table dans les 12 Supplementary Data ni
+  dans la Source Data » ; le §8.89 étend ce verdict à
+  **toutes les données publiées de Chen et al. 2025**.
+- **A2 inchangé** (paire Chen hors compte, exploratoire) ;
+  §8.84 inchangé (paire CONFIRME consolidée, D1/D2a/D2c
+  inchangés). Aucun run pipeline dans ce chantier.
+- **Les 2 hits D1 ne sont ni confirmés ni infirmés sous
+  KRAS/MTAP** : T3 n'a pas été couru (condition non
+  remplie), la question reste ouverte.
+- **Pistes ouvertes (pas des verdicts) :** (a) demander aux
+  auteurs une table KRAS/MTAP par DAC pour les 46 PDO
+  criblés — seule voie directe vers D3/D4 ; (b) accès
+  approuvé GSA-Human (demande + MTA) puis ré-analyse des
+  WGS des 69 organoïdes pour appeler KRAS (dont G12C) et
+  le nombre de copies 9p21/MTAP par DAC — travail lourd,
+  hors de ce chantier, à décider par Zackary ; (c) la
+  contradiction Fig. 6e / Fig. 14c sur le statut CFTR
+  (DAC_24, DAC_84) mériterait la même table des auteurs —
+  elle ne change rien à D3/D4.
+- **C3 reste LEVÉE** (elle l'était depuis le §8.71) ; ce
+  chantier ne rouvre rien.
+
+## 8.89.7 — Provenance (complète, liens cliquables)
+
+- Article : Yin, X. *et al.*, *Nat. Commun.* **16**, 2214 (2025),
+  DOI 10.1038/s41467-025-57520-3,
+  https://doi.org/10.1038/s41467-025-57520-3 (CC BY-NC-ND 4.0).
+- MOESM1 (Supplementary Information) :
+  https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM1_ESM.pdf
+  — 24 268 877 o, SHA-256
+  `4b70d25b078f21cc2612963d807e9a1ab27782ccc8aa721482043b16e60aa61f`.
+- MOESM2 (Peer Review File) :
+  https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM2_ESM.pdf
+  — 4 586 550 o, SHA-256
+  `ce939f2227d92a7147e3d5c6681bd9fe0e8ab70c5a8c7fad99695016bfd65d67`.
+- MOESM16 (Reporting Summary) :
+  https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM16_ESM.pdf
+  — 3 947 814 o, SHA-256
+  `69a959c3ff56eff607dfa561b8734f537780e16dcf8376ade26c1b0afb95c499`.
+- MOESM3–MOESM15, MOESM17 : SHA re-vérifiés identiques à
+  PROVENANCE_884 (§3) ; MOESM13 :
+  `0e009cd5…5340`, 35 732 o.
+- Dépôts : GSA-Human HRA005195 et HRA010277
+  (https://ngdc.cncb.ac.cn/gsa-human) ; Metabolomics
+  Workbench ST003734
+  (https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Study&StudyID=ST003734,
+  projet PR002320, DOI 10.21228/M8R83M) ; Code Ocean 1432248
+  (https://doi.org/10.24433/CO.1432248.v1).
+- Protocole gelé : `PROTOCOL_chen_supplements_889.md`, SHA-256
+  `d4296ddd0c43b44c3a4e943ff12b73cf2eca4cc6960f2eb4f9a3c93a07de792b`.
+- Provenance : `PROVENANCE_889.md`, SHA-256
+  `bd33f8da8c08d8ee37ad6523eb80d398200eb443e3720372fd0b6a89ef37e4f1`.
+- Examen : `chen889_scratch/examine_889.py` SHA
+  `ef2828805ef6e64f88a14f10575c54901619fa689dbc97ccbe483678a51e3645`,
+  `examine_889.json` SHA
+  `0f828245cfad1a2b996c61886aef2f54557e1576035f684668890e9e3aadadb0`.
+
+## 8.89.8 — Ce qui manque
+
+- Table KRAS par PDO (46 DAC) : absente partout ; table MTAP
+  par PDO : absente partout (`MTAP` 0 occurrence dans
+  l'article entier) ; identifiant DAC de l'organoïde G12C
+  unique : absent partout ; T1/T2/T3 non courus (condition
+  non remplie) ; pages live GSA-Human non confirmées (échec
+  réseau) et page Code Ocean non consultée (HTTP 403) —
+  leurs qualifications reposent sur l'article et MOESM16,
+  pas sur les pages live. Tous les SHA de cette section sont
+  relevés des fichiers et re-vérifiés ; aucun nombre n'est un
+  placeholder.
+
+— Fin de la §8.89. —
 
 ---
 
@@ -21547,5 +22773,11 @@ d'expression, sans qu'aucun renommage soit en cause.
 - **21 nov. 2026, 08h47 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — tête `8da66c97`, §8.78–§8.83.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé, ancienne tête `dce4ed07` → nouvelle tête `8da66c97` (1 commit, vérifié en lecture directe : `8da66c97`, 21 nov. 2026 13:47:36 UTC — livre blanc §8.1–§8.83, README, DATA_SOURCES révisée §30–§34). Même blob livre blanc des deux côtés (vérifié par SHA git `45a2b0a5…`). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
 
 - **21 nov. 2026 : FUSION §8.84–§8.86 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1269 PAGES.** Sections rédigées dans `section_8.84_chen2025_drogue.md` (494 lignes, SHA `fd0ac8c2…34d5`), `section_8.85_gdc_mucl3.md` (527 lignes, SHA `0e314d9f…8aca7`) et `section_8.86_gse194249.md` (270 lignes, SHA `f55578f7…98bd`), fusionnées par le coordinateur : titres normalisés « ### 8.84 ... (21 novembre 2026) » (déjà normalisé dans la source), « ### 8.85 ... (21 novembre 2026) » et « ### 8.86 ... (21 novembre 2026) » (date ajoutée, absente du titre source ; les sections sources §8.85/§8.86 commençaient par « # §8.XX — ... ») ; lignes de go/dates : §8.84 et §8.85 portent déjà leur paragraphe go/protocole juste après le titre (§8.84 : protocole gelé ~14h10 EST ; §8.85 : protocole gelé ~08h55 EST) — aucune ligne ajoutée, pas de doublon ; §8.86 : ligne de go ajoutée (protocole gelé ~14h00 EST, source PROTOCOL_gse194249_886.md) ; marqueurs de fin déjà normalisés dans les trois sources (« — Fin de la §8.XX. — », conservés) ; note de fin de chantier §8.85.11 (« pour le coordinateur », après le marqueur de fin) TRONQUÉE à la fusion — 512 lignes fusées sur 527 ; lignes 90–92 au §7 ; entrées de journal ajoutées pour les poussées `4135ad7c` (principal, §8.78–§8.83, Release v6.2-8.83) et `8da66c97` (suite, privée) ; DATA_SOURCES.md révisée (1 177 lignes, SHA `2b0d94ec…`, nouvelles §35 lot drogue Chen MOESM3–MOESM17, §36 remappage MUCL3 HGNC/Ensembl, §37 GSE194249 ; MOESM13 déjà couverte, rappelée ; données GDC déjà couvertes, rappelées) ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 21 549 lignes, SHA-256 `7fa942dc…16da0` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-886`, FIN 21 nov. 2026 14:47 UTC, soit 09h47 heure de Montréal) : **1269 pages A4, 14 283 320 octets, SHA-256 `be1ebbfb6c57b932461185917d6d1163e38d7ddc3a2e608ab2e0fe2020c1fd77`** (ancien 1220 pages, SHA `2792c53f…`) ; couverture §8.1–§8.86 (kicker 19–21 novembre 2026, nouveau paragraphe §8.84–§8.86) ; §8.84 à §8.86 et entrées 4135ad7c/8da66c97 vérifiés présents par lecture du PDF, chiffres clés présents (+0,0982 ; +0,0884 ; INUTILISABLE ; 10/14 ; 0/15 609). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`). Écarts nommés, non corrigés dans ce lot : (1) le fichier source §8.86 écrit A2 « 9/13 » en 3 endroits (verdict, §8.86.3, bilan) et « la quatorzième paire n'a pas eu lieu » — chiffres d'avant §8.85, qui a fait A2 10/14 ; la ligne §7 n° 92 porte 10/14, le texte §8.86 est fusé tel quel ; (2) dans PROVENANCE_884, les suffixes tronqués consignés pour MOESM5, MOESM7 et MOESM8 ne correspondent pas aux SHA complets recalculés depuis les fichiers détenus (préfixes conformes ; suffixe MOESM7 = terminaison de MOESM9, suffixe MOESM8 = sous-chaîne du SHA de MOESM14, suffixe MOESM5 dans aucun SHA) — les SHA complets cités au §35 de DATA_SOURCES.md sont ceux des fichiers détenus. Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
+
+- **21 nov. 2026, 09h49 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `c696e173`, §8.84–§8.86, RELEASE v6.2-8.86.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `4135ad7c` → nouvelle tête `c696e173` (3 commits, vérifiés en lecture directe : `a0c01783` (1/3, livre blanc, README, DATA_SOURCES, provenance, sections, scripts, results), `d949c314` (2/3, data_flux), `c696e173` (3/3, MANIFEST_SHA256.txt) ; commits 21 nov. 2026 14:49:09–14:49:31 UTC). Contenu : livre blanc §8.1–§8.86 (21 551 lignes, SHA `a9db8e09…`, blob git `7dc665b0…`), PDF 1269 pages (14 283 320 octets, SHA `be1ebbfb…`). Release `v6.2-8.86` : PDF 1269 p. (asset de Release, créé par le parent). Cette entrée clôt la mention « Poussée GitHub à venir » de l'entrée de fusion §8.84–§8.86 ci-dessus.
+
+- **21 nov. 2026, 09h49 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — tête `4052c0f3`, §8.84–§8.86.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé, ancienne tête `8da66c97` → nouvelle tête `4052c0f3` (1 commit, vérifié en lecture directe : `4052c0f3`, 21 nov. 2026 14:49:42 UTC — livre blanc §8.1–§8.86, README, DATA_SOURCES révisée §35–§37). Même blob livre blanc des deux côtés (vérifié par SHA git `7dc665b0…`). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
+
+- **21 nov. 2026 : FUSION §8.87–§8.89 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1310 PAGES.** Sections rédigées dans `section_8.87_consolidation_gdc.md` (428 lignes, SHA `4af7adb1…b4c0a3`), `section_8.88_gse194249_11flux.md` (556 lignes, SHA `d2c8d678…45052`) et `section_8.89_chen_supplements.md` (258 lignes, SHA `b697f4c9…0a428`), fusionnées par le coordinateur : titres normalisés « ### 8.87 Consolidation de §8.85 : 10 nuls frais sur GDC ORGANOID-PANCREATIC — FRAGILE CONFIRMÉ (21 novembre 2026) », « ### 8.88 GSE194249 à 11 flux : quinzième paire NON — `maxsep` ne sépare pas, le réel est dans la distribution des nuls (21 novembre 2026) » et « ### 8.89 Suppléments Chen non téléchargés (MOESM1, MOESM2, MOESM16) et dépôts : aucune table par-PDO KRAS / MTAP nulle part — piste fermée (21 novembre 2026) » (les sections sources §8.87/§8.88 commençaient par « # §8.XX — ... », §8.89 était déjà normalisée ; la date était déjà dans les trois titres) ; lignes de go/dates : les trois sections portent déjà leur paragraphe go/protocole juste après le titre (§8.87 : go 10h07, protocole gelé ~10h09 EST ; §8.88 : go 10h07, protocole gelé ~10h10 EST ; §8.89 : feu vert 10h07, protocole gelé ~10h15 EST) — aucune ligne ajoutée, pas de doublon ; marqueurs de fin déjà normalisés dans les trois sources (« — Fin de la §8.XX. — », conservés) ; notes de fin de chantier (« pour le coordinateur », après le marqueur de fin) TRONQUÉES à la fusion — §8.87 : 410 lignes fusées sur 428 (§8.87.7), §8.88 : 542 lignes fusées sur 556 (§8.88.11), §8.89 : 258/258 ; lignes 93–95 au §7 ; entrées de journal ajoutées pour les poussées `c696e173` (principal, §8.84–§8.86, Release v6.2-8.86) et `4052c0f3` (suite, privée) ; DATA_SOURCES.md révisée (1 356 lignes, SHA `2c8df23c…`, nouvelles §38 consolidation GDC 10 nuls frais, §39 GSE194249 à 11 flux, §40 suppléments Chen MOESM1/MOESM2/MOESM16 et dépôts ; matrice GSE194249 déjà couverte (§37), rappelée ; données GDC déjà couvertes (§31), rappelées) ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 22 781 lignes, SHA-256 `c535571b…6ccc9a` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-889`, FIN 21 nov. 2026 15:54:53 UTC, soit 10h54:53 heure de Montréal) : **1310 pages A4, 14 515 988 octets, SHA-256 `9a04e93b37d55ccbdfc2eda995f7e2837d3adfc87579233367661346d4c65bfa`** (ancien 1269 pages, SHA `be1ebbfb…`) ; couverture §8.1–§8.89 (kicker 19–21 novembre 2026, nouveau paragraphe §8.87–§8.89) ; §8.87 à §8.89 et entrées c696e173/4052c0f3 vérifiés présents par lecture du PDF, chiffres clés présents (+0,0314 ; −0,0239 ; 10/15 ; PISTE FERMÉE) ; **les 2 corrections datées du 21 nov. 2026 vérifiées présentes dans le PDF** : les deux paragraphes « Correction datée » A2 9/13 → 10/14 (§8.84 et §8.86, 2 occurrences) et les suffixes SHA MOESM5/7/8 corrigés (anciens suffixes 1eb46c / 2a1957 / 4f06e : 0 occurrence ; suffixes corrigés ef25eb / a194fe / d5e389 : présents, via le corps du §8.84 et l'annexe des provenances, PROVENANCE_884.md corrigée). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`, SHA complet v6.2 `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`). Écarts nommés, non corrigés dans ce lot : (1) dans PROVENANCE_889 §7, le SHA tronqué noté pour examine_889.json (`0f828245…bef946`) ne correspond pas au SHA complet recalculé depuis le fichier détenu (`0f828245…aadadb0`, conforme au §4 de la même provenance) — probable coquille de transcription ; le SHA complet cité au §40 de DATA_SOURCES.md est celui du fichier détenu. (2) PROVENANCE_884.md local (SHA `8a1ffcd3…`) diffère du distant à c696e173 (SHA `1eb03395…`) uniquement par les 3 suffixes MOESM5/7/8 corrigés après la poussée — le fichier corrigé est repris dans le snapshot de cette publication (commit 1, modification) pour que le distant ne garde pas des suffixes connus faux. Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
 
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*

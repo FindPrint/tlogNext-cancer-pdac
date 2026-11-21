@@ -1,0 +1,58 @@
+{
+  "real_csv": "pdac_885_gdc_organoid_fluxes.csv",
+  "real_sha": "a83b98175bdbc33525ba8a175aa898504d2cc44125b891d0902c6c6c26345eaf",
+  "seeds": [
+    8871,
+    8872,
+    8873,
+    8874,
+    8875,
+    8876,
+    8877,
+    8878,
+    8879,
+    8880
+  ],
+  "nulls": {
+    "8871": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8871.csv",
+      "sha256": "4ad645ca2a9938d4aedffd84c8e5d32134a10a3838f19b879655b526cc6266d9"
+    },
+    "8872": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8872.csv",
+      "sha256": "7888cdfdad7bab463a14b4ba1f4fd5462bf43f3571e9cfa38419742c5d940f46"
+    },
+    "8873": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8873.csv",
+      "sha256": "804571d744a434f8884c0d9fd7e493d27c385592eddf98f9f736714226d87d47"
+    },
+    "8874": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8874.csv",
+      "sha256": "605ae0228ce9425b945481e6c35de8c16d866b4e8f7563517d17fcbc58e65acb"
+    },
+    "8875": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8875.csv",
+      "sha256": "2e74c5a0f5dd1cab4bcb0c52faffeed94565261ab7db73e9fc314bc9ee8622c8"
+    },
+    "8876": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8876.csv",
+      "sha256": "ec2ca1a72869543574004acfa114fe0c92a3b1bd71dfa63be67e329c97b77a98"
+    },
+    "8877": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8877.csv",
+      "sha256": "64e1eb438b9acd7ed528601cb9ce04d276484347c8dc4511adae229beacf2b59"
+    },
+    "8878": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8878.csv",
+      "sha256": "7f46f5812ac75c41da930af17017e266e1815c754a53fa9e186acb87ecb69e50"
+    },
+    "8879": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8879.csv",
+      "sha256": "5460483f94235e4b9205c278f4e9066c6633ca161ce24936b5b84a30307b7b63"
+    },
+    "8880": {
+      "file": "pdac_885_gdc_organoid_fluxes_nul_s8880.csv",
+      "sha256": "449eff62d0c151689ae27e5ae5f24f659ef997bd4ae4276651915689bb99fd79"
+    }
+  }
+}

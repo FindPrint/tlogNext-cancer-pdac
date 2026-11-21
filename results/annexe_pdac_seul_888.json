@@ -1,0 +1,53 @@
+{
+  "cohorte": "GSE194249, lignées CAS-DAC-* seules",
+  "n": 75,
+  "flux": [
+    {
+      "gene": "PGC",
+      "rho_pdac_seul": -0.12961593172119487
+    },
+    {
+      "gene": "REG4",
+      "rho_pdac_seul": 0.3967964950822069
+    },
+    {
+      "gene": "CLDN18",
+      "rho_pdac_seul": 0.08156472261735419
+    },
+    {
+      "gene": "MUC17",
+      "rho_pdac_seul": 0.23617522173585792
+    },
+    {
+      "gene": "CR2",
+      "rho_pdac_seul": 0.12910475892758216
+    },
+    {
+      "gene": "KRT20",
+      "rho_pdac_seul": 0.2380695629395302
+    },
+    {
+      "gene": "MUC2",
+      "rho_pdac_seul": 0.05738264580369844
+    },
+    {
+      "gene": "GSTM1",
+      "rho_pdac_seul": -0.11128983741499551
+    },
+    {
+      "gene": "CEACAM5",
+      "rho_pdac_seul": 0.07046941678520625
+    },
+    {
+      "gene": "CLCA1",
+      "rho_pdac_seul": 0.29698935905418444
+    },
+    {
+      "gene": "MUC16",
+      "rho_pdac_seul": -0.0227027027027027
+    }
+  ],
+  "rho_median": 0.08156472261735419,
+  "n_rho_positifs": 8,
+  "rho_moyen_abs": 0.16092369588950126
+}

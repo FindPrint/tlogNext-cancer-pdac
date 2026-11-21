@@ -1,0 +1,120 @@
+{
+  "tag": "gdc_organoid",
+  "comparaisons": [
+    {
+      "dir": "results_fast_v62_885_gdc_organoid",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_885_gdc_organoid_nul",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_885_gdc_organoid_nul_s8851",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_885_gdc_organoid_nul_s8852",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8871",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8872",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8873",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8874",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8875",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8876",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8877",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8878",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8879",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    },
+    {
+      "dir": "results_fast_v62_887_gdc_organoid_nul_s8880",
+      "ecart_maxsep": 0.0,
+      "ecart_mc_score": 0.0,
+      "ecart_stability": 0.0,
+      "version_extraction": "v6.2.0-L7aL7b-CohenD-short",
+      "version_relecture": "v6.2.0-L7aL7b-CohenD-short"
+    }
+  ],
+  "ecart_max": 0.0,
+  "verdict": "OK",
+  "n_compares": 14
+}

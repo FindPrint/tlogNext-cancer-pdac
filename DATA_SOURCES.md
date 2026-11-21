@@ -6,6 +6,7 @@
 **Révision §8.77 :** 21 novembre 2026 — toutes les URL manquantes du §17 ont été retrouvées et vérifiées par SHA-256 (voir §29, chantier §8.77) ; nouvelle §28 (sources du §8.76) et §29 (bilan du chantier). Aucun verdict du livre blanc n'est modifié par cette révision.
 **Révision §8.83 :** 21 novembre 2026 — nouvelles §30 (inventaire §8.78, supplément Chen MOESM13), §31 (13e paire GSE57495 + arrêt C2 GDC, §8.79), §32 (TCGA-UVM, §8.81), §33 (TCGA-GBM, §8.82) et §34 (survie §8.83, aucune source nouvelle) ; §8.80 (veille clinique) sans donnée nouvelle. GSE57495 déjà couverte (ligne §21 / §8.69) — rappelée, pas re-ajoutée. Aucun verdict du livre blanc n'est modifié par cette révision.
 **Révision §8.86 :** 21 novembre 2026 — nouvelles §35 (lot drogue Chen 2025, suppléments MOESM3–MOESM17, §8.84), §36 (remappage DPCR1 → MUCL3, réponses HGNC/Ensembl, §8.85) et §37 (GSE194249, matrice FPKM déposée, §8.86) ; MOESM13 déjà couverte (§30) — rappelée, pas re-ajoutée ; données GDC déjà couvertes (§31) — rappelées, pas re-téléchargées. Aucun verdict du livre blanc n'est modifié par cette révision.
+**Révision §8.89 :** 21 novembre 2026 — nouvelles §38 (consolidation GDC, 10 nuls frais, §8.87), §39 (GSE194249 à 11 flux, §8.88) et §40 (suppléments Chen MOESM1/MOESM2/MOESM16 et dépôts, §8.89) ; matrice GSE194249 déjà couverte (§37) — rappelée, pas re-téléchargée ; données GDC déjà couvertes (§31) — rappelées, pas re-téléchargées. Aucun verdict du livre blanc n'est modifié par cette révision.
 **Périmètre :** tous les fichiers de `~/workspace/runs/pdac-v6/data/` (87 fichiers, ~2,44 Go) + un fichier brut hors `data/` (`data_clinical_patient.txt`, racine de `pdac-v6/`).
 **Règle appliquée (Zackary, 27 oct. 2026 — provenance toujours nommée) :** chaque URL est copiée telle quelle depuis une provenance lue ; **aucune URL n'a été inventée**. Quand une URL n'est pas dans une provenance, c'est écrit noir sur blanc : « URL non consignée dans les provenances ».
 
@@ -1136,6 +1137,184 @@ l'API E-utilities, voir ci-dessous).
   (SHA `fa3f622c…`). Verdict §8.86 : **INUTILISABLE** comme 14e paire (DPCR1 absent) ;
   A2 reste 10/14 ; piste fermée comme paire à 12 flux.
 
+## 38. Consolidation de §8.85 : 10 nuls frais sur GDC ORGANOID-PANCREATIC (§8.87, 21 nov. 2026)
+
+**Aucun nouveau téléchargement dans ce chantier** : les 55 TSV GDC sont déjà
+couverts (§31 — manifeste SHA `f713edebf0f8afb20305b1472d480564e45ac31ce79e28350d7dde6ae496220b`,
+55/55 MD5 conformes, total 232 648 892 o) ; le CSV réel
+`pdac_885_gdc_organoid_fluxes.csv` (44 lignes + en-tête, TPM GDC
+`tpm_unstranded`, ordre KRAS, MUCL3 ex-DPCR1) est celui du §8.85,
+SHA-256 `a83b98175bdbc33525ba8a175aa898504d2cc44125b891d0902c6c6c26345eaf`,
+vérifié inchangé avant, pendant et après la construction des nuls.
+
+**Nouveaux fichiers du chantier — 10 nuls frais** (permutation des lignes du
+bloc des flux du CSV réel, `rng(graine)`, colonne `step` intacte, graines
+8871–8880 gelées avant toute construction ; échantillons hypothétiques, pas
+des mesures ; 3 905 o chacun ; SHA-256 complets recalculés depuis les fichiers
+détenus, conformes à `nulls_887_files.json` SHA
+`7703708b79018d833479fa4528bc4f3c85e01876baff8cdb085c387d40bbe360` et à
+PROVENANCE_887) :
+s8871 `4ad645ca2a9938d4aedffd84c8e5d32134a10a3838f19b879655b526cc6266d9` ;
+s8872 `7888cdfdad7bab463a14b4ba1f4fd5462bf43f3571e9cfa38419742c5d940f46` ;
+s8873 `804571d744a434f8884c0d9fd7e493d27c385592eddf98f9f736714226d87d47` ;
+s8874 `605ae0228ce9425b945481e6c35de8c16d866b4e8f7563517d17fcbc58e65acb` ;
+s8875 `2e74c5a0f5dd1cab4bcb0c52faffeed94565261ab7db73e9fc314bc9ee8622c8` ;
+s8876 `ec2ca1a72869543574004acfa114fe0c92a3b1bd71dfa63be67e329c97b77a98` ;
+s8877 `64e1eb438b9acd7ed528601cb9ce04d276484347c8dc4511adae229beacf2b59` ;
+s8878 `7f46f5812ac75c41da930af17017e266e1815c754a53fa9e186acb87ecb69e50` ;
+s8879 `5460483f94235e4b9205c278f4e9066c6633ca161ce24936b5b84a30307b7b63` ;
+s8880 `449eff62d0c151689ae27e5ae5f24f659ef997bd4ae4276651915689bb99fd79`.
+Vérification de construction : 10/10 nuls — même en-tête que le réel, `step`
+intact, marginales préservées exactement par colonne, ordre différent du réel.
+
+Scripts : `build_nulls_887.py` (SHA `4da79e8a912b62634e96ed3a2f2a4ef681c0ef5e4b2587b2c4bfa4ec2be61e05`) ;
+`extract_887.py` (SHA `1f608c82ee58400b59f039ac2d0207237daf1f0abaa54875009116281c98f57c`) ;
+`verify_887.py` (SHA `b173c3733d4a5141d7ade7daeb6dec3992874054b328c7e2222ec3695f3298af`).
+Résultats : `extract_887.json` (SHA `ca66461a50df41ec38e8cd3001e2fb6377b461c687d7902a98baa404a4cb5e74`) /
+`extract_887.csv` (SHA `5dfad9318d743cdf1d32083b5f2bb0465fdf420f38d009ff6f97e9471e7a7b5b`) ;
+`dist_887.json` (SHA `aacd01c3e99554c3e6b8861a88c590602892ef9ea01d19256d818b5880cc28fd`) ;
+`maxsep_887_verify.json` (SHA `9926c87de071ce4fddbdd14648e76c5d6bb727e28393737b841d12a6186cb381`) ;
+`nulls_887_files.json` (SHA `7703708b79018d833479fa4528bc4f3c85e01876baff8cdb085c387d40bbe360`).
+Manifeste `manifest_v62_887.txt` (SHA `d013077a1d01686c7730adcb6f027e872babb5a81237c6f8a93df38582c70913`) ;
+journal `runs_v62_887.log` (SHA `b9a0e84a1af568297c8e917c6bee90de339195ddbd404949e5c736e64247a698`) :
+début 2026-11-21T15:09:50Z, FIN 2026-11-21T15:41:40Z, **10/10 exit 0, 0 échec**.
+Protocole `PROTOCOL_consolidation_gdc_887.md` (SHA `956d5e44…`) ; provenance `PROVENANCE_887.md`
+(SHA `53c4e516…`). Verdict §8.87 : **FRAGILE CONFIRMÉ**, d_médian +0,0314, rang 13/14,
+2/13 écarts au-dessus du plancher ; A2 inchangé 10/14 ; C3 reste levée.
+
+---
+
+## 39. GSE194249 à 11 flux : quinzième paire (§8.88, 21 nov. 2026)
+
+**Aucun nouveau téléchargement dans ce chantier** : la matrice FPKM déposée
+`GSE194249_PDPCOs_FPKM.txt.gz` est déjà couverte (§37 — URL
+`https://ftp.ncbi.nlm.nih.gov/geo/series/GSE194nnn/GSE194249/suppl/GSE194249_PDPCOs_FPKM.txt.gz`,
+4 927 876 o, SHA-256 `479517fbed1d8f5bb9d141b6b932b6ab56ba2ba72d4394d13aea2a3da0a50f27`,
+re-vérifiée par SHA avant construction, identique au §8.86) ; métadonnées
+E-utilities `gse194249_esummary_886.json` (SHA `73934e46a717a5db1ed8cd8e1c4349435683a0eed1dda85fe7b097ec448f460e`,
+§37) et reçu `download_gse194249_886_receipt.json` (SHA `fd9bd625a3869086d06b11bb4896b5e5de7f05da91bf5867bca8d1bf83a016ea`,
+§37) réutilisés tels quels.
+
+**Nouveaux CSV de flux du chantier** (re-découpage de la matrice déposée :
+sélection des 11 gènes + KRAS, exclusion des 3 normaux `NPC-*`, tri par KRAS
+FPKM croissant, `step` = rang ; aucune renormalisation, aucune transformation
+log, aucune imputation ; 84 PDPCOs, 7 902 o chacun ; SHA-256 complets
+recalculés depuis les fichiers détenus, conformes à PROVENANCE_888 §7) :
+réel `pdac_888_gse194249_fluxes.csv` SHA `7799a62a6c1145b728e60a2d1126a93b86c28123744c0dc904e454c35ae9aeda` ;
+nul graine 42 SHA `2f633871d068ceaa7152f10d1190ecb7ca4a58eef0d3e4cfb3a9ad322db44569` ;
+nuls frais s8881 SHA `f95b7cc4add9f23963d476a939ee9b66317f720eaa12f92e331c184a44388f49`,
+s8882 SHA `78b1f280d8409b04fe92f7509c8291c718c3acb634c73a61f6b5da2fa4829950`.
+Nuls = échantillons hypothétiques (permutation des lignes, graines 42 / 8881 / 8882).
+
+Scripts : `build_fluxes_888.py` (SHA `f598c4b464db90b0394a1e1511115161526b183b229f292854f3391edfbd5e70`) ;
+`extract_888.py` (SHA `3dc9ff8b40f9d0fb2afe9c1cfb8047ee05d69643338b704f593fd746f296681d`) ;
+`verify_888.py` (SHA `689f0463a2c2dbfd871f3c81adc62452f39e6358155af7c9120ebc268659c6f7`) ;
+`direct_tests_888.py` (SHA `ec93dcfdcb4c5f04dbc59ac17fe25b7e04aee9f216e441a2822f582cc2486a39`).
+Résultats : `extract_888.json` (SHA `ad34293d02661f43070aac97921ba21aa4f9ab020f11691762763368a6ebe0dc`) /
+`extract_888.csv` (SHA `52f2feb8f1c44b4825c77cd27987d23b5d57b72b089218f912ff0f0e87146f64`) ;
+`maxsep_888_verify.json` (SHA `53aeadc4675516676f822459d56b9929a1da310218e4b8926912b4783530db27`) ;
+`direct_tests_888.json` (SHA `92f43c24ee30c2cfeecce3f624d9e6deff293e974c2497d87b05be9c961671b1`) ;
+`annexe_pdac_seul_888.json` (SHA `c724fa849d757b65486f70bdc2e4815ea9460ccfe7e97a38d550b56248b94910`) ;
+`build_fluxes_888_audit.json` (SHA `7e30cdb03a5f40f03a867bba9bbc9a24f9c28e219e5ae25d783a0471e281bc13`).
+Manifestes `manifest_v62_888.txt` (SHA `77538d050b80e9f63982bf33ac513f14d78a3e02b3779f6a151e2de6405aaa80`) et
+`manifest_v62_888_frais.txt` (SHA `48f841c799706257a34318d05268b9c7f5e6010167a92f32d919c42d8306192d`) ;
+journaux `runs_v62_888.log` (SHA `35aa2a01f6b6c820afde80df22eba5830c9b9148c62f5f7c7acac9ca01478fc7`) et
+`runs_v62_888_frais.log` (SHA `513d439125f20e2abdafc6f08ae3d4d6bb867e10ba976352cb60cd374d25a1d5`) :
+paire FIN 2026-11-21T15:23:29Z, nuls frais FIN 2026-11-21T15:36:25Z, **4/4 exit 0**.
+Protocole `PROTOCOL_gse194249_11flux_888.md` (SHA `f5eb1f95…`) ; provenance `PROVENANCE_888.md`
+(SHA `f90b8658…`). Verdict §8.88 : **NON**, d_maxsep −0,0239 ; A2 devient 10/15
+(12/15 positifs), LOO 9/14 ; C3 reste levée ; caveat « 11 flux, DPCR1 absent » écrit.
+
+---
+
+## 40. Suppléments Chen non téléchargés (MOESM1, MOESM2, MOESM16) et dépôts (§8.89, 21 nov. 2026)
+
+**Article :** Yin, X., Shen, H., Wang, H. *et al.*, *Nature Communications* **16**,
+2214 (2025), DOI 10.1038/s41467-025-57520-3
+(https://doi.org/10.1038/s41467-025-57520-3, CC BY-NC-ND 4.0).
+Inventaire exhaustif des suppléments : page de l'article relue le 21 nov. 2026
+(`chen884_scratch/article.html`, 734 178 o, SHA-256
+`b9ee6c7e6b47a8079c72c02ebb34cd6c9ecc17f565b0b23a47b13a4a393f4f4d`) —
+exactement MOESM1 à MOESM17, aucun MOESM18 dans le HTML. Confirmation par
+requête : MOESM18 `.pdf` et `.xlsx` retournent HTTP 403 (aucun fichier servi)
+le 21 nov. 2026 ~15h10 EST. Motif URL Springer :
+`https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM{n}_ESM.{pdf,xlsx}`
+
+**Nouveaux téléchargements du chantier (§8.89 §2, après le gel)** — fichiers
+détenus dans `chen889_scratch/`, SHA-256 complets recalculés depuis les
+fichiers détenus, tailles mesurées localement :
+
+- **MOESM1 — Supplementary Information** :
+  `https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM1_ESM.pdf`,
+  **24 268 877 o**, SHA-256 `4b70d25b078f21cc2612963d807e9a1ab27782ccc8aa721482043b16e60aa61f`,
+  HTTP 200. Texte extrait `MOESM1.txt` (379 692 o, 3 971 lignes, SHA-256
+  `0f87343e1cf2e419b122982ba49eb8be94ecd57bb69ea2aadeb9a4f0f2801b06`) :
+  17 Supplementary Figures, 4 Supplementary Tables, 1 Supplementary Note ;
+  comptages exacts : `DAC` 59, `KRAS` 6, `MTAP` 0, `9p21` 0, `G12C` 2,
+  `CDKN2A` 0. Aucune ligne par patient, aucun identifiant DAC, sauf la
+  Fig. 14c (p. 21) : barre d'annotation `CFTR mutation` MT/WT sur 57
+  organoïdes (MT = DAC_13, DAC_30, DAC_72, DAC_73 ; recoupement 38/46 avec
+  les PDO criblés) — variable **non recevable** comme base de test
+  (barre de figure, pas une table ; couverture 38/46 < 40 ; MT n = 4 ;
+  définition en conflit avec la Fig. 6e pour DAC_24 et DAC_84).
+- **MOESM2 — Peer Review File** :
+  `https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM2_ESM.pdf`,
+  **4 586 550 o**, SHA-256 `ce939f2227d92a7147e3d5c6681bd9fe0e8ab70c5a8c7fad99695016bfd65d67`,
+  HTTP 200. Texte extrait `MOESM2.txt` (110 168 o, 1 760 lignes, SHA-256
+  `9084f5ebbfccce0e68692ca5d563e53835ed79e87553c39429d342ed41635318`) :
+  comptages exacts : `DAC` 2, `KRAS` 15, `MTAP` 0, `9p21` 0, `G12C` 7,
+  `CDKN2A` 1 — discussion d'évaluation par les pairs uniquement, aucune
+  table ; point décisif : **UN seul organoïde KRAS p.G12C**, toujours sans
+  identifiant DAC nommé.
+- **MOESM16 — Reporting Summary** :
+  `https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-57520-3/MediaObjects/41467_2025_57520_MOESM16_ESM.pdf`,
+  **3 947 814 o**, SHA-256 `69a959c3ff56eff607dfa561b8734f537780e16dcf8376ade26c1b0afb95c499`,
+  HTTP 200. Formulaire Nature Portfolio (image, sans texte extractible ;
+  4 pages rendues en PNG et lues) ; texte extrait `MOESM16.txt` (7 o,
+  1 ligne, SHA-256 `c97ac254423c01ccffc2b53ac620eb9f686d449dbe9fb2394925c03a9254132d`) :
+  aucune table de données, aucun génotype, aucun identifiant DAC.
+
+**Suppléments déjà détenus — re-vérifiés sans re-téléchargement** (SHA-256
+re-calculés le 21 nov. 2026, **tous identiques** aux empreintes PROVENANCE_884,
+§35) : MOESM3 (140 637 o, SHA `3a84243b…5313c569`), MOESM4 (`09968fbc…171dfd`),
+MOESM5 (`c759ab51…ef25eb`), MOESM6 (`af69c390…01392`), MOESM7 (`bf5cab3f…a194fe`),
+MOESM8 (`9b440dd9…d5e389`), MOESM9 (`017632df…1957`), MOESM10 (`2e65713b…48ccaa`),
+MOESM11 (`da2c4583…ff25c`), MOESM12 (`70a0ff03…904b`), MOESM14 (`55c35f4a…3864`),
+MOESM15 (`10ce1ef8…7a44`), MOESM17 (5 454 570 o, SHA `917a1011…511f7b1`),
+MOESM13 (35 732 o, SHA `0e009cd5…5340`).
+
+**Dépôts cités dans « Data availability » (consultés, aucun téléchargement)** :
+- **GSA-Human (NGDC) HRA005195** : séquences brutes WGS/WES/RNA-seq de la
+  cohorte découverte + WGS de la cohorte de validation fonctionnelle
+  (69 organoïdes). **Accès contrôlé** (données humaines ; accord de transfert
+  de matériel requis). Page publique tentée le 21 nov. 2026 : `browser.open`
+  en échec (erreur réseau, sans statut HTTP) — page live non confirmée ;
+  **aucune demande d'accès, aucun compte créé, aucun téléchargement de
+  lectures brutes**. Contenu : des lectures brutes, pas une table par-PDO.
+- **GSA-Human (NGDC) HRA010277** : RNA-seq et ATAC-seq des organoïdes +
+  RNA-seq des lignées. Même statut : accès contrôlé, mêmes limites ; page non
+  consultée (même échec réseau, non répété). Pas une table par-PDO.
+- **Metabolomics Workbench ST003734** (projet PR002320, DOI
+  10.21228/M8R83M) : page d'étude consultée en direct le 21 nov. 2026 —
+  **lipidomique de la lignée PANC-1** (52 échantillons : CFTR OE / EV /
+  p.L88X / p.E681V / p.C1355Y + QC, 4 réplicats techniques), pas des
+  organoïdes, aucun identifiant DAC, aucun KRAS/MTAP. Aucune table par-PDO.
+- **Code Ocean 1432248** (DOI 10.24433/CO.1432248.v1) : **code seulement**
+  (article § Code availability et MOESM16 p. 1 : « All original code has
+  been deposited in Code Ocean »). Page DOI tentée le 21 nov. 2026 :
+  HTTP 403 (accès refusé en amont), non répétée. Aucun génotype attendu.
+
+**Examen** : script `examine_889.py` (SHA `ef2828805ef6e64f88a14f10575c54901619fa689dbc97ccbe483678a51e3645`),
+sortie `examine_889.json` (SHA `0f828245cfad1a2b996c61886aef2f54557e1576035f684668890e9e3aadadb0`).
+**Écart nommé dans PROVENANCE_889 §7 :** le SHA tronqué qui y est noté pour
+`examine_889.json` (`0f828245…bef946`) ne correspond pas au SHA complet
+recalculé ci-dessus (conforme au §4 de la même provenance) — probable
+coquille de transcription. Le SHA complet cité ici est celui du fichier détenu.
+Protocole `PROTOCOL_chen_supplements_889.md` (SHA `d4296ddd…`) ; provenance `PROVENANCE_889.md`
+(SHA `bd33f8da…`). Verdict §8.89 : **PISTE FERMÉE** — aucune table par-PDO
+KRAS/MTAP dans les 17 suppléments ni dans les dépôts consultables ; D3/D4
+restent IMPOSSIBLES ; la question des hits du §8.84 reste sans réponse.
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash
@@ -1167,7 +1346,7 @@ sha256sum ~/workspace/runs/pdac-v6/data_clinical_patient.txt
 
 ## Annexe B — Provenances lues pour rédiger ce document
 
-`PROVENANCE_depmap.md`, `PROVENANCE_tcga.md`, `PROVENANCE_tcga_v2.md`, `PROVENANCE_tcga_v3.md`, `PROVENANCE_tcga_v4.md`, `PROVENANCE_cptac.md`, `PROVENANCE_geo71729.md`, `PROVENANCE_geo62452.md`, `PROVENANCE_geo71729_survival.md`, `PROVENANCE_icgc.md`, `PROVENANCE_gdsc.md`, `PROVENANCE_prism_secondary.md`, `PROVENANCE_kras_g12d.md`, `PROVENANCE_kras_combinations.md`, `PROVENANCE_crispr_scan.md`, `PROVENANCE_mtap.md`, `PROVENANCE_mtap_pancancer.md`, `PROVENANCE_mtap_series.md`, `PROVENANCE_prmt5_mtap.md`, `PROVENANCE_mtap_prmt5_flux.md`, `PROVENANCE_mtap_arbitration_840.md`, `PROVENANCE_pancancer.md`, `PROVENANCE_parp_v6.md`, `PROVENANCE_immune_v6.md`, `PROVENANCE_immune_parp_v6.md`, `PROVENANCE_atr_chek1.md`, `PROVENANCE_muc16_cldn182.md`, `PROVENANCE_rotations.md`, `PROVENANCE_rotations_v61.md`, `PROVENANCE_rotations_dedup_844.md`, `PROVENANCE_testA_proliferation.md`, `PROVENANCE_testC_stage.md`, `PROVENANCE_v6.1.md`, `PROVENANCE_v6.2.md`, `PROVENANCE_878.md`, `PROVENANCE_879.md`, `PROVENANCE_880.md`, `PROVENANCE_881.md`, `PROVENANCE_882.md`, `PROVENANCE_883.md`, `PROVENANCE_884.md`, `PROVENANCE_885.md`, `PROVENANCE_886.md`, `PROVENANCE_priv_881.json`, `source_registry.md` (registre de synthèse du 16 nov. 2026), `~/workspace/staging-pdac/download_data.sh`, `~/workspace/runs/pdac-v6/download_gpl6244_mapping.py`, journaux `data/download_depmap.log`, `data/download_firehose.log`, `data/download_omicscn.log`, réponses JSON `data/panc1_api.json`, `data/panc1_9191.json`, `data/panc1_9197.json`, `data/panc1_ncats.json`.
+`PROVENANCE_depmap.md`, `PROVENANCE_tcga.md`, `PROVENANCE_tcga_v2.md`, `PROVENANCE_tcga_v3.md`, `PROVENANCE_tcga_v4.md`, `PROVENANCE_cptac.md`, `PROVENANCE_geo71729.md`, `PROVENANCE_geo62452.md`, `PROVENANCE_geo71729_survival.md`, `PROVENANCE_icgc.md`, `PROVENANCE_gdsc.md`, `PROVENANCE_prism_secondary.md`, `PROVENANCE_kras_g12d.md`, `PROVENANCE_kras_combinations.md`, `PROVENANCE_crispr_scan.md`, `PROVENANCE_mtap.md`, `PROVENANCE_mtap_pancancer.md`, `PROVENANCE_mtap_series.md`, `PROVENANCE_prmt5_mtap.md`, `PROVENANCE_mtap_prmt5_flux.md`, `PROVENANCE_mtap_arbitration_840.md`, `PROVENANCE_pancancer.md`, `PROVENANCE_parp_v6.md`, `PROVENANCE_immune_v6.md`, `PROVENANCE_immune_parp_v6.md`, `PROVENANCE_atr_chek1.md`, `PROVENANCE_muc16_cldn182.md`, `PROVENANCE_rotations.md`, `PROVENANCE_rotations_v61.md`, `PROVENANCE_rotations_dedup_844.md`, `PROVENANCE_testA_proliferation.md`, `PROVENANCE_testC_stage.md`, `PROVENANCE_v6.1.md`, `PROVENANCE_v6.2.md`, `PROVENANCE_878.md`, `PROVENANCE_879.md`, `PROVENANCE_880.md`, `PROVENANCE_881.md`, `PROVENANCE_882.md`, `PROVENANCE_883.md`, `PROVENANCE_884.md`, `PROVENANCE_885.md`, `PROVENANCE_886.md`, `PROVENANCE_887.md`, `PROVENANCE_888.md`, `PROVENANCE_889.md`, `PROVENANCE_priv_881.json`, `source_registry.md` (registre de synthèse du 16 nov. 2026), `~/workspace/staging-pdac/download_data.sh`, `~/workspace/runs/pdac-v6/download_gpl6244_mapping.py`, journaux `data/download_depmap.log`, `data/download_firehose.log`, `data/download_omicscn.log`, réponses JSON `data/panc1_api.json`, `data/panc1_9191.json`, `data/panc1_9197.json`, `data/panc1_ncats.json`.
 
 **Écarts relevés pendant la rédaction (signalés dans le texte) :**
 1. `PROVENANCE_geo62452.md` indique 819 249 octets pour `GPL6244_probe2symbol.tsv` — c'est la taille de `GPL570_probe2symbol.tsv` ; le fichier GPL6244 fait 382 034 octets (25 293 sondes, contenu conforme).

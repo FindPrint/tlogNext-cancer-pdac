@@ -6,11 +6,11 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## État au 21 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 1269 pages (PDF partagé séparément),
-  SHA-256 `be1ebbfb6c57b932461185917d6d1163e38d7ddc3a2e608ab2e0fe2020c1fd77`
-  (14283320 octets), sections §8.1–§8.86. Le fichier Markdown ici a pour SHA-256
-  `a9db8e09334ca278a31ec513c6b3aa6da2a7bd71c78ab515f73b78a63f076090`
-  (21551 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 1310 pages (PDF partagé séparément),
+  SHA-256 `9a04e93b37d55ccbdfc2eda995f7e2837d3adfc87579233367661346d4c65bfa`
+  (14515988 octets), sections §8.1–§8.89. Le fichier Markdown ici a pour SHA-256
+  `39d3abd65eda029efb959934ecdf17a10f14ba85b0b15f9c03c9e86fc8358696`
+  (22783 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -19,6 +19,27 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   `universal_v6.4.0_cohen.py` (recomposition du MC par la
   récurrence-concentration) est joint pour vérification : proposition
   REJETÉE (§8.52), v6.2 reste la version de travail.
+- Les 3 verdicts §8.87–§8.89 : (§8.87) consolidation de la quatorzième paire
+  GDC avec 10 nuls frais (graines 8871–8880, + 3 anciens = 13 nuls) —
+  **FRAGILE CONFIRMÉ** : d_médian +0,0314 (réel 0,2542 contre nul médian
+  0,2229), sous le seuil de consolidation 0,09 et sous le plancher 0,07 ;
+  réel battu par 1 nul sur 13 (s8880, 0,2689 — rang 13/14), sous le p95 des
+  nuls (d contre p95 = −0,0042) ; **2/13 écarts au-dessus du plancher** ;
+  **A2 inchangé 10/14** ; 10/10 runs exit 0, vérification 14/14 à 0,0 exact ;
+  C3 reste levée. (§8.88) GSE194249 à 11 flux, quinzième paire — **NON** :
+  d_maxsep −0,0239 (réel 0,2306 contre nul 0,2545), le nul graine 42 sépare
+  plus que le réel ; **A2 devient 10/15** (12/15 positifs), LOO 9/14 ; nuls
+  frais +0,0517 / +0,0354 ; 4/4 runs exit 0, vérification 4/4 à 0,0 exact ;
+  C3 reste levée ; caveat « 11 flux, DPCR1 absent » écrit. (§8.89) trois
+  derniers suppléments Chen (MOESM1, MOESM2, MOESM16) et dépôts consultables
+  — **PISTE FERMÉE** : aucune table par-PDO KRAS / MTAP dans les 17
+  suppléments ni dans les dépôts consultables (HRA005195 et HRA010277 :
+  accès contrôlé, lectures brutes ; ST003734 : lipidomique PANC-1 ;
+  Code Ocean 1432248 : code seulement) ; **drogue × KRAS et drogue × MTAP
+  IMPOSSIBLES** ; la question des hits du §8.84 reste sans réponse, pas
+  tranchée négativement ; seule variable par-organoïde nouvelle, le statut
+  CFTR MT/WT de la Fig. 14c (MOESM1), non recevable (38/46 couverts,
+  MT n = 4, en conflit avec la Fig. 6e).
 - Les 3 verdicts §8.84–§8.86 : (§8.84) lot drogue Chen 2025 (46 PDO × 63 AUC,
   ordonnés par sensibilité à la gemcitabine) — **CONFIRME (exploratoire, consolidée)** :
   d_maxsep +0,0982 (réel 0,3478 contre nul 0,2496), 3/3 nuls au-dessus du plancher
@@ -224,7 +245,7 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.86).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.89).
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
@@ -234,16 +255,16 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   version corrigée §8.77 (SHA `55811136…`, 52 fichiers, EXIT:0, test à froid
   à 0,0 exact ; original `~/workspace/staging-pdac/download_data.sh`,
   SHA `4e151d59…`).
-- `provenance/` — 108 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 115 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 154 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249).
-- `sections/` — sections §8.38–§8.86 du livre blanc, fichiers sources.
-- `scripts/` — 228 scripts de construction des flux, d'extraction et
+- `results/` — 166 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249, consolidation GDC 10 nuls frais, GSE194249 à 11 flux, suppléments Chen MOESM1/2/16).
+- `sections/` — sections §8.38–§8.89 du livre blanc, fichiers sources.
+- `scripts/` — 236 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 803 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.86.
+- `data_flux/` — 820 CSV/JSON : flux d'entrée des runs, tests directs,
+  extraits ssep / v62_delta / §8.46–§8.89.
 
 ## Données brutes
 
@@ -254,7 +275,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (1269 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (1310 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 

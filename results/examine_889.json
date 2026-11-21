@@ -1,0 +1,353 @@
+{
+  "new_files": {
+    "MOESM1_SupplInfo.pdf": {
+      "bytes": 24268877,
+      "sha256": "4b70d25b078f21cc2612963d807e9a1ab27782ccc8aa721482043b16e60aa61f",
+      "matches_download_receipt": true
+    },
+    "MOESM2_PeerReview.pdf": {
+      "bytes": 4586550,
+      "sha256": "ce939f2227d92a7147e3d5c6681bd9fe0e8ab70c5a8c7fad99695016bfd65d67",
+      "matches_download_receipt": true
+    },
+    "MOESM16_ReportingSummary.pdf": {
+      "bytes": 3947814,
+      "sha256": "69a959c3ff56eff607dfa561b8734f537780e16dcf8376ade26c1b0afb95c499",
+      "matches_download_receipt": true
+    }
+  },
+  "held_files_reverified": {
+    "MOESM3_description.pdf": {
+      "sha256": "3a84243b7b4c3bbab172a4ead61725663fd076cd00664091ea0fad3c5313c569",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM4.xlsx": {
+      "sha256": "09968fbc39659f2ddf79bc40b7269e4cb5899e719bfb9d4b869ae1d55c171dfd",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM5.xlsx": {
+      "sha256": "c759ab51256b69605fcaba96e30d0f90a95c3737db4cb16eb46ce4b4d8ef25eb",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM6.xlsx": {
+      "sha256": "af69c390a301f390a7c0d5b2e949057af813300f75669b62321c7ec55cb01392",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM7.xlsx": {
+      "sha256": "bf5cab3f8f874451bcbc5aedbf4820481575d73fa079292797de5c63aca194fe",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM8.xlsx": {
+      "sha256": "9b440dd95795d33585f3ae712dc1aa457bf5bc079dea704125a7c98a99d5e389",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM9.xlsx": {
+      "sha256": "017632df49433135102830813ca7dfaaee56684264c1540b2614a79b802a1957",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM10.xlsx": {
+      "sha256": "2e65713b3c575be73f81d4cf21b704a235315f6220472f64db0972465a48ccaa",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM11.xlsx": {
+      "sha256": "da2c45834835df838c5d7555c5ed45a4642bca1be2d7e788520e066ed12ff25c",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM12.xlsx": {
+      "sha256": "70a0ff03362fe595f8b93662a2eec30b5978631a2077deb0d46dadecd8ff904b",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM14.xlsx": {
+      "sha256": "55c35f4a2b49e5622b3d297fdffe1d7b7c7a66d8347edfc54f06e34b72de3864",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM15.xlsx": {
+      "sha256": "10ce1ef81e6c75841419bafbbee1c52d86550a63474d76a634509bbccb8d7a44",
+      "matches_PROVENANCE_884": true
+    },
+    "MOESM17_sourcedata.xlsx": {
+      "sha256": "917a1011426c5ee749343ccabf8126e35923a65c4719ec929f84aa29a511f7b1",
+      "matches_PROVENANCE_884": true
+    }
+  },
+  "MOESM13": {
+    "sha256": "0e009cd56d2f6c25b0b355590becc4abfee3e1080633173bc33606d1bf325340",
+    "matches_PROVENANCE_884": true
+  },
+  "keyword_counts": {
+    "MOESM1": {
+      "DAC": 59,
+      "KRAS": 6,
+      "MTAP": 0,
+      "9p21": 0,
+      "G12C": 2,
+      "CDKN2A": 0,
+      "organoid": 4,
+      "Organoid": 4,
+      "Supplementary Table": 4,
+      "Supplementary Fig": 34
+    },
+    "MOESM2": {
+      "DAC": 2,
+      "KRAS": 15,
+      "MTAP": 0,
+      "9p21": 0,
+      "G12C": 7,
+      "CDKN2A": 1,
+      "organoid": 71,
+      "Organoid": 2,
+      "Supplementary Table": 0,
+      "Supplementary Fig": 23
+    },
+    "MOESM16": {
+      "DAC": 0,
+      "KRAS": 0,
+      "MTAP": 0,
+      "9p21": 0,
+      "G12C": 0,
+      "CDKN2A": 0,
+      "organoid": 0,
+      "Organoid": 0,
+      "Supplementary Table": 0,
+      "Supplementary Fig": 0
+    }
+  },
+  "MOESM16_text_chars": 1,
+  "fig14c": {
+    "n_tokens": 57,
+    "n_unique": 57,
+    "order_visual": [
+      "DAC_13",
+      "DAC_30",
+      "DAC_72",
+      "DAC_73",
+      "DAC_1",
+      "DAC_2",
+      "DAC_4",
+      "DAC_5",
+      "DAC_7",
+      "DAC_10",
+      "DAC_16",
+      "DAC_18",
+      "DAC_20",
+      "DAC_21",
+      "DAC_22",
+      "DAC_24",
+      "DAC_25",
+      "DAC_28",
+      "DAC_29",
+      "DAC_31",
+      "DAC_32",
+      "DAC_35",
+      "DAC_37",
+      "DAC_39",
+      "DAC_42",
+      "DAC_14",
+      "DAC_34",
+      "DAC_6",
+      "DAC_52",
+      "DAC_53",
+      "DAC_54",
+      "DAC_56",
+      "DAC_57",
+      "DAC_58",
+      "DAC_60",
+      "DAC_61",
+      "DAC_63",
+      "DAC_64",
+      "DAC_65",
+      "DAC_66",
+      "DAC_67",
+      "DAC_68",
+      "DAC_69",
+      "DAC_70",
+      "DAC_71",
+      "DAC_75",
+      "DAC_76",
+      "DAC_77",
+      "DAC_78",
+      "DAC_80",
+      "DAC_81",
+      "DAC_82",
+      "DAC_83",
+      "DAC_84",
+      "DAC_85",
+      "DAC_88",
+      "DAC_89"
+    ]
+  },
+  "MOESM13_columns": {
+    "n": 46,
+    "cols": [
+      "DAC_61",
+      "DAC_88",
+      "DAC_56",
+      "DAC_25",
+      "DAC_30",
+      "DAC_31",
+      "DAC_2",
+      "DAC_13",
+      "DAC_16",
+      "DAC_37",
+      "DAC_67",
+      "DAC_75",
+      "DAC_80",
+      "DAC_82",
+      "DAC_57",
+      "DAC_83",
+      "DAC_22",
+      "DAC_4",
+      "DAC_5",
+      "DAC_73",
+      "DAC_20",
+      "DAC_78",
+      "DAC_76",
+      "DAC_32",
+      "DAC_35",
+      "DAC_99",
+      "DAC_102",
+      "DAC_109",
+      "DAC_110",
+      "DAC_114",
+      "DAC_103",
+      "DAC_104",
+      "DAC_72",
+      "DAC_54",
+      "DAC_58",
+      "DAC_81",
+      "DAC_85",
+      "DAC_89",
+      "DAC_84",
+      "DAC_1",
+      "DAC_42",
+      "DAC_29",
+      "DAC_53",
+      "DAC_64",
+      "DAC_65",
+      "DAC_115"
+    ]
+  },
+  "fig14c_overlap_screened": {
+    "n_fig14c": 57,
+    "n_screened": 46,
+    "n_covered": 38,
+    "screened_not_in_fig14c": [
+      "DAC_102",
+      "DAC_103",
+      "DAC_104",
+      "DAC_109",
+      "DAC_110",
+      "DAC_114",
+      "DAC_115",
+      "DAC_99"
+    ],
+    "fig14c_not_screened": [
+      "DAC_10",
+      "DAC_14",
+      "DAC_18",
+      "DAC_21",
+      "DAC_24",
+      "DAC_28",
+      "DAC_34",
+      "DAC_39",
+      "DAC_52",
+      "DAC_6",
+      "DAC_60",
+      "DAC_63",
+      "DAC_66",
+      "DAC_68",
+      "DAC_69",
+      "DAC_7",
+      "DAC_70",
+      "DAC_71",
+      "DAC_77"
+    ]
+  },
+  "fig14c_MT": {
+    "MT": [
+      "DAC_13",
+      "DAC_30",
+      "DAC_72",
+      "DAC_73"
+    ],
+    "n_MT": 4,
+    "MT_in_screened": [
+      "DAC_13",
+      "DAC_30",
+      "DAC_72",
+      "DAC_73"
+    ],
+    "bar_teal_x_pts": [
+      51.9,
+      74.8
+    ],
+    "bar_orange_from_x_pts": 74.9,
+    "column_pitch_pts": 5.719,
+    "MT_columns_measured": 4.02
+  },
+  "fig6e_CFTR": {
+    "DAC13": "MT",
+    "DAC18": "WT",
+    "DAC2": "WT",
+    "DAC20": "WT",
+    "DAC24": "MT",
+    "DAC29": "WT",
+    "DAC31": "WT",
+    "DAC32": "WT",
+    "DAC34": "WT",
+    "DAC5": "WT",
+    "DAC53": "WT",
+    "DAC54": "WT",
+    "DAC6": "WT",
+    "DAC72": "MT",
+    "DAC84": "MT"
+  },
+  "fig6e_MT": [
+    "DAC13",
+    "DAC24",
+    "DAC72",
+    "DAC84"
+  ],
+  "fig6e_MT_vs_fig14c": {
+    "MT_fig6e_but_WT_fig14c": [
+      "DAC_24",
+      "DAC_84"
+    ],
+    "MT_fig14c_but_not_in_fig6e_15": [
+      "DAC_30",
+      "DAC_73"
+    ],
+    "MT_in_both": [
+      "DAC_13",
+      "DAC_72"
+    ]
+  },
+  "article_html_counts": {
+    "MTAP": 0,
+    "G12C": 6,
+    "Supplementary Table": 7,
+    "HRA005195": 1,
+    "HRA010277": 1,
+    "ST003734": 1,
+    "Code Ocean": 1
+  },
+  "article_html_MOESM": [
+    "MOESM1",
+    "MOESM10",
+    "MOESM11",
+    "MOESM12",
+    "MOESM13",
+    "MOESM14",
+    "MOESM15",
+    "MOESM16",
+    "MOESM17",
+    "MOESM2",
+    "MOESM3",
+    "MOESM4",
+    "MOESM5",
+    "MOESM6",
+    "MOESM7",
+    "MOESM8",
+    "MOESM9"
+  ]
+}
