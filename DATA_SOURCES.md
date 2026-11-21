@@ -652,6 +652,18 @@ ce sont des actifs de Release uniquement. Détail et réassemblage :
 
 ---
 
+## 26. Douzième paire principale GSE131050 (20 nov. 2026)
+
+- **GSE131050** (NCBI GEO ; Rashid et coll. 2020, *Clin Cancer Res* 26(1):82–92, PMID 31754050, doi 10.1158/1078-0432.CCR-19-1467 ; UNC Lineberger, Chapel Hill, USA ; série soumise 10 mai 2019, publique 10 déc. 2019 ; BioProject PRJNA542388, SRA SRP197641) — fichiers officiels : Yeh_seq `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE131nnn/GSE131050/suppl/GSE131050_PurIST_Yeh_seq.tsv.gz` (SHA `2fc0a66e…be5b1`, 9 468 179 o) ; Linehan_seq `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE131nnn/GSE131050/suppl/GSE131050_PurIST_Linehan_seq.tsv.gz` (SHA `729bb794…efc16`, 5 157 464 o) ; matrices GPL18573 `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE131nnn/GSE131050/matrix/GSE131050-GPL18573_series_matrix.txt.gz` (SHA `9b333eb6…7843e`, 6 864 o) et GPL16791 `https://ftp.ncbi.nlm.nih.gov/geo/series/GSE131nnn/GSE131050/matrix/GSE131050-GPL16791_series_matrix.txt.gz` (SHA `03aa8ca6…1df94`, 4 859 o). Lot Yeh_seq FF : 42 tumeurs PDAC primaires flash-frozen (plateforme GPL18573 Illumina NextSeq 500), médiane des réplicats FF pour 4 tumeurs sur 42 ; nature FPKM vs TPM indéterminée (valeurs prises telles que fournies). Flux : `data_flux/pdac_874_yeh_ff_fluxes.csv` (42 lignes, SHA `db258c99…58fe44`), nuls graine 42 (`e9468376…2305b`), 8741 (`627bbf22…771c5`), 8742 (`68d95935…483`). Extraction 4/4 à 0,0 exact (`results/maxsep_874_verify.json`). Manifestes `manifest_v62_874.txt` (`d130c20b…29f`) et `manifest_v62_874_frais.txt` (`4df63561…9094`). Piste suivante nommée : lot Yeh_seq FNA (n = 42 codes), non vérifiée ; lot Linehan_seq inutilisable comme paire principale (37 patients, pré/post mélangées). Détail au §8.74 et dans `PROVENANCE_874.md`.
+
+---
+
+## 27. Clôture du résidu M2 — 40 nuls frais ICGC / GSE62452 (20–21 nov. 2026)
+
+- **Aucune donnée nouvelle** hors des CSV déjà sur disque et de 40 nuls frais : ICGC s61–s90 (`data_flux/pdac_immune_icgc_fluxes_nul_s61.csv` … `s90.csv`) et GSE62452 s31–s40 (`data_flux/pdac_immune_geo62452_fluxes_nul_s31.csv` … `s40.csv`), SHA dans `results/nulls_icgc_gse_875_files.json` (SHA `40ac6212…04b`). Réels relus, jamais re-téléchargés : ICGC `10823879…8adc`, GSE62452 `97c4689a…79a3` (provenances `PROVENANCE_immune_v6.md`, `PROVENANCE_icgc.md`, `PROVENANCE_geo62452.md`). Nuls existants relus : ICGC s11–s30 (§8.53), s31–s40 (§8.63), s41–s60 (§8.73) ; GSE62452 s11–s30 (§8.53). Lot v6.2 fast 40/40 exit 0 (FIN 21 nov. 2026 00:50:42Z), manifeste `manifest_v62_875.txt` (`a8f815b6…`). Verdict : TRANCHÉ–CONFIRMÉ — 24/30 et 9/10 choisissent la config réelle, taux stabilisé 80 %, M2 EXPLIQUÉ. Erreur de transcription documentée et corrigée dans `m2_cloture_875.py` (copie de `fwhm_rob_from_curve`, rob reproduite à 0,00e+00 sur 1 320 configs). Détail au §8.75 et dans `PROVENANCE_875.md`.
+
+---
+
 ## Annexe A — Commandes de vérification (après re-téléchargement)
 
 ```bash

@@ -6,11 +6,11 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## État au 20 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 1061 pages (PDF partagé séparément),
-  SHA-256 `d5f0ed07b694caf40fa2cb6ca30232c1226cc32c6903fc984d02b29b0c4240e1`
-  (13184128 octets), sections §8.1–§8.73. Le fichier Markdown ici a pour SHA-256
-  `bf999cdd40a0a82dce6d6382d2a98122a53721486182de91f299a2414c096e28`
-  (15929 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 1090 pages (PDF partagé séparément),
+  SHA-256 `5db6b001ed0d89feac5cba8fafc8c231a9075deb90cc5bbbb874b773f03c9cd9`
+  (13346927 octets), sections §8.1–§8.75. Le fichier Markdown ici a pour SHA-256
+  `9bad983794023ef6a4f2911b87cd55adca413309016fa6be7f74c1a8c793274c`
+  (16907 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -19,6 +19,21 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   `universal_v6.4.0_cohen.py` (recomposition du MC par la
   récurrence-concentration) est joint pour vérification : proposition
   REJETÉE (§8.52), v6.2 reste la version de travail.
+- Les 2 verdicts §8.74–§8.75 : (§8.74) douzième paire principale
+  GSE131050 lot Yeh_seq FF (n = 42, Rashid et coll. 2020, PMID 31754050,
+  GPL18573, UNC) — **CONFIRME**, de justesse : d_maxsep +0,0739 (réel
+  0,3220 contre nul 0,2481), marge de 0,0039 au-dessus du plancher 0,07,
+  la plus petite marge passante du dossier ; A2 étendu 8/12 (10/12
+  positifs), LOO 7/11 ; passage consolidé par deux nuls frais (3/3 écarts
+  au-dessus du plancher, +0,0976 et +0,1113) ; extraction 4/4 à 0,0
+  exact ; **C3 RESTE LEVÉE** (confirmation supplémentaire, ne rouvre
+  rien) ; piste suivante nommée : lot Yeh_seq FNA (n = 42 codes), non
+  vérifiée. (§8.75) clôture du résidu M2 du §8.63 — **TRANCHÉ–CONFIRMÉ** :
+  la réplication hors échantillon tient (24/30 nuls ICGC frais, 80,0 %,
+  et 9/10 nuls GSE62452 frais choisissent la config réelle) ; le taux
+  stabilisé est **80 %**, pas 85 % (poolé ICGC 64/80, GSE 26/30) ; M2
+  passe de PARTIELLEMENT EXPLIQUÉ à **EXPLIQUÉ** ; 40/40 runs exit 0 ;
+  le déclencheur du pic étroit reste NON ÉLUCIDÉ (§8.73).
 - Les 3 verdicts §8.71–§8.73 : (§8.71) confirmation indépendante maxsep (C3) —
   CONFIRME : la paire GSE60979 (n = 49, Sandhu et coll. 2015, PMID 25579086,
   GPL14550, Oslo) donne d_maxsep +0,2045 (réel 0,4418 contre nul 0,2373),
@@ -108,7 +123,7 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   §8.53 — M1 EXPLIQUÉ (MC haut = permutation, Delta bas = w = 27, qui
   porte 96,8 % de l'effet) ; M2 PARTIELLEMENT EXPLIQUÉ (l'optimiseur
   maximise le MC sur 12 configs fixes, réplication hors échantillon
-  indécise 6/10) ; Delta doit se comparer à w égal.
+  indécise 6/10) ; Delta doit se comparer à w égal. Clos au §8.75 : réplication confirmée (24/30 nuls ICGC frais et 9/10 nuls GSE62452 frais), taux stabilisé 80 %, M2 EXPLIQUÉ.
 - Les 5 verdicts §8.54–§8.58 : (§8.54) infiltration — H1 SOUTENUE : la
   corrélation immunitaire est largement un effet de composition — après
   déconvolution ESTIMATE, la cohésion intra-famille tombe de 0,5563 à
@@ -146,22 +161,22 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.73).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.75).
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
 - `README.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier,
   les sources des données, les SHA-256 de chaque fichier du dépôt.
-- `provenance/` — 80 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 84 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 107 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit).
-- `sections/` — sections §8.38–§8.73 du livre blanc, fichiers sources.
-- `scripts/` — 186 scripts de construction des flux, d'extraction et
+- `results/` — 114 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2).
+- `sections/` — sections §8.38–§8.75 du livre blanc, fichiers sources.
+- `scripts/` — 195 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 724 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.73.
+- `data_flux/` — 771 CSV/JSON : flux d'entrée des runs, tests directs,
+  extraits ssep / v62_delta / §8.46–§8.75.
 
 ## Données brutes
 
@@ -172,7 +187,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (1061 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (1090 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 
