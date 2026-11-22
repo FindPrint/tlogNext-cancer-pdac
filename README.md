@@ -4,13 +4,13 @@ Dépôt public de travail du projet PDAC : recherche d'un remède pour le
 cancer du pancréas avec le pipeline universel de détection de ruptures
 (v6.2), données ouvertes, protocoles gelés, résultats vérifiés.
 
-## État au 21 novembre 2026
+## État au 22 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 1357 pages (PDF partagé séparément),
-  SHA-256 `91989ddb6b6df30f062ecfe8f30b833cb04481549720dc219fb3cba77b487476`
-  (14794967 octets), sections §8.1–§8.92. Le fichier Markdown ici a pour SHA-256
-  `2606caf3e7caaeb3de572160bf63699e59ec036f24b41a93f2d085f3c0f2d333`
-  (23739 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 1436 pages (PDF partagé séparément),
+  SHA-256 `0ece36587bb0a246fb18cb051004cf11db87e5bbaec5eb3339825532b57007b8`
+  (15175137 octets), sections §8.1–§8.97. Le fichier Markdown ici a pour SHA-256
+  `54078164e54549d960fa8fe46a94fee04bbecde5d406927eef2ffb99a5df0b78`
+  (25887 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -19,6 +19,8 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   `universal_v6.4.0_cohen.py` (recomposition du MC par la
   récurrence-concentration) est joint pour vérification : proposition
   REJETÉE (§8.52), v6.2 reste la version de travail.
+  `universal_v6.5.0_cohen.py` (score composite) est joint pour vérification :
+  proposition REJETÉE (§8.95), v6.2 reste la version de travail.
 - Le verdict §8.90 (audit complet, 21 nov. 2026, lecture seule, 4 volets, aucun run) :
   le podcast a dit juste sur un point précis (`maxsep` 6/8 contre MC 1/8, chiffres exacts
   re-vérifiés ; GSE79668 renverse +0,1447 contre 13 nuls ; MTAP 10/10) mais a exagéré en
@@ -28,10 +30,33 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   daté (PROVENANCE_889 §7) et 7 autres incohérences corrigées (dont le titre §8.51, révisé
   par le §8.54) ; aucun avertissement médical visible (0 occurrence de « conseil médical »
   ou « oncologue »), aucune recommandation clinique directe, faits cliniques tous conformes
-  — texte d'avertissement renforcé au §8.90.3.4, sa mise en tête du document est une dette
-  de gabarit ; le mot « universel » est exagéré tel quel (l'Ising n'a jamais tourné en
+  — texte d'avertissement renforcé au §8.90.3.4, sa mise en tête du document était une dette
+  de gabarit, réglée le 22 nov. 2026 (§8.93–§8.97) ; le mot « universel » est exagéré tel quel (l'Ising n'a jamais tourné en
   v6/v6.1/v6.2 ici). Corrections de Zackary (21 nov. 2026) : MC n'est jamais seul — la
   batterie entière fait le verdict ; `maxsep` est le score principal AFFICHÉ, pas le verdict.
+- Les 5 verdicts §8.93–§8.97 (21–22 nov. 2026) : (§8.93) distribution des
+  nuls — **5 SOLIDES / 5 FRAGILES / 5 NON** : A2-distrib 5/15 (12/15 positifs,
+  LOO 4/14), contre A2 classique 10/15 inchangé ; 150/150 nuls frais pipeline,
+  exit 0 (graines 9101–9110) ; C3 reste levée. (§8.94) Delta, nouvelle tentative
+  — **NON ÉLUCIDÉ** (4e tentative, 4e échec au critère gelé du §8.39) : d_div à
+  ±0,10 sur 13,5 % des runs en LOCO (30/222) ; paire médiane 40,1 % (89/222) ;
+  résidu hors ±0,10 sur 50,0 % des paires (53/106) ; à w égal, Delta réel−nul
+  dans ±0,10 sur 71,2 % (52/73) ; aucun run pipeline neuf. (§8.95) score
+  composite v6.5 — **REJETÉ** : échoue à la porte C2 (principales 5/8, barres
+  6/8 et 7/8) et reste strictement inférieur à maxsep seul (V1 5/8 contre 6/8,
+  V2 31/48 contre 37/48) ; copie v6.5 construite et vérifiée, non adoptée —
+  maxsep reste le score principal affiché, MC secondaire. (§8.96) universalité,
+  autre cancer — **LUAD NON, BRCA CONFIRME (partiel)** : LUAD écart maxsep
+  +0,0140, sous le plancher 0,07 ; BRCA écart +0,2182, 3× le plancher, nuls
+  frais +0,2056 / +0,1990, mais MC ne sépare pas et L7b FRAGILE ; confirmation
+  totale non testée. (§8.97) audit de la règle — **AUDIT** : 752 dossiers
+  balayés — 650 propres, 102 avec la signature du doublon, tous des rotations,
+  0 autre cas ; 38 occurrences « monotone »/« monotonie » lues — aucun seuil
+  écarté au motif de non-monotonie ; 257 lignes avec un terme de prédiction —
+  9 formulations reformulées par addendum daté ; preuves re-vérifiées (test à
+  froid §8.77 à 0,0 ; `download_data_877.sh` SHA `55811136…`, EXIT:0,
+  52 fichiers, 2,4 Go ; DATA_SOURCES.md 1 484 lignes, SHA `dec70e17…` ;
+  v6.2/v6.1/v6 inchangés).
 - Les 2 verdicts §8.91–§8.92 (21 nov. 2026, aucun run) : (§8.91) GSE194249,
   re-dérivation depuis les lectures brutes (SRA) — **PISTE FERMÉE**, lectures non
   accessibles en libre accès (SRA 0 expérience pour PRJNA799993 et PRJNA801501,
@@ -120,7 +145,7 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   **REPRODUCTIBILITÉ RÉPARÉE** : 19/19 gaps fermés (URL retrouvée +
   fichier re-téléchargé + SHA vérifié, dont le SOFT GPL20769, le
   fichier clinique du test C et les 4 fichiers CPTAC) ; script de
-  re-téléchargement corrigé (`download_data.sh`, SHA `55811136…`,
+  re-téléchargement corrigé (`download_data_877.sh`, SHA `55811136…`,
   12 corrections, `bash -n` OK), exécuté en entier jusqu'à EXIT:0
   (52 fichiers, 2,4 Go, tous vérifiés) ; test à froid TCGA v4 :
   flux reconstruits SHA-IDENTIQUES et runs v6.2 identiques aux
@@ -271,26 +296,27 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.92).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.97).
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
+- `universal_v6.5.0_cohen.py` — proposition v6.5 REJETÉE (§8.95).
 - `README.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier,
   les sources des données, les SHA-256 de chaque fichier du dépôt.
-- `download_data.sh` — script de re-téléchargement des matrices brutes,
+- `download_data_877.sh` — script de re-téléchargement des matrices brutes,
   version corrigée §8.77 (SHA `55811136…`, 52 fichiers, EXIT:0, test à froid
   à 0,0 exact ; original `~/workspace/staging-pdac/download_data.sh`,
   SHA `4e151d59…`).
-- `provenance/` — 124 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 133 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 166 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249, consolidation GDC 10 nuls frais, GSE194249 à 11 flux, suppléments Chen MOESM1/2/16).
-- `sections/` — sections §8.38–§8.92 du livre blanc, fichiers sources.
-- `scripts/` — 236 scripts de construction des flux, d'extraction et
+- `results/` — 187 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249, consolidation GDC 10 nuls frais, GSE194249 à 11 flux, suppléments Chen MOESM1/2/16, distribution des nuls §8.93 (150 nuls frais), Delta §8.94, composite v6.5 §8.95, universalité LUAD/BRCA §8.96, audit §8.97).
+- `sections/` — sections §8.38–§8.97 du livre blanc, fichiers sources.
+- `scripts/` — 252 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 820 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.89.
+- `data_flux/` — 976 CSV/JSON : flux d'entrée des runs, tests directs,
+  extraits ssep / v62_delta / §8.46–§8.97.
 
 ## Données brutes
 
@@ -301,7 +327,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (1357 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (1436 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 
@@ -309,7 +335,7 @@ au total. Son SHA-256 est rappelé ci-dessus.
 
 La suite du travail (phase 2) se poursuit dans le dépôt
 `tlogNext-pdac-phase2`, travail d'un autre agent — ce dépôt-ci reste
-l'état vérifié du travail v6.2 au 21 novembre 2026.
+l'état vérifié du travail v6.2 au 22 novembre 2026.
 
 Projet : FindPrint / TagPrint. Données ouvertes, code reproductible,
 résultats négatifs rapportés comme les positifs.

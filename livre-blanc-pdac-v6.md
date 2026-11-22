@@ -1,5 +1,19 @@
 # Livre blanc — PDAC : chercher des pistes thérapeutiques avec UNIVERSAL_LOG v6
 
+> **⚠ AVERTISSEMENT — LISEZ CECI D'ABORD**
+>
+> Ce document n'est **pas un conseil médical**. Il ne dit à personne quel traitement prendre, et il ne remplace pas l'avis d'un médecin.
+>
+> Ce que vous lisez ici est un **travail de recherche** : des calculs sur des données publiques, des essais cliniques publiés par d'autres, et des pistes à tester. Le mot « remède » dans ce document veut dire « piste de recherche à tester », jamais « traitement prouvé » ou « traitement à prendre ».
+>
+> **Aucune décision de traitement ne doit reposer sur ce document.** Les médicaments cités ici (par exemple le daraxonrasib ou le vopimetostat) sont des données d'essais cliniques publiés : certains sont approuvés dans certains pays et pour certains patients seulement, d'autres sont encore en essai et ne sont pas disponibles en dehors d'un essai. Les doses écrites ici sont celles des essais, pas des doses à prendre.
+>
+> **Si vous êtes malade ou si un proche est malade, parlez-en à votre oncologue (le médecin spécialiste du cancer) ou à votre médecin traitant.** Eux seuls connaissent votre situation et peuvent dire ce qui s'applique à vous. Ne commencez, ne changez et n'arrêtez aucun traitement à cause de ce document.
+>
+> Si une phrase de ce document vous fait espérer un traitement, montrez-la à votre oncologue et demandez-lui ce qu'elle vaut pour vous.
+
+*— Avertissement placé en tête du document le 22 novembre 2026 (fusion §8.93–§8.97) ; dette de gabarit §8.90.3.4 réglée. Le texte intégral figure aussi au §8.90.3.4.*
+
 **Projet :** cancer du pancréas (PDAC), ARN + protéine + CRISPR + autres flux/données, pipeline UNIVERSAL_LOG v6.
 **Mandat de Zackary :** 15 novembre 2026 — « Trouver un remède pour le cancer du pancréas en utilisant ARN, protéine et CRISPR et autre flux/data information et avec mon pipeline. Maintenir un livre blanc de tout ce que tu fais tester penser analyse connais connais pas. »
 **Document vivant :** mis à jour à chaque étape (fait / testé / pensé / analysé / connu / inconnu). Rien n'est effacé : une correction remplace, elle ne supprime pas l'historique.
@@ -252,6 +266,11 @@ Inventaire tlog28 confirmé : données réelles présentes = TCGA PAAD via cBioP
 | 96 | 21 nov. 2026 | **Audit complet du livre blanc (§8.1–§8.89) (§8.90)** (audit en lecture seule, 21 nov. 2026, 4 volets, aucun run de pipeline, aucun fichier de résultats modifié ; rapports `audit_890/volet1_podcast_mc.md` SHA `c5d90180…c22100`, `volet2_verdicts.md` SHA `a5025999…5913013e`, `volet3_securite.md` SHA `37c72a69…5be`, `volet4_universalite.md` SHA `e7911335…a32` ; **volet 1** : le podcast a dit juste sur un point précis (`maxsep` 6/8 contre MC 1/8, chiffres exacts re-vérifiés ; GSE79668 renverse +0,1447 contre 13 nuls ; MTAP 10/10) mais a exagéré en généralisant (6/8 tient à une paire, ICGC charnière ; rotations sans doublon 37/48, pas 48/48 ; paires récentes contraires : GDC fragile confirmé +0,0314, GSE194249 NON −0,0239) — verdict : un seul chiffre voit une différence là où l'ancien MC ne voyait rien, pas une preuve générale, pas un remède, pas un remplacement de la batterie ; **corrections de Zackary, 21 nov. 2026** : (a) 11h00 MC n'est JAMAIS seul — la batterie entière (29 estimateurs, Q1–Q6, tests de bruit, F1/F2, L7a/L7b, falsification, Delta, `maxsep`) fait le verdict, règle NOUVELLE (« batterie » : 0 occurrence dans le livre blanc) ; survente confirmée à 3 endroits (« `maxsep` seul SUFFIT » §8.56, « adoption de `maxsep` seul » §8.59, journal §7 lignes 215/218 ; « le critère gelé est `maxsep`, et lui seul », 5 occurrences) — addendum daté : `maxsep` = score principal AFFICHÉ, pas le verdict ; (b) 11h01 « MC = pur bruit » tranché en deux parties — comme discriminateur réel/nul sur le cancer, vrai (MC 1/8 §8.35, §8.31, rotations 17/48 puis 12/48, Test A nul 0,4587 au-dessus du réel 0,3638) ; comme nombre sans structure, faux (composite connu, inversion MTAP expliquée par la robustesse seule, M1 expliqué §8.63, pic étroit non élucidé §8.73) ; correction d'un chiffre de la consigne : 1,772 contre 0,121 sur HP35, ce sont les valeurs `maxsep`, pas MC (MC HP35 : 0,6035 contre 0,4086, +0,1950) ; (c) 11h03 code vérifié : v6.2 ligne 3333 (`max_separation`, retourne aussi s_norm, stability, robustness, sharpness) et ligne 10095 (`compare_monte_carlo_regimes`, appelée L10486, résultat retourné L10536 « mc ») — les deux calculés dans le même run ; l'adoption n'a changé que l'ordre d'affichage, pas de v6.5 ; toute formulation « `maxsep` au lieu de MC » est fausse ; **volet 2** : 0 écart numérique sur 9 chiffres clés re-vérifiés ; 1 seule erreur de valeur (coquille SHA PROVENANCE_889 §7, `0f828245…bef946` au lieu de `…aadadb0`) ; plus grave incohérence : titre §8.51 et §7 ligne 210 affirment que la corrélation immunitaire n'est pas un artefact de composition, alors que §8.54.8(f) révise cette lecture sans renvoi — addendum daté avec renvoi ; 8 incohérences au total, toutes corrigées par addendum daté ; classement 6 SOLIDE, 9 FRAGILE, 6 NON PROUVÉ / FERMÉ ; A2 final 10/15, 12/15 positifs, LOO 9/14 ; **volet 3** : AUCUN avertissement médical visible (0 occurrence de « conseil médical » ou « oncologue », aucune section éthique ; couverture affiche « trouver un remède » sans mise en garde) ; aucune recommandation clinique directe, aucune dose comme consigne ; faits cliniques tous conformes (FDA daraxonrasib 26 août 2026, RASolute 302 OS 13,2 vs 6,7 mois HR 0,40, vopimetostat + daraxonrasib ORR 82 % 18/22 non randomisé n=22 sans OS, approbation européenne 16 nov. 2026, IBI343 phase III NCT07066098) ; écarts mineurs seulement (ventilation 2e/3e ligne incomplète, indication FDA simplifiée au §8.20, affirmation NCCN catégorie 1 sans référence vérifiable jointe) — addendum daté ; texte d'avertissement renforcé au §8.90.3.4, sa mise en tête du document est une DETTE pour la prochaine révision du gabarit ; **volet 4** : le mot « universel » est exagéré tel quel ; l'Ising n'a jamais tourné en v6/v6.1/v6.2 dans ce livre blanc ; 32 systèmes inventoriés ; ce qui sépare vraiment : `maxsep` seul, 6/8, 37/48 sans doublon, A2 10/15, HP35 +1,6512, avec ses fragilités ; redéfinition en une phrase au §8.90.4.5). Détail au §8.90. |
 | 97 | 21 nov. 2026 | **GSE194249 : re-dérivation depuis les lectures brutes (SRA) — PISTE FERMÉE (§8.91)** (piste 1 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 11h09 ; protocole gelé avant toute tentative de téléchargement et tout run `PROTOCOL_gse194249_sra_891.md`, SHA `6a743f9c…fba56b` ; provenance `PROVENANCE_891.md`, SHA `a61a8b71…8155f9` ; 5 contrôles d'accès, tous négatifs : SRA 0 expérience pour PRJNA799993 et pour PRJNA801501, lien GEO→SRA aucun, SRA GSE194249 count 0, ENA 0 run ; fiche BioProject PRJNA799993 : « Raw data are not available for this Series due to human genetic resources policy in China. » ; PRJNA801501 : lectures brutes chez NODE, accès contrôlé, OEP001744 — **aucune demande d'accès faite** (geste administratif et juridique, sans go) ; **0 téléchargement, 0 CSV de flux, 0 run v6.2** ; la question « DPCR1/MUCL3 sont-ils quantifiables depuis les lectures brutes ? » reste sans réponse ; **A2 inchangé 10/15** (12/15 positifs), LOO 9/14 ; C3 reste levée. Détail au §8.91. |
 | 98 | 21 nov. 2026 | **Vérification vopimetostat + daraxonrasib, phase 3 : NON CHANGÉ pour la combinaison (§8.92)** (piste 2 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 11h09 ; protocole gelé avant toute recherche `PROTOCOL_vopimetostat_verification_892.md`, SHA `3a1c2824…1e6dba` ; provenance `PROVENANCE_892.md`, SHA `3983873b…6149ca` ; interrogation directe de l'API v2 de ClinicalTrials.gov, 21 nov. 2026 ~12h00 EST : **vopimetostat 2 études, daraxonrasib 16 études, aucune phase 3 de la combinaison** ; TNG462-C102 (NCT06922591) RECRUITING, dernière mise à jour 23 oct. 2026, **aucune nouvelle coupe de données** (ORR 82 %, 18/22, coupure 20 août 2026, PFS médiane non atteinte, sans OS) ; **NON CHANGÉ** : toujours pas de numéro NCT pour la phase 3, démarrage 1er semestre 2027 inchangé ; fait nouveau (1) **NCT07938463 (TAP-ALK : vopimetostat + lorlatinib, CBNPC ALK+ MTAP-délété, Dana-Farber, première publication 16 nov. 2026)** — autre combinaison, pas la phase 3 pancréatique ; fait nouveau (2) **10-Q de Tango du 9 nov. 2026 (SEC, accession 0001193125-26-452634) : « aucune assurance » d'obtenir l'approvisionnement clinique en daraxonrasib** pour la phase 3 — le démarrage 1H 2027 est explicitement conditionné à l'approvisionnement ; rationnel MTAP/PRMT5 mesuré ici ni confirmé ni infirmé ; aucune recommandation clinique. Détail au §8.92. |
+| 99 | 22 nov. 2026 | **Chaque paire jugée contre une distribution de nuls — RÉSULTATS COMPLETS (§8.93)** (piste 1 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 11h36 ; protocole gelé avant tout calcul `PROTOCOL_nulls_distribution_893.md`, SHA `d2cdbc3d…6529a0` ; addendum correction 21 nov. 2026, SHA après ajout `78578444…bd2599` ; provenance `PROVENANCE_893.md` (squelette) ; réplique 1000 permutations par ligne sous les DEUX configs fixes — **30 000 tirages** (15 paires × 2 configs × 1000, graine maîtresse `default_rng(20261121)`) — calibration 30/30 à 0,00e+00 ; **150/150 nuls frais pipeline, exit 0** (graines 9101–9110, étapes 1+2, file `queue_893_896`) ; **5 paires SOLIDES, 5 FRAGILES, 5 NON** — A2-distrib **5/15** (12/15 positifs, LOO 4/14), contre A2 classique 10/15 (12/15 positifs, LOO 9/14) inchangé ; C3 reste levée. Détail au §8.93. |
+| 100 | 21–22 nov. 2026 | **Delta, nouvelle tentative d'élucidation — NON ÉLUCIDÉ (§8.94)** (piste 2 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 11h36 ; protocole gelé avant tout calcul neuf `PROTOCOL_delta_elucidation_894.md`, SHA gelé `79e5567c…5229d` ; provenance `PROVENANCE_894.md`, SHA `3d1892f1…15b1b` ; **NON ÉLUCIDÉ** (4e tentative, 4e échec au critère gelé du §8.39) : d_div à ±0,10 sur **13,5 %** des runs en LOCO (30/222) et 9,7 % sur l'ensemble B (3/31) ; paire médiane **40,1 %** (89/222) ; résidu Delta − F2(ln n) hors ±0,10 sur **50,0 %** des paires (53/106) ; à w égal, Delta réel−nul dans ±0,10 sur **71,2 %** (52/73) ; w déplace Delta (r = +0,603) mais ne le prédit pas ; déclencheur du pic étroit non élucidé (position du split à ±2 pas dans 5/11 cas, niveau du hasard) ; **aucun run pipeline neuf** (lecture seule des sorties détenues + réplique). Détail au §8.94. |
+| 101 | 21 nov. 2026 | **Le score composite v6.5 — REJETÉ (§8.95)** (piste 3 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 11h36 ; protocole gelé avant tout calcul `PROTOCOL_composite_v65_895.md`, SHA `f3fcb38e…66ece` ; provenance `PROVENANCE_895.md`, SHA `e32f47d9…1fd1ba` ; rescore des 60 paires §8.56 depuis les `master_results.json` détenus, **AUCUN run** ; **REJETÉ** : C1 rotations 31/48 — PASSE (barre 30/48) ; C2 principales 5/8 — **ÉCHOUE** (barre 6/8 et 7/8) ; C3 HP35 C = +1,8012 — PASSE (barre 0,30) ; C4 relecture indépendante — PASSE (0,0 exact sur 120/120 runs) ; une seule porte échouée suffit ; le composite est strictement INFÉRIEUR à maxsep seul (V1 5/8 contre 6/8, V2 31/48 contre 37/48) ; copie v6.5 construite et vérifiée, **non adoptée** — maxsep reste le score principal affiché, MC secondaire. Détail au §8.95. |
+| 102 | 21–22 nov. 2026 | **Universalité : le pipeline sur un autre cancer — LUAD NON, BRCA CONFIRME (partiel) (§8.96)** (piste 4 du lot du 21 nov. 2026 ; go de Zackary 21 nov. 2026 11h36 ; protocole gelé avant tout téléchargement nouveau `PROTOCOL_universalite_896.md`, SHA `1349b996…848d8` ; provenance `PROVENANCE_896.md`, SHA `d9554cf3…a92c68` ; **8/8 runs exit 0** ; bras A **LUAD : NON** — écart maxsep réel−nul +0,0140 (réel 0,1502 contre nul 0,1362), sous le plancher 0,07 ; nuls frais +0,0321 / +0,0436, tous deux sous le plancher ; bras B **BRCA : CONFIRME (partiel)** — écart maxsep **+0,2182** (réel 0,3200 contre nul 0,1018), 3× le plancher ; nuls frais +0,2056 / +0,1990 ; mais MC ne sépare pas et L7b FRAGILE ; confirmation totale non testée (test direct de la structure analogue absent). Détail au §8.96. |
+| 103 | 21 nov. 2026 | **Extension d'audit — la règle du 21 nov. 2026 appliquée à tout le livre blanc (§8.1–§8.89) (§8.97)** (protocole gelé avant le travail `PROTOCOL_audit_regle_897.md`, SHA `fa04f4fe…370e` ; provenance `PROVENANCE_897.md`, SHA `5482fcac…3d` ; audit en lecture seule, **aucun run** ; partie 1 : balayage mécanique de **752 dossiers** de runs — 650 propres, 102 avec la signature du doublon, tous des rotations, **0 autre cas** ; partie 2 : 38 occurrences « monotone »/« monotonie » lues — **aucun seuil écarté** au motif de non-monotonie ; partie 3 : 257 lignes avec un terme de prédiction — **9 formulations de verdict reformulées par addendum daté** ; partie 4 : preuves re-vérifiées (test à froid §8.77 à 0,0 ; `download_data_877.sh` SHA `55811136…`, EXIT:0, 52 fichiers, 2,4 Go ; DATA_SOURCES.md 1 484 lignes, SHA `dec70e17…` ; v6.2/v6.1/v6 inchangés) ; dettes nommées — avertissement médical en tête (réglée par cette fusion), SHA PROVENANCE_889 (addendum §8.90 I-1), entrées de journal des poussées e0e282d9, b82c3a19, 6e7d1506 vérifiées présentes au §10. Détail au §8.97. |
 
 ---
 
@@ -22465,6 +22484,8 @@ n'a pas pu être testée, elle n'a pas échoué.
    200 dpi de la p. 21 (positions `pdftotext -bbox`),
    relecture de la Fig. 6e dans MOESM17, recoupement avec
    les 46 colonnes MOESM13.
+
+> **Addendum daté — 22 novembre 2026 (fusion §8.93–§8.97).** Dans l'item ci-dessus, lire `examine_889.json` (SHA `0f828245…aadadb0`, SHA complet `0f828245cfad1a2b996c61886aef2f54557e1576035f684668890e9e3aadadb0`, recalculé le 22 novembre 2026 depuis `chen889_scratch/examine_889.json`) au lieu de `0f828245…bef946` (coquille de transcription ; voir aussi l'addendum §8.90 I-1 et PROVENANCE_889.md §7, addendum daté). Texte d'origine intact.
 4. **Dépôts (§3.4).** Pages publiques consultées :
    Metabolomics Workbench ST003734 (lue en direct),
    GSA-Human HRA005195 (tentée : échec réseau, sans statut
@@ -22878,6 +22899,8 @@ Inventaire complet des doses et schémas cités (tous descriptifs — à conserv
 > Si une phrase de ce document vous fait espérer un traitement, montrez-la à votre oncologue et demandez-lui ce qu'elle vaut pour vous.
 
 **Dette de gabarit (inscrite au journal, §10) :** la mise en tête de cet avertissement — et sa reprise sur la page de couverture du PDF généré — est une dette pour la prochaine révision du gabarit du livre blanc. Tant qu'elle n'est pas faite, chaque PDF publié porte en première page un document dont le mandat affiché (« trouver un remède ») n'est contrebalancé par aucun avertissement visible. Priorité : haute, avant la prochaine publication. **Note explicite : le présent §8.90 contient le texte d'avertissement, mais il ne le met pas lui-même en tête du document — la mise en tête reste à faire, et c'est la dette.**
+
+> **Addendum daté — 22 novembre 2026 (fusion §8.93–§8.97).** Dette réglée : l'avertissement ci-dessus est désormais placé en tête du document, immédiatement sous le titre, avant le §1 (avec une mention de placement datée). Texte d'origine intact.
 
 ### 8.90.3.5 Vérification des faits cliniques sensibles — tous conformes, écarts mineurs seulement
 
@@ -23553,6 +23576,2125 @@ se discute avec un oncologue.
 
 ---
 
+### 8.93 Chaque paire jugée contre une distribution de nuls — RÉSULTATS COMPLETS (22 novembre 2026)
+
+## 8.93.0 Correction de Zackary du 21 novembre 2026 — à lire avant la section
+
+**Correction datée, nommée, de Zackary (21 novembre 2026, 12h03 ;
+portée étendue à tout le projet le 12h04).** Elle s'applique aux quatre
+pistes du lot (§8.93–§8.96) et, rétrospectivement, à tout le livre
+blanc (§8.97). Trois points :
+
+**(1) Un flux en axe de contrôle ne doit JAMAIS être un flux analysé.**
+Le pipeline fait déjà cela — à vérifier et à écrire : c'est vrai pour
+les rotations REFAITES sans doublon (§8.44), mais les 96 fichiers de
+rotations d'origine (§8.32) avaient le défaut du doublon. Dans ce lot,
+les deux sont dits plainement : où la règle est respectée, où elle ne
+l'était pas. Pour chaque piste, l'exclusion du flux de contrôle est
+vérifiée AVANT tout run (addenda datés aux quatre protocoles, 21
+novembre 2026) ; pour les runs déjà lancés au moment de la correction
+(LUAD, §8.96 bras A), la vérification a été faite immédiatement sur
+les fichiers construits, sans relance à l'aveugle, et son résultat est
+consigné. Mécanisme vérifié par lecture du code : le pipeline exclut
+la colonne de contrôle des flux analysés quand aucun `flux_mapping`
+n'est fourni (ligne 6787 de `universal_v6.2.0_cohen.py` :
+`[c for c in ... if c != control_col]`).
+
+**(2) Même un flux NON monotone en axe de contrôle peut donner un
+seuil différent — et c'est de l'information, pas une erreur.** Ce flux
+peut avoir des propriétés distinctes, il fait partie de l'information.
+Ne pas écarter les contrôles non monotones, ne pas exiger la monotonie
+comme condition, et lire leurs seuils comme des résultats d'analyse à
+part entière. Cela nuance la règle ancienne « le contrôle doit être
+monotone en T » : la monotonie aide à lire, elle n'est pas une
+condition pour que le seuil compte. Dans ce lot : aucun seuil écarté
+au motif de non-monotonie sans le dire et le justifier.
+
+**(3) Le pipeline est AVANT TOUT un pipeline d'ANALYSE, pas forcément
+de prédiction.** Tous les verdicts de ce lot sont formulés comme de
+l'analyse (ce que les données montrent) et non comme des prédictions.
+Si une formulation présente un résultat comme une prédiction, elle est
+signalée et reformulée.
+
+## 8.93.1 Question, méthode, règles
+
+**Question.** Jusqu'ici chaque paire a été jugée contre UN seul nul
+(graine 42) ou quelques nuls frais : un réel au-dessus du nul peut
+être un tirage chanceux du nul, ou un nul malchanceux. Question posée :
+chaque paire survit-elle à une DISTRIBUTION de nuls — 1000
+permutations par ligne, plus 10 nuls frais pipeline par paire ?
+
+**Méthode.** Protocole gelé `PROTOCOL_nulls_distribution_893.md` (SHA
+d'origine `d2cdbc3d589d3be61a506f7be2a250d3d4a1c9adc21d1327c8ffc7a61f6529a0`,
+écrit avant tout calcul ; addendum de la correction du 21 novembre
+2026 ajouté ensuite, texte gelé intact). Deux voies, décision de
+faisabilité gelée : 200 nuls pipeline × 15 paires = 3 000 runs ≈ 250 h
+— INFAISABLE en lot unique. Voie gelée : (a) réplique 1000
+permutations par ligne (précédent §8.47/§8.53, calibration à ±0,001
+avant tout tirage, sinon arrêt) sous les DEUX configs fixes (config
+réelle et config nulle du run v6.2 existant) — 30 000 tirages, graine
+maîtresse `default_rng(20261121)`, nouvelle, distincte de §8.47 et
+§8.53 ; (b) 10 nuls frais pipeline par paire, graines gelées 9101–
+9110 (jamais utilisées) — étape 1 : 8 paires principales, 80 runs
+≈ 7 h ; étape 2 : 7 paires A2 restantes, 70 runs ≈ 6 h. La réplique
+reprend les fonctions DU PIPELINE en lecture seule
+(`_build_mc_progress_axis`, `scan_critical_threshold`,
+`evaluate_scan_quality`) ; MC par tirage = 0,3·s_norm + 0,3·stabilité
++ 0,2·robustesse + 0,2·sharpness, pénalité ×0,8 si w < n//10 (code
+v6.2 lignes 3480–3484 et 3727–3731) ; S_sep = maxsep × stabilité.
+
+**Les 15 paires (table §8.88.3 reprise telle quelle ; A2 actuel 10/15,
+12/15 positifs, LOO 9/14).** HP35 (d_maxsep +1,6512), TCGA v4
+(+0,2928), GSE71729 (+0,0402), GSE62452 (−0,0036), ICGC (+0,0970),
+Immunitaire TCGA (+0,3675), PARP TCGA (+0,1688), DepMap (+0,1904),
+GSE21501 (−0,0100), GSE79668 (+0,0567), GSE60979 (+0,2045), GSE131050
+Yeh FF (+0,0739), GSE57495 (+0,4494, 11 flux), GDC ORGANOID (+0,0884,
+12 flux, MUCL3 ex-DPCR1), GSE194249 (−0,0239, 11 flux, DPCR1 absent).
+Toutes ont le contrôle `step` ; n de 42 à 1000.
+
+**Verdicts par paire gelés.** SOLIDE si réel > p95 des nuls ET ≥ 950/
+1000 nuls sous le plancher (écart > 0,07 contre ≥ 95 % des nuls) ;
+FRAGILE si réel > médiane mais ≤ p95, ou 50–95 % sous le plancher ;
+NON si réel ≤ médiane ou < 50 % sous le plancher. A2 recalculé contre
+les distributions (A2-distrib) — il coexiste avec A2 classique, il ne
+le réécrit pas.
+
+**Application de la correction du 21 novembre 2026 à cette piste.**
+(1) Contrôle jamais analysé : vérifié avant les runs — les 15 CSV ont
+le contrôle `step`, KRAS absent des flux ; les 150 nuls frais sont des
+permutations des mêmes CSV ; la réplique exclut la colonne de contrôle
+par construction. Règle respectée. (2) Aucun seuil écarté pour
+non-monotonie. (3) Verdicts formulés comme de l'analyse : la position
+du réel dans la distribution des nuls décrit ce que les données
+montrent, elle ne prédit rien.
+
+## 8.93.2 Résultats — COMPLETS (22 novembre 2026)
+
+**Verdict global.** Sur les 15 paires jugées contre une distribution de
+nuls (1000 permutations par ligne sous config réelle, plus 10 nuls frais
+pipeline par paire), les données montrent : **5 paires SOLIDES, 5
+FRAGILES, 5 NON** — A2-distrib **5/15** (12/15 positifs, LOO 4/14),
+contre A2 classique 10/15 (12/15 positifs, LOO 9/14). Le compte
+classique ne change pas ; c'est la lecture contre une distribution qui
+est deux fois plus sévère. Aucune paire n'est sans résultat exploitable :
+les 15 paires ont une réplique complète (1000 tirages × 2 configs) et
+10 nuls frais pipeline chacune.
+
+## 8.93.2.1 Calibration et exécution
+
+- **Calibration (§3a).** 30/30 runs existants reproduits par la réplique
+  à **0,00e+00** sur maxsep et sur MC, courbes identiques (écart max
+  courbe 0,0) — `nulls_dist_893_verify.json`. La machinerie de réplique
+  est donc la même mesure que le pipeline, à l'identique, avant tout
+  tirage.
+- **Réplique.** **30 000 tirages** (15 paires × 2 configs × 1000
+  permutations par ligne, graines 3000–3999, graine maîtresse
+  `default_rng(20261121)`), valeurs brutes intégrales conservées
+  (`nulls_dist_893_replica_raw.csv`, 30 001 lignes avec en-tête ; 1000
+  tirages par (paire, config), vérifié). Étape 3 de la file, exit 0,
+  22 nov. 2026 12h33 UTC (`queue_893_896.log`).
+- **Nuls frais pipeline.** **150/150 runs, exit 0, 0 échec** — étape 1 :
+  80 runs (8 paires principales), 80 libellés distincts EXIT:0, fin
+  22 nov. 13h16 UTC ; étape 2 : 70 runs (7 paires A2 restantes),
+  70 libellés distincts EXIT:0, fin 22 nov. 15h35 UTC
+  (`runs_nulls_893_e1.log`, `runs_nulls_893_e2.log`). v6.2 SHA vérifié
+  avant chaque lot et à la fin des deux lots : `f07567c4…` inchangé.
+  Marqueur `QUEUE_893_896_DONE` présent.
+- **Ce qui n'a PAS été atteint.** Les ~200 nuls pipeline par paire de
+  la proposition initiale : le protocole gelé l'avait déclaré
+  INFAISABLE en lot unique (3 000 runs ≈ 250 h) et avait gelé la voie
+  réplique + 10 nuls frais en validation. Ce qui a été atteint
+  réellement : 1000 nuls réplique par paire et par config (soit
+  2000 tirages par paire) + 10 nuls frais pipeline par paire. Les
+  10 nuls frais valident la réplique, ils ne la remplacent pas
+  (protocole §7).
+
+## 8.93.2.2 Table des 15 paires — réplique, config réelle
+
+Rang ascendant /1001, réel inclus : rang 1001 = réel au-dessus des
+1000 nuls ; rang 573 = 428 nuls au-dessus du réel. Plancher gelé 0,07 :
+% des nuls dont l'écart réel−nul dépasse 0,07. d_maxsep = écart contre
+UN seul nul (graine 42), table §8.88.3 reprise telle quelle.
+
+| Paire | n | flux | maxsep réel | rang /1001 | p95 nuls | médiane nuls | % nuls sous plancher | nuls réplique au-dessus du réel | d_maxsep (1 nul) |
+|---|---|---|---|---|---|---|---|---|---|
+| HP35 | 1000 | 7 | 1,7718 | 1001 | 0,2097 | 0,1342 | 100,0 % | 0 | +1,6512 |
+| TCGA v4 | 178 | 12 | 0,4623 | 1001 | 0,2644 | 0,1826 | 100,0 % | 0 | +0,2928 |
+| GSE71729 | 145 | 12 | 0,2593 | 913 | 0,2747 | 0,1935 | 46,1 % | 88 | +0,0402 |
+| GSE62452 | 69 | 12 | 0,3100 | 883 | 0,3378 | 0,2447 | 45,4 % | 118 | −0,0036 |
+| ICGC | 70 | 12 | 0,4080 | 991 | 0,3489 | 0,2440 | 93,3 % | 10 | +0,0970 |
+| Immunitaire TCGA | 178 | 12 | 0,5309 | 1001 | 0,3444 | 0,2068 | 99,6 % | 0 | +0,3675 |
+| PARP TCGA | 178 | 12 | 0,3680 | 1001 | 0,2773 | 0,1866 | 97,5 % | 0 | +0,1688 |
+| DepMap | 45 | 12 | 0,4436 | 983 | 0,3977 | 0,2950 | 90,5 % | 18 | +0,1904 |
+| GSE21501 | 132 | 12 | 0,2121 | 620 | 0,2789 | 0,2000 | 2,7 % | 381 | −0,0100 |
+| GSE79668 | 51 | 12 | 0,4104 | 999 | 0,3535 | 0,2801 | 90,8 % | 2 | +0,0567 |
+| GSE60979 | 49 | 12 | 0,4418 | 977 | 0,4143 | 0,2869 | 88,3 % | 24 | +0,2045 |
+| GSE131050 Yeh FF | 42 | 12 | 0,3220 | 991 | 0,2891 | 0,2047 | 84,0 % | 10 | +0,0739 |
+| GSE57495 | 63 | 11 | 0,6381 | 1000 | 0,4292 | 0,2565 | 99,5 % | 1 | +0,4494 |
+| GDC ORGANOID | 44 | 12 | 0,2542 | 884 | 0,2767 | 0,2022 | 32,4 % | 117 | +0,0884 |
+| GSE194249 | 84 | 11 | 0,2306 | 573 | 0,2793 | 0,2248 | 0,8 % | 428 | −0,0239 |
+
+## 8.93.2.3 Lecture par paire — batterie entière
+
+Règle gelée (§4) : SOLIDE si réel > p95 des nuls ET ≥ 95 % des nuls
+sous le plancher ; FRAGILE si réel > médiane mais ≤ p95, ou 50–95 %
+sous le plancher ; NON si réel ≤ médiane ou < 50 % sous le plancher.
+`maxsep` est le score principal AFFICHÉ ; le verdict utilise la
+batterie entière (§8.90.1.2), rapportée ci-dessous par paire depuis
+les runs existants (MC, Delta, L7a, falsification, F1/F2 après seuil).
+
+**SOLIDES (5/15).** HP35 (réel 1,7718, rang 1001, 100,0 % sous le
+plancher) ; TCGA v4 (0,4623, rang 1001, 100,0 %) ; Immunitaire TCGA
+(0,5309, rang 1001, 99,6 %) ; PARP TCGA (0,3680, rang 1001, 97,5 %) ;
+GSE57495 (0,6381, rang 1000 — 1 seul nul réplique au-dessus du réel —
+99,5 %).
+
+**FRAGILES (5/15).** ICGC (réel 0,4080 > p95 0,3489, mais 93,3 % sous
+le plancher < 95 %) ; DepMap (0,4436 > p95 0,3977, 90,5 %) ; GSE79668
+(0,4104 > p95 0,3535, 90,8 %) ; GSE60979 (0,4418 > p95 0,4143, 88,3 %) ;
+GSE131050 Yeh FF (0,3220 > p95 0,2891, 84,0 %). Dans les cinq cas le
+réel est au-dessus du p95 des nuls, mais la queue des nuls mord le
+plancher : moins de 95 % des nuls sont sous l'écart 0,07.
+
+**NON (5/15).** GSE71729 (réel 0,2593 < p95 0,2747, 46,1 % sous le
+plancher, 88 nuls au-dessus du réel) ; GSE62452 (0,3100 < p95 0,3378,
+45,4 %, 118 nuls au-dessus) ; GSE21501 (0,2121, rang 620, 2,7 %,
+381 nuls au-dessus) ; GDC ORGANOID (0,2542 < p95 0,2767, 32,4 %,
+117 nuls au-dessus) ; GSE194249 (0,2306, rang 573, 0,8 %, 428 nuls
+au-dessus — le réel est au milieu de sa distribution de nuls).
+
+Batterie des réels (runs existants, extraction `extract_858.extract`,
+même méthode que les lots précédents) :
+
+| Paire | MC réel | p95 MC réplique | MC réel > p95 MC ? | Delta | L7a (dir, conf) | falsification (statut) | F1 / F2 après seuil |
+|---|---|---|---|---|---|---|---|
+| HP35 | 0,6035 | 0,4248 | oui | 4,483 | up 0,3779 | 1,2656 (ok) | 0,013 / 0,001 |
+| TCGA v4 | 0,3720 | 0,4273 | non | 4,181 | down 0,4052 | 0,8494 (ok) | 0,031 / 0,009 |
+| GSE71729 | 0,3393 | 0,3521 | non | 2,159 | up 0,4154 | 0,6013 (ok) | 0,057 / 0,043 |
+| GSE62452 | 0,3454 | 0,3536 | non | 1,412 | down 0,1974 | 0,1988 (ok) | 0,025 / 0,020 |
+| ICGC | 0,3600 | 0,3582 | oui | 1,444 | up 0,1811 | 0,2379 (ok) | 9,481 / 10,630 |
+| Immunitaire TCGA | 0,3785 | 0,5259 | non | 4,210 | down 0,1835 | 0,9851 (ok) | 11,469 / 18,706 |
+| PARP TCGA | 0,3555 | 0,4517 | non | 4,299 | up 0,1726 | 0,8671 (ok) | 0,391 / 0,343 |
+| DepMap | 0,3615 | 0,3574 | oui | 1,934 | down 0,1959 | indisponible (n=45 < 75) | 1,030 / 1,503 |
+| GSE21501 | 0,3337 | 0,3896 | non | 2,813 | up 0,1622 | 0,2583 (ok) | 41,845 / 46,206 |
+| GSE79668 | 0,3566 | 0,3511 | oui | 0,635 | up 0,3459 | 1,4058 (ok) | 9,717 / 22,575 |
+| GSE60979 | 0,3606 | 0,3605 | oui (à 0,0001 près) | 1,871 | up 0,1388 | 0,1746 (ok) | 9,914 / 19,524 |
+| GSE131050 Yeh FF | 0,3985 | 0,3939 | oui | 1,470 | up 0,3352 | 1,3021 (ok) | 0,477 / 0,525 |
+| GSE57495 | 0,3920 | 0,3775 | oui | 1,403 | up 0,3386 | 0,4476 (ok) | 0,121 / 0,083 |
+| GDC ORGANOID | 0,3880 | 0,3918 | non | 1,468 | up 0,3372 | 1,5177 (ok) | 0,322 / 0,585 |
+| GSE194249 | 0,3350 | 0,3425 | non | 0,991 | up 0,3521 | 1,0904 (ok) | 3,772 / 8,774 |
+
+Trois lectures de la batterie :
+
+- **MC jamais seul (§8.90.1.2).** Sur les 15 paires, le MC réel ne
+  dépasse le p95 MC de sa réplique que pour 7 paires (HP35, ICGC,
+  DepMap, GSE79668, GSE60979, Yeh FF, GSE57495). TCGA v4, Immunitaire
+  TCGA et PARP TCGA sont SOLIDES en maxsep avec un MC réel SOUS le
+  p95 MC de leur réplique (0,3720 contre 0,4273 ; 0,3785 contre
+  0,5259 ; 0,3555 contre 0,4517). À l'inverse, GSE60979 a un MC réel
+  au-dessus du p95 MC (0,3606 contre 0,3605, à 0,0001 près) sans
+  être SOLIDE. Le MC est rapporté, il ne décide pas.
+- **L7b.** FRAGILE sur les 15 réels — audit clos : L7b dit FRAGILE
+  sur le réel comme sur un nul permuté, propriété de la construction
+  du contrôle, pas mesure de fragilité de l'instrument ; il n'entre
+  dans aucun verdict ici.
+- **Falsification et dérivés.** Statut « ok » pour les 14 paires où
+  la falsification est disponible ; indisponible pour DepMap
+  (n=45 < 75). Les dérivés F1/F2 après seuil sont forts (> 1) pour
+  ICGC (9,481 / 10,630), Immunitaire TCGA (11,469 / 18,706),
+  GSE21501 (41,845 / 46,206), GSE79668 (9,717 / 22,575), GSE60979
+  (9,914 / 19,524) et GSE194249 (3,772 / 8,774), faibles (< 1) pour
+  HP35, TCGA v4, GSE71729, GSE62452, PARP TCGA, Yeh FF, GSE57495 et
+  GDC ORGANOID, voisins de 1 pour DepMap (1,030 / 1,503) : la
+  dérivée après seuil ne sépare pas les SOLIDES des NON, elle est
+  rapportée comme élément de la batterie, pas comme critère.
+
+## 8.93.2.4 Nuls frais pipeline — validation de la réplique
+
+10 nuls frais par paire, graines 9101–9110, runs v6.2 fast, exit 0.
+Extraction par `extract_858.extract` (même méthode que les lots
+précédents) — `nulls_dist_893_fresh.json`.
+
+| Paire | frais médiane | frais p95 | frais min–max | frais au-dessus du réel (/10) | frais sous plancher (/10) | p95 frais dans [p2,5 ; p97,5] réplique ? |
+|---|---|---|---|---|---|---|
+| HP35 | 0,0924 | 0,1672 | 0,0747–0,1722 | 0 | 10 | oui [0,0848 ; 0,2311] |
+| TCGA v4 | 0,1857 | 0,2278 | 0,1346–0,2466 | 0 | 10 | oui [0,1262 ; 0,2841] |
+| GSE71729 | 0,1992 | 0,2211 | 0,1663–0,2249 | 0 | 4 | oui [0,1379 ; 0,2944] |
+| GSE62452 | 0,2219 | 0,3203 | 0,1509–0,3259 | 2 | 6 | oui [0,1704 ; 0,3656] |
+| ICGC | 0,2552 | 0,3270 | 0,1939–0,3370 | 0 | 10 | oui [0,1634 ; 0,3764] |
+| Immunitaire TCGA | 0,1719 | 0,2301 | 0,0572–0,2594 | 0 | 10 | oui [0,1158 ; 0,3792] |
+| PARP TCGA | 0,1858 | 0,2161 | 0,1036–0,2173 | 0 | 10 | oui [0,1247 ; 0,2960] |
+| DepMap | 0,3108 | 0,4288 | 0,1327–0,4391 | 0 | 7 | **non** [0,2073 ; 0,4272] — hors de 0,0016 |
+| GSE21501 | 0,2000 | 0,2787 | 0,1772–0,3137 | 3 | 0 | oui [0,1403 ; 0,2999] |
+| GSE79668 | 0,2690 | 0,3138 | 0,2316–0,3185 | 0 | 10 | oui [0,2068 ; 0,3704] |
+| GSE60979 | 0,2493 | 0,3622 | 0,1563–0,3760 | 0 | 9 | oui [0,1881 ; 0,4387] |
+| GSE131050 Yeh FF | 0,2004 | 0,2537 | 0,1554–0,2899 | 0 | 9 | oui [0,1325 ; 0,3080] |
+| GSE57495 | 0,2612 | 0,4115 | 0,2046–0,4864 | 0 | 10 | oui [0,1595 ; 0,4687] |
+| GDC ORGANOID | 0,2031 | 0,2338 | 0,1524–0,2412 | 0 | 3 | oui [0,1259 ; 0,2916] |
+| GSE194249 | 0,2063 | 0,2423 | 0,1767–0,2584 | 1 | 0 | oui [0,1717 ; 0,2908] |
+
+- **Question subsidiaire (§3b).** Le p95 des 10 nuls frais tombe
+  dans l'intervalle [p2,5 ; p97,5] de la réplique pour **14/15
+  paires**. Seule exception : DepMap, p95 frais 0,4288 contre
+  p97,5 réplique 0,4272 — hors intervalle de 0,0016, consigné, pas
+  corrigé, sans effet sur le verdict (DepMap FRAGILE dans les deux
+  lectures).
+- **Aucun nul frais ne renverse la lecture de la réplique.** Les
+  nombres de nuls frais au-dessus du réel (GSE62452 2/10, GSE21501
+  3/10, GSE194249 1/10, 0/10 ailleurs) sont compatibles avec les
+  proportions de la réplique (11,8 %, 38,1 %, 42,8 %) pour un
+  échantillon de 10 ; GSE71729 0/10 frais au-dessus du réel contre
+  8,8 % en réplique est compatible aussi (probabilité d'observer
+  0/10 à 8,8 % : 0,40). Les % sous plancher des frais suivent ceux
+  de la réplique (HP35 10/10 contre 100,0 % ; TCGA 10/10 contre
+  100,0 % ; GSE71729 4/10 contre 46,1 % ; GSE62452 6/10 contre
+  45,4 % ; ICGC 10/10 contre 93,3 % ; DepMap 7/10 contre 90,5 % ;
+  GSE79668 10/10 contre 90,8 % ; GSE60979 9/10 contre 88,3 % ;
+  Yeh FF 9/10 contre 84,0 % ; GSE57495 10/10 contre 99,5 % ; GDC
+  3/10 contre 32,4 % ; GSE21501 0/10 contre 2,7 % ; GSE194249 0/10
+  contre 0,8 %).
+- **L7a des nuls frais** (rapportée, non décisive) : les 10 nuls
+  frais sont tous « up » pour GSE79668, Yeh FF et GDC ORGANOID ;
+  partagés ailleurs (p. ex. DepMap 5 up / 5 down, GSE60979 5 up /
+  5 down, PARP TCGA 7 up / 2 down / 1 flat). Un nul frais peut donc
+  voter « up » comme le réel : la direction L7a seule ne sépare
+  pas le réel du nul.
+
+## 8.93.2.5 A2 recalculé contre les distributions
+
+- **A2-distrib : 5/15 SOLIDES** (HP35, TCGA v4, Immunitaire TCGA,
+  PARP TCGA, GSE57495) ; **positifs 12/15** (inchangé : d_maxsep
+  > 0 pour les mêmes 12 paires que le classique) ; **LOO 4/14**
+  (convention du script : solides − 1 sur 14, même convention que
+  le LOO classique 9/14).
+- **Ce qui bouge par rapport à A2 classique (10/15).** Cinq paires
+  passent de passantes à non-SOLIDES : ICGC, DepMap, GSE60979 et
+  Yeh FF (passantes classiques, devenues FRAGILES : réel au-dessus
+  du p95 des nuls mais moins de 95 % des nuls sous le plancher) et
+  GDC ORGANOID (passante classique à +0,0884, devenue NON : réel
+  sous le p95, 32,4 % sous le plancher). GSE79668, déjà non passante
+  en classique (+0,0567 < 0,07), est lue FRAGILE ici (réel
+  au-dessus du p95, 90,8 % sous le plancher) — la distribution
+  affine la lecture sans la renverser.
+- **Les deux comptes coexistent.** A2 classique 10/15 n'est pas
+  réécrit ; A2-distrib 5/15 est la lecture contre une distribution
+  de nuls. Le verdict par paire décrit la position du réel dans la
+  distribution des nuls observée ; il ne prédit rien sur un futur
+  échantillon (correction du 21 nov. 2026, §8.93.0).
+
+## 8.93.2.6 Sensibilités (rapportées, non décisives)
+
+- **(a) Config nulle au lieu de config réelle.** Verdicts
+  inchangés : les mêmes 5 paires sont SOLIDES sous config nulle
+  (p95 nulle / % sous le plancher : HP35 0,2192 / 100,0 % ;
+  TCGA v4 0,2649 / 99,9 % ; Immunitaire TCGA 0,2936 / 99,3 % ;
+  PARP TCGA 0,2666 / 97,8 % ; GSE57495 0,4230 / 99,7 %) ;
+  DepMap reste FRAGILE (94,6 % sous config nulle) ; ICGC 91,4 %,
+  GSE79668 85,6 %, GSE60979 89,1 %, Yeh FF 81,0 % sous config
+  nulle ; GSE71729 42,6 %, GSE62452 23,7 %, GSE21501 0,0 %,
+  GDC 32,8 %, GSE194249 0,6 %.
+- **(b) Plancher 0,05 et 0,10 au lieu de 0,07 (config réelle).**
+  À 0,05, 7 paires seraient SOLIDES (s'ajoutent ICGC 96,4 % et
+  GSE79668 96,0 % sous le plancher) ; à 0,10, 4 paires (PARP tombe
+  à 93,7 % < 95 %, ICGC à 85,7 %). Le compte SOLIDE bouge 7 → 5 →
+  4 quand le plancher bouge 0,05 → 0,07 → 0,10 — le plancher 0,07
+  reste le plancher gelé, les deux autres sont des sensibilités.
+  (% sous plancher à 0,05 : HP35 100,0 ; TCGA 100,0 ; GSE71729
+  65,2 ; GSE62452 61,8 ; ICGC 96,4 ; Immunitaire 99,7 ; PARP 98,9 ;
+  DepMap 94,2 ; GSE21501 12,0 ; GSE79668 96,0 ; GSE60979 92,2 ;
+  Yeh FF 91,2 ; GSE57495 99,7 ; GDC 52,2 ; GSE194249 7,0. À 0,10 :
+  HP35 100,0 ; TCGA 99,8 ; GSE71729 13,5 ; GSE62452 21,8 ; ICGC
+  85,7 ; Immunitaire 99,3 ; PARP 93,7 ; DepMap 79,7 ; GSE21501 0,1 ;
+  GSE79668 76,1 ; GSE60979 78,9 ; Yeh FF 64,3 ; GSE57495 99,1 ;
+  GDC 10,8 ; GSE194249 0,0.)
+- **(c) S_sep au lieu de maxsep (même règle SOLIDE appliquée à
+  S_sep).** Mêmes 5 SOLIDES (HP35, TCGA v4, Immunitaire TCGA,
+  PARP TCGA, GSE57495 — S_sep réel au-dessus du p95 S_sep et
+  ≥ 95 % des nuls sous le plancher pour ces 5 paires ; rangs
+  S_sep 1001/1001 pour les cinq) ; les 10 autres restent FRAGILES
+  ou NON (rangs S_sep : ICGC 991, DepMap 984, GSE79668 998,
+  GSE60979 978, Yeh FF 991, GSE71729 935, GSE62452 873, GSE21501
+  611, GDC 878, GSE194249 577). La lecture ne dépend pas du choix
+  maxsep / S_sep pour le compte SOLIDE.
+
+## 8.93.2.7 Limites
+
+- La réplique est à config fixe ; l'optimiseur libre (qui choisit
+  sa config par run) élargit légèrement la distribution des nuls
+  (§8.53) — l'écart réplique vs nuls frais pipeline est mesuré ici
+  (§8.93.2.4), pas supposé nul : p95 frais dans l'intervalle
+  réplique pour 14/15 paires, DepMap hors de 0,0016.
+- Les nuls sont des permutations par ligne : ils brisent la
+  structure temporelle/ordonnée, pas les marginales — c'est le nul
+  du projet depuis §8.31, pas un nul biologique.
+- 10 nuls frais par paire ne font pas une distribution à 200 : ils
+  valident la réplique, ils ne la remplacent pas. Les ~200 nuls
+  pipeline par paire de la proposition initiale n'ont pas été
+  atteints (INFAISABLE, 3 000 runs ≈ 250 h, tranché avant le gel) ;
+  ce qui a été atteint : 1000 nuls réplique par paire et par config
+  + 10 nuls frais pipeline par paire.
+- Les verdicts SOLIDE / FRAGILE / NON décrivent la position du réel
+  dans la distribution des nuls observée ; ils ne prédisent rien
+  sur un futur échantillon (correction du 21 nov. 2026, §8.93.0).
+
+## 8.93.3 Provenance — COMPLÉTÉE (22 novembre 2026)
+
+Protocole gelé `PROTOCOL_nulls_distribution_893.md` (SHA d'origine
+`d2cdbc3d589d3be61a506f7be2a250d3d4a1c9adc21d1327c8ffc7a61f6529a0` ;
+addendum correction 21 novembre 2026, SHA après ajout
+`785784446c18f9450fc0963f26c40796dce66e70a329650d2001c19316bd2599`) ;
+addendum `ADDENDUM_correction_20261121_893.md` (SHA
+`50ad59801aa618f1908908c396c536ab649e63dd5ead08f97d591f8dd0bc34ec`) ;
+provenance `PROVENANCE_893.md` (squelette au 21 nov. 2026 — les
+résultats sont consignés ici, dans cette section, et dans les JSON
+ci-dessous, sans réécrire le squelette).
+
+Scripts : `replica_nulls_893.py` (SHA
+`a270da28b0b9d96cdabe18bf189525f42ff0cd9d4bbe9728aa31843b7b9963fe`),
+`extract_893_fresh.py` (SHA
+`405b2cf666efafedfac1693d8f54328040493ffd82ceb4a614c9f4664ca6ec1a`,
+extraction des 150 nuls frais + 15 réels par `extract_858.extract`,
+lecture seule), `build_nulls_893.py`, `run_nulls_893_e1.sh`,
+`run_nulls_893_e2.sh`, `queue_893_896.sh`, `watch_queue_893_896.sh`.
+Versions : v6.2 SHA `f07567c4…` (travail, vérifié avant chaque lot et
+à la fin des deux lots, inchangé), v6.1 SHA `2af5e5ce…` (référence),
+v6 SHA `bb8bbdba…`.
+
+Sorties (SHA-256) : `nulls_dist_893_verify.json`
+`7122d7d7e1fa771ddd243c01593ef3725314d09f1a97dcf5f0ef05a612dd32f8`
+(calibration 30/30 à 0,00e+00) ; `nulls_dist_893_replica.json`
+`50f1924c498ff07fdf36e7a4eeda0c31d98c0f01f474f028005087a9f454fd9b` ;
+`nulls_dist_893_replica_raw.csv`
+`4a4c8cf43de2f456571f0bc71e4b2e0778192e0cf490c563c3a1acfe80ae1fc4`
+(30 000 tirages bruts) ; `nulls_dist_893_table.json`
+`3ce39accab00dae86e713794bc683e8d9f550e8b22a660576837b67f5dad27fd`
+(lecture gelée + A2-distrib) ; `nulls_dist_893_fresh.json`
+`76a571ee6e0339be5442d19127d3da599aba6335860169d5e0ad0544021d8d82`
+(165 runs extraits : 15 réels + 150 nuls frais) ;
+`nulls_dist_893_fresh.csv`
+`d7a06f9064fed03b879ab46f8c7fbdf91c504a642620765cd924e4f5fef2c005` ;
+`nulls_dist_893_fresh_summary.json`
+`dfe619ff9eec8079867aed4856f73e330282cabf27739109f0aef6dc7834535e`
+(résumé par paire) ; `nulls_dist_893_sensibilites.json`
+`7a2f3e5398e9edcfd8e79b8c54900cc1ff76b18558f26636c3e36e999fc5020c`
+(planchers 0,05/0,10, S_sep, MC, question subsidiaire).
+
+Lots : file systemd `queue_893_896` — réplique étape 3 exit 0,
+22 nov. 2026 12h33 UTC ; étape 1 (80 runs) fin 22 nov. 13h16 UTC,
+80 libellés distincts EXIT:0, 0 non nul ; étape 2 (70 runs) fin
+22 nov. 15h35 UTC, 70 libellés distincts EXIT:0, 0 non nul ;
+marqueur `QUEUE_893_896_DONE` (SHA
+`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`,
+fichier vide). Graines : réplique 3000–3999, maître
+`default_rng(20261121)` ; nuls frais 9101–9110 ; CSV des 150 nuls
+frais construits avant les runs, SHA consignés dans
+`nulls_893_files.json` (SHA
+`5787aca22f6950f0af08c555d314e3535f18ea245a8511446d9c42cf4d677d69`).
+
+Correction de nom : le script de re-téléchargement des données est
+`download_data_877.sh` (SHA `55811136…`), pas `download_data.sh` —
+l'ancien nom n'est utilisé dans aucun texte neuf de cette section.
+Aucune recommandation clinique.
+
+— Fin de la §8.93. —
+
+---
+
+### 8.94 Delta, nouvelle tentative d'élucidation — NON ÉLUCIDÉ (21–22 novembre 2026)
+
+Go de Zackary « Faite tout cela » (21 nov. 2026 11h36, piste 2/4 — élucider
+Delta, nouvelle tentative ; protocole gelé avant tout calcul neuf et tout
+run neuf).
+
+**Verdict d'abord, en quatre phrases. (a) NON ÉLUCIDÉ — quatrième
+tentative, quatrième échec au critère gelé du §8.39 (≥ 90 % paires ET
+≥ 90 % valeurs à ±0,10 en hold-out, mécanisme nommé et vérifié sur
+l'ensemble B) : le meilleur modèle honnête prédit d_div à ±0,10 sur
+13,5 % des runs en leave-one-cohort-out (30/222, référence ln n seul
+du §8.62) et 9,7 % sur l'ensemble B (3/31), et l'identité de la paire
+médiane sur 40,1 % des runs (89/222, kNN LOCO, angle A3). (b) L'élucidation
+négative échoue elle aussi : le résidu Delta − F2(ln n) n'est pas du
+bruit — il dépasse ±0,10 dans 53/106 paires (50,0 %, écart-type 0,536)
+— et à w égal, Delta réel−nul reste dans ±0,10 sur 52/73 paires
+seulement (71,2 %), sous la barre de 90 %. (c) Ce qui est établi :
+w déplace Delta fortement (r = +0,603 ; la réplique Tier-2 fait passer
+Delta de +0,21 à +1,13 entre w = 27 et w = 30 sur les 8 paires
+principales, et l'écart réel−nul s'effondre à w égal : 8/8 paires dans
+±0,10 à w = 27, 6/8 à w = 30) — mais ni w seul, ni ln n seul, ni
+w + ln n ne prédisent le niveau en hold-out, et la structure des flux
+ne choisit pas la paire. (d) Le déclencheur du pic étroit reste non
+élucidé par cette voie : la position du split prédite par l'extrémité
+non signée G tombe à ±2 pas du vrai pic dans 5/11 cas (niveau du
+hasard), aucune statistique ne sépare rob-on de rob-off (AUC 0,23–0,47),
+et le lot frais ne contient aucune courbe rob-on (P1 non testable, P2
+en échec : 0 vrai positif, 23 faux positifs). Delta reste une piste
+fragile et ne devient pas un discriminateur recommandé.**
+
+## 8.94.1 Ce qui était acquis avant ce chantier
+
+Le §8.39 avait clos la voie « variables structurelles » (meilleur
+hold-out honnête 87,9 % paires / 81,8 % valeurs, H9e) et nommé la
+structure : GraphDimension et PersistentHomology toujours les deux plus
+basses (222/222), LocalPCA toujours 3e ou 4e (222/222), le choix se
+jouant entre trois magnitudes continues séparées de ~0,5. Le §8.42
+avait clos la voie « résumés de flux » (meilleur LOCO 68,9 % paires /
+6,3 % valeurs ; `log(n)` meilleur trait unique pour 12 cibles sur 13)
+et ouvert deux voies : modéliser depuis les séries entières, et la loi
+d'échelle en n. Le §8.57 avait clos la voie « séries complètes »
+(meilleur modèle honnête S2d : 89,2 % paires / 90,5 % valeurs en LOCO,
+manquant le critère de 2 runs ; 89,4 % / 89,4 % en split, manquant de
+1 run) et le §8.62 la loi d'échelle en n (F2 R² = 0,673 < 0,80 ;
+LOCO R² = −0,005), en laissant ouvert le critère (ii) jamais testé
+seul : le résidu Delta − F2(ln n) sépare-t-il réel de nul ? Le §8.63
+avait expliqué M1 (MC haut = propriété de la permutation, Delta bas =
+propriété de w = 27, écart +0,7 entre w = 27 et w = 30) en laissant
+ouvert M1c (MC haut et Delta bas ont-ils une cause commune ?) et M2d
+(réplication hors échantillon de l'optimiseur). Le §8.73 avait laissé
+non élucidé le déclencheur du pic étroit (ni bloc extrême, ni ligne
+unique). Ce chantier reprend les pistes non closes et ajoute trois
+angles neufs, tous gelés avant tout calcul : Delta à w égal (A1),
+le résidu après la loi en n (A2), la structure des flux (A3), et la
+reprise du déclencheur du pic étroit (A4).
+
+## 8.94.2 Méthode du chantier
+
+Protocole gelé `PROTOCOL_delta_elucidation_894.md` (SHA
+`79e5567c19d90cdd78d39f4d90888b5e8d00c5a25f56f7ac5789a8dd9bc5229d`,
+vérifié par troncature du fichier à l'octet 9376 — voir Provenance),
+écrit avant tout calcul neuf ; script Tier-1
+`v62_delta_elucidation_894.py`
+(SHA `6dc5db1a09a52da30885cf934cf4cdbef476d2f6c3ff3089557b8bc03ef9bc0f`),
+log `v62_delta_elucidation_894.log` (21 nov. 2026 16:54–16:55).
+Lecture seule des sorties détenues, aucun run du pipeline, aucun code
+modifié. Ensemble gelé : 222 runs (156 v6.1 + 66 v6.2), 9 cohortes
+(tcga 126, depmap 30, geo71729 20, geo62452 14, icgc 10, cptac 8,
+hp35 6, coad 4, luad 4) ; ensemble B (§8.62) : 31 runs v6.2 fast,
+31/31 valides. Pipeline v6.2
+`universal_v6.2.0_cohen.py`, SHA
+`f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+vérifié sur disque avant et après le chantier (v6.1
+`2af5e5cea3a99ff227c7f76dff48c678eb07baba92625ca57e3c1c412546a9c9`,
+v6 `bb8bbdba4eb1f8c55b49748274ae8fbfef8a43f6c1b890964f18ba77960c0773`).
+
+**Vérification préalable (dans le script, avant modélisation).**
+Recomputation de `raw_median` depuis `df_feat.csv` : **2886/2886 à
+10⁻⁶** (diagnostic C0, même construction que §8.57) ; identités
+d_div / d_sat recalculées depuis les médianes parsées : **0 écart
+> 10⁻³ sur 222/222** (div et sat) ; `df_feat.csv` présent dans
+222/222 dossiers, `fluxes_raw.csv` présent dans 222/222, JSON et CSV
+manquants : 0. Vérification préalable : OK. Les 185 dossiers v62
+postérieurs (§8.47, §8.53) restent hors de l'ensemble gelé, comme
+au §8.57.
+
+**Barres gelées (§4 du protocole, identiques au §8.39 §5.4 — la barre
+ne bouge pas).** ÉLUCIDÉ si et seulement si (a) l'identité de la paire
+médiane est prédite sur ≥ 90 % des runs en hold-out (LOCO par cohorte)
+ET (b) d_div est prédit à ±0,10 près sur ≥ 90 % des runs en hold-out
+— avec le mécanisme NOMMÉ et VÉRIFIÉ sur l'ensemble B (transfert
+≥ 90 % à ±0,10). ÉLUCIDATION NÉGATIVE (compte comme élucidation) si
+A2 montre que le résidu Delta − F2(ln n) est du bruit (≥ 90 % des
+paires |Δrésidu| ≤ 0,10) ET A1 montre qu'à w égal Delta ne sépare
+pas : le mécanisme serait alors « Delta est une fonctionnelle de n et
+de w, sans contenu de flux », vérifié sur B. NON ÉLUCIDÉ sinon, avec
+la liste exacte de ce qui a été exclu. Aucune repondération, aucun
+nouveau prédicteur, aucun changement de tolérance après coup. Un
+modèle en échantillon ne compte jamais ; seul le hold-out compte.
+
+**Correction de Zackary du 21 novembre 2026, 12h03 (portée : tout le
+projet, précisée 12h04) — appliquée ici.** (1) Contrôle jamais
+analysé : Tier 1 en lecture seule ; le Tier 2 reconstruit `df_feat`
+depuis les CSV détenus avec les fonctions DU PIPELINE
+(`replica_w_894.py`, calque de `replica_delta_863.py`) — la colonne
+de contrôle (`step`) est exclue des flux analysés par construction
+(pipeline, ligne 6787 : `c != control_col`), et la variable d'ordre
+(KRAS pour les paires PDAC) est absente des colonnes de flux des CSV
+sources, vérifié le 21 novembre 2026 sur les 15 CSV des paires
+principales et A2. (2) Contrôles non monotones : aucun seuil n'a été
+écarté dans le Tier 1 au motif de non-monotonie — A1 lit Delta à w
+égal, A2 le résidu F2, A3 la structure des flux, A4 le pic étroit ;
+si un contrôle non monotone donne un seuil différent, c'est de
+l'information, pas une erreur. (3) Analyse, pas prédiction : le
+verdict décrit ce que les angles testés montrent sur les données
+détenues — il ne prédit rien, et Delta n'est jamais présenté comme
+discriminateur tant qu'il n'est pas élucidé.
+
+**Tier 2 — réplique à w fixe.** `replica_w_894.py`
+(SHA `1677ec2500fdd96377220de311a6dcd5fc8c05b0ddd47ea3fd7adea1a005d781`),
+sortie `replica_w_894.json`
+(SHA `a3ba1536e36ec23a7ce3ceabd1016a7930521fd8d74a53d50495128eac90730c`) ;
+première fin exit = 0 le 21 nov. 2026 19:09:40Z (file
+`queue_893_896`, étape 2), 12 passages exit = 0 au total, dernière
+réécriture le 22 nov. 2026 12:33:17Z — le fichier relu est cette
+dernière réécriture, la calibration étant exacte à chaque passage.
+Calibration : reproduction du D_vector stocké (d_sat, d_crit, d_div,
+d_null) à |Δ| < 10⁻⁶ pour chacun des 16 CSV à son w propre — **16/16,
+écart maximal 0,0** (ex. TCGA v4 réel : d_div répliqué 5,754216 =
+stocké, Delta 4,181387 ; HP35 réel : d_div 6,018889, Delta 4,482534).
+Puis croisement w ∈ {27, 30} sur les 8 paires principales V1 (§8.56) :
+16 CSV × 2 w = 32 builds. Résultats au §8.94.3.
+
+## 8.94.3 A1 — Delta à w égal : w déplace Delta, mais ne le prédit pas
+
+**Tier 1 (222 runs, 106 paires réel/nul).** w récupéré sur 222/222
+runs, 0 manquant ; w de 10 à 89, médiane 30, 17 valeurs distinctes —
+w = 30 dans 105 runs, w = 10 dans 22, w = 16 dans 21, w = 26 dans 12,
+w = 27 dans 10. Paires à w égal des deux côtés : **73/106** (68,9 %) ;
+les 33 autres paires ont un w différent entre réel et nul et sont
+exclues de la comparaison à w égal. Sur ces 73 paires :
+|Delta_réel − Delta_nul| ≤ 0,10 sur **52/73 (71,2 %)**, moyenne
++0,036, écart-type 0,199 ; écart > 0,07 (réel > nul) sur 24/73,
+|écart| > 0,07 sur 30/73. La barre de 90 % n'est pas atteinte, dans
+les deux sens : ni « Delta sépare à w égal » (l'écart dépasse 0,10
+sur 21/73 paires seulement, 28,8 %, loin des ≥ 90 % exigés pour le
+mécanisme « le niveau est choisi par w »), ni « Delta ne sépare pas
+à w égal » au sens gelé de l'élucidation négative (71,2 % < 90 %).
+Corrélations sur les 222 runs : r(Delta, w) = **+0,603**,
+r(d_div, w) = **+0,631**, r(Delta, ln n) = **+0,774** — ln n reste
+le corrélat simple le plus fort, devant w.
+
+**Prédiction de d_div en LOCO (barre : ≥ 90 % à ±0,10).**
+
+| Modèle (d_div) | ±0,10 en LOCO | MAE |
+|---|---|---|
+| 1 + ln n (référence §8.62) | 30/222 (13,5 %) | 0,974 |
+| 1 + w + ln n | 21/222 (9,5 %) | 1,026 |
+| 1 + w + ln n + (ln n)² | 4/222 (1,8 %) | 1,172 |
+| 1 + w seul | 0/222 (0,0 %) | 1,200 |
+
+Par pli, le modèle 1 + w + ln n atteint 20/30 (66,7 %) sur depmap
+et 1/126 (0,8 %) sur tcga, 0 % partout ailleurs ; la référence
+1 + ln n atteint 30/30 (100 %) sur depmap et 0/192 ailleurs — un
+artefact de cohorte (n fixe dans depmap), pas un mécanisme. Pour
+Delta lui-même, c'est pire : 0/222 (1 + w + ln n, MAE 1,031),
+3/222 (1,4 %, avec (ln n)², MAE 1,222), 1/222 (0,5 %, 1 + ln n,
+MAE 0,978), 0/222 (1 + w seul, MAE 1,120). **Transfert sur
+l'ensemble B (n = 31)** : d_div 3/31 (9,7 %, MAE 0,767) avec
+1 + w + ln n comme avec (ln n)² (MAE 0,677) ; Delta 1/31 (3,2 %,
+MAE 0,742) et 4/31 (12,9 %, MAE 0,679). Aucun modèle, aucun
+hold-out, aucun transfert ne s'approche de 90 %.
+
+**Tier 2 — le croisement w = 27 / w = 30 (8 paires principales).**
+À w = 27, |écart réel−nul| ≤ 0,10 sur **8/8 paires** (écarts :
+HP35 +0,0017 ; TCGA v4 +0,0453 ; GSE71729 +0,0383 ; GSE62452
+−0,0276 ; ICGC +0,0340 ; IMMUNE_TCGA +0,0032 ; PARP_TCGA +0,0700 ;
+DEPMAP −0,0415) ; à w = 30, **6/8** (TCGA v4 +0,4157 et PARP_TCGA
++0,2616 dépassent ±0,10 ; les 6 autres restent dans ±0,10, dont
+HP35 +0,0679 et ICGC −0,0630). Le passage w = 27 → w = 30 déplace
+Delta de **+0,21 à +1,13** sur les 8 paires (réel TCGA v4 :
+3,156 → 4,181 ; réel IMMUNE_TCGA : 3,143 → 4,210 ; réel PARP_TCGA :
+3,164 → 4,299 ; DEPMAP : 0,000, d_div plafonné à 3,0 aux deux w).
+Rappel §8.63, confirmé : l'écart Delta s11111 − réel tombe à
++0,0238 à w = 30 et −0,0718 à w = 27, contre l'écart brut du §8.63 ;
+l'écart w27 − w30 vaut −0,7165 (réel), −0,812 (s11111), −0,7099
+(s123). Lecture : w est bien le moteur du niveau de Delta — à w
+fixé, l'écart réel−nul s'effondre sur les 8 paires principales —
+mais sur l'ensemble des 106 paires le compte à w égal (71,2 %)
+reste sous la barre gelée, et le niveau lui-même n'est pas
+prédictible à ±0,10 en hold-out. A1 exclut « w seul choisit le
+niveau » au sens du critère ≥ 90 %, sans établir l'élucidation
+négative.
+
+## 8.94.4 A2 — Le résidu après la loi en n n'est pas du bruit
+
+F2(ln n) reprise du §8.62, coefficients gelés NON ré-estimés :
+F2 = −12,896435 + 5,27966·ln n − 0,402319·(ln n)² (R² §8.62 =
+0,6725). Résidu R = Delta − F2(ln n), sur les 106 paires :
+|R_réel − R_nul| ≤ 0,10 sur **53/106 (50,0 %)**, moyenne +0,077,
+écart-type 0,536. Critère A2 (≥ 90 % à ±0,10 ET |moyenne| ≤ 0,10) :
+**NON ATTEINT** — la moyenne passe (+0,077), la fraction échoue
+de 40 points.
+
+Fait de construction, consigné plainement : dans chaque paire, les
+deux côtés ont le même n, donc F2(ln n) s'annule exactement —
+écart maximal |ΔDelta − ΔR| = **0,00e+00** sur les 106 paires, et
+|Delta_réel − Delta_nul| ≤ 0,10 vaut aussi 53/106. A2, tel que
+gelé, se réduit donc au test de l'écart brut de Delta entre réel
+et nul : dans la moitié des paires, Delta diffère de plus de 0,10
+entre une matrice et sa permutation. **Delta porte quelque chose
+au-delà de n** — ou, à tout le moins, quelque chose que la loi en
+n ne capture pas — dans la moitié des paires. L'élucidation
+négative (« Delta est une fonctionnelle de n et de w, sans contenu
+de flux ») est exclue par ce seul angle, quelle que soit la
+lecture de A1. Le critère (ii) du §8.62, jamais testé seul, est
+désormais testé : il échoue.
+
+## 8.94.5 A3 — La structure des flux ne choisit pas la paire
+
+Prédicteurs calculés depuis `fluxes_raw.csv` + `df_feat.csv` SANS
+recalculer les estimateurs (piège de circularité du §8.57 §3) :
+p (nombre de flux), n, dispersion inter-flux (écart-type des
+médianes de flux), corrélation moyenne intra-famille, part de
+variance du premier axe (PCA sur les flux bruts), asymétrie (skew)
+moyenne des flux. Features calculées sur 222/222 runs, 0 manquant.
+
+(a) Identité de la paire médiane (kNN k = 5, LOCO) : **89/222
+(40,1 %)** — barre 90 %. Par pli : coad 4/4 (100 %), icgc 10/10
+(100 %), geo62452 8/14 (57,1 %), geo71729 12/20 (60,0 %), tcga
+55/126 (43,7 %), cptac 0/8, depmap 0/30, hp35 0/6, luad 0/4.
+(b) d_div à ±0,10 (ridge λ = 10, LOCO) : **0/222 (0,0 %)**,
+MAE 1,928 (par pli : geo71729 0,408 ; geo62452 0,930 ; icgc 1,094 ;
+luad 1,565 ; depmap 1,576 ; cptac 2,109 ; tcga 2,232 ; coad 2,665 ;
+hp35 5,578). Pour mémoire, la distribution des paires dans
+l'ensemble gelé : LocalPCA+MFA 99, LocalPCA+PCAIntrinsic 46,
+LocalPCA+LevinaBickel 31, MFA+LocalPCA 30, LocalPCA 7, MFA 5,
+PCAIntrinsic+LocalPCA 4 — LocalPCA figure dans la paire dans
+217/222 runs, sans que sa magnitude soit prédictible.
+
+Corrélations descriptives (pas un modèle) : n r = +0,485 (d_div) /
++0,473 (Delta) ; part de PC1 +0,443 / +0,430 ; corrélation moyenne
++0,365 / +0,353 ; dispersion inter-flux +0,302 / +0,291 ; skew
+moyen −0,370 / −0,409 ; p +0,164 / +0,177. Aucun prédicteur de
+structure ne s'approche du seuil : la voie « résumés de flux » du
+§8.42, dans sa dernière variante (structure sans estimateur), est
+close. Ce qui résiste n'est ni dans les résumés, ni dans les séries
+(§8.57), ni dans w et ln n (A1) — et la paire elle-même n'est pas
+choisie par la structure des flux.
+
+## 8.94.6 A4 — Le déclencheur du pic étroit : la position du split ne tient pas
+
+Reprise du §8.73, critères gelés repris tels quels (P1 ≥ 9/11,
+P2 ≥ 9/11 — en pratique, qualification hors échantillon : succès
+P1 si ≥ 70 % des pics frais à ±2 pas du candidat prédit par G,
+avec ≥ 5 courbes rob-on fraîches ; succès P2 si AUC de H_max
+≥ 0,80). Corpus relu : 82 courbes gagnantes (11 rob-on, 71
+rob-off). Aucune statistique globale ne sépare rob-on de rob-off :
+AUC G_max **0,233**, H_max **0,315**, E_max **0,405**, max e_ligne
+**0,469** (11 contre 71) ; sur l'ensemble restreint du §8.73.3
+(67 rob-off, rob < 0,05) : H_max 0,309 (p = 0,044, inversée),
+E_max 0,400, max e_ligne 0,468 — même conclusion. La position du
+pic n'est pas prédite par l'extrémité des lignes : le candidat
+argmax G(c) tombe à ±2 pas du vrai pic dans **5/11 cas (45,5 %)**,
+niveau du hasard sur ~11 candidats de bord.
+
+Interventions relues (identiques au §8.73.4–§8.73.5, chiffres
+inchangés) : A-swap (déplacer le bloc) **1/11** ; A1 (winsoriser
+le bloc) 8/11 (2 fenêtres), 10/11 (4 fenêtres), 11/11 (8 fenêtres)
+— avec l'avertissement du §8.73.7, inchangé : la winsorisation
+déflate la variance et fait monter le maxsep dans 8/11 cas à
+l'échelon 2 fenêtres, le critère gelé compte un effet générique,
+pas la suppression d'un déclencheur ; A2 (winsoriser une seule
+ligne) **4/11** ; contrôles B1 (propre bloc extrême au bord)
+**0/6**, B2 (valeurs donneuses) **0/3**, B0 (bloc médian au bord)
+**1/2**. Le déclencheur « position du split (extrémité non signée,
+sans cohérence de signe entre flux) » échoue sur les deux critères
+gelés : P1 = 5/11 < 9/11, et P2 n'est pas atteignable.
+
+**Lot frais (celui du §8.73, s41–s60, relu — aucun lot neuf).**
+Réplique des 240 courbes fraîches : écart **0,00e+00** (métriques
+et courbes), ok. **0 courbe rob-on fraîche, 0 gagnante rob-on sur
+20.** P1 : non testable (0/0, succes_70pc null) — comme prévu au
+protocole quand il y a moins de 5 courbes rob-on fraîches. P2 :
+140 courbes à T_H défini (100 exclues, T_H indéfini), H_max prédit
+23 courbes rob-on — **0 réelle : TP = 0, FP = 23, FN = 0, TN = 117**,
+AUC indéfinie (aucun positif), succes_auc_080 false. Le déclencheur
+est consigné « non élucidable par cette voie » et le verdict global
+reste NON ÉLUCIDÉ, comme le protocole l'exigeait si les deux
+critères échouaient.
+
+## 8.94.7 Lecture croisée : ce qui est exclu, ce qui reste ouvert
+
+**Exclu par ce chantier (chiffres, pas d'adjectifs).** (1) w seul
+choisit le niveau : LOCO d_div 0,0 % à ±0,10 avec w seul, 9,5 %
+avec w + ln n ; transfert B 9,7 %. (2) ln n seul : F2 R² = 0,6725,
+résidu non-bruit (53/106 à ±0,10). (3) w + ln n conjointement :
+9,5 % LOCO, 9,7 % sur B. (4) La structure des flux : paire 40,1 %,
+d_div 0,0 % en LOCO. (5) La position du split par l'extrémité non
+signée G comme déclencheur du pic étroit : 5/11, AUC ≤ 0,47, P1
+non testable et P2 en échec hors échantillon.
+
+**Ce qui reste ouvert, non testé ici.** M1c (§8.63) — MC haut et
+Delta bas ont-ils une cause commune ? Non tranché : aucun MC ne
+figure dans les sorties du Tier-1, l'angle n'était pas dans le
+protocole gelé. M2d (§8.63/§8.75) — réplication hors échantillon
+de l'optimiseur (lot frais ICGC s31–s40) : non testée ici, le lot
+frais relu en A4 est celui du §8.73 (s41–s60). Le mécanisme qui
+choisit LEQUEL des trois estimateurs hauts {MFA, LevinaBickel,
+PCAIntrinsic} est le plus petit, et à quelle magnitude, reste
+incompris — quatre tentatives, quatre échecs au critère ≥ 90 %.
+
+**Ce qui est établi, et qui ne change pas le verdict.** w est le
+moteur du niveau de Delta (corrélations +0,60/+0,63 ; décalage
++0,21 à +1,13 entre w = 27 et w = 30 ; effondrement de l'écart
+réel−nul à w égal sur les 8 paires principales). ln n porte
+l'échelle (r = +0,774 avec Delta). Mais un moteur n'est pas un
+mécanisme de choix : ni w, ni n, ni leur combinaison, ni la
+structure des flux ne disent lequel des trois estimateurs hauts
+est le plus petit, ni à quelle magnitude, à ±0,10 près sur 90 %
+des runs. Delta n'est pas un discriminateur recommandé ; aucune
+conclusion de séparation réel/nul n'est tirée de Delta dans ce
+chantier, et aucune ne doit l'être tant qu'il n'est pas élucidé.
+
+## 8.94.8 Ce que ça change pour §8.39, §8.42 et §8.57
+
+**§8.39.** Le statut « Delta NON ÉLUCIDÉ » est confirmé une
+quatrième fois, avec les deux pistes que le §8.39.10 laissait
+ouvertes désormais testées et closes : Delta à w égal (A1 — le
+signal le plus fort du chantier, mais 71,2 % sur les paires à w
+égal, sous la barre) et le résidu après la loi en n (A2 — 50,0 %,
+le résidu n'est pas du bruit). La nouveauté structurelle du §8.39
+(LocalPCA toujours 3e ou 4e, choix entre trois magnitudes) est
+reconfirmée dans l'ensemble gelé (LocalPCA dans la paire dans
+217/222 runs) sans que le choix soit élucidé.
+
+**§8.42.** La voie « résumés de flux » est close dans sa dernière
+variante : A3 montre que même la structure des flux sans
+estimateur (p, n, dispersion, corrélation, PC1, skew) ne choisit
+ni la paire (40,1 %) ni la valeur (0,0 %). La leçon du §8.42 —
+« les magnitudes sont des fonctionnelles de la série ordonnée
+complète, pas de ses résumés » — tient, avec l'ajout que la série
+complète elle-même (§8.57) et w + ln n (A1) ne suffisent pas non
+plus en hold-out.
+
+**§8.57.** Le piège de circularité reste évité (aucun recalcul
+d'estimateur, `csd_fractal_estimators.json` non utilisée) et la
+conclusion tient : l'échec des modèles honnêtes est un manque
+d'information, pas un manque de capacité (C0 2886/2886). Le §8.94
+ajoute la borne chiffrée : même avec w et ln n conjointement, d_div
+n'est prédit qu'à 9,5 % en LOCO et 9,7 % sur B — le niveau n'est
+pas une fonction lisse de (w, n) au sens du critère ±0,10.
+
+**Pour le projet.** Delta reste une piste fragile, quatrième
+confirmation. Aucun changement de protocole, aucun changement de
+pipeline, aucune utilisation de Delta comme discriminateur. Les
+deux questions ouvertes (M1c, M2d) restent au journal, non
+tranchées, et toute nouvelle tentative exigera un protocole gelé
+neuf — la barre de 90 % ne bouge pas.
+
+## 8.94.9 Limites
+
+- L'ensemble gelé de 222 runs est un ensemble de comparabilité,
+  pas un échantillon représentatif : les 185 dossiers v62
+  supplémentaires (§8.47, §8.53) restent hors ensemble, comme au
+  §8.57 ; les cohortes sont très déséquilibrées (tcga 126/222).
+- A1 : la comparaison à w égal ne porte que sur 73/106 paires ;
+  33 paires ont un w différent entre réel et nul et en sont
+  exclues. Le Tier-2 ne couvre que les 8 paires principales V1
+  (§8.56), pas les 106 paires.
+- A2 : par construction, F2 s'annule exactement dans chaque paire
+  (même n des deux côtés) — le test du résidu se réduit au test de
+  l'écart brut de Delta. Il exclut « le résidu est du bruit », il
+  ne peut pas établir « Delta = F2(ln n) + bruit » au-delà de
+  l'écart observé.
+- A3 : les prédicteurs sont des résumés ; un modèle qui utiliserait
+  les séries entières retomberait dans le piège de circularité du
+  §8.57. Le kNN et le ridge sont des modèles de référence, pas une
+  recherche exhaustive.
+- A4 : le lot frais relu est celui du §8.73 (s41–s60), pas un lot
+  neuf ; avec 0 courbe rob-on fraîche, P1 reste non testable et P2
+  ne peut qu'échouer par absence de positif. Les comptages A1 de
+  winsorisation portent l'avertissement d'artefact du §8.73.7
+  (déflation de variance) et ne pèsent pas dans le verdict.
+- M1c et M2d n'ont pas été testés dans ce chantier ; les nommer
+  « ouverts » n'est pas un verdict sur eux.
+- Le verdict est lu sur la batterie gelée A1–A4 + Tier-2, jamais
+  sur un seul nombre (MC jamais seul) ; il décrit les données
+  détenues, il ne prédit rien.
+
+**Provenance (§8.94)**
+
+- Protocole gelé `PROTOCOL_delta_elucidation_894.md`, SHA-256
+  gelé `79e5567c19d90cdd78d39f4d90888b5e8d00c5a25f56f7ac5789a8dd9bc5229d`
+  (cité dans `PROVENANCE_894.md` et dans `delta_894_results.json`,
+  champ `sha_protocole`). Le fichier sur disque porte aujourd'hui
+  le SHA `0e3b33718fb13cba531143822b6328ba1d3f7dc9ebc4a1aa64aee6bf2a625b41`
+  parce que l'addendum de Zackary du 21 nov. 2026 12h03 y a été
+  annexé après le gel (21 nov. 17h07) ; le texte gelé est intact —
+  tronqué à l'octet 9376 (juste avant le marqueur de l'addendum),
+  le fichier redonne exactement le SHA gelé
+  `79e5567c…5229d`. Un fichier parasite nommé littéralement
+  `PROTOCOL_894_*.md` (SHA
+  `24847d6c94b632649abace0146868800439b59a92c0addd88f67c31178bb3730`,
+  identique au fichier de l'addendum) existe dans le dossier —
+  accident de glob, contenu = addendum seul, sans effet sur les
+  résultats.
+- Addendum : `ADDENDUM_correction_20261121_894.md`, SHA-256
+  `24847d6c94b632649abace0146868800439b59a92c0addd88f67c31178bb3730`
+  (correction de Zackary, 21 nov. 2026 12h03, précisée 12h04).
+- Provenance du chantier : `PROVENANCE_894.md`, SHA-256
+  `3d1892f1b671ba88fef45ebda679c07597f5721e08e47369d54f755050115b1b`
+  (squelette au moment du gel ; à compléter par addenda datés,
+  sans réécrire).
+- Code : pipeline v6.2
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`,
+  SHA-256
+  `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+  (vérifié sur disque ; v6.1 `2af5e5ce…c1c9`, v6 `bb8bbdba…c0773`,
+  inchangés) ; script Tier-1 `v62_delta_elucidation_894.py`, SHA-256
+  `6dc5db1a09a52da30885cf934cf4cdbef476d2f6c3ff3089557b8bc03ef9bc0f` ;
+  script Tier-2 `replica_w_894.py`, SHA-256
+  `1677ec2500fdd96377220de311a6dcd5fc8c05b0ddd47ea3fd7adea1a005d781`.
+- Résultats : `delta_894_results.json`, SHA-256
+  `70ee8d8e09b68c0cef1121d85e8a9c3942a9d445fe8c68c0a88ac75f501e8e56`
+  (21 nov. 2026 16:55) ; `delta_894_table.csv` (222 lignes + en-tête),
+  SHA-256
+  `9a928bacae87efb3a5240710e02fa2ff2296de0a4f8773850717eafc520c4c8c` ;
+  log Tier-1 `v62_delta_elucidation_894.log` (21 nov. 16:55) ;
+  `replica_w_894.json`, SHA-256
+  `a3ba1536e36ec23a7ce3ceabd1016a7930521fd8d74a53d50495128eac90730c`
+  (première fin exit = 0 le 21 nov. 2026 19:09:40Z, file
+  `queue_893_896` étape 2, 12 passages exit = 0, dernière réécriture
+  22 nov. 2026 12:33:17Z).
+- Données d'entrée (détenues, relues) : `v62_delta_levels.csv`,
+  222 runs (156 v6.1 + 66 v6.2), 223 lignes avec en-tête — ensemble
+  gelé des §8.39/§8.42/§8.57 ; ensemble B (§8.62), 31 runs v6.2 fast ;
+  `df_feat.csv` présent dans 222/222 dossiers (120 lignes),
+  `fluxes_raw.csv` présent dans 222/222 ; coefficients F2(ln n)
+  [−12,896435 ; 5,27966 ; −0,402319] repris du §8.62, NON ré-estimés
+  (R² §8.62 = 0,6725) ; corpus A4 : 82 courbes gagnantes du §8.73
+  (11 rob-on, 71 rob-off) + lot frais §8.73 (20 nuls ICGC, graines
+  41–60), relu.
+- Go : Zackary « Faite tout cela », 21 nov. 2026 11h36, piste 2/4.
+  Coordinateur : TagPrint.
+- Ce qui manque : M1c et M2d (non testés ici, voir §8.94.7) ; aucun
+  nouveau run pipeline dans ce chantier (lecture seule des sorties
+  détenues, Tier-2 = réplique depuis les CSV détenus avec les
+  fonctions du pipeline) ; le livre blanc n'est pas modifié par ce
+  fichier — section séparée, à fusionner par le coordinateur ;
+  PDF non régénéré, rien poussé.
+
+— Fin de la §8.94. —
+
+---
+
+### 8.95 Le score composite v6.5 — REJETÉE : une seule porte échouée suffit, et c'est la paire DepMap qui tombe (21 novembre 2026)
+
+**Verdict d'abord, en trois phrases. (a) REJETÉE — le score composite
+C_pair = (maxsep_R − maxsep_N) + 0,50×(MC_R − MC_N) + 0,50×(robustness_R
+− robustness_N) + 0,25×(L7a_R − L7a_N) ne passe pas les quatre portes
+gelées du protocole : C1 rotations 31/48 — PASSE (barre 30/48) ; C2
+principales 5/8 au-dessus du plancher 0,07 et 8/8 positifs — ÉCHOUE
+(barre 6/8 et 7/8) ; C3 HP35 C = +1,8012 — PASSE (barre 0,30) ; C4
+relecture indépendante — PASSE (0,0 exact sur 120/120 runs, tous les
+recoupements à 1e-9, SHAs des versions inchangés). Une seule porte
+échouée suffit — comme pour v6.3 et v6.4 — donc le composite est
+REJETÉ, et le score principal affiché reste maxsep seul, MC secondaire.
+(b) Attribution précise : le composite ne perd qu'une seule paire
+principale par rapport à maxsep seul, et c'est DepMap — d_maxsep
++0,1904, mais d_l7a −0,5409, donc C = +0,0292, sous le plancher ; les
+deux autres paires perdues (GSE71729 C +0,0584, GSE62452 C +0,0295)
+échouent déjà sous maxsep seul. Le composite est strictement
+INFÉRIEUR à maxsep seul sur les deux compteurs : V1 5/8 contre 6/8,
+V2 31/48 contre 37/48. (c) Sensibilités : sans le terme L7a, V1 passe
+à 6/8 et V2 à 32/48 — c'est le terme L7a qui coûte la porte C2 ; sans
+le terme robustesse, V1 reste à 5/8 et V2 monte à 34/48 ; plancher
+0,05 → V1 6/8, V2 34/48 ; plancher 0,10 → V1 5/8, V2 30/48. Le terme
+robustesse punit surtout les rotations PARP (d_rob −0,81 à −0,99 sur
+ATM, ATR, PARP2, MUC16) même quand maxsep est positif : la robustesse
+n'est pas un allié du composite ici. La copie v6.5 existe, construite
+et vérifiée, mais son adoption reste à Zackary — et sur ces chiffres,
+elle n'est pas recommandée.**
+
+**Application de la correction de Zackary du 21 novembre 2026 à cette
+piste (texte complet en tête de §8.93).** (1) Contrôle jamais analysé :
+V2 (48 rotations) utilise les fichiers DEDUP du §8.44 — le flux
+d'ordre est la première colonne (contrôle) et N'EST PAS parmi les flux
+analysés, vérifié sur les 48 fichiers (0 colonne `.1`, 0 doublon) ;
+V1 et descriptifs : contrôle `step`, PROLIF, MTAPCN ou `score_acineux`,
+jamais un flux analysé. Le défaut connu des 96 fichiers de rotations
+d'origine (§8.32 — `CEACAM5` en contrôle ET `CEACAM5.1` parmi les flux
+analysés) n'est PAS utilisé ici ; ces fichiers restent sur le disque
+comme témoins du défaut. Le composite V2 (31/48) est donc mesuré sur
+les mêmes fichiers propres que le 37/48 de maxsep seul — comparaison à
+base identique. (2) Aucun seuil écarté au motif de non-monotonie.
+(3) Tous les verdicts de cette section sont formulés comme de
+l'analyse : le REJET du composite décrit ce que les 60 paires
+détenues montrent, il ne prédit pas sa performance ailleurs.**
+
+## 8.95.1 Question, méthode, règles
+
+**Question.** §8.56 a montré que maxsep seul sépare 37/48 rotations et
+6/8 paires principales, mieux que MC (12/48, 5/8) et mieux que v6.3
+(31/48) et v6.4 (28/48). Le composite v6.5 était la piste gelée pour
+faire mieux que maxsep seul en additionnant les signaux : maxsep, MC,
+robustesse et L7a signé, avec les poids 1 / 0,50 / 0,50 / 0,25 — poids
+gelés dans le protocole, pas ajustés après coup. Question posée : le
+composite bat-il maxsep seul sur les mêmes barres que §8.56 ?
+
+**Méthode.** Protocole gelé `PROTOCOL_composite_v65_895.md` (SHA
+`f3fcb38ef1d6ce68a14369ccd2a2baa62520fe124641ff8c411eb87692c66ece`,
+écrit avant tout calcul). Rescore des 60 paires §8.56 depuis les
+`master_results.json` détenus, AUCUN run : 8 paires principales (V1),
+48 rotations (V2), 4 paires descriptives (hors portes). L7a signé =
+±`global_confidence` (up +, down −, sinon 0 — même convention que
+§8.44). La copie v6.5 est construite par diff minimal depuis v6.2
+(§8.95.4), jamais en touchant l'original.
+
+**Barres gelées (C1–C4 = A1–A4 du §8.56).** C1 rotations ≥ 30/48 ;
+C2 principales ≥ 6/8 au-dessus du plancher 0,07 ET ≥ 7/8 positifs ;
+C3 HP35 ≥ 0,30 ; C4 relecture indépendante : re-extraction 0,0 exact
+sur 120/120 runs, recoupements à 1e-9, SHAs inchangés. Une seule
+porte échouée suffit au rejet, comme pour v6.3 et v6.4.
+
+## 8.95.2 Résultats — les quatre portes
+
+| Porte | Barre gelée | Mesuré | Verdict |
+|---|---|---|---|
+| C1 rotations (V2, 48) | ≥ 30/48 | **31/48** (38/48 positifs, 10 négatifs, somme +13,4370) | PASSE |
+| C2 principales (V1, 8) | ≥ 6/8 et ≥ 7/8 positifs | **5/8** au-dessus du plancher, 8/8 positifs | **ÉCHOUE** |
+| C3 HP35 | ≥ 0,30 | **+1,8012** | PASSE |
+| C4 relecture indépendante | 0,0 exact, 1e-9, SHAs inchangés | 120/120 exact, tous les recoupements à 1e-9, SHAs inchangés | PASSE |
+
+**V1 — les 8 paires principales (détail).** C = d_maxsep + 0,50×d_MC
++ 0,50×d_rob + 0,25×d_l7a, plancher 0,07 :
+
+| Paire | C | d_maxsep | d_MC | d_rob | d_l7a | Porte |
+|---|---|---|---|---|---|---|
+| HP35 | **+1,8012** | +1,6512 | +0,0129 | +0,2540 | +0,0982 | oui |
+| TCGA v4 | **+0,1723** | +0,2928 | −0,0270 | −0,1772 | −0,0735 | oui |
+| GSE71729 | +0,0584 | +0,0402 | −0,0131 | +0,0519 | −0,0160 | non |
+| GSE62452 | +0,0295 | −0,0036 | −0,0186 | +0,0922 | +0,0000 | non |
+| ICGC | **+0,2372** | +0,0970 | +0,0108 | +0,1273 | +0,2373 | oui |
+| IMMUNE TCGA | **+0,2631** | +0,3675 | −0,0281 | +0,0505 | −0,3024 | oui |
+| PARP TCGA | **+0,1260** | +0,1688 | −0,0326 | −0,0000 | +0,1275 | oui |
+| DEPMAP | +0,0292 | +0,1904 | −0,0244 | −0,0000 | **−0,5409** | non |
+
+**Lecture de V1.** Seule DepMap bascule par rapport à maxsep seul :
+maxsep seul la classe oui (+0,1904), le composite la classe non
+(+0,0292) — le terme L7a à −0,5409 (L7a réel down, nul up, écart
+0,54 de confiance) coûte 0,1352 de C, plus que la marge. GSE71729
+et GSE62452 sont perdues sous les deux scores : elles ne distinguent
+pas le composite, elles confirment que ces deux paires ne séparent
+pas. Somme V1 +2,7168, moyenne +0,3396.
+
+**V2 — les 48 rotations.** 31/48 au-dessus du plancher, 38/48
+positifs, 10 négatifs, somme +13,4370. Par famille : IMMROT 11/12
+(12/12 positifs, somme +7,6500), V4ROT 9/12 (9/12 positifs, somme
++3,4528), PARPROT 7/12 (8/12 positifs, somme +1,3902), DEPMAPROT
+4/12 (9/12 positifs, somme +0,9440). Les 17 paires sous le plancher :
+DEPMAPROT ACO2 +0,0231, CCND1 −0,1045, CFLAR +0,0560, CRKL +0,0399,
+MYC +0,0100, MYH9 −0,0160, RAB10 +0,0644, UROD −0,0278 ;
+IMMROT CD19 +0,0641 ; PARPROT ATM −0,3871, ATR −0,2765, PARP1
+−0,1253, PARP2 −0,5387, XRCC1 +0,0414 ; V4ROT CR2 −0,0968,
+GSTM1 −0,0839, MUC16 −0,4826. Les échecs PARPROT et V4ROT-MUC16
+sont dominés par d_rob : ATM −0,8494, ATR −0,8080, PARP2 −0,9898,
+MUC16 −0,8309 — la robustesse réelle s'effondre sous ces contrôles
+alors que maxsep reste positif (+0,1638, +0,2381, +0,0203, +0,0703).
+La robustesse, en tant que terme du composite, punit des paires que
+maxsep seul classe correctement.
+
+## 8.95.3 Sensibilités — ce qui aide, ce qui coûte
+
+| Variante | V1 (plancher 0,07) | V2 (plancher 0,07) | Lecture |
+|---|---|---|---|
+| Composite complet (gelé) | 5/8 | 31/48 | référence |
+| Sans le terme L7a | **6/8** | 32/48 | le terme L7a coûte la porte C2 |
+| Sans le terme robustesse | 5/8 | **34/48** | la robustesse coûte 3 rotations |
+| Plancher 0,05 | 6/8 | 34/48 | le plancher 0,07 n'est pas le seul coupable |
+| Plancher 0,10 | 5/8 | 30/48 | à 0,10, C1 passe tout juste |
+
+Sans L7a, V1 passe à 6/8 — exactement le niveau de maxsep seul —
+et V2 à 32/48, toujours sous les 37/48 de maxsep seul. Aucune
+variante testée n'atteint maxsep seul sur V2. Le composite n'améliore
+rien ; il redistribue les pertes.
+
+## 8.95.4 La copie v6.5 — construite, vérifiée, non adoptée
+
+Copie `universal_v6.5.0_cohen.py`, SHA
+`983ec65dc607a2ca8445bed095e5d86b3e6560534c7e7ecf9eda587fb6420bf6`
+(script `build_v65.py`, SHA
+`18eaa1e8cf1284fd34e926871e3727e3b99d385219b8e27ec09d1b91da2871c4`).
+Diff vs v6.2 = exactement 3 hunks, 70 lignes : (1) fonction pure
+`composite_c65_run` après `evaluate_scan_quality` ; (2) site d'appel
+avant `final_output` ; (3) `VERSION_MASTER` →
+`v6.5.0-L7aL7b-CohenD-short` + commentaire. 1 seule ligne supprimée.
+`py_compile` OK. SHA de v6.2 vérifié identique avant et après les
+travaux (f07567c4…). L'adoption finale reste à Zackary ; sur ces
+chiffres, la recommandation est de NE PAS adopter — le composite est
+rejeté comme score principal, et il ne remplace pas la batterie
+entière (règle §8.90.1.2 : maxsep est le score principal AFFICHÉ,
+pas le verdict).
+
+## 8.95.5 Paires descriptives — hors portes, rapportées
+
+Test A (prolifération, §8.34) : C +0,0084 — quasi nul, attendu pour
+un NON, pas d'anomalie. MTAP_PRMT5FLUX : C −0,1118 ; MTAP_SERIES :
+C −0,5637 — la contradiction S_sep/MC du §8.40 persiste sous le
+composite (le composite ne l'arbitre pas). V4R_PURITY : C +0,5188 —
+le candidat bouge avec la composition, cohérent avec §8.51–§8.54.
+
+## 8.95.6 Ce qui est établi, ce qui ne l'est pas
+
+**Établi.** (1) Le composite gelé est rejeté sur C2, par une seule
+paire (DepMap) perdue à cause du terme L7a. (2) Le composite est
+strictement inférieur à maxsep seul sur V1 (5/8 contre 6/8) et V2
+(31/48 contre 37/48) — il ne faut pas l'adopter. (3) Le terme
+robustesse punit les rotations PARP même quand maxsep est positif :
+la robustesse n'est pas un allié du composite. (4) La relecture
+indépendante est parfaite (0,0 exact sur 120/120) : le rejet est un
+verdict sur le score, pas un artefact d'extraction.
+
+**Non établi.** (1) Aucune autre pondération n'a été testée — les
+poids étaient gelés, et les repondérer après coup serait du
+surajustement. (2) Le composite n'a pas été testé sur les paires
+§8.93 (distributions de nuls) ni sur les bras §8.96 — ce n'est pas
+son rôle : il est rejeté. (3) Le mécanisme de l'écart L7a DepMap
+(d_l7a −0,5409) n'est pas élucidé ici — il est consigné, pas
+expliqué. (4) Les 48 rotations V2 sont les fichiers DEDUP propres du
+§8.44 (flux d'ordre = contrôle, jamais analysé) ; les 96 fichiers
+d'origine §8.32, avec le doublon `X.1`, ne sont pas utilisés ici —
+ils sont traités au §8.97, partie 1.
+
+## 8.95.7 Provenance
+
+Protocole gelé `PROTOCOL_composite_v65_895.md` (SHA
+`f3fcb38ef1d6ce68a14369ccd2a2baa62520fe124641ff8c411eb87692c66ece`) ;
+provenance `PROVENANCE_895.md` (SHA
+`e32f47d917f5e6dc6ee939ef5faa5f428c531d2de8908622a2cfce66a91fd1ba`).
+Extraction `extract_c65.py` (SHA
+`c60ab9928a0b31b5d1c7112dfb6088b6e7bd825c8895c8cb54a41c8fec03220d`) ;
+vérification indépendante `extract_c65_verify.py` (SHA
+`a7f79b6dcb43d72d38fe863081f51d8f95b5ebc641b8a51596e4bd9072121950`) ;
+table `c65_table.json` (SHA
+`769e8653ad302c7d78e476d4a7205d8745728e6d6b809e8e00f8a0b7f07d56b8`) ;
+`c65_table.csv` (SHA
+`238a0e054322d416c74aec4114ebc1b99cb4e2112f91272dd8b81aaec36a37c4`) ;
+vérification `c65_verify.json` (SHA
+`ff8d0f358c7fab85759fb6c209c3e437e00b91ab221e0f4cbfadd5ae2eda8f26`).
+Paires et listes reprises de `extract_sep_maxsep_856.py` (§8.56) ;
+recoupements à 1e-9 contre `ssep_844_rotations.csv`,
+`v62_phase2_table.csv`, `v63_mc_table.json`, `v64_mc_table.json`,
+`sep_maxsep_856_table.json` ; ancien MC recoupé à 1e-9 contre §8.44 et
+phase 2. Versions : v6.2 SHA `f07567c4…` (travail), v6.1 SHA
+`2af5e5ce…` (référence), v6 SHA `bb8bbdba…`, v6.3 SHA
+`3f5e1a5c…`, v6.4 SHA `a9d8c2f1…` — tous inchangés avant et après.
+Aucun run pipeline. Aucune recommandation clinique.
+
+— Fin de la §8.95. —
+
+---
+
+### 8.96 Universalité : le pipeline sur un autre cancer — LUAD NON, BRCA CONFIRME (partiel) ; la confirmation totale reste non testée (21–22 novembre 2026)
+
+Piste 4/4 du lot du 21 nov. 2026 (go de Zackary « Faite tout cela »,
+21 nov. 2026 11h36) ; protocole gelé 21 nov. 2026 avant tout
+téléchargement nouveau, toute copie et tout calcul
+(`PROTOCOL_universalite_896.md`, SHA `1349b996…848d8`) ; provenance
+`PROVENANCE_896.md`, SHA `d9554cf3…a92c68`. Pipeline v6.2, SHA
+`f07567c4…c3abf`, vérifié avant et après chaque lot, inchangé.
+Correction de Zackary du 21 nov. 2026 12h03 (portée : tout le projet,
+précisée 12h04 ; `ADDENDUM_correction_20261121_896.md`, SHA
+`ff840864…97f132`) : MC jamais seul — la batterie entière fait le
+verdict ; un flux en axe de contrôle n'est jamais un flux analysé ;
+formulation en analyse, jamais en prédiction. Choix de l'axe BRCA
+par addendum daté (`ADDENDUM_axe_brca_896.md`, SHA `aed56a92…48ba`).
+
+## Verdict d'abord
+
+**Bras A — LUAD : NON.** Le réel ne se sépare pas du nul sur la
+barre gelée : écart `maxsep` réel − nul graine 42 de **+0,0140**
+(réel 0,1502 contre nul 0,1362), très sous le plancher 0,07 — et
+les deux nuls frais confirment le NON (+0,0321 et +0,0436, tous
+deux sous le plancher). L'ancien MC ne sépare pas non plus
+(−0,0203 contre le nul graine 42, le nul au-dessus du réel),
+Delta non plus (+0,0137 contre le nul graine 42 ; le nul frais
+s9601 est même très au-dessus du réel, 4,6279 contre 2,5108).
+La lecture en LUAD est donc : le pipeline ne sépare pas le réel
+du nul sur ces données, avec ces 12 flux, sous l'axe KRAS — un
+NON qui ne retire rien aux résultats PAAD, il borne
+l'universalité.
+
+**Bras B — BRCA : CONFIRME (partiel).** Le réel se sépare du nul
+sur la barre gelée : écart `maxsep` réel − nul graine 42 de
+**+0,2182** (réel 0,3200 contre nul 0,1018), au-dessus du plancher
+0,07, avec Delta positif dans le même sens (+0,5357) et L7a
+concordant (réel UP 38,43 % contre nul DOWN 18,08 %) — et les
+deux nuls frais confirment (écarts +0,2056 et +0,1990, 2/2
+au-dessus du plancher). MAIS la confirmation est partielle
+seulement : l'ancien MC ne sépare pas (−0,0092 contre le nul
+graine 42, −0,0088 contre le nul frais s9602), la falsification
+est plus haute sur les trois nuls que sur le réel, L7b est
+FRAGILE sur les 8 runs du lot, et Delta échoue contre le nul
+frais s9601 (−0,0352). La séparation en BRCA est portée par
+`maxsep`, Delta (contre 2 nuls sur 3) et L7a (contre le nul
+graine 42 seulement), pas par la batterie entière.
+
+**Confirmation totale : NON TESTÉE, donc non écrite.** La barre
+gelée exigeait en plus la structure analogue — le bloc
+estomac/mucus (ou un bloc de co-expression équivalent) variant
+avec l'axe, comme en PAAD (§8.33/§8.66). Aucun test direct de ce
+type n'a été fait dans ce chantier, sur aucun des deux bras :
+aucun fichier de test ne figure sur disque, et cette section
+n'invente pas le test après coup. Le verdict « total » n'est
+donc pas rendu, ni pour LUAD ni pour BRCA.
+
+| Porte (protocole §1.4, gelé) | Exigé | Mesuré 21 nov. 2026 | Sort |
+|---|---|---|---|
+| LUAD : écart `maxsep` réel − nul 42 | > 0,07 | **+0,0140** (0,1502 contre 0,1362) | **ÉCHOUE** |
+| LUAD : 2e indicateur concordant (MC / Delta / L7a) | positif | MC −0,0203 ; Delta +0,0137 ; L7a UP contre DOWN | **NON** |
+| LUAD : nuls frais ≥ 1/2 au-dessus du plancher | ≥ 1/2 | **+0,0321 et +0,0436 — 0/2** | **NON** |
+| BRCA : écart `maxsep` réel − nul 42 | > 0,07 | **+0,2182** (0,3200 contre 0,1018) | **PASSE** |
+| BRCA : 2e indicateur concordant | positif | Delta +0,5357 ; L7a UP 38,43 % contre DOWN 18,08 % | **PASSE** |
+| BRCA : nuls frais ≥ 1/2 au-dessus du plancher | ≥ 1/2 | **+0,2056 et +0,1990 — 2/2** | **PASSE** |
+| Structure analogue (bloc estomac/mucus variant avec l'axe) | test direct, mêmes gènes/seuils que §8.33/§8.66 | **aucun test fait — absent du disque** | **NON TESTÉ** |
+| 8 runs v6.2, exit 0, SHA v6.2 vérifié | 8/8 | **8/8 exit 0** (LUAD 16h42–17h03 UTC, BRCA 17h03–18h21 UTC) | **PASSE** |
+| Contrôle jamais analysé (correction 21 nov. 12h03) | KRAS / ESR1 absents des flux | **vérifié sur les fichiers construits** | **PASSE** |
+
+**Ce que ce verdict dit, et ce qu'il ne dit pas.** Il dit que,
+sur les deux cancers testés ici avec les mêmes 12 flux, le
+pipeline sépare le réel du nul dans un cas (BRCA, par `maxsep`
+surtout) et pas dans l'autre (LUAD, par aucun indicateur) — une
+universalité partielle, mesurée, pas un principe général. Il dit
+aussi que la séparation en BRCA ne tient pas à toute la
+batterie : MC, falsification et L7b ne la portent pas, et un nul
+frais sur deux renverse Delta. Il ne dit pas que le pipeline
+séparera le réel du nul sur un troisième cancer (analyse, pas
+prédiction — correction du 21 nov. 12h03). Il ne dit rien de
+clinique : ce sont des ARN tumoraux ordonnés par un gène, pas
+des réponses de patients — aucune affirmation sur un traitement
+n'est tirée de ce lot. Il ne dit pas que la structure KRAS du
+pancréas existe ou non dans le poumon ou le sein : le test qui
+l'aurait dit n'a pas été fait.
+
+**Fragilité, dite en tête.** Le verdict BRCA tient à une seule
+paire réelle (n = 1 093) contre trois nuls, avec un écart
+`maxsep` large (+0,2182) mais un réel dont le diagnostic de
+bruit est le plus fort du lot (score moyen 0,6945,
+« proxy de variance modéré », MEDIUM_HIGH — le seul run du lot
+à ce niveau) et dont la cascade est comprimée très tôt
+(T0 11,25 %, T+1/T+2 23,19 % contre 83–94 % pour les nuls).
+Le verdict LUAD tient à l'inverse : le réel reproduit presque
+exactement les chiffres v6.0/v6.1 du §8.27 (Delta 2,5108 contre
+2,511 ; L7a UP 42,05 % contre 42,11 %), mais le nul graine 42
+est presque au même niveau sur tous les indicateurs — la
+différence réel/nul est un bruit de fond, pas un signal manqué
+de peu. Enfin, deux runs BRCA nuls (graine 42 et s9602) portent
+une anomalie de recomposition MC (§8.96.7) : le score MC stocké
+ne suit pas la formule de recomposition du §8.50 (écart 0,0900)
+— l'anomalie ne change pas le sens des écarts MC (négatifs dans
+les deux lectures), mais elle est consignée telle quelle.
+
+## §8.96.1 Question et protocole gelé
+
+Tout le travail PDAC est pancréas-spécifique. La question porte
+sur l'instrument, pas sur le cancer : le pipeline sépare-t-il le
+réel du nul ailleurs, et trouve-t-il une structure analogue ?
+Deux bras, dans cet ordre : (A) LUAD — données déjà détenues,
+axe analogue déjà construit (KRAS, même gène pilote, même sens
+qu'en PAAD) ; (B) BRCA — données à sourcer, construction neuve,
+axe choisi après lecture de la matrice et avant tout run (ESR1).
+Le témoin COAD est lu, pas recouru : son programme KRAS est
+déjà connu différent (§8.27), et aucun run COAD neuf ne fait
+partie de ce lot. La batterie entière fait le verdict (correction
+du 21 nov. 12h03) : 29 estimateurs, Q1–Q6, 4 tests de bruit,
+F1/F2, L7a/L7b, falsification, Delta, `maxsep` — `maxsep` est
+le score principal affiché, pas le verdict. Le pipeline v6.2
+ne change jamais (SHA `f07567c4…c3abf`).
+
+## §8.96.2 Données et axes
+
+**Bras A — TCGA-LUAD (données détenues, rien à télécharger).**
+Source : Broad GDAC Firehose stddata 2016-01-28,
+`LUAD.rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.data.txt`,
+47 043 687 octets, MD5 observé `4c36eec3f6df75630292c5a569cfc8f4`
+(aucun MD5 de référence publié par Firehose). Matrice
+20 503 gènes × 576 échantillons ; retenus : 515 tumeurs primaires
+(code TCGA 01) ; transformation log2(RSEM normalisé + 1). Flux :
+`pdac_luad_fluxes.csv`, SHA `d407849b…38091e`, 515 lignes,
+12 flux — les 12 MÊMES gènes que PAAD v4 (PGC, REG4, CLDN18,
+MUC17, DPCR1, CR2, KRT20, MUC2, GSTM1, CEACAM5, CLCA1, MUC16),
+12/12 présents, 0 NaN, aucun remplacement. Nul graine 42 :
+`pdac_luad_fluxes_nul.csv`, SHA `93766e8c…978a6b`. Nuls frais
+(graines gelées 9601, 9602, jamais utilisées dans ce projet) :
+`pdac_luad_fluxes_nul_s9601.csv`, SHA `6e652a42…c72d1` ;
+`pdac_luad_fluxes_nul_s9602.csv`, SHA `358188cf…336f`. Axe :
+**expression KRAS brute croissante ; KRAS = axe, jamais un
+flux** (KRAS log2 : n = 515, min 8,921, médiane 10,4127, max
+14,8647). Gate 12/12, 0 NaN — déjà vérifié au §8.27, re-vérifié
+avant les runs.
+
+**Bras B — TCGA-BRCA (données sourcées, construction neuve).**
+Source : Broad GDAC Firehose stddata 2016-01-28, cohorte BRCA,
+tarball `gdac.broadinstitute.org_BRCA.Merge_rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.Level_3.2016012800.0.0.tar.gz`,
+97 981 987 octets, MD5 observé `b4eed57d14ca2fa563ca0dd05d4fba7f`
+(conforme au `.md5` publié par Firehose) ; matrice interne
+212 145 748 octets, MD5 observé `96d707af16947605116dfbec6e3c050e`.
+Matrice : 20 503 gènes × 1 212 échantillons ; retenues :
+1 093 tumeurs primaires (code TCGA 01) ; log2(RSEM normalisé + 1).
+Script de construction neuf `build_fluxes_brca_896.py`, SHA
+`7f60c0fe…62b4`, calqué sur `build_fluxes_pancancer.py`. Les 12
+gènes v4 PAAD sont présents avec 1 093/1 093 valeurs valides —
+gate 12/12 PASSÉ, 0 remplacement, 0 NaN. Flux :
+`pdac_brca_fluxes.csv`, SHA `c08ebf41…2d84` ; nul graine 42 :
+`pdac_brca_fluxes_nul.csv`, SHA `f8234a33…c88b29` ; nuls frais :
+`pdac_brca_fluxes_nul_s9601.csv`, SHA `5713da1f…57f7e` ;
+`pdac_brca_fluxes_nul_s9602.csv`, SHA `88a1b9aa…62a8`.
+Axe (addendum daté, après lecture de la matrice, avant tout run) :
+**expression ESR1 brute croissante ; ESR1 = axe, jamais un flux.**
+ESR1 (n = 1 093, min 1,901, médiane 12,795, max 16,137,
+écart-type 3,190) a été choisi sur les trois critères gelés —
+présence (1 093 ≥ 50), variance inter-tumeurs la plus forte des
+trois candidats (TP53 : 0,862 ; MKI67/prolifération : 1,300),
+pertinence (ESR1 définit les sous-types BRCA, luminal contre
+basal/triple-négatif). TP53 écarté pour faible variance, MKI67
+écarté comme axe principal. KRAS n'est pas l'axe en BRCA
+(exclu par le protocole : rarement pilote du sein). Aucun
+chiffre de run n'a influencé le choix.
+
+**Règle du contrôle (correction du 21 nov. 12h03).** Vérifiée
+sur les fichiers construits : KRAS est absent des 12 flux LUAD,
+ESR1 est absent des 12 flux BRCA (KRAS absent aussi). Le
+pipeline exclut en outre la colonne de contrôle des flux
+analysés par construction (v6.2, ligne 6787 :
+`c != control_col`). Le défaut connu des 96 rotations
+d'origine (§8.32) ne concerne pas cette piste.
+
+## §8.96.3 Runs : 8/8 exit 0, SHA vérifié
+
+Huit runs v6.2 fast, commande identique aux lots précédents
+(`python3 universal_v6.2.0_cohen.py --input <csv> --mode fast
+--output <dir>`), lots systemd, SHA v6.2 vérifié au lancement
+et à la fin de chaque lot (`f07567c4…c3abf`, attendu identique).
+Lot LUAD 21 nov. 2026 16h42–17h03 UTC : réel, nul 42, nuls
+frais s9601, s9602 — 4/4 exit 0 (`runs_luad_896.log`). Lot BRCA
+21 nov. 2026 17h03–18h21 UTC : réel, nul 42, nuls frais s9601,
+s9602 — 4/4 exit 0 (`runs_brca_896.log`, reprises après
+redémarrages de la file, 0 run perdu). Aucun run relancé, aucun
+dossier de run touché après coup.
+
+Lecture des résultats : script `extract_universalite_896.py`
+(SHA `583397ed…fa210`, lecture seule — il reprend la logique
+de lecture de `mtap_consolidation_850.py` : S_sep =
+`max_separation` × stabilité ; MC recomposé
+0,3·s_norm + 0,3·stabilité + 0,2·robustesse + 0,2·acuité).
+Sorties : `universalite_896_table.json` (SHA
+`cfddd6d8…fe24`) et `universalite_896_table.csv` (SHA
+`47807fd2…ef2cfc`). Les médianes Q1–Q6 sont calculées ici sur
+les 348 entrées flux × estimateur de chaque `scores.json`
+(12 flux × 29 estimateurs) ; les résumés des 4 tests de bruit
+sont les médianes sur les 1 044 lignes de chaque
+`estimator_four_tests.csv` (12 flux × 29 estimateurs × 3
+trajectoires : estimateur, F1, F2). Ces deux agrégations sont
+des lectures de cette section, pas des sorties du pipeline —
+elles sont définies ici pour être reproductibles.
+
+## §8.96.4 Batterie complète : les 8 runs
+
+| Run | n | `maxsep` | S_sep | MC | Delta | L7a | Falsification | Régime |
+|---|---|---|---|---|---|---|---|---|
+| LUAD réel | 515 | 0,1502 | 0,1500 | 0,3236 | 2,5108 | UP 42,05 % | 0,6389 | criticality |
+| LUAD nul 42 | 515 | 0,1362 | 0,1349 | 0,3439 | 2,4971 | DOWN 23,25 % | 0,6325 | criticality |
+| LUAD nul s9601 | 515 | 0,1181 | 0,1175 | 0,3206 | 4,6279 | UP 40,57 % | 1,0553 | divergence |
+| LUAD nul s9602 | 515 | 0,1067 | 0,1060 | 0,3171 | 2,5267 | UP 38,48 % | 0,6439 | criticality |
+| BRCA réel | 1 093 | 0,3200 | 0,3181 | 0,3508 | 5,0557 | UP 38,43 % | 0,6919 | divergence |
+| BRCA nul 42 | 1 093 | 0,1018 | 0,1012 | 0,3600 | 4,5200 | DOWN 18,08 % | 0,8708 | divergence |
+| BRCA nul s9601 | 1 093 | 0,1144 | 0,1140 | 0,3198 | 5,0909 | UP 17,16 % | 0,8284 | divergence |
+| BRCA nul s9602 | 1 093 | 0,1210 | 0,1194 | 0,3596 | 4,5139 | UP 18,81 % | 0,8281 | divergence |
+
+Écarts réel − nul (par bras) :
+
+| Écart | LUAD vs nul 42 | LUAD vs s9601 | LUAD vs s9602 | BRCA vs nul 42 | BRCA vs s9601 | BRCA vs s9602 |
+|---|---|---|---|---|---|---|
+| d_`maxsep` | +0,0140 | +0,0321 | +0,0436 | **+0,2182** | **+0,2056** | **+0,1990** |
+| d_S_sep | +0,0152 | +0,0325 | +0,0440 | +0,2168 | +0,2041 | +0,1987 |
+| d_MC | −0,0203 | +0,0030 | +0,0064 | −0,0092 | +0,0310 | −0,0088 |
+| d_Delta | +0,0137 | −2,1171 | −0,0159 | +0,5357 | −0,0352 | +0,5418 |
+| d_falsification | +0,0064 | −0,4164 | −0,0051 | −0,1788 | −0,1365 | −0,1362 |
+
+Cascades (T−2 / T−1 / T0 / T+1 / T+2, en %) et dérivées :
+
+| Run | Cascade | max F1 | max F2 |
+|---|---|---|---|
+| LUAD réel | 0,7610 / 46,6916 / 68,6177 / 80,8214 / 80,8214 | 5,4057 | 17,2461 |
+| LUAD nul 42 | 0,0000 / 0,6145 / 3,6145 / 69,6060 / 69,6060 | 5,3803 | 10,6233 |
+| LUAD nul s9601 | 0,0000 / 13,2595 / 80,8214 / 91,6903 / 91,6903 | 4,4897 | 13,6409 |
+| LUAD nul s9602 | 0,1902 / 38,9868 / 47,0299 / 69,6060 / 69,6060 | 5,0645 | 13,6210 |
+| BRCA réel | 0,0000 / 0,0894 / 11,2527 / 23,1883 / 23,1883 | 6,7877 | 30,1192 |
+| BRCA nul 42 | 0,1789 / 13,3938 / 35,6115 / 94,3074 / 94,3074 | 6,8615 | 25,4989 |
+| BRCA nul s9601 | 0,4472 / 21,9367 / 86,3148 / 94,3794 / 94,3794 | 7,6125 | 32,2386 |
+| BRCA nul s9602 | 0,0000 / 7,7648 / 72,3868 / 83,1000 / 83,1000 | 6,1820 | 31,0386 |
+
+SHA-256 des `master_results.json` : LUAD réel `b8b995f4…2a113`,
+nul 42 `5738ffdf…93d26`, s9601 `f026e4df…4f`, s9602
+`25e6d69c…45a8` ; BRCA réel `5859072b…1d7ab2`, nul 42
+`326b7694…ab763`, s9601 `5cb7ffcb…f418`, s9602 `e84d68aa…723da2`
+(SHA complets dans `universalite_896_table.json`).
+
+## §8.96.5 Bras A — LUAD : NON
+
+La barre gelée exige d'abord un écart `maxsep` réel − nul 42
+supérieur à 0,07 : mesuré **+0,0140**, soit un cinquième du
+plancher. Les deux nuls frais ne sauvent rien : +0,0321 et
++0,0436, tous deux sous le plancher — 0/2, alors que la barre
+exigeait au moins 1/2. Le deuxième indicateur ne compense pas :
+MC est négatif contre le nul graine 42 (−0,0203, le nul
+au-dessus du réel) et quasi nul contre les frais (+0,0030,
++0,0064) ; Delta est quasi nul contre le nul graine 42
+(+0,0137) et négatif contre les frais (−2,1171 contre s9601,
+−0,0159 contre s9602). Seul L7a donne une direction
+concordante contre le nul graine 42 (réel UP 42,05 % contre nul
+DOWN 23,25 %, avec désaccord interne sur le nul) — mais les
+deux nuls frais votent UP comme le réel (40,57 % et 38,48 %),
+donc L7a ne sépare pas le réel des nuls frais. La falsification
+déclenche partout (0,6389 réel ; 0,6325 / 1,0553 / 0,6439
+nuls) : elle ne discrimine rien ici, et son maximum du lot est
+un nul (s9601, 1,0553). Les cascades ne séparent pas non plus :
+le réel (0,7610 / 46,6916 / 68,6177 / 80,8214 / 80,8214) est
+entouré de nuls qui couvrent toute la gamme (T0 nul : 3,61 %,
+80,82 %, 47,03 %). F1/F2 non plus : F1 réel 5,4057 contre
+5,3803 / 4,4897 / 5,0645 ; F2 réel 17,2461 contre 10,6233 /
+13,6409 / 13,6210 — le réel est le plus haut en F2, mais sans
+barre gelée sur F1/F2, ce n'est qu'une observation, pas un
+verdict. Le régime ne sépare pas : réel criticality, nuls
+criticality / divergence / criticality.
+
+Reproduction du §8.27 : le run v6.2 réel reproduit presque
+exactement les chiffres v6.0/v6.1 — cascade 0,7610 / 46,6916 /
+68,6177 / 80,8214 / 80,8214 contre 0,76 / 46,69 / 68,62 / 80,82 /
+80,82 ; Delta 2,5108 contre 2,511 ; L7a UP 42,05 % contre
+42,11 %. Le NON en LUAD n'est donc pas un artefact de version :
+le même instrument, sur les mêmes données, donne les mêmes
+chiffres et ne sépare toujours pas. C'est cohérent avec le
+§8.27 (v6 ne séparait pas réel/nul en LUAD : Delta 2,511 contre
+2,497) et avec l'audit §8.90 (volet 2) : sur les paires
+inventoriées, le nul dépasse le réel en MC sur LUAD (−0,020,
+déjà noté).
+
+## §8.96.6 Bras B — BRCA : CONFIRME (partiel)
+
+La barre gelée est franchie sur ses trois conditions. Écart
+`maxsep` réel − nul 42 : **+0,2182** (0,3200 contre 0,1018),
+trois fois le plancher 0,07. Deuxième indicateur concordant :
+Delta **+0,5357** contre le nul graine 42 (5,0557 contre
+4,5200) — un écart cinq fois supérieur à l'échelle typique
+|Δ| ≤ 0,10 observée sur la moitié des paires au §8.62 — et
+L7a UP 38,43 % contre DOWN 18,08 % (désaccord interne sur le
+nul). Nuls frais : **+0,2056 et +0,1990, 2/2 au-dessus du
+plancher**. S_sep suit `maxsep` (stabilité 0,9872–0,9988 sur
+les 8 runs) : écarts +0,2168 / +0,2041 / +0,1987. La cascade
+réelle est comprimée très tôt (0,0000 / 0,0894 / 11,2527 /
+23,1883 / 23,1883) contre des nuls tardifs (T0 35,61 % /
+86,31 % / 72,39 % ; T+1/T+2 83–94 %) : le réel et les nuls
+n'ont pas la même forme de cascade, dans le même sens que
+l'écart `maxsep`.
+
+Les réserves, mesurées, pas minimisées : (1) MC ne sépare pas
+— −0,0092 contre le nul graine 42, +0,0310 contre s9601,
+−0,0088 contre s9602, le nul au-dessus du réel sur 2 nuls sur
+3 ; (2) Delta échoue contre le nul frais s9601 (−0,0352 ;
+5,0557 contre 5,0909) ; (3) la falsification est plus haute
+sur les trois nuls (0,8708 / 0,8284 / 0,8281) que sur le réel
+(0,6919), alors qu'elle déclenche partout (> 0,5 sur les 8
+runs) — elle ne discrimine rien ici non plus ; (4) L7a ne
+sépare que contre le nul graine 42 : les deux nuls frais
+votent UP comme le réel (17,16 % et 18,81 %, avec désaccord
+interne), à des confiances plus faibles ; (5) L7b est FRAGILE
+sur les 8 runs (§8.96.7) ; (6) le diagnostic de bruit du réel
+est le plus fort du lot (§8.96.7). La confirmation est donc
+partielle au sens gelé du terme : elle porte sur `maxsep`,
+Delta (2 nuls sur 3) et L7a (1 nul sur 3), pas sur la batterie
+entière — et elle ne dit rien d'un troisième cancer.
+
+## §8.96.7 La batterie entière, loupe par loupe
+
+**Q1–Q6 (médianes sur 348 entrées flux × estimateur).**
+
+| Run | Q1 | Q2 | Q3 (= Q1) | Q4 | Q5 | Q6 |
+|---|---|---|---|---|---|---|
+| LUAD réel | 0,3048 | 0,4999 | 0,3048 | 0,2202 | 9,0143 | 17,7422 |
+| LUAD nul 42 | 0,2868 | 1,8172 | 0,2868 | 0,2395 | 7,6272 | 20,0937 |
+| LUAD nul s9601 | 0,3423 | 1,4440 | 0,3423 | 0,2236 | 8,7164 | 12,8356 |
+| LUAD nul s9602 | 0,2956 | 1,1538 | 0,2956 | 0,2358 | 8,5081 | 17,4259 |
+| BRCA réel | 0,3483 | 3,5171 | 0,3483 | 0,1536 | 11,0289 | 32,3646 |
+| BRCA nul 42 | 0,3655 | 0,6806 | 0,3655 | 0,2094 | 12,3843 | 42,1275 |
+| BRCA nul s9601 | 0,3164 | 1,3328 | 0,3164 | 0,1520 | 11,4002 | 30,1946 |
+| BRCA nul s9602 | 0,3238 | 1,0365 | 0,3238 | 0,2185 | 13,3576 | 38,7783 |
+
+Q3 recopie Q1 sur les 8 runs (couverture faible, règle connue
+du pipeline). Q1, Q4, Q5, Q6 ne séparent pas le réel des nuls
+dans aucun des deux bras (les médianes réelles sont au milieu
+des médianes nulles). Q2 est le seul score Q qui bouge :
+LUAD réel 0,4999, le plus bas des 4 runs LUAD (nuls 1,8172 /
+1,4440 / 1,1538) ; BRCA réel 3,5171, le plus haut des 4 runs
+BRCA (nuls 0,6806 / 1,3328 / 1,0365) — dans des sens opposés
+selon le bras, sans barre gelée : c'est une observation, pas
+un discriminateur.
+
+**Quatre tests de bruit (médianes sur 1 044 lignes ;
+comptages « computed » entre parenthèses).**
+
+| Run | Étape 1 : ratio candidat/bruit blanc | Étape 2 : Δ corrélation | Étape 3 : Hurst moyen | Étape 4 : Δ pente |
+|---|---|---|---|---|
+| LUAD réel | 0,3700 (959) | +0,0339 (927) | 0,7889 (957) | −0,1111 (963) |
+| LUAD nul 42 | 1,7470 (964) | −0,5346 (912) | 0,7918 (963) | +0,7810 (947) |
+| LUAD nul s9601 | 3,1384 (1008) | −0,6105 (978) | 0,7899 (969) | +0,8037 (984) |
+| LUAD nul s9602 | 6,6088 (961) | −0,3237 (927) | 0,7759 (963) | +0,4431 (952) |
+| BRCA réel | 1,6688 (1015) | −0,6649 (926) | 0,7455 (974) | +0,7414 (992) |
+| BRCA nul 42 | 1,8494 (993) | −0,0658 (959) | 0,7833 (993) | −0,1464 (999) |
+| BRCA nul s9601 | 1,0596 (1018) | −0,4943 (966) | 0,7733 (984) | +0,9103 (1001) |
+| BRCA nul s9602 | 26,8547 (987) | +0,1278 (953) | 0,7934 (996) | +0,0450 (996) |
+
+Lecture : l'étape 1 ne sépare pas — en LUAD, les nuls ont des
+ratios plus hauts que le réel (1,75 / 3,14 / 6,61 contre 0,37),
+en BRCA le réel est au milieu des nuls (1,67 contre 1,85 /
+1,06 / 26,85). L'étape 3 (Hurst moyen) ne sépare pas non plus
+(0,7455–0,7934 sur les 8 runs, sans ordre réel/nul). Les étapes
+2 et 4 séparent en LUAD seulement, par le signe : Δ corrélation
+réel +0,0339 contre −0,53 / −0,61 / −0,32 ; Δ pente réel
+−0,1111 contre +0,78 / +0,80 / +0,44 — mais en BRCA le réel
+(−0,6649 ; +0,7414) est indiscernable des nuls. Aucun des
+quatre tests ne sépare sur les deux bras à la fois.
+
+**Diagnostic de bruit (score proxy moyen, 12 flux).** LUAD :
+réel 0,4848 (« Mixte », MEDIUM, colonne MUC17) contre nuls
+0,5048 / 0,3974 / 0,3738 — pas de séparation. BRCA : réel
+**0,6945** (« Proxy de variance modéré », MEDIUM_HIGH, colonne
+PGC) contre nuls 0,4634 / 0,5111 / 0,5183 — le réel BRCA porte
+le diagnostic de bruit le plus fort des 8 runs du lot, au-dessus
+de tous ses nuls. Ce n'est pas une preuve contre la séparation
+BRCA (le diagnostic est un proxy, non décisionnel), mais c'est
+une réserve nommée : la paire BRCA qui sépare le plus en
+`maxsep` est aussi celle dont le réel porte le plus de
+signature de variance résiduelle.
+
+**L7a / L7b.** L7a : réel UP dans les deux bras (LUAD 42,05 %,
+BRCA 38,43 %) ; nul graine 42 DOWN dans les deux bras (23,25 %,
+18,08 %, désaccord interne) ; nuls frais UP dans les deux bras
+(LUAD 40,57 % / 38,48 % sans désaccord ; BRCA 17,16 % /
+18,81 % avec désaccord). L7b : **FRAGILE (mode light) sur les
+8 runs**, sans exception. Le check de stabilité walk-forward
+échoue sur les 8 runs (T0 variable, t0_std > 10 partout) ; la
+stabilité d'horizon échoue sur 3 runs (LUAD nul 42, LUAD nul
+s9602, BRCA réel) ; la cohérence interne échoue sur 4 nuls
+(LUAD nul 42, BRCA nul 42, BRCA s9601, BRCA s9602) et passe
+sur les deux réels. Comme au §8.27 et dans les rotations
+(§8.32), L7b est non-informatif ici : il dit FRAGILE sur le
+réel et sur les nuls alike — il ne porte aucun des deux
+verdicts, et ne doit jamais être rapporté seul comme une
+mesure de fragilité de l'instrument.
+
+**Régimes et vecteur D.** LUAD réel : criticality
+(d_sat 1,6563, d_crit 3,1463, d_div 4,1671, d_null 2,5074) ;
+BRCA réel : divergence (d_sat 1,6454, d_crit 3,1876,
+d_div 6,7011, d_null 2,4957). Mais les nuls portent les mêmes
+étiquettes : LUAD nuls criticality / divergence / criticality,
+BRCA nuls divergence / divergence / divergence. Le régime ne
+sépare pas. Delta, lui, est la différence d_sat/d_div portée
+par la couche géométrique : en LUAD le nul s9601 (Delta 4,6279,
+d_div 6,2790) dépasse le réel ; en BRCA le nul s9601
+(Delta 5,0909, d_div 6,7306) dépasse aussi le réel — dans les
+deux bras, le nul frais s9601 est le Delta le plus haut du
+bras. C'est la même fragilité que celle du §8.62 : Delta ne
+suffit pas comme discriminateur.
+
+**MC : recomposition et anomalie.** Le score MC stocké est
+reproduit exactement (écart 0,0) par la formule du §8.50
+(0,3·s_norm + 0,3·stabilité + 0,2·robustesse + 0,2·acuité)
+sur 6 runs sur 8. Sur 2 runs — BRCA nul graine 42 et BRCA nul
+s9602 — l'écart est de **0,0900** (recomposé 0,4499 contre
+stocké 0,3600 ; recomposé 0,4495 contre stocké 0,3596). Ces
+deux runs sont les seuls du lot dont la robustesse est haute
+(0,6634 et 0,6376, contre ≤ 0,12 ailleurs). Aucune explication
+n'est inventée ici : l'anomalie est consignée telle quelle.
+Elle ne change pas le sens des écarts MC en BRCA — avec les
+valeurs recomposées, les écarts réel − nul seraient −0,0991
+et −0,0987 au lieu de −0,0092 et −0,0088, toujours négatifs :
+MC ne sépare pas en BRCA dans les deux lectures. En LUAD, la
+recomposition est exacte sur les 4 runs et MC ne sépare pas
+non plus.
+
+## §8.96.8 Ce qui n'a pas été testé (nommé, pas comblé)
+
+- **La structure analogue (confirmation totale).** Aucun test
+  direct de corrélation bloc/axe n'a été fait : ni le bloc
+  estomac/mucus variant avec KRAS en LUAD, ni un bloc
+  équivalent variant avec ESR1 en BRCA. Les fichiers
+  `luad_896_fresh.json`, `luad_896_table.json`,
+  `brca_896_fresh.json`, `brca_896_table.json` annoncés au
+  §4 du protocole n'existent pas sur disque ; les tables
+  produites pour cette section sont `universalite_896_table.json`
+  et `universalite_896_table.csv` (§8.96.3). Le verdict
+  « total » n'est pas rendu : il attendrait son propre
+  protocole, avec les mêmes gènes et les mêmes seuils que
+  §8.33/§8.66.
+- **La série LUAD n = 45…515 (§8.62, ensemble B).** Le
+  protocole prévoyait de la relire en sensibilité (le pipeline
+  sépare-t-il à petit n en LUAD comme en PAAD ?). Elle n'a pas
+  été relue dans cette section : le NON en LUAD porte sur
+  n = 515 seul.
+- **Le témoin COAD.** Aucun run COAD neuf dans ce lot. Les
+  valeurs §8.27 sont rappelées seulement : réel Delta 4,619
+  contre nul 4,599 — le v6 ne séparait pas non plus en COAD,
+  comme attendu (§8.27 : programme KRAS du côlon différent).
+- **Aucun autre cancer.** GBM / UVM (§8.33) ne sont pas
+  rouverts, comme gelé.
+
+## §8.96.9 Ce que ça change pour l'universalité
+
+Avant ce chantier, l'universalité tenait à trois points
+(§8.90, volet 4) : `maxsep` seul 6/8, rotations sans doublon
+37/48, A2 10/15 — tous pancréas, plus l'Ising jamais tourné
+en v6/v6.1/v6.2 dans ce livre blanc. Après ce chantier, le
+tableau est mixte et mesuré : le pipeline sépare le réel du
+nul sur un cancer hors pancréas (BRCA, par `maxsep` surtout)
+et ne le sépare pas sur un autre (LUAD, par aucun
+indicateur) — avec les mêmes 12 flux, le même pipeline, la
+même barre. Trois lectures en découlent. Premièrement, le mot
+« universel » reste exagéré tel quel (§8.90.4) : un bras sur
+deux, et une confirmation partielle seulement. Deuxièmement,
+le bras qui sépare (BRCA) est celui dont l'axe est un vrai
+classificateur biologique du cancer (ESR1 sépare ER+ / ER−,
+écart-type 3,190, le plus fort des candidats) — alors que
+l'axe KRAS, analogue exact de PAAD, ne sépare pas en LUAD :
+ce qui voyage, ce n'est pas l'axe KRAS, c'est la capacité de
+l'instrument à lire un ordre fort quand il existe. C'est une
+lecture d'analyse, pas une règle : un seul bras la porte.
+Troisièmement, la fragilité de Delta est confirmée hors
+pancréas (§8.62) : dans les deux bras, un nul frais dépasse
+le réel en Delta. Pour la suite : un troisième cancer ne se
+prédit pas, il se teste — avec sa propre barre gelée, son
+propre axe choisi avant les runs, et le test de structure
+analogue fait cette fois, pas seulement annoncé.
+
+## §8.96.10 Limites
+
+- Deux bras seulement, une paire réelle par bras, trois nuls
+  par bras : les écarts reposent sur 8 runs. La distribution
+  nulle est empirique (3 permutations par bras), ses quantiles
+  sont bruités.
+- LUAD et PAAD partagent les 12 mêmes flux : en LUAD, une
+  structure analogue trouvée aurait pu tenir aux gènes
+  choisis, pas au cancer — le bras BRCA (mêmes 12 flux aussi,
+  gate 12/12 sans remplacement) ne lève pas cette limite
+  autant que prévu : les flux n'ont pas été adaptés au sein,
+  ils ont passé le gate tels quels.
+- Firehose 2016-01-28 est un millésime figé (2016) : les
+  résultats portent sur ces données, pas sur TCGA actuel —
+  choix de comparabilité, consigné, pas limite cachée.
+- Les sous-échantillons préfixe du §8.62 ne sont pas des
+  cohortes indépendantes (rappel du protocole).
+- L7b light seulement (pas de `--l7b-full`) ; la recomposition
+  MC présente une anomalie non élucidée sur 2 runs (§8.96.7).
+- Aucune recommandation clinique, jamais ; données d'essais
+  seulement, à discuter avec un oncologue (règle de sécurité
+  §8.90).
+
+## §8.96.11 Provenance
+
+- Protocole gelé : `PROTOCOL_universalite_896.md`, SHA-256
+  `1349b9963a1a267dafaacaa8fd5df215d680ba1fa11d5e0e29dad635efe848d8`
+  (le SHA `24566611…5fc9` cité dans `PROVENANCE_896.md` est
+  celui de la version au gel du squelette ; le fichier a été
+  complété ensuite par l'addendum de correction — le texte
+  gelé est intact, l'addendum l'applique).
+- Provenance : `PROVENANCE_896.md`, SHA
+  `d9554cf3923155696d3773c3fc5c2d52c94bb15f1bd9aea4eb0567cc15a92c68`.
+- Addendum correction (Zackary, 21 nov. 2026 12h03) :
+  `ADDENDUM_correction_20261121_896.md`, SHA
+  `ff8408644894898ae82b63a702f1595bf29f58e511af0244ee2df4daff97f132`.
+- Addendum axe BRCA : `ADDENDUM_axe_brca_896.md`, SHA
+  `aed56a92aee3c7cb545bcafcb9af786172246449fcf04a08222ddc9345f048ba`.
+- Code : pipeline v6.2
+  `~/workspace/runs/biophysique-hp35/universal_v6.2.0_cohen.py`,
+  SHA `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`
+  (vérifié par `sha256sum` et dans les logs des deux lots).
+- Construction BRCA : `build_fluxes_brca_896.py`, SHA
+  `7f60c0feeaf90df64700635826f8915fa875ff493fc5745b8dd1348f447f62b4` ;
+  nuls LUAD : `build_luad_nulls_896.py`, SHA
+  `5e79c90fb9313bef874e1c6758a7562860c9117af02f2fd6916dea71c25b7e04`.
+- Téléchargement BRCA : `brca_896_download.json`, SHA
+  `80d0f7ce8a07987f8f441d23c9f768e0f6159910930fd33f88b62eb2481c244e`
+  (tarball MD5 `b4eed57d14ca2fa563ca0dd05d4fba7f`, matrice
+  interne MD5 `96d707af16947605116dfbec6e3c050e`).
+- Nuls LUAD frais : `luad_896_nulls_files.json`, SHA
+  `d75c13018c4843257f978c40eb92e9b1512c3f307fc50101ab6305e625195488`.
+- Flux (SHA-256) : LUAD réel `d407849b…38091e`, nul 42
+  `93766e8c…978a6b`, s9601 `6e652a42…c72d1`, s9602
+  `358188cf…336f` ; BRCA réel `c08ebf41…2d84`, nul 42
+  `f8234a33…c88b29`, s9601 `5713da1f…57f7e`, s9602
+  `88a1b9aa…62a8` (SHA complets dans
+  `universalite_896_table.json`).
+- Logs des lots : `runs_luad_896.log`, `runs_brca_896.log`
+  (8/8 exit 0, SHA v6.2 vérifié au lancement et à la fin).
+- Lecture : `extract_universalite_896.py`, SHA
+  `583397ed853eae6a48a0ee1d7e8d27cf625b2f7107a8e70792a41795974fa210` ;
+  tables `universalite_896_table.json` (SHA
+  `cfddd6d8a1d46d78ae107b08f3dd541069a25e01af94d13450c1e1eb4df1fe24`)
+  et `universalite_896_table.csv` (SHA
+  `47807fd2116813f9695ddefc5cef8b28055ce3c9a616c5ddab0352b7b3ef2cfc`).
+- Sources externes : Broad GDAC Firehose stddata 2016-01-28
+  (LUAD : `https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/LUAD/20160128/` ;
+  BRCA : `https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/BRCA/20160128/`).
+  Antériorités citées : §8.27 (pan-cancer), §8.33 (flux et
+  blocs), §8.62 (Delta, série LUAD n = 45…515), §8.90 (audit,
+  volet 4 : universalité).
+
+## §8.96.12 Ce qui manque (déclaré)
+
+- Le test direct de la structure analogue (bloc estomac/mucus
+  ou équivalent variant avec l'axe) : absent, à faire sous son
+  propre protocole avant tout verdict « total ».
+- Les fichiers `luad_896_fresh.json`, `luad_896_table.json`,
+  `brca_896_fresh.json`, `brca_896_table.json` annoncés au §4
+  du protocole : non produits ; remplacés ici par
+  `universalite_896_table.json` / `.csv` (même contenu :
+  8 runs, écarts, SHAs).
+- La relecture de la série §8.62 en sensibilité de n (LUAD).
+- L'élucidation de l'anomalie de recomposition MC sur les
+  deux nuls BRCA à robustesse haute (§8.96.7).
+- La mise à jour de `PROVENANCE_896.md` (squelette) avec les
+  SHAs des flux BRCA et des runs : les SHAs sont dans cette
+  section et dans `universalite_896_table.json`, pas encore
+  reportés dans le fichier de provenance — dette de
+  consignation, pas de résultat.
+
+— Fin de la §8.96. —
+
+---
+
+### 8.97 Extension d'audit — la règle du 21 nov. 2026 appliquée à tout le livre blanc (§8.1–§8.89) (21 novembre 2026)
+
+**Correction de Zackary, datée et nommée, qui déclenche cette section
+(21 novembre 2026, 12h03 ; portée étendue à tout le projet le 12h04 ;
+partie 4 ajoutée le 12h05).** Trois points, portés à TOUT le projet,
+pas seulement aux quatre pistes du lot en cours : (1) un flux en axe
+de contrôle ne doit JAMAIS être un flux analysé ; (2) même un flux NON
+monotone en axe de contrôle peut donner un seuil différent — c'est de
+l'information, pas une erreur, il ne faut pas l'écarter ; (3) le
+pipeline est AVANT TOUT un pipeline d'ANALYSE, pas forcément de
+prédiction — les verdicts se formulent comme de l'analyse, jamais
+comme des prédictions. L'audit §8.90 est déjà fusionné et publié, donc
+ces trois vérifications deviennent cette section propre, EN PLUS des
+§8.93–§8.96. La correction en tête de §8.93 reste en place : §8.93
+porte la règle pour les quatre pistes, §8.97 l'applique
+rétrospectivement à tout le livre blanc.
+
+**Verdict d'abord, en quatre phrases — une par partie. (1) Contrôle
+jamais analysé : AUCUN autre cas que le défaut connu des rotations
+d'origine (§8.32) — balayage mécanique de 752 dossiers de runs : 650
+propres, 102 avec la signature du doublon, tous des rotations, 0
+ailleurs ; les 2 dossiers sans `master_results.json` sont des
+répertoires vides et 1 run BRCA en cours (CSV déjà vérifié propre).
+(2) Contrôles non monotones : AUCUN seuil écarté au motif de
+non-monotonie dans tout le livre blanc — 38 occurrences de
+« monotone » et « monotonie » lues en contexte ; la règle ancienne, sous
+sa forme littérale « le contrôle doit être monotone en T », n'apparaît
+même pas dans le livre blanc (elle vit dans la philosophie de travail),
+et les cas proches (stade, Tiriac, Delta) lisent les seuils, ils ne
+les écartent pas. (3) Analyse, pas prédiction : 257 lignes contiennent
+un terme de prédiction ; 9 formulations de verdict sont reformulées
+en langage d'analyse par addendum daté ci-dessous (survie Cox et axe
+Chronos, titres §8.48) ; le reste est conforme avec raison écrite
+(négations, modélisation statistique testée, questions ouvertes,
+stipulations de protocole, plans d'industriels). (4) Reproductibilité
+et clarté : chaque preuve citée a été re-vérifiée contre le dépôt réel
+— test à froid §8.77 (0,0 exact, flux SHA-identiques), script de
+re-téléchargement (SHA 55811136…, EXIT:0, 52 fichiers, 2,4 Go),
+DATA_SOURCES.md (1 484 lignes, SHA dec70e17…), pipeline v6.2 SHA
+f07567c4… et v6.1/v6 intacts — et les dettes connues sont nommées
+ci-dessous, dont l'avertissement médical toujours absent en tête du
+document (priorité haute).**
+
+## 8.97.0 Portée, méthode, règles
+
+**Portée gelée : §8.1–§8.89.** Le livre blanc sur le disque
+(`livre-blanc-pdac-v6.md`, SHA `2606caf3…`, 23 739 lignes) contient
+aussi §8.90 (l'audit lui-même), §8.91 et §8.92 (finisseur) — ces trois
+sections sont HORS de ce balayage : §8.90 parce qu'il est l'audit qui
+a déclenché ce travail ; §8.91–§8.92 parce qu'elles appartiennent au
+finisseur et ne sont pas encore poussées. Les §8.93–§8.96 sont couverts
+par la correction en tête de §8.93, pas par ce balayage.
+
+**Méthode.** Protocole gelé `PROTOCOL_audit_regle_897.md` (SHA
+`fa04f4fee49648b7ad409a5323d75f3a61324f94bb40e3ca37dfec55a035370e`,
+écrit avant tout balayage, toute lecture, toute rédaction de section).
+Travail de LECTURE SEULE : aucun run de pipeline, aucune modification
+du livre blanc ni d'aucune ancienne section. Les corrections se font
+par addendum daté DANS cette section, texte d'origine intact.
+
+## 8.97.1 Partie 1 — Contrôle jamais analysé : aucun autre cas
+
+**Question.** Existe-t-il, ailleurs que dans les 96 rotations
+d'origine du §8.32 (défaut connu, corrigé au §8.44), des endroits où
+un flux de contrôle était aussi un flux analysé ?
+
+**Méthode.** Deux volets, lecture seule. (a) Balayage mécanique de
+TOUS les dossiers `results_*` du projet (script `audit_doublon_897.py`,
+SHA `731dbe25f5cab43d1c5acc3cb13856c33cdbf5694167e46af15476bcfc10f5de`) :
+pour chaque dossier, lecture de `master_results.json` (csv_path,
+contrôle) et des colonnes du CSV source ; signalement de toute colonne
+se terminant par `.1` — signature mécanique du doublon §8.32 (pandas
+renomme la colonne dupliquée) — et de tout contrôle présent aussi
+comme flux analysé. (b) Table des familles : variable d'ordre nommée
+pour chaque famille, avec sa source, vérifiée absente des flux
+analysés.
+
+**Résultat du balayage (21 novembre 2026, 17h14).** 752 dossiers
+scannés : **650 propres** (aucune colonne `.1`, aucun contrôle
+réanalysé), **102 avec une colonne `.1`**, **0 contrôle réanalysé
+sous le même nom**, 0 CSV illisible. Les 3 dossiers sans
+`master_results.json` : `results_fast_pdac_depmap` et
+`results_fast_pdac_depmap_nul` — deux répertoires VIDES (créés le
+15 nov. 2026 12h39, jamais remplis, aucune donnée) — et
+`results_fast_v62_896_brca` — le run BRCA du lot en cours, en train
+de tourner au moment du balayage, dont le CSV a déjà été vérifié
+propre séparément (ESR1 absent des flux, §8.96).
+
+**Les 102 dossiers avec `.1` sont TOUS des rotations, 0 ailleurs.**
+Composition exacte : 96 fichiers §8.32 (v6.1, 4 familles × 12
+contrôles × réel/nul : V4ROT, IMMROT, PARPROT, DEPMAPROT) + 6
+dossiers de la rotation CLDN18 (la paire qui a RÉVÉLÉ le défaut,
+§8.31(4) : `results_fast_v4r_cldn18` + nul, `results_fast_v61_
+v4r_cldn18` + nul, `results_fast_v62_v4r_cldn18` + nul — la même
+rotation courue sous trois nommages/versions, toujours avec le
+doublon). Exemple : `pdac_tcga_fluxes_v4rot_CEACAM5.csv` —
+`CEACAM5,PGC,REG4,…,CEACAM5.1,…,MUC16` (le flux d'ordre en contrôle
+ET en `CEACAM5.1` parmi les flux analysés). Le livre blanc le dit
+déjà au §8.44 (ligne 772) : « CLDN18 est à la fois le contrôle et
+un flux (lu `CLDN18.1`) ».
+
+**Table des familles (variable d'ordre → absente des flux ?).**
+
+| Famille | Variable d'ordre | Source | Absente des flux analysés ? |
+|---|---|---|---|
+| Paires principales V1 + A2 (15) | KRAS croissant | §8.4, §8.88.3 | Oui — contrôle `step`, KRAS absent des 15 CSV |
+| Rotations §8.32 (96 fichiers) | flux de rotation | §8.32 | **NON — défaut connu (colonne `.1`)** |
+| Rotations DEDUP §8.44 (48 paires) | flux de rotation | §8.44 | Oui — flux d'ordre = 1re colonne (contrôle), 0 `.1` sur 48/48 |
+| Rotation CLDN18 (6 dossiers) | CLDN18 | §8.31(4) | **NON — même défaut, cas révélateur** |
+| Test A §8.34 (prolifération) | score PROLIF | §8.34 | Oui — contrôle PROLIF, MKI67 absent |
+| Test C §8.45 (stade) | stade clinique | §8.45 | Oui — le stade n'est pas un flux |
+| Série MTAP §8.43 | MTAPCN | §8.43 | Oui — contrôle MTAPCN, 12 flux |
+| MTAP_PRMT5FLUX §8.41 | dépendance PRMT5 | §8.41 | Oui — contrôle `step`, PRMT5 absent |
+| V4R_PURITY | score acineux | §8.51 | Oui — contrôle `score_acineux` |
+| HP35 (biophysique) | température (ordre des lignes) | §8.1 | Oui — contrôle `step`, T n'est pas une colonne |
+| Chen drogue §8.84 | AUC médicament (ordre des lignes) | §8.84 | Oui — contrôle `step`, l'AUC n'est pas un flux |
+| GDC organoid §8.85/§8.87, GSE194249 §8.88 | KRAS croissant | §8.85/§8.88 | Oui — mêmes CSV que les paires A2 |
+| LUAD/BRCA §8.96 | KRAS / ESR1 (ordre des lignes) | §8.96 | Oui — contrôle `step`, KRAS/ESR1 absents |
+
+**Mécanisme vérifié par lecture du code.** Le pipeline exclut la
+colonne de contrôle des flux analysés quand aucun `flux_mapping`
+n'est fourni — cas de tous nos runs — (ligne 6787 de
+`universal_v6.2.0_cohen.py` : `[c for c in ... if c != control_col]`).
+Le doublon §8.32 ne venait donc pas du pipeline : il venait des CSV
+construits avec le flux d'ordre en double (contrôle + colonne `.1`).
+Les fichiers DEDUP du §8.44 ont retiré la colonne en double, et ce
+sont eux qui sont utilisés depuis (§8.56, §8.95 : 48/48 vérifiés
+propres le 21 novembre 2026).
+
+**Verdict partie 1 : AUCUN autre cas.** Le défaut est circonscrit
+aux rotations d'origine et à la rotation CLDN18 qui l'a révélé —
+déjà documenté au §8.32, déjà corrigé au §8.44, déjà dit dans le
+livre blanc. Aucun addendum de correction n'est nécessaire pour
+cette partie : il n'y a rien d'autre à corriger. Les 102 dossiers
+défectueux restent sur le disque comme témoins du défaut, ils ne
+sont plus utilisés pour aucun verdict depuis §8.44.
+
+## 8.97.2 Partie 2 — Contrôles non monotones : aucun seuil écarté
+
+**Question.** Quelque part dans le livre blanc, le seuil d'un contrôle
+non monotone a-t-il été écarté ou traité comme une erreur ?
+
+**Méthode.** Grep `monotone` et `monotonie` dans tout le livre blanc
+(38 occurrences, lignes 48 à 23669) ; lecture de chaque occurrence en
+contexte ; jugement : un seuil a-t-il été écarté ou traité comme une
+erreur au motif de non-monotonie ?
+
+**Résultat : NON — aucun seuil écarté pour non-monotonie.** Les 38
+occurrences se répartissent ainsi : relations monotones entre
+variables (dose–réponse, Spearman, Delta en w et en n) ; propriétés
+mathématiques (`sep`/`maxsep` monotones l'un en l'autre, §8.56.2) ;
+descriptions de données (survie par stade non monotone, §7 ligne 50 ;
+Delta non monotone en n aux petites tailles, §8.62.5). Aucune ne dit
+qu'un seuil est écarté parce que son contrôle est non monotone.
+
+**La règle ancienne, sous sa forme littérale, n'apparaît pas dans le
+livre blanc.** « Le contrôle doit être monotone en T » — cette
+formulation vit dans la philosophie de travail (synthèse
+d'alignement, règles de l'instrument), pas dans le texte du livre
+blanc. Dans le livre, la monotonie apparaît comme une aide à la
+lecture, jamais comme une condition d'admission d'un seuil. La nuance
+du 21 novembre 2026 la corrige donc sans contredire aucun texte du
+livre : la monotonie aide à lire, elle n'est pas une condition pour
+que le seuil compte.
+
+**Exemples vérifiés (les cas proches, lus en contexte).**
+- **Test C, stade (§8.45, ligne 3042).** Le contrôle (stade) est
+  monotone non décroissant mais n'a que 4 valeurs distinctes
+  (corrélation rang/valeur 0,646, ties massives) : les seuils sont
+  LUS (T_0 à 98,41 %, T_-1 au pas 50, T_-2 au pas 2), pas écartés —
+  le verdict est NON, porté par la lecture, pas par un tri.
+- **Tiriac et al. 2018 (§8.78.8, ligne 18497).** « T0 ambigu partout,
+  contrôle non monotone partout (v5.9.4, 19–20 nov. 2026). » La
+  non-monotonie est RAPPORTÉE comme une propriété des données déjà
+  courues ; la cohorte est classée non-candidate parce que ce n'est
+  « pas une nouvelle cohorte » (déjà courue), pas pour sa
+  non-monotonie. Aucun seuil n'est écarté au motif de non-monotonie.
+- **Delta en n (§8.62.5).** « Delta croît avec n — localement, non
+  monotone » : la non-monotonie est décrite, elle ne disqualifie
+  rien.
+- **Le cas le plus proche d'une mise à l'écart — et ce n'en est pas
+  une au sens de la règle.** Au §8.45 toujours : « un “seuil” à
+  l'intérieur du stade II ne mesure rien » — le seuil est mis de
+  côté parce que l'ordre DANS le stade II est l'ordre des
+  codes-barres, arbitraire par construction (aucune information),
+  et non parce que le contrôle serait non monotone. La nuance du
+  21 novembre 2026 ne change pas ce jugement : un ordre arbitraire
+  ne porte pas d'information, un contrôle non monotone en porte —
+  la distinction est écrite ici pour qu'elle ne soit pas confondue
+  avec un tri par monotonie.
+
+**Verdict partie 2 : aucun cas à réhabiliter.** Aucun addendum de
+correction n'est nécessaire pour cette partie. La nuance est
+consignée : désormais, si un contrôle non monotone donne un seuil
+différent, il est lu comme un résultat d'analyse à part entière.
+
+## 8.97.3 Partie 3 — Analyse, pas prédiction : 9 formulations de verdict reformulées
+
+**Question.** Où le livre blanc présente-t-il un résultat comme une
+prédiction ?
+
+**Méthode.** Grep dans tout le livre blanc : `prédit`, `prédiction`,
+`prévoit`, `annoncera`, `prédire`, `prévoir`, `prédira`, `prédisent`,
+`prédictions` (257 lignes contiennent au moins un de ces termes, sur
+23 739 lignes ; liste complète avec section et contexte dans
+`audit_prediction_897_hits.json`, SHA
+`7c4e0b73757b21c398a301cccf35e688afa7c651fb3145a209b139c3b94a1158`).
+Chaque ligne a été classée : présente-t-elle un RÉSULTAT comme une
+prédiction ? Les négations, les stipulations de protocole, les
+discussions de méthode et les questions ouvertes ne sont pas des
+présentations de résultat comme prédiction — chacune est listée avec
+sa raison.
+
+**Comptage par catégorie (257 lignes).**
+
+| Catégorie | Lignes | Jugement |
+|---|---|---|
+| Régression du couplage (§8.48 + sections T3) | 143 | Sens statistique testé — voir ci-dessous |
+| Modélisation Delta (§8.39, §8.41, §8.42, §8.57, §8.62, §8.73, §8.47, §8.53, §8.35, §8.37) | 31 + ~20 dans « autre » | Évaluation de modèle, taux d'erreur donnés — conforme |
+| Survie, formulations de verdict (§8.83, §8.12, §8.13, §8.16, §8.20 Chronos) | 20 + 3 | **REFORMULÉES par addendum (table A)** |
+| Négations (« pas une prédiction du pipeline », « ne prédit pas », « pas de prédiction sans rigueur ») | 11 | Conformes — le livre se corrige déjà lui-même |
+| Journal §7 (dont requalification pronostique) | 7 | Conformes — dont « stratification pronostique, pas prédiction par pseudo-temps » (ligne 31) |
+| Citations par l'audit §8.90 | 5 | Renvoient aux reformulations (table A) |
+| Questions ouvertes, stipulations, plans d'industriels, notes de sources | ~14 | Conformes avec raison (voir texte) |
+
+**Table A — Addendum daté, 21 novembre 2026 (correction de Zackary).
+Formulations de verdict reformulées en langage d'analyse. Texte
+d'origine intact dans le livre blanc ; les reformulations ci-dessous
+sont les formulations à lire à la place, à compter de cette section.**
+
+| # | Localisation exacte | Formulation d'origine | Reformulation (analyse) |
+|---|---|---|---|
+| A1 | §8.12, ligne 382 | « KRAS, CA125, CEA et DPCR1 prédisent chacun une survie plus courte pris seuls » | « KRAS, CA125, CEA et DPCR1 sont chacun associés à une survie plus courte pris seuls (Cox univarié) » — mêmes HR, mêmes p |
+| A2 | §8.13, ligne 394 | « **Survie : CA125 prédit une survie plus courte dans 2 cohortes sur 3** (TCGA : HR 1,44 univarié / 1,32 multivarié ; ICGC : 1,57 / 1,56 ; GSE71729 : non, 1,06) » | « **Survie : CA125 est associé à une survie plus courte dans 2 cohortes sur 3** (mêmes chiffres) » |
+| A3 | §8.83, titre, ligne 19853 | « les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, pour 3 items sur 8 » | « les gènes de privilège sont-ils associés à la survie comme CA125 ? OUI, pour 3 items sur 8 » |
+| A4 | §8.83, verdict, lignes 19861–19862 | « AU MOINS UN gène de privilège prédit la survie comme CA125 : 3 items sur 8 sont dans la catégorie « PRÉDIT COMME CA125 » (Cox univarié… » | « AU MOINS UN gène de privilège est associé à la survie comme CA125 : 3 items sur 8 sont dans la catégorie « ASSOCIÉ COMME CA125 » (Cox univarié… » — mêmes critères (HR > 1, p < 0,05 dans ≥ 2/3 cohortes), mêmes gènes (TGFB2, HLA-G, score combiné) |
+| A5 | §8.83, lignes 19870, 20060 | « FASLG et IDO1 ne prédisent rien nulle part » ; « 3 items sur 8 prédisent la survie comme CA125 (TGFB2, HLA-G, score) » | « FASLG et IDO1 ne sont associés à rien nulle part » ; « 3 items sur 8 sont associés à la survie comme CA125 (TGFB2, HLA-G, score) » |
+| A6 | §7, ligne 245 (journal, §8.83) | « **3 items sur 8 PRÉDISENT COMME CA125** (Cox HR > 1, p < 0,05 dans ≥ 2/3 cohortes) — TGFB2, HLA-G et le score combiné » | « **3 items sur 8 ASSOCIÉS COMME CA125** (mêmes critères) — TGFB2, HLA-G et le score combiné » ; le titre cité devient « sont-ils associés à la survie comme CA125 ? » |
+| A7 | §8.90, lignes 22736, 22808 (tables de vérification) | « 3 items sur 8 prédisent comme CA125 » ; « 3/8 prédisent comme CA125 sur ≥ 2/3 cohortes » | « 3 items sur 8 sont associés comme CA125 » ; « 3/8 associés comme CA125 sur ≥ 2/3 cohortes » — chiffres inchangés |
+| A8 | §8.20, ligne 512 | « L'axe Chronos KRAS prédit la sensibilité chez les G12D : Spearman rho +0,47 (p=0,079, n=15) » | « L'axe Chronos KRAS est associé à la sensibilité chez les G12D : Spearman rho +0,47 (p=0,079, n=15) — direction juste, effectif trop petit pour conclure » |
+| A9 | §8.48.3 (titre) + titres T3 (§8.51.5, §8.54.5, §8.55.6, §8.60.5, §8.61.5, §8.67.5, §8.68.5) | « Le couplage prédit S_sep — test principal » ; « Couplage prédit : la régression §8.48 tient, avant comme après » | « Le couplage est associé à S_sep, et l'association tient hors échantillon — test principal » ; « Couplage associé : la régression §8.48 tient, avant comme après » — le contenu du test (r = 0,954, H2/H3) est inchangé |
+
+**Ce qui n'est PAS reformulé, avec la raison (sens statistique ou
+méthodologique du mot « prédire », pas une prédiction du pipeline).**
+- **Modélisation interne testée (§8.39, §8.41, §8.42, §8.57, §8.62,
+  §8.73, §8.47, §8.53).** « Prédire la paire à ±0,10 », « r(prédit,
+  vrai) », « la courbe réplique prédit » : un modèle ajusté sur des
+  données, évalué sur des données tenues à l'écart, avec son taux
+  d'erreur écrit (souvent un ÉCHEC : 46,8 %, 47,3 %, « NON ÉLUCIDÉ »).
+  Le mot est employé au sens statistique — évaluer un modèle — et les
+  verdicts disent déjà l'échec. Rien à reformuler : ce n'est pas un
+  résultat du pipeline présenté comme une prédiction sur le monde.
+- **« Prédictions gelées avant les runs » (§8.48.6).** Des prévisions
+  écrites AVANT les runs, puis testées par les runs (H2/H3) — le sens
+  scientifique du mot (une prévision testée par des données nouvelles),
+  avec l'issue écrite. Conforme.
+- **Négations (11 lignes).** « Pas une prédiction du pipeline »
+  (§7 ligne 180 ; §8.20 ligne 503 ; §8.90 ligne 23040), « le pipeline
+  ne prédit pas », « la construction ne prédit pas le verdict d'une
+  paire » (§8.85.7, §8.88.7), « Le pilote ne prédit rien ici »
+  (§8.84.1), « aucun flux ne prédit seul » (§7 ligne 29, R2 infirmé),
+  « pas de prédiction sans rigueur ». Le livre se corrige déjà
+  lui-même : ces lignes sont conformes à la règle du 21 novembre 2026.
+- **Requalification déjà faite (§7 lignes 29 et 31).** « L'axe
+  pseudo-temporel comme source prédictive hors échantillon (accuracy
+  0,4612, p = 0,9581) » est un RÉSULTAT NÉGATIF sur la capacité
+  prédictive (R2 infirmé), et « le projet est devenu de la
+  stratification pronostique, pas de la prédiction par pseudo-temps »
+  est la requalification elle-même. Conformes.
+- **Questions ouvertes.** « Prédisent-ils… ? » (§8.82.7, ligne 19812),
+  « la dépendance KRAS prédit-elle le bénéfice de la combinaison ? »
+  (§8.22, ligne 571 — test non fait, faute de matrice) : des
+  questions, pas des verdicts. Conformes.
+- **« Prévoit » (4 occurrences).** Deux stipulations de protocole
+  (« le protocole gelé ne prévoit pas de second bras », ligne 8750 ;
+  « protocole §4.3 ne prévoit d'addendum qu'en cas de… », ligne
+  21614 — « prévoir » = stipuler) et deux plans d'industriel
+  (« Tango prévoit de lancer… une étude de phase 1/2 », lignes 19041
+  et 19109 — le plan annoncé d'une entreprise, pas un résultat).
+  Aucune n'est un résultat présenté comme une prédiction. « Annoncera »,
+  « prédira », « prévoir » : 0 occurrence.
+- **Notes de sources.** §8.78.10, ligne 18542 : « ni prédiction ni
+  alerte opérationnelle » — une mention sur un dépôt de données, pas
+  un résultat.
+- **Synthèse §8.5 (lignes 23616–23669).** Ces lignes citent les
+  verdicts de leurs sections d'origine : elles héritent de leur
+  jugement — les citations de §8.48 relèvent de A9, celles de survie
+  de A1–A8, celles de modélisation du sens statistique ci-dessus.
+
+**Verdict partie 3 : 9 reformulations, par addendum daté (table A).**
+Aucun chiffre ne change : seules les formulations de verdict passent
+du langage de la prédiction à celui de l'association mesurée. Le reste
+des 257 lignes est conforme avec raison écrite.
+
+## 8.97.4 Partie 4 — Preuves de reproductibilité et de clarté, vérifiables par un lecteur extérieur
+
+**Question.** Ce qui est sur GitHub est-il reproductible, clair et
+propre — et comment un lecteur extérieur peut-il le vérifier
+lui-même, sans nous croire sur parole ? Langage simple, moyen concret
+de vérification pour chaque affirmation. Chaque preuve ci-dessous a
+été re-vérifiée contre le dépôt réel le 21 novembre 2026 ; si une
+preuve ne tenait plus, elle serait dite ici et corrigée — aucune ne
+s'est effondrée, une précision de nom est corrigée (voir le script).
+
+### 8.97.4.1 Ce qui prouve que le dépôt est REPRODUCTIBLE
+
+**1. Le test à froid du §8.77 — reproduction exacte à 0,0.**
+Ce que dit le livre blanc (§8.77, et journal ligne 239) : après
+réparation, les flux TCGA v4 ont été reconstruits depuis les sources
+et sont SHA-IDENTIQUES aux flux tenus (`e7a2adab…` et `895a4562…`,
+identiques à l'octet), et les runs v6.2 redonnent les chiffres tenus
+à **0,0 exact des deux côtés** (cascade, MC, maxsep, S_sep, Delta,
+L7a, falsification), avec d_maxsep froid +0,29276219, égal au tenu.
+Comment vérifier : lire §8.77 dans le livre blanc ; relancer les
+deux runs TCGA v4 depuis les flux reconstruits et comparer les
+chiffres au §8.77 — l'écart doit être 0,0 exact. Limite écrite au
+§8.77 lui-même : le test à froid ne couvre que la paire TCGA v4, pas
+la pérennité des liens de téléchargement.
+
+**2. Le script de re-téléchargement — 52 fichiers, 2,4 Go, EXIT:0.**
+Précision de nom (correction de cette section) : le script vérifié au
+§8.77 s'appelle `download_data_877.sh`, pas `download_data.sh` — il
+est dans `runs/pdac-v6/repro_877/download_data_877.sh` (323 lignes,
+SHA `558111360ceda48bece577d7176a5ad5e46630f0a39fc85c03e8c3635564c78f`,
+vérifié aujourd'hui, identique au SHA consigné au §8.77). Un fichier
+`download_data.sh` existe aussi sous `staging-pdac/` (16 nov. 2026) :
+ce n'est pas celui du test §8.77. Ce que dit le §8.77 : le script a
+été exécuté en entier jusqu'à **EXIT:0 — 52 fichiers, 2,4 Go, tous
+vérifiés** (36 déjà présents et vérifiés + 16 OK frais, 0 erreur).
+Comment vérifier : `bash repro_877/download_data_877.sh`, attendre
+EXIT:0, puis vérifier chaque fichier contre son SHA dans
+DATA_SOURCES.md. Le dossier `data/` tient 168 fichiers, 2,9 Go,
+présents localement au 21 novembre 2026.
+
+**3. Chaque fichier avec sa source et son SHA — DATA_SOURCES.md.**
+Le fichier vivant est `DATA_SOURCES.md`, **1 484 lignes, SHA
+`dec70e17639348ac171c95f7f1128cef9918fc2f263b7c0bdd8d79e28bc47326`**
+(dans le répertoire de construction `push_v62_892_build/`, état
+§8.91–§8.92). Comment vérifier : ouvrir DATA_SOURCES.md, prendre
+n'importe quelle ligne, suivre sa source (URL) et recalculer le
+SHA-256 du fichier — il doit correspondre. Au §8.77, il faisait 900
+lignes (SHA `17b8428b…`) ; il a grandi depuis avec les nouvelles
+sections — c'est normal, il suit le livre blanc.
+
+**4. Le pipeline v6.2, original intact — et v6.1, v6 intacts.**
+SHA vérifiés aujourd'hui, 21 novembre 2026, avant et après les lots
+du jour : v6.2 `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`,
+v6.1 `2af5e5cea3a99ff227c7f76dff48c678eb07baba92625ca57e3c1c412546a9c9`,
+v6 `bb8bbdba4eb1f8c55b49748274ae8fbfef8a43f6c1b890964f18ba77960c0773` —
+tous trois identiques aux SHA consignés depuis leur adoption.
+Comment vérifier : `sha256sum runs/biophysique-hp35/universal_v6.*.0_cohen.py`
+et comparer aux SHA ci-dessus et à ceux du §8.37 (§8.37) et du §7.
+La copie v6.5 (§8.95, SHA `983ec65d…`) est une copie, jamais
+l'original — et elle est rejetée, donc non adoptée.
+
+### 8.97.4.2 Ce qui prouve qu'il est CLAIR
+
+**1. Chaque verdict avec ses limites écrites.** Exemples vérifiables :
+§8.87 (consolidation GDC FRAGILE, « réel sous le p95 des nuls »),
+§8.88 (GSE194249 NON, « le nul sépare plus que le réel »), §8.94
+Tier 1 (NON ÉLUCIDÉ, « aucun angle n'atteint la barre »), §8.95
+(REJETÉE, « une seule porte échouée suffit »). Ouvrir n'importe
+quelle section : le verdict est en tête, les limites sont dans la
+section « Ce qui est établi, ce qui ne l'est pas ».
+
+**2. Chaque correction par addendum daté, texte d'origine intact.**
+Trois exemples vérifiables : (a) §8.70 porte un
+« ADDENDUM — 20 novembre 2026 (§8.72) : NOTE DATÉE DE CORRECTION —
+LECTURE RENVERSEE » — le verdict « sous le plancher » du §8.70 est
+renversé par la distribution des 13 nuls du §8.72 (d_médian +0,1447),
+et le texte d'origine du §8.70 est intact sous l'addendum ;
+(b) l'audit §8.90 a ajouté des addenda datés du 21 novembre 2026
+(volet 3, R2 ligne 45, R6 ligne 505, précision FDA ligne 521) —
+reformulations proposées, texte d'origine intact ; (c) la coquille
+de SHA dans PROVENANCE_889 §7, trouvée par l'audit §8.90 (I-1,
+ligne 22749 : SHA tronqué faux, ligne 236, `examine_889.json`),
+est consignée comme erreur de valeur — sa correction fait partie
+des dettes ci-dessous.
+
+**3. Chaque section avec son protocole gelé avant les runs et sa
+provenance nommée.** Exemples : §8.93–§8.96 (protocoles gelés avec
+SHA, addenda de la correction du 21 novembre 2026), §8.97 lui-même
+(protocole `PROTOCOL_audit_regle_897.md`, SHA `fa04f4fe…`,
+provenance `PROVENANCE_897.md`, SHA `5482fcac…`). Ouvrir n'importe
+quelle section : le protocole est cité avec son SHA, la provenance
+avec ses fichiers.
+
+### 8.97.4.3 Ce qui reste comme DETTE CONNUE — nommé explicitement
+
+Une dette nommée n'est pas un défaut caché — c'est la preuve que
+l'audit est honnête. Dettes au 21 novembre 2026 :
+
+1. **(Priorité haute) L'avertissement médical en tête du document
+   est toujours absent.** Dette de gabarit de l'audit §8.90 : le
+   livre blanc ne porte pas encore, en tête, l'avertissement
+   « aucune recommandation clinique — données d'essais seulement, à
+   discuter avec un oncologue ». Vérifié aujourd'hui : les 30
+   premières lignes du livre blanc ne contiennent aucun avertissement
+   médical. À ajouter à la prochaine fusion (ce lot, §8.93–§8.97).
+2. **Entrées de journal à ajouter à la prochaine publication.**
+   Dettes connues : le journal de la poussée e0e282d9 (06h51, 19
+   novembre 2026) manque toujours ; les entrées des poussées
+   §8.90–§8.92 sont à ajouter ; les deux corrections datées du
+   21 novembre 2026 (A2 périmé « 9/13 » corrigé en 10/14 dans
+   §8.84/§8.86, suffixes SHA MOESM5/7/8 corrigés dans
+   PROVENANCE_884) sont dans le livre blanc local, en avance sur la
+   poussée — à consigner dans le journal à la fusion.
+3. **Coquille SHA PROVENANCE_889 §7** (audit §8.90, I-1) : SHA
+   tronqué faux, ligne 236 (`examine_889.json`) — à corriger à la
+   prochaine publication.
+4. **Synchronisation du dépôt suite.** Le dépôt privé
+   `FindPrint/tlogNext-cancer-pdac-suite` est mis à jour à chaque
+   publication du lot ; sa copie de DATA_SOURCES.md dans le
+   répertoire de préparation `push_ds_suite_sync/` (21 nov. 2026
+   01h26, 702 lignes) est antérieure à l'état actuel (1 484 lignes)
+   — la synchronisation fait partie de la fusion de ce lot, elle
+   n'est pas faite au moment où cette section est écrite.
+5. **Les 102 dossiers de runs défectueux (§8.32) restent sur le
+   disque.** Ce n'est pas un oubli : ce sont les témoins du défaut,
+   conservés exprès. Ils ne sont plus utilisés pour aucun verdict
+   depuis §8.44 — mais un lecteur qui les ouvre sans lire §8.44
+   pourrait les prendre pour des runs valides. La mention est ici
+   pour qu'on ne les confonde pas avec les fichiers DEDUP propres.
+> **Addendum daté — 22 novembre 2026 (fusion §8.93–§8.97 ; vérification du finisseur, dettes 1–3).** Dette 1 RÉGLÉE par cette fusion : l'avertissement médical renforcé (§8.90.3.4) est désormais placé en tête du document, immédiatement sous le titre, avant le §1. Dette 2, précisée : les entrées de journal des poussées `e0e282d9` (19 nov. 2026 06h51), `b82c3a19` et `6e7d1506` (21 nov. 2026 10h57) et des poussées §8.90 `4901432b` / `08fcc9a4` (21 nov. 2026 11h22/11h24) sont présentes au §10 ; la poussée des §8.91–§8.92 (tête distante `97dc2d6c`, commits `a3f22894` 16h42 et `97dc2d6c` 16h47 UTC le 21 nov. 2026, vérifiée en lecture directe le 22 nov. 2026) n'a pas encore d'entrée de journal au §10 — à consigner à la prochaine publication ; la Release `v6.2-8.89` (cible `b82c3a19`) est consignée au §10 et citée comme Latest dans le README du dépôt suite (lu le 22 novembre 2026). Dette 3 RÉGLÉE par addendum daté (§8.90 I-1, dans PROVENANCE_889.md et au §8.89) : `examine_889.json`, SHA `0f828245…aadadb0` (SHA complet recalculé le 22 novembre 2026 : `0f828245cfad1a2b996c61886aef2f54557e1576035f684668890e9e3aadadb0`). Dette 4 (synchronisation du dépôt suite) : hors de cette fusion, aucune poussée dans ce lot. Texte d'origine intact.
+
+**Verdict partie 4 : les preuves tiennent, les dettes sont nommées.**
+Le dépôt est reproductible (test à froid 0,0 ; script EXIT:0 ;
+sources + SHA ; pipeline intact) et clair (verdicts avec limites,
+corrections par addendum, protocoles gelés) — et ce qui manque est
+écrit ci-dessus, pas caché.
+
+## 8.97.5 Provenance
+
+Protocole gelé `PROTOCOL_audit_regle_897.md` (SHA
+`fa04f4fee49648b7ad409a5323d75f3a61324f94bb40e3ca37dfec55a035370e`) ;
+provenance `PROVENANCE_897.md` (SHA
+`5482fcace62d307b40db0454c1c7d1f3bc939d8778dfbdb68fe05c2f5957183d`).
+Balayage mécanique `audit_doublon_897.py` (SHA
+`731dbe25f5cab43d1c5acc3cb13856c33cdbf5694167e46af15476bcfc10f5de`),
+sortie `audit_doublon_897.json` (SHA
+`e64d435932bdc5aed48d8344633e8edf59a70e2964d866673427cb43f8f975af`,
+752 dossiers scannés, 650 propres, 102 avec `.1`, 2 répertoires
+vides, 1 run en cours) ; occurrences de prédiction
+`audit_prediction_897_hits.json` (SHA
+`7c4e0b73757b21c398a301cccf35e688afa7c651fb3145a209b139c3b94a1158`,
+257 lignes). Livre blanc audité : SHA `2606caf3…`, 23 739 lignes.
+Versions : v6.2 SHA `f07567c4…`, v6.1 SHA `2af5e5ce…`, v6 SHA
+`bb8bbdba…` — tous vérifiés inchangés le 21 novembre 2026. Aucun run
+de pipeline dans cette section. Aucune recommandation clinique.
+
+— Fin de la §8.97. —
+
+---
+
 ### 8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas
 
 | | v1 (brute) | v2 (hors pureté) | v3 (+ correction) | v4 (+ hors sexe) |
@@ -23735,5 +25877,11 @@ se discute avec un oncologue.
 - **21 nov. 2026, 11h24 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — tête `08fcc9a4`, §8.90.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé, ancienne tête `6e7d1506` → nouvelle tête `08fcc9a4` (1 commit, vérifié en lecture directe : `08fcc9a4`, 21 nov. 2026 16:24:11 UTC — livre blanc §8.1–§8.90, README, DATA_SOURCES inchangée, SHA `2c8df23c…`). Même blob livre blanc des deux côtés (vérifié par SHA git `e531b687…`). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
 
 - **21 nov. 2026 : FUSION §8.91–§8.92 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1357 PAGES.** Sections rédigées dans `section_8.91_gse194249_sra.md` (169 lignes, SHA `96a32946…98601`) et `section_8.92_vopimetostat_verification.md` (284 lignes, SHA `009914c5…658aaf`), fusionnées par le finisseur avant « ### 8.5 Synthèse des 4 versions » ; titres normalisés « ### 8.91 GSE194249 : re-dérivation depuis les lectures brutes (SRA) — PISTE FERMÉE, lectures non accessibles en libre accès (21 novembre 2026) » et « ### 8.92 Vérification vopimetostat + daraxonrasib, phase 3 : NON CHANGÉ pour la combinaison — toujours pas de numéro NCT, toujours pas de nouvelle coupe de données ; deux faits nouveaux par ailleurs (21 novembre 2026) » (les sections sources commençaient par « # §8.XX — ... ») ; lignes de go/dates : les deux sections portent déjà leur paragraphe go/protocole juste après le titre (§8.91 : go 11h09, protocole gelé avant toute tentative de téléchargement ; §8.92 : go 11h09, protocole gelé avant toute recherche) — aucune ligne ajoutée, pas de doublon ; marqueurs de fin normalisés (« *Fin de la section §8.XX. ...* » → phrase de clôture conservée en italique + « — Fin de la §8.XX. — ») ; lignes 97–98 au §7 ; entrées de journal ajoutées pour les poussées `4901432b` (principal, §8.90, Release v6.2-8.90 à créer par le parent) et `08fcc9a4` (suite, privée) ; DATA_SOURCES.md révisée (1 484 lignes, SHA `dec70e17…`, nouvelles §41 GSE194249 accès SRA et §42 vérification vopimetostat ; Annexe B complétée : PROVENANCE_890.md, PROVENANCE_891.md, PROVENANCE_892.md) ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 23 737 lignes, SHA-256 `2fb5e76c…f5d14d` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-build-892`, FIN 16:35:29 UTC, soit 11h35:29 heure de Montréal) : **1357 pages A4, 14794967 octets, SHA-256 `91989ddb6b6df30f062ecfe8f30b833cb04481549720dc219fb3cba77b487476`** (ancien 1348 pages, SHA `9331f107…`) ; couverture §8.1–§8.92 (kicker 19–21 novembre 2026, nouveau paragraphe §8.91–§8.92) ; §8.91 et §8.92 et entrées 4901432b/08fcc9a4 vérifiés présents par lecture du PDF, chiffres clés présents (SRA 0 expérience ; OEP001744 ; NCT07938463 ; 10-Q 9 nov. 2026 ; « aucune assurance ») et texte d'avertissement renforcé (§8.90.3.4) présent. Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`, SHA complet v6.2 `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`). Verdicts : (§8.91) **PISTE FERMÉE** — re-dérivation SRA impossible en libre accès (SRA 0 expérience pour PRJNA799993 et PRJNA801501, ENA 0 run ; données brutes chez NODE, accès contrôlé OEP001744, aucune demande faite) ; 0 téléchargement, 0 CSV, 0 run ; A2 inchangé 10/15, 12/15 positifs, LOO 9/14 ; C3 reste levée. (§8.92) **NON CHANGÉ pour la combinaison** — toujours pas de numéro NCT pour la phase 3, toujours pas de nouvelle coupe TNG462-C102 (dernière mise à jour du registre 23 oct. 2026, coupure 20 août 2026, ORR 82 %, n=22), démarrage 1er semestre 2027 inchangé ; deux faits nouveaux : NCT07938463 (TAP-ALK : vopimetostat + lorlatinib, CBNPC ALK+ MTAP-délété, Dana-Farber, première publication 16 nov. 2026) et 10-Q de Tango du 9 nov. 2026 (source primaire SEC : « aucune assurance » d'obtenir l'approvisionnement clinique en daraxonrasib — démarrage 1H 2027 explicitement conditionné à l'approvisionnement) ; aucune recommandation clinique. Incident de lot : la machine a redémarré à 16h31 UTC pendant le premier lancement du build PDF (unité pdf-build-892 tuée, log vide, PDF ancien intact) — build relancé après vérification de l'état (livre blanc SHA 2fb5e76c… et DATA_SOURCES SHA dec70e17… intacts, couverture §8.1–§8.92 en place), terminé EXIT 0, index.html régénéré (17 700 691 caractères). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore ; Release `v6.2-8.92` à créer par le parent. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
+
+- **21 nov. 2026, 11h42 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac — tête `97dc2d6c`, §8.91–§8.92, RELEASE v6.2-8.92 À CRÉER PAR LE PARENT.** Go de Zackary (règle permanente « Toujours github et pdf !!! »). Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac, branche `main`, ancienne tête `4901432b` → nouvelle tête `97dc2d6c` (2 commits, vérifiés en lecture directe : `a3f22894` (1/2, livre blanc, README, DATA_SOURCES, provenance, sections), `97dc2d6c` (2/2, MANIFEST_SHA256.txt) ; commits 21 nov. 2026 16:42:41–16:47:47 UTC). Contenu : livre blanc §8.1–§8.92 (23 739 lignes, SHA `2606caf3…`, blob git `6250e8cc…`), PDF 1357 pages (14 794 967 octets, SHA `91989ddb…`). Release `v6.2-8.92` : PDF 1357 p. à créer par le parent (pas par le finisseur). Cette entrée clôt la mention « Poussée GitHub à venir » de l'entrée de fusion §8.91–§8.92 ci-dessus.
+
+- **21 nov. 2026, 11h51 (heure de Montréal) : POUSSÉE GITHUB tlogNext-cancer-pdac-suite (PRIVÉ) — tête `d044f950`, §8.91–§8.92.** Dépôt https://github.com/FindPrint/tlogNext-cancer-pdac-suite, branche `main`, privé, ancienne tête `08fcc9a4` → nouvelle tête `d044f950` (1 commit, vérifié en lecture directe : `d044f950`, 21 nov. 2026 16:51:05 UTC — livre blanc §8.1–§8.92, README, DATA_SOURCES révisée (§41–§42), SHA `dec70e17…`). Même blob livre blanc des deux côtés (vérifié par SHA git `6250e8cc…`). Le dépôt `tlogNext-pdac-phase2` (autre IA) n'a jamais été touché.
+
+- **22 nov. 2026 : FUSION §8.93–§8.97 AU LIVRE BLANC + PDF RÉGÉNÉRÉ — 1436 PAGES.** Sections fusionnées par le finisseur avant « ### 8.5 Synthèse des 4 versions » : §8.93 (ligne 23579), §8.94, §8.95, §8.96, §8.97 (ligne 25244) ; sauvegarde avant fusion `livre-blanc-pdac-v6.md.bak-893-897`, SHA-256 `2606caf3e7caaeb3de572160bf63699e59ec036f24b41a93f2d085f3c0f2d333` ; entrées 99–103 au §7 (lignes 269–273) ; avertissement médical placé en tête du document (lignes 3–13, immédiatement sous le titre, avant le §1) — dette de gabarit §8.90.3.4 RÉGLÉE ; zéro titre doublé, zéro marqueur en double, zéro résidu. Livre blanc fusionné : 25 881 lignes, SHA-256 `710f2227f42561fd6a7015f94af37f7d4a4c03dd53c370c550e47e232d344fb0` avant journal (voir fin de cette entrée). PDF régénéré avec la chaîne `.src/` (`build_appendix.py` puis `build_pdf.py`, WeasyPrint 70.0, unité systemd `pdf-pdac-893-897`, FIN 15:55:54 UTC, soit 10h55:54 heure de Montréal, EXIT 0 ; index.html 18 054 271 caractères) : **1436 pages A4, 15 175 137 octets, SHA-256 `0ece36587bb0a246fb18cb051004cf11db87e5bbaec5eb3339825532b57007b8`** (ancien 1357 pages, SHA `91989ddb…`) ; couverture §8.1–§8.97 (kicker 19–22 novembre 2026). Réparation de la chaîne (sans toucher au contenu du livre blanc) : le premier rendu a montré que `build_pdf.py` jetait l'en-tête avant « ## 1. » — l'avertissement médical n'apparaissait qu'au §8.90.3.4, pas en tête du PDF. `build_pdf.py` corrigé : l'avertissement est désormais lu depuis l'en-tête du source et rendu sur la couverture, immédiatement sous le titre (7 paragraphes, texte issu du source, jamais recopié à la main) ; portée §8.1–§8.97 et kicker mis à jour. §8.93–§8.97, avertissement en tête et chiffres clés vérifiés présents par lecture du PDF : avertissement intégral en page 1 ; §8.93 page 461, §8.94 page 468, §8.95 page 474, §8.96 page 477, §8.97 page 485 ; « 5 paires SOLIDES, 5 FRAGILES, 5 NON » ; 150/150 nuls frais ; 13,5 %, 40,1 %, 71,2 % (§8.94) ; +0,0140 (LUAD) et +0,2182 (BRCA) ; 752 dossiers, 650 propres, 102 avec la signature du doublon (§8.97). Codes v6/v6.1/v6.2 revérifiés inchangés (`bb8bbdba…` / `2af5e5ce…` / `f07567c4…`, SHA complet v6.2 `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`) ; dépôt `tlogNext-pdac-phase2` (autre IA) jamais touché. Verdicts : (§8.93) **5 SOLIDES / 5 FRAGILES / 5 NON** — A2-distrib 5/15 (12/15 positifs, LOO 4/14), contre A2 classique 10/15 inchangé ; 150/150 nuls frais pipeline, exit 0 (graines 9101–9110) ; C3 reste levée. (§8.94) **NON ÉLUCIDÉ** (4e tentative, 4e échec au critère gelé du §8.39) : d_div à ±0,10 sur 13,5 % des runs en LOCO (30/222) ; paire médiane 40,1 % (89/222) ; résidu hors ±0,10 sur 50,0 % des paires (53/106) ; à w égal, Delta réel−nul dans ±0,10 sur 71,2 % (52/73) ; aucun run pipeline neuf. (§8.95) **REJETÉ** : le score composite v6.5 échoue à la porte C2 (principales 5/8, barres 6/8 et 7/8) et reste strictement inférieur à maxsep seul (V1 5/8 contre 6/8, V2 31/48 contre 37/48) ; copie v6.5 construite et vérifiée, non adoptée — maxsep reste le score principal affiché, MC secondaire. (§8.96) **LUAD NON, BRCA CONFIRME (partiel)** : LUAD écart maxsep +0,0140, sous le plancher 0,07 ; BRCA écart +0,2182, 3× le plancher, nuls frais +0,2056 / +0,1990, mais MC ne sépare pas et L7b FRAGILE ; confirmation totale non testée. (§8.97) **Audit** : 752 dossiers balayés — 650 propres, 102 avec la signature du doublon, tous des rotations, 0 autre cas ; 38 occurrences « monotone »/« monotonie » lues — aucun seuil écarté au motif de non-monotonie ; 257 lignes avec un terme de prédiction — 9 formulations reformulées par addendum daté ; preuves re-vérifiées (test à froid §8.77 à 0,0 ; `download_data_877.sh` SHA `55811136…`, EXIT:0, 52 fichiers, 2,4 Go ; DATA_SOURCES.md 1 484 lignes, SHA `dec70e17…` ; v6.2/v6.1/v6 inchangés). Poussée GitHub à venir ; le hash du commit GitHub n'existe pas encore ; Release `v6.2-8.97` à créer par le parent. Note : cette entrée a été ajoutée APRÈS la régénération du PDF, comme aux publications précédentes — le PDF ne la contient pas encore, elle sera dans le PDF de la prochaine publication.
 
 *Fin de la version initiale du livre blanc — 15 novembre 2026. Le reste se mesure.*
