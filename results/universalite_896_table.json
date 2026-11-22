@@ -1,0 +1,1001 @@
+{
+ "runs": {
+  "LUAD_REEL": {
+   "dir": "results_fast_v62_896_luad",
+   "version": "v6.2.0-L7aL7b-CohenD-short",
+   "n": 515.0,
+   "cascade_pct": [
+    0.7609527939491242,
+    46.69156374652134,
+    68.61766167202956,
+    80.82141891649441,
+    80.82141891649441
+   ],
+   "max_F1_velocity": 5.405682270253756,
+   "max_F2_curvature": 17.246106252401596,
+   "mc_score": 0.3235859482010776,
+   "mc_thr": 77.77777777777777,
+   "mc_recomp": 0.3235859482010776,
+   "mc_ecart_recomp": 0.0,
+   "n_candidates": 55,
+   "w_size": 51,
+   "min_grp": 6,
+   "rule": "uniform",
+   "maxsep": 0.15020862127956672,
+   "s_norm": 0.07496341596291142,
+   "stability": 0.9988194640054603,
+   "robustness": 7.948738390787437e-50,
+   "sharpness": 0.007255421052830517,
+   "ssep": 0.150031294595456,
+   "delta": 2.510793,
+   "d_vector": {
+    "d_sat": 1.656342,
+    "d_crit": 3.146266,
+    "d_div": 4.167134,
+    "d_null": 2.507401
+   },
+   "dominant_regime": "criticality",
+   "l7a_dir": "up",
+   "l7a_conf": 0.42045978903093983,
+   "l7b": {
+    "version": "L7b-ROBUSTESSE",
+    "mode": "light",
+    "status": "ok",
+    "verdict": "FRAGILE",
+    "lecture": "Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "ne_pas_confondre": "L7a-COHERENCE = vote interne UP/DOWN/FLAT. L7b-ROBUSTESSE = audit ROBUSTE/FRAGILE/INDETERMINE. Ne jamais moyenner les deux.",
+    "checks": {
+     "stabilite_horizon": {
+      "statut": "PASS",
+      "min_stabilite_horizon": 0.833,
+      "stabilites": {
+       "L1": 0.8333333333333334,
+       "L3": 1.0,
+       "L5": 1.0
+      },
+      "detail": "Stabilite horizon >= 0.80 sur L1/L3/L5."
+     },
+     "stabilite_walkforward": {
+      "statut": "FAIL",
+      "t0_std": 17.874,
+      "detail": "T0 moyennement variable en walk-forward (10 < t0_std <= 20)."
+     },
+     "coherence_interne": {
+      "statut": "PASS",
+      "disagreement": false,
+      "contradiction_penalty": 0.0,
+      "detail": "Cible et regime alignes ou non-informes, pas de desaccord directionnel."
+     },
+     "note_graine_fenetre_melange": "Non testes en mode light. Utiliser --l7b-full pour graine / fenetre / melange / echelle."
+    }
+   },
+   "l7b_lines": [
+    "L7b-ROBUSTESSE : audit FRAGILE (mode=light) | Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "L7b check stabilite_horizon : PASS | Stabilite horizon >= 0.80 sur L1/L3/L5.",
+    "L7b check stabilite_walkforward : FAIL | T0 moyennement variable en walk-forward (10 < t0_std <= 20).",
+    "L7b check coherence_interne : PASS | Cible et regime alignes ou non-informes, pas de desaccord directionnel."
+   ],
+   "fals": 0.638865,
+   "fals_significant": true,
+   "default_thr": 75.77092511013215,
+   "default_maxsep": 0.1479986576548858,
+   "default_n_scored": 191,
+   "q_median": {
+    "Q1_Calme_vs_Chaos": 0.30482108124677093,
+    "Q1_Calme_vs_Chaos_n": 348,
+    "Q2_Tension_Seuil": 0.499864831268086,
+    "Q2_Tension_Seuil_n": 348,
+    "Q3_Agressivite": 0.30482108124677093,
+    "Q3_Agressivite_n": 348,
+    "Q4_Persistence": 0.2201644200172582,
+    "Q4_Persistence_n": 348,
+    "Q5_Actif_Receptif": 9.01429815569146,
+    "Q5_Actif_Receptif_n": 348,
+    "Q6_Actif_Receptif_Echelle": 17.742159796405613,
+    "Q6_Actif_Receptif_Echelle_n": 348
+   },
+   "four_tests": {
+    "n_rows": 1044,
+    "step1_computed": 959,
+    "step1_median": 0.3700187136438614,
+    "step2_computed": 927,
+    "step2_median": 0.03390993471599236,
+    "step3_computed": 957,
+    "step3_median": 0.7888566208037389,
+    "step4_computed": 963,
+    "step4_median": -0.11112667074326144
+   },
+   "noise_diag": {
+    "avg": 0.4848333333333334,
+    "max": 0.657,
+    "min": 0.268,
+    "label": "Mixte - Coexistence de bruit blanc et de proxies de variance résiduelle",
+    "verdict": "MEDIUM",
+    "noise_col": "MUC17"
+   },
+   "master_sha": "b8b995f4b142e17f77f71753702136493232aee9d00e69a81de77c1b1de2a113"
+  },
+  "LUAD_NUL42": {
+   "dir": "results_fast_v62_896_luad_nul",
+   "version": "v6.2.0-L7aL7b-CohenD-short",
+   "n": 515.0,
+   "cascade_pct": [
+    0.0,
+    0.6145257712583394,
+    3.6145257712583394,
+    69.60604589032766,
+    69.60604589032766
+   ],
+   "max_F1_velocity": 5.380319864119347,
+   "max_F2_curvature": 10.623313003106258,
+   "mc_score": 0.3439246848948359,
+   "mc_thr": 7.407407407407407,
+   "mc_recomp": 0.3439246848948359,
+   "mc_ecart_recomp": 0.0,
+   "n_candidates": 55,
+   "w_size": 51,
+   "min_grp": 6,
+   "rule": "uniform",
+   "maxsep": 0.13623113732361966,
+   "s_norm": 0.06801041784120582,
+   "stability": 0.9900813148519764,
+   "robustness": 0.11638034301664804,
+   "sharpness": 0.016105482417758072,
+   "ssep": 0.1348799035651495,
+   "delta": 2.497056,
+   "d_vector": {
+    "d_sat": 1.647032,
+    "d_crit": 3.13659,
+    "d_div": 4.144088,
+    "d_null": 2.504126
+   },
+   "dominant_regime": "criticality",
+   "l7a_dir": "down",
+   "l7a_conf": 0.23249154641584352,
+   "l7b": {
+    "version": "L7b-ROBUSTESSE",
+    "mode": "light",
+    "status": "ok",
+    "verdict": "FRAGILE",
+    "lecture": "Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "ne_pas_confondre": "L7a-COHERENCE = vote interne UP/DOWN/FLAT. L7b-ROBUSTESSE = audit ROBUSTE/FRAGILE/INDETERMINE. Ne jamais moyenner les deux.",
+    "checks": {
+     "stabilite_horizon": {
+      "statut": "FAIL",
+      "min_stabilite_horizon": 0.583,
+      "stabilites": {
+       "L1": 0.8333333333333334,
+       "L3": 1.0,
+       "L5": 0.5833333333333334
+      },
+      "detail": "Stabilite horizon entre 0.50 et 0.80 : fragile, ne pas trancher."
+     },
+     "stabilite_walkforward": {
+      "statut": "FAIL",
+      "t0_std": 37.766,
+      "detail": "T0 tres variable en walk-forward (t0_std > 20)."
+     },
+     "coherence_interne": {
+      "statut": "FAIL",
+      "disagreement": true,
+      "contradiction_penalty": 0.2,
+      "target_direction": "up",
+      "regime_structural_direction": "down",
+      "detail": "Cible (L1) et regime (L3/L6) ne disent pas la meme chose. Reporter les deux, ne pas forcer un seul sens."
+     },
+     "note_graine_fenetre_melange": "Non testes en mode light. Utiliser --l7b-full pour graine / fenetre / melange / echelle."
+    }
+   },
+   "l7b_lines": [
+    "L7b-ROBUSTESSE : audit FRAGILE (mode=light) | Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "L7b check stabilite_horizon : FAIL | Stabilite horizon entre 0.50 et 0.80 : fragile, ne pas trancher.",
+    "L7b check stabilite_walkforward : FAIL | T0 tres variable en walk-forward (t0_std > 20).",
+    "L7b check coherence_interne : FAIL | Cible (L1) et regime (L3/L6) ne disent pas la meme chose. Reporter les deux, ne pas forcer un seul sens."
+   ],
+   "fals": 0.632464,
+   "fals_significant": true,
+   "default_thr": 8.370044052863436,
+   "default_maxsep": 0.10003444867877624,
+   "default_n_scored": 191,
+   "q_median": {
+    "Q1_Calme_vs_Chaos": 0.28684775152986935,
+    "Q1_Calme_vs_Chaos_n": 348,
+    "Q2_Tension_Seuil": 1.8171647947104765,
+    "Q2_Tension_Seuil_n": 348,
+    "Q3_Agressivite": 0.28684775152986935,
+    "Q3_Agressivite_n": 348,
+    "Q4_Persistence": 0.23950596186820888,
+    "Q4_Persistence_n": 348,
+    "Q5_Actif_Receptif": 7.627185781248389,
+    "Q5_Actif_Receptif_n": 348,
+    "Q6_Actif_Receptif_Echelle": 20.093701831166925,
+    "Q6_Actif_Receptif_Echelle_n": 348
+   },
+   "four_tests": {
+    "n_rows": 1044,
+    "step1_computed": 964,
+    "step1_median": 1.7470009482237037,
+    "step2_computed": 912,
+    "step2_median": -0.5346284029097368,
+    "step3_computed": 963,
+    "step3_median": 0.7917765440638644,
+    "step4_computed": 947,
+    "step4_median": 0.7810414566560067
+   },
+   "noise_diag": {
+    "avg": 0.5048333333333332,
+    "max": 0.657,
+    "min": 0.283,
+    "label": "Mixte - Coexistence de bruit blanc et de proxies de variance résiduelle",
+    "verdict": "MEDIUM",
+    "noise_col": "KRT20"
+   },
+   "master_sha": "5738ffdffb7d13c2266ac83b1556e6567b0fd79222255cca4b8ab1d983293d26"
+  },
+  "LUAD_NUL_S9601": {
+   "dir": "results_fast_v62_896_luad_nul_s9601",
+   "version": "v6.2.0-L7aL7b-CohenD-short",
+   "n": 515.0,
+   "cascade_pct": [
+    0.0,
+    13.259549677953917,
+    80.82141891649441,
+    91.69025481726433,
+    91.69025481726433
+   ],
+   "max_F1_velocity": 4.489689516470023,
+   "max_F2_curvature": 13.640923457888462,
+   "mc_score": 0.32057321795893445,
+   "mc_thr": 10.0,
+   "mc_recomp": 0.32057321795893445,
+   "mc_ecart_recomp": 0.0,
+   "n_candidates": 271,
+   "w_size": 59,
+   "min_grp": 6,
+   "rule": "uniform",
+   "maxsep": 0.11808367216016426,
+   "s_norm": 0.05897332620562666,
+   "stability": 0.9950185888584276,
+   "robustness": 1.7364066202619453e-21,
+   "sharpness": 0.021878217198590684,
+   "ssep": 0.11749544884002784,
+   "delta": 4.627874,
+   "d_vector": {
+    "d_sat": 1.651139,
+    "d_crit": 3.53753,
+    "d_div": 6.279013,
+    "d_null": 2.482265
+   },
+   "dominant_regime": "divergence",
+   "l7a_dir": "up",
+   "l7a_conf": 0.40570789219359393,
+   "l7b": {
+    "version": "L7b-ROBUSTESSE",
+    "mode": "light",
+    "status": "ok",
+    "verdict": "FRAGILE",
+    "lecture": "Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "ne_pas_confondre": "L7a-COHERENCE = vote interne UP/DOWN/FLAT. L7b-ROBUSTESSE = audit ROBUSTE/FRAGILE/INDETERMINE. Ne jamais moyenner les deux.",
+    "checks": {
+     "stabilite_horizon": {
+      "statut": "PASS",
+      "min_stabilite_horizon": 0.833,
+      "stabilites": {
+       "L1": 0.8333333333333334,
+       "L3": 1.0,
+       "L5": 1.0
+      },
+      "detail": "Stabilite horizon >= 0.80 sur L1/L3/L5."
+     },
+     "stabilite_walkforward": {
+      "statut": "FAIL",
+      "t0_std": 17.866,
+      "detail": "T0 moyennement variable en walk-forward (10 < t0_std <= 20)."
+     },
+     "coherence_interne": {
+      "statut": "PASS",
+      "disagreement": false,
+      "contradiction_penalty": 0.0,
+      "detail": "Cible et regime alignes ou non-informes, pas de desaccord directionnel."
+     },
+     "note_graine_fenetre_melange": "Non testes en mode light. Utiliser --l7b-full pour graine / fenetre / melange / echelle."
+    }
+   },
+   "l7b_lines": [
+    "L7b-ROBUSTESSE : audit FRAGILE (mode=light) | Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "L7b check stabilite_horizon : PASS | Stabilite horizon >= 0.80 sur L1/L3/L5.",
+    "L7b check stabilite_walkforward : FAIL | T0 moyennement variable en walk-forward (10 < t0_std <= 20).",
+    "L7b check coherence_interne : PASS | Cible et regime alignes ou non-informes, pas de desaccord directionnel."
+   ],
+   "fals": 1.055265,
+   "fals_significant": true,
+   "default_thr": 18.061674008810574,
+   "default_maxsep": 0.1047299155799728,
+   "default_n_scored": 191,
+   "q_median": {
+    "Q1_Calme_vs_Chaos": 0.3423319041559825,
+    "Q1_Calme_vs_Chaos_n": 348,
+    "Q2_Tension_Seuil": 1.4440137423833068,
+    "Q2_Tension_Seuil_n": 348,
+    "Q3_Agressivite": 0.3423319041559825,
+    "Q3_Agressivite_n": 348,
+    "Q4_Persistence": 0.22362891757196277,
+    "Q4_Persistence_n": 348,
+    "Q5_Actif_Receptif": 8.71640483657543,
+    "Q5_Actif_Receptif_n": 348,
+    "Q6_Actif_Receptif_Echelle": 12.835626489950746,
+    "Q6_Actif_Receptif_Echelle_n": 348
+   },
+   "four_tests": {
+    "n_rows": 1044,
+    "step1_computed": 1008,
+    "step1_median": 3.1384306658743073,
+    "step2_computed": 978,
+    "step2_median": -0.6105445746164266,
+    "step3_computed": 969,
+    "step3_median": 0.7898669825022743,
+    "step4_computed": 984,
+    "step4_median": 0.8036839200639025
+   },
+   "noise_diag": {
+    "avg": 0.3974166666666667,
+    "max": 0.749,
+    "min": 0.252,
+    "label": "Bruit blanc avec signaux faibles - Quelques flux montrent des signatures de proxy",
+    "verdict": "LOW_MEDIUM",
+    "noise_col": "GSTM1"
+   },
+   "master_sha": "f026e4df0caf8f59c46722a6baf46c58e4ec8dbc1c9c65bc2df085422c1a1b4f"
+  },
+  "LUAD_NUL_S9602": {
+   "dir": "results_fast_v62_896_luad_nul_s9602",
+   "version": "v6.2.0-L7aL7b-CohenD-short",
+   "n": 515.0,
+   "cascade_pct": [
+    0.19023819848728105,
+    38.986786632986096,
+    47.029899014620135,
+    69.60604589032766,
+    69.60604589032766
+   ],
+   "max_F1_velocity": 5.064473999559752,
+   "max_F2_curvature": 13.620968096953641,
+   "mc_score": 0.31714162501009285,
+   "mc_thr": 11.11111111111111,
+   "mc_recomp": 0.31714162501009285,
+   "mc_ecart_recomp": 0.0,
+   "n_candidates": 55,
+   "w_size": 51,
+   "min_grp": 6,
+   "rule": "uniform",
+   "maxsep": 0.10665380875536769,
+   "s_norm": 0.053276412195308306,
+   "stability": 0.9938026533029929,
+   "robustness": 0.0017981666618475847,
+   "sharpness": 0.013291360141165075,
+   "ssep": 0.10599283812595438,
+   "delta": 2.526685,
+   "d_vector": {
+    "d_sat": 1.659385,
+    "d_crit": 3.143041,
+    "d_div": 4.18607,
+    "d_null": 2.499103
+   },
+   "dominant_regime": "criticality",
+   "l7a_dir": "up",
+   "l7a_conf": 0.3848065970479676,
+   "l7b": {
+    "version": "L7b-ROBUSTESSE",
+    "mode": "light",
+    "status": "ok",
+    "verdict": "FRAGILE",
+    "lecture": "Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "ne_pas_confondre": "L7a-COHERENCE = vote interne UP/DOWN/FLAT. L7b-ROBUSTESSE = audit ROBUSTE/FRAGILE/INDETERMINE. Ne jamais moyenner les deux.",
+    "checks": {
+     "stabilite_horizon": {
+      "statut": "FAIL",
+      "min_stabilite_horizon": 0.667,
+      "stabilites": {
+       "L1": 0.8333333333333334,
+       "L3": 1.0,
+       "L5": 0.6666666666666666
+      },
+      "detail": "Stabilite horizon entre 0.50 et 0.80 : fragile, ne pas trancher."
+     },
+     "stabilite_walkforward": {
+      "statut": "FAIL",
+      "t0_std": 28.856,
+      "detail": "T0 tres variable en walk-forward (t0_std > 20)."
+     },
+     "coherence_interne": {
+      "statut": "PASS",
+      "disagreement": false,
+      "contradiction_penalty": 0.0,
+      "detail": "Cible et regime alignes ou non-informes, pas de desaccord directionnel."
+     },
+     "note_graine_fenetre_melange": "Non testes en mode light. Utiliser --l7b-full pour graine / fenetre / melange / echelle."
+    }
+   },
+   "l7b_lines": [
+    "L7b-ROBUSTESSE : audit FRAGILE (mode=light) | Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "L7b check stabilite_horizon : FAIL | Stabilite horizon entre 0.50 et 0.80 : fragile, ne pas trancher.",
+    "L7b check stabilite_walkforward : FAIL | T0 tres variable en walk-forward (t0_std > 20).",
+    "L7b check coherence_interne : PASS | Cible et regime alignes ou non-informes, pas de desaccord directionnel."
+   ],
+   "fals": 0.643938,
+   "fals_significant": true,
+   "default_thr": 15.418502202643172,
+   "default_maxsep": 0.07690038143320208,
+   "default_n_scored": 191,
+   "q_median": {
+    "Q1_Calme_vs_Chaos": 0.2955939237047805,
+    "Q1_Calme_vs_Chaos_n": 348,
+    "Q2_Tension_Seuil": 1.153843655341317,
+    "Q2_Tension_Seuil_n": 348,
+    "Q3_Agressivite": 0.2955939237047805,
+    "Q3_Agressivite_n": 348,
+    "Q4_Persistence": 0.23583496945388793,
+    "Q4_Persistence_n": 348,
+    "Q5_Actif_Receptif": 8.508145549157547,
+    "Q5_Actif_Receptif_n": 348,
+    "Q6_Actif_Receptif_Echelle": 17.42585096744071,
+    "Q6_Actif_Receptif_Echelle_n": 348
+   },
+   "four_tests": {
+    "n_rows": 1044,
+    "step1_computed": 961,
+    "step1_median": 6.608802189084087,
+    "step2_computed": 927,
+    "step2_median": -0.3236592393996091,
+    "step3_computed": 963,
+    "step3_median": 0.775854341020979,
+    "step4_computed": 952,
+    "step4_median": 0.44307383680011303
+   },
+   "noise_diag": {
+    "avg": 0.3738333333333333,
+    "max": 0.576,
+    "min": 0.22,
+    "label": "Bruit blanc avec signaux faibles - Quelques flux montrent des signatures de proxy",
+    "verdict": "LOW_MEDIUM",
+    "noise_col": "GSTM1"
+   },
+   "master_sha": "25e6d69c8d9cb502d0059f527f5ce40b86e96000476887657520128fff6945a8"
+  },
+  "BRCA_REEL": {
+   "dir": "results_fast_v62_896_brca",
+   "version": "v6.2.0-L7aL7b-CohenD-short",
+   "n": 1093.0,
+   "cascade_pct": [
+    0.0,
+    0.08943020315405069,
+    11.252706112252596,
+    23.188339543832313,
+    23.188339543832313
+   ],
+   "max_F1_velocity": 6.787656940553818,
+   "max_F2_curvature": 30.119203409628746,
+   "mc_score": 0.35076591454717737,
+   "mc_thr": 5.756578947368421,
+   "mc_recomp": 0.35076591454717737,
+   "mc_ecart_recomp": 0.0,
+   "n_candidates": 609,
+   "w_size": 113,
+   "min_grp": 5,
+   "rule": "uniform",
+   "maxsep": 0.31999727055799015,
+   "s_norm": 0.15864717392534372,
+   "stability": 0.9939810569561177,
+   "robustness": 6.583330319400738e-55,
+   "sharpness": 0.02488722641369475,
+   "ssep": 0.3180712252123038,
+   "delta": 5.055703,
+   "d_vector": {
+    "d_sat": 1.645389,
+    "d_crit": 3.187596,
+    "d_div": 6.701092,
+    "d_null": 2.495676
+   },
+   "dominant_regime": "divergence",
+   "l7a_dir": "up",
+   "l7a_conf": 0.3843422377003114,
+   "l7b": {
+    "version": "L7b-ROBUSTESSE",
+    "mode": "light",
+    "status": "ok",
+    "verdict": "FRAGILE",
+    "lecture": "Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "ne_pas_confondre": "L7a-COHERENCE = vote interne UP/DOWN/FLAT. L7b-ROBUSTESSE = audit ROBUSTE/FRAGILE/INDETERMINE. Ne jamais moyenner les deux.",
+    "checks": {
+     "stabilite_horizon": {
+      "statut": "FAIL",
+      "min_stabilite_horizon": 0.667,
+      "stabilites": {
+       "L1": 0.6666666666666666,
+       "L3": 1.0,
+       "L5": 1.0
+      },
+      "detail": "Stabilite horizon entre 0.50 et 0.80 : fragile, ne pas trancher."
+     },
+     "stabilite_walkforward": {
+      "statut": "FAIL",
+      "t0_std": 33.06,
+      "detail": "T0 tres variable en walk-forward (t0_std > 20)."
+     },
+     "coherence_interne": {
+      "statut": "PASS",
+      "disagreement": false,
+      "contradiction_penalty": 0.0,
+      "detail": "Cible et regime alignes ou non-informes, pas de desaccord directionnel."
+     },
+     "note_graine_fenetre_melange": "Non testes en mode light. Utiliser --l7b-full pour graine / fenetre / melange / echelle."
+    }
+   },
+   "l7b_lines": [
+    "L7b-ROBUSTESSE : audit FRAGILE (mode=light) | Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "L7b check stabilite_horizon : FAIL | Stabilite horizon entre 0.50 et 0.80 : fragile, ne pas trancher.",
+    "L7b check stabilite_walkforward : FAIL | T0 tres variable en walk-forward (t0_std > 20).",
+    "L7b check coherence_interne : PASS | Cible et regime alignes ou non-informes, pas de desaccord directionnel."
+   ],
+   "fals": 0.69192,
+   "fals_significant": true,
+   "default_thr": 4.878048780487805,
+   "default_maxsep": 0.3802246753031491,
+   "default_n_scored": 380,
+   "q_median": {
+    "Q1_Calme_vs_Chaos": 0.34830754189982677,
+    "Q1_Calme_vs_Chaos_n": 348,
+    "Q2_Tension_Seuil": 3.517115742762266,
+    "Q2_Tension_Seuil_n": 348,
+    "Q3_Agressivite": 0.34830754189982677,
+    "Q3_Agressivite_n": 348,
+    "Q4_Persistence": 0.15364129786087083,
+    "Q4_Persistence_n": 348,
+    "Q5_Actif_Receptif": 11.028875329091315,
+    "Q5_Actif_Receptif_n": 348,
+    "Q6_Actif_Receptif_Echelle": 32.36464055973486,
+    "Q6_Actif_Receptif_Echelle_n": 348
+   },
+   "four_tests": {
+    "n_rows": 1044,
+    "step1_computed": 1015,
+    "step1_median": 1.6688305039576805,
+    "step2_computed": 926,
+    "step2_median": -0.6649022673811025,
+    "step3_computed": 974,
+    "step3_median": 0.7454557886657452,
+    "step4_computed": 992,
+    "step4_median": 0.7414077415946565
+   },
+   "noise_diag": {
+    "avg": 0.6945,
+    "max": 0.925,
+    "min": 0.354,
+    "label": "Proxy de variance modéré - Plusieurs flux agissent comme proxies de variance résiduelle",
+    "verdict": "MEDIUM_HIGH",
+    "noise_col": "PGC"
+   },
+   "master_sha": "5859072b9308c80268e3ba5bb5d2822098565191956900191d39c02a51d7ab2e"
+  },
+  "BRCA_NUL42": {
+   "dir": "results_fast_v62_896_brca_nul",
+   "version": "v6.2.0-L7aL7b-CohenD-short",
+   "n": 1093.0,
+   "cascade_pct": [
+    0.17886040630810135,
+    13.393820781318851,
+    35.611495479373374,
+    94.30736516906398,
+    94.30736516906398
+   ],
+   "max_F1_velocity": 6.861452785902561,
+   "max_F2_curvature": 25.498914846216124,
+   "mc_score": 0.35995882351416175,
+   "mc_thr": 8.974358974358974,
+   "mc_recomp": 0.4499485293927022,
+   "mc_ecart_recomp": 0.08998970587854044,
+   "n_candidates": 469,
+   "w_size": 59,
+   "min_grp": 6,
+   "rule": "uniform",
+   "maxsep": 0.1018406992382465,
+   "s_norm": 0.05087638506377784,
+   "stability": 0.9941886524754039,
+   "robustness": 0.663383176059337,
+   "sharpness": 0.018761914595401368,
+   "ssep": 0.10124886754282518,
+   "delta": 4.519988,
+   "d_vector": {
+    "d_sat": 1.639235,
+    "d_crit": 3.374924,
+    "d_div": 6.159223,
+    "d_null": 2.504155
+   },
+   "dominant_regime": "divergence",
+   "l7a_dir": "down",
+   "l7a_conf": 0.180792692291076,
+   "l7b": {
+    "version": "L7b-ROBUSTESSE",
+    "mode": "light",
+    "status": "ok",
+    "verdict": "FRAGILE",
+    "lecture": "Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "ne_pas_confondre": "L7a-COHERENCE = vote interne UP/DOWN/FLAT. L7b-ROBUSTESSE = audit ROBUSTE/FRAGILE/INDETERMINE. Ne jamais moyenner les deux.",
+    "checks": {
+     "stabilite_horizon": {
+      "statut": "PASS",
+      "min_stabilite_horizon": 1.0,
+      "stabilites": {
+       "L1": 1.0,
+       "L3": 1.0,
+       "L5": 1.0
+      },
+      "detail": "Stabilite horizon >= 0.80 sur L1/L3/L5."
+     },
+     "stabilite_walkforward": {
+      "statut": "FAIL",
+      "t0_std": 28.372,
+      "detail": "T0 tres variable en walk-forward (t0_std > 20)."
+     },
+     "coherence_interne": {
+      "statut": "FAIL",
+      "disagreement": true,
+      "contradiction_penalty": 0.12,
+      "target_direction": "down",
+      "regime_structural_direction": "up",
+      "detail": "Cible (L1) et regime (L3/L6) ne disent pas la meme chose. Reporter les deux, ne pas forcer un seul sens."
+     },
+     "note_graine_fenetre_melange": "Non testes en mode light. Utiliser --l7b-full pour graine / fenetre / melange / echelle."
+    }
+   },
+   "l7b_lines": [
+    "L7b-ROBUSTESSE : audit FRAGILE (mode=light) | Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "L7b check stabilite_horizon : PASS | Stabilite horizon >= 0.80 sur L1/L3/L5.",
+    "L7b check stabilite_walkforward : FAIL | T0 tres variable en walk-forward (t0_std > 20).",
+    "L7b check coherence_interne : FAIL | Cible (L1) et regime (L3/L6) ne disent pas la meme chose. Reporter les deux, ne pas forcer un seul sens."
+   ],
+   "fals": 0.870768,
+   "fals_significant": true,
+   "default_thr": 8.292682926829269,
+   "default_maxsep": 0.0980294235015569,
+   "default_n_scored": 380,
+   "q_median": {
+    "Q1_Calme_vs_Chaos": 0.36554943519871663,
+    "Q1_Calme_vs_Chaos_n": 348,
+    "Q2_Tension_Seuil": 0.6805632958732308,
+    "Q2_Tension_Seuil_n": 348,
+    "Q3_Agressivite": 0.36554943519871663,
+    "Q3_Agressivite_n": 348,
+    "Q4_Persistence": 0.20938769511974115,
+    "Q4_Persistence_n": 348,
+    "Q5_Actif_Receptif": 12.384343479315081,
+    "Q5_Actif_Receptif_n": 348,
+    "Q6_Actif_Receptif_Echelle": 42.127503796118035,
+    "Q6_Actif_Receptif_Echelle_n": 348
+   },
+   "four_tests": {
+    "n_rows": 1044,
+    "step1_computed": 993,
+    "step1_median": 1.8494084221635194,
+    "step2_computed": 959,
+    "step2_median": -0.06575850245575013,
+    "step3_computed": 993,
+    "step3_median": 0.78326518969975,
+    "step4_computed": 999,
+    "step4_median": -0.14643337772664333
+   },
+   "noise_diag": {
+    "avg": 0.46341666666666664,
+    "max": 0.677,
+    "min": 0.233,
+    "label": "Mixte - Coexistence de bruit blanc et de proxies de variance résiduelle",
+    "verdict": "MEDIUM",
+    "noise_col": "MUC2"
+   },
+   "master_sha": "326b7694d5ae4acace32c718a649160565be13b70bf74c2f64e5c099820ab763"
+  },
+  "BRCA_NUL_S9601": {
+   "dir": "results_fast_v62_896_brca_nul_s9601",
+   "version": "v6.2.0-L7aL7b-CohenD-short",
+   "n": 1093.0,
+   "cascade_pct": [
+    0.44715101577025346,
+    21.93666663297978,
+    86.31477184628142,
+    94.37940931584254,
+    94.37940931584254
+   ],
+   "max_F1_velocity": 7.612543116224593,
+   "max_F2_curvature": 32.238649201426625,
+   "mc_score": 0.3198011956304278,
+   "mc_thr": 7.565789473684211,
+   "mc_recomp": 0.3198011956304278,
+   "mc_ecart_recomp": 0.0,
+   "n_candidates": 609,
+   "w_size": 113,
+   "min_grp": 5,
+   "rule": "uniform",
+   "maxsep": 0.11435411682772202,
+   "s_norm": 0.05711483173400884,
+   "stability": 0.997148652452785,
+   "robustness": 6.908123638278764e-06,
+   "sharpness": 0.017603843748310023,
+   "ssep": 0.11402805349719135,
+   "delta": 5.090864,
+   "d_vector": {
+    "d_sat": 1.639692,
+    "d_crit": 3.330262,
+    "d_div": 6.730556,
+    "d_null": 2.501861
+   },
+   "dominant_regime": "divergence",
+   "l7a_dir": "up",
+   "l7a_conf": 0.1716293375603056,
+   "l7b": {
+    "version": "L7b-ROBUSTESSE",
+    "mode": "light",
+    "status": "ok",
+    "verdict": "FRAGILE",
+    "lecture": "Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "ne_pas_confondre": "L7a-COHERENCE = vote interne UP/DOWN/FLAT. L7b-ROBUSTESSE = audit ROBUSTE/FRAGILE/INDETERMINE. Ne jamais moyenner les deux.",
+    "checks": {
+     "stabilite_horizon": {
+      "statut": "PASS",
+      "min_stabilite_horizon": 1.0,
+      "stabilites": {
+       "L1": 1.0,
+       "L3": 1.0,
+       "L5": 1.0
+      },
+      "detail": "Stabilite horizon >= 0.80 sur L1/L3/L5."
+     },
+     "stabilite_walkforward": {
+      "statut": "FAIL",
+      "t0_std": 27.678,
+      "detail": "T0 tres variable en walk-forward (t0_std > 20)."
+     },
+     "coherence_interne": {
+      "statut": "FAIL",
+      "disagreement": true,
+      "contradiction_penalty": 0.2,
+      "target_direction": "down",
+      "regime_structural_direction": "up",
+      "detail": "Cible (L1) et regime (L3/L6) ne disent pas la meme chose. Reporter les deux, ne pas forcer un seul sens."
+     },
+     "note_graine_fenetre_melange": "Non testes en mode light. Utiliser --l7b-full pour graine / fenetre / melange / echelle."
+    }
+   },
+   "l7b_lines": [
+    "L7b-ROBUSTESSE : audit FRAGILE (mode=light) | Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "L7b check stabilite_horizon : PASS | Stabilite horizon >= 0.80 sur L1/L3/L5.",
+    "L7b check stabilite_walkforward : FAIL | T0 tres variable en walk-forward (t0_std > 20).",
+    "L7b check coherence_interne : FAIL | Cible (L1) et regime (L3/L6) ne disent pas la meme chose. Reporter les deux, ne pas forcer un seul sens."
+   ],
+   "fals": 0.828401,
+   "fals_significant": true,
+   "default_thr": 10.24390243902439,
+   "default_maxsep": 0.12492036797147316,
+   "default_n_scored": 380,
+   "q_median": {
+    "Q1_Calme_vs_Chaos": 0.31642763085815917,
+    "Q1_Calme_vs_Chaos_n": 348,
+    "Q2_Tension_Seuil": 1.3328170381143267,
+    "Q2_Tension_Seuil_n": 348,
+    "Q3_Agressivite": 0.31642763085815917,
+    "Q3_Agressivite_n": 348,
+    "Q4_Persistence": 0.15200444056592327,
+    "Q4_Persistence_n": 348,
+    "Q5_Actif_Receptif": 11.400212443744255,
+    "Q5_Actif_Receptif_n": 348,
+    "Q6_Actif_Receptif_Echelle": 30.19459630718758,
+    "Q6_Actif_Receptif_Echelle_n": 348
+   },
+   "four_tests": {
+    "n_rows": 1044,
+    "step1_computed": 1018,
+    "step1_median": 1.0595615748245992,
+    "step2_computed": 966,
+    "step2_median": -0.49425937757337063,
+    "step3_computed": 984,
+    "step3_median": 0.7733267950860916,
+    "step4_computed": 1001,
+    "step4_median": 0.9102732385511625
+   },
+   "noise_diag": {
+    "avg": 0.5110833333333334,
+    "max": 0.672,
+    "min": 0.374,
+    "label": "Mixte - Coexistence de bruit blanc et de proxies de variance résiduelle",
+    "verdict": "MEDIUM",
+    "noise_col": "REG4"
+   },
+   "master_sha": "5cb7ffcbf87c330a1b00e411409feee3acf826ed68fef1ac49393aad9f85f418"
+  },
+  "BRCA_NUL_S9602": {
+   "dir": "results_fast_v62_896_brca_nul_s9602",
+   "version": "v6.2.0-L7aL7b-CohenD-short",
+   "n": 1093.0,
+   "cascade_pct": [
+    0.0,
+    7.764821102039305,
+    72.38678182058337,
+    83.09997913736356,
+    83.09997913736356
+   ],
+   "max_F1_velocity": 6.182008907570207,
+   "max_F2_curvature": 31.03862597604045,
+   "mc_score": 0.35958222328551454,
+   "mc_thr": 92.73504273504273,
+   "mc_recomp": 0.4494777791068931,
+   "mc_ecart_recomp": 0.08989555582137859,
+   "n_candidates": 469,
+   "w_size": 59,
+   "min_grp": 6,
+   "rule": "uniform",
+   "maxsep": 0.1209828126369288,
+   "s_norm": 0.06041773056350477,
+   "stability": 0.9871783784973155,
+   "robustness": 0.6376071911460548,
+   "sharpness": 0.038387540797180784,
+   "ssep": 0.1194316168049679,
+   "delta": 4.51394,
+   "d_vector": {
+    "d_sat": 1.635077,
+    "d_crit": 3.330886,
+    "d_div": 6.149017,
+    "d_null": 2.502757
+   },
+   "dominant_regime": "divergence",
+   "l7a_dir": "up",
+   "l7a_conf": 0.1881472500358434,
+   "l7b": {
+    "version": "L7b-ROBUSTESSE",
+    "mode": "light",
+    "status": "ok",
+    "verdict": "FRAGILE",
+    "lecture": "Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "ne_pas_confondre": "L7a-COHERENCE = vote interne UP/DOWN/FLAT. L7b-ROBUSTESSE = audit ROBUSTE/FRAGILE/INDETERMINE. Ne jamais moyenner les deux.",
+    "checks": {
+     "stabilite_horizon": {
+      "statut": "PASS",
+      "min_stabilite_horizon": 0.833,
+      "stabilites": {
+       "L1": 0.8333333333333334,
+       "L3": 1.0,
+       "L5": 0.9166666666666666
+      },
+      "detail": "Stabilite horizon >= 0.80 sur L1/L3/L5."
+     },
+     "stabilite_walkforward": {
+      "statut": "FAIL",
+      "t0_std": 35.502,
+      "detail": "T0 tres variable en walk-forward (t0_std > 20)."
+     },
+     "coherence_interne": {
+      "statut": "FAIL",
+      "disagreement": true,
+      "contradiction_penalty": 0.2,
+      "target_direction": "down",
+      "regime_structural_direction": "up",
+      "detail": "Cible (L1) et regime (L3/L6) ne disent pas la meme chose. Reporter les deux, ne pas forcer un seul sens."
+     },
+     "note_graine_fenetre_melange": "Non testes en mode light. Utiliser --l7b-full pour graine / fenetre / melange / echelle."
+    }
+   },
+   "l7b_lines": [
+    "L7b-ROBUSTESSE : audit FRAGILE (mode=light) | Au moins un check light FAIL. Ne pas utiliser L7a seul pour decider. Passer en --l7b-full pour confirmer.",
+    "L7b check stabilite_horizon : PASS | Stabilite horizon >= 0.80 sur L1/L3/L5.",
+    "L7b check stabilite_walkforward : FAIL | T0 tres variable en walk-forward (t0_std > 20).",
+    "L7b check coherence_interne : FAIL | Cible (L1) et regime (L3/L6) ne disent pas la meme chose. Reporter les deux, ne pas forcer un seul sens."
+   ],
+   "fals": 0.828128,
+   "fals_significant": true,
+   "default_thr": 96.34146341463415,
+   "default_maxsep": 0.12293355146158848,
+   "default_n_scored": 380,
+   "q_median": {
+    "Q1_Calme_vs_Chaos": 0.32376076260084874,
+    "Q1_Calme_vs_Chaos_n": 348,
+    "Q2_Tension_Seuil": 1.0364540464777723,
+    "Q2_Tension_Seuil_n": 348,
+    "Q3_Agressivite": 0.32376076260084874,
+    "Q3_Agressivite_n": 348,
+    "Q4_Persistence": 0.218543919637392,
+    "Q4_Persistence_n": 348,
+    "Q5_Actif_Receptif": 13.357613165998439,
+    "Q5_Actif_Receptif_n": 348,
+    "Q6_Actif_Receptif_Echelle": 38.7782914553043,
+    "Q6_Actif_Receptif_Echelle_n": 348
+   },
+   "four_tests": {
+    "n_rows": 1044,
+    "step1_computed": 987,
+    "step1_median": 26.854703060880762,
+    "step2_computed": 953,
+    "step2_median": 0.127814373003124,
+    "step3_computed": 996,
+    "step3_median": 0.7933739944549889,
+    "step4_computed": 996,
+    "step4_median": 0.04504063686761872
+   },
+   "noise_diag": {
+    "avg": 0.5183333333333334,
+    "max": 0.773,
+    "min": 0.357,
+    "label": "Mixte - Coexistence de bruit blanc et de proxies de variance résiduelle",
+    "verdict": "MEDIUM",
+    "noise_col": "PGC"
+   },
+   "master_sha": "e84d68aa3dc7939eba1b91e41cd7628312cce3b35430f63e87986b1e2b723da2"
+  }
+ },
+ "floor": 0.07,
+ "gaps": {
+  "LUAD_REEL": {
+   "LUAD_NUL42": {
+    "d_maxsep": 0.013977483955947057,
+    "d_ssep": 0.015151391030306494,
+    "d_mc": -0.020338736693758297,
+    "d_delta": 0.013736999999999888,
+    "d_fals": 0.00640099999999999
+   },
+   "LUAD_NUL_S9601": {
+    "d_maxsep": 0.03212494911940246,
+    "d_ssep": 0.03253584575542816,
+    "d_mc": 0.003012730242143158,
+    "d_delta": -2.117081,
+    "d_fals": -0.4163999999999999
+   },
+   "LUAD_NUL_S9602": {
+    "d_maxsep": 0.04355481252419903,
+    "d_ssep": 0.04403845646950162,
+    "d_mc": 0.006444323190984758,
+    "d_delta": -0.015892000000000017,
+    "d_fals": -0.005072999999999994
+   }
+  },
+  "BRCA_REEL": {
+   "BRCA_NUL42": {
+    "d_maxsep": 0.21815657131974364,
+    "d_ssep": 0.2168223576694786,
+    "d_mc": -0.009192908966984381,
+    "d_delta": 0.5357150000000006,
+    "d_fals": -0.178848
+   },
+   "BRCA_NUL_S9601": {
+    "d_maxsep": 0.20564315373026815,
+    "d_ssep": 0.20404317171511244,
+    "d_mc": 0.030964718916749567,
+    "d_delta": -0.035160999999999554,
+    "d_fals": -0.13648100000000007
+   },
+   "BRCA_NUL_S9602": {
+    "d_maxsep": 0.19901445792106137,
+    "d_ssep": 0.1986396084073359,
+    "d_mc": -0.008816308738337164,
+    "d_delta": 0.5417630000000004,
+    "d_fals": -0.136208
+   }
+  }
+ },
+ "files_sha": {
+  "PROTOCOL_universalite_896.md": "1349b9963a1a267dafaacaa8fd5df215d680ba1fa11d5e0e29dad635efe848d8",
+  "PROVENANCE_896.md": "d9554cf3923155696d3773c3fc5c2d52c94bb15f1bd9aea4eb0567cc15a92c68",
+  "ADDENDUM_correction_20261121_896.md": "ff8408644894898ae82b63a702f1595bf29f58e511af0244ee2df4daff97f132",
+  "ADDENDUM_axe_brca_896.md": "aed56a92aee3c7cb545bcafcb9af786172246449fcf04a08222ddc9345f048ba",
+  "brca_896_download.json": "80d0f7ce8a07987f8f441d23c9f768e0f6159910930fd33f88b62eb2481c244e",
+  "luad_896_nulls_files.json": "d75c13018c4843257f978c40eb92e9b1512c3f307fc50101ab6305e625195488",
+  "build_fluxes_brca_896.py": "7f60c0feeaf90df64700635826f8915fa875ff493fc5745b8dd1348f447f62b4",
+  "build_luad_nulls_896.py": "5e79c90fb9313bef874e1c6758a7562860c9117af02f2fd6916dea71c25b7e04",
+  "pdac_luad_fluxes.csv": "d407849b991aa758398c85796662f51787cc54bbac62e824308f29787238091e",
+  "pdac_luad_fluxes_nul.csv": "93766e8c14e140f6b7946b67db9c0f2ad4beff0c1790d84a9c1357c56f978a6b",
+  "pdac_luad_fluxes_nul_s9601.csv": "6e652a425c342d48145a2cf058fe86893fa8280e32c9ed836e643e5ca65c72d1",
+  "pdac_luad_fluxes_nul_s9602.csv": "358188cfea3b29e8dbbb70f77198348666a98013a21c3f8b00d422c7fc0b336f",
+  "pdac_brca_fluxes.csv": "c08ebf413ec99c1659ee840d9eed835b3f85c0c9021bc949bfc6e47ff99b2d84",
+  "pdac_brca_fluxes_nul.csv": "f8234a33e3aaab70e2bc1025ed32d9ec1ef851087b820df5dba7cbcee5c88b29",
+  "pdac_brca_fluxes_nul_s9601.csv": "5713da1ff4c7dc10d00a59329ef7af14cc6accb82177bd9ee3f4b1115d857f7e",
+  "pdac_brca_fluxes_nul_s9602.csv": "88a1b9aa0f923210872800aa0e345ad8235a078052be8fee8db59a97f0e962a8",
+  "../biophysique-hp35/universal_v6.2.0_cohen.py": "f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf"
+ },
+ "script_sha": "583397ed853eae6a48a0ee1d7e8d27cf625b2f7107a8e70792a41795974fa210"
+}

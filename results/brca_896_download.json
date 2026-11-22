@@ -1,0 +1,70 @@
+{
+  "cohorte": "TCGA-BRCA",
+  "source": {
+    "depot": "Broad GDAC Firehose stddata 2016-01-28",
+    "tarball": "gdac.broadinstitute.org_BRCA.Merge_rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.Level_3.2016012800.0.0.tar.gz",
+    "url": "https://gdac.broadinstitute.org/runs/stddata__2016_01_28/data/BRCA/20160128/",
+    "taille_octets": 97981987,
+    "md5_observe": "b4eed57d14ca2fa563ca0dd05d4fba7f",
+    "matrice_interne": "gdac.broadinstitute.org_BRCA.Merge_rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.Level_3.2016012800.0.0/BRCA.rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.data.txt",
+    "matrice_interne_octets": 212145748,
+    "matrice_interne_md5": "96d707af16947605116dfbec6e3c050e",
+    "matrice": "20503 genes x 1212 echantillons",
+    "donnees": "RNA-seq V2 RSEM normalisé (TCGA, UNC Illumina HiSeq)"
+  },
+  "patients": {
+    "critere": "echantillons tumoraux primaires, code TCGA 01",
+    "retenus": 1093,
+    "ecartes": 119,
+    "transformation": "log2(RSEM normalisé + 1)"
+  },
+  "genes": {
+    "demandes_v4": [
+      "PGC",
+      "REG4",
+      "CLDN18",
+      "MUC17",
+      "DPCR1",
+      "CR2",
+      "KRT20",
+      "MUC2",
+      "GSTM1",
+      "CEACAM5",
+      "CLCA1",
+      "MUC16"
+    ],
+    "retenus": [
+      "PGC",
+      "REG4",
+      "CLDN18",
+      "MUC17",
+      "DPCR1",
+      "CR2",
+      "KRT20",
+      "MUC2",
+      "GSTM1",
+      "CEACAM5",
+      "CLCA1",
+      "MUC16"
+    ],
+    "absents": [],
+    "moins_de_50_valides": [],
+    "remplacement_effectue": null
+  },
+  "axe": {
+    "gene": "ESR1",
+    "n": 1093,
+    "min": 1.9008,
+    "mediane": 12.795,
+    "max": 16.1375,
+    "ecart_type": 3.1899,
+    "choix": "ADDENDUM_axe_brca_896.md (ESR1, apres lecture de la matrice, avant tout run)"
+  },
+  "ordre": "expression ESR1 brute croissante ; ESR1 = axe, jamais un flux",
+  "fichiers_sha256": {
+    "pdac_brca_fluxes_nul.csv": "f8234a33e3aaab70e2bc1025ed32d9ec1ef851087b820df5dba7cbcee5c88b29",
+    "pdac_brca_fluxes_nul_s9601.csv": "5713da1ff4c7dc10d00a59329ef7af14cc6accb82177bd9ee3f4b1115d857f7e",
+    "pdac_brca_fluxes_nul_s9602.csv": "88a1b9aa0f923210872800aa0e345ad8235a078052be8fee8db59a97f0e962a8",
+    "pdac_brca_fluxes.csv": "c08ebf413ec99c1659ee840d9eed835b3f85c0c9021bc949bfc6e47ff99b2d84"
+  }
+}

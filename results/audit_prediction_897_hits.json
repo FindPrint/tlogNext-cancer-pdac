@@ -1,0 +1,1287 @@
+[
+ {
+  "ligne": 29,
+  "section": "hors-section",
+  "texte": "- **R2 — infirmé :** l'axe pseudo-temporel comme source prédictive hors échantillon (accuracy 0,4612, p = 0,9581 ; aucun flux ne prédit seul)."
+ },
+ {
+  "ligne": 31,
+  "section": "hors-section",
+  "texte": "- **Requalification :** le projet est devenu de la stratification pronostique, pas de la prédiction par pseudo-temps."
+ },
+ {
+  "ligne": 180,
+  "section": "hors-section",
+  "texte": "| 24 | 16 nov. 2026, 07h42 | **Inhibiteurs directs KRAS G12D / pan-RAS** : présence par nom dans PRISM/GDSC2/secondaire + test par allèle KRAS (MAF DepMap 24Q4, 54 lignées) + revue essais (sources nommées) | — | — | hors pipeline (test direct + revue) | **TERMINÉ. OUI pour un seul.** MRTX1133 tue le"
+ },
+ {
+  "ligne": 202,
+  "section": "hors-section",
+  "texte": "| 46 | 19 nov. 2026 | **Modélisation des magnitudes des estimateurs depuis les flux (§8.42)** (suite du §8.39, voie ouverte au §8.39.10 point 1 ; protocole gelé avant exécution `PROTOCOL_delta_magnitudes.md`, SHA `2562ee22…0419` ; script `v62_delta_magnitudes.py`, SHA `cefedf77…61debc` ; lecture seu"
+ },
+ {
+  "ligne": 210,
+  "section": "hors-section",
+  "texte": "| 54 | 19 nov. 2026 | **Domination IMMROT (§8.48)** (go de Zackary « Fait tout cela », 19 nov. 2026 ~16h30, 3e des 4 chantiers ; protocole gelé avant tout calcul `PROTOCOL_immrot_domination.md`, SHA `465b4f54…77d4b9d` ; **EXPLIQUÉE : effet de corrélation, pas rupture** — le couplage contrôle↔flux C "
+ },
+ {
+  "ligne": 213,
+  "section": "hors-section",
+  "texte": "| 57 | 19–20 nov. 2026 | **Pureté / infiltration (§8.51)** (go de Zackary « Faite tout cela », 19 nov. 2026 ~18h27, 2e des 4 chantiers ; question ouverte du §8.48.8 ; protocole gelé avant tout calcul `PROTOCOL_purity_infiltration_851.md`, SHA `568d93d2…0867ab5` ; 6 runs v6.2 fast, 6/6 exit 0 ; **NON"
+ },
+ {
+  "ligne": 229,
+  "section": "hors-section",
+  "texte": "| 73 | 20 nov. 2026 | **Test décisif sur la fraction leucocytaire (§8.67)** (go de Zackary « Fait tout cela », 20 nov. 2026 13h04, 1er des 4 étapes ; protocole gelé avant tout calcul nouveau et avant tout run `PROTOCOL_leukocyte_decisive_867.md`, SHA `571adf82…59ad` ; **4/4 runs v6.2 exit 0** (lot 1"
+ },
+ {
+  "ligne": 245,
+  "section": "hors-section",
+  "texte": "| 89 | 21 nov. 2026 | **Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? (§8.83)** (deuxième bras supplémentaire autorisé par Zackary, idées propres ; protocole gelé 21 nov. 2026 ~07h25 EST `PROTOCOL_survie_privilege_883.md`, SHA `0eb83d63…c206`, amendé AVANT toute lecture des r"
+ },
+ {
+  "ligne": 382,
+  "section": "8.12 Survie — le paysage dépend du seuil, le test sans seuil tient (15 nov. 2026",
+  "texte": "**Test sans seuil (Cox continu, aucune coupure, aucun groupe) — n=177, 92 décès, risque par +1 écart-type — valeurs VÉRIFIÉES 16 nov. :** KRAS HR 1,42 (p=0,0003) ; MUC16 HR 1,44 (p=0,001) ; CEACAM5 HR 1,31 (p=0,011) ; PGC HR 1,16 (p=0,13) ; DPCR1 HR 1,43 (p=0,001) ; CLDN18 HR 1,22 (p=0,064). **En mu"
+ },
+ {
+  "ligne": 394,
+  "section": "8.13 Troisième cohorte GSE62452 — OUI, 3/3, et le seuil seul retourne le signe (",
+  "texte": "**État du résultat robuste après 4 cohortes :** le groupe KRAS-le-plus-fort a CA125 et CEA élevés — 3/4 (TCGA, GSE71729, GSE62452 oui ; ICGC non, §8.16). L'effondrement des marqueurs de différenciation est une observation TCGA seule. **Survie : CA125 prédit une survie plus courte dans 2 cohortes sur"
+ },
+ {
+  "ligne": 503,
+  "section": "8.20 Inhibiteurs directs KRAS G12D / pan-RAS — OUI pour un seul, et une approbat",
+  "texte": "**Verdict : on peut tester ces inhibiteurs contre l'axe KRAS avec des données publiques pour un seul composé — MRTX1133 — et le test est positif. Pour RMC-6236, RMC-9805, ASP3082, sotorasib, adagrasib, BI-3406 et TNO155, aucune matrice publique de dose-réponse n'existe. Et le fait clinique le plus f"
+ },
+ {
+  "ligne": 512,
+  "section": "8.20 Inhibiteurs directs KRAS G12D / pan-RAS — OUI pour un seul, et une approbat",
+  "texte": "- L'axe Chronos KRAS prédit la sensibilité chez les G12D : Spearman **rho +0,47 (p=0,079, n=15)** — direction juste, effectif trop petit pour conclure ; toutes lignées rho +0,36 (p=0,031, n=36) ; non-G12D rho +0,11 (p=0,65, rien)."
+ },
+ {
+  "ligne": 519,
+  "section": "8.20 Inhibiteurs directs KRAS G12D / pan-RAS — OUI pour un seul, et une approbat",
+  "texte": "- **RMC-6236 / daraxonrasib** (pan-RAS ON) : phase I/II NCT05379985, NEJM 2026 Wolpin (n=168, ORR 29 %) ; phase III **RASolute-302 NCT06625320 : OS 13,2 contre 6,7 mois, HR 0,40** ; **FDA approuvé le 26 août 2026 (RASONQUE™)** pour le PDAC métastatique prétraité — vérifié indépendamment sur plusieur"
+ },
+ {
+  "ligne": 571,
+  "section": "8.22 Combinaisons — OUI, vopimetostat + daraxonrasib, 82 % de réponses (16 nov. ",
+  "texte": "- **Le test « la dépendance KRAS prédit-elle le bénéfice de la combinaison ? » n'a pas pu être fait : aucune matrice publique multi-lignées pancréas n'existe en accès libre.** ALMANAC (NCI-60), AZ-DREAM (85 lignées : sein/poumon/vessie/GI) et O'Neil (39 lignées : sein/côlon/poumon/mélanome/ovaire/pr"
+ },
+ {
+  "ligne": 1058,
+  "section": "8.35 Phase 2 — discrimination réel / nul : ce qui sépare, ce qui ne sépare pas (",
+  "texte": "prédictions. Les 3 blocs de co-expression (§8.32) et la chaîne KRAS (§8.4)"
+ },
+ {
+  "ligne": 1104,
+  "section": "8.37 v6.2 : hachage stable L5, score S_sep, élucidation de Delta (18–19 nov. 202",
+  "texte": "prédit la paire médiane à 80,2 % et la valeur à 61,7 % — loin des 90 %"
+ },
+ {
+  "ligne": 1277,
+  "section": "8.37 v6.2 : hachage stable L5, score S_sep, élucidation de Delta (18–19 nov. 202",
+  "texte": "à ±0,10 sur 222/222 — identité de construction, pas une prédiction)."
+ },
+ {
+  "ligne": 1278,
+  "section": "8.37 v6.2 : hachage stable L5, score S_sep, élucidation de Delta (18–19 nov. 202",
+  "texte": "- **Ce qui choisit la paire reste indéterminé.** Taux de prédiction"
+ },
+ {
+  "ligne": 1295,
+  "section": "8.37 v6.2 : hachage stable L5, score S_sep, élucidation de Delta (18–19 nov. 202",
+  "texte": "corrélation n'est pas une prédiction de la paire."
+ },
+ {
+  "ligne": 1773,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "ensemble nommé — parmi H1–H7 du protocole et H8–H17 testées ici — ne prédit"
+ },
+ {
+  "ligne": 1823,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "2. **Paire non ordonnée.** La prédiction est aussi mesurée en ignorant"
+ },
+ {
+  "ligne": 1913,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "**§8.39.4 Hypothèses H8–H15 : taux de prédiction**"
+ },
+ {
+  "ligne": 1942,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "ne prédit la paire qu'à 46,8 % (quartiles trop grossiers pour un ordre"
+ },
+ {
+  "ligne": 1974,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "écart-type 0,283, **47,3 % des prédictions à ±0,10**. Ajouter le"
+ },
+ {
+  "ligne": 1985,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "prédicteur éligible) : (rang de MFA, masque, n) prédit la paire à"
+ },
+ {
+  "ligne": 1988,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "MFA, on ne prédit pas d_div à ±0,10 sur 90 % des runs.** Seule"
+ },
+ {
+  "ligne": 2028,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "prédire LevinaBickel, PCAIntrinsic et MFA (et LocalPCA) depuis la"
+ },
+ {
+  "ligne": 2063,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "1. **Modéliser les magnitudes.** Prédire les médianes LevinaBickel,"
+ },
+ {
+  "ligne": 2065,
+  "section": "8.39 Élucidation de Delta (19 novembre 2026)",
+  "texte": "(avant médiane) : seul un tel modèle pourrait, en principe, prédire"
+ },
+ {
+  "ligne": 2432,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "point 1 — prédire les magnitudes des estimateurs depuis les matrices de"
+ },
+ {
+  "ligne": 2473,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "pour appliquer la construction aux prédictions (comme aux §8.39, H1) ;"
+ },
+ {
+  "ligne": 2494,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "split par matrice. Les prédictions sont dérivées par la construction"
+ },
+ {
+  "ligne": 2496,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "recalculés depuis les médianes prédites)."
+ },
+ {
+  "ligne": 2545,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "## §8.42.4 Par cible : LocalPCA, toujours dans la paire, n'est prédite nulle part"
+ },
+ {
+  "ligne": 2560,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "(§8.39) et aucun modèle ne la prédit entre cohortes : la paire ne peut"
+ },
+ {
+  "ligne": 2565,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "famille, se prédit bien intra-cohorte, mais cela ne sauve pas d_div."
+ },
+ {
+  "ligne": 2594,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "n=62 : r(prédit, vrai) = +0,06, écart-type résiduel 0,98 (d_div vrai"
+ },
+ {
+  "ligne": 2599,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "fixé, le modèle ne voit plus rien.** M4 prédit ~la constante du groupe"
+ },
+ {
+  "ligne": 2610,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "peuvent différer. Paire prédite identique réel vs nul (LOCO M1, même"
+ },
+ {
+  "ligne": 2632,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "— et leur échelle est portée par n.** Un modèle qui voudrait les prédire"
+ },
+ {
+  "ligne": 2647,
+  "section": "8.41.7 Ce qui manque, ce qui reste ouvert",
+  "texte": "3. **d_sat.** Prédite à 90,9 % ±0,10 en split (M3) mais 56,3 % en LOCO :"
+ },
+ {
+  "ligne": 3733,
+  "section": "8.47.8 Méthode",
+  "texte": "Calibration réplique ↔ pipeline : 3/4 prédictions ponctuelles 10g"
+ },
+ {
+  "ligne": 3736,
+  "section": "8.47.8 Méthode",
+  "texte": "(TCGA nul42) vaut 0,1107 contre 0,1434 prédit sous config réelle"
+ },
+ {
+  "ligne": 3821,
+  "section": "8.48 Pourquoi IMMROT domine — la domination est un effet de corrélation, pas une",
+  "texte": "C (moyenne des |r de Pearson| entre le contrôle et les 11 flux analysés) prédit"
+ },
+ {
+  "ligne": 3829,
+  "section": "8.48 Pourquoi IMMROT domine — la domination est un effet de corrélation, pas une",
+  "texte": "le rapport prédit par la régression."
+ },
+ {
+  "ligne": 3832,
+  "section": "8.48 Pourquoi IMMROT domine — la domination est un effet de corrélation, pas une",
+  "texte": "À la coupure médiane, le |d de Cohen| observé de chaque flux est prédit par sa"
+ },
+ {
+  "ligne": 3865,
+  "section": "8.48 Pourquoi IMMROT domine — la domination est un effet de corrélation, pas une",
+  "texte": "q=0,5, comme prédit (0,63 ; 0,37 ; 0,33). Croisés inter-familles (H2) : un"
+ },
+ {
+  "ligne": 3909,
+  "section": "8.48.1 Question, méthode, définitions gelées",
+  "texte": "- Prédiction bivariée-normale par flux, à la médiane :"
+ },
+ {
+  "ligne": 3918,
+  "section": "8.48.1 Question, méthode, définitions gelées",
+  "texte": "**Hypothèses.** H1 (principale) : l'écart S_sep est prédit par le couplage"
+ },
+ {
+  "ligne": 3919,
+  "section": "8.48.1 Question, méthode, définitions gelées",
+  "texte": "contrôle↔flux. H0 (négative) : la cohésion entre flux analysés ne prédit pas"
+ },
+ {
+  "ligne": 3946,
+  "section": "8.48.3 Le couplage prédit S_sep — test principal (48 rotations, sans doublon)",
+  "texte": "## 8.48.3 Le couplage prédit S_sep — test principal (48 rotations, sans doublon)"
+ },
+ {
+  "ligne": 3960,
+  "section": "8.48.3 Le couplage prédit S_sep — test principal (48 rotations, sans doublon)",
+  "texte": "moyennes par famille, elle prédit : IMMROT +0,773 (observé +0,752), V4ROT"
+ },
+ {
+  "ligne": 3968,
+  "section": "8.48.3 Le couplage prédit S_sep — test principal (48 rotations, sans doublon)",
+  "texte": "0,834 (DEPMAPROT), 0,832 (IMMROT), 0,872 (PARPROT). Le couplage prédit"
+ },
+ {
+  "ligne": 4010,
+  "section": "8.48.3 Le couplage prédit S_sep — test principal (48 rotations, sans doublon)",
+  "texte": "Le couplage prédit aussi les écarts AVEC doublon (r = 0,934, ρ = 0,907) :"
+ },
+ {
+  "ligne": 4083,
+  "section": "8.48.5 Réplication analytique : le |d| vient de la corrélation, flux par flux",
+  "texte": "moitiés (triées par le contrôle) ; |d| prédit = 1,596·|r_j| / √(1 − 0,637·r_j²)"
+ },
+ {
+  "ligne": 4086,
+  "section": "8.48.5 Réplication analytique : le |d| vient de la corrélation, flux par flux",
+  "texte": "- |d| prédit vs |d| observé : **r = 0,947**, p = 1,8×10⁻²⁶²,"
+ },
+ {
+  "ligne": 4097,
+  "section": "8.48.5 Réplication analytique : le |d| vient de la corrélation, flux par flux",
+  "texte": "|d| = 2,13, prédit 1,82 ; CD4 : r = 0,731, |d| = 1,29, prédit 1,44 ; PDCD1 :"
+ },
+ {
+  "ligne": 4098,
+  "section": "8.48.5 Réplication analytique : le |d| vient de la corrélation, flux par flux",
+  "texte": "r = 0,792, |d| = 1,66, prédit 1,63). Rotation GSTM1 (échoue, −0,134) : les 11"
+ },
+ {
+  "ligne": 4099,
+  "section": "8.48.5 Réplication analytique : le |d| vient de la corrélation, flux par flux",
+  "texte": "flux ont r ≤ 0,15 avec GSTM1 ; |d| observés ≤ 0,23, prédits ≤ 0,24. Le contrôle"
+ },
+ {
+  "ligne": 4141,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "## 8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)"
+ },
+ {
+  "ligne": 4143,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "Les prédictions ci-dessous sont calculées À PARTIR de la régression du §8.48.3"
+ },
+ {
+  "ligne": 4157,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "**Croisés inter-familles (H2) — couplages mesurés, prédictions :**"
+ },
+ {
+  "ligne": 4160,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "+0,498 ; les 11 autres sont entre −0,14 et +0,22. Prédiction :"
+ },
+ {
+  "ligne": 4165,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "POLQ–GZMB +0,223. Prédiction : d_X2 = **+0,048** — ne passe pas la règle (A)."
+ },
+ {
+  "ligne": 4170,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "**Dose–réponse (H3) — permutation partielle, prédictions :** bloc analysé"
+ },
+ {
+  "ligne": 4190,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "| Rotation | Réel (q=1) | q=0,5 (observé / prédit) | q=0,25 (observé / prédit) | Nul (q=0) |"
+ },
+ {
+  "ligne": 4200,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "le nul, à ±0,11 de la prédiction de la régression (0,55 contre 0,63 ; 0,30"
+ },
+ {
+  "ligne": 4205,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "prédit contre 0,17 observé) : le modèle linéaire ne tient plus aux faibles"
+ },
+ {
+  "ligne": 4212,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "| Croisement | S_sep réel | S_sep nul | Écart | Prédit | Verdict gelé |"
+ },
+ {
+  "ligne": 4223,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "à la médiane, ATM a |d| = 0,737 (r = +0,498 avec CD8A, prédit 0,865) quand les"
+ },
+ {
+  "ligne": 4227,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "donne |d| = 0,027 à la médiane (prédit 0,518) — la corrélation y est portée"
+ },
+ {
+  "ligne": 4229,
+  "section": "8.48.6 Prédictions gelées avant les runs, et runs de contrôle (H2, H3)",
+  "texte": "bivariée-normale y échoue : c'est la plus grosse erreur de prédiction"
+ },
+ {
+  "ligne": 4909,
+  "section": "8.51 Pureté / infiltration : la corrélation immunitaire n'est pas un artefact de",
+  "texte": "prédit +0,9185 par la régression §8.48 à 0,0011 près. **La pureté"
+ },
+ {
+  "ligne": 4913,
+  "section": "8.51 Pureté / infiltration : la corrélation immunitaire n'est pas un artefact de",
+  "texte": "ordonne les flux immunitaires mieux que prédit (+0,2876 observé contre"
+ },
+ {
+  "ligne": 4914,
+  "section": "8.51 Pureté / infiltration : la corrélation immunitaire n'est pas un artefact de",
+  "texte": "+0,1625 prédit, 1,77×) et CD4 est le gène le plus lié à la pureté"
+ },
+ {
+  "ligne": 5063,
+  "section": "8.51.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "## 8.51.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après"
+ },
+ {
+  "ligne": 5066,
+  "section": "8.51.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "flux), brut contre résidualisé ; d_ssep prédit par d = −0,175 + 1,705·C."
+ },
+ {
+  "ligne": 5068,
+  "section": "8.51.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "| | C moyen | d_ssep prédit moyen |"
+ },
+ {
+  "ligne": 5073,
+  "section": "8.51.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "Sanité : la prédiction brute retrouve la moyenne IMMROT observée à 0,02"
+ },
+ {
+  "ligne": 5075,
+  "section": "8.51.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "données. Après résidualisation, la prédiction ne baisse que de 0,014."
+ },
+ {
+  "ligne": 5077,
+  "section": "8.51.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "que traduire T2 en S_sep prédit ; le verdict se joue au T5."
+ },
+ {
+  "ligne": 5099,
+  "section": "8.51.7 T5 — Runs v6.2 : la pureté n'ordonne pas l'immunitaire, les résidus si",
+  "texte": "Prédictions calculées AVANT de lire les sorties (depuis T1/T2 du jour) :"
+ },
+ {
+  "ligne": 5105,
+  "section": "8.51.7 T5 — Runs v6.2 : la pureté n'ordonne pas l'immunitaire, les résidus si",
+  "texte": "| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w |"
+ },
+ {
+  "ligne": 5117,
+  "section": "8.51.7 T5 — Runs v6.2 : la pureté n'ordonne pas l'immunitaire, les résidus si",
+  "texte": "de sa prédiction (+0,1625, 1,77×) mais sous le seuil gelé de 0,30 (de"
+ },
+ {
+  "ligne": 5127,
+  "section": "8.51.7 T5 — Runs v6.2 : la pureté n'ordonne pas l'immunitaire, les résidus si",
+  "texte": "+0,9185 prédit (**écart à la prédiction −0,0011** — la régression §8.48"
+ },
+ {
+  "ligne": 5128,
+  "section": "8.51.7 T5 — Runs v6.2 : la pureté n'ordonne pas l'immunitaire, les résidus si",
+  "texte": "prédit le résiduel aussi exactement que le brut). MC +0,1240 (0,4551"
+ },
+ {
+  "ligne": 5794,
+  "section": "8.53.5 Combien de nuls faut-il en pratique ? (convergence)",
+  "texte": "n=23), contre ~0,016 et ~0,012 prédits par la courbe réplique à"
+ },
+ {
+  "ligne": 5798,
+  "section": "8.53.5 Combien de nuls faut-il en pratique ? (convergence)",
+  "texte": "précise que la courbe réplique ne le prédit, parce que la"
+ },
+ {
+  "ligne": 5949,
+  "section": "8.54 Infiltration par déconvolution indépendante : la corrélation immunitaire ES",
+  "texte": "+1,1942**, réel 1,4063 contre nul 0,2121 — au-dessus du +1,0466 prédit et"
+ },
+ {
+  "ligne": 6208,
+  "section": "8.54.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "## 8.54.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après"
+ },
+ {
+  "ligne": 6211,
+  "section": "8.54.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "flux), brut contre résidualisé ; d_ssep prédit par d = −0,175 + 1,705·C."
+ },
+ {
+  "ligne": 6213,
+  "section": "8.54.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "| | C moyen | d_ssep prédit moyen |"
+ },
+ {
+  "ligne": 6218,
+  "section": "8.54.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "Sanité : la prédiction brute retrouve la moyenne IMMROT observée à 0,02"
+ },
+ {
+  "ligne": 6220,
+  "section": "8.54.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "données, comme au §8.51. Après résidualisation, la prédiction tombe à"
+ },
+ {
+  "ligne": 6223,
+  "section": "8.54.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "traduire T2 en S_sep prédit ; le verdict se joue au T5."
+ },
+ {
+  "ligne": 6252,
+  "section": "8.54.7 T5 — Runs v6.2 : l'infiltration ordonne l'immunitaire, les résidus presqu",
+  "texte": "Prédictions calculées AVANT de lire les sorties (depuis T1/T2 du jour) :"
+ },
+ {
+  "ligne": 6258,
+  "section": "8.54.7 T5 — Runs v6.2 : l'infiltration ordonne l'immunitaire, les résidus presqu",
+  "texte": "| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w | t0 |"
+ },
+ {
+  "ligne": 6265,
+  "section": "8.54.7 T5 — Runs v6.2 : l'infiltration ordonne l'immunitaire, les résidus presqu",
+  "texte": "- **I-IMM : séparation massive, au-dessus de la prédiction.** Écart"
+ },
+ {
+  "ligne": 6266,
+  "section": "8.54.7 T5 — Runs v6.2 : l'infiltration ordonne l'immunitaire, les résidus presqu",
+  "texte": "+1,1942 — 1,14× la prédiction (+1,0466, +0,1476 au-dessus), 2,65× le"
+ },
+ {
+  "ligne": 6274,
+  "section": "8.54.7 T5 — Runs v6.2 : l'infiltration ordonne l'immunitaire, les résidus presqu",
+  "texte": "indépendante.** Écart +0,9407 — 1,11× la prédiction (+0,8483,"
+ },
+ {
+  "ligne": 6284,
+  "section": "8.54.7 T5 — Runs v6.2 : l'infiltration ordonne l'immunitaire, les résidus presqu",
+  "texte": "de 79,8 %**) et contre +0,2966 prédit (−0,0984 en dessous — la"
+ },
+ {
+  "ligne": 6285,
+  "section": "8.54.7 T5 — Runs v6.2 : l'infiltration ordonne l'immunitaire, les résidus presqu",
+  "texte": "régression §8.48 sur-prédit légèrement le résiduel ici). MC"
+ },
+ {
+  "ligne": 6488,
+  "section": "8.55 Pureté externe ABSOLUTE : la corrélation immunitaire est en partie un effet",
+  "texte": "sépare fortement (**écart S_sep +0,6911**, prédit +0,6659, seuil trouvé tôt"
+ },
+ {
+  "ligne": 6688,
+  "section": "8.55.6 T3' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "## 8.55.6 T3' — Couplage prédit : la régression §8.48 tient, avant comme après"
+ },
+ {
+  "ligne": 6691,
+  "section": "8.55.6 T3' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "flux), brut contre résidualisé ; d_ssep prédit par d = −0,175 + 1,705·C."
+ },
+ {
+  "ligne": 6693,
+  "section": "8.55.6 T3' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "| | C moyen | d_ssep prédit moyen |"
+ },
+ {
+  "ligne": 6699,
+  "section": "8.55.6 T3' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "que traduire T2' en S_sep prédit ; le verdict se joue au T5'."
+ },
+ {
+  "ligne": 6718,
+  "section": "8.55.8 T5' — Runs v6.2 : ABSOLUTE ordonne l'immunitaire, les résidus aussi",
+  "texte": "Prédictions calculées AVANT de lire les sorties (depuis T1'/T2' du jour) :"
+ },
+ {
+  "ligne": 6723,
+  "section": "8.55.8 T5' — Runs v6.2 : ABSOLUTE ordonne l'immunitaire, les résidus aussi",
+  "texte": "| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w |"
+ },
+ {
+  "ligne": 6731,
+  "section": "8.55.8 T5' — Runs v6.2 : ABSOLUTE ordonne l'immunitaire, les résidus aussi",
+  "texte": "(+0,7521), prédit +0,6659 à 0,025 près. MC sépare aussi (+0,0844 :"
+ },
+ {
+  "ligne": 6740,
+  "section": "8.55.8 T5' — Runs v6.2 : ABSOLUTE ordonne l'immunitaire, les résidus aussi",
+  "texte": "+0,5960 prédit (écart à la prédiction +0,0539). MC +0,0939 (0,4162"
+ },
+ {
+  "ligne": 7253,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "voudrait les prédire devrait partir des séries entières, et il devra"
+ },
+ {
+  "ligne": 7326,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "cible — un seul cas dans tout l'ensemble (voir §8.57.7). MFA : prédiction"
+ },
+ {
+  "ligne": 7342,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "sur le LOCO poolé ET sur le split par matrice. Les prédictions sont"
+ },
+ {
+  "ligne": 7344,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "du masque vrai ; d_div et d_sat recalculés depuis les médianes prédites ;"
+ },
+ {
+  "ligne": 7469,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "LevinaBickel figure dans la vraie paire ou dans la paire prédite sur"
+ },
+ {
+  "ligne": 7508,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "groupe (LP, MFA 6,0, n=178), n=62 : r(prédit, vrai) = **0,977**,"
+ },
+ {
+  "ligne": 7516,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "où la paire prédite n'est pas la vraie, concentrés dans le pli tcga."
+ },
+ {
+  "ligne": 7529,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "- **Paire prédite identique réel/nul (LOCO, S2d) :** 66/106 (62,3 %)."
+ },
+ {
+  "ligne": 7531,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "(44,6 %) : la prédiction demi-flux est plus bruitée que la paire"
+ },
+ {
+  "ligne": 7570,
+  "section": "8.57 Modélisation depuis les séries complètes — chantier 3 (suite, 19 novembre 2",
+  "texte": "ne la prédit** (S4 : 62,6 % / 0,9 %). Delta n'est pas expliqué par les"
+ },
+ {
+  "ligne": 8663,
+  "section": "8.60 Déconvolution par type cellulaire : aucun type ne porte la corrélation — el",
+  "texte": "minimum IMMROT +0,4508 et au-dessus des prédictions +0,3900 / +0,3865)."
+ },
+ {
+  "ligne": 8678,
+  "section": "8.60 Déconvolution par type cellulaire : aucun type ne porte la corrélation — el",
+  "texte": "+0,7129**, prédit +0,7552). Une quantité GLOBALE d'infiltrat, mesurée"
+ },
+ {
+  "ligne": 8687,
+  "section": "8.60 Déconvolution par type cellulaire : aucun type ne porte la corrélation — el",
+  "texte": "et leurs prédictions de ~0,18–0,20, et leurs liens aux flux sont"
+ },
+ {
+  "ligne": 8750,
+  "section": "8.60.1 Question, méthode, inventaire des sources (avant le gel)",
+  "texte": "ouverte (source 5), le protocole gelé ne prévoit pas de second bras par"
+ },
+ {
+  "ligne": 8966,
+  "section": "8.60.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "## 8.60.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après"
+ },
+ {
+  "ligne": 8969,
+  "section": "8.60.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "flux), brut contre résidualisé sur TOP1 ; d_ssep prédit par"
+ },
+ {
+  "ligne": 8972,
+  "section": "8.60.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "| | C moyen | d_ssep prédit moyen |"
+ },
+ {
+  "ligne": 8977,
+  "section": "8.60.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "Sanité : la prédiction brute (0,6850) est dans la gamme des écarts"
+ },
+ {
+  "ligne": 8980,
+  "section": "8.60.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "que traduire T2 en S_sep prédit ; le verdict se joue au T5 — et c'est"
+ },
+ {
+  "ligne": 8981,
+  "section": "8.60.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "là que la prédiction sera mise en défaut pour D-TOP1/D-TOP2 (§8.60.7)."
+ },
+ {
+  "ligne": 9034,
+  "section": "8.60.7 Bras L — Fraction leucocytaire par méthylation : PARTIELLE (un tiers, voi",
+  "texte": "**T5-L.** Voir §8.60.8 (D-LEU +0,7129, prédit +0,7552). Le bras L ne"
+ },
+ {
+  "ligne": 9042,
+  "section": "8.60.8 T5 — Runs v6.2 : chaque type ordonne les flux, les résidus aussi",
+  "texte": "Prédictions calculées AVANT de lire les sorties (depuis T1/T2/T3 du"
+ },
+ {
+  "ligne": 9050,
+  "section": "8.60.8 T5 — Runs v6.2 : chaque type ordonne les flux, les résidus aussi",
+  "texte": "| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w | t0 |"
+ },
+ {
+  "ligne": 9060,
+  "section": "8.60.8 T5 — Runs v6.2 : chaque type ordonne les flux, les résidus aussi",
+  "texte": "**+0,1967 AU-DESSUS de la prédiction** (+0,3900) : la régression §8.48"
+ },
+ {
+  "ligne": 9061,
+  "section": "8.60.8 T5 — Runs v6.2 : chaque type ordonne les flux, les résidus aussi",
+  "texte": "sous-prédit ce contrôle. MC sépare aussi (+0,0839 : 0,4198 contre"
+ },
+ {
+  "ligne": 9070,
+  "section": "8.60.8 T5 — Runs v6.2 : chaque type ordonne les flux, les résidus aussi",
+  "texte": "au-dessus du seuil H1 (0,45), **+0,1744 au-dessus de la prédiction**"
+ },
+ {
+  "ligne": 9078,
+  "section": "8.60.8 T5 — Runs v6.2 : chaque type ordonne les flux, les résidus aussi",
+  "texte": "contre +0,8089 prédit (−0,0397 en dessous — la régression §8.48"
+ },
+ {
+  "ligne": 9079,
+  "section": "8.60.8 T5 — Runs v6.2 : chaque type ordonne les flux, les résidus aussi",
+  "texte": "prédit bien le résiduel ici). MC +0,1085 (0,4413 contre 0,3328) ;"
+ },
+ {
+  "ligne": 9088,
+  "section": "8.60.8 T5 — Runs v6.2 : chaque type ordonne les flux, les résidus aussi",
+  "texte": "IMMROT, contre +0,7552 prédit (−0,0423). MC +0,0973 (0,4327 contre"
+ },
+ {
+  "ligne": 9281,
+  "section": "8.60.11 Ce qui manque, ce qui reste ouvert",
+  "texte": "un type prédit la survie — hors protocole gelé, non fait ici."
+ },
+ {
+  "ligne": 9314,
+  "section": "8.61 Pureté par méthylation : une seconde mesure ADN qui sépare comme ABSOLUTE, ",
+  "texte": "+0,6911 d'E-ABS au §8.55, prédit +0,5459 à 0,128 près. Ordonner les flux"
+ },
+ {
+  "ligne": 9495,
+  "section": "8.61.5 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "## 8.61.5 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après"
+ },
+ {
+  "ligne": 9498,
+  "section": "8.61.5 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "flux), brut contre résidualisé ; d_ssep prédit par d = −0,175 + 1,705·C."
+ },
+ {
+  "ligne": 9500,
+  "section": "8.61.5 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "| | C moyen | d_ssep prédit moyen |"
+ },
+ {
+  "ligne": 9506,
+  "section": "8.61.5 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "ne fait que traduire T2'' en S_sep prédit ; le verdict se joue au T5''."
+ },
+ {
+  "ligne": 9507,
+  "section": "8.61.5 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "À noter : la prédiction résiduelle (+0,6932) est PLUS haute que"
+ },
+ {
+  "ligne": 9531,
+  "section": "8.61.7 T5'' — Runs v6.2 : METH ordonne l'immunitaire comme ABSOLUTE, les résidus",
+  "texte": "Prédictions calculées AVANT de lire les sorties (depuis T1''/T2'' du"
+ },
+ {
+  "ligne": 9537,
+  "section": "8.61.7 T5'' — Runs v6.2 : METH ordonne l'immunitaire comme ABSOLUTE, les résidus",
+  "texte": "| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w |"
+ },
+ {
+  "ligne": 9553,
+  "section": "8.61.7 T5'' — Runs v6.2 : METH ordonne l'immunitaire comme ABSOLUTE, les résidus",
+  "texte": "prédiction de 0,1280 (+0,6739 contre +0,5459)** — la régression"
+ },
+ {
+  "ligne": 9564,
+  "section": "8.61.7 T5'' — Runs v6.2 : METH ordonne l'immunitaire comme ABSOLUTE, les résidus",
+  "texte": "est 0,1505 SOUS sa prédiction (+0,5427 contre +0,6932)** — la"
+ },
+ {
+  "ligne": 9566,
+  "section": "8.61.7 T5'' — Runs v6.2 : METH ordonne l'immunitaire comme ABSOLUTE, les résidus",
+  "texte": "M-METH. Les deux écarts à la prédiction sont de sens opposés et de"
+ },
+ {
+  "ligne": 9740,
+  "section": "8.61.11 Ce qui manque, ce qui reste ouvert",
+  "texte": "opposés. La prédiction par couplage, calibrée sur IMMROT, n'est pas"
+ },
+ {
+  "ligne": 9769,
+  "section": "8.62 Loi d'échelle en n pour Delta — chantier (20 novembre 2026)",
+  "texte": "loi en n pur leur prédit le même Delta ; or sur les 106 paires réel/nul,"
+ },
+ {
+  "ligne": 9832,
+  "section": "8.62 Loi d'échelle en n pour Delta — chantier (20 novembre 2026)",
+  "texte": "(c) transfert A→B : ≥ 90 % des points B prédits à ±0,10. LA LOI SUFFIT À"
+ },
+ {
+  "ligne": 9867,
+  "section": "8.62 Loi d'échelle en n pour Delta — chantier (20 novembre 2026)",
+  "texte": "forme en n seul ne prédit Delta à ±0,10 sur les runs détenus."
+ },
+ {
+  "ligne": 9989,
+  "section": "8.62 Loi d'échelle en n pour Delta — chantier (20 novembre 2026)",
+  "texte": "prédit pas les sous-échantillons des mêmes matrices : ce n'est pas"
+ },
+ {
+  "ligne": 10046,
+  "section": "8.62 Loi d'échelle en n pour Delta — chantier (20 novembre 2026)",
+  "texte": "garantit pas la prédiction à ±0,10. **La loi d'échelle en n existe —"
+ },
+ {
+  "ligne": 11288,
+  "section": "8.65.7 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "## 8.65.7 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après"
+ },
+ {
+  "ligne": 11291,
+  "section": "8.65.7 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "flux), brut contre résidualisé ; d_ssep prédit par d = −0,175 + 1,705·C."
+ },
+ {
+  "ligne": 11293,
+  "section": "8.65.7 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "| | C moyen | d_ssep prédit moyen |"
+ },
+ {
+  "ligne": 11301,
+  "section": "8.65.7 T3'' — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "à 0,0001 près. Le T3'' ne fait que traduire T2'' en S_sep prédit ;"
+ },
+ {
+  "ligne": 11323,
+  "section": "8.65.9 T5'' — Runs v6.2 : les scores publiés ordonnent l'immunitaire, les résidu",
+  "texte": "Prédictions calculées AVANT de lire les sorties (depuis T1''/T2'' du jour) :"
+ },
+ {
+  "ligne": 11329,
+  "section": "8.65.9 T5'' — Runs v6.2 : les scores publiés ordonnent l'immunitaire, les résidu",
+  "texte": "| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w | t0 |"
+ },
+ {
+  "ligne": 11336,
+  "section": "8.65.9 T5'' — Runs v6.2 : les scores publiés ordonnent l'immunitaire, les résidu",
+  "texte": "- **E-PIMM : séparation massive, au-dessus de la prédiction.** Écart"
+ },
+ {
+  "ligne": 11337,
+  "section": "8.65.9 T5'' — Runs v6.2 : les scores publiés ordonnent l'immunitaire, les résidu",
+  "texte": "+1,1928 — 1,14× la prédiction (+1,0466, +0,1462 au-dessus), 2,65× le"
+ },
+ {
+  "ligne": 11348,
+  "section": "8.65.9 T5'' — Runs v6.2 : les scores publiés ordonnent l'immunitaire, les résidu",
+  "texte": "indépendante.** Écart +1,0443 — 1,23× la prédiction (+0,8483,"
+ },
+ {
+  "ligne": 11362,
+  "section": "8.65.9 T5'' — Runs v6.2 : les scores publiés ordonnent l'immunitaire, les résidu",
+  "texte": "de 79,7 %**) et contre +0,2965 prédit (−0,0964 en dessous — la"
+ },
+ {
+  "ligne": 11363,
+  "section": "8.65.9 T5'' — Runs v6.2 : les scores publiés ordonnent l'immunitaire, les résidu",
+  "texte": "régression §8.48 sur-prédit légèrement le résiduel ici, comme au"
+ },
+ {
+  "ligne": 12080,
+  "section": "8.67 Test décisif sur la fraction leucocytaire : elle porte un tiers de la corré",
+  "texte": "conservés** — presque exactement la prédiction de la régression §8.48"
+ },
+ {
+  "ligne": 12321,
+  "section": "8.67.5 T3-L2 — Couplage prédit : la régression §8.48 tient, avant comme après — ",
+  "texte": "## 8.67.5 T3-L2 — Couplage prédit : la régression §8.48 tient, avant comme après — et le plancher de L-ORD"
+ },
+ {
+  "ligne": 12324,
+  "section": "8.67.5 T3-L2 — Couplage prédit : la régression §8.48 tient, avant comme après — ",
+  "texte": "flux), brut contre résidualisé sur `leuco` ; d_ssep prédit par"
+ },
+ {
+  "ligne": 12327,
+  "section": "8.67.5 T3-L2 — Couplage prédit : la régression §8.48 tient, avant comme après — ",
+  "texte": "| | C moyen | d_ssep prédit moyen |"
+ },
+ {
+  "ligne": 12333,
+  "section": "8.67.5 T3-L2 — Couplage prédit : la régression §8.48 tient, avant comme après — ",
+  "texte": "prédiction L-RES). Le T3-L2 ne fait que traduire T2-L2 en S_sep"
+ },
+ {
+  "ligne": 12334,
+  "section": "8.67.5 T3-L2 — Couplage prédit : la régression §8.48 tient, avant comme après — ",
+  "texte": "prédit ; le verdict se joue au T5-L2."
+ },
+ {
+  "ligne": 12342,
+  "section": "8.67.5 T3-L2 — Couplage prédit : la régression §8.48 tient, avant comme après — ",
+  "texte": "prédiction au sens ordinaire : c'est le plancher LINÉAIRE. Toute"
+ },
+ {
+  "ligne": 12379,
+  "section": "8.67.7 T5-L2 — Runs v6.2 : la séparation survit à 57,6 %, l'ordonnancement leuco",
+  "texte": "Prédictions calculées AVANT de lire les sorties (depuis T1-L2/T2-L2"
+ },
+ {
+  "ligne": 12387,
+  "section": "8.67.7 T5-L2 — Runs v6.2 : la séparation survit à 57,6 %, l'ordonnancement leuco",
+  "texte": "| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w | t0 |"
+ },
+ {
+  "ligne": 12394,
+  "section": "8.67.7 T5-L2 — Runs v6.2 : la séparation survit à 57,6 %, l'ordonnancement leuco",
+  "texte": "prédit.** Écart +0,5662 contre +0,9838 pour CD8A brut (**57,6 %"
+ },
+ {
+  "ligne": 12395,
+  "section": "8.67.7 T5-L2 — Runs v6.2 : la séparation survit à 57,6 %, l'ordonnancement leuco",
+  "texte": "conservés, baisse de 42,4 %**) et contre +0,5409 prédit (**+0,0253"
+ },
+ {
+  "ligne": 12396,
+  "section": "8.67.7 T5-L2 — Runs v6.2 : la séparation survit à 57,6 %, l'ordonnancement leuco",
+  "texte": "au-dessus — la régression §8.48 prédit bien le résiduel ici**,"
+ },
+ {
+  "ligne": 12454,
+  "section": "8.67.8 Verdict de synthèse — PARTIEL",
+  "texte": "(c) Cela dit que la régression §8.48 prédit bien la séparation"
+ },
+ {
+  "ligne": 12455,
+  "section": "8.67.8 Verdict de synthèse — PARTIEL",
+  "texte": "résiduelle leucocytaire (+0,5409 prédit contre +0,5662 observé) —"
+ },
+ {
+  "ligne": 12456,
+  "section": "8.67.8 Verdict de synthèse — PARTIEL",
+  "texte": "elle encadre mal METH, bien la fraction leucocytaire : la prédiction"
+ },
+ {
+  "ligne": 12543,
+  "section": "8.67.9 Provenance",
+  "texte": "porte L, jointure, T1-L2–T4-L, sensibilités, prédictions T3-L2."
+ },
+ {
+  "ligne": 12617,
+  "section": "8.67.10 Ce qui manque, ce qui reste ouvert",
+  "texte": "prédit la survie — hors protocole gelé, non fait ici."
+ },
+ {
+  "ligne": 13026,
+  "section": "8.68.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "## 8.68.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après"
+ },
+ {
+  "ligne": 13029,
+  "section": "8.68.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "flux), brut contre résidualisé sur TOP1 ; d_ssep prédit par"
+ },
+ {
+  "ligne": 13032,
+  "section": "8.68.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "| | C moyen | d_ssep prédit moyen |"
+ },
+ {
+  "ligne": 13037,
+  "section": "8.68.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "Sanité : la prédiction brute (0,7735) est dans la gamme des écarts"
+ },
+ {
+  "ligne": 13040,
+  "section": "8.68.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "Le T3 ne fait que traduire T2 en S_sep prédit ; le verdict se joue au"
+ },
+ {
+  "ligne": 13041,
+  "section": "8.68.5 T3 — Couplage prédit : la régression §8.48 tient, avant comme après",
+  "texte": "T5 — et c'est là que la prédiction sera mise en défaut pour D-XTOP2"
+ },
+ {
+  "ligne": 13067,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "Prédictions calculées AVANT de lire les sorties (depuis T1/T2/T3 du"
+ },
+ {
+  "ligne": 13075,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "| Run | Contrôle → analysés | S_sep réel | S_sep nul | Écart | Prédit | MC réel / nul | Delta réel / nul | w | t0 |"
+ },
+ {
+  "ligne": 13085,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "**+0,0166 au-dessus de la prédiction** (+0,8654) : la régression §8.48"
+ },
+ {
+  "ligne": 13086,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "prédit ce contrôle presque exactement. MC ne sépare PAS (−0,0152 :"
+ },
+ {
+  "ligne": 13097,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "**+0,3672 AU-DESSUS de la prédiction** (+0,8132) : la régression §8.48"
+ },
+ {
+  "ligne": 13098,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "sous-prédit ce contrôle de plus d'un tiers d'écart — comme au §8.60"
+ },
+ {
+  "ligne": 13099,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "où D-TOP1/D-TOP2 dépassaient leurs prédictions de ~+0,18–0,20, mais"
+ },
+ {
+  "ligne": 13110,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "contre +0,5441 prédit (+0,0599 au-dessus — la régression §8.48 prédit"
+ },
+ {
+  "ligne": 13121,
+  "section": "8.68.7 T5 — Runs v6.2 : les dendritiques ordonnent les flux, les résidus aussi, ",
+  "texte": "— au-dessus du seuil (0,45), contre +0,6473 prédit (−0,0374). MC ne"
+ },
+ {
+  "ligne": 13294,
+  "section": "8.68.10 Ce qui manque, ce qui reste ouvert",
+  "texte": "(+1,1804) dépasse sa prédiction de +0,3672 et frôle I-IMM (+1,1942) :"
+ },
+ {
+  "ligne": 13295,
+  "section": "8.68.10 Ce qui manque, ce qui reste ouvert",
+  "texte": "la régression §8.48 sous-prédit systématiquement les contrôles par"
+ },
+ {
+  "ligne": 13312,
+  "section": "8.68.10 Ce qui manque, ce qui reste ouvert",
+  "texte": "prédit la survie — hors protocole gelé, non fait ici."
+ },
+ {
+  "ligne": 15416,
+  "section": "8.73.1 Question, méthode, règles",
+  "texte": "(graines 41–60, jamais utilisées), avec prédictions écrites AVANT toute"
+ },
+ {
+  "ligne": 15452,
+  "section": "8.73.1 Question, méthode, règles",
+  "texte": "des pics frais à ±2 pas du candidat prédit par G, avec ≥ 5 courbes"
+ },
+ {
+  "ligne": 15479,
+  "section": "8.73.3 Corpus — aucune statistique globale ne sépare rob-on de rob-off (H3 écart",
+  "texte": "non plus prédite par l'extrémité des lignes : le candidat argmax G(c)"
+ },
+ {
+  "ligne": 15590,
+  "section": "8.73.5 Interventions sur les contrôles — l'extrême au bord ne crée rien, l'ordin",
+  "texte": "seuil 10,87 %, au bord comme prédit) et rien chez GSE62452 s11."
+ },
+ {
+  "ligne": 15596,
+  "section": "8.73.6 Confirmation hors échantillon (lot frais s41–s60) — aucun pic étroit, la ",
+  "texte": "## 8.73.6 Confirmation hors échantillon (lot frais s41–s60) — aucun pic étroit, la prédiction H_max échoue"
+ },
+ {
+  "ligne": 15604,
+  "section": "8.73.6 Confirmation hors échantillon (lot frais s41–s60) — aucun pic étroit, la ",
+  "texte": "`f07567c4…ec3abf`). Prédictions écrites AVANT toute lecture des"
+ },
+ {
+  "ligne": 15629,
+  "section": "8.73.6 Confirmation hors échantillon (lot frais s41–s60) — aucun pic étroit, la ",
+  "texte": "configs sur 12), H_max prédit 23 courbes rob-on — **0 réelle** :"
+ },
+ {
+  "ligne": 15631,
+  "section": "8.73.6 Confirmation hors échantillon (lot frais s41–s60) — aucun pic étroit, la ",
+  "texte": "H_max sur-prédit (16 % de faux positifs) et ne prédit rien de vrai :"
+ },
+ {
+  "ligne": 15632,
+  "section": "8.73.6 Confirmation hors échantillon (lot frais s41–s60) — aucun pic étroit, la ",
+  "texte": "la prédiction par l'écart cohérent du petit côté ne se généralise"
+ },
+ {
+  "ligne": 15690,
+  "section": "8.73.8 Ce que ça change, et ce que ça ne change pas",
+  "texte": "courbes ; §8.73.6) et la prédiction H_max y échoue (23 faux positifs,"
+ },
+ {
+  "ligne": 15719,
+  "section": "8.73.9 Méthode",
+  "texte": "terminée 21:44:34Z, 20/20 exit 0, 0 échec). **Prédictions** :"
+ },
+ {
+  "ligne": 18542,
+  "section": "8.78.10 — Autres dépôts du compte (nommés depuis la seule liste de recherche, no",
+  "texte": "prédiction ni alerte opérationnelle », mis à jour 17 sept. 2026)."
+ },
+ {
+  "ligne": 19041,
+  "section": "8.80 Nouvelles sur vopimetostat + daraxonrasib depuis ESMO 2026 (21 novembre 202",
+  "texte": "**Depuis ESMO 2026, aucune nouvelle donnée d'efficacité ou de sécurité sur la combinaison vopimetostat + daraxonrasib n'a été publiée ; la phase 3 n'a pas démarré et n'a toujours pas de numéro NCT — son design est en revanche désormais précisé (1:1, vopimetostat 200 mg + daraxonrasib 100 mg 1×/jour "
+ },
+ {
+  "ligne": 19109,
+  "section": "8.80 Nouvelles sur vopimetostat + daraxonrasib depuis ESMO 2026 (21 novembre 202",
+  "texte": "- Annoncé en octobre 2026 et confirmé le 9 novembre 2026 : Tango prévoit de lancer au **1er semestre 2027** une étude de **phase 1/2 d'environ 25 patients**, vopimetostat + inhibiteur pan-RAS, chez des patients atteints de PDAC **MTAP wild-type** (MTAP-sauvage), en **2e ligne**."
+ },
+ {
+  "ligne": 19812,
+  "section": "8.82.7 — Pistes ouvertes",
+  "texte": "pancréas) : ils descendent avec la prolifération, mais prédisent-ils"
+ },
+ {
+  "ligne": 19853,
+  "section": "8.83 Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, ",
+  "texte": "### 8.83 Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, pour 3 items sur 8 — mais pas parce qu'ils montent avec KRAS (21 novembre 2026)"
+ },
+ {
+  "ligne": 19861,
+  "section": "8.83 Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, ",
+  "texte": "**AU MOINS UN gène de privilège prédit la survie comme CA125 : 3 items"
+ },
+ {
+  "ligne": 19862,
+  "section": "8.83 Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, ",
+  "texte": "sur 8 sont dans la catégorie « PRÉDIT COMME CA125 » (Cox univarié"
+ },
+ {
+  "ligne": 19870,
+  "section": "8.83 Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, ",
+  "texte": "le bas) ; FASLG et IDO1 ne prédisent rien nulle part."
+ },
+ {
+  "ligne": 19873,
+  "section": "8.83 Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, ",
+  "texte": "prédisent-ils la survie ? » — reçoit une réponse en deux temps, et le"
+ },
+ {
+  "ligne": 19877,
+  "section": "8.83 Survie : les gènes de privilège prédisent-ils la survie comme CA125 ? OUI, ",
+  "texte": "prédisent la survie comme CA125 ne montent pas avec KRAS : TGFB2 ne"
+ },
+ {
+  "ligne": 19956,
+  "section": "8.83.2 — Le tableau complet : Cox univarié, log-rank, et KRAS",
+  "texte": "| FASLG | 0,92 (0,43) / 0,16 | 0,90 (0,54) / 0,12 | 1,08 (0,48) / 0,96 | NE PRÉDIT RIEN | 0/3 |"
+ },
+ {
+  "ligne": 19958,
+  "section": "8.83.2 — Le tableau complet : Cox univarié, log-rank, et KRAS",
+  "texte": "| TGFB2 | **1,28 (0,014)** / 0,025 | **1,34 (0,048)** / 0,063 | 1,01 (0,91) / 0,79 | **PRÉDIT COMME CA125** | 1/3 |"
+ },
+ {
+  "ligne": 19959,
+  "section": "8.83.2 — Le tableau complet : Cox univarié, log-rank, et KRAS",
+  "texte": "| IDO1 | 1,17 (0,13) / 0,39 | 1,07 (0,65) / 0,98 | 1,16 (0,14) / 0,068 | NE PRÉDIT RIEN | 0/3 |"
+ },
+ {
+  "ligne": 19960,
+  "section": "8.83.2 — Le tableau complet : Cox univarié, log-rank, et KRAS",
+  "texte": "| HLA-G | 1,18 (0,11) / 0,45 | **1,71 (0,0004)** / 0,0007 | **1,28 (0,035)** / 0,040 | **PRÉDIT COMME CA125** | 0/3 |"
+ },
+ {
+  "ligne": 19963,
+  "section": "8.83.2 — Le tableau complet : Cox univarié, log-rank, et KRAS",
+  "texte": "| SCORE_PRIV | **1,28 (0,020)** / 0,83 | **1,70 (0,001)** / 0,0066 | 1,07 (0,53) / 0,73 | **PRÉDIT COMME CA125** | 1/3 |"
+ },
+ {
+  "ligne": 19976,
+  "section": "8.83.3 — Les trois items passants, un par un",
+  "texte": "**TGFB2 — PRÉDIT COMME CA125.** TCGA HR 1,28 (p=0,014, log-rank"
+ },
+ {
+  "ligne": 19984,
+  "section": "8.83.3 — Les trois items passants, un par un",
+  "texte": "**HLA-G — PRÉDIT COMME CA125.** TCGA HR 1,18 (p=0,11, ns) ; ICGC HR"
+ },
+ {
+  "ligne": 19990,
+  "section": "8.83.3 — Les trois items passants, un par un",
+  "texte": "il DESCEND avec KRAS en GSE71729). Un gène de privilège qui prédit une"
+ },
+ {
+  "ligne": 19994,
+  "section": "8.83.3 — Les trois items passants, un par un",
+  "texte": "**Score combiné (moyenne des z-scores des 7) — PRÉDIT COMME CA125.**"
+ },
+ {
+  "ligne": 20028,
+  "section": "8.83.4 — Les cinq autres : un signal fort isolé, une contradiction, deux riens",
+  "texte": "**FASLG et IDO1 — NE PRÉDIT RIEN.** Aucune cohorte avec p < 0,05 dans"
+ },
+ {
+  "ligne": 20037,
+  "section": "8.83.5 — Le croisement avec KRAS : la prémisse ne tient pas",
+  "texte": "KRAS prédisent la survie ». Le tableau de croisement (Spearman gène vs"
+ },
+ {
+  "ligne": 20059,
+  "section": "8.83.5 — Le croisement avec KRAS : la prémisse ne tient pas",
+  "texte": "prédisent-ils la survie » — la réponse honnête est double : (a) oui,"
+ },
+ {
+  "ligne": 20060,
+  "section": "8.83.5 — Le croisement avec KRAS : la prémisse ne tient pas",
+  "texte": "3 items sur 8 prédisent la survie comme CA125 (TGFB2, HLA-G, score) ;"
+ },
+ {
+  "ligne": 20062,
+  "section": "8.83.5 — Le croisement avec KRAS : la prémisse ne tient pas",
+  "texte": "prédit la survie en descendant avec KRAS en GSE71729, et TGFB2 ne"
+ },
+ {
+  "ligne": 20111,
+  "section": "8.83.8 — Pistes ouvertes",
+  "texte": "2. HLA-G : pourquoi prédit-il la survie en descendant avec KRAS en"
+ },
+ {
+  "ligne": 20262,
+  "section": "8.84.1 — La source : Chen et al. 2025, et ce que MOESM13 contient vraiment",
+  "texte": "0 résultat. Le pilote ne prédit rien ici."
+ },
+ {
+  "ligne": 21059,
+  "section": "8.85.7 — Comparaison descriptive avec le §8.79 : mêmes 55 TSV, un flux renommé, ",
+  "texte": "construction ne prédit pas le verdict d'une paire, et un"
+ },
+ {
+  "ligne": 21614,
+  "section": "8.87.2 — Ce que la confirmation de fragilité dit, et ce qu'elle ne dit pas",
+  "texte": "protocole §4.3 ne prévoit d'addendum qu'en cas de"
+ },
+ {
+  "ligne": 22294,
+  "section": "8.88.7 — Comparaison descriptive avec le §8.86 : même matrice, un arrêt levé, un",
+  "texte": "construction ne prédit pas le verdict d'une paire, et un"
+ },
+ {
+  "ligne": 22736,
+  "section": "8.90.2.1 Tableau de vérification des chiffres clés — 0 écart numérique sur 9 chi",
+  "texte": "| (d) | §8.83 survie : **3 items sur 8** prédisent comme CA125 (Cox HR > 1, p < 0,05 dans ≥ 2/3 cohortes) — **TGFB2, HLA-G, score combiné** ; aucun gène ne monte avec KRAS dans ≥ 2/3 cohortes | Recompté cohorte par cohorte : TGFB2 TCGA p=0,0139 ✓, ICGC p=0,0482 ✓, GSE71729 p=0,9135 ✗ → 2/3 ✓ ; HLA-G"
+ },
+ {
+  "ligne": 22765,
+  "section": "8.90.2.2 Incohérences trouvées — 8, toutes corrigées par addendum daté (texte d'",
+  "texte": "**I-5 — Titre plus fort que le corps : §8.83, « pas parce qu'ils montent avec KRAS ».** Localisation : titre du §8.83 (ligne 19820) ; §7 ligne 242 (row 89) : « le signal de survie ne passe pas par KRAS ». Preuve : TGFB2, l'un des trois passants, monte avec KRAS en TCGA seule (rho +0,337, p < 0,0001 "
+ },
+ {
+  "ligne": 22791,
+  "section": "8.90.2.3 Tableau en trois colonnes — classement des verdicts",
+  "texte": "| CA125/CEA — survie | CA125 prédit la survie dans 2 cohortes sur 3 (TCGA Cox p=0,001 ; ICGC 9,5 contre 23,8 mois, le plus fort marqueur de survie), GSE71729 seule en échec. |"
+ },
+ {
+  "ligne": 22793,
+  "section": "8.90.2.3 Tableau en trois colonnes — classement des verdicts",
+  "texte": "| Daraxonrasib | Fait clinique externe : FDA approuvé le 26 août 2026, phase III RASolute-302 OS 13,2 contre 6,7 mois, HR 0,40 (pas une prédiction du pipeline). |"
+ },
+ {
+  "ligne": 22808,
+  "section": "8.90.2.3 Tableau en trois colonnes — classement des verdicts",
+  "texte": "| Survie des gènes de privilège | 3/8 prédisent comme CA125 sur ≥ 2/3 cohortes, mais p limites (TGFB2 ICGC p=0,048), aucun ne passe Bonferroni dans ≥ 2 cohortes, log-rank contredit Cox pour le score en TCGA. |"
+ },
+ {
+  "ligne": 22860,
+  "section": "8.90.3.3 Occurrences à reformuler — 8 reformulations proposées (superlatifs ou a",
+  "texte": "| R6 | 177 (journal §10) et 497 (§8.20) | « Première avance réelle du dossier : un médicament approuvé qui double la survie médiane — pas un remède, pas une prédiction du pipeline. » / « le daraxonrasib (RMC-6236) a doublé la survie médiane en phase III et a été approuvé par la FDA — une avance réel"
+ },
+ {
+  "ligne": 23040,
+  "section": "8.90.4.3 Liste des limites connues et vérifiables (16)",
+  "texte": "16. **Tout verdict clinique vient d'ailleurs** : daraxonrasib, vopimetostat + daraxonrasib, IBI343 (§8.20, §8.22) sont des avancées trouvées (essais, FDA), pas des prédictions du pipeline ; les 3 blocs de co-expression et la chaîne sont des faits de tests directs, pas des verdicts du pipeline (§8.35"
+ },
+ {
+  "ligne": 23616,
+  "section": "8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas",
+  "texte": "- **15 nov. 2026, 10h20 : SURVIE — le paysage dépend du seuil (avertissement de Zackary, 10h11 : ne pas se fixer sur un seuil/flux/contrôle). 9 définitions testées, toutes rapportées : top12 KRAS vit 9,1 mois contre 20,4 (p=0,024 ; brut p=0,002), mais top7 rien (19,5 mois, p=0,24), top20 limite (p=0"
+ },
+ {
+  "ligne": 23621,
+  "section": "8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas",
+  "texte": "- **16 nov. 2026, 07h45 : QUATRIÈME COHORTE ICGC — EXPRESSION NON, SURVIE CA125 OUI. Sur 70 tumeurs PACA-AU (Bailey 2016 ; portail ICGC mort, données via Xena + tables Bailey) : CA125 +0,13 et CEA +0,28 chez les KRAS-les-plus-forts — dans le bruit du nul. Le « 3/3 » devient « 3/4 » pour l'expression"
+ },
+ {
+  "ligne": 23626,
+  "section": "8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas",
+  "texte": "- **16 nov. 2026, 07h50 : INHIBITEURS KRAS G12D / PAN-RAS — OUI POUR UN SEUL, ET UNE APPROBATION FDA. Test par allèle (vérifié) : le MRTX1133 tue les lignées G12D (−1,70 contre −0,38, p=0,0001) ; l'axe Chronos prédit la sensibilité chez les G12D (rho +0,47, p=0,079, n=15 — suggestif, pas une preuve)"
+ },
+ {
+  "ligne": 23628,
+  "section": "8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas",
+  "texte": "- **16 nov. 2026, 07h58 : BILAN DU ROUND « REMÈDE » — trouvé : le daraxonrasib, approuvé FDA, survie doublée en phase III (13,2 contre 6,7 mois, HR 0,40) — une avance réelle, pas une guérison, pas une prédiction du pipeline. Piste précoce : IBI343 anti-CLDN18.2 (22,7 % de réponses en phase I, phase "
+ },
+ {
+  "ligne": 23656,
+  "section": "8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas",
+  "texte": "- **19 nov. 2026 : §8.42 — MODÉLISATION DES MAGNITUDES : DELTA NON ÉLUCIDÉ.** Suite du §8.39 (voie ouverte au §8.39.10 point 1). Protocole gelé avant exécution (`PROTOCOL_delta_magnitudes.md`, SHA `2562ee22…0419`) ; script `v62_delta_magnitudes.py` (SHA `cefedf77…61debc`) ; lecture seule, aucun run,"
+ },
+ {
+  "ligne": 23669,
+  "section": "8.5 Synthèse des 4 versions — ce qui bouge, ce qui ne bouge pas",
+  "texte": "- **19 nov. 2026, ~16h30–22h51 (heure de Montréal) : §8.48 — DOMINATION IMMROT : EXPLIQUÉE, EFFET DE CORRÉLATION, PAS RUPTURE.** Go de Zackary « Fait tout cela » (~16h30, 3e des 4 chantiers ; suite du §8.44, annoncée au §8.44.7). Protocole gelé avant tout calcul (`PROTOCOL_immrot_domination.md`, SHA"
+ }
+]

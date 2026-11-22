@@ -1,0 +1,35 @@
+{
+ "n_paires": 60,
+ "n_runs": 120,
+ "ecarts": [],
+ "manquants": [],
+ "c4a_0_0_exact_120_120": true,
+ "sha_apres": {
+  "v6.2": {
+   "attendu": "f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf",
+   "observe": "f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf",
+   "ok": true
+  },
+  "v6.1": {
+   "attendu": "2af5e5cea3a99ff227c7f76dff48c678eb07baba92625ca57e3c1c412546a9c9",
+   "observe": "2af5e5cea3a99ff227c7f76dff48c678eb07baba92625ca57e3c1c412546a9c9",
+   "ok": true
+  },
+  "v6": {
+   "attendu": "bb8bbdba4eb1f8c55b49748274ae8fbfef8a43f6c1b890964f18ba77960c0773",
+   "observe": "bb8bbdba4eb1f8c55b49748274ae8fbfef8a43f6c1b890964f18ba77960c0773",
+   "ok": true
+  },
+  "v6.3": {
+   "attendu": "552e735910a1fac183ad2ce5713ffa2888e9214c764b103707eeef1787044ffb",
+   "observe": "552e735910a1fac183ad2ce5713ffa2888e9214c764b103707eeef1787044ffb",
+   "ok": true
+  },
+  "v6.4": {
+   "attendu": "9ed728da7168925f629258e671971d3e2724c35c812a60d9bd95f5fd8199ea3d",
+   "observe": "9ed728da7168925f629258e671971d3e2724c35c812a60d9bd95f5fd8199ea3d",
+   "ok": true
+  }
+ },
+ "c4d_tous_inchanges": true
+}
