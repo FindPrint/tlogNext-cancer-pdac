@@ -1,5 +1,7 @@
 # Cancer du pancréas (PDAC) — pipeline universel v6.2
 
+Version anglaise : [README_EN.md](README_EN.md) — English version
+
 Dépôt public de travail du projet PDAC : recherche d'un remède pour le
 cancer du pancréas avec le pipeline universel de détection de ruptures
 (v6.2), données ouvertes, protocoles gelés, résultats vérifiés.
@@ -61,9 +63,7 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   les `master_results.json` des 2 850 runs sont dans les artefacts GitHub
   Actions (rétention 7 jours, jusqu'à ~29 nov.) et l'agrégation est ici
   (`results/nulls_lot_next_table.json/.csv`, registre `results/nulls_lot_next_ledger.csv`
-  + `results/nulls_lot_next_LEDGER.md`). Dette nommée : vérification
-  SHA-256 bit-à-bit de 203 des 209 artefacts GitHub contre les digests
-  (API en limite 403), à refaire avant ~29 nov.
+  + `results/nulls_lot_next_LEDGER.md`). Dette SHA du §8.98 soldée le 27 nov. (209/209 vérifiés bit à bit).
 - Les 5 verdicts §8.93–§8.97 (21–22 nov. 2026) : (§8.93) distribution des
   nuls — **5 SOLIDES / 5 FRAGILES / 5 NON** : A2-distrib 5/15 (12/15 positifs,
   LOO 4/14), contre A2 classique 10/15 inchangé ; 150/150 nuls frais pipeline,
@@ -151,7 +151,7 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   nouvelle donnée sur la combinaison depuis ESMO 2026**, phase 3 sans NCT (design précisé,
   démarrage 1er semestre 2027) ; **approbation européenne de daraxonrasib seul le 16 nov.
   2026** ; 1re ligne daraxonrasib + GnP plus mature (ENA 2026, PFS médiane 12,8 mois) ;
-  rationnel MTAP/PRMT5 mesuré ici intact. (§8.81) piste Œil — **MIXTE** : la tumeur ne
+  **rationnel MTAP/PRMT5 mesuré ici intact**. (§8.81) piste Œil — **MIXTE** : la tumeur ne
   copie pas le privilège oculaire comme un programme cohérent (3/7 gènes montent avec KRAS :
   CD47, TGFB1, CD274 ; score PRIV rho médian +0,122, sous le seuil +0,15 ; bras pipeline
   TCGA ordre PRIV d_maxsep +0,1649 mais chaîne absente ; UVM n = 80 : gènes de privilège
@@ -326,27 +326,46 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## Structure
 
+Arbre après la fusion des dépôts du 27 nov. 2026 (voir « Fusion des dépôts » ci-dessous) ; les branches ajoutées par la fusion sont marquées « fusion ».
+
 - `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.99).
+- `universal_v6.0.0_cohen.py` — pipeline v6.0 (historique, SHA-256 `bb8bbdba…`), rapatrié de `Code` — fusion.
+- `universal_v6.1.0_cohen.py` — pipeline v6.1, version de référence (SHA-256 `2af5e5ce…`), rapatrié de la suite et de `Code` — fusion.
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
 - `universal_v6.5.0_cohen.py` — proposition v6.5 REJETÉE (§8.95).
-- `README.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier,
+- `PROTOCOL_v6.1.md`, `PROTOCOL_v6.2.md` — protocoles gelés v6.1 et v6.2, à la racine, rapatriés de la suite — fusion.
+- `.github/workflows/` — 4 workflows GitHub Actions rapatriés de `tlogNext-pipeline-actions` : `pipeline-nulls-lot.yml`, `pipeline-nulls-lot-e2.yml`, `pipeline-nulls-lot-rerun.yml`, `pipeline-smoke-test.yml` (déclenchement manuel uniquement) — fusion.
+- `README.md`, `README_EN.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier, sa version anglaise,
   les sources des données, les SHA-256 de chaque fichier du dépôt.
 - `download_data_877.sh` — script de re-téléchargement des matrices brutes,
   version corrigée §8.77 (SHA `55811136…`, 52 fichiers, EXIT:0, test à froid
   à 0,0 exact ; original `~/workspace/staging-pdac/download_data.sh`,
   SHA `4e151d59…`).
-- `provenance/` — 135 fichiers : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 136 fichiers (dont `SOURCES_CANDIDATES.tsv` — fusion) : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
-- `results/` — 193 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
+- `results/` — 215 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
   Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249, consolidation GDC 10 nuls frais, GSE194249 à 11 flux, suppléments Chen MOESM1/2/16, distribution des nuls §8.93 (150 nuls frais), Delta §8.94, composite v6.5 §8.95, universalité LUAD/BRCA §8.96, audit §8.97, suivi §8.93 à 200 nuls §8.98 (2 850 runs, 3 000 nuls lus), seizième paire GSE184585 §8.99 (82 tumeurs, SOLIDE à 10 nuls), correction Cox §8.12.
 - `sections/` — sections §8.38–§8.99 du livre blanc, fichiers sources.
-- `scripts/` — 266 scripts de construction des flux, d'extraction et
+- `scripts/` — 272 scripts de construction des flux, d'extraction et
   d'analyse.
-- `data_flux/` — 988 CSV/JSON : flux d'entrée des runs, tests directs,
+- `data_flux/` — 989 CSV/JSON : flux d'entrée des runs, tests directs,
   extraits ssep / v62_delta / §8.46–§8.99.
+- `rapports/` — rapports rapatriés de `pancreatic-cancer-open-data-reproducibility` (14 fichiers, dont PRMT5/MTAP, KRAS, MUC16/CLDN18.2) — fusion.
+- `docs/` — documentation rapatriée du même dépôt : gouvernance des données, méthodologie, protocole pilote — fusion.
+- `pdf-build/` — scripts de construction du PDF rapatriés du même dépôt, à la racine — fusion.
+
+## Fusion des dépôts (27 nov. 2026)
+
+- Les 5 dépôts du projet sont réunis dans celui-ci : `tlogNext-cancer-pdac` (principal), `tlogNext-cancer-pdac-suite`, `tlogNext-pipeline-actions`, `pancreatic-cancer-open-data-reproducibility` et `Code` (ce dernier seulement pour la lignée v6.0/v6.1 ; ses 20 dossiers hors PDAC ne sont pas fusionnés et il reste un dépôt vivant, séparé, non archivé).
+- Après la fusion, les dépôts `tlogNext-cancer-pdac-suite`, `tlogNext-pipeline-actions` et `pancreatic-cancer-open-data-reproducibility` sont archivés : leur historique reste lisible, ils ne sont jamais supprimés.
+- https://github.com/FindPrint/tlogNext-cancer-pdac-suite
+- https://github.com/FindPrint/tlogNext-pipeline-actions
+- https://github.com/FindPrint/pancreatic-cancer-open-data-reproducibility
+- Historique des runs GitHub Actions : coupure acceptée — les runs #1–#3 (lots de nuls §8.93) et le rerun vivent dans le dépôt `tlogNext-pipeline-actions` archivé (onglet Actions) et ne migrent pas avec les workflows ; les lots suivants partent de ce dépôt-ci, après le smoke-test de bascule.
+- Contenu rapatrié : v6.0 et v6.1 à la racine, `PROTOCOL_v6.1.md` et `PROTOCOL_v6.2.md` à la racine, `.github/workflows/` (4 workflows), `rapports/`, `docs/`, `pdf-build/`, et les fichiers uniques de `pancreatic-cancer-open-data-reproducibility` (`scripts/`, `results/`, et `provenance/SOURCES_CANDIDATES.tsv`) après déduplication par SHA-256. Le livre blanc et les verdicts ne changent pas ; le MANIFEST sera régénéré sur l'arbre fusionné.
 
 ## Données brutes
 
