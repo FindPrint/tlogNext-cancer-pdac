@@ -29,10 +29,12 @@ jobs:
 
       - name: Vérifier les empreintes SHA-256 des entrées
         run: |
-          sha256sum universal_v6.2.0_cohen.py data_flux/pdac_tcga_fluxes_v4.csv data_flux/pdac_tcga_fluxes_v4_nul.csv
           echo "Attendu v6.2 : f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf"
           echo "Attendu v4 réel : e7a2adaba5a0ef6858b665251d56d40a26eb9edd116370bf2c686c752213a0b0"
           echo "Attendu v4 nul : 895a456295d2b0553a2a62910461aedecb1aeccca59f57751c87b75ce0b97da4"
+          echo "f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf  universal_v6.2.0_cohen.py" | sha256sum -c -
+          echo "e7a2adaba5a0ef6858b665251d56d40a26eb9edd116370bf2c686c752213a0b0  data_flux/pdac_tcga_fluxes_v4.csv" | sha256sum -c -
+          echo "895a456295d2b0553a2a62910461aedecb1aeccca59f57751c87b75ce0b97da4  data_flux/pdac_tcga_fluxes_v4_nul.csv" | sha256sum -c -
 
       - name: Run réel TCGA v4 (mode fast)
         run: python3 universal_v6.2.0_cohen.py --input data_flux/pdac_tcga_fluxes_v4.csv --mode fast --output results_fast_gha_tcga_v4
