@@ -1,0 +1,94 @@
+SHA256 tarball: c3dd138b3257ad5bae5a58160f5607d2ad9c2871c83f6cdb5959cc9116d262c9
+MD5 tarball: b09569ce3f4721f514bc137bd109ac0a
+SHA256 clinique: 0c2742688e59bb918d446d35f755d7a849c3e647ab184dc54d4f7e807be2efe5
+SHA256 groups: 6d5abe9725b5e1cb72086a922902b2d937d80f193066def176fcb0a3f2c8320b
+SHA256 fluxes_v4: e7a2adaba5a0ef6858b665251d56d40a26eb9edd116370bf2c686c752213a0b0
+membre tarball: gdac.broadinstitute.org_PAAD.Merge_rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.Level_3.2016012800.0.0/PAAD.rnaseqv2__illuminahiseq_rnaseqv2__unc_edu__Level_3__RSEM_genes_normalized__data.data.txt
+tumeurs primaires: 178 | genes: 20502
+top12 residu/brut conformes au JSON groupes: OK
+lignes cliniques (hors 2 lignes descriptives): 186
+OS_STATUS brut: {'1:DECEASED': 99, '0:LIVING': 85, 'OS_STATUS': 1, '9': 1}
+patients ARN sans survie: ['TCGA-IB-7654']
+n=177 deces=92 OS mois: min=0.00 max=90.11 mediane brute=15.2
+sexe (n=177): {'Male': 97, 'Female': 80}
+age: n manquant = 0 mediane = 65.0
+stade brut (n=177): {'STAGE IIB': 118, 'STAGE IIA': 28, 'STAGE IB': 15, 'STAGE IA': 5, 'STAGE IV': 4, 'STAGE III': 4, nan: 2, 'STAGE I': 1}
+pT: {'T3': 142, 'T2': 23, 'T1': 7, 'T4': 3, nan: 1, 'TX': 1}
+pN: {'N1': 119, 'N0': 49, 'N1B': 4, 'NX': 4, nan: 1}
+pM: {'MX': 94, 'M0': 79, 'M1': 4}
+[validation fitter maison] beta vrai=0.7 estime=0.718 se=0.028 p=0.00e+00 (attendu ~0.70 +- 0.05)
+[KM maison] mediane survie cohorte entiere = 20.2 mois
+[KM maison] S(12)=nan
+correlation residu vs brut par gene (Spearman approx Pearson sur rangs):
+  KRAS: pearson residu/brut = 0.999 | sd residu=0.505 sd brut=0.506
+  MUC16: pearson residu/brut = 0.991 | sd residu=3.673 sd brut=3.706
+  CEACAM5: pearson residu/brut = 0.995 | sd residu=3.692 sd brut=3.708
+  PGC: pearson residu/brut = 0.950 | sd residu=4.313 sd brut=4.534
+  DPCR1: pearson residu/brut = 0.972 | sd residu=3.879 sd brut=3.982
+  CLDN18: pearson residu/brut = 0.985 | sd residu=3.957 sd brut=4.015
+--- Cox UNIVARIE, covariables = RESIDUS v4 (corriges purete), z ddof=0 ---
+  KRAS       MAISON Breslow HR=1.4232 p=0.0003259 | statsmodels Breslow HR=1.4232 p=0.0003259 | statsmodels Efron HR=1.4233 p=0.0003241 | lifelines(Efron) HR=1.4233 p=0.0003241
+  MUC16      MAISON Breslow HR=1.4386 p=0.001057 | statsmodels Breslow HR=1.4386 p=0.001057 | statsmodels Efron HR=1.4386 p=0.001058 | lifelines(Efron) HR=1.4386 p=0.001058
+  CEACAM5    MAISON Breslow HR=1.3081 p=0.01056 | statsmodels Breslow HR=1.3081 p=0.01056 | statsmodels Efron HR=1.3082 p=0.01054 | lifelines(Efron) HR=1.3082 p=0.01054
+  PGC        MAISON Breslow HR=1.1623 p=0.1335 | statsmodels Breslow HR=1.1623 p=0.1335 | statsmodels Efron HR=1.1626 p=0.1329 | lifelines(Efron) HR=1.1626 p=0.1329
+  DPCR1      MAISON Breslow HR=1.4259 p=0.001073 | statsmodels Breslow HR=1.4259 p=0.001073 | statsmodels Efron HR=1.4261 p=0.001068 | lifelines(Efron) HR=1.4261 p=0.001068
+  CLDN18     MAISON Breslow HR=1.2174 p=0.06363 | statsmodels Breslow HR=1.2174 p=0.06363 | statsmodels Efron HR=1.2175 p=0.0635 | lifelines(Efron) HR=1.2175 p=0.0635
+--- Cox UNIVARIE, covariables = BRUTES log2(RSEM+1), z ddof=0 ---
+  KRAS       MAISON Breslow HR=1.4146 p=0.0004023 | statsmodels Breslow HR=1.4146 p=0.0004023 | statsmodels Efron HR=1.4147 p=0.0004001 | lifelines(Efron) HR=1.4147 p=0.0004001
+  MUC16      MAISON Breslow HR=1.4651 p=0.0007225 | statsmodels Breslow HR=1.4651 p=0.0007225 | statsmodels Efron HR=1.4651 p=0.000723 | lifelines(Efron) HR=1.4651 p=0.0007232
+  CEACAM5    MAISON Breslow HR=1.3244 p=0.008542 | statsmodels Breslow HR=1.3244 p=0.008542 | statsmodels Efron HR=1.3245 p=0.008527 | lifelines(Efron) HR=1.3245 p=0.008531
+  PGC        MAISON Breslow HR=1.1819 p=0.09921 | statsmodels Breslow HR=1.1819 p=0.09921 | statsmodels Efron HR=1.1822 p=0.09875 | lifelines(Efron) HR=1.1822 p=0.09875
+  DPCR1      MAISON Breslow HR=1.4481 p=0.0008171 | statsmodels Breslow HR=1.4481 p=0.0008171 | statsmodels Efron HR=1.4483 p=0.0008139 | lifelines(Efron) HR=1.4483 p=0.0008147
+  CLDN18     MAISON Breslow HR=1.2345 p=0.04758 | statsmodels Breslow HR=1.2345 p=0.04758 | statsmodels Efron HR=1.2346 p=0.04749 | lifelines(Efron) HR=1.2346 p=0.0475
+--- variante ddof=1 (residus) ---
+  KRAS       MAISON Breslow HR=1.4246 p=0.0003259
+  MUC16      MAISON Breslow HR=1.4401 p=0.001057
+  CEACAM5    MAISON Breslow HR=1.3091 p=0.01056
+  DPCR1      MAISON Breslow HR=1.4273 p=0.001073
+--- MULTIVARIE marqueurs seuls, RESIDUS ---
+  KRAS       MAISON HR=1.3265 p=0.01458 | statsmodels Breslow HR=1.3265 p=0.01458 | lifelines HR=1.3267 p=0.01452
+  MUC16      MAISON HR=1.3155 p=0.01913 | statsmodels Breslow HR=1.3155 p=0.01913 | lifelines HR=1.3154 p=0.01916
+  CEACAM5    MAISON HR=1.0708 p=0.5716 | statsmodels Breslow HR=1.0708 p=0.5716 | lifelines HR=1.0709 p=0.5714
+--- MULTIVARIE marqueurs seuls, BRUTS ---
+  KRAS       MAISON HR=1.3127 p=0.01853 | statsmodels Breslow HR=1.3127 p=0.01853 | lifelines HR=1.3129 p=0.01846
+  MUC16      MAISON HR=1.3392 p=0.01425 | statsmodels Breslow HR=1.3392 p=0.01425 | lifelines HR=1.3391 p=0.01427
+  CEACAM5    MAISON HR=1.0830 p=0.5157 | statsmodels Breslow HR=1.0830 p=0.5157 | lifelines HR=1.0830 p=0.5156
+--- AJUSTE 6 genes, RESIDUS ---
+  KRAS       MAISON HR=1.2952 p=0.02936 | statsmodels Breslow HR=1.2952 p=0.02936 | lifelines HR=1.2954 p=0.02927
+  MUC16      MAISON HR=1.2613 p=0.0863 | statsmodels Breslow HR=1.2613 p=0.0863 | lifelines HR=1.2611 p=0.08653
+  CEACAM5    MAISON HR=1.0280 p=0.8624 | statsmodels Breslow HR=1.0280 p=0.8624 | lifelines HR=1.0281 p=0.8616
+  PGC        MAISON HR=1.0032 p=0.9824 | statsmodels Breslow HR=1.0032 p=0.9824 | lifelines HR=1.0036 p=0.9805
+  DPCR1      MAISON HR=1.2400 p=0.1576 | statsmodels Breslow HR=1.2400 p=0.1576 | lifelines HR=1.2400 p=0.1576
+  CLDN18     MAISON HR=0.9454 p=0.7698 | statsmodels Breslow HR=0.9454 p=0.7698 | lifelines HR=0.9451 p=0.7687
+--- AJUSTE 6 genes, BRUTS ---
+  KRAS       MAISON HR=1.2848 p=0.03508 | statsmodels Breslow HR=1.2848 p=0.03508 | lifelines HR=1.2850 p=0.03495
+  MUC16      MAISON HR=1.2826 p=0.07201 | statsmodels Breslow HR=1.2826 p=0.07201 | lifelines HR=1.2823 p=0.07224
+  CEACAM5    MAISON HR=1.0231 p=0.8882 | statsmodels Breslow HR=1.0231 p=0.8882 | lifelines HR=1.0233 p=0.8874
+  PGC        MAISON HR=0.9981 p=0.9902 | statsmodels Breslow HR=0.9981 p=0.9902 | lifelines HR=0.9985 p=0.9922
+  DPCR1      MAISON HR=1.2593 p=0.1378 | statsmodels Breslow HR=1.2593 p=0.1378 | lifelines HR=1.2592 p=0.1379
+  CLDN18     MAISON HR=0.9568 p=0.8228 | statsmodels Breslow HR=0.9568 p=0.8228 | lifelines HR=0.9565 p=0.8215
+stade regroupe I / II / III-IV / manquant: [(-1, 2), (0, 21), (1, 146), (2, 8)] | manquants age: 0
+sous-echantillon avec age renseigne: n=175 deces=92
+--- MULTIVARIE marqueurs + age(z) + sexe(H=1) + stade III-IV (n=age connu) ---
+  KRAS       MAISON HR=1.3849 p=0.006393 | statsmodels Breslow HR=1.3849 p=0.006393 | lifelines HR=1.3851 p=0.006364
+  MUC16      MAISON HR=1.3082 p=0.02198 | statsmodels Breslow HR=1.3082 p=0.02198 | lifelines HR=1.3082 p=0.02199
+  CEACAM5    MAISON HR=0.9985 p=0.9905 | statsmodels Breslow HR=0.9985 p=0.9905 | lifelines HR=0.9984 p=0.9902
+  age_z      MAISON HR=1.3654 p=0.008036 | statsmodels Breslow HR=1.3654 p=0.008036 | lifelines HR=1.3653 p=0.008056
+  sexe_M     MAISON HR=0.8290 p=0.3886 | statsmodels Breslow HR=0.8290 p=0.3886 | lifelines HR=0.8293 p=0.3894
+  stade34    MAISON HR=0.6326 p=0.439 | statsmodels Breslow HR=0.6326 p=0.439 | lifelines HR=0.6335 p=0.4403
+--- MULTIVARIE marqueurs + age(z) + sexe + stade II + stade III-IV (ref=I) ---
+  KRAS       MAISON HR=1.3830 p=0.00647 | statsmodels Breslow HR=1.3830 p=0.00647 | lifelines HR=1.3832 p=0.006438
+  MUC16      MAISON HR=1.3130 p=0.02108 | statsmodels Breslow HR=1.3130 p=0.02108 | lifelines HR=1.3130 p=0.02107
+  CEACAM5    MAISON HR=0.9485 p=0.6923 | statsmodels Breslow HR=0.9485 p=0.6923 | lifelines HR=0.9484 p=0.692
+  age_z      MAISON HR=1.3682 p=0.007687 | statsmodels Breslow HR=1.3682 p=0.007687 | lifelines HR=1.3682 p=0.007705
+  sexe_M     MAISON HR=0.8424 p=0.4338 | statsmodels Breslow HR=0.8424 p=0.4338 | lifelines HR=0.8427 p=0.4348
+  stadeII    MAISON HR=1.6914 p=0.2038 | statsmodels Breslow HR=1.6914 p=0.2038 | lifelines HR=1.6919 p=0.2036
+  stade34    MAISON HR=1.0290 p=0.9678 | statsmodels Breslow HR=1.0290 p=0.9678 | lifelines HR=1.0305 p=0.9661
+age seul (par an): HR=1.0253 p=0.01676
+sexe seul (H vs F): HR=0.8142 p=0.3255
+stade III-IV seul vs I-II: HR=0.7520 p=0.6287
+[KM lifelines] mediane survie cohorte = 20.2 mois
+top12 KRAS residu: n=11 deces=9 mediane=9.1 (reste 20.6) | log-rank maison p=0.0172 | lifelines p=0.0172
+top20 KRAS residu: n=20 deces=14 mediane=17.9 (reste 20.8) | log-rank maison p=0.0415 | lifelines p=0.0415
+[hypothese] Cox KRAS residu DICHOTOMISE (mediane): HR=2.0215 p=0.001151
+FIN RECALCUL
