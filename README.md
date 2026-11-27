@@ -8,11 +8,11 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 ## État au 27 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 1474 pages (PDF partagé séparément),
-  SHA-256 `f4d9be2183e2bbd5ad288d464361eae36b48ed79302de3e34bcf8a577b67484c`
-  (15365159 octets), sections §8.1–§8.99. Le fichier Markdown ici a pour SHA-256
-  `c172966afb437c8bbd9246e65929a009c0972de12b3d09e95d33e8ebf4c929cd`
-  (26790 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 1516 pages (PDF partagé séparément),
+  SHA-256 `e35f8b7556af6baf9e854be54f1be2c77fb7c0a5b9180d1d9c4461f3381ed1e6`
+  (15547251 octets), sections §8.1–§8.100. Le fichier Markdown ici a pour SHA-256
+  `a3b8e2cf14638373b48b4c7cb512ec98cbe47bdf51c95acc20fe2efd45185c40`
+  (27115 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -36,6 +36,15 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   de gabarit, réglée le 22 nov. 2026 (§8.93–§8.97) ; le mot « universel » est exagéré tel quel (l'Ising n'a jamais tourné en
   v6/v6.1/v6.2 ici). Corrections de Zackary (21 nov. 2026) : MC n'est jamais seul — la
   batterie entière fait le verdict ; `maxsep` est le score principal AFFICHÉ, pas le verdict.
+- Le verdict §8.100 (27 nov. 2026) : fusion des cinq dépôts en un dépôt unique
+  `FindPrint/tlogNext-cancer-pdac` (PUBLIC), 7 commits, tête finale `0aaf7116` —
+  v6.0+v6.1 à la racine, 4 workflows via le navigateur (API GitHub refuse les
+  workflows à l'App, 403), protocoles à la racine, `README_EN.md` ; MANIFEST
+  régénéré 1 718 entrées, distant = local bit à bit ; 3 anciens dépôts archivés,
+  jamais supprimés ; smoke-test run GitHub nº 1 (ID 46014415035, 8 min 11 s,
+  Success) — scores de décision EXACTEMENT identiques au local, seule nouveauté
+  Delta +0,14 % (gigue de plateforme) ; dette Cox réglée ; kicker PDF au
+  27 novembre 2026. Aucun run pipeline, aucun verdict sur le cancer.
 - Le verdict §8.99 (27 nov. 2026) : nouvelle paire GSE184585 (82 tumeurs PDAC
   primaires MSKCC, GPL17586, choisie avant toute lecture d'association ;
   remappage DPCR1 → MUCL3 vérifié 5/5), protocole gelé avant tout run,
@@ -328,7 +337,7 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 Arbre après la fusion des dépôts du 27 nov. 2026 (voir « Fusion des dépôts » ci-dessous) ; les branches ajoutées par la fusion sont marquées « fusion ».
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.99).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.100).
 - `universal_v6.0.0_cohen.py` — pipeline v6.0 (historique, SHA-256 `bb8bbdba…`), rapatrié de `Code` — fusion.
 - `universal_v6.1.0_cohen.py` — pipeline v6.1, version de référence (SHA-256 `2af5e5ce…`), rapatrié de la suite et de `Code` — fusion.
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
@@ -343,16 +352,16 @@ Arbre après la fusion des dépôts du 27 nov. 2026 (voir « Fusion des dépôts
   version corrigée §8.77 (SHA `55811136…`, 52 fichiers, EXIT:0, test à froid
   à 0,0 exact ; original `~/workspace/staging-pdac/download_data.sh`,
   SHA `4e151d59…`).
-- `provenance/` — 136 fichiers (dont `SOURCES_CANDIDATES.tsv` — fusion) : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 137 fichiers (dont `SOURCES_CANDIDATES.tsv` — fusion) : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
 - `results/` — 215 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249, consolidation GDC 10 nuls frais, GSE194249 à 11 flux, suppléments Chen MOESM1/2/16, distribution des nuls §8.93 (150 nuls frais), Delta §8.94, composite v6.5 §8.95, universalité LUAD/BRCA §8.96, audit §8.97, suivi §8.93 à 200 nuls §8.98 (2 850 runs, 3 000 nuls lus), seizième paire GSE184585 §8.99 (82 tumeurs, SOLIDE à 10 nuls), correction Cox §8.12.
-- `sections/` — sections §8.38–§8.99 du livre blanc, fichiers sources.
-- `scripts/` — 272 scripts de construction des flux, d'extraction et
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249, consolidation GDC 10 nuls frais, GSE194249 à 11 flux, suppléments Chen MOESM1/2/16, distribution des nuls §8.93 (150 nuls frais), Delta §8.94, composite v6.5 §8.95, universalité LUAD/BRCA §8.96, audit §8.97, suivi §8.93 à 200 nuls §8.98 (2 850 runs, 3 000 nuls lus), seizième paire GSE184585 §8.99 (82 tumeurs, SOLIDE à 10 nuls), correction Cox §8.12, fusion des dépôts §8.100 (dépôt unique, tête 0aaf7116, smoke-test réussi).
+- `sections/` — sections §8.38–§8.100 du livre blanc, fichiers sources.
+- `scripts/` — 273 scripts de construction des flux, d'extraction et
   d'analyse.
 - `data_flux/` — 989 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.99.
+  extraits ssep / v62_delta / §8.46–§8.100.
 - `rapports/` — rapports rapatriés de `pancreatic-cancer-open-data-reproducibility` (14 fichiers, dont PRMT5/MTAP, KRAS, MUC16/CLDN18.2) — fusion.
 - `docs/` — documentation rapatriée du même dépôt : gouvernance des données, méthodologie, protocole pilote — fusion.
 - `pdf-build/` — scripts de construction du PDF rapatriés du même dépôt, à la racine — fusion.
@@ -376,7 +385,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (1474 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (1516 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 
