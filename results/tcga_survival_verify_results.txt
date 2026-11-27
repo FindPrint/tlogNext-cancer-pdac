@@ -1,0 +1,31 @@
+patients sans survie (exclus) : ['TCGA-IB-7654']
+n=177 décès=92 OS médiane cohorte=15.2
+--- Paysage (9 définitions) ---
+top12 KRAS résidu (v4) | n=11 décès=9 médiane=9.1 (reste 20.6) log-rank p=0.0172
+top12 KRAS brut | n=11 décès=10 médiane=9.1 (reste 20.8) log-rank p=0.0015
+top12 score KRAS+CA125+CEA | n=11 décès=8 médiane=8.2 (reste 20.6) log-rank p=0.0498
+top7 KRAS résidu | n=7 décès=6 médiane=9.1 (reste 20.6) log-rank p=0.0721
+top20 KRAS résidu | n=20 décès=14 médiane=17.9 (reste 20.8) log-rank p=0.0415
+quartile sup. MUC16 (CA125) seul | n=45 décès=30 médiane=15.8 (reste 21.4) log-rank p=0.0703
+quartile sup. CEACAM5 (CEA) seul | n=45 décès=27 médiane=15.9 (reste 20.8) log-rank p=0.2499
+quartile sup. KRAS brut seul | n=45 décès=30 médiane=15.6 (reste 22.5) log-rank p=0.0136
+CA125 ET CEA élevés (2 quartiles sup.) | n=16 décès=10 médiane=22.5 (reste 20.2) log-rank p=0.9028
+--- Cox univarié (un gène à la fois, HR par +1 sd) ---
+  KRAS résidu  HR=1.42 coef=+0.35 se=0.10 p=0.0003
+  KRAS brut    HR=1.42 coef=+0.35 se=0.10 p=0.0004
+  MUC16        HR=1.44 coef=+0.36 se=0.11 p=0.0010
+  CEACAM5      HR=1.31 coef=+0.27 se=0.11 p=0.0105
+  PGC          HR=1.16 coef=+0.15 se=0.10 p=0.1337
+  DPCR1        HR=1.43 coef=+0.36 se=0.11 p=0.0011
+  CLDN18       HR=1.22 coef=+0.20 se=0.11 p=0.0636
+--- Cox multivarié KRAS résidu + MUC16 + CEACAM5 ---
+  KRAS résidu  HR=1.33 coef=+0.28 se=0.12 p=0.0144
+  MUC16        HR=1.32 coef=+0.27 se=0.12 p=0.0189
+  CEACAM5      HR=1.07 coef=+0.07 se=0.12 p=0.5712
+--- Cox ajusté 6 gènes (référence) ---
+  KRAS résidu  HR=1.30 coef=+0.26 se=0.12 p=0.0291
+  MUC16        HR=1.26 coef=+0.23 se=0.14 p=0.0862
+  CEACAM5      HR=1.03 coef=+0.03 se=0.16 p=0.8593
+  PGC          HR=1.00 coef=+0.00 se=0.15 p=0.9837
+  DPCR1        HR=1.24 coef=+0.22 se=0.15 p=0.1570
+  CLDN18       HR=0.94 coef=-0.06 se=0.19 p=0.7665

@@ -1,0 +1,28 @@
+SURVIE GSE71729 — paysage complet + Cox continu
+Primaires : 145 ; avec survie : 125 ; décès : 84
+OS médiane cohorte : 17.0 mois
+top12 KRAS | n=12 décès=7 médiane=17.0 (reste 17.0) log-rank p=0.8857
+top7 KRAS | n=7 décès=4 médiane=17.0 (reste 16.0) log-rank p=0.7102
+top20 KRAS | n=17 décès=11 médiane=17.0 (reste 16.0) log-rank p=0.7584
+quartile sup. MUC16 (CA125) seul | n=33 décès=22 médiane=17.0 (reste 16.0) log-rank p=0.7292
+quartile sup. CEACAM5 (CEA) seul | n=32 décès=18 médiane=19.0 (reste 15.0) log-rank p=0.2049
+quartile sup. KRAS seul | n=32 décès=23 médiane=10.0 (reste 19.0) log-rank p=0.0196
+CA125 ET CEA élevés (2 quartiles sup.) | n=11 décès=6 médiane=19.0 (reste 16.0) log-rank p=0.4562
+Cox univarié (HR par +1 sd, un gène à la fois) :
+  KRAS HR=1.24 coef=0.22 se=0.12 p=0.0753
+  MUC16 HR=1.06 coef=0.06 se=0.11 p=0.5812
+  CEACAM5 HR=1.00 coef=-0.00 se=0.10 p=0.9658
+  PGC HR=0.85 coef=-0.16 se=0.11 p=0.1471
+  DPCR1 HR=1.01 coef=0.01 se=0.12 p=0.9010
+  CLDN18 HR=1.01 coef=0.01 se=0.12 p=0.9508
+Cox multivarié KRAS+MUC16+CEACAM5 :
+  KRAS HR=1.25 coef=0.22 se=0.12 p=0.0659
+  MUC16 HR=1.08 coef=0.08 se=0.12 p=0.5109
+  CEACAM5 HR=0.93 coef=-0.07 se=0.12 p=0.5234
+Cox ajusté 6 gènes (référence) :
+  KRAS HR=1.32 coef=0.27 se=0.13 p=0.0351
+  MUC16 HR=1.04 coef=0.04 se=0.14 p=0.7577
+  CEACAM5 HR=0.83 coef=-0.19 se=0.14 p=0.1916
+  PGC HR=0.75 coef=-0.29 se=0.14 p=0.0350
+  DPCR1 HR=1.07 coef=0.07 se=0.14 p=0.6284
+  CLDN18 HR=1.14 coef=0.13 se=0.16 p=0.4263

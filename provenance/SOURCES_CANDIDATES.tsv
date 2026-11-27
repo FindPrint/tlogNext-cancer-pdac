@@ -1,0 +1,8 @@
+nom	type	rôle_envisagé	url_ou_doi	statut_avant_usage
+MetaGxPancreas	compendium transcriptomique	pilote multi-cohortes non clinique	https://doi.org/10.18129/B9.bioc.MetaGxPancreas	Geler version et vérifier provenance par cohorte
+TCGA-PAAD	génomique et clinique	étude de sensibilité ou réplication	https://portal.gdc.cancer.gov/projects/TCGA-PAAD	Choisir uniquement fichiers ouverts autorisés et figer version GDC
+CPTAC-PDA	imagerie, omique et clinique	projet multimodal ultérieur	https://doi.org/10.7937/K9/TCIA.2018.SC20FO18	Vérifier licence et conditions de chaque ressource liée
+PGPA	portail analytique pancréatique	vérification de cohortes et métadonnées	https://pgpa.bcc.qmul.ac.uk/	Ne pas présumer de l’accès aux fichiers bruts
+PACA-AU	cohorte ICGC historique	validation externe éventuelle	https://pancreasexpression.org/analytics/icgc/	Vérifier voie d’accès, version et variables disponibles
+PACA-CA	cohorte ICGC/ARGO	validation externe éventuelle	https://www.icgc-argo.org/page/96/paca-ca	Accès à confirmer ; ne pas télécharger sans conditions explicites
+QCMG Nature 2016	cohorte génomique	analyse mutationnelle exploratoire	https://www.cbioportal.org/study/summary?id=paad_qcmg_uq_2016	Expression incomplète ; ne pas utiliser comme base transcriptomique principale

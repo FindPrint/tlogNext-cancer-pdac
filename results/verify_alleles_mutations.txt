@@ -1,0 +1,102 @@
+=== Étape 4 (a) + (b) — 18 nov. 2026 ===
+SHA kras_alleles_pancreas.csv : 9ac803adaba4b634a3b4a4dac5e51c81e4f9c0027209634322ce3b4195bc0d42
+SHA mutation_table_pancreas.csv (avant revérification) : f3fa2bd2ddafdec83795211cd45de19ce88de674a2d660f47a5e72d813063f36
+
+(a) kras_alleles_pancreas.csv : 54 lignées
+  p.G12D : 23
+  p.G12V : 20
+  p.G12R : 5
+  p.Q61H : 2
+  p.Q61R : 1
+  p.G12C : 1
+  p.G12A : 1
+  p.G12I : 1
+  MAX par allèle : 23 (minimum fast v6.1 = 40) => série v6.1 par allèle IMPOSSIBLE
+
+(b) Revérification de la jointure PR->ACH : relance de build_mutation_table_pancreas.py
+  exit constructeur : 0
+  sortie constructeur (dernières lignes) :
+    lignées pancréas retenues : 45
+    profils : 4518, ModelID uniques : 2005
+    lignes MAF pour les 4 gènes : 2925, PR sans profil : 0
+    mutées /45 : {'TP53': 38, 'SMAD4': 11, 'CDKN2A': 12, 'KRAS': 42}
+    écrit : /home/hatch/workspace/runs/pdac-v6/data/mutation_table_pancreas.csv
+  SHA après relance : f3fa2bd2ddafdec83795211cd45de19ce88de674a2d660f47a5e72d813063f36
+  SHA attendu (18 nov.) : f3fa2bd2ddafdec83795211cd45de19ce88de674a2d660f47a5e72d813063f36
+  JOINTURE REPRODUITE À L'IDENTIQUE : True
+
+  Table mutations : 45 lignées
+  TP53_mut : 38/45
+  SMAD4_mut : 11/45
+  CDKN2A_mut : 12/45
+  KRAS_mut : 42/45
+  Allèles KRAS dans les 45 :
+    p.G12D : 19
+    p.G12V : 14
+    p.G12R : 5
+    inconnu : 3
+    p.Q61H : 2
+    p.G12C : 1
+    p.G12A : 1
+  MAX par allèle dans les 45 : 19 (< 40 aussi)
+
+  Chronos joint à la table : 45 lignées, 0 NaN sur KRAS
+
+(a) TESTS DIRECTS — dépendance Chronos par allèle KRAS (45 lignées)
+  groupes : G12D n=19, G12V n=14, autres (G12R/Q61H/G12C/G12A/inconnu) n=12
+  Chronos KRAS :
+  G12D vs G12V : n=19 vs 14 | médianes -2.343 vs -1.842 | moyennes -2.273 vs -1.812 | d de Cohen -0.69 | Mann-Whitney p=0.15
+  G12D vs autres : n=19 vs 12 | médianes -2.343 vs -1.051 | moyennes -2.273 vs -1.165 | d de Cohen -1.42 | Mann-Whitney p=0.00167
+  G12V vs autres : n=14 vs 12 | médianes -1.842 vs -1.051 | moyennes -1.812 vs -1.165 | d de Cohen -1.08 | Mann-Whitney p=0.0168
+  Chronos PRMT5 :
+  G12D vs G12V : n=19 vs 14 | médianes -1.091 vs -1.100 | moyennes -1.156 vs -1.229 | d de Cohen +0.16 | Mann-Whitney p=0.927
+  G12D vs autres : n=19 vs 12 | médianes -1.091 vs -1.063 | moyennes -1.156 vs -1.142 | d de Cohen -0.05 | Mann-Whitney p=0.951
+  G12V vs autres : n=14 vs 12 | médianes -1.100 vs -1.063 | moyennes -1.229 vs -1.142 | d de Cohen -0.20 | Mann-Whitney p=0.898
+  KRAS sauvages / allèle inconnu : n=3 — Chronos KRAS médiane -0.363 (G12D -2.343, G12V -1.842)
+
+(a) TESTS DIRECTS — viabilité MRTX1133 par allèle (mrtx1133_prism_kras_allele.csv, recalculé)
+  SHA mrtx1133_prism_kras_allele.csv : 7a449c92e992fa347819e94ac188f78dc3c93316ea7119672ea86b226e6e5ef6
+  n=40 lignées ; allèles : {'p.G12D': 17, 'p.G12V': 15, 'p.G12R': 5, 'p.Q61H': 1, 'p.G12C': 1, 'p.G12A': 1}
+  groupes : G12D n=17, G12V n=15, autres n=8
+  MRTX1133 G12D vs G12V : n=17 vs 15 | médianes -1.517 vs -0.308 | moyennes -1.704 vs -0.368 | d de Cohen -1.52 | Mann-Whitney p=0.000386
+  MRTX1133 G12D vs autres : n=17 vs 8 | médianes -1.517 vs -0.562 | moyennes -1.704 vs -0.401 | d de Cohen -1.31 | Mann-Whitney p=0.00598
+  MRTX1133 G12V vs autres : n=15 vs 8 | médianes -0.308 vs -0.562 | moyennes -0.368 vs -0.401 | d de Cohen +0.08 | Mann-Whitney p=0.681
+  (référence §8.20 : MRTX1133 tue les G12D spécifiquement, p=0,0001 — valeur recalculée ci-dessus, pas importée)
+
+(b) TESTS DIRECTS — dépendance Chronos selon le statut mutationnel
+  TP53 muté n=38 vs sauvage n=7 :
+  TP53 mut vs sauv — Chronos KRAS : n=38 vs 7 | médianes -1.842 vs -1.233 | moyennes -1.882 vs -1.576 | d de Cohen -0.38 | Mann-Whitney p=0.187
+  TP53 mut vs sauv — Chronos PRMT5 : n=38 vs 7 | médianes -1.090 vs -0.966 | moyennes -1.180 vs -1.150 | d de Cohen -0.08 | Mann-Whitney p=0.89
+  TP53 mut vs sauv — Chronos ATR : n=38 vs 7 | médianes -1.381 vs -1.393 | moyennes -1.354 vs -1.378 | d de Cohen +0.07 | Mann-Whitney p=0.939
+  SMAD4 muté n=11 vs sauvage n=34 :
+  SMAD4 mut vs sauv — Chronos KRAS : n=11 vs 34 | médianes -1.891 vs -1.709 | moyennes -2.296 vs -1.685 | d de Cohen -0.79 | Mann-Whitney p=0.0885
+  SMAD4 mut vs sauv — Chronos PRMT5 : n=11 vs 34 | médianes -1.049 vs -1.126 | moyennes -1.074 vs -1.208 | d de Cohen +0.35 | Mann-Whitney p=0.285
+  SMAD4 mut vs sauv — Chronos ATR : n=11 vs 34 | médianes -1.394 vs -1.381 | moyennes -1.404 vs -1.342 | d de Cohen -0.19 | Mann-Whitney p=0.518
+  CDKN2A muté n=12 vs sauvage n=33 :
+  CDKN2A mut vs sauv — Chronos KRAS : n=12 vs 33 | médianes -2.199 vs -1.758 | moyennes -2.166 vs -1.714 | d de Cohen -0.57 | Mann-Whitney p=0.186
+  CDKN2A mut vs sauv — Chronos PRMT5 : n=12 vs 33 | médianes -0.944 vs -1.139 | moyennes -0.963 vs -1.253 | d de Cohen +0.78 | Mann-Whitney p=0.0142
+  CDKN2A mut vs sauv — Chronos ATR : n=12 vs 33 | médianes -1.428 vs -1.358 | moyennes -1.394 vs -1.344 | d de Cohen -0.15 | Mann-Whitney p=0.404
+
+(b) CONFONDANT MTAP — CN MTAP par groupe mutationnel (OmicsCNGene.csv, seuil délétion < 0,5 comme au §8.29)
+  CN MTAP joint : 45/45 lignées
+  TP53 : CN MTAP médiane mut +0.567 vs sauv +0.576 ; délétées (<0,5) 18/38 vs 2/7
+    Spearman PRMT5 ~ CN MTAP : mut rho +0.504 (p=0.00127, n=38) ; sauv rho +0.714 (p=0.0713, n=7)
+  SMAD4 : CN MTAP médiane mut +0.568 vs sauv +0.569 ; délétées (<0,5) 5/11 vs 15/34
+    Spearman PRMT5 ~ CN MTAP : mut rho +0.300 (p=0.37, n=11) ; sauv rho +0.582 (p=0.000303, n=34)
+  CDKN2A : CN MTAP médiane mut +0.960 vs sauv +0.288 ; délétées (<0,5) 2/12 vs 18/33
+    Spearman PRMT5 ~ CN MTAP : mut rho -0.056 (p=0.863, n=12) ; sauv rho +0.537 (p=0.00128, n=33)
+  PRMT5 par statut, stratifié par délétion MTAP (< 0,5) :
+  TP53 mut vs sauv, MTAP-délétée — PRMT5 : effectifs trop petits (mut n=18, sauv n=2)
+  TP53 mut vs sauv, MTAP-intacte — PRMT5 : n=20 vs 5 | médianes -1.030 vs -0.946 | moyennes -1.017 vs -1.012 | d de Cohen -0.03 | Mann-Whitney p=0.668
+  SMAD4 mut vs sauv, MTAP-délétée — PRMT5 : n=5 vs 15 | médianes -0.943 vs -1.397 | moyennes -1.104 vs -1.465 | d de Cohen +0.76 | Mann-Whitney p=0.168
+  SMAD4 mut vs sauv, MTAP-intacte — PRMT5 : n=6 vs 19 | médianes -1.069 vs -1.008 | moyennes -1.049 vs -1.005 | d de Cohen -0.26 | Mann-Whitney p=0.78
+  CDKN2A mut vs sauv, MTAP-délétée — PRMT5 : effectifs trop petits (mut n=2, sauv n=18)
+  CDKN2A mut vs sauv, MTAP-intacte — PRMT5 : n=10 vs 15 | médianes -0.978 vs -1.010 | moyennes -0.996 vs -1.029 | d de Cohen +0.19 | Mann-Whitney p=0.76
+
+(b) FAISABILITÉ SÉRIE v6.1 — preuve
+  TP53 : muté 38 / sauvage 7 — deux séries muté/non-muté exigeraient 40 + 40 : IMPOSSIBLE
+  SMAD4 : muté 11 / sauvage 34 — deux séries muté/non-muté exigeraient 40 + 40 : IMPOSSIBLE
+  CDKN2A : muté 12 / sauvage 33 — deux séries muté/non-muté exigeraient 40 + 40 : IMPOSSIBLE
+  Ordre binaire 0/1 sur 45 lignées : DÉGÉNÉRÉ (seuil forcé à la frontière des groupes par construction) — NON lancé (protocole).
+
+=== FIN ===
