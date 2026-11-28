@@ -6,13 +6,13 @@ Dépôt public de travail du projet PDAC : recherche d'un remède pour le
 cancer du pancréas avec le pipeline universel de détection de ruptures
 (v6.2), données ouvertes, protocoles gelés, résultats vérifiés.
 
-## État au 27 novembre 2026
+## État au 28 novembre 2026
 
-- Livre blanc : `livre-blanc-pdac-v6.md`, 1516 pages (PDF partagé séparément),
-  SHA-256 `e35f8b7556af6baf9e854be54f1be2c77fb7c0a5b9180d1d9c4461f3381ed1e6`
-  (15547251 octets), sections §8.1–§8.100. Le fichier Markdown ici a pour SHA-256
-  `a3b8e2cf14638373b48b4c7cb512ec98cbe47bdf51c95acc20fe2efd45185c40`
-  (27115 lignes).
+- Livre blanc : `livre-blanc-pdac-v6.md`, 1561 pages (PDF partagé séparément),
+  SHA-256 `8087fac15112c6d2d3bcaaa59066e02b46877a0dfbd9100887153ce377cd1732`
+  (15806587 octets), sections §8.1–§8.103. Le fichier Markdown ici a pour SHA-256
+  `ec7fd45e00098c9ae810a10c00b071737bf82a8bbfa3a8b5ed2022921452539c`
+  (28863 lignes).
 - Pipeline : `universal_v6.2.0_cohen.py`, version de travail, SHA-256
   `f07567c48a5625060c6c4dd7dbed3dd2df915b5c24c91ed6e8a4b735e5ec3abf`.
   v6.1 = référence, v6 = historique. `universal_v6.3.0_cohen.py`
@@ -23,6 +23,9 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   REJETÉE (§8.52), v6.2 reste la version de travail.
   `universal_v6.5.0_cohen.py` (score composite) est joint pour vérification :
   proposition REJETÉE (§8.95), v6.2 reste la version de travail.
+  `universal_v6.2.1_cohen.py` (masque inf dans `compute_harmonic_mc_progress_axis`,
+  audit externe 27 nov. 2026) est joint pour vérification : candidate NON ADOPTÉE,
+  v6.2 reste la version de travail (non-régression 28 nov. 2026 : TCGA v4 réel + nul graine 42, scores de décision identiques à v6.2 à 0,0 exact (maxsep 0,46234232 / 0,16958013, MC 0,372047 / 0,326773, seuils 10,8696 / 81,5217) ; entrée inf synthétique (1 cellule MUC16 = inf) : scores identiques entre v6.2 et v6.2.1 (maxsep 0,46167456, MC 0,371953, Delta 4,19, exit 0), 5 feuilles NaN/inf identiques (diagnostics Q6) — le masque ne change rien d'observable sur ce test (défense en profondeur)).
 - Le verdict §8.90 (audit complet, 21 nov. 2026, lecture seule, 4 volets, aucun run) :
   le podcast a dit juste sur un point précis (`maxsep` 6/8 contre MC 1/8, chiffres exacts
   re-vérifiés ; GSE79668 renverse +0,1447 contre 13 nuls ; MTAP 10/10) mais a exagéré en
@@ -36,6 +39,20 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
   de gabarit, réglée le 22 nov. 2026 (§8.93–§8.97) ; le mot « universel » est exagéré tel quel (l'Ising n'a jamais tourné en
   v6/v6.1/v6.2 ici). Corrections de Zackary (21 nov. 2026) : MC n'est jamais seul — la
   batterie entière fait le verdict ; `maxsep` est le score principal AFFICHÉ, pas le verdict.
+- Le verdict §8.101/§8.102/§8.103 (28 nov. 2026) : (§8.101) consolidation
+  GSE184585 à 200 nuls — **FRAGILE** : réel 0,3712 > p95 des nuls 0,3014 mais
+  188/200 nuls sous le plancher 0,07 (94,0 %, il en fallait 95 %) ; le SOLIDE à
+  10 nuls du §8.99 ne survit pas à la consolidation ; A2-distrib 5/16 paires
+  PDAC (6/16 avec HP35), LOO 5/15. (§8.102) nouvelle paire GSE313117 —
+  **FRAGILE à 10 nuls** : réel 0,4261, p95 0,3614, 9/10 écarts > 0,07 ;
+  Δρ médian +0,3070 ; A2 classique 12/17 (nul graine 42 : +0,1278).
+  (§8.103) Delta, 6e tentative — **NON ÉLUCIDÉ** : Delta(w) est une courbe
+  irrégulière non monotone, pas un escalier ; à w fixe, réel et nuls
+  coïncident presque partout sauf à w = 30 (+0,34 à +0,40) ; extension B4b
+  (~19 h) validée non lancée. Corrections de l'audit externe du 27 nov. :
+  smoke-test YAML (poussé 27 nov.), `build_null_894.py`, `VERSION_STATUS.md`,
+  résumé exécutif en tête du livre blanc, copie v6.2.1 (masque inf, candidate
+  non adoptée). Aucun remède.
 - Le verdict §8.100 (27 nov. 2026) : fusion des cinq dépôts en un dépôt unique
   `FindPrint/tlogNext-cancer-pdac` (PUBLIC), 7 commits, tête finale `0aaf7116` —
   v6.0+v6.1 à la racine, 4 workflows via le navigateur (API GitHub refuse les
@@ -337,31 +354,32 @@ cancer du pancréas avec le pipeline universel de détection de ruptures
 
 Arbre après la fusion des dépôts du 27 nov. 2026 (voir « Fusion des dépôts » ci-dessous) ; les branches ajoutées par la fusion sont marquées « fusion ».
 
-- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.100).
+- `livre-blanc-pdac-v6.md` — livre blanc complet (§8.1–§8.103).
 - `universal_v6.0.0_cohen.py` — pipeline v6.0 (historique, SHA-256 `bb8bbdba…`), rapatrié de `Code` — fusion.
 - `universal_v6.1.0_cohen.py` — pipeline v6.1, version de référence (SHA-256 `2af5e5ce…`), rapatrié de la suite et de `Code` — fusion.
 - `universal_v6.2.0_cohen.py` — pipeline v6.2 (Cohen-d partout).
 - `universal_v6.3.0_cohen.py` — proposition v6.3 REJETÉE (§8.49).
 - `universal_v6.4.0_cohen.py` — proposition v6.4 REJETÉE (§8.52).
 - `universal_v6.5.0_cohen.py` — proposition v6.5 REJETÉE (§8.95).
+- `universal_v6.2.1_cohen.py` — candidate v6.2.1 (masque inf, audit 27 nov.), NON ADOPTÉE, v6.2 reste la version de travail.
 - `PROTOCOL_v6.1.md`, `PROTOCOL_v6.2.md` — protocoles gelés v6.1 et v6.2, à la racine, rapatriés de la suite — fusion.
-- `.github/workflows/` — 4 workflows GitHub Actions rapatriés de `tlogNext-pipeline-actions` : `pipeline-nulls-lot.yml`, `pipeline-nulls-lot-e2.yml`, `pipeline-nulls-lot-rerun.yml`, `pipeline-smoke-test.yml` (déclenchement manuel uniquement) — fusion.
+- `.github/workflows/` — 5 workflows GitHub Actions (4 rapatriés de `tlogNext-pipeline-actions` + `pipeline-nulls-lot-899-consolidation.yml` pour la consolidation §8.101) : `pipeline-nulls-lot.yml`, `pipeline-nulls-lot-e2.yml`, `pipeline-nulls-lot-rerun.yml`, `pipeline-smoke-test.yml`, `pipeline-nulls-lot-899-consolidation.yml` (déclenchement manuel uniquement) — fusion.
 - `README.md`, `README_EN.md`, `DATA_SOURCES.md`, `MANIFEST_SHA256.txt` — ce fichier, sa version anglaise,
   les sources des données, les SHA-256 de chaque fichier du dépôt.
 - `download_data_877.sh` — script de re-téléchargement des matrices brutes,
   version corrigée §8.77 (SHA `55811136…`, 52 fichiers, EXIT:0, test à froid
   à 0,0 exact ; original `~/workspace/staging-pdac/download_data.sh`,
   SHA `4e151d59…`).
-- `provenance/` — 137 fichiers (dont `SOURCES_CANDIDATES.tsv` — fusion) : protocoles gelés (`PROTOCOL_*.md`) et
+- `provenance/` — 140 fichiers (dont `SOURCES_CANDIDATES.tsv` — fusion) : protocoles gelés (`PROTOCOL_*.md`) et
   provenances (`PROVENANCE_*.md`) de chaque lot, plus
   `PUBLICATION_tlogNext.md`.
 - `results/` — 215 tables vérifiées v6.1/v6.2/v6.3/v6.4 (validation, phase 2,
-  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249, consolidation GDC 10 nuls frais, GSE194249 à 11 flux, suppléments Chen MOESM1/2/16, distribution des nuls §8.93 (150 nuls frais), Delta §8.94, composite v6.5 §8.95, universalité LUAD/BRCA §8.96, audit §8.97, suivi §8.93 à 200 nuls §8.98 (2 850 runs, 3 000 nuls lus), seizième paire GSE184585 §8.99 (82 tumeurs, SOLIDE à 10 nuls), correction Cox §8.12, fusion des dépôts §8.100 (dépôt unique, tête 0aaf7116, smoke-test réussi).
-- `sections/` — sections §8.38–§8.100 du livre blanc, fichiers sources.
-- `scripts/` — 273 scripts de construction des flux, d'extraction et
+  Delta, MC recomposé, infiltration, pureté externe, sep/maxsep, Delta séries, estomac/mucus, adoption maxsep, déconvolution, pureté méthylation, loi d'échelle Delta, mécanismes, décision maxsep, ESTIMATE publiés, quatrième cohorte GSE62165, fraction leucocytaire, xCell, confirmation indépendante GSE21501, confirmation indépendante GSE79668, confirmation indépendante GSE60979, consolidation GSE79668, déclencheur du pic étroit, douzième paire GSE131050, clôture du résidu M2, lot FNA GSE131050, réparation de la reproductibilité, treizième paire GSE57495, piste Œil (UVM), cerveau GBM, survie privilège, lot drogue Chen 2025, quatorzième paire GDC MUCL3, ré-audit GSE194249, consolidation GDC 10 nuls frais, GSE194249 à 11 flux, suppléments Chen MOESM1/2/16, distribution des nuls §8.93 (150 nuls frais), Delta §8.94, composite v6.5 §8.95, universalité LUAD/BRCA §8.96, audit §8.97, suivi §8.93 à 200 nuls §8.98 (2 850 runs, 3 000 nuls lus), seizième paire GSE184585 §8.99 (82 tumeurs, SOLIDE à 10 nuls), correction Cox §8.12, fusion des dépôts §8.100 (dépôt unique, tête 0aaf7116, smoke-test réussi), consolidation GSE184585 §8.101 (FRAGILE à 200 nuls), nouvelle paire GSE313117 §8.102 (FRAGILE à 10 nuls), Delta §8.103 (NON ÉLUCIDÉ), corrections de l'audit externe.
+- `sections/` — sections §8.38–§8.103 du livre blanc, fichiers sources.
+- `scripts/` — 275 scripts de construction des flux, d'extraction et
   d'analyse.
 - `data_flux/` — 989 CSV/JSON : flux d'entrée des runs, tests directs,
-  extraits ssep / v62_delta / §8.46–§8.100.
+  extraits ssep / v62_delta / §8.46–§8.103.
 - `rapports/` — rapports rapatriés de `pancreatic-cancer-open-data-reproducibility` (14 fichiers, dont PRMT5/MTAP, KRAS, MUC16/CLDN18.2) — fusion.
 - `docs/` — documentation rapatriée du même dépôt : gouvernance des données, méthodologie, protocole pilote — fusion.
 - `pdf-build/` — scripts de construction du PDF rapatriés du même dépôt, à la racine — fusion.
@@ -385,7 +403,7 @@ les flux de `data_flux/`.
 
 ## PDF
 
-Le PDF du livre blanc (1516 pages, binaire) est partagé séparément : les
+Le PDF du livre blanc (1561 pages, binaire) est partagé séparément : les
 snapshots GitHub n'acceptent que des fichiers UTF-8 de moins de 16 Mio
 au total. Son SHA-256 est rappelé ci-dessus.
 
@@ -393,7 +411,7 @@ au total. Son SHA-256 est rappelé ci-dessus.
 
 La suite du travail (phase 2) se poursuit dans le dépôt
 `tlogNext-pdac-phase2`, travail d'un autre agent — ce dépôt-ci reste
-l'état vérifié du travail v6.2 au 27 novembre 2026.
+l'état vérifié du travail v6.2 au 28 novembre 2026.
 
 Projet : FindPrint / TagPrint. Données ouvertes, code reproductible,
 résultats négatifs rapportés comme les positifs.
